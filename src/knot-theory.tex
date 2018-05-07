@@ -1,4 +1,7 @@
 \documentclass{createspace}
+\input{00-meta-latex/shortcuts}
+\usepackage{tikz}
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}
 
 \author{Leon Suwalski}
 \title{Krótkie wprowadzenie do teorii węzłów}
@@ -8,6 +11,8 @@
 \maketitle
 \tableofcontents
 \chapter{Preludium}
+\label{cha:preludium}
+\input{10-introduction/knots}
 
 \chapter{Niezmienniki kolorowe}
 
@@ -18,4 +23,9 @@
 \chapter{Wybrane rodziny węzłów}
 
 \chapter{Tablice węzłów pierwszych}
+
+\raggedright
+\bibliographystyle{plain}
+%\bibliographystyle{plunsrt}
+\bibliography{knot_theory}
 \end{document}

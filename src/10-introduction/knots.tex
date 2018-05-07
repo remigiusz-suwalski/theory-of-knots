@@ -1,0 +1,264 @@
+Teoria węzłów to gałąź topologii,
+która powstała z inspiracji węzłami,
+jakie pojawiają się w codziennym życiu: przy wiązaniu butów albo cumowaniu statków.
+Zajmuje się ona badaniem przede wszystkim węzłów,
+czyli pewnych włożeń okręgu $S^1$ w trójwymiarową przestrzeń euklidesową $\R^3$ lub sferę $S^3$,
+ale także splotów (zaplątanych w sobie węzłów), warkoczy, supłów oraz podobnych obiektów.
+Matematyczne węzły różnią się tym od zwykłych, że ich końce są ze sobą połączone.
+Oto kilka przykładów.
+
+\begin{figure}[H]
+	\begin{minipage}[b]{.11\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{?}
+	\end{minipage}
+	\begin{minipage}[b]{.11\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{?}
+	\end{minipage}
+	\begin{minipage}[b]{.11\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{?}
+	\end{minipage}
+	\begin{minipage}[b]{.11\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{?}
+	\end{minipage}
+	\begin{minipage}[b]{.11\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{?}
+	\end{minipage}
+	\begin{minipage}[b]{.11\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{?}
+	\end{minipage}
+	\begin{minipage}[b]{.11\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{?}
+	\end{minipage}
+\end{figure}
+
+Początkowo celem teorii węzłów była klasyfikacja wszystkich węzłów.
+Od XIX wieku, kiedy teoria węzłów wyodrębniła się jako osobny dział matematyki,
+zdążyliśmy skatalogować ponad sześć miliardów tych obiektów.
+Pozornie tak samo wyglądające węzły mogą się od siebie różnić.
+Do wykrywania tych subtelnych różnic używa się przede wszystkim niezmienników topologicznych takich jak grupy, wielomiany bądź liczby.
+Poznamy je w dalszych rozdziałach.
+
+Matematycy uogólnili pojęcie węzła:
+można rozpatrywać je w wyższych wymiarach albo zastąpić okrąg inną przestrzenią topologiczną.
+Będziemy starać się unikać tych uogólnień.
+
+\section{Węzły i sploty}
+Największą różnicą między węzłami matematycznymi oraz tymi z prawdziwego jest życia jest to, że te pierwsze nie mają luźnych końców.
+Można przyjąć nieidealną, naiwną definicję:
+
+\begin{definition}
+	Ciągłe oraz różnowartościowe odwzorowanie $S^1 \to \R^3$ to \textbf{węzeł}.
+\end{definition}
+
+\todo[inline]{Zdefiniować niewęzeł i narysować go.}
+
+Zastanówmy się, jakim formalizmem opisać manipulowanie fizycznym sznurkiem.
+Nie można użyć izotopii
+(dwa węzły są izotopijne, jeśli istnieje ciągła funkcja $F \colon S^1 \times [0, 1] \to \R^3$ taka, że $F(-, 0)$ jest pierwszym, zaś $F(-,1)$ drugim węzłem).
+Zauważmy, że każde splątanie ściaga się do punktu.
+Dowolny węzeł jest równoważny z trywialnym, zatem istnieje tylko jedna klasa abstrakcji.
+\begin{figure}[H]
+	\begin{minipage}[b]{.23\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{węzeł}
+	\end{minipage}
+	\begin{minipage}[b]{.23\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{prostszy węzeł}
+	\end{minipage}
+	\begin{minipage}[b]{.23\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{niewęzeł}
+	\end{minipage}
+\end{figure}
+
+Trzeba uwzględnić to, jak węzeł leży w przestrzeni.
+Właściwym narzędziem jest więc izotopia otaczająca.
+Intuicyjnie: dwa węzły uznajemy za równoważne,
+jeśli można przejść od jednego do drugiego przy użyciu deformacji całej przestrzeni $\R^3$.
+
+\begin{definition}[izotopia otaczająca] \label{def_ambient_isotopy}
+	Ciągłe odwzorowanie $F \colon \R^3 \times [0,1] \to \R^3$,
+	które staje się homeomorfizmem po ustaleniu drugiego argumentu i takie,
+	że $F(-, 0)$ jest funkcją tożsamościową,
+	zaś $F(-, 1)$ złożona z pierwszym węzłem daje drugi węzeł,
+	nazywamy izotopią otaczającą.
+\end{definition}
+
+\begin{definition}[węzeł] \label{def_knot}
+	Gładkie włożenie $S^1 \to \R^3$ izotopijne otaczająco z zamkniętą łamaną bez samoprzecięć nazywamy węzłem poskromionym.
+\end{definition}
+
+Wykluczamy w ten sposób patologiczne z kombinatorycznego punktu widzenia węzły dzikie.
+Przez prawie całą książkę interesować nas będą jedynie węzły poskromione,
+dlatego jeśli nie zaznaczono inaczej, przez węzeł rozumiemy węzeł poskromiony.
+\todo{Wstawić przykład węzła dzikiego.}
+Dość często będziemy utożsamiać węzeł z jego obrazem.
+
+Jednocześnie homeomorfizmy $F(-,t)$ zastępujemy przez dyfeomorfizmy zachowujące orientację.
+Chwila namysłu wystarcza do przekonania się, że definicja \ref{def_ambient_isotopy} obejmuje zwykłą izotopię,
+a przy tym nie pozwala na rozwiązanie nietrywialnych węzłów przez ściągnięcie zaplątania do punktu.
+Istnieje jeszcze jedna, konkurencyjna definicja węzłów równoważnych:
+
+\begin{definition}
+	Dwa węzły są równoważne, gdy jeden z nich jest obrazem drugiego przez zachowujący orientację homeomorfizm $\R^3 \to \R^3$.
+\end{definition}
+
+Stwierdzenie to przestaje być prawdziwe po zastąpieniu przestrzeni $\R^m$ przez $S^m$.
+
+\begin{proof}
+	Podany niżej dowód pochodzi z książki ,,Topology from the differentiable viewpoint'' Johna Millnora.
+	Musimy pokazać, że dyfeomorfizm $f \colon \R^m \to \R^m$ jest gładko izotopijny z identycznością.
+	Translacje są izotopiami, więc bez straty ogólności zakładamy, że $f(0) = 0$.
+	Pochodna $f$ w zerze jest dana wzorem $\mathrm{d}f_0(x) = \lim_{t \to 0} f(tx) /t$,
+	naturalną definicją	izotopii $F \colon \R^m \times [0, 1] \to \R^m$ jest więc
+	\[
+		F(x, t) = \begin{cases}
+			f(tx) / t & 0 < t \le 1 \\
+			\mathrm{d}f_0(x) & t = 0
+		\end{cases} .
+	\]
+
+	Funkcja $F$ jest gładka,
+	gdyż na mocy lematu Hadamarda funkcja $f$ zapisuje się jako suma $x_1 g_1(x) + \ldots + x_mg_m(x)$,
+	gdzie funkcje $g_i$ są gładkie, co jakoś kończy dowód.
+\end{proof}
+
+\begin{definition}[splot] \label{def_link}
+	Sumę rozłączną skończenie wielu węzłów nazywamy splotem.
+\end{definition}
+
+\begin{example}
+	Whitehead w 1934 odkrył kontrprzykład do nieudanego dowodu hipotezy Poincarego.
+	Był nim splot o dwóch składowych przedstawiony na poniższym rysunku.
+	Splot Hopfa to najprostszy splot nietrywialny, którym w 1931 r. zajmował się Heinz Hopf,
+	topolog niemiecki, w ramach badań nad tzw. rozwłóknieniem (Hopf fibration).
+	\todo[inline]{Podać przykład prostego splotu}
+\end{example}
+
+\begin{figure}[H]
+	\begin{minipage}[b]{.32\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{splot Whiteheada}
+	\end{minipage}
+	\begin{minipage}[b]{.32\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{splot Heada}
+	\end{minipage}
+	\begin{minipage}[b]{.32\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{splot jakiś inny}
+	\end{minipage}
+\end{figure}
+
+Jeśli dwa węzły są równoważne, to ich dopełnienia są oczywiście homeomorficzne.
+Pytanie o prawdziwość implikacji odwrotnej jako pierwszy zadał najprawdopodobniej Tietze w 1908 roku.
+Odpowiedź jest pozytywna: każdy węzeł jest wyznaczony jednoznacznie przez swoje dopełnienie.
+
+\begin{theorem}[Gordon, Luecke, 1989] \label{thm_gordon_luecke}
+	Poskromione węzły o homeomorficznych (z zachowaniem orientacji) dopełnieniach są wzajemnie izotopijne.
+\end{theorem}
+
+\begin{proof}[Niedowód]
+	Wynika to z ogólniejszego stwierdzenia:
+	nietrywialna chirurgia Dehna na węźle w 3-sferze nigdy nie daje 3-sfery.
+	Pełny dowód zawiera praca \cite{gordon89}.
+\end{proof}
+
+Istnieje nieskończenie wiele kontrprzykładów do odpowiednika twierdzenia Gordona-Lueckego dla splotów,
+których nie da się, patrząc na samo dopełnienie, odróżnić od splotu Whiteheada.
+\todo{Wymienić sploty przeczące tw. Gordona-Lueckegp}
+
+\section{Diagramy}
+Chociaż w świetle definicji \ref{def_knot} węzły są pewnymi regularnymi podzbiorami przestrzeni $\R^3$,
+z kombinatorycznego punktu widzenia wygodniej jest rysować je na  płaszczyźnie.
+
+\begin{definition} \label{def_diagrams}
+	Cień to rzut węzła $K \subseteq \R^3$ na płaszczyznę.
+	Diagram to cień bez katastrof
+	(potrójnych przecięć, stycznych i dziobów)
+	razem z informacją o tym, jak przebiegają skrzyżowania.
+\end{definition}
+
+\begin{proposition}
+	Każdy splot posiada diagram -- zbiór diagramów jest otwarty i gęsty w zbiorze wszystkich.
+\end{proposition}
+
+\begin{proof}
+	Rzut splotu na równoległe płaszyczyzny jest taki sam,
+	a te można sparametryzować prostymi przechodzącymi przez początek układu współrzędnych,
+	które tworzą przestrzeń rzutową $\R \mathbb P^2$.
+	Niech $S$ będzie zbiorem prostych, które dają złe rzuty.
+	Wystarczy pokazać jego nigdziegęstość.
+	Okazuje się, że $S$ jest też jednowymiarowy. 
+	(Dowód za \cite{crowell63}).
+	% (Crowell-Fox 1963?).
+\end{proof}
+
+%Niestety pomimo upływu czasus, nikt nie napisał komputerowego programu realizującego ten algorytm (stan na 1994).
+%Może podejmie się tego Czytelnik?
+%Inne algorytmy istnieją, jednak wszystkie działają w wykładniczym czasie.
+
+W 1961 roku W. Haken \cite{haken61} podał niezawodny przepis na wykrycie diagramu niewęzła,
+częściowo rozwiązując jeden z ważniejszych problemów teorii węzłów.
+Przez wiele lat nikt nie podjął się implementacji tego algorytmu,
+udało się to na przykład B. Burtonowi, R. Budneyowi oraz W. Petterssonowi w komputerowym programie Regina
+\footnote{Dostępny pod adresem \url{https://regina-normal.github.io/}.} na przełomie tysiącleci.
+Burton, Rubinstein i Tillman pokazali w pracy \cite{burton12}, jak sprawdzać,
+czy powierzchnia normalna na striangulowanej 3-rozmaitości jest (nie)ściśliwa w czasie wykładniczym.
+To okazało się być wystarczającym do udzielenia negatywnej odpowiedzi na pytanie Thurstona:
+,,czy przestrzeń Seiferta-Webera jest rozmaitością Hakena?'',
+a zatem wykraczającego poza poziom tej pracy.
+
+\todo[inline]{\url{http://geometrygames.org/SnapPea/index.html}}
+
+Przykładami trudnych w rozpoznaniu niewęzłów są: niewęzeł Goritza, Freedmana.
+
+\begin{figure}[H]
+	\begin{minipage}[b]{.32\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{normalny}
+	\end{minipage}
+	\begin{minipage}[b]{.32\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{Goritza}
+	\end{minipage}
+	\begin{minipage}[b]{.32\linewidth}
+		\centering 
+		\includegraphics[width=\linewidth]{../data/missing.jpg} 
+		\subcaption{Freedmana}
+	\end{minipage}
+\end{figure}
+
+Innym narzędziem wykrywającym niewęzły jest homologia Chowanowa (opisana później),
+jak pokazał Kronheimer z Mrówką \cite{kronheimer11}.
+Bar-Natan, topolog izraelski, napisał program liczący te homologie szybko \cite{barnatan07},
+zapewne w czasie $O(\exp(c \sqrt n))$, dla diagramu o $n$ skrzyżowaniach.
+Nie możemy liczyć na istotne przyspieszenie:
+znalezienie przybliżenia wielomianu Jonesa jest problemem \#P-trudnym (\cite{kuperberg15}, \cite{vertigan05}),
+a przy znanych homologiach -- wręcz trywialnym.
+
+\todo[inline]{Metody kodowania węzłów i splotów}
+Tait, Little wyprodukowali prawie bezbłędną tablicę węzłów o co najwyżej 11 skrzyżowaniach przy użyciu grafów.
