@@ -1,0 +1,44 @@
+\section{Węzły pierwsze}
+\label{sec:prime_knots}
+Istnieje węzłowy odpowiednik liczb pierwszych.
+Jest on ściśle związany z podaną wyżej operacją sumy spójnej.
+Do jego dostatecznie dobrego zrozumienia wymagana jest znajomość powierzchni Seiferta (opisanych w sekcji \ref{section_genus}).
+
+\begin{definition} \label{primeknot}
+    Nietrywialny węzeł nazywamy \textbf{pierwszym},
+    kiedy nie można przedstawić go jako sumy spójnej $K_1 \shrap K_2$
+    dwóch nietrywialnych węzłów $K_1, K_2$ (nie jest złożony).
+\end{definition}
+
+Okazuje się, że jeśli alternujący \todo{definicja splotów alternujących} splot nie jest pierwszy,
+to każdy jego alternujący diagram jest złożony.
+Jako pierwszy fakt ten został wykazany przez Menasco w \cite{menasco84}.
+Dowód opiera się na multiplikatywności wielomianu BLM/Ho\todo{wielomian BLM/Ho opisany jest w sekcji \ref{section_blmho}}.
+
+\todo[inline]{Taniyama: pewien diagram sumy spójnej k,l-alternujących jest k+l-alternujący}
+
+Czy węzłów pierwszych jest nieskończenie wiele?
+Tak (patrz fakt \ref{infty_primes}), potrafimy nawet oszacować ich liczbę.
+W roku 1987 C. Ernst, D. Sumners w oparciu o wyniki Thistlethwaite'a, Kauffmana, oraz Murasugiego dotyczące węzłów alternujących pokazali w \cite{ernst87},
+że różnych węzłów pierwszych o $n$ skrzyżowaniach jest co najmniej $\frac 1 3 (2^{n- 2} - 1)$ dla $n \ge 4$,
+przy czym węzły lustrzane traktowane są jako różne.
+Welsh znalazł ograniczenie
+\[
+    \limsup_{n \to \infty} \sqrt[n]{N(n)} \le 13.5,
+\]
+gdzie $N(n)$ jest ilością pierwszych węzłów o $n$ skrzyżowaniach.
+
+Czy niewęzeł nie daje się zapisać jako suma dwóch innych węzłów?
+Byłoby to skrajnie niepożądane, gdyż każdy węzeł jest naturalnie spójną sumą siebie oraz niewęzła.
+Na szczęście przy pomocy powierzchni Seiferta można pokazać, że tak się nie dzieje (jest to wniosek \ref{no_inverses}).
+Prawdziwe jest dużo mocniejsze stwierdzenie,
+którego nie udowodnimy ze względu na niedostatecznie rozwinięty aparat matematyczny.
+Należy o nim myśleć jak o analogonie zasadniczego twierdzenia arytmetyki.
+
+\begin{theorem}[Schubert, 1949]
+    Każdy różny od niewęzła węzeł rozkłada się jednoznacznie na węzły pierwsze
+    (jeśli tylko pominąć kolejność składników).
+\end{theorem}
+
+Pomimo to uda się nam pokazać samo istnienie rozkładu, jest to fakt \ref{genus_sum}.
+% koniec sekcji Węzły pierwsze
