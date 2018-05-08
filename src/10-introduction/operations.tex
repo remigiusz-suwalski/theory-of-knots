@@ -1,0 +1,264 @@
+\section{Operacje na węzłach} % (fold)
+\label{sec:knot_operations}
+W tej sekcji poznamy sposoby otrzymywania nowych obiektów z już istniejących (rewers i lustro splotu).
+Rodzina węzłów wyposażona w sumę spójną tworzy przemienny monoid z jednoznacznością rozkładu.
+Znacznie później (w sekcji \ref{section_tangle}) określimy jeszcze sumę oraz iloczyn supłów.
+
+\subsection{Operacje na pojedynczym splocie} % (fold)
+\label{sub:single_operations}
+\begin{definition}
+    Niech $L$ będzie zorientowanym splotem.
+    Przez \textbf{rewers} $L$, $rL$,
+    rozumiemy ten sam splot z przeciwną orientacją.
+    \textbf{Lustrem} $L$, $mL$,
+    będziemy nazywać odbicia $L$ względem płaszczyzny.
+    \begin{figure}[H]
+        \begin{minipage}[b]{.32\linewidth}
+            \centering 
+            \includegraphics[width=\linewidth]{../data/link_mirror.png} 
+            \subcaption{lustro $mL$}
+        \end{minipage}
+        \begin{minipage}[b]{.32\linewidth}
+            \centering 
+            \includegraphics[width=\linewidth]{../data/link.png} 
+            \subcaption{przykładowy splot $L$}
+        \end{minipage}
+        \begin{minipage}[b]{.32\linewidth}
+            \centering 
+            \includegraphics[width=\linewidth]{../data/link_reverse.png} 
+            \subcaption{rewers $rL$}
+        \end{minipage}
+    \end{figure}
+\end{definition}
+
+Na lewym obrazku odbiliśmy diagram względem poziomej prostej,
+ale równie dobrze można po prostu zamienić każde nadskrzyżowanie na podskrzyżowanie.
+Zauważmy, że wykonując powyższe operacje na węźle możemy otrzymać mniej niż czterech różne obiekty
+($L$, $mL$, $rL$, $mrL$) -- na przykład trójlistnik jest własnym rewersem, ale nie lustrem.
+
+\begin{definition}
+    Istnieje pięć typów symetrii węzłów:
+    całkowicie chiralny albo skrętny (węzły $K$, $rK$, $mK$ są parami nierównoważne),
+    odwracalny ($K \cong rK$),
+    zwierciadlany ujemnie ($K \cong mrK$),
+    zwierciadlany dodatnio ($K \cong mK$) oraz
+    całkowicie zwierciadlany ($rK \cong K \cong mK$).
+\end{definition}
+
+Węzeł $9_{32}$ jest całkowicie skrętny. 
+Ósemka jest zwierciadlana, trójlistnik jest odwracalny,
+zaś $8_{17}$ to najprostszy przykład węzła nieodwracalnego.
+Ten ostatni fakt jest jednak daleki od oczywistego -- 
+sześćdziesiąt lat temu nie było pewne,
+czy węzły nieodwracalne w ogóle istnieją.
+W roku 1962 Ralph Fox wskazał kilku kandydatów do tego tytułu.
+Hale Trotter odkrył rok później nieskończoną rodzinę nieodwracalnych precli\todo{definicja precli: \ref{pretzel_def}}.
+Obecnie wiadomo, że prawie wszystkie węzły są nieodwracalne (\cite[s.~46]{murasugi96}).
+Wszystkie węzły torusowe są skrętne.
+
+\begin{proposition}[Trotter, 1963] \label{trotter}
+    Precel $(p, q, r)$, gdzie $p, q, r$ sa parami różnymi liczbami całkowitymi, nie jest odwracalny.
+\end{proposition}
+
+\begin{proof}
+    Praca \cite{trotter63} sprowadza w elementarny sposób problem do pytania, czy pewna grupa posiada inwersję.
+\end{proof}
+
+Tait odnosił wrażenie, że zwierciadlane węzły mają parzysty indeks skrzyżowań,
+ale Hoste (Thistlethwaite?) znalazł w 1998 kontrprzykład o piętnastu skrzyżowaniach.
+Jest on jedynym znanym nam dzisiaj.
+Hipoteza Taita jest prawdziwa dla węzłów pierwszych, alternujących.
+
+Poniższa tabela oparta jest (kolejno) o ciągi 
+\href{https://oeis.org/A051766}{51766}, 
+\href{https://oeis.org/A051769}{51769}, 
+\href{https://oeis.org/A051768}{51768}, 
+\href{https://oeis.org/A051767}{51767}, 
+\href{https://oeis.org/A052400}{52400}, 
+z bazy danych ``The On-Line Encyclopedia of Integer Sequences'' (OEIS).
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}*{20}l@{}} \toprule
+        skrzyżowania & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 \\ \midrule
+        całkowicie skrętne & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 27 & 187 & 1103 & 6919 & 37885 \\
+        odwracalne & 1 & 0 & 2 & 2 & 7 & 16 & 47 & 125 & 365 & 1015 & 3069 & 8813 \\
+        $-$ zwierciadlane & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 6 & 0 & 40 & 0 & 227 \\
+        $+$ zwierciadlane & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 6 \\
+        zwierciadlane & 0 & 1 & 0 & 1 & 0 & 4 & 0 & 7 & 0 & 17 & 0 & 41 \\
+        \bottomrule
+        \hline
+    \end{tabular}
+    \caption{Liczba węzłów o poszczególnych typach symetrii}
+    \label{tablica_wezlow}
+\end{table}
+
+% Koniec podsekcji Operacje na pojedynczym splocie
+
+\subsection{Sumy wielu węzłów} % (fold)
+\label{sub:knot_sum}
+Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wzdłuż brzegu.
+
+\begin{definition}
+    Niech $L_1, L_2$ będą splotami.
+    Ich \textbf{sumą niespójną}, $L_1 \sqcup L_2$,
+    jest teoriomnogościowa suma rozłączna splotów
+    $L_1$ i $L_2$ leżących po różnych stronach pewnej płaszczyzny.
+\end{definition}
+
+\begin{definition}
+    Nacinając dwa zorientowane węzły w dwóch bliskich punktach i 
+    ponownie zszywając je dwoma łukami nieprzecinającymi już
+    istniejących otrzymujemy \textbf{sumę spójną}, $K_1 \shrap K_2$.
+    \[
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5, flip crossing/.list={5}, ignore endpoint intersections=false,]
+            \strand[thick] (-3.5, -3.5) [in=down, out=up] to (3.5, 3.5);
+            \strand[thick] (3.5, 3.5) [in=right, out=up] to (-4.5, 10);
+            \strand[thick] (-4.5, 10) [in=up, out=left] to (-10, 3.5);
+            \strand[thick] (-10, 3.5) to (-10, -3.5);
+            \strand[thick] (-10, -3.5) [in=left, out=down] to (-4.5, -10);
+            \strand[thick] (-4.5, -10) [in=down, out=right] to (3.5, -3.5);
+            \strand[thick] (3.5, -3.5) [in=down, out=up] to (-3.5, 3.5);
+            \strand[thick] (-3.5, 3.5) [in=left, out=up] to (4.5, 10);
+            \strand[thick] (4.5, 10) [in=up, out=right] to (10, 3.5);
+            \strand[thick, -Latex] (10, 3.5) to (10, -3.5);
+            \strand[thick] (10, -3.5) [in=right, out=down] to (4.5, -10);
+            \strand[thick] (4.5, -10) [in=down, out=left] to (-3.5, -3.5);
+            \node at (0, -15) {$K_1$};
+        \end{knot}
+        \end{tikzpicture}
+        \shrap
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5, flip crossing/.list={6}, ignore endpoint intersections=false,]
+            \strand[thick] (-3.5, -3.5) [in=down, out=up] to (3.5, 3.5);
+            %\strand[thick] (3.5, 3.5) [in=right, out=up] to (-4.5, 10);
+            %\strand[thick] (-4.5, 10) [in=up, out=left] to (-10, 3.5);
+            \strand[thick] (-10, -3.5) [in=left, out=up] to (0, 6.5);
+            \strand[thick, Latex-] (-10, -3.5) [in=left, out=down] to (-4.5, -10);
+            \strand[thick] (-4.5, -10) [in=down, out=right] to (3.5, -3.5);
+            \strand[thick] (3.5, -3.5) [in=down, out=up] to (-3.5, 3.5);
+            %\strand[thick] (-3.5, 3.5) [in=left, out=up] to (4.5, 10);
+            %\strand[thick] (4.5, 10) [in=up, out=right] to (10, 3.5);
+            \strand[thick] (10, -3.5) [in=right, out=up] to (0, 6.5);
+            \strand[thick] (10, -3.5) [in=right, out=down] to (4.5, -10);
+            \strand[thick] (4.5, -10) [in=down, out=left] to (-3.5, -3.5);
+            %
+            \strand[thick] (-3.5, 3.5) [in=left, out=up] to (0, 10);
+            \strand[thick] (3.5, 3.5) [in=right, out=up] to (0, 10);
+            \node at (0, -15) {$K_2$};
+        \end{knot}
+        \end{tikzpicture}
+        =
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5, flip crossing/.list={5, 22, 23}, ignore endpoint intersections=false,]
+            \strand[thick] (-18.5, -3.5) [in=down, out=up] to (-11.5, 3.5);
+            \strand[thick] (-11.5, 3.5) [in=right, out=up] to (-19.5, 10);
+            \strand[thick] (-19.5, 10) [in=up, out=left] to (-25, 3.5);
+            \strand[thick] (-25, 3.5) to (-25, -3.5);
+            \strand[thick] (-25, -3.5) [in=left, out=down] to (-19.5, -10);
+            \strand[thick] (-19.5, -10) [in=down, out=right] to (-11.5, -3.5);
+            \strand[thick] (-11.5, -3.5) [in=down, out=up] to (-18.5, 3.5);
+            \strand[thick] (-18.5, 3.5) [in=left, out=up] to (-10.5, 10);
+            \strand[thick] (-10.5, 10) [in=left, out=right] to (-5, 2);
+            \strand[thick, -Latex] (-5, 2) to (-5+6, 2);
+            \strand[thick] (5, 2) to (-5+6, 2);
+            \strand[thick] (3, -2) to [in=left, out=right] (10.5, -10);
+            \strand[thick, -Latex] (3, -2) to (0, -2);
+            \strand[thick] (-5, -2) to (0, -2);
+            \strand[thick] (-5, -2) [in=right, out=left] to (-10.5, -10);
+            \strand[thick] (-10.5, -10) [in=down, out=left] to (-18.5, -3.5);
+            %%%
+            \strand[thick] (11.5, -3.5) [in=down, out=up] to (18.5, 3.5);
+            \strand[thick] (-10 +15, 2) [in=left, out=right] to (15, 6.5);
+            \strand[thick] (10.5, -10) [in=down, out=right] to (18.5, -3.5);
+            \strand[thick] (18.5, -3.5) [in=down, out=up] to (11.5, 3.5);
+            \strand[thick] (25, -3.5) [in=right, out=up] to (15, 6.5);
+            \strand[thick] (25, -3.5) [in=right, out=down] to (19.5, -10);
+            \strand[thick] (19.5, -10) [in=down, out=left] to (11.5, -3.5);
+            \strand[thick] (11.5, 3.5) [in=left, out=up] to (15, 10);
+            \strand[thick] (18.5, 3.5) [in=right, out=up] to (15, 10);
+            %%%
+            \node at (0, -15) {$K_1 \shrap K_2$};
+        \end{knot}
+        \end{tikzpicture}
+        \]
+\end{definition}
+
+Uogólnieniem tego działania oraz 
+(nieopisanej w naszej pracy) operacji \emph{plumbing}
+jest suma Murasugiego, dobrze wyjaśniona w czwartym rozdziale \cite{kawauchi96}.
+
+Ważna jest orientacja składników:
+suma dwóch trójlistników może być, w zależności od ich orientacji,
+węzłem babskim\todo{nazewnictwo pochodzi od żeglarzy, nie matematyków} lub prostym.
+Fox pokazał w 1952 roku, że dopełnienia tych dwóch węzłów nie są homeomorficzne.
+Suma przeciwnie skręconych trójlistników jest plastrowa\todo{definicja \ref{slice_def}},
+natomiast tak samo skręconych -- nie.
+
+\begin{proposition}
+    Suma spójna jest dobrze określonym działaniem.
+\end{proposition}
+
+Suma spójna nie jest dobrze określona dla splotów:
+nie istnieje kanoniczny wybór, które składowe łączyć ze sobą.
+
+\begin{proof}
+    Niech dane będą węzły $K_1$ oraz $K_2$
+    oraz dwa różne łuki $\gamma_1$, $\gamma_2$,
+    których można użyć do konstrukcji sumy spójnej.
+    Skurczmy $K_1$, przeciągnijmy najpierw przez łuk $\gamma_1$, a następnie wzdłuż węzła $K_2$.
+    Teraz wystarczy odwrócić ten proces z $\gamma_2$ w miejscu $\gamma_1$.
+\end{proof}
+
+\begin{proposition}
+    Suma spójna zorientowanych węzłów posiada następujące własności:
+    \begin{enumerate}[leftmargin=*]
+    \itemsep0em
+        \item jest łączna:
+        $(K_1 \shrap K_2) \shrap K_3 \simeq K_1 \shrap (K_2 \shrap K_3)$,
+        \item jest przemienna:
+        $K_1 \shrap K_2 \simeq K_2 \shrap K_1$,
+        \item posiada element neutralny:
+        $K_1 \shrap \MalyNieWezel \simeq \MalyNieWezel \shrap K_1 \simeq K_1$.
+    \end{enumerate}
+\end{proposition}
+
+Prosty dowód tego faktu pozostawiamy Czytelnikowi.
+Pokażemy za to, iż węzły z sumą spójną nie tworzą grupy -- brakuje elementów przeciwnych.
+
+\begin{proposition}
+    Jeśli $K \shrap L = \NieWezel$, to $K = L = \NieWezel$.
+\end{proposition}
+
+\begin{proof}[Niedowód]
+    Technika ta zwana jest szwindlem Mazura.
+    Załóżmy, że $K \shrap L = \NieWezel$ i dopuśćmy wyjątkowo węzły dzikie.
+    Skonstruujmy sumę $K \shrap L \shrap K \shrap \ldots$,
+    przy czym kolejne składniki powinny zmniejszać się,
+    aby ich suma nadal była węzłem.
+    Wtedy
+    \begin{align*}
+        K & \simeq K \shrap [(L \shrap K) \shrap (L \shrap K) \ldots] \\
+         & \simeq (K \shrap L) \shrap (K \shrap L) \shrap \ldots
+         \simeq \NieWezel \shrap \NieWezel \shrap \ldots
+         \simeq \NieWezel.
+    \end{align*}
+    Analogicznie pokazujemy, że $L \simeq \NieWezel$.
+\end{proof}
+
+Później poznamy prawdziwy, oparty na topologii algebraicznej, dowód.
+Połączymy fakty \ref{genus_one} oraz \ref{genus_sum}.
+
+Półgrupę węzłów z operacją sumy spójnej można ulepszyć do grupy na dwa sposoby:
+albo poprzez zmianę działania, w jakie jest wyposażona,
+albo osłabiając definicję węzłów równoważnych.
+Drugi pomysł jest dużo lepszy niż pierwszy.
+Na początku lat pięćdziesiątych J. Millnor wprowadził do matematyki pojęcie zgodności
+(z angielskiego \emph{concordance}), które zastąpiło zwykłą równoważność.
+Element neutralny nowej grupy to węzły plastrowe, ich opis leży w sekcji \ref{sec:slice}.
+Zagadnienia te zakorzenione są w czterowymiarowej topologii.
+
+% Koniec podsekcji Sumy wielu węzłów
+
+% Koniec sekcji Operacje na węzłach
