@@ -1,14 +1,20 @@
 \section{Niezmienniki liczbowe}
-Jak wspomnieliśmy na początku rozdziału, sprawdzenie, czy dwa diagramy przedstawiają sploty równoważne, jest uciążliwym i czasochłonnym zadaniem.
+Jak wspomnieliśmy na początku rozdziału, sprawdzenie,
+czy dwa diagramy przedstawiają sploty równoważne,
+jest uciążliwym i czasochłonnym zadaniem.
 Aby je uprościć, podamy opis kilku prostych niezmienników o całkowitych wartościach.
-Zachodzą implikacje: sploty równoważne $\Rightarrow$ ta sama wartość niezmiennika oraz różne wartości niezmiennika $\Rightarrow$ różne sploty.
+Zachodzą implikacje:
+sploty równoważne $\Rightarrow$ ta sama wartość niezmiennika
+oraz różne wartości niezmiennika $\Rightarrow$ różne sploty.
 
 \subsection{Indeks skrzyżowaniowy} % (fold)
 \label{sub:crossing_number}
 Z angielskiego \emph{crossing number}.
 
 \begin{definition}
-    Indeks skrzyżowaniowy $\operatorname{cr}(L)$ splotu $L$ to minimalna liczba skrzyżowań widocznych na diagramie, który przedstawia splot $L$.
+    Indeks skrzyżowaniowy $\operatorname{cr}(L)$ splotu $L$ to
+    minimalna liczba skrzyżowań widocznych na diagramie,
+    który przedstawia splot $L$.
 \end{definition}
 
 Wciąż nie jest wiadome, czy indeks skrzyżowaniowy jest addytywny względem sumy spójnej.
@@ -31,27 +37,37 @@ Z angielskiego \emph{unknotting number}.
     Liczba $u$ nie musi być osiągana przez diagram o minimalnej liczbie skrzyżowań.
 \end{definition}
 
-Dotychczas wyznaczono liczbę gordyjską dla prawie wszystkich węzłów pierwszych o co najwyżej dziesięciu skrzyżowaniach, Cha i Livingston podają następującą listę wyjątków:  $10_{11}$, $10_{47}$, $10_{51}$, $10_{54}$, $10_{61}$, $10_{76}$, $10_{77}$, $10_{79}$, $10_{100}$ (stan na rok 2008).
-S. Bleiler odkrył w \cite{bleiler84} fascynujący przykład wymiernego węzła $2$-gordyjskiego, czego świadkiem nie może być diagram o minimalnej liczbie skrzyżowań (ponieważ, co jeszcze bardziej fascynujące, węzeł ten posiada tylko jeden diagram o dziesięciu skrzyżowaniach z trzema do odwrócenia).
+Dotychczas wyznaczono liczbę gordyjską dla prawie wszystkich węzłów pierwszych o co najwyżej dziesięciu skrzyżowaniach,
+Cha i Livingston podają następującą listę wyjątków: 
+$10_{11}$, $10_{47}$, $10_{51}$, $10_{54}$, $10_{61}$, $10_{76}$, $10_{77}$, $10_{79}$, $10_{100}$ (stan na rok 2008).
+S. Bleiler odkrył w \cite{bleiler84} fascynujący przykład wymiernego węzła $2$-gordyjskiego,
+czego świadkiem nie może być diagram o minimalnej liczbie skrzyżowań
+(ponieważ, co jeszcze bardziej fascynujące, węzeł ten posiada tylko jeden diagram o dziesięciu skrzyżowaniach z trzema do odwrócenia).
 Koduje go liczba $29/6$, w tabeli węzłów figuruje jako $10_8$.
-Stoimenow w \cite{stoimenow01} pokazuje, że jeden węzeł może mieć kilka diagramów minimalnych, z których tylko niektóre są świadkiem $1$-gordyjskości (są to między innymi $14_{36750}$ oraz $14_{36760}$.)
+Stoimenow w \cite{stoimenow01} pokazuje, że jeden węzeł może mieć kilka diagramów minimalnych,
+z których tylko niektóre są świadkiem $1$-gordyjskości (są to między innymi $14_{36750}$ oraz $14_{36760}$.)
 
 Jeśli odwrócenie pewnych skrzyżowań daje niewęzeł, to odwrócenie pozostałych także.
 To daje proste, choć niezbyt pomocne oszacowanie liczby gordyjskiej: $2 \operatorname{u} (K) \le \operatorname{cr} (K)$. 
-Borodzik oraz Friedl podali niedawno całkiem mocne ograniczenia na liczbę gordyjską w pracach \cite{borodzik14} i \cite{borodzik15} opierając się o parowanie Blanchfielda (poprawiając ograniczenia z sygnatury Levine'a-Tristrama, indeksu Nakanishiego oraz przeszkodą Lickorisha).
+Borodzik oraz Friedl podali niedawno całkiem mocne ograniczenia na liczbę gordyjską w pracach \cite{borodzik14} i \cite{borodzik15} opierając się o parowanie Blanchfielda
+(poprawiając ograniczenia z sygnatury Levine'a-Tristrama, indeksu Nakanishiego oraz przeszkodą Lickorisha).
 Dwadzieścia pięć węzłów o co najwyżej dwunastu skrzyżowaniach ma liczbę gordyjską równą co najmniej trzy, co trudno pokazać innymi metodami.
 
 
 Dla każdego nietrywialnego splotu istnieje diagram wymagający odwrócenia  dowolnie wielu skrzyżowań (dowód zawiera praca \cite{taniyama09} Taniyamy).
 Pokazany jest tam jeszcze jeden godny uwagi fakt.
-Jeśli liczba gordyjska diagramu $D$ wynosi $\frac 12 (c(D) - 1)$, co jest maksymalną możliwą wartością zgodnie z naszym prostym ograniczeniem, to węzeł jest $(2,p)$-torusowy albo wygląda jak diagram niewęzła po pierwszym ruchu Reidemeistera.
+Jeśli liczba gordyjska diagramu $D$ wynosi $\frac 12 (c(D) - 1)$,
+co jest maksymalną możliwą wartością zgodnie z naszym prostym ograniczeniem,
+to węzeł jest $(2,p)$-torusowy albo wygląda jak diagram niewęzła po pierwszym ruchu Reidemeistera.
 
 % Liczba gordyjska nietrywialnego węzła skręconego (definicja \ref{twist_knots}) to jeden, wystarczy bowiem rozwiązać jego splecione końce.
 Patrz także stwierdzenie \ref{torus_unknotting}.
 
 Od początku teorii węzłów podejrzewano, że liczba gordyjska jest addytywna, to znaczy $u(K \shrap J) = u(K) + u(J)$.
-Z tej nieudowodnionej do dzisiaj hipotezy można wyciągnąć wniosek, że jeśli do rozwiązania węzła wystarcza odwrócenie skrzyżowania, to jest pierwszy.
-Podejrzewał to H. Wendt w 1937 roku, kiedy policzył liczbę gordyjską węzła babskiego używając homologii rozgałęzionego nakrycia cyklicznego.
+Z tej nieudowodnionej do dzisiaj hipotezy można wyciągnąć wniosek,
+że jeśli do rozwiązania węzła wystarcza odwrócenie skrzyżowania, to jest pierwszy.
+Podejrzewał to H. Wendt w 1937 roku,
+kiedy policzył liczbę gordyjską węzła babskiego używając homologii rozgałęzionego nakrycia cyklicznego.
 
 \begin{proposition}
     Węzły $1$-gordyjskie są pierwsze.
@@ -61,7 +77,8 @@ Podejrzewał to H. Wendt w 1937 roku, kiedy policzył liczbę gordyjską węzła
     W pracy \cite{scharleman85} z 1985 roku M. Scharleman podał dość zawiłe uzasadnienie, w które zamieszane były grafy planarne.
 \end{proof}
 
-W pracy \cite{shimizu14} Ayaka Shimizu pokazuje przykład innej operacji rozwiązującej węzły, ale nie sploty: zmianę skrzyżowań wokół obszaru na diagramie.
+W pracy \cite{shimizu14} Ayaka Shimizu pokazuje przykład innej operacji rozwiązującej węzły, ale nie sploty:
+zmianę skrzyżowań wokół obszaru na diagramie.
 
 % Koniec podsekcji Liczba gordyjska
 
@@ -70,7 +87,8 @@ W pracy \cite{shimizu14} Ayaka Shimizu pokazuje przykład innej operacji rozwią
 Z angielskiego \emph{bridge number}.
 Wprowadzona w 1954 przez Schuberta.
 \begin{definition}
-    Liczba mostowa $\operatorname{br}(K)$ to minimalna liczba mostów: długich łuków, które biegną przez nadskrzyżowania.
+    Liczba mostowa $\operatorname{br}(K)$ to minimalna liczba mostów:
+    długich łuków, które biegną przez nadskrzyżowania.
 \end{definition}
 
 Można pokazać, że $n$-mostowe węzły rozkładają się na sumę dwóch trywialnych $n$-supłów.
@@ -86,7 +104,8 @@ Można pokazać, że $n$-mostowe węzły rozkładają się na sumę dwóch trywi
 \end{proof}
 
 Tylko jeden węzeł jest jednomostowy, to niewęzęł.
-Kolejne w hierarchi skomplikowania, czyli dwumostowe, to domknięcia wymiernych supłów, patrz fakt \ref{two_bridge_tangle}.
+Kolejne w hierarchi skomplikowania, czyli dwumostowe,
+to domknięcia wymiernych supłów, patrz fakt \ref{two_bridge_tangle}.
 Węzły trójmostowe pozostają nie do końca zbadane.
 
 \todo[inline]{Hipoteza mówi, że $c \ge 3 br - 3$, z równością dla inewęzła i sum trójlistników.}
@@ -144,7 +163,8 @@ Skorzystaliśmy z faktu \ref{torus_bridge}.
         \strand[semithick,Latex-] (-5,5) -- (5,-5);
         \end{knot}\end{tikzpicture}\,\,\Bigr) = -1
     \]
-    \textbf{Indeks zaczepienia} splotu zorientowanego $L$ o diagramie $D$ to $\frac 12 \sum_c \sign (c)$, gdzie $c$ przebiega każde skrzyżowanie, przy którym spotykają się \emph{różne} składowe.
+    \textbf{Indeks zaczepienia} splotu zorientowanego $L$ o diagramie $D$ to $\frac 12 \sum_c \sign (c)$,
+    gdzie $c$ przebiega każde skrzyżowanie, przy którym spotykają się \emph{różne} składowe.
     Oznaczenie: $\operatorname{lk}(L)$.
 \end{definition}
 
@@ -252,7 +272,6 @@ Sygnatura pozwala uzyskać proste oszacowanie liczby gordyjskiej od dołu:
 Nie istnieje bezpośredni związek między sygnaturą i liczbą mostową.
 Węzeł torusowy $T_{2,n}$ jest dwumostowy, jego sygnatura wynosi $n - 1$.
 Suma spójna węzłów prostych ma zerową sygnaturę i nieograniczoną liczbę mostową.
-
 
 % Koniec podsekcji Sygnatura
 
