@@ -1,0 +1,105 @@
+\section{Ruchy Reidemeistera}
+\label{sec:reidemeister_moves}
+W kombinatorycznej teorii węzłów diagramy są dużo ważniejsze od gładkich włożeń okręgu w przestrzeń $\R^3$,
+dlatego przytoczymy proste kryterium decydujące o tym,
+kiedy dwa diagramy przedstawiają jeden węzeł.
+Najpierw zdefiniujmy trzy lokalne operacje na diagramach.
+
+\begin{definition}  
+    Trzy ruchy Reidemeistera, $R_1$, $R_2$, oraz $R_3$, to następujące deformacje diagramu:
+    \[
+        \underbrace{\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5]
+            \strand[thick] (-5, 10) to [in=left, out=down] (2, -5);
+            \strand[thick] (5, 0) to [in=right, out=down] (2, -5);
+            \strand[thick] (5, 0) to [in=right, out=up] (2, 5);
+            \strand[thick] (-5, -10) to [in=left, out=up] (2, 5);
+        \end{knot}
+        \end{tikzpicture}
+        \, \cong \,
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5]
+            \strand[thick] (0,10) to (0,-10);
+        \end{knot}
+        \end{tikzpicture}}_{R_1}
+        %%%
+        \quad \quad \quad 
+        \underbrace{\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5]
+            \strand[thick] (-5, 10) to [in=up, out=down] (5, 0);
+            \strand[thick] (-5, -10) to [in=down, out=up] (5, 0);
+            \strand[thick] (5, 10) to [in=up, out=down] (-5, 0);
+            \strand[thick] (5, -10) to [in=down, out=up] (-5, 0);
+        \end{knot}
+        \end{tikzpicture}
+        \, \cong \,
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5]
+            \strand[thick] (-5, 10) to [in=up, out=down] (-2, 0);
+            \strand[thick] (-5, -10) to [in=down, out=up] (-2, 0);
+            \strand[thick] (5, 10) to [in=up, out=down] (2, 0);
+            \strand[thick] (5, -10) to [in=down, out=up] (2, 0);
+        \end{knot}
+        \end{tikzpicture}}_{R_2}
+        %%%
+        \quad \quad \quad
+        \underbrace{\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5, flip crossing/.list={1,2,3}]
+            \strand[thick] (-10, -10) -- (10, 10);
+            \strand[thick] (-10, 10) -- (10, -10);
+            \strand[thick] (-10, 0) to [in=left, out=right] (0, 10);
+            \strand[thick] (10, 0) to [in=right, out=left] (0, 10);
+        \end{knot}
+        \end{tikzpicture}
+        \, \cong \,
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5, flip crossing/.list={1,2,3}]
+            \strand[thick] (-10, -10) -- (10, 10);
+            \strand[thick] (-10, 10) -- (10, -10);
+            \strand[thick] (-10, 0) to [in=left, out=right] (0, -10);
+            \strand[thick] (10, 0) to [in=right, out=left] (0, -10);
+        \end{knot}
+        \end{tikzpicture}}_{R_3}
+    \]
+\end{definition}
+
+Ruch $R_i$ operuje więc na $i$ łukach diagramu.
+Reidemeister w swojej pierwszej pracy przyjął innął kolejność,
+jego drugi ruch jest naszym pierwszym.
+
+\begin{theorem}[Reidemeister, 1927]
+    Każdy splot posiada diagram.
+    Dwa diagramy przedstawiają równoważne sploty,
+    wtedy i tylko wtedy gdy pierwszy można otrzymać z drugiego
+    wykonując skończenie wiele ruchów Reidemeistera
+    oraz gładko deformując łuki bez zmiany biegu skrzyżowań.
+\end{theorem}
+
+\begin{proof}
+    Szkielet dowodu można znaleźć w książce Burdego i Zieschanga.
+    Kluczowe pomysły zawiera ,,Knots, links, braids and $3$-manifolds''
+    Prasołowa i Sosinskiego.
+    Innym przystępnym źródłem jest podręcznik \cite{murasugi96} Murasugiego ,,Knot theory and its applications''.
+\end{proof}
+
+Twierdzenie Reidemeistera jest użytecznym narzędziem,
+z którego będziemy korzystać podczas definiowania większości niezmienników,
+obiektów, które pozwalają odróżniać od siebie węzły.
+Rzadko stosuje się je do przechodzenia między dwoma diagramami.
+Istotnie, Coward i Lackenby udowodnili w \cite{coward11},
+że jeśli dwa diagramy o $n$ skrzyżowaniach przedstawiają jeden węzeł, wystarcza
+\[
+    R(n) = 2^{2^{\ldots^{2^n}}}
+\]
+(gdzie piętrowa potęga ma $10^{1000000n}$ warstw) ruchów Reidemeistera, by przejść między nimi. 
+Jeśli jeden z diagramów jest pozbawiony skrzyżowań, wystarcza $(236n)^{11}$ ruchów.
+Zapewne lepsze ograniczenia istnieją, ale ich nie znamy.
+Ważne jest to, że wielkość $R(n)$ jest skończona.
+
+\begin{definition}
+    Węzeł zorientowany to taki, w którym wybrano kierunek, w którym należy się po nim poruszać.
+\end{definition}
+
+Twierdzenie Reidemeistera pozostaje prawdziwe dla węzłów zorientowanych.
+
+% koniec sekcji Ruchy Reidemeistera
