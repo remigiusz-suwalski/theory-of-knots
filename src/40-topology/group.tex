@@ -1,0 +1,157 @@
+\section{Grupa węzła. Prezentacja Wirtingera} % (fold)
+\label{sec:group_wirtinger}
+Kiedy mówimy o grupie węzła,
+zazwyczaj mamy na myśli obiekt opisany poniżej,
+a nie grupę kolorującą z definicji \ref{colgrp_def}.
+Nie należy ich mylić.
+
+\begin{definition}
+    \label{def:knot_group}
+    Grupa węzła $K$ to grupa podstawowa jego dopełnienia, $\pi_1(\R^3 \setminus K)$.
+\end{definition}
+
+Przestrzeń $\R^3 \setminus K$ jest łukowo spójna,
+zatem powyższa definicja nie zależy od wyboru punktu bazowego.
+Oto grupy kilku najprostszych węzłów.
+
+\begin{example}
+    Niewęzeł: $\Z$.
+\end{example}
+
+\begin{example}
+    Trójlistnik: grupa warkoczowa $B_3 \cong \langle x, y \mid x^2 = y^3\rangle$.
+\end{example}
+
+\begin{example}
+    Węzeł $(p,q)$-torusowy: $\langle x, y \mid x^p = y^q \rangle$.
+\end{example}
+
+\begin{example}
+    Węzeł ósemkowy: $\langle x, y \mid yxy^{{-1}}xy=xyx^{{-1}}yx \rangle$.
+\end{example}
+
+\begin{proposition}
+    \label{prop:knot_group_invariant}
+    Grupa węzła jest niezmiennikiem węzłów.
+\end{proposition}
+
+\begin{proof}
+    Gdy dwa węzły są równoważne,
+    istnieje izotopijny z identycznością homemorfizm $\R^3 \to \R^3$,
+    który posyła pierwszy węzeł na drugi.
+    Obcięty do dopełnień węzłów indukuje izomorfizm grup podstawowych.
+\end{proof}
+
+Grupa podstawowa odróżnia od siebie dowolne dwa węzły pierwsze.
+Na przykładzie grupy $\langle x,y,z \mid xyx=yxy,xzx=zxz\rangle$,
+która odpowiada zarówno sumie prostej różno-, jak i jednoskrętnych trójlistników,
+widać jednak, że nie jest niezmiennikiem zupełnym.
+Prawdziwe jest ogólniejsze stwierdzenie:
+
+\begin{proposition}
+    \label{prop:knot_group_sum}
+    Jeśli $K, L$ są węzłami, to grupa podstawowa nie odróżnia węzła $K \shrap L$ od $K \shrap -L^*$.
+\end{proposition}
+
+Wiemy więc już trochę o nowym niezmienniku, ale nie umiemy go jeszcze wyznaczać.
+Jak zauważył Wilhelm Wirtinger około roku 1905 (!),
+grupa węzła zawsze posiada pewną specjalną prezentację,
+nazwaną na jego cześć prezentacją Wirtingera.
+Jest to skończona prezentacja, w której wszystkie relacje są postaci $w g_i w^{-1} = g_j$,
+gdzie $w$ to pewne słowo na generatorach, $g_1, \ldots, g_k$.
+Przedstawimy ją zaraz ze względu na użyteczność w rachunkach,
+dowodząc jednocześnie jej istnienia.
+
+\begin{proposition}
+    \label{prop:wirtinger}
+    Każdy węzeł posiada prezentację Wirtingera.
+\end{proposition}
+
+\begin{proof}
+    Oto zarys konstruktywnego dowodu.
+    Przedstawiony algorytm jest bardzo wygodnym sposobem na wyznaczenie grupy węzła.
+    Niech $K$ będzie węzłem z diagramem o $n$ łukach i $m$ skrzyżowaniach.
+    Wtedy 
+    \begin{equation}
+        \pi_1(K) \cong \langle a_1, \ldots, a_n \mid r_1, \ldots, r_m\rangle,
+    \end{equation}
+    gdzie $a_i$ to włókna diagramu, zaś $r_x$ to relacje Wirtingera: $a_ia_ja_i^{-1}a_k^{-1}=1$, \[
+    \begin{tikzpicture}[baseline=-0.65ex,scale=0.15]
+    \begin{knot}[clip width=15] 
+        \strand[semithick,-Latex] (-5, -5) to (5, 5);
+        \strand[semithick,-Latex] (-5, 5) to (5, -5);
+        \node[darkblue] at (5, 5)[below right] {$a_i$};
+        \node[darkblue] at (5, -5)[above right] {$a_k$};
+        \node[darkblue] at (-5, 5)[below left] {$a_j$};
+    \end{knot}
+    \end{tikzpicture}
+    \quad\quad
+    \begin{tikzpicture}[baseline=-0.65ex,scale=0.15]
+    \begin{knot}[clip width=15, flip crossing/.list={1}] 
+        \strand[semithick,-Latex] (-5, -5) to (5, 5);
+        \strand[semithick,-Latex] (-5, 5) to (5, -5);
+        \node[darkblue] at (5, 5)[below right] {$a_j$};
+        \node[darkblue] at (-5, -5)[above left] {$a_k$};
+        \node[darkblue] at (-5, 5)[below left] {$a_i$};
+    \end{knot}
+    \end{tikzpicture}
+    \]
+    w których łuk $a_i$ biegnie górą, zaś $a_j$ leży po jego lewej stronie.
+\end{proof}
+
+Istnieje alternatywna prezentacja grupy węzła, która pochodzi od Dehna,
+gdzie zamiast etykietować łuki,
+przypisuje się różne litery czterem częściom płaszczyzny,
+które są rozcinane przez skrzyżowanie.
+Pomijamy tę prezentację dla oszczędności miejsca.
+Klasycznie (jak na przykład w \cite{crowell63}) macierz, a co za tym idzie,
+także wielomian Alexandera wprowadza się przy użyciu prezentacji Wirtingera i pochodnej Foxa.
+\todo[inline]{Pochodna Foxa}
+Oryginalna praca Alexandera była jednak bliższa duchem pomysłom Dehna.
+
+Nietrywialne węzły, których grupa ma nietrywialne centrum, to dokładnie węzły torusowe.
+Wszystkie one są węzłami Neuwirtha
+(z grupą o skończenie generowanym komutancie, wprowadzone w 1965 roku).
+
+\begin{corollary}
+    \label{prop:knot_group_abelianisation}
+    Abelianizacją grupy węzła jest pierwsza grupa homologii okręgu, $\Z$.
+\end{corollary}
+
+Dwa następne stwierdzenia są już trudniejsze w dowodzie,
+na przykład uzasadnienie pierwszego może wymagać:
+twierdzenia o sferze, o pętli oraz hipotezy Knesera.
+
+\begin{proposition}
+    \label{prop:knot_group_split}
+    Następujące warunki są równoważne:
+    splot $L$ nie jest rozszczepialny;
+    grupa podstawowa splotu $L$ nie jest produktem wolnym;
+    $L$ jest rozmaitością Hakena o nieściśliwym brzegu.
+\end{proposition}
+
+\begin{proposition}
+    \label{prop:knot_group_free}
+    Splot o wolnej grupie podstawowej rangi $n$ to trywialny splot o $n$ ogniwach.
+\end{proposition}
+
+Twierdzenie Dehna z 1915 mówi, że jedynym węzłem,
+którego grupą są liczby całkowite $\mathbb Z$, jest niewęzeł.
+Wynik ten został później istotnie uogólniony.
+Michael Kervaire pokazał w 1966 roku (w \cite{kervaire65}),
+że abstrakcyjna grupa $G$ jest grupą podstawową dopełnienia węzła
+(co najmniej pięciowymiarowego) wtedy i tylko wtedy, gdy:
+\begin{enumerate}[leftmargin=*]
+    \itemsep0em
+    \item abelianizacją $G$ jest grupa liczb całkowitch, $\mathbb Z$, 
+    \item druga grupa homologii $G$ jest trywialna,
+    \item $G$ jest skończenie prezentowana oraz
+    \item $G$ stanowi domknięcie normalne pojedynczego generatora.
+\end{enumerate}
+
+Wiadomo, że w wymiarach $n \ge 3$ warunki te są co najmniej wystarczające,
+jednakże problem  pełnej charakteryzacji w czwartym wymiarze jest otwarty.
+Pierwsze dwa wynikają z dualności Alexandera,
+dwa kolejne stanowią przeformułowanie prezentacji Wirtingera.
+
+% Koniec sekcji Grupa węzła. Prezentacja Wirtingera
