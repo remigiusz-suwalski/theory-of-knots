@@ -9,3 +9,34 @@
 		\strand[semithick] (0,0) circle (5);
 	\end{knot}
 \end{tikzpicture}}
+
+\tikzset{
+	->-/.style={decoration={markings, mark=at position .5 with {\arrow{>}}},postaction={decorate}},
+	-<-/.style={decoration={markings, mark=at position .5 with {\arrow{<}}},postaction={decorate}},
+	LUK/.style ={
+		draw=black,
+		line join=miter,
+		line cap=butt,
+		miter limit=4.00,
+		line width=0.2 mm
+	},
+	CIENKILUK/.style ={
+		draw=black,
+		line join=miter,
+		line cap=butt,
+		miter limit=4.00,
+		line width=0.1 mm
+	},
+	TEKSTOWY/.style ={
+		draw=black,
+		line join=round,
+		line cap=butt,
+		miter limit=20.00,
+		line width=0.2 mm
+	},
+	OBSZAR/.style={
+		draw=none,
+		fill=white!#1!red
+	},
+	OBSZAR/.default = 80,
+}
