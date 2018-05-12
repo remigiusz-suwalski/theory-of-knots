@@ -1,0 +1,45 @@
+\subsection{Wielomian Jonesa} % (fold)
+\label{sub:jones}
+\begin{definition}  \index{Wielomian!Jonesa}
+	\emph{Wielomian Jonesa} zorientowanego splotu to wielomian Laurenta $V(L)\in\Z[t^{1/2},t^{-1/2}]$ określony przez
+	\[
+		V(L)=\left[(-A)^{-3w(D)} \bracket{D}\right]_{t^{1/2}=A^{-2}},
+	\]
+	gdzie $D$ to dowolny diagram dla $L$.
+\end{definition}
+
+Połączenie \emph{writhe} z nawiasem nazywamy ,,trikiem Kauffmana''.
+
+\begin{theorem}
+	Wielomian Jonesa jest niezmiennikiem zorientowanych splotów.
+\end{theorem}
+
+\begin{proof}
+	%Skorzystamy z tego, że indeks zaczepienia jest niezmiennikiem.
+	Wystarczy pokazać niezmienniczość $(-A)^{-3w(D)}\langle D\rangle$ na ruchy Reidemeistera.
+	Ale
+	\[
+		(-A)^{-3 w\left(\MalyreidemeisterIa\right)} \bracket{\MalyreidemeisterIa} =
+		(-A)^{-3 w\left(\ \MalyreidemeisterIb\ \right)+3} (-A)^{-3}\bracket{\ \MalyreidemeisterIb\ } =
+		(-A)^{-3 w\left(\ \MalyreidemeisterIb\ \right)}	\bracket{\,\MalyreidemeisterIb\,}. \qedhere
+	\]
+\end{proof}
+
+Wielomian Jonesa jest naprawdę potężnym narzędziem.
+Pozwala bowiem odróżnić dowolne dwa węzły pierwsze o co najwyżej dziewięciu skrzyżowaniach.
+
+\begin{conjecture} \label{jones_conjecture}
+	Nie istnieje nietrywialny węzeł, którego wielomian Jonesa nie odróżnia od niewęzła.
+\end{conjecture}
+
+Istnieją natomiast sploty o trywialnym wielomianie Jonesa, jest ich nawet nieskończenie wiele, jak Eliahou, Kauffman i Thistlethwaite pokazali w pracy \cite{eliahou03}.
+
+Wartości wielomianu Jonesa w niektórych pierwiastkach jedności są związane z innymi niezmiennikami węzłów.
+I tak dla splotu o $k$ komponentach mamy $V(1) = (-2)^k$, $V(-1) = (-1)^{k-1} \Delta(-1)$, $V(\omega) = 1$ (gdzie $\omega$ to nierzeczywisty pierwiastek trzeciego stopnia).
+Jeśli $\Delta(-1)$ jest postaci $8k \pm 1$, to $V(i) = 1$, w przeciwnym razie $V(i) = -1$.
+
+\todo[inline]{\url{https://mathoverflow.net/questions/176862/the-jones-polynomial-at-specific-values-of-t}}
+
+
+
+% Koniec podsekcji Wielomian Jonesa

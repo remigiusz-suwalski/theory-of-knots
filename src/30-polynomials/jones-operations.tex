@@ -1,0 +1,100 @@
+% \subsection{Odwrotności, lustra i sumy}
+\begin{proposition}
+    Niech $L$ będzie zorientowanym splotem.
+    $V(rL)=V(L)$, $V(mL)(t)=V(L)(t^{-1})$.
+\end{proposition}
+
+\begin{proof}
+    Aby obliczyć wielomian rewersu, wykorzystujemy te same diagramy kłębiaste,
+    jak dla zwykłego, a przy tym nie zmieniamy znaku żadnego skrzyżowania.
+
+    Druga część: Florian Gellert, Kombinatorische Invarianten, strona 12.
+\end{proof}
+
+\begin{corollary}
+    Wielomian Jonesa nie zależy od orientacji węzła (ale nie splotu!).
+\end{corollary}
+
+\begin{proof}
+    Każdy węzeł ma tylko dwie orientacje, splot może mieć ich $2^n$, gdzie $n$ to liczba składowych.
+\end{proof}
+
+\begin{proposition}
+    Niech $L, M$ będą zorientowanymi splotami, zaś $J, K$: zorientowanymi węzłami.
+    \begin{enumerate}
+        \item $V(L \sqcup M) = (-t^{1/2} - t^{-1/2}) V(L) V(M)$,
+        \item $V(J \# K) = V(J) V(K)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    Wybierzmy diagramy $D, E$ dla (odpowiednio) $L, M$.
+    Po podstawieniu $t^{1/2}=A^{-2}$ widzimy, że chcemy pokazać
+    $(-A)^{-3w(D\sqcup E)}\langle D\sqcup E\rangle =(-A^2-A^{-2})(-A)^{-3(w(D)+w(E))}\langle D\rangle  \langle E\rangle$.
+
+    Oczywiście $w(D\sqcup E)=w(D)+w(E)$, więc wystarczy udowodnić, że
+    \[
+        \langle D\sqcup E\rangle = (-A^2-A^{-2})\langle D\rangle\langle E\rangle.
+    \]
+
+    Oznaczmy przez $f_1(D)$, $f_2(D)$ lewą i prawą stronę ostatniego równania.
+    Są to wielomiany Laurenta, które zależą tylko od $D$.
+    Aksjomaty Kauffmana pozwalają na pokazanie, że obie funkcje mają następujące własności:
+    $f_i(\MalyNieWezel)=(-A^2-A^{-2})\langle E\rangle$,
+    $f_i(D\sqcup\MalyNieWezel)=(-A^2-A^{-2})f_i(D)$,
+    $f_i(\MalyPrawyKrzyz)=Af_i(\MalyPrawyGladki) + A^{-1}f_i(\MalyLewyGladki)$.
+    To pozwala na wyznaczenie ich wartości dla dowolnego $D$, zatem $f_1 \equiv f_2$, co kończy dowód.
+\end{proof}
+
+\begin{proof}
+    Rozpatrzmy sploty
+    \[
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5, flip crossing/.list={1}]
+            \strand[semithick] (-17, -5) rectangle (-7, 5);
+            \strand[semithick] (17, -5) rectangle (7, 5);
+
+            \strand[semithick,Latex-] (-7, 3) [in=left, out=right] to (7, -3);
+            \strand[semithick,Latex-] (7, 3) [in=right, out=left] to (-7, -3);
+
+            \node at (-12, 0) {$J$};
+            \node at (12, 0) {$K$};
+        \end{knot}
+        \end{tikzpicture}
+        \quad\quad
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+            \strand[semithick] (-17, -5) rectangle (-7, 5);
+            \strand[semithick] (17, -5) rectangle (7, 5);
+
+            \strand[semithick,Latex-] (-7, 3) [in=left, out=right] to (7, -3);
+            \strand[semithick,Latex-] (7, 3) [in=right, out=left] to (-7, -3);
+
+            \node at (-12, 0) {$J$};
+            \node at (12, 0) {$K$};
+        \end{knot}
+        \end{tikzpicture}
+        \quad\quad
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+            \strand[semithick] (-17, -5) rectangle (-7, 5);
+            \strand[semithick] (-7, -3) [in=down, out=right] to (-2, 0);
+            \strand[semithick,Latex-] (-7, 3) [in=up, out=right] to (-2, 0);
+
+            \strand[semithick] (17, -5) rectangle (7, 5);
+            \strand[semithick] (7, -3) [in=down, out=left] to (2, 0);
+            \strand[semithick,Latex-] (7, 3) [in=up, out=left] to (2, 0);
+
+            \node at (-12, 0) {$J$};
+            \node at (12, 0) {$K$};
+        \end{knot}
+        \end{tikzpicture}
+    \]
+    Relacja kłębiasta może zostać użyta do pokazania, że
+    \[
+    t^{-1}V(J\#K)-tV(J\#K)+(t^{-1/2}-t^{1/2})V(J\sqcup K)=0.
+    \]
+    Ale $V(J\sqcup K)=(-t^{1/2}-t^{-1/2})V(J)V(K)$, co upraszcza się do $V(J\#K)=V(J)V(K)$ i kończy dowód.
+\end{proof}
+
+

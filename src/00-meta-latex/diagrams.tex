@@ -10,6 +10,213 @@
 	\end{knot}
 \end{tikzpicture}}
 
+\newcommand{\PrawyKrzyz} {\begin{tikzpicture}[baseline=-0.65ex, scale=0.04]
+	\useasboundingbox (-5, -5) rectangle (5,5);
+	\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}] 
+		\strand[semithick] (-5,5) to (5,-5);
+		\strand[semithick] (-5,-5) to (5,5);
+	\end{knot}
+\end{tikzpicture}}
+
+\newcommand{\MalyPrawyGladki} {
+	\begin{tikzpicture}[baseline=-0.65ex,scale=0.03]
+	\begin{knot}[clip width=5, end tolerance=1pt] 
+		\strand[semithick] (-4, -5) to [out=45, in=-45] (-4, 5);
+		\strand[semithick] (4, -5) to [out=135, in=-135] (4, 5);
+	\end{knot}
+	\end{tikzpicture}
+}
+
+\newcommand{\MalyPrawyKrzyz} {\begin{tikzpicture}[baseline=-0.65ex, scale=0.03]
+	\useasboundingbox (-5, -5) rectangle (5,5);
+	\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}] 
+		\strand[semithick] (-5,5) to (5,-5);
+		\strand[semithick] (-5,-5) to (5,5);
+	\end{knot}
+\end{tikzpicture}}
+
+\newcommand{\PrawyGladkiKreslony} {
+	\begin{tikzpicture}[baseline=-0.65ex,yscale=0.07, xscale=0.1]
+	\useasboundingbox (-5, -6) rectangle (5, 6);
+	\begin{knot}[clip width=5, end tolerance=1pt] 
+		\strand[semithick] (-4, -5) to [out=45, in=-45] (-4, 5);
+		\strand[semithick] (4, -5) to [out=135, in=-135] (4, 5);
+		\strand[semithick] (-5, 0) to (5, 0);
+	\end{knot}
+	\end{tikzpicture}
+}
+
+\newcommand{\LewyGladkiKreslony} {
+	\begin{tikzpicture}[baseline=-0.65ex,yscale=0.07, xscale=0.1]
+	\useasboundingbox (-5, -6) rectangle (5, 6);
+	\begin{knot}[clip width=5, end tolerance=1pt] 
+		\strand[semithick] (-5, 5) [in=-135, out=-45] to (5,5);
+		\strand[semithick] (-5, -5) [in=135, out=45] to (5,-5);
+		\strand[semithick] (-5, 0) to (5, 0);
+	\end{knot}
+	\end{tikzpicture}
+}
+
+\newcommand{\LewyKrzyz} {\begin{tikzpicture}[scale=0.03, baseline=-3]
+	\begin{knot}[clip width=5, end tolerance=1pt] 
+		\strand[semithick] (-5,5) to (5,-5);
+		\strand[semithick] (-5,-5) to (5,5);
+	\end{knot}
+\end{tikzpicture}}
+
+\newcommand{\MalyLewyGladki} {
+	\begin{tikzpicture}[baseline=-0.65ex,scale=0.03]
+	\begin{knot}[clip width=5, end tolerance=1pt] 
+		\strand[semithick] (-5, 5) [in=-135, out=-45] to (5,5);
+		\strand[semithick] (-5, -5) [in=135, out=45] to (5,-5);
+	\end{knot}
+	\end{tikzpicture}
+}
+
+\newcommand{\MalyLewyKrzyz} {
+	\begin{tikzpicture}[baseline=-0.65ex,scale=0.03]
+	\begin{knot}[clip width=5, end tolerance=1pt] 
+		\strand[semithick] (-5, -5) to [out=up, in=up] (5, -5);
+		\strand[semithick] (-5, 5) to [out=down, in=down] (5, 5);
+	\end{knot}
+	\end{tikzpicture}
+}
+
+\newcommand{\reidemeisterIa} {
+\begin{tikzpicture}[baseline=-0.65ex, scale=0.07]
+\useasboundingbox (-4, -5) rectangle (3, 5);
+\begin{knot}[clip width=5, end tolerance=1pt] 
+	\strand[semithick] (-3,  5) [in=left, out=down] to (1, -2) [in=down, out=right] to (3, 0);
+	\strand[semithick] (-3, -5) [in=left, out=up]   to (1,  2) [in=up,   out=right] to (3, 0);
+\end{knot}
+\end{tikzpicture}
+}
+
+\newcommand{\MalyreidemeisterIa} {\begin{tikzpicture}[baseline=-0.65ex, scale=0.03]
+\useasboundingbox (-4, -5) rectangle (3, 5);
+\begin{knot}[clip width=5, end tolerance=1pt] 
+	\strand[semithick] (-3,  5) [in=left, out=down] to (1, -2) [in=down, out=right] to (3, 0);
+	\strand[semithick] (-3, -5) [in=left, out=up]   to (1,  2) [in=up,   out=right] to (3, 0);
+	\end{knot}
+	\end{tikzpicture}}
+
+\newcommand{\MalyreidemeisterIb} {\begin{tikzpicture}[baseline=-0.65ex, scale=0.03]
+	\begin{knot}[clip width=5, end tolerance=1pt] 
+		\strand[semithick] (0,-5) to (0, 5);
+	\end{knot}
+\end{tikzpicture}}
+
+\newcommand{\reidemeisterIb} {
+\begin{tikzpicture}[baseline=-0.65ex, scale=0.07]
+\begin{knot}[clip width=5, end tolerance=1pt] 
+	\strand[semithick] (0,-5) to (0, 5);
+\end{knot}
+\end{tikzpicture}
+}
+
+% potrzebne do klamry Kauffmana
+\newcommand{\reidemeisterIab} {
+\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+\useasboundingbox (-5, -6) rectangle (5, 6);
+\begin{knot}[clip width=5, end tolerance=1pt] 
+	\strand[semithick] (4,-5) .. controls (4,-3) and (-4,-3) .. (-4,-1);
+	\strand[semithick] (-4,-5) .. controls (-4,-3) and (4,-3) .. (4,-1);
+	\strand[semithick] (-4,-1) [in=left, out=up] to (0, 1) to [in=up, out=right] (4,-1);
+	\strand[semithick] (-4, 5) [in=left, out=down] to (0, 3) to [in=down, out=right] (4, 5);
+\end{knot}
+\end{tikzpicture}
+}
+
+\newcommand{\reidemeisterIIa} {
+\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+\useasboundingbox (-5, -6) rectangle (5, 6);
+\begin{knot}[clip width=5, end tolerance=1pt] 
+	\strand[semithick] (4,-5) .. controls (4,-2) and (-4,-2) .. (-4,0);
+	\strand[semithick] (4,5) .. controls (4, 2) and (-4, 2) .. (-4,0);
+	\strand[semithick] (-4,-5) .. controls (-4,-2) and (4,-2) .. (4,0);
+	\strand[semithick] (-4,5) .. controls (-4, 2) and (4,2) .. (4,0);
+\end{knot}
+\end{tikzpicture}
+}
+
+% reidemeister II a poziomo
+\newcommand{\reidemeisterIIaa} {
+\begin{tikzpicture}[baseline=-0.65ex,scale=0.05]
+\begin{knot}[clip width=5, end tolerance=1pt] 
+	\strand[semithick] (-10, -5) to [out=right, in=left] ( 0,  5) 
+	                             to [out=right, in=left] (10, -5);
+	\strand[semithick] (-10,  5) to [out=right, in=left] ( 0, -5) 
+	                             to [out=right, in=left] (10,  5);
+\end{knot}
+\end{tikzpicture}
+}
+
+\newcommand{\reidemeisterIIb} {
+\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+\begin{knot}[clip width=5, end tolerance=1pt] 
+	\strand[semithick] (4,-5) .. controls (4,-2) and (1,-2) .. (1,0);
+	\strand[semithick] (4,5) .. controls (4, 2) and (1, 2) .. (1,0);
+	\strand[semithick] (-4,-5) .. controls (-4,-2) and (-1,-2) .. (-1,0);
+	\strand[semithick] (-4,5) .. controls (-4, 2) and (-1,2) .. (-1,0);
+\end{knot}
+\end{tikzpicture}
+}
+
+\newcommand{\reidemeisterIIIa} {
+\begin{tikzpicture}[baseline=-0.65ex,yscale=0.07, xscale=0.1]
+\useasboundingbox (-5, -6) rectangle (5, 6);
+\begin{knot}[clip width=5, flip crossing/.list={1,2,3}, end tolerance=1pt] 
+	\strand[semithick] (-5,-5) -- (5,5);
+	\strand[semithick] (-5,5) -- (5,-5);
+	\strand[semithick] (-5,-1) .. controls (-2, -1) and (-2,4) .. (0,4) .. controls (2, 4) and (2, -1) .. (5, -1);
+\end{knot}
+\end{tikzpicture}
+}
+
+\newcommand{\reidemeisterIIIb} {
+\begin{tikzpicture}[baseline=-0.65ex,yscale=0.07, xscale=0.1]
+\useasboundingbox (-5, -6) rectangle (5, 6);
+\begin{knot}[clip width=5, flip crossing/.list={1,2,3}, end tolerance=1pt] 
+	\strand[semithick] (-5,-5) -- (5,5);
+	\strand[semithick] (-5,5) -- (5,-5);
+	\strand[semithick](-5,+1) .. controls (-2,+1) and (-2,-4) .. (0,-4) .. controls (2,-4) and (2,+1) .. (5,+1);
+\end{knot}
+\end{tikzpicture}
+}
+
+\newcommand{\skeinplus} {
+\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+\useasboundingbox (-5, -6) rectangle (5, 6);
+\begin{knot}[clip width=5, end tolerance=1pt] 
+	\strand[semithick,-latex] (-5, -5) to (5,  5);
+	\strand[semithick,latex-] (-5,  5) to (5, -5);
+	\node[darkblue] at (0,-4)[below] {$L_+$};
+\end{knot}
+\end{tikzpicture}
+}
+
+\newcommand{\skeinminus} {
+\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+\useasboundingbox (-5, -6) rectangle (5, 6);
+\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}] 
+	\strand[semithick,-latex] (-5, -5) to (5,  5);
+	\strand[semithick,latex-] (-5,  5) to (5, -5);
+	\node[darkblue] at (0,-4)[below] {$L_-$};
+\end{knot}
+\end{tikzpicture}
+}
+
+\newcommand{\skeinzero} {
+\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+\useasboundingbox (-5, -6) rectangle (5, 6);
+\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}] 
+	\strand[semithick,-latex] (-5, -5) to [out=45, in=-45] (-5, 5);
+	\strand[semithick,-Latex] (5, -5) to [out=135, in=-135] (5, 5);
+	\node[darkblue] at (0,-4)[below] {$L_0$};
+\end{knot}
+\end{tikzpicture}
+}
+
 \tikzset{
 	->-/.style={decoration={markings, mark=at position .5 with {\arrow{>}}},postaction={decorate}},
 	-<-/.style={decoration={markings, mark=at position .5 with {\arrow{<}}},postaction={decorate}},

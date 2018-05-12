@@ -1,0 +1,149 @@
+\subsection{Nawias Kauffmana} % (fold)
+\label{sub:kauffman_bracket}
+Zaczniemy od zdefiniowania nawiasu Kauffmana.
+Przypomnijmy, wielomian Laurenta zmiennej $X$ to formalny symbol $f=a_r X^r + \ldots + a_s X^s$, 
+gdzie $r, s, a_r, \ldots, a_s$ są całkowite i $r \le s$.
+
+Poszukujemy niezmiennika dla splotów o kilku prostych własnościach.
+Przede wszystkim żądamy,
+by niewęzłowi przypisany był wielomian $1$: $\bracket{\MalyNieWezel} = 1$.
+Po drugie chcemy wyznaczać nawiasy znając je dla prostszych splotów,
+co zapiszemy symbolicznie $\bracket{\MalyPrawyKrzyz} = A \bracket{\MalyPrawyGladki} + B \bracket{\MalyLewyGladki}$.
+Zależy nam wreszcie na tym, by móc dodać do splotu trywialną składową:
+$\langle L \cup \MalyNieWezel \rangle = C \langle L \rangle$.
+
+Prosty rachunek pokazuje wpływ drugiego ruchu Reidemeistera na nawias:
+\[
+    \bracket{\reidemeisterIIaa}
+    = (A^2 + ABC + B^2) \bracket{\MalyLewyGladki} + BA \bracket{\MalyPrawyGladki} 
+    \stackrel{?}{=} \bracket{\MalyPrawyGladki}.
+\]
+
+Aby zachodziła ostatnia równość wystarczy (chociaż wcale nie trzeba) przyjąć 
+$B = A^{-1}$, co wymusza na nas $C = -A^2 - A^{-2}$.
+W ten sposób odkryliśmy następującą definicję.
+
+\begin{definition}[nawias Kauffmana]  \index{Nawias Kauffmana}
+    Wielomian Laurenta $\bracket{D}$ dla diagramu splotu $D$ zmiennej $A$, 
+    który jest niezmienniczy ze względu na gładkie deformacje diagramu, 
+    a przy tym spełnia trzy poniższe aksjomaty, to nawias Kauffmana.
+    \begin{align}
+        \bracket{\MalyNieWezel} & = 1 \\
+        \bracket{D \sqcup \MalyNieWezel} & = (-A^{-2} - A^2) \bracket{D} \\
+        \bracket{\MalyPrawyKrzyz} & = A \bracket{\MalyPrawyGladki} + A^{-1} \bracket{\MalyLewyGladki}
+    \end{align}
+\end{definition}
+
+Tutaj $\MalyNieWezel$ oznacza standardowy diagram dla niewęzła, 
+zaś trzy symbole $\MalyPrawyKrzyz$, $\MalyPrawyGladki$ oraz $\MalyLewyGladki$ odnoszą się do diagramów, 
+które są identyczne wszędzie poza małym obszarem (tak jak w relacji kłębiastej).
+
+Diagramy $\MalyPrawyGladki$ oraz $\MalyLewyGladki$ nazywa się odpowiednio 
+dodatnim (prawym) i ujemnym (lewym) wygładzeniem $\MalyPrawyKrzyz$.
+
+\begin{lemma}
+    Nawias Kauffmana każdego diagramu wyznacza się w skończonie wielu krokach.
+\end{lemma}
+
+\begin{proof}
+    Jeżeli diagram $D$ ma $n$ skrzyżowań, to nieustanne stosowanie aksjomatu trzeciego pozwala na zapisanie $\bracket{D}$ jako sumy $2^n$ składników, 
+    z których każdy jest po prostu zamkniętą krzywą i ma trywialny nawias ($\bracket{\MalyNieWezel} = 1$).
+    Nawias sumy wyznacza się korzystając z drugiego aksjomatu.
+\end{proof}
+
+Przedstawimy teraz wpływ ruchów Reidemeistera na nawias Kauffmana.
+
+\begin{lemma}
+    Drugi i trzeci ruch Reidemeistera nie ma wpływu na klamrę Kauffmana,
+    pierwszy ruch zmienia ją zgodnie z regułą:
+    \[
+        \bracket{\reidemeisterIa} = -A^{-3} \bracket{\,\reidemeisterIb\,}.
+    \]
+\end{lemma}
+
+\begin{proof}
+Pierwszy ruch Reidemeistera:
+\[
+    \bracket{\reidemeisterIa} \stackrel{K3}{=} A \bracket{
+    \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+    \useasboundingbox (-4, -5) rectangle (3, 5);
+    \begin{knot}[clip width=5, end tolerance=1pt] 
+        \strand[semithick]
+            (-3, 5) [in=left, out=down] to (-1,1) [in=left, out=right] 
+                                        to (1,3) 
+                                        to [in=up, out=right] (3,0);
+        \strand[semithick]
+            (-3, -5) [in=left, out=up] to (-1,-1) [in=left, out=right] 
+                                       to (1, -3) 
+                                       to [in=down, out=right] (3,0);
+    \end{knot}
+    \end{tikzpicture}}
+    + A^{-1} \bracket{\,
+    \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+    \begin{knot}[clip width=5] 
+        \strand[semithick] (0,-5) [in=down, out=up] to (1, -2) to (1, 2) to (0, 5);
+        \strand[semithick] (4,0) circle (1.5);
+    \end{knot}
+    \end{tikzpicture}}
+    \stackrel{K2}{=} A \bracket{\,\reidemeisterIb\,} + A^{-1}(-A^{-2}-A^2) \bracket{\,\reidemeisterIb\,}
+    = -A^{-3}\bracket{\,\reidemeisterIb\,}
+\]
+
+Pierwsza równość wynika z $K3$, druga z $K2$, trzecia jest oczywista.
+Dla drugiego ruchu:
+\begin{align*}
+    \bracket{\reidemeisterIIa} &\stackrel{K3}{=} A
+    \bracket{\reidemeisterIab}
+    + A^{-1} \bracket{\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+    \useasboundingbox (-5, -6) rectangle (5, 6);
+    \begin{knot}[clip width=5, end tolerance=1pt] 
+        \strand[semithick] (4,-5) .. controls (4,-2) and (-4,-2) .. (-4,0);
+        \strand[semithick] (4,5) to (4,0);
+        \strand[semithick] (-4,-5) .. controls (-4,-2) and (4,-2) .. (4,0);
+        \strand[semithick] (-4,5) to (-4,0);
+    \end{knot}
+    \end{tikzpicture}}
+    \stackrel{K1}{=} -A^{-2} \bracket{\MalyLewyGladki} + A^{-1}
+    \bracket{\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+    \useasboundingbox (-5, -6) rectangle (5, 6);
+    \begin{knot}[clip width=5, end tolerance=1pt] 
+        \strand[semithick] (4,-5) .. controls (4,-2) and (-4,-2) .. (-4,0);
+        \strand[semithick] (4,5) to (4,0);
+        \strand[semithick] (-4,-5) .. controls (-4,-2) and (4,-2) .. (4,0);
+        \strand[semithick] (-4,5) to (-4,0);
+    \end{knot}
+    \end{tikzpicture}}
+    \\ & \stackrel{K3}{=} -A^{-2} \bracket{\MalyLewyGladki} 
+    + A^{-1}A \bracket{\MalyPrawyGladki} + A^{-1}A^{-1} \bracket{\MalyLewyGladki} 
+    = \bracket{\MalyPrawyGladki}
+\end{align*}
+
+Dla trzeciego ruchu:
+\begin{align*}
+\bracket{\,\reidemeisterIIIa\,} &\stackrel{K3}{=} A
+\bracket{\,\begin{tikzpicture}[baseline=-0.65ex,yscale=0.07, xscale=0.1]
+    \useasboundingbox (-5, -6) rectangle (5, 6);
+    \begin{knot}[clip width=5, flip crossing/.list={1,2,3}, end tolerance=1pt] 
+        \strand[semithick] (-5, 5) [in=-135, out=-45] to (5,5);
+        \strand[semithick] (-5, -5) [in=135, out=45] to (5,-5);
+        \strand[semithick] (-5, 0) .. controls (-2, 0) and (-2,5) .. (0,5) .. controls (2, 5) and (2, 0) .. (5, 0);
+    \end{knot}
+    \end{tikzpicture}\,}
++A^{-1} \bracket{\PrawyGladkiKreslony} \\
+%\stackrel{R2}{=} A \bracket{\,\LewyGladkiKreslony\,} +A^{-1} \bracket{\PrawyGladkiKreslony} \\ 
+& \stackrel{R2}{=} A \bracket{\,\LewyGladkiKreslony\,} +A^{-1} \bracket{\PrawyGladkiKreslony} 
+\stackrel{K3}{=} \bracket{\,\reidemeisterIIIb\,}
+\end{align*}
+korzystaliśmy tu z własności drugiego ruchu.
+\end{proof}
+
+Okazało się, że użycie najprostszego, I ruchu Reidemeistera, ,,psuje'' nawias!
+W akcie desperacji moglibyśmy zmienić definicję, 
+zaniechamy tego i przejdziemy do kolejnego składnika w przepisie na wielomian Jonesa.
+
+Gregor Schaumann w notatkach \cite{schaumann16} wprowadza rachunek schematyczny, 
+który pozwala spojrzeć na nawias Kauffmanna z nowej perspektywy.
+Definiuje kwantowe niezmienniki oraz plątaniny (równoważne wtedy, 
+kiedy związane są przez ciąg tożsamości wężowych, ruchów Turaewa oraz Reidemeistera).
+Wspomniane są też dokonania Wasiljewa.
+% Koniec podsekcji Nawias Kauffmana
