@@ -1,0 +1,66 @@
+\section{Homologie} % (fold)
+\label{sec:homology}
+Z powodu naszego ograniczonego rozumienia topologii algebraicznej oraz teorii kategorii
+wyłożony poniżej materiał jest tak naprawdę tylko przytoczeniem podstawowych definicji i faktów.
+Prezentowane podejście do homologii Chowanowa pochodzi od Oleg Viro (praca \cite{viro04}.
+
+Kompleks łańcuchowy to ciąg grup abelowych $C_n$ indeksowanych liczbami całkowitymi
+wraz z różniczkami, morfizmami $\partial_n \colon C_n \to C_{n-1}$ takimi,
+że złożenie $\partial_{n-1} \circ \partial_n = 0$ jest trywialne.
+Iloraz $\ker \partial_n / \operatorname{im} \partial_{n+1}$ nazywamy $n$-tą grupą homologii, $H_n$.
+
+% Przykładem takiego obiektu jest kompleks symplicjalny
+% Kompleks symplicjalny: para $K = (V, P)$, gdzie $P \subseteq \mathfrak P(V)$ jest
+% taką rodziną skończonych podzbiorów zamkniętą na branie podzbiorów, że $v \in V \implies \{v\} \in P$.
+% $V$ zbiór wierzchołków, $P$ sympleksów.
+
+\begin{definition}
+	Niech $D$ będzie diagram splotu.
+	Niezredukowanym nawiasem Kauffmanaa nazywamy wielomian
+	\[
+		[D] = (-A^2 - A^{-2}) \langle D \rangle = \sum_s A^{\sigma(s)} (-A^2 - A^{-2})^{|D_s|}.
+	\]
+\end{definition}
+
+\begin{definition}
+	Rozszerzonym stanem Kauffmana nazywamy parę uporządkowaną $S = (s, r)$,
+	gdzie $s$ to stan Kauffmana,
+	zaś $r$ to odwzorowanie $D_s \to \{\pm 1\}$ ze zbioru składowych diagramu.
+\end{definition}
+
+\begin{definition}
+	Zbiór rozszerzonych stanów Kauffmana $\mathcal S(D)$:
+	rozbija się na podzbiory indeksowane przez pary liczb całkowitych:
+	$\mathcal S_{i, j} = \{S : \sigma(s) = i, \sigma(s) + 2 \tau(s) = j\}$.
+\end{definition}
+
+Tutaj lokalnie $\sigma(s) = |s|$, oraz $\tau(s) = |r^{-1}[1]| - |r^{-1}[-1]|$.
+
+%%% Zauważmy, że $|D_s| \equiv r(s) \mod 2$. DLACZEGO?
+
+\begin{definition}
+	Niech $C_{i, j}$ będzie wolną grupą abelową generowaną przez zbiór $\mathcal S_{i, j}$.
+	Ponumerujmy skrzyżowania diagramu $D$ liczbami $1, 2, \ldots, n$.
+	Homologie Chowanowa splotu o diagramie $D$ to homologie kompleksu
+	\[
+		C(D) = \bigoplus_{i, j \in \Z} C_{i, j}(D),
+	\]
+	z różniczkami $\partial_{i, j} \colon C_{i,j} \to C_{i-2, j}$ danymi wzorem
+	\[
+		\partial_{i, j}(S) = \sum_{S'} (-1)^{t(S, S')}  S'.
+	\]
+	Sumowanie odbywa się po tych $S' \in \mathcal S_{i-2, j}$,
+	które różnią się od $S$ na dokładnie jednym skrzyżowaniu $v$:
+	$S(v) = 1$, $S'(v) = -1$ oraz $\tau(S') = 1 + \tau (S)$.
+
+	Liczba $t(S, S')$ to liczba skrzyżowań $D$ mniejszych od $v$, dla których $S$ przyjmuje wartość $-1$.
+\end{definition}
+
+Chowanow w pracy \cite{khovanov00} przypisał każdemu rozszerzonemu stanowi Kauffmana
+element w bialgebrze $A^{\otimes |D_s|}$, gdzie $A = \Z[X]/(X^2)$.
+Różniczka wyraża się w terminach mnożenia i komnożenia,
+gdy okręgi dodatnie (z $r^{-1}[1]$) zamienimy na $X$, zaś pozostałe na $1$.
+
+% Patrz ,,system Frobeniusa''.
+
+% Koniec sekcji Homologie
