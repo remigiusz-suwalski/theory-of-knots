@@ -1,0 +1,162 @@
+Zamknęliśmy już pierwszy rozdział, ale wciąż nie pokazaliśmy, że istnieje przynajmniej jeden węzeł różny od niewęzła.
+Temu między innymi poświęcony jest rozdział drugi.
+Poznamy prosty niezmiennik, trójkolorowalność, do zdefiniowania którego nie trzeba odwoływać się nawet do pojęcia liczby.
+Później zostanie on oczywiście odpowiednio wzmocniony.
+
+Kolorowanie nie jest idealnym narzędziem klasyfikującym, istnieją węzły, których nie odróżnia.
+Problem ten dotyka wielu późniejszych niezmienników, dość ważna hipoteza Jonesa \ref{jones_conjecture} pyta, czy wielomian Jonesa jest zupełny (tak nazywamy niezmienniki, które wykrywają każdą różnicę).
+Pierwszy niezmiennik zupełny poznamy w rozdziale czwartym.
+Nie stanowi to wielkiego powodu do radości ze względu na wysoką złożoność obliczeniową.
+
+\section{Kolorowanie splotów} % (fold)
+\label{sec:colour_links}
+Nasz nowy niezmiennik, kolorowalność, opisuje, czy włókna diagramu dają się pomalować ograniczoną paletą kolorów.
+Przed wyłożeniem właściwego materiału potrzebne nam będą dwie definicje.
+
+\begin{definition}[włókno] 
+	Fragment diagramu, który biegnie między dwoma kolejnymi tunelami (podskrzyżowaniami) nazywamy włóknem.
+\end{definition}
+
+\begin{definition}[rozszczepialność]
+	Splot, który jest niespójną sumą niepustych splotów, nazywamy rozszczepialnym.
+\end{definition}
+
+Oto mniej mętny opis trójkolorowalności, czyli jak nietrudno się domyślić, kolorowalności trzema kolorami.
+Diagram $D$ splotu $K$ jest trójkolorowalny, jeśli każdemu włóknu można przypisać jeden z trzech kolorów tak, by co najmniej dwa zostały użyte.
+Wymagamy przy tym, by przy żadnym skrzyżowaniu nie spotykały się tylko dwa kolory.
+Metoda ta została odkryta razem z uogólnieniem do $n$ kolorów przez Ralpha Foxa w 1956, kiedy próbował uczynić teorię węzłów bardziej przystępną dla studentów.
+
+\begin{definition}[kolorowanie] \label{coleqn-definition}
+	Niech $L$ będzie splotem, zaś $n$ liczbą naturalną.
+	Mówimy, że splot $L$ jest kolorowalny modulo $n$, jeśli posiada diagram, którego włóknom można przypisać liczby całkowite $0, \ldots, n - 1$ tak, by równanie $a + b \equiv 2c$ modulo $n$ było spełnione przy każdym skrzyżowaniu oraz istniały dwa włókna różnych kolorów.
+	Takie przyporządkowanie nazywamy (nietrywialnym) kolorowaniem.
+	\[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
+	\useasboundingbox (-5, -5) rectangle (5,5);
+	\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}] 
+		\strand[semithick] (-5,5) to (5,-5);
+		\strand[semithick] (-5,-5) to (5,5);
+		\node[darkblue] at (5, 5)[below right] {$c$};
+		\node[darkblue] at (5, -5)[above right] {$b$};
+		\node[darkblue] at (-5, 5)[below left] {$a$};
+	\end{knot}
+	\end{tikzpicture}\]
+\end{definition}
+
+Opierając się jedynie na definicji kolorowania oraz ruchach Reidemeistera jesteśmy w stanie wykazać pierwsze własności niezmiennika.
+
+\begin{proposition}
+	Żaden węzeł nie koloruje się modulo dwa.
+\end{proposition}
+
+\begin{proof}
+	Załóżmy nie wprost, że istnieje nietrywialne kolorowanie.
+	Analiza czterech możliwych skrzyżowań pokazuje, 
+	że włókna wychodzące z tunelu muszą mieć ten sam kolor.
+	Przechodząc wzdłuż węzła widzimy jeden kolor, wbrew założeniu nie wprost.
+\end{proof}
+
+Oczywiście wszystkie sploty o wielu składowych kolorują się modulo dwa: wystarczy pomalować jedną składową zerem, a pozostałe jedynkami.
+Powyższe rozumowanie dowodzi, że nie można pomalować żadnej składowej dwoma kolorami.
+Co więcej, rozszczepialne sploty są kolorowalne modulo $n$ dla każdego $n \ge 2$: można skorzystać z tego samego schematu kolorowania.
+
+\begin{proposition} \label{color_invariant}
+	Kolorowalność modulo $n$ jest niezmiennikiem węzłów.
+\end{proposition}
+
+\begin{proof}
+	Wystarczy sprawdzić, jak ruchy Reidemeistera zmieniają kolory.
+	Pierwszy i drugi:
+	\[
+		\fbox{
+		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+		\begin{knot}[clip width=5] 
+			\strand[semithick] (-10,10) .. controls (-10,2) and (-10,2) .. (-6,-2);
+			\strand[semithick] (-10,-10) .. controls (-10,-2) and (-10,-1) .. (-9,0);
+
+			\strand[semithick] (-7,1) -- (-6,2);
+			\strand[semithick] (-6,2) .. controls (2,9) and (2,-9) .. (-6,-2);
+			\node[darkblue] at (-10, 10)[below left] {$a$};
+			\node[darkblue] at (-10, -10)[above left] {$b \equiv a$};
+		\end{knot}
+		\end{tikzpicture}
+		$\stackrel{R_1}{\cong} \,\,$
+		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+		\begin{knot}[clip width=5] 
+			\strand[semithick] (0,10) -- (0,-10);
+			\node[darkblue] at (0, 0)[left] {$a$};
+		\end{knot}
+		\end{tikzpicture}}
+		%%%
+		\quad \fbox{
+		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+		\begin{knot}[clip width=5] 
+			\strand[semithick] (4,-10) .. controls (4,-4) and (-4,-4) .. (-4,0);
+			\node[darkblue] at (-4, -10)[above left] {$d \equiv b$};
+			\strand[semithick] (4,10) .. controls (4, 4) and (-4, 4) .. (-4,0);
+			\node[darkblue] at (4, 10)[below right] {$a$};
+			\strand[semithick] (-4,-10) .. controls (-4,-4) and (4,-4) .. (4,0);
+			\node[darkblue] at (4, 0) [right] {$c \equiv 2a-b$};
+			\strand[semithick] (-4, 10) .. controls (-4, 4) and (4,4) .. (4,0);
+			\node[darkblue] at (-4, 10) [below left] {$b$};
+		\end{knot}
+		\end{tikzpicture}
+		$\stackrel{R_2}{\cong} \,\,$
+		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+		\begin{knot}[clip width=5] 
+			\strand[semithick] (4,-10) .. controls (4,-4) and (1,-4) .. (1,0);
+			\strand[semithick] (4,10) .. controls (4, 4) and (1, 4) .. (1,0);
+			\strand[semithick] (-4,-10) .. controls (-4,-4) and (-1,-4) .. (-1,0);
+			\strand[semithick] (-4,10) .. controls (-4, 4) and (-1,4) .. (-1,0);
+		\end{knot}
+		\end{tikzpicture}}
+	\]
+	Trzeci ruch także nie wymaga skomplikowanych rachunków.
+	Najkrótszy łuk na diagramach ma kolor $2a-c$ po lewej oraz $2b-c$ po prawej stronie.
+	\[
+	 \fbox{
+		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+		\begin{knot}[clip width=5, flip crossing/.list={1,2,3}] 
+			\node[darkblue] at (-10, 10) [above] {$b$};
+			\node[darkblue] at (10, 10) [above] {$c$};
+			\node[darkblue] at (-10, -10) [below] {$2a-2b+c$};
+			\node[darkblue] at (10, -10) [below] {$2a-b$};
+			\node[darkblue] at (-10, -2) [left] {$a$};
+			\strand[semithick] (-10,-10) -- (10,10);
+			\strand[semithick] (-10,10) -- (10,-10);
+			\strand[semithick] (-10,-2) .. controls (-4, -2) and (-4,8) .. (0,8);
+			\strand[semithick] (10,-2) .. controls (4, -2) and (4,8) .. (0,8);
+		\end{knot}
+		\end{tikzpicture}
+		$\stackrel{R_3}{\cong} \,\,$
+		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+		\begin{knot}[clip width=5, flip crossing/.list={1,2,3}] 
+			\node[darkblue] at (-10, 10) [above] {$b$};
+			\node[darkblue] at (10, 10) [above] {$c$};
+			\node[darkblue] at (-10, -10) [below] {$2a-2b+c$};
+			\node[darkblue] at (10, -10) [below] {$2a-b$};
+			\node[darkblue] at (10, 2) [right] {$a$};
+			\strand[semithick] (-10,-10) -- (10,10);
+			\strand[semithick] (-10,10) -- (10,-10);
+			\strand[semithick] (-10,2) .. controls (-4, 2) and (-4,-8) .. (0,-8);
+			\strand[semithick] (10,2) .. controls (4, 2) and (4,-8) .. (0,-8);
+		\end{knot}
+		\end{tikzpicture}}
+	\]
+\end{proof}
+
+Trójlistnik koloruje się dokładnie modulo krotności trójk, ósemka zaś -- piątki.
+Pierścienie Boromeuszy nie kolorują się modulo trzy, nie są zatem rozszczepialne.
+Sama kolorowalność nie mówi wiele, splot jest kolorowalny lub nie.
+Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, być może trywialnych, także jest niezmiennikiem.
+
+Poniższy akapit można spokojnie pominąć przy pierwszym czytaniu.
+Niech $L$ będzie splotem, zaś $\pi$ grupą podstawową jego dopełnienia.
+Reprezentację $\rho$ dla $\pi$ na $D_{2n}$, grupę diedralną, nazywamy $n$-kolorowaniem Foxa.
+Grupa splotu generowana jest przez ścieżki z punktu bazowego w $S^3$ do brzegu rurowego otoczenia splotu, wokół południka i znowu do bazowego punktu.
+Obrazami tych generatorów są odbicia $n$-kąta foremne, które zapisujemy jako $ts^i$ ($t$ to odbicie, zaś $s$ jest najmniejszym obrotem). 
+Każdy generator odpowiada pewnemu łukowi, przypiszmy mu liczbę $i \in \Z/n\Z$.
+Dostaliśmy zwykłe kolorowanie.
+
+Później (fakt \ref{morphism_colour}) pokażemy, że kolorowania to dokładnie homomorfizmy z pewnej grupy związanej z węzłem w $\Z/n$.
+
+% Koniec sekcji Kolorowanie splotów

@@ -1,0 +1,83 @@
+\section{Grupa} % (fold)
+\label{sec:section_name}
+\begin{definition} \label{colgrp_def}
+    Niech $L$ będzie splotem.
+    Grupa kolorująca $L$, oznaczana $\operatorname{Col}(L)$, to abelowa grupa generowana przez łuki diagramu przedstawiającego $L$ z równaniami skrzyżowań tegoż diagramu jako relacjami.
+    Oprócz tego mamy jeszcze jedną relację, $a = 0$, gdzie $a$ jest ustalonym łukiem.
+\end{definition}
+
+\begin{proposition} \label{morphism_colour}
+    Splot $L$ koloruje się modulo $n$, wtedy i tylko wtedy gdy istnieje nietrywialny homomorfizm $\operatorname{Col}(L) \to \Z/n\Z$.
+\end{proposition}
+
+\begin{proposition}
+    Grupa kolorująca (z dokładnością do izomorfizmu) jest niezmiennikiem węzłów.
+\end{proposition}
+
+\begin{corollary} \label{det_invariant}
+    Wyznacznik jest niezmiennikiem splotów.
+\end{corollary}
+
+Oto metoda pozwalająca na znalezienie grupy kolorującej splotu $L$.
+Wybierzmy diagram dla $L$ bez zamkniętych krzywych, etykietowanie $x_0, \ldots, x_m$ dla łuków oraz $0, \ldots, m$ dla skrzyżowań.
+Utwórzmy macierz kolorującą $A$.
+Grupy abelowe $\operatorname{Col}(L)$ oraz $\Z^m / A^t \Z^m$ są izomorficzne.
+Następnie znajdźmy macierz diagonalną $D = \operatorname{diag}(d_1, \ldots, d_m)$, taką że $D = RAC$, gdzie całkowite macierze $R, C$ mają wyznacznik $1$ (to tak zwana postać normalna Smitha).
+
+Wtedy funkcja $f(x) = C^tx$ jest izomorfizmem $\Z^m/A^t \Z^m \to \Z^m / D\Z^m$, a skoro $D$ jest macierzą diagonalną, to $\Z^m/D\Z^m \cong \bigoplus_{k=1}^m \Z/{|d_k|} \Z$.
+Macierz $A$ można zastąpić przez macierz Goeritza $G$.
+
+\begin{proposition}
+    Grupa kolorująca splotu jest skończona, wtedy i tylko wtedy gdy wyznacznik splotu jest niezerowy.
+\end{proposition}
+
+Podamy teraz za S. Cyganem przykład nieskończonej rodziny węzłów, 
+której elementy rozróżnia właśnie wyznacznik.
+Rozpatrzmy węzeł $K_k$ dla $k \ge 4$:
+\[
+\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+%\useasboundingbox (-5, -5) rectangle (5,5);
+\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1,2,3,6}] 
+    \strand[semithick] (-10, +3) .. controls (-4, +3) and (-4, -3) .. (0, -3);
+    \strand[semithick] (-10, -3) .. controls (-4, -3) and (-4, +3) .. (0, +3);
+    \node at (5, 0) {$\ldots$};
+    \strand[semithick] (10+10, +3) .. controls (10+ 4, +3) and (10+ 4, -3) .. (10+0, -3);
+    \strand[semithick] (10+ 10, -3) .. controls (10+ 4, -3) and (10+4, +3) .. (10+0, +3);   
+    \strand[semithick] (20+10, +3) .. controls (20+ 4, +3) and (20+ 4, -3) .. (20+0, -3);
+\strand[semithick] (20+ 10, -3) .. controls (20+ 4, -3) and (20+4, +3) .. (20+0, +3);   
+    \strand[semithick] (30, 3) [in=up, out=right] to (35, -3);
+    \strand[semithick,  ] (30, -3) [in=down, out=right] to (35, 3); 
+    \strand[semithick] (35, 3) [in=right, out=up] to (0, 10);   
+    \strand[semithick] (35, -3) [in=right, out=down] to (0, -10);
+    \strand[semithick] (-10, -3) [in=down, out=left] to (-20, 0) to [in=left, out=up] (-10, 3);
+    \strand[semithick] (-15, 5) [in=left, out=up] to (0, 10);
+    \strand[semithick] (-15, 5) to (-15, -5) [in=left, out=down] to (0, -10);
+    \node at (-5, -5) {$c_3$};
+    \node at (15, -5) {$c_{k-2}$};
+    \node at (25, -5) {$c_{k-1}$};
+\end{knot}
+\end{tikzpicture}\]
+
+Niech $W_n$ będzie macierzą $n \times n$, na przekątnej której znajdują się $2$, zaś bezpośrednio nad i pod nią -- wyrazy $-1$.
+W macierzy kolorującej (ze skreślonym wierszem ,,$c_k$'' oraz kolumną ,,$a_k$'') zamieńmy miejscami dwie pierwsze kolumny, dodajmy do drugiej dwa razy pierwszą, zaś do drugiego wiersza -- dwa razy pierwszy wiersz.
+Otrzymamy macierz
+\[\begin{pmatrix}
+    -1 & 0 & 0 \\
+    0 & 3 & -1 \\
+    0 & -1 & W_{k-3}
+\end{pmatrix}\]
+
+Powtarzając operacje: zamiana miejscami skrajnie lewych kolumn, dodanie do drugiej $2m+1$ razy pierwszej, odjęcie pierwszego wiersza od trzeciego, czyli sprowadzając naszą macierz do postaci normalnej Smitha przekonamy się, że na jej przekątnej znajdują się wyrazy $-1, -1, \ldots, -1, 2k-3$.
+To oznacza, że $\det K_k = 2k-3$.
+
+\begin{proposition}
+    Niech $k \ge 9$ będzie takie, że wyznacznik węzła $K_k$ jest pewną potęgą $3$.
+    Wtedy $K_k$ nie jest splotem trójlistników.
+\end{proposition}
+
+\begin{proof}
+    Macierz diagonalna otrzymana po wniosku \ref{det_invariant} także jest niezmiennikiem węzłów.
+
+    Macierzą dla splotu trójlistników $(3_1)^{\# n}$ trójlistników jest $\operatorname{diag}(1, \ldots, 1, 3, \ldots, 3)$, zaś dla węzła $K_k$: $\operatorname{diag} (1, \ldots, 1, 3^?)$.
+\end{proof}
+% koniec sekcji grupa
