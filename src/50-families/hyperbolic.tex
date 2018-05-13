@@ -1,0 +1,66 @@
+\section{Węzły hiperboliczne} % (fold)
+\label{sec:hyperbolic}
+\begin{definition}
+    Węzeł nazywamy hiperbolicznym, jeżeli na jego dopełnieniu można zadać metrykę o stałej krzywiźnie $-1$. \index{Węzeł!hiperboliczny}
+\end{definition}
+
+\begin{theorem}[Thurston, 1978]
+    Jeżeli węzeł nie jest hiperboliczny, to należy do jednej z dwóch nieskończonych rodzin: torusowych oraz satelitarnych.\index{Twierdzenie!Thurstona}
+\end{theorem}
+
+Stwierdzenie to nazywa się czasem trychotomią Thurstona, gdyż dzieli węzły na trzy rodzaje.
+
+\begin{proposition}
+    Żaden węzeł nie ma mniejszej objętości hiperbolicznej od ósemki.
+\end{proposition}
+
+Dowód tego faktu podał Cao z Meyerhoffem w 2001 roku.
+Opierali się oni na działaniu komputerowego programu, który wyeliminował inne możliwości.
+
+\begin{proposition}
+    Objętość hiperboliczna nie odróżnia hiperbolicznych mutantów.
+\end{proposition}
+
+Nie jestem w stanie podać odnośnika do dowodu w literaturze -- przypominam, że chodzi o mutanty z definicji \ref{mutants}.
+Stwierdzenie to można znaleźć na przykład w książce Adamsa (strona 124).
+
+\begin{proposition}
+    Grupa symetrii węzła hiperbolicznego jest skończona: cykliczna lub diedralna.
+\end{proposition}
+
+\begin{proof}
+    Praca \cite{kodama92}.
+\end{proof}
+
+Objętość hiperboliczna bardzo dobrze odróżnia od siebie węzły.
+Pewien węzeł o dwunastu skrzyżowaniach i $5_2$ mają jednak tę samą objętość.
+
+\begin{proposition}
+    Każdy węzeł hiperboliczny jest pierwszy. 
+\end{proposition}
+
+Spośród wszystkich węzłów pierwszych o mniej niż 17 skrzyżowaniach, prawie wszystkie są hiperboliczne: 12 z nich to węzły torusowe, 20 to satelity trójlistnika (te ostatnie mają ponad 10 skrzyżowań).
+Jak pokazuje poniższa tabela (oparta na bazie ciągów OEIS, numery 51764, 51765, 52408), węzły pierwsze nie przypominają licznością liczb pierwszych.
+
+\renewcommand*{\arraystretch}{1.4}
+\footnotesize
+\begin{longtable}{lcccccccccccccc}
+\hline
+    \textbf{rodzaj} & 3 & 4 & 5 & 6 & 7 & 8  & 9  & 10  & 11  & 12   & 13   & 14    & 15     \\ \hline \endhead
+    torusowe        & 1 & 0 & 1 & 0 & 1 & 1  & 1  & 1   & 1   & 0    & 1    & 1     & 2      \\
+    satelitarne     & 0 & 0 & 0 & 0 & 0 & 0  & 0  & 0   & 0   & 0    & 2    & 2     & 6      \\
+    hiperboliczne   & 0 & 1 & 1 & 3 & 6 & 20 & 48 & 164 & 551 & 2176 & 9985 & 46969 & 253285 \\
+    \hline
+\end{longtable}
+\normalsize
+
+% Every non-split, prime, alternating link that is not a torus link is hyperbolic by a result of William Menasco.
+
+Z twierdzenia o sztywności (\emph{rigidity theorem}) Mostowa i Prasada (1973), jeśli na dopełnieniu węzła można zadać strukturę hiperbolkiczną, to w tylko jeden sposób.
+Co więcej, Mostow pokazał, że jeśli istnieje izomorfizm grup podstawowych domkniętych, hiperboliczynch 3-rozmaitości, to są one izometryczne.
+Wiedzę o węzłach hiperbolicznych można czerpać z prac: \cite{weeks05} (poprawiona wersja dostępna w serwisie ArXiv), "Hyperbolic Knot Theory" J. Purcell.
+
+Kryterium Thurstona: splot $L$ z dopełnieniem $X$ i grupą podstawową $\pi$ który spełnia poniższe warunki (a każdy warunek zakłada poprzednie): $L$ nie rozszczepia się ($X$ nie zawiera właściwej 2-sfery, $\pi$ nie jest wolnym produktem), $L$ nie jest niewęzłem ($X$ nie zawiera właściwego dysku, $\pi$ nie jest cykliczna), żadna składowa $L$ nie jest niezakłóconym węzłem satelitarnym (?) ($X$ nie zawiera właściwego torusa), $L$ nie jest węzłem torusowym ($X$ nie zawiera właściwego pierścienia, $\pi$ nie zawiera kopii $\Z^2$) daje zadać na swoim dopełnieniu strukturę hiperboliczną.
+% https://arxiv.org/abs/math/0309466
+% https://arxiv.org/abs/math/0311380
+% Koniec sekcji Węzły hiperboliczne

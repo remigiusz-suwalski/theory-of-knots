@@ -1,0 +1,182 @@
+\section{Warkocze} % (fold)
+\label{sec:braid}
+Podam teraz opis grupy warkoczy, rozważanej po raz pierwszy niejawnie przez A. Hurwitza w 1885 roku i jawnie przez E. Artina czterdzieści lat później.
+O dwóch punktach $(d_1, t_1)$, $(d_2, t_2)$ w $B^2 \times [0, 1] \subseteq \R^3$ powiemy, że łączący je odcinek jest malejący, jeśli $t_1 > t_2$.
+Łamaną złożoną z malejących odcinków także można nazwać malejącą.
+
+\begin{definition}[warkocz] \label{braid_def}
+    Teoriomnogościową sumę parami rozłącznych łamanych malejących, które łączą zbiory $\{x_1, \ldots, x_n\} \times \{1\}$ oraz $\{x_1, \ldots, x_n\} \times \{0\}$, nazywamy warkoczem o $n$ pasmach.
+\end{definition}
+
+Poszczególne pasma warkocza możemy utożsamiać z wykresami pewnych (gładkich) funkcji $f_i \colon [0, 1] \to \R^2$, jeśli zbiory $\{f_i(0) : 1 \le i \le n\} = \{f_i(1) : 1 \le i \le n\}$ są równe.
+Wtedy dwa warkocze uznajemy za równoważne, jeśli istnieje między nimi izotopia: funkcje ciągłe dwóch zmiennych $F_i(t, s)$ określone na zbiorze $[0,1] \times [0,1]$ takie, że $F_i(t,0)= f_i(t)$ oraz $F_i(t, 1) = g_i(t)$.
+Przez analogię do węzłów można zdefiniować diagramy warkoczy jako cienie bez katastrof.
+Najczęściej rzutujemy prostopadle do odcinka $\{0\} \times [0, 1]$.
+
+\begin{definition} \index{Grupa!warkoczy}
+    Określmy pomocniczo dwie kontrakcje $B^2 \times [0,1] \to B^2 \times [0,1]$:
+    \begin{align*}
+        \psi_1(d, t)&  = (d, t/2) \\
+        \psi_2(d, t)&  = (d, \frac12 (t+1))
+    \end{align*}
+    Klasy abstrakcji warkoczy z mnożeniem danym wzorem $z_1z_2 = \psi_1(z_1) \cup \psi_2(z_2)$ tworzą grupę warkoczy $B_n$.
+    Jej elementem neutralnym jest warkocz $1_n = \bigcup_{i = 1}^n \{x_1\} \times [0,1]$.
+\end{definition}
+
+Sprawdzenie aksjomatów grupy pozostawiamy Czytelnikowi,
+pozostawiając mu małą wskazówkę graficzną:
+\[
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.2]
+    \begin{knot}[clip width=5, end tolerance=1pt]
+        \strand[semithick] (-6, 0) .. controls (-4, 0) and (-5, 2) .. (-3, 2);
+        \strand[semithick] (-6, 2) .. controls (-4, 2) and (-5, 0) .. (-3, 0);
+        \strand[semithick] (-6, -2) to (-3, -2);
+        \strand[semithick] (-3, 0) .. controls (-1, 0) and (-2, -2) .. (0, -2);
+        \strand[semithick] (-3, -2) .. controls (-1, -2) and (-2, 0) .. (0, 0);
+        \strand[semithick] (-3, 2) to (0, 2);
+        \strand[semithick] (+6, 0) .. controls (+4, 0) and (+5, 2) .. (+3, 2);
+        \strand[semithick] (+6, 2) .. controls (+4, 2) and (+5, 0) .. (+3, 0);
+        \strand[semithick] (+6, -2) to (+3, -2);
+        \strand[semithick] (+3, 0) .. controls (+1, 0) and (+2, -2) .. (0, -2);
+        \strand[semithick] (+3, -2) .. controls (+1, -2) and (+2, 0) .. (0, 0);
+        \strand[semithick] (+3, 2) to (0, 2);
+        \draw (+6, -3) rectangle (0, 3);
+        \draw (-6, -3) rectangle (0, 3);
+        \draw[semithick, decoration={brace,mirror,raise=3pt},decorate]  (-5.75, -3) -- node[below=6pt] {$\beta$} (-0.25, -3);
+        \draw[semithick, decoration={brace,mirror,raise=3pt},decorate]  (0.25, -3) -- node[below=6pt] {$\beta^{-1}$} (5.75, -3);
+    \end{knot}
+    \end{tikzpicture}
+    \cong
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.2]
+        \draw[semithick] (-3, -2) to (3, -2);
+        \draw[semithick] (-3, 0) to (3, 0);
+        \draw[semithick] (-3, 2) to (3, 2);
+        \draw (-3, -3) rectangle (3, 3);
+        \draw[semithick, decoration={brace,mirror,raise=3pt},decorate]  (-2.75, -3) -- node[below=6pt] {$1_3$} (2.75, -3);
+    \end{tikzpicture}
+    \quad\quad\quad
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.2]
+        \useasboundingbox (-6, -3) rectangle (12, 5);
+\begin{knot}[clip width=5, end tolerance=1pt]
+        \strand[semithick] (-6, 0) .. controls (-4, 0) and (-5, 2) .. (-3, 2);
+        \strand[semithick] (-6, 2) .. controls (-4, 2) and (-5, 0) .. (-3, 0);
+        \strand[semithick] (-6, -2) to (-3, -2);
+        \strand[semithick] (-3, 0) .. controls (-1, 0) and (-2, -2) .. (0, -2);
+        \strand[semithick] (-3, -2) .. controls (-1, -2) and (-2, 0) .. (0, 0);
+        \strand[semithick] (-3, 2) to (0, 2);
+        \draw (-6, -3) rectangle (0, 3);
+        \draw[semithick, decoration={brace,mirror,raise=3pt},decorate]  (-5.75, -3) -- node[below=6pt] {$\beta_1$} (-0.25, -3);
+        \strand[semithick] (+6, 0) .. controls (+4, 0) and (+5, 2) .. (+3, 2);
+        \strand[semithick] (+6, 2) .. controls (+4, 2) and (+5, 0) .. (+3, 0);
+        \strand[semithick] (+6, -2) to (+3, -2);
+        \strand[semithick] (+3, 0) .. controls (+1, 0) and (+2, -2) .. (0, -2);
+        \strand[semithick] (+3, -2) .. controls (+1, -2) and (+2, 0) .. (0, 0);
+        \strand[semithick] (+3, 2) to (0, 2);
+        \draw (+6, -3) rectangle (0, 3);
+        \strand[semithick] (6+6, 0) .. controls (6+4, 0) and (6+5, 2) .. (6+3, 2);
+        \strand[semithick] (6+6, 2) .. controls (6+4, 2) and (6+5, 0) .. (6+3, 0);
+        \strand[semithick] (6+6, -2) to (6+3, -2);
+        \strand[semithick] (6+3, 0) .. controls (6+1, 0) and (6+2, -2) .. (6+0, -2);
+        \strand[semithick] (6+3, -2) .. controls (6+1, -2) and (6+2, 0) .. (6+0, 0);
+        \strand[semithick] (6+3, 2) to (6+0, 2);
+        \draw (6+6, -3) rectangle (6+0, 3);
+        \draw[semithick, decoration={brace,mirror,raise=3pt},decorate]  (0.25, -3) -- node[below=6pt] {$\beta_2\beta_3$} (11.75, -3);
+        \draw[semithick, decoration={brace,raise=3pt},decorate]  (6.25, 3) -- node[above=6pt] {$\beta_3$} (11.75, 3);
+        \draw[semithick, decoration={brace,raise=3pt},decorate]  (-5.75, 3) -- node[above=6pt] {$\beta_1\beta_2$} (5.75, 3);
+    \end{knot}
+    \end{tikzpicture}
+\]
+
+Grupy $B_n$ mogą być obiektem badań algebry bez związku z teorią węzłów.
+Wszystkie są beztorsyjne (tylko jeden ich element jest skończonego rzędu) i Hopfa, czyli każdy epimorfizm $B_n \to B_n$ jest jednocześnie izomorfizmem.
+Grupa $B_1$ jest trywialna, $B_2$ cykliczna, zaś $B_3$ to grupa podstawowa trójlistnika.
+Widać tu rosnącą złożoność.
+
+\begin{proposition}
+    Jeśli $n \ge 3$, to centrum grupy $B_n$ jest generowane
+    przez warkocz $(\prod_{i = 1}^{n-1} \sigma_i)^n$.
+\end{proposition}
+
+
+Tylko grupy $B_2$ i $B_3$ mogą być grupami węzłów,
+Wszystkie wyższe zawierają podgrupę izomorficzną z $\Z^3$, z generatorami $\sigma_1$, $\sigma_3$, $(\sigma_1 \sigma_2\sigma_3)^4$.
+% No. Knot complements are aspherical by the sphere theorem, so the cohomology of knot groups coincides with that of the knot complement, which vanishes outside degree 1. Now we have the following calculation, due to Fuks, of the Poincare polynomial of pure braid groups: $$\sum_{i=0}^\infty \text{rk} H^i(P_n, \Bbb Z) t^i  = \prod_{j=1}^{n-1} (1 + jt).$$ In particular, for $n > 3$, the pure braid group has cohomology in degrees 3 and higher. But if $B_n$ were the fundamental group of a knot complement, then a finite (degree $n!$) cover of this 3-manifold would have fundamental group $P_n$. But that's preposterous, since a noncompact 3-manifold cannot have nontrivial cohomology in degrees 3 and higher.
+% Alternatively starting at $B_6$ there are evident $\Bbb Z^3$ subgroups of the braid groups, and an aspherical noncompact 3-manifold cannot have fundamental group $\Bbb Z^3$ for the same cohomological reasons as before (but now you can calculate it yourself, since $\Bbb Z^3$ is the fundamental group of $T^3$). But then $B_4$ and $B_5$ need special arguments. You can find $\Bbb Z^3 \subset B_4$ in a somewhat more complicated way: it's generated by $\sigma_1$, $\sigma_3$, and $(\sigma_1 \sigma_2 \sigma_3)^4$.
+
+\begin{proposition}
+    Grupa warkoczy jest izomorficzna z grupę prezentowaną przez generatory $\sigma_1, \ldots, \sigma_{n-1}$ oraz relacje:
+    $\sigma_i \sigma_j = \sigma_j \sigma_i$ dla $|i - j| \neq 1$,
+    $\sigma_i\sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ dla $1 \le i \le n-2$.
+\end{proposition}
+
+Generatory $\sigma_i$ posiadają prostą interpretację graficzną:
+\[
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.05]
+    \useasboundingbox (-15, -10) rectangle (15, 15);
+    \begin{knot}[clip width=5, end tolerance=1pt]
+        \strand[semithick] (-15, -10) to (-15, 10);
+        \strand[semithick] ( 15, -10) to ( 15, 10);
+        \strand[semithick] (-5, -10) to (-5, -5) .. controls (-5, 1) and (5, -1) .. (5, 5) to (5, 10);
+        \strand[semithick] (-5, 10) to (-5, 5) .. controls (-5, -1) and (5, 1) .. (5, -5) to (5, -10);
+        \node  at (-10, 0) {\ldots};
+        \node at ( 10, 0) {\ldots};
+        \node [above] at (-15, 12) {$1$};
+        \node [above] at ( -5, 12) {$i$};
+        \node [above] at (  5, 12) {$i+1$};
+        \node [above] at ( 15, 12) {$n$};
+    \end{knot}
+    \end{tikzpicture}
+\]
+
+Każdy warkocz można domknąć do węzła, łącząc punkty $(x_i, 1)$ oraz $(x_i, 0)$
+łamanymi, których rzuty do płaszyczyzny diagramu nie przecinają się.
+Jeden węzeł może być przy tym domknięciem różnych warkoczy.
+Żaden węzeł nie jest pomijany.
+Co ciekawe, domknięcia warkoczy były rozważane przed samymi warkoczami!
+
+\begin{theorem}[Alexander, 1923] \label{alex_thm}
+     Każdy węzeł i splot powstaje przez domknięcie pewnego splotu.
+     \index{Twierdzenie!Alexandera}
+\end{theorem}
+
+Wielomian Alexandera wykrywa czasami węzły, których nie otrzyma się domykając ,,małe'' warkocze.
+Jeśli $|\Delta(i)| > 3$, to węzeł nie jest domknięciem 3-warkocza.
+Jeśli zaś spełniona jest nierówność $\Delta (\exp (2\pi i / 5)) > 13/2$,
+nie jest on domknięciem 4-warkocza.
+Jeśli $b_+$ jest sumą dodatnich wykładników, zaś $b_-$ ujemnych w grupie $B_n$ i $b_+ - 3b_- \ge n$, to domknięcie warkocza $a$ nie jest achiralne.
+Dowody tych faktów zawiera praca \cite{jones85} Jonesa.
+
+\begin{theorem}[Markow, 1936]
+    % Każdy splot jest domknięciem pewnego warkocza. -- Alexander
+    Dwa domknięte warkocze są równoważne jako sploty wtedy i tylko wtedy,
+    gdy jeden powstaje z drugiego przez ciąg
+    sprzężeń: $z_1 \mapsto z_2 z_1 z_2^{-1}$ oraz procesów Markowa,
+    które zastępują $n$-warkocz $\beta$ przez $(n+1)$-warkocz $\beta\sigma_n^{\pm 1}$.
+\end{theorem}
+
+\begin{proof}
+    Kompletny i godny naśladowania dowód znajduje się w książce \cite{birman74} Birman.
+\end{proof}
+
+Na zakończenie sekcji wspomnijmy o macierzowej reprezentacji Burau.
+Wyznaczona jest ona przez obrazy generatorów:
+\[
+    \varphi(\sigma_i) = I_{i-1} \oplus \begin{pmatrix}
+        1-t & t \\
+        1   & 0
+    \end{pmatrix} \oplus I_{n-i-1}
+\]
+Reprezentacja $\varphi$ jest wierna dla $n = 2, 3$ i niewierna dla $n \ge 5$.
+Czy reprezentacja Burau dla $B_4$ jest wierna?
+Negatywna odpowiedź na to pytanie prawie na pewno prowadziłaby do
+nietrywialnego węzła, którego wielomianem HOMFLY jest $1$,
+natomiast odpowiedź pozytywna raczej nie ma aż tak dramatycznych następstw.
+Bigelow w 1999 roku znalazł nietrywialne elementy jądra zadane komutatorem $[\psi_1^{{-1}}\sigma_4\psi_1,\psi_2^{{-1}}\sigma_4\sigma_3\sigma_2\sigma_1^2\sigma_2\sigma_3\sigma_4\psi_2]$, gdzie
+    \begin{align*}
+        \psi_1 & = \sigma_3^{{-1}}\sigma_2\sigma_1^2\sigma_2\sigma_4^3\sigma_3\sigma_2, \\
+\psi_2 & = \sigma_4^{{-1}}\sigma_3\sigma_2\sigma_1^{{-2}}\sigma_2\sigma_1^2\sigma_2^2\sigma_1\sigma_4^5.
+    \end{align*}
+
+
+
+% Koniec sekcji warkocze

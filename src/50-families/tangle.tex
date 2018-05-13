@@ -1,0 +1,119 @@
+\section{Supły} % (fold)
+\label{sec:tangle}
+
+Na przełomie lat sześćdziesiątych i siedemdziesiątych Conway szukał sposobu na zbudowanie kompletnej tablicy węzłów.
+Niezmienniki znane w tym czasie nie były dostatecznie mocne, by sprostać temu wyzwaniu.
+Conway wprowadził pojęcie supła i chociaż wszystkich węzłów nie można z nich uzyskać, teoria została pchnięta do przodu.
+Supły stanowią budulec splotów takich jak na przykład precle z definicji \ref{pretzel_def}.
+
+Sekcja oparta jest na podręczniku Murasugiego \cite{murasugi96} i pracach \cite{conway70}, \cite{kauffman97}, \cite{kauffman04}, a także \cite{schubert56}.
+Po raz pierwszy z supłami zetknęliśmy się w pracy \cite{janiak04}, także czerpiącej inspirację z \cite{murasugi96}.
+
+\begin{definition}[supeł]
+\label{def:tangle}
+	Zawarty w kole fragment diagramu splotu o dwóch łukach wyjściowych oraz dwóch wejściowych, nazywamy supłem.
+\end{definition}
+
+Istnieją dwa rodzaje supłów -- naprzemienne i sąsiadujące.
+\input{50-families/tangle_01}
+
+Podobnie jak dla węzłów, pojawia się naturalne pytanie o równoważność dwóch supłów.
+Jest tak wtedy, gdy istnieje homeomorfizm* kuli na siebie, który przekształca jeden supeł na drugi, ale nie rusza sfery otaczającej.
+Dla diagramów odpowiada to ruchom Reidemeistera, nie mamy jednak prawa opuszczać kuli zawierającej supeł.
+
+Wszystkich supłów jest bardzo dużo, więc ograniczymy się do końca rozdziału do pewnej ich regularnej rodziny.
+Oto cztery podstawowe supły:
+\input{50-families/tangle_02}
+
+\begin{definition}
+\label{def:rational_tangle}
+	Supły powstające z $(0)$ lub $(\infty)$ przez homeomorfizm kuli na siebie permutujący wejścia i wyjścia nazywamy wymiernymi.
+\end{definition}
+
+Wystarczy się przy tym ograniczyć do ciągu obrotów półsfery dolnej (SW--SE) oraz lewej (SW--NW)
+Z obrotami prawoskrętnymi wiążemy liczby dodatnie, natomiast z lewoskrętnymi -- ujemne.
+Otrzymujemy tak pewną krotkę $(a_1, \ldots, a_n)$.
+Jeśli $n$ jest parzyste, zaczynamy od supła $(\infty)$, jeśli nie -- od $(0)$.
+Ostatni obrót dotyczy półsfery dolnej.
+Krotka nie jest jeszcze niezmiennikiem supłów (gdyż $(-2,3,3) \cong (3, -2, 3)$), ale nic straconego.
+Potrzebować będziemy prostej definicji, uzasadniającej określenie ,,supły wymierne''.
+% Conway pokazał, że dla dowolnego supła przy pomocy wielomianu Alexandera zdefiniować można  pewien ułamek.
+
+\begin{proposition}
+\label{prp:continued_fractions}
+	Istnieje bijekcja między klasami supłów wymiernych oraz łańcuchowymi ułamkami, które je przedstawiają:
+	\[
+		\frac \alpha \beta = a_n + \frac{1}{a_{n-1} + 1 / (a_{n-2} +  \ldots + 1/a_1)} \in \Q \cup \{\infty\}.
+	\]
+\end{proposition}
+
+\begin{proof}
+	Praca \cite{conway70} Conwaya.
+\end{proof}
+
+\begin{proposition}
+\label{prp:continued_fractions_2}
+	Supły o łańcuchowych ułamkach różnych od $0$ i $\infty$ można kodować ciągami liczb całkowitych tego samego znaku.
+\end{proposition}
+
+
+Z każdym supłem $T$ związane jest jego odbicie $\overline T$, obraz wyjściowego przez symetrię względem prostej $y = -x$.
+Mając dwa supły obok siebie, można dokonać ich sklejenia wdłuż połówek kul, w których leżą:
+\input{50-families/tangle_03}
+
+Oznaczmy tak otrzymany węzeł przez $T_1 + T_2$.
+Niektórzy definiują dalsze działania, jak produkt: $T_1 \cdot T_2 = \overline T_1 + T_2$ czy rozgałęzienie, $\overline T_1 + \overline T_2$.
+Rodzina supłów wymiernych jest zamknięta na branie produktów, ale nie sum.
+Wprowadzamy więc następującą, ogólniejszą definicję.
+Supeł będący skończoną sumą supłów wymiernych, ich luster, odbić lub odbić luster nazywamy algebraicznym.
+
+Przez zszycie par łuków wejściowych (lub wyjściowych) zamieniamy supły w węzły:
+\input{50-families/tangle_04}
+
+Oznaczenia $N(T)$ oraz $D(T)$ pochodzą od angielskich słów \emph{numerator}, \emph{denominator}.
+Być może nie jest jasne, dlaczego terminy stosowane zazwyczaj do opisu ułamków stosujemy wobec diagramów splotów.
+Nazewnictwo nie jest przypadkowe. %, wrócimy do tego tematu wkrótce.
+\begin{proposition}
+\label{prp:knot_fraction}
+	Ułamek supła zadany wzorem
+	\[
+		F(A) = \frac{\nabla_{N(A)}(z)}{\nabla_{D(A)}(z)}
+	\]
+	spełnia zależność $F(A+B) = F(A) + F(B)$.
+\end{proposition}
+
+\begin{proof}
+	Praca \cite{conway70} Conwaya.
+\end{proof}
+
+Praca \cite{conway70} zawiera jeszcze jeden ciekawy rezultat, uogólniony przez Lickorisha i Milletta w \cite{lickorish87}.
+Przyjmijmy następujące skróty: niech $A_n = P_{N(A)}(x,y)$, $A_d = P_{D(A)}(x,y)$.
+
+\begin{proposition}
+	Dla dowolnych supłów $A, B$ mamy
+	\[
+	(1 - (x+y)^2)(A+B)_n = (A_nB_d + A_dB_n) - (x+y)(A_nB_n+  A_dB_d)
+	\]
+	oraz
+	\[
+		(A+B)_d = A_dB_d.
+	\]
+\end{proposition}
+
+Uwaga, zastosowano tu nieco inną parametryzację wielomianu HOMFLY.
+Na zakończenie wspomnimy o mutacjach.
+
+\begin{definition}[mutacja]
+\label{def:mutant}
+	Półobrót supła względem osi poziomej, pionowej albo też prostopadłej do płaszczyzny, w jakiej leży diagram, nazywamy mutacją, zaś otrzymany tak splot -- mutantem.
+	W razie potrzeby zmieniamy orientację supła na przeciwną.
+\end{definition}
+
+Mutant nie musi być nierównoważny ze splotem wyjściowym.
+Pierwszym przykładem diagramu, dla którego zmiana rzeczywiście zachodzi, był posiadający 11 skrzyżowań.
+Mutacja alternującego diagramu jest alternującym węzłem.
+Genus rzadko kiedy odróżnia mutanty.
+
+\input{50-families/tangle-bridge}
+
+% Koniec sekcji Supły

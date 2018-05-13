@@ -1,0 +1,131 @@
+\section{Węzły plastrowe} % (fold)
+\label{sec:slice}
+% Na podstawie podręcznika Murasugiego
+Rozpatrzmy węzeł $K$ w sferze $S^3$ jako brzegu czterowymiarowej kuli $B^4$.
+Punkt wewnętrzny $P$ dysku $D$ w tej kuli nazywamy osobliwym, jeśli nie można wskazać dla niego żadnego otoczenia $U$, homeomorficznego z $B^4$, takiego że $\partial U \cap D$ jest węzłem trywialnym w $\partial U$, 3-sferze.
+Jeśli $K$ jest brzegiem dysku $D$ pozbawionego punktów osobliwych, to jest on węzłem plastrowym.
+
+
+W tej sekcji opiszemy pewną czterowymiarową własność węzłów.
+Węzły plastrowe na sferze $S^3$ to takie, które są brzegiem ładnie zanurzonego dysku $D$ w 4-kuli.
+Co dokładnie znaczy wyrażenie ,,ładnie zanurzony'' zależy od kontekstu: istnieją węzły gładko albo też topologicznie plastrowe.
+Precyzuje to pochodząca najwyraźniej od Foxa (1962) definicja:
+
+\begin{definition}
+    Węzeł $K \subseteq S^3$ nazywamy plastrowym, jeśli istnieje płaski dysk $D$ zawarty w $B^4$ taki, że $K = \partial D = D \cap S^3$.
+    Płaski, czyli: dysk $D$ posiada otoczenie $N$ będące kopią zbioru $D \times I^2$, która spotyka sferę $S^3$ dokładnie w $\partial D \times I^2$.
+\end{definition}
+
+Następujące węzły o mniej niż jedenastu skrzyżowaniach są plastrowe: $6_1$, $8_{20}$, $8_{8}$, $8_{9}$, $9_{27}$, $9_{41}$, $9_{46}$, $10_{22}$, $10_{35}$, $10_{3}$, $10_{42}$, $10_{48}$, $10_{75}$, $10_{87}$, $10_{99}$, $10_{123}$, $10_{129}$, $10_{137}$, $10_{140}$, $10_{153}$, $10_{155}$, $10_{155}$.
+Lista ta powstała na podstawie portalu KnotAtlas.
+
+\begin{proposition} \label{slice_square_det}
+    Wyznacznik węzła plastrowego jest kwadratem (Rolfsen 1976, strona 224).
+\end{proposition}
+
+Węzły plastrowe (slice), skręcone (twist).
+
+\begin{definition} \label{twist_knots}
+    Węzeł powstały przez $n$-krotne półskręcanie domkniętej pętli oraz splecienie końców nazywamy węzłem skręconym. \index{Węzeł!skręcony}
+\end{definition}
+
+Węzły skręcone to dokładnie towarzyszące niewęzłowi w węzłach satelitarnych, tak zwane whiteheadowskie duble niewęzła.
+Wszystkie są odwracalne (ale tylko niewęzeł oraz ósemka są amfichiralne) i mają liczbę gordyjską $1$, ponieważ wystarczy rozwiązać skrzyżowanie, które plotło końce.
+Każdy jest $2$-mostowy i posiada zerową sygnaturę.
+Dalsze właności węzłów skręconych zależą od $n$, ilości półskrętów.
+Indeks skrzyżowaniowy wynosi $n + 2$.
+
+\begin{proposition}
+    Wielomianowymi niezmiennikami węzłów skręconych są:
+    \begin{align*}
+    (q+1)V(q) & = \begin{cases}
+        1+q^{-2}+q^{-n}-q^{-n-3} & n \mbox{ nieparzyste} \\
+        q^{3}+q-q^{3-n}+q^{-n} & n \mbox{ parzyste}
+    \end{cases} \\
+    2 \nabla (z) & = \begin{cases}
+        (n+1) z^{2} + 2 & n \mbox{ nieparzyste} \\
+        2 - nz^2 & n \mbox{ parzyste}
+    \end{cases}
+    \end{align*}
+\end{proposition}
+
+%\begin{definition} \label{slice_def}
+    %Węzeł $K$ w $S^3 = \partial D^4$ jest plastrowy, jeśli ogranicza dysk $\Delta^2$ w $D^4$, który ma rurowe otoczenie $\Delta^2 \times D^2$, którego przekrojem z $S^3$ jest rurowe otoczenie $K \times D^2$ dla $K$. \index{Węzeł!plastrowy}
+%\end{definition}
+
+Istnieje konkurencyjna definicja węzłów plastrowych.
+Dwa sploty $K, L \subseteq S^n$ nazywamy zgodnymi (\emph{concordant}), jeśli istnieje włożenie $f \colon K \times [0,1] \to S^n \times [0,1]$ spełniające dwa warunki: $f(K \times 0) = K \times 0$ oraz $f(K \times 1) = L \times 1$.
+
+\begin{definition} 
+    Węzeł zgodny z niewęzłem nazywamy plastrowym.
+\end{definition}
+
+Zgodność jest relacją równoważności, słabszą od izotopii, ale mocniejszą od homotopii.
+Oznaczmy zbiór jej klas abstrakcji przez $C^1$.
+Stanowi on grupę abelową, z działaniem danym wzorem $[K] + [L] = [K \shrap L]$ i niewęzłem jako element neutralny. \index{Grupa!zgodności}
+Elementem odwrotnym do $[K]$ jest $[-K^*]$.
+
+\begin{proposition}
+    Albo wszystkie trzy węzły $K, L, K \shrap L$ są plastrowe, albo co najwyżej jeden z nich.
+\end{proposition}
+
+Poniższa własność znana jest w literaturze jako warunek Foxa-Milnora. \index{Warunek Foxa-Milnora}
+
+\begin{proposition}
+    Wielomian Alexandera węzła plastrowego $K$ jest postaci $f(t) f(1/t)$, gdzie $f(t)$ jest pewnym wielomianem Laurenta nad pierścieniem $\Z$.
+\end{proposition}
+
+\begin{theorem}[Casson, Gordon, 1975]
+    Niewęzeł oraz węzeł dokerski ($6_1$) są jedynymi skręconymi węzłami plastrowymi.
+\end{theorem}
+
+\begin{proof}
+    Casson, Gordon: ,,Cobordism of classical knots'', Orsay, 1976.
+\end{proof}
+
+\begin{definition}
+    Węzeł $K = f(S^1)$ będący brzegiem singularnego dysku $f \colon D \to S^3$ posiadającego następującą własnosć: każda przecinająca siebie składowa jest łukiem $A \subseteq f(D^2)$, dla którego $f^{-1}(A)$ składa się z dwóch łuków w $D^2$ (jeden z nich jest wewnętrzny), nazywamy taśmowym. \index{Węzeł!taśmowy}
+\end{definition}
+
+Suma spójna dowolnego węzła $K$ oraz jego lustra $mK$ jest taśmowa.
+Dowód plastrowatości można znaleźć w Kawauchi, A Survey of knot theory, strona 155.
+
+\begin{proposition}
+    Każdy węzeł taśmowy jest plastrowy.
+\end{proposition}
+
+Dawno temu Fox zapytał, czy implikacja odwrotna także jest prawdziwa.
+
+\begin{conjecture}[Fox, 1958]
+    Każdy węzeł plastrowy jest taśmowy.
+\end{conjecture}
+
+W latach sześćdziesiątych podano kryteria na to, by węzeł nie był węzłem plastrowym (Fox-Milnor 1966, Murasugi 1965).
+W szczególności, spośród tych o co najwyżej siedmiu skrzyżowaniach, tylko $6_1$ jest plastrowy.
+
+% http://citeseerx.ist.psu.edu/viewdoc/download?rep=rep1&type=pdf&doi=10.1.1.212.2610
+% http://people.brandeis.edu/~ruberman/drslides/wesleyan.pdf
+
+\begin{proposition} \label{slice_signature}
+    Plastrowe węzły mają zerową sygnaturę.
+\end{proposition}
+
+\begin{proof}[Szkic dowodu]
+    Ustalmy odwzorowanie $f$, które jest niesingularne, symetryczne i dwuliniowe, z przestrzeni $V$ o wymiarze $2n$ oraz wyznaczoną przez nie formę kwadratową.
+    Jeśli znika ona na podprzestrzeni wymiaru $n$, to ma zerową sygnaturę.
+    %Praca "Infinite Order Amphicheiral Knots". (Charles Livingston, 2001) -- chyba nie?
+    (dowód znaleziony w podręczniku Lickorisha)
+\end{proof}
+
+Własności opisane w faktach \ref{slice_square_det} i \ref{slice_signature} pozwalają stwierdzić, że 223 spośród 249 węzłów pierwszych o dziesięciu lub mniej skrzyżowaniach nie jest plastrowych.
+
+Każda macierz Seiferta $V$ (całkowitoliczbowa, kwadratowa, taka że $\det (V - V^t) = 1$), która jest unimodularnie sprzężona: istnieje całkowitoliczbowa macierz $P$ o wyznaczniku równym $\pm 1$, że
+\[
+    V = P () P^{-1}
+\]
+stanowi macierz Seiferta pewnego węzła plastrowego.
+Takie węzły nazywamy plastrowymi algebraicznie.
+Węzeł $K$ w $S^3$ jest algebraicznie plastrowy dokłdnie wtedy, gdy ogranicza izotropiczną powierzchnię w kuli $B^4$.
+Wyłumaczenie w podręczniku Kawauchiego.
+
+% Koniec sekcji Węzły plastrowe
