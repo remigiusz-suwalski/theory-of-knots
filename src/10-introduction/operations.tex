@@ -14,18 +14,18 @@ Znacznie później (w sekcji \ref{sec:tangle}) określimy jeszcze sumę oraz ilo
     będziemy nazywać odbicia $L$ względem płaszczyzny.
     \begin{figure}[H]
         \begin{minipage}[b]{.32\linewidth}
-            \centering 
-            \includegraphics[width=\linewidth]{../data/link_mirror.png} 
+            \centering
+            \includegraphics[width=\linewidth]{../data/link_mirror.png}
             \subcaption{lustro $mL$}
         \end{minipage}
         \begin{minipage}[b]{.32\linewidth}
-            \centering 
-            \includegraphics[width=\linewidth]{../data/link.png} 
+            \centering
+            \includegraphics[width=\linewidth]{../data/link.png}
             \subcaption{przykładowy splot $L$}
         \end{minipage}
         \begin{minipage}[b]{.32\linewidth}
-            \centering 
-            \includegraphics[width=\linewidth]{../data/link_reverse.png} 
+            \centering
+            \includegraphics[width=\linewidth]{../data/link_reverse.png}
             \subcaption{rewers $rL$}
         \end{minipage}
     \end{figure}
@@ -45,10 +45,10 @@ Zauważmy, że wykonując powyższe operacje na węźle możemy otrzymać mniej 
     całkowicie zwierciadlany ($rK \cong K \cong mK$).
 \end{definition}
 
-Węzeł $9_{32}$ jest całkowicie skrętny. 
+Węzeł $9_{32}$ jest całkowicie skrętny.
 Ósemka jest zwierciadlana, trójlistnik jest odwracalny,
 zaś $8_{17}$ to najprostszy przykład węzła nieodwracalnego.
-Ten ostatni fakt jest jednak daleki od oczywistego -- 
+Ten ostatni fakt jest jednak daleki od oczywistego --
 sześćdziesiąt lat temu nie było pewne,
 czy węzły nieodwracalne w ogóle istnieją.
 W roku 1962 Ralph Fox wskazał kilku kandydatów do tego tytułu.
@@ -69,12 +69,12 @@ ale Hoste (Thistlethwaite?) znalazł w 1998 kontrprzykład o piętnastu skrzyżo
 Jest on jedynym znanym nam dzisiaj.
 Hipoteza Taita jest prawdziwa dla węzłów pierwszych, alternujących.
 
-Poniższa tabela oparta jest (kolejno) o ciągi 
-\href{https://oeis.org/A051766}{51766}, 
-\href{https://oeis.org/A051769}{51769}, 
-\href{https://oeis.org/A051768}{51768}, 
-\href{https://oeis.org/A051767}{51767}, 
-\href{https://oeis.org/A052400}{52400}, 
+Poniższa tabela oparta jest (kolejno) o ciągi
+\href{https://oeis.org/A051766}{51766},
+\href{https://oeis.org/A051769}{51769},
+\href{https://oeis.org/A051768}{51768},
+\href{https://oeis.org/A051767}{51767},
+\href{https://oeis.org/A052400}{52400},
 z bazy danych ``The On-Line Encyclopedia of Integer Sequences'' (OEIS).
 
 \begin{table}[h]
@@ -107,7 +107,7 @@ Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wz
 \end{definition}
 
 \begin{definition}
-    Nacinając dwa zorientowane węzły w dwóch bliskich punktach i 
+    Nacinając dwa zorientowane węzły w dwóch bliskich punktach i
     ponownie zszywając je dwoma łukami nieprzecinającymi już
     istniejących otrzymujemy \textbf{sumę spójną}, $K_1 \shrap K_2$.
     \[
@@ -185,7 +185,7 @@ Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wz
         \]
 \end{definition}
 
-Uogólnieniem tego działania oraz 
+Uogólnieniem tego działania oraz
 (nieopisanej w naszej pracy) operacji \emph{plumbing}
 jest suma Murasugiego, dobrze wyjaśniona w czwartym rozdziale \cite{kawauchi96}.
 
@@ -223,7 +223,7 @@ nie istnieje kanoniczny wybór, które składowe łączyć ze sobą.
         \item jest przemienna:
         $K_1 \shrap K_2 \simeq K_2 \shrap K_1$,
         \item posiada element neutralny:
-        $K_1 \shrap \MalyNieWezel \simeq \MalyNieWezel \shrap K_1 \simeq K_1$.
+        $K_1 \shrap \LittleUnknot \simeq \LittleUnknot \shrap K_1 \simeq K_1$.
     \end{enumerate}
 \end{proposition}
 
@@ -231,12 +231,12 @@ Prosty dowód tego faktu pozostawiamy Czytelnikowi.
 Pokażemy za to, iż węzły z sumą spójną nie tworzą grupy -- brakuje elementów przeciwnych.
 
 \begin{proposition}
-    Jeśli $K \shrap L = \NieWezel$, to $K = L = \NieWezel$.
+    Jeśli $K \shrap L = \Unknot$, to $K = L = \Unknot$.
 \end{proposition}
 
 \begin{proof}[Niedowód]
     Technika ta zwana jest szwindlem Mazura.
-    Załóżmy, że $K \shrap L = \NieWezel$ i dopuśćmy wyjątkowo węzły dzikie.
+    Załóżmy, że $K \shrap L = \Unknot$ i dopuśćmy wyjątkowo węzły dzikie.
     Skonstruujmy sumę $K \shrap L \shrap K \shrap \ldots$,
     przy czym kolejne składniki powinny zmniejszać się,
     aby ich suma nadal była węzłem.
@@ -244,10 +244,10 @@ Pokażemy za to, iż węzły z sumą spójną nie tworzą grupy -- brakuje eleme
     \begin{align*}
         K & \simeq K \shrap [(L \shrap K) \shrap (L \shrap K) \ldots] \\
          & \simeq (K \shrap L) \shrap (K \shrap L) \shrap \ldots
-         \simeq \NieWezel \shrap \NieWezel \shrap \ldots
-         \simeq \NieWezel.
+         \simeq \Unknot \shrap \Unknot \shrap \ldots
+         \simeq \Unknot.
     \end{align*}
-    Analogicznie pokazujemy, że $L \simeq \NieWezel$.
+    Analogicznie pokazujemy, że $L \simeq \Unknot$.
 \end{proof}
 
 Później poznamy prawdziwy, oparty na topologii algebraicznej, dowód.

@@ -14,7 +14,7 @@ Wyjaśnimy teraz użyte tu przymiotniki.
 Diagram jest zredukowany, gdy nie zawiera usuwalnych skrzyżowań:
 \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
-    \begin{knot}[clip width=5] 
+    \begin{knot}[clip width=5]
         \strand[semithick] (-5,-5) rectangle (5,5);
         \strand[semithick] (-5, -3) [in=right, out=left] to (-15, 3);
         \strand[semithick] (-5, 3) [in=right, out=left] to (-15, -3);
@@ -43,7 +43,7 @@ Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
 Niech $D$ będzie diagramem splotu.
 \begin{enumerate}
 \item \emph{Stan} $D$ to funkcja $s$ ze zbioru skrzyżowań $D$ w $\{-1, +1\}$.
-\item Dla ustalonego stanu $s$ diagramu $D$ przez $sD$ rozumiemy diagram powstały przez wygładzenie 
+\item Dla ustalonego stanu $s$ diagramu $D$ przez $sD$ rozumiemy diagram powstały przez wygładzenie
 wszystkich skrzyżowań zgodnie z ich nowym znakiem ($\pm 1$), wtedy $|s|$ to suma wartości $s$.
 \item Diagram dla $sD$ jest sumą zamkniętych krzywych, ich liczbę oznaczamy przez $|sD|$.
 \end{enumerate}
@@ -58,31 +58,31 @@ gdzie sumujemy po wszystkich stanach $s$ dla $D$.
 
 \begin{proof}
 Oznaczmy prawą stronę dowodzonej równości przez $[D]$.
-Pokażemy, że spełnia ona $[\MalyNieWezel]=1$, $[D\sqcup\MalyNieWezel]=(-A^{-2}-A^2) [D]$ oraz $[\MalyPrawyKrzyz] = A [\MalyPrawyGladki] + A^{-1}[\MalyLewyGladki]$.
+Pokażemy, że spełnia ona $[\LittleUnknot]=1$, $[D\sqcup\LittleUnknot]=(-A^{-2}-A^2) [D]$ oraz $[\LittleRightCrossing] = A [\LittleRightSmoothing] + A^{-1}[\LittleLeftSmoothing]$.
 Stąd wynika już, że $[D] = \bracket{D}$.
 
-Niewęzeł $\MalyNieWezel$ ma tylko jeden stan $s$ z $|s| = 0$ i $|s\,\MalyNieWezel| = 1$.
+Niewęzeł $\LittleUnknot$ ma tylko jeden stan $s$ z $|s| = 0$ i $|s\,\LittleUnknot| = 1$.
 
-Zauważmy, że $D \sqcup \MalyNieWezel$ i $D$ mają te same skrzyżowania, 
-więc możemy utożsamiać stany $s$ dla $D$ ze stanami $u$ dla $D \sqcup \MalyNieWezel$.
-Wtedy $|u| = |s|$ oraz $|u(D \sqcup \MalyNieWezel)| = |sD| + 1$.
+Zauważmy, że $D \sqcup \LittleUnknot$ i $D$ mają te same skrzyżowania,
+więc możemy utożsamiać stany $s$ dla $D$ ze stanami $u$ dla $D \sqcup \LittleUnknot$.
+Wtedy $|u| = |s|$ oraz $|u(D \sqcup \LittleUnknot)| = |sD| + 1$.
 Zatem
 \begin{align*}
-    [D \sqcup \MalyNieWezel] 
-    & = \sum_u (-A^2-A^{-2})^{|u(D\sqcup\MalyNieWezel)|-1} A^{|u|} \\
+    [D \sqcup \LittleUnknot]
+    & = \sum_u (-A^2-A^{-2})^{|u(D\sqcup\LittleUnknot)|-1} A^{|u|} \\
     & = \sum_s (-A^2-A^{-2})^{|sD|} A^{|s|} = (-A^2-A^{-2}) [D].
 \end{align*}
 
-Pozostała trzecia własność. Z definicji $A[\MalyPrawyGladki]=\sum_u(-A^2-A^{-2})^{|u\MalyPrawyGladki|-1}A^{|u|+1}$, 
-gdzie $u$ przebiega wszystkie stany $\MalyPrawyGladki$.
-Ale $\MalyPrawyGladki$ to $\MalyPrawyKrzyz$ ze skrzyżowaniem (powiedzmy, $c$) wygładzonym dodatnio, 
-co daje bijekcję między stanami $u$ dla $\MalyPrawyGladki$ i $s$ dla $\MalyPrawyKrzyz$, dla których $s(c) = + 1$.
-Wtedy $|s\MalyPrawyKrzyz|=|u\MalyPrawyGladki|$ i $|s|=|u|+1$ oraz
+Pozostała trzecia własność. Z definicji $A[\LittleRightSmoothing]=\sum_u(-A^2-A^{-2})^{|u\LittleRightSmoothing|-1}A^{|u|+1}$,
+gdzie $u$ przebiega wszystkie stany $\LittleRightSmoothing$.
+Ale $\LittleRightSmoothing$ to $\LittleRightCrossing$ ze skrzyżowaniem (powiedzmy, $c$) wygładzonym dodatnio,
+co daje bijekcję między stanami $u$ dla $\LittleRightSmoothing$ i $s$ dla $\LittleRightCrossing$, dla których $s(c) = + 1$.
+Wtedy $|s\LittleRightCrossing|=|u\LittleRightSmoothing|$ i $|s|=|u|+1$ oraz
 \[
-A[\MalyPrawyGladki] = \sum_u (-A^2-A^{-2})^{|u\,\MalyPrawyGladki|-1}A^{|u|+1} = \sum_{s(c)=1}(-A^2-A^{-2})^{|s\,\MalyPrawyKrzyz|-1}A^{|s|},
+A[\LittleRightSmoothing] = \sum_u (-A^2-A^{-2})^{|u\,\LittleRightSmoothing|-1}A^{|u|+1} = \sum_{s(c)=1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|},
 \]
-podobne rozumowanie pokazuje, że $A^{-1}[\MalyLewyGladki] = \sum_{s(c)=-1}(-A^2-A^{-2})^{|s\,\MalyPrawyKrzyz|-1}A^{|s|}$. 
-Teraz wystarczy dodać do siebie dwa ostatnie równania. %: $A[\PrawyGladki]+A^{-1}[\LewyGladki] = \sum_s(-A^2-A^{-2})^{|s\,\MalyPrawyKrzyz|-1}A^{|s|} = [\PrawyKrzyz]$. 
+podobne rozumowanie pokazuje, że $A^{-1}[\LittleLeftSmoothing] = \sum_{s(c)=-1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|}$.
+Teraz wystarczy dodać do siebie dwa ostatnie równania. %: $A[\PrawyGladki]+A^{-1}[\LewyGladki] = \sum_s(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|} = [\RightCrossing]$.
 \end{proof}
 
 Zbadamy teraz dwa najprostsze stany dowolnego diagrau.
@@ -97,7 +97,7 @@ Wtedy wszystkie jego skrzyżowania mają ten sam znak.
 Wybierzmy dla niego uszachowienie.
 \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.15]
-    \begin{knot}[clip width=5] 
+    \begin{knot}[clip width=5]
         \strand[semithick] (-25, 0) to (25, 0);
         \strand[semithick] (10*0-15, -5) to (10*0-15, 5);
         \strand[semithick] (10*1-15, -5) to (10*1-15, 5);
@@ -140,9 +140,9 @@ Porównajmy wygładzenie $s_+D$ z $s_-D$:
     \end{tikzpicture}
 \]
 
-Zamknięte krzywe tworzące $s_+D$ są brzegami białych obszarów uszachowienia, 
+Zamknięte krzywe tworzące $s_+D$ są brzegami białych obszarów uszachowienia,
 podczas gdy te tworzące $s_-D$ stanowią brzeg czarnych obszarów.
-Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i białe obszary 
+Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i białe obszary
 (nie mogą się spotkać w innych miejscach), gdyż diagram był zredukowany.
 
 \begin{lemma}
@@ -158,7 +158,7 @@ Załóżmy, że jest on prawdziwy dla wszystkich diagramów o $n - 1$ skrzyżowa
 Wybierzmy skrzyżowanie z $D$. Można je wygładzić na dwa sposoby, jeden z nich daje spójny diagram $D'$.
 Bez straty ogólności przyjmijmy, że jest to dodatnie wygładzenie.
 Wtedy zachodzi $|s_+D'| = |s_+D|$, ale $|s_-D'|=|s_-D|\pm 1$, ponieważ $s_-D'$ powstaje z $s_-D$ przez zastąpienie pewnej części
-$\MalyPrawyGladki$ z $\MalyLewyGladki$.
+$\LittleRightSmoothing$ z $\LittleLeftSmoothing$.
 To rozrywa jedną krzywą na dwa kawałki lub scala dwie krzywe w jedną.
 Teraz $|s_+D|+|s_-D| = |s_+D'|+|s_-D'|\pm 1 \le (n-1)+2\pm 1 \le n+2$ (pierwsza nierówność wynika z założenia indukcyjnego).
 
@@ -169,7 +169,7 @@ Z drugiej strony $|s_-D'|=|s_-D|-1$, ponieważ przejście od $s_-D$ do $s_-D'$ s
 To pokazuje drugą równość i kończy dowód.
 \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.20]
-    \begin{knot}[clip width=5] 
+    \begin{knot}[clip width=5]
         \strand[semithick] (-5, 0) to (5, 0);
         \strand[semithick] (0, -5) to (0, 5);
         \draw[fill=blue!10!white,draw=none] (-5, -5) rectangle (0, 0);
@@ -210,14 +210,14 @@ z równością, jeżeli $D$ jest alternujący, zredukowany i spójny.
 \begin{proof}
 Udowodnimy tylko pierwszą część, druga jest do niej podobna.
 Oznaczymy przez $\langle D \mid s \rangle$ wielkość $(-A^{-2}-A^2)^{|sD|-1}A^{|s|}$.
-Zauważmy, że $M\langle D|s\rangle=2|sD|+|s|-2$, 
+Zauważmy, że $M\langle D|s\rangle=2|sD|+|s|-2$,
 a więc w szczególności $M\langle D|s_+\rangle=2|s_+D|+n-2$.
-Gdyby udało się nam pokazać, że $M\langle D|s\rangle \le M\langle D|s_+\rangle$ 
+Gdyby udało się nam pokazać, że $M\langle D|s\rangle \le M\langle D|s_+\rangle$
 dla wszystkich innych stanów $s$, dowód nierówności byłby zakończony.
-Ale możemy znaleźć ciąg $s_+ = s_0$, $s_1$, \ldots, $s_r=s$, 
+Ale możemy znaleźć ciąg $s_+ = s_0$, $s_1$, \ldots, $s_r=s$,
 w którym $s_{i+1}$ powstaje z $s_i$ przez pojedynczą zmianę $+1$ na $-1$.
 
-Teraz $|s_{i+1}|=|s_i|-2$, podczas gdy $|s_{i+1}D|=|s_iD|\pm 1$, 
+Teraz $|s_{i+1}|=|s_i|-2$, podczas gdy $|s_{i+1}D|=|s_iD|\pm 1$,
 ponieważ $s_{i+1}D$ uzyskujemy z $s_{i}D$ przez połączenie dwóch zamkniętych krzywych lub podział jednej zamkniętej krzywej na dwie części.
 Zatem
 \begin{align*}
@@ -244,11 +244,11 @@ Wtedy $\operatorname{span}(V(L)) \le n$, z równością dla zredukowanego i alte
 \end{theorem}
 
 \begin{proof}
-    Pokażemy prawdziwość innego, równoważnego stwierdzenia: $\operatorname{span} \langle D\rangle\le 4n$ 
+    Pokażemy prawdziwość innego, równoważnego stwierdzenia: $\operatorname{span} \langle D\rangle\le 4n$
     z równością dla zredukowanego i alternującego $D$.
     Dwa poprzednie lematy mówią, że
     \begin{align*}
-        \operatorname{span}\langle D\rangle 
+        \operatorname{span}\langle D\rangle
         & = M\langle D\rangle - m\langle D\rangle \le (2|s_+D|+n-2)+(2|s_-D|+n-2) \\
         & = 2(|s_+D|+|s_- D|)+2n-4 \le 2(n+2)+2n-4 = 4n. \qedhere
     \end{align*}
@@ -262,7 +262,7 @@ Jesteśmy już w stanie podać dowód twierdzenia \ref{taitjones} wspomnianego n
     mielibyśmy $\operatorname{span} (V(L)) < n$, co prowadzi do sprzeczności.
 \end{proof}
 
-Szukanie wielomianu Jonesa splotu bywa uciążliwe, 
+Szukanie wielomianu Jonesa splotu bywa uciążliwe,
 jednak czasami możemy oszacować jego rozpiętość korzystając z następujących nierówności:
 
 \begin{corollary}

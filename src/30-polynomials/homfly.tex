@@ -1,6 +1,6 @@
 \section{Wielomian HOMFLY} % (fold)
 \label{sec:homfly}
-Po tym, jak Jones przedstawił światu swój wielomian w 1984 roku, matematycy 
+Po tym, jak Jones przedstawił światu swój wielomian w 1984 roku, matematycy
 zaczęli szukać jego uogólnienia zależnego nie od jednej, lecz dwóch zmiennych.
 Pierwszym takim węzłowym niezmiennikiem okazał się wielomian (Laurenta) HOMFLY.
 Jego nazwa pochodzi od sześciu odkrywców -- Hoste, Ocneanu, Millett, Freyd, Lickorish, Yetter z pracy \cite{homfly85}.
@@ -8,8 +8,8 @@ Jego nazwa pochodzi od sześciu odkrywców -- Hoste, Ocneanu, Millett, Freyd, Li
 Dwa lata później i niezależnie od nich, Przytycki z Traczykiem otrzymał ten sam obiekt w \cite{przytycki87}.
 Ich nazwiska czasami są pomijane ze względu na wolno działającą pocztę (!).
 
-\begin{definition} \label{homflydef} 
-    Wielomian HOMFLY zorientowanego splotu $L$ to niezmienniczy na izotopie wielomian Laurenta dwóch zmiennych $m, l$ taki, że $P(\MalyNieWezel) = 1$ oraz
+\begin{definition} \label{homflydef}
+    Wielomian HOMFLY zorientowanego splotu $L$ to niezmienniczy na izotopie wielomian Laurenta dwóch zmiennych $m, l$ taki, że $P(\LittleUnknot) = 1$ oraz
     \[
         l P(L_+) +  \frac 1l P(L_-) + mP(L_0) = 0,
     \]
@@ -41,7 +41,7 @@ Można potraktować to jako proste ćwiczenie z indukcji matematycznej, pozostaw
 
 \begin{proof}
     Dowód analogiczny do ,,multiplikatywności'' wielomianu Jonesa/Alexandera.
-    
+
     Każdy splot $L$ jest kombinacją liniową (o współczynnikach będących wielomianami w $m$ oraz $l$) niesplotów $U_k$ o różnej liczbie składowych $k$.
     Mamy więc
     \[
@@ -59,8 +59,8 @@ Można potraktować to jako proste ćwiczenie z indukcji matematycznej, pozostaw
     Jeśli usuniemy teraz wszystkie skrzyżowania z diagramu $L_1$ relacją kłębiastą, dostaniemy $L_1 \# L_2 = \sum_{k=1}^n a_k (U_{k-1} \cup L_2)$, gdyż jedna z niezawęźlonych składowych zostanie wchłonięta do diagramu diagramu $L_2$.
     Rozwijamy dalej i otrzymujemy
     \begin{align*}
-        L_1 \# L_2 & = \sum_{k=1}^n a_k \left(U_{k-1} \cup \sum_{k=1}^n b_k U_k\right) \\ 
-                   & = \sum_{k=1}^{2n} \sum_{i=1}^{k-1} a_i b_{k-i} U_{i-1} \cup U_{k-i} \\ 
+        L_1 \# L_2 & = \sum_{k=1}^n a_k \left(U_{k-1} \cup \sum_{k=1}^n b_k U_k\right) \\
+                   & = \sum_{k=1}^{2n} \sum_{i=1}^{k-1} a_i b_{k-i} U_{i-1} \cup U_{k-i} \\
                    & = \sum_{k=1}^{2n} \sum_{i=1}^{k-1} a_i b_{k-i} U_{k-1},
     \end{align*}
     co kończy dowód.
@@ -99,10 +99,10 @@ Oznacza to, że dostaliśmy niewęzeł.
 \begin{proof}
     Niech $L$ będzie splotem, którego wielomian HOMFLY próbujemy wyznaczyć.
     Ustalmy jego dowolny diagram i wybierzmy jedno ze skrzyżowań, które należy odwrócić, by uzyskać niesplot.
-    
-    Początkowy diagram odpowiada $L_+$ lub $L_-$, relacja kłębiasta pozwala na uzyskanie wielomianu wyjściowego splotu zależnego od wielomianu splotu z 
+
+    Początkowy diagram odpowiada $L_+$ lub $L_-$, relacja kłębiasta pozwala na uzyskanie wielomianu wyjściowego splotu zależnego od wielomianu splotu z
     diagramem, na którym jest mniej skrzyżowań oraz splotu, który jest ,,jedno skrzyżowanie bliżej'' niesplotu.
-    
+
     Powtarzając tę procedurę dojdziemy w pewnym momencie do splotów trywialnych, gdzie powołujemy się na wniosek \ref{links_homfly}.
 \end{proof}
 
@@ -130,12 +130,12 @@ Jak elementarnie pokazał Kanenobu w pracy \cite{kanenobu86} z 1986 roku, istnie
 Wielomian HOMFLY nie odróżnia od siebie mutantów (z definicji \ref{def:mutant}).
 
 \begin{example}
-    Przykłady kolizji: $5_1$ oraz $10_{132}$, $5_{1}$ oraz $10_{132}$, 
+    Przykłady kolizji: $5_1$ oraz $10_{132}$, $5_{1}$ oraz $10_{132}$,
     $8_{8}$ oraz $10_{129}$, $8_{16}$ oraz $10_{156}$, $10_{25}$ oraz $10_{56}$.
 \end{example}
 
 % A POLYNOMIAL INVARIANT OF ORIENTED LINKS W. B. R. LICKORISH and KENNETH C. MILLET
-% Example 16 - książka 
+% Example 16 - książka
 
 
 

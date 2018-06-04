@@ -71,13 +71,13 @@ dowodząc jednocześnie jej istnienia.
     Oto zarys konstruktywnego dowodu.
     Przedstawiony algorytm jest bardzo wygodnym sposobem na wyznaczenie grupy węzła.
     Niech $K$ będzie węzłem z diagramem o $n$ łukach i $m$ skrzyżowaniach.
-    Wtedy 
+    Wtedy
     \begin{equation}
         \pi_1(K) \cong \langle a_1, \ldots, a_n \mid r_1, \ldots, r_m\rangle,
     \end{equation}
     gdzie $a_i$ to włókna diagramu, zaś $r_x$ to relacje Wirtingera: $a_ia_ja_i^{-1}a_k^{-1}=1$, \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.15]
-    \begin{knot}[clip width=15] 
+    \begin{knot}[clip width=15]
         \strand[semithick,-Latex] (-5, -5) to (5, 5);
         \strand[semithick,-Latex] (-5, 5) to (5, -5);
         \node[darkblue] at (5, 5)[below right] {$a_i$};
@@ -87,7 +87,7 @@ dowodząc jednocześnie jej istnienia.
     \end{tikzpicture}
     \quad\quad
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.15]
-    \begin{knot}[clip width=15, flip crossing/.list={1}] 
+    \begin{knot}[clip width=15, flip crossing/.list={1}]
         \strand[semithick,-Latex] (-5, -5) to (5, 5);
         \strand[semithick,-Latex] (-5, 5) to (5, -5);
         \node[darkblue] at (5, 5)[below right] {$a_j$};
@@ -143,7 +143,7 @@ Michael Kervaire pokazał w 1966 roku (w \cite{kervaire65}),
 (co najmniej pięciowymiarowego) wtedy i tylko wtedy, gdy:
 \begin{enumerate}[leftmargin=*]
     \itemsep0em
-    \item abelianizacją $G$ jest grupa liczb całkowitch, $\mathbb Z$, 
+    \item abelianizacją $G$ jest grupa liczb całkowitch, $\mathbb Z$,
     \item druga grupa homologii $G$ jest trywialna,
     \item $G$ jest skończenie prezentowana oraz
     \item $G$ stanowi domknięcie normalne pojedynczego generatora.

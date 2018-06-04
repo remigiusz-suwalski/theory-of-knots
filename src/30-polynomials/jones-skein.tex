@@ -1,12 +1,12 @@
 \subsection{Relacja kłębiasta} % (fold)
 \label{sub:skein}
 Dotychczas wyznaczyliśmy wielomian Jonesa jedynie dla trywialnych splotów.
-Spowodowane jest to tym, że chociaż nawias Kauffmana jest przydatny przy dowodzeniu różnych własności, 
+Spowodowane jest to tym, że chociaż nawias Kauffmana jest przydatny przy dowodzeniu różnych własności,
 to zupełnie nie nadaje się do obliczeń.
 Dużo lepszym narzędziem jest następujące twierdzenie.
 
 \begin{theorem}[relacja kłębiasta] \label{tracheotomia} \index{Relacja kłębiasta}
-    Wielomian Jonesa spełnia równość $V(\MalyNieWezel) = 1$ oraz relację
+    Wielomian Jonesa spełnia równość $V(\LittleUnknot) = 1$ oraz relację
     \[
         t^{-1} V(L_+) - tV(L_-) + (t^{-1/2} - t^{1/2}) V(L_0) = 0,
     \]
@@ -17,26 +17,26 @@ Dużo lepszym narzędziem jest następujące twierdzenie.
         \skeinminus \quad\quad\quad\quad
         \skeinzero
     \]
-\end{theorem} 
+\end{theorem}
 
 \begin{proof}
 Wyraźmy wielomian Jonesa przez nawias Kauffmana i spin.
 Chcemy pokazać, że
 \[
-    A^{4}(-A)^{-3w(L_+)}\bracket{\MalyPrawyKrzyz}
-    -A^{-4}(-A)^{-3w(L_-)}\bracket{\MalyLewyKrzyz}
-    +(A^2-A^{-2})(-A)^{-3w(L_0)}\bracket{\MalyPrawyGladki} = 0.
+    A^{4}(-A)^{-3w(L_+)}\bracket{\LittleRightCrossing}
+    -A^{-4}(-A)^{-3w(L_-)}\bracket{\LittleLeftCrossing}
+    +(A^2-A^{-2})(-A)^{-3w(L_0)}\bracket{\LittleRightSmoothing} = 0.
 \]
 
-Ale $w(L_\pm)=w(L_0)\pm 1$, zatem to jest równoważne z 
+Ale $w(L_\pm)=w(L_0)\pm 1$, zatem to jest równoważne z
 \[
-    -A\bracket{\MalyPrawyKrzyz} +A^{-1}\bracket{\MalyLewyKrzyz} +(A^2-A^{-2})\bracket{\MalyPrawyGladki} =0.
+    -A\bracket{\LittleRightCrossing} +A^{-1}\bracket{\LittleLeftCrossing} +(A^2-A^{-2})\bracket{\LittleRightSmoothing} =0.
 \]
 Z definicji nawiasu Kauffmana wnioskujemy, że
-$\bracket{\MalyPrawyKrzyz} = A\bracket{\MalyPrawyGladki}+A^{-1}\bracket{\MalyLewyGladki}$ i 
-$\bracket{\MalyLewyKrzyz} = A\bracket{\MalyLewyGladki}+A^{-1}\bracket{\MalyPrawyGladki}$.
+$\bracket{\LittleRightCrossing} = A\bracket{\LittleRightSmoothing}+A^{-1}\bracket{\LittleLeftSmoothing}$ i
+$\bracket{\LittleLeftCrossing} = A\bracket{\LittleLeftSmoothing}+A^{-1}\bracket{\LittleRightSmoothing}$.
 Pierwsze równanie przemnóżmy przez $A$, drugie przez $A^{-1}$, a następnie dodajmy je do siebie.
-Wtedy otrzymamy $A\bracket{\MalyPrawyKrzyz}-A^{-1}\bracket{\MalyLewyKrzyz} = 
-A^2\bracket{\MalyPrawyGladki} - A^{-2}\bracket{\MalyPrawyGladki}$.
+Wtedy otrzymamy $A\bracket{\LittleRightCrossing}-A^{-1}\bracket{\LittleLeftCrossing} =
+A^2\bracket{\LittleRightSmoothing} - A^{-2}\bracket{\LittleRightSmoothing}$.
 \end{proof}
 % Koniec sekcji Relacja kłębiasta

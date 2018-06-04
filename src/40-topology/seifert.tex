@@ -16,9 +16,9 @@ Ta druga własność sprowadza się na mocy klasyfikacji powierzchni (spójna po
 Podane wcześniej powierzchnie są orientowalne.
 
 \begin{definition} \index{Charakterystyka Eulera}
-    Charakterystyka Eulera $\chi(M) \in \Z$ to niezmiennik 
+    Charakterystyka Eulera $\chi(M) \in \Z$ to niezmiennik
     topologiczny powierzchni $M$, którego definicji nie podamy.
-    Zamiast tego wymienimy dość reguł, 
+    Zamiast tego wymienimy dość reguł,
     by wyznaczyć go w interesujących nas przypadkach:
     \begin{itemize}
         \item Charakterystyka dysku to $1$.
@@ -29,21 +29,21 @@ Podane wcześniej powierzchnie są orientowalne.
 \end{definition}
 
 \begin{definition} \index{Genus}
-    Genus powierzchni $M$ posiadającej $c$ składowych spójności brzegu to 
+    Genus powierzchni $M$ posiadającej $c$ składowych spójności brzegu to
     \[
         g(M) = 1 - \frac{\chi(M) + c}{2}.
     \]
 \end{definition}
 
 \begin{proposition}
-    Dwie spójne, zorientowane powierzchnie są homeomorficzne wtedy i tylko 
+    Dwie spójne, zorientowane powierzchnie są homeomorficzne wtedy i tylko
     wtedy, gdy mają ten sam genus i tyle samo składowych spójności brzegu.
 \end{proposition}
 
 Najważniejsze dla nas są powierzchnie Seiferta:
 
 \begin{definition} \index{Powierzchnia!Seiferta}
-    Powierzchnia Seiferta związana z węzłem $K$ to spójna, 
+    Powierzchnia Seiferta związana z węzłem $K$ to spójna,
     orientowanlna powierzchnia zanurzona w $\R^3$, której brzegiem jest $K$.
 \end{definition}
 
@@ -60,15 +60,15 @@ Najważniejsze dla nas są powierzchnie Seiferta:
 %       -- (1.25, -11.5)
 %       .. controls (4.5,-8) and (4.5,-4) .. (0,0)
 %       .. controls (4,4) and (4.5,5.5) .. (-1.25,11.5);}
-%   \path[LUK] (0,10) .. controls (10,0) and (-10,0) .. (0,-10);
+%   \path[TIKZ_ARCH] (0,10) .. controls (10,0) and (-10,0) .. (0,-10);
 %   \foreach \d in {0,180} {
-%   \path[LUK, rotate=\d] (-1.5,1.5) .. controls (-6,6) and (-3,17) .. (10,12)
+%   \path[TIKZ_ARCH, rotate=\d] (-1.5,1.5) .. controls (-6,6) and (-3,17) .. (10,12)
 %   .. controls (23,7) and (15,-20)  .. (3,-13);}
 % \end{tikzpicture}
 % \end{center}
 % \end{example}
 
-Nie każde uszachowienie diagramu węzła prowadzi do powierzchni Seiferta: 
+Nie każde uszachowienie diagramu węzła prowadzi do powierzchni Seiferta:
 widać to po standardowym diagramie trójlistnika.
 Pomimo to prawdziwe jest następujące stwierdzenie.
 
@@ -79,12 +79,12 @@ Pomimo to prawdziwe jest następujące stwierdzenie.
 Dowód tego faktu opiera się na bezpośredniej konstrukcji i pochodzi od Seiferta.
 
 \begin{proof}
-    Wybierzmy diagram $D$ dla węzła oraz orientację, 
+    Wybierzmy diagram $D$ dla węzła oraz orientację,
     a następnie wyprostujmy wszystkie skrzyżowania zgodnie z ich orientacją:
 
     \[
     \begin{tikzpicture}[scale=0.12, baseline=-3]
-        \begin{knot}[clip width=15, end tolerance=1pt,flip crossing/.list={1}] 
+        \begin{knot}[clip width=15, end tolerance=1pt,flip crossing/.list={1}]
             \strand[semithick,Latex-] (-5,5) to (5,-5);
             \strand[semithick,-Latex] (-5,-5) to (5,5);
         \end{knot}
@@ -97,19 +97,19 @@ Dowód tego faktu opiera się na bezpośredniej konstrukcji i pochodzi od Seifer
         \end{tikzpicture}
         \quad\longleftarrow\quad
     \begin{tikzpicture}[scale=0.12, baseline=-3]
-        \begin{knot}[clip width=15, end tolerance=1pt] 
+        \begin{knot}[clip width=15, end tolerance=1pt]
             \strand[semithick,Latex-] (-5,5) to (5,-5);
             \strand[semithick,-Latex] (-5,-5) to (5,5);
         \end{knot}
     \end{tikzpicture}
     \]
 
-    Otrzymany diagram składa się teraz z pewnej liczby zamkniętych krzywych, 
+    Otrzymany diagram składa się teraz z pewnej liczby zamkniętych krzywych,
     zwanych okręgami Seiferta, które wypełniamy do dysków.
     Tam, gdzie jeden okrąg leżał wewnątrz drugiego, podnosimy wewnętrzny nad zewnętrzny.
     Przy każdym skrzyżowaniu pierwotnego diagramu doklejamy skręcony pasek do obydwu dysków.
 
-    Dyski są dwustronne, więc ich górnej stronie przypisujemy znak $+$, 
+    Dyski są dwustronne, więc ich górnej stronie przypisujemy znak $+$,
     jeśli tylko brzeg jest zorientowany dodatnio i $-$ w przeciwnym razie.
 
     \begin{center}
@@ -119,7 +119,7 @@ Dowód tego faktu opiera się na bezpośredniej konstrukcji i pochodzi od Seifer
 
 \end{proof}
 
-Otrzymana powierzchnia zorientowana, $M_D$, 
+Otrzymana powierzchnia zorientowana, $M_D$,
 nie daje się łatwo wyobrazić, ale można policzyć jej genus.
 Posiada bowiem dokładnie jedną składową spójności brzegu.
 
@@ -198,7 +198,7 @@ Dysk też ma te własności, więc korzystamy z klasyfikacji powierzchni (dysk j
     a przez to
     \[
         g(M_{J\#K}) = \frac{1-\chi(M_{J\#K})}{2} =
-        \frac{1-\chi(M_{J})}{2} + \frac{1-\chi(M_{K})}{2} 
+        \frac{1-\chi(M_{J})}{2} + \frac{1-\chi(M_{K})}{2}
         % = %g(M_J)+g(M_K)
         = g(J) + g(K).
     \]
@@ -215,7 +215,7 @@ Dysk też ma te własności, więc korzystamy z klasyfikacji powierzchni (dysk j
     \end{tikzpicture}
 \]
 
-Usunięcie paska daje powierzchnie Seiferta dla $M_J$ oraz $M_K$ takie, że 
+Usunięcie paska daje powierzchnie Seiferta dla $M_J$ oraz $M_K$ takie, że
 \[
     g(M_J)+g(M_K)=g(M_{J\#K})=g(J\#K).
 \]
@@ -245,7 +245,7 @@ Każdy węzeł można zapisać jako suma spójna pewnej liczby węzłów pierwsz
 \begin{proof}
     Dowodzimy przez indukcję względem genusu $g(K)$.
     Przypadek bazowy $g(K) = 0$ jest oczywisty, gdyż wtedy $K$ to niewęzeł.
-    Załóżmy więc, że fakt zachodzi dla węzłów $J$ genusu co najwyżej $n$. 
+    Załóżmy więc, że fakt zachodzi dla węzłów $J$ genusu co najwyżej $n$.
     Niech $K$ będzie genusu $n + 1$.
 
     Jeśli $K$ jest pierwszy, nie ma czego dowodzić.
@@ -254,7 +254,7 @@ Każdy węzeł można zapisać jako suma spójna pewnej liczby węzłów pierwsz
     Zatem $g(J_1),g(J_2)\leqslant n$.
     Na mocy hipotezy indukcyjnej, $J_1$ oraz $J_2$ są równoważne sumom
     \[
-        J_1 \cong K_1\#\cdots\# K_s,\qquad 
+        J_1 \cong K_1\#\cdots\# K_s,\qquad
         J_2 \cong K_{s+1}\#\cdots\# K_r,
     \]
     gdzie $K_i$ są pierwsze.
@@ -272,7 +272,7 @@ Pokażemy, że wszystkie węzły $(2n+2)_1$ są pierwsze, gdzie $n \ge 1$.
 Istotnie, algorytm Seiferta zastosowany do diagramu tego węzła wyprodukuje $2n+1$ okręgów.
 \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.055]
-    \begin{knot}[clip width=10, flip crossing/.list={1,4,5},end tolerance=1pt] 
+    \begin{knot}[clip width=10, flip crossing/.list={1,4,5},end tolerance=1pt]
         \node at (0,10) {$\cdots$};
         \strand[semithick] (-30, -5) -- (-5, -5);
         \strand[semithick,-Latex]  (5, -5) -- (30, -5);

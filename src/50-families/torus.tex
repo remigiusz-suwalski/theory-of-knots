@@ -1,7 +1,7 @@
 \section{Węzły torusowe} % (fold)
 \label{sec:torus}
 W tej sekcji przyjrzymy się węzłom o specjalnym ułożeniu w przestrzeni $\R^3$.
-Do ich określenia potrzebny jest torus trywialny, 
+Do ich określenia potrzebny jest torus trywialny,
 powierzchnia otrzymana przez obrót okręgu $(x-2)^2 + y^2 = 1$ wokół osi $y$.
 Można go także uzyskać przez sklejenie podstaw walca tak, by go przy tym nie zapętlić.
 Oczywiście istnieją też nietrywialne torusy, na przykład rurowe otoczenie trójlistnika.
@@ -15,7 +15,7 @@ Na walcu $S^2 \times [0,1]$, którego podstawa leży w płaszczyźnie $xy$, rozp
     \left(\cos \frac{2k \pi}{r}, \sin \frac{2k\pi}{r}, 0 \right), \quad
     \left(\cos \frac{2k \pi}{r}, \sin \frac{2k\pi}{r}, 1 \right).
 \end{align*}
-Przekręćmy górną podstawę walca wokół osi $z$ o skierowany kąt $2\pi q / r$ oraz utożsammy ze sobą pary punktów $(x, y, 0) \sim (x, y, 1)$, 
+Przekręćmy górną podstawę walca wokół osi $z$ o skierowany kąt $2\pi q / r$ oraz utożsammy ze sobą pary punktów $(x, y, 0) \sim (x, y, 1)$,
 Uzyskaliśmy splot torusowy $K_{q, r}$: okrąża on $q$ razy rdzeń torusa i $p$ razy jego oś symetrii obrotowej.
 Określimy jeszcze kilka splotów torusowych.
 Węzeł $K_{0, 0}$ leży na powierzchni torusa i jest ściągalny do punktu, zaś $K_{1, 0}$ to nawinięta toroidalnie pętla.
@@ -30,18 +30,18 @@ Poniżej przedstawiamy trzy węzły torusowe.
 
 \begin{figure}[H]
     \begin{minipage}[b]{.3\linewidth}
-        \centering 
-        \includegraphics[width=\linewidth]{../data/torus-p2-q3.pdf} 
+        \centering
+        \includegraphics[width=\linewidth]{../data/torus-p2-q3.pdf}
         \subcaption{trójlistnik: $p = 2, q = 3$}
     \end{minipage}
     \begin{minipage}[b]{.3\linewidth}
-        \centering 
-        \includegraphics[width=\linewidth]{../data/torus-p2-q11.pdf} 
+        \centering
+        \includegraphics[width=\linewidth]{../data/torus-p2-q11.pdf}
         \subcaption{$p = 2, q = 11$}
     \end{minipage}
     \begin{minipage}[b]{.3\linewidth}
-        \centering 
-        \includegraphics[width=\linewidth]{../data/torus-p11-q2.pdf} 
+        \centering
+        \includegraphics[width=\linewidth]{../data/torus-p11-q2.pdf}
         \subcaption{$p = 11, q = 2$}
     \end{minipage}
 \end{figure}
@@ -58,13 +58,13 @@ Okazuje się, że innych obiektów już nie ma.
 % q = 3;
 % ParametricPlot3D[
 % {
-% Cos [2 Pi p t] (2 + Cos[2 Pi q t]), 
-% (2 + Cos[2 Pi q t]) Sin[2 Pi p t], 
-% -Sin[2 Pi q t]}, 
-% {t, 0, 1}, 
-% ColorFunction -> "Rainbow", 
-% PlotStyle -> Thickness[0.02], 
-% Boxed -> False, 
+% Cos [2 Pi p t] (2 + Cos[2 Pi q t]),
+% (2 + Cos[2 Pi q t]) Sin[2 Pi p t],
+% -Sin[2 Pi q t]},
+% {t, 0, 1},
+% ColorFunction -> "Rainbow",
+% PlotStyle -> Thickness[0.02],
+% Boxed -> False,
 % Axes -> False
 % ]
 
@@ -74,7 +74,7 @@ Nietrywialne węzły torusowe są pierwsze i odwracalne, ale nie achiralne (maj�
     Dla $q, r > 0$ zdefiniujmy wielkość $\sigma(q, r) = - \sigma(K_{q, r})$.
     Wtedy, jeśli
     \begin{itemize}[leftmargin=*]
-    \itemsep0em 
+    \itemsep0em
         \item $2r < q$ i $r$ jest parzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2$.
         \item $2r < q$ i $r$ jest nieparzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2 - 1$.
         \item $\sigma(2r, r) = r^2 - 1$.
@@ -162,8 +162,8 @@ Genus pokrywa się z liczbą gordyjską dla węzłów (czyli względnie pierwszy
     \]
 \end{proposition}
 
-Murasugi i Neuwirth w 1961 dla węzłów alternujących, 
-zaś Burde z Zieschangiem w 1965 pokazali, że nietrywialny węzeł, 
+Murasugi i Neuwirth w 1961 dla węzłów alternujących,
+zaś Burde z Zieschangiem w 1965 pokazali, że nietrywialny węzeł,
 którego grupa ma nietrywialne centrum, jest torusowy.
 
 \begin{proposition}

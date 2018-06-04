@@ -31,23 +31,23 @@ Macierz $A$ można zastąpić przez macierz Goeritza $G$.
     Grupa kolorująca splotu jest skończona, wtedy i tylko wtedy gdy wyznacznik splotu jest niezerowy.
 \end{proposition}
 
-Podamy teraz za S. Cyganem przykład nieskończonej rodziny węzłów, 
+Podamy teraz za S. Cyganem przykład nieskończonej rodziny węzłów,
 której elementy rozróżnia właśnie wyznacznik.
 Rozpatrzmy węzeł $K_k$ dla $k \ge 4$:
 \[
 \begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
 %\useasboundingbox (-5, -5) rectangle (5,5);
-\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1,2,3,6}] 
+\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1,2,3,6}]
     \strand[semithick] (-10, +3) .. controls (-4, +3) and (-4, -3) .. (0, -3);
     \strand[semithick] (-10, -3) .. controls (-4, -3) and (-4, +3) .. (0, +3);
     \node at (5, 0) {$\ldots$};
     \strand[semithick] (10+10, +3) .. controls (10+ 4, +3) and (10+ 4, -3) .. (10+0, -3);
-    \strand[semithick] (10+ 10, -3) .. controls (10+ 4, -3) and (10+4, +3) .. (10+0, +3);   
+    \strand[semithick] (10+ 10, -3) .. controls (10+ 4, -3) and (10+4, +3) .. (10+0, +3);
     \strand[semithick] (20+10, +3) .. controls (20+ 4, +3) and (20+ 4, -3) .. (20+0, -3);
-\strand[semithick] (20+ 10, -3) .. controls (20+ 4, -3) and (20+4, +3) .. (20+0, +3);   
+\strand[semithick] (20+ 10, -3) .. controls (20+ 4, -3) and (20+4, +3) .. (20+0, +3);
     \strand[semithick] (30, 3) [in=up, out=right] to (35, -3);
-    \strand[semithick,  ] (30, -3) [in=down, out=right] to (35, 3); 
-    \strand[semithick] (35, 3) [in=right, out=up] to (0, 10);   
+    \strand[semithick,  ] (30, -3) [in=down, out=right] to (35, 3);
+    \strand[semithick] (35, 3) [in=right, out=up] to (0, 10);
     \strand[semithick] (35, -3) [in=right, out=down] to (0, -10);
     \strand[semithick] (-10, -3) [in=down, out=left] to (-20, 0) to [in=left, out=up] (-10, 3);
     \strand[semithick] (-15, 5) [in=left, out=up] to (0, 10);

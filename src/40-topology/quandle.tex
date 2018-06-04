@@ -3,12 +3,12 @@
 Sekcja ta powstała częściowo w oparciu o notatki autorstwa Andrew Bergera, Chrisa Geriga
 \footnote{dostępne pod adresem \url{https://math.berkeley.edu/~cgerig/notes}}
 oraz Andrew Bergera, Brandona Flannery'ego i Chrisa Sumnichta
-\footnote{dostępne pod adresem \url{https://github.com/thyrgle/191_Final_Project/blob/master/paper.pdf}}. 
+\footnote{dostępne pod adresem \url{https://github.com/thyrgle/191_Final_Project/blob/master/paper.pdf}}.
 Kwandle, z angielskiego \emph{quandle}, są strukturami algebraicznymi przypominającymi grupy,
 jednak których aksjomaty nie odzwierciedlają własności symetrii, tylko ruchów Reidemeistera.
 
 \begin{definition}[wrak]
-    Zbiór $R$ z binarnym działaniem $\triangleleft$, które spełnia relację 
+    Zbiór $R$ z binarnym działaniem $\triangleleft$, które spełnia relację
     \[
         a \triangleleft (b \triangleleft c) = (a \triangleleft b) \triangleleft (a \triangleleft c)
     \]
@@ -54,9 +54,9 @@ Wiele znanych z algebry obiektów można zmienić w kwandle.
 %Wtedy przy każdym skrzyżowaniu występują trzy kolory: $x$, $y$ oraz $x \triangleright y$.
 
 \begin{tikzpicture}[scale=0.18, baseline=0]
-    \path[LUK,Latex-] (-4,0) -- (4,8);
-    \path[LUK] (4,0) -- (1,3);
-    \path[LUK] (-1,5) -- (-4,8);
+    \path[TIKZ_ARCH,Latex-] (-4,0) -- (4,8);
+    \path[TIKZ_ARCH] (4,0) -- (1,3);
+    \path[TIKZ_ARCH] (-1,5) -- (-4,8);
     \node[darkblue] at (-4, 0)[above left] {$y$};
     \node[darkblue] at (4, 0)[above right] {$x \triangleright y$};
     \node[darkblue] at (-4, 8)[below left] {$x$};
@@ -77,8 +77,8 @@ Z każdym węzłem związany jest specjalny kwandel.
 %       [\gamma_1] \triangleright [\gamma_2] = [\gamma_2 \circ m \circ \gamma_2^{-1} \circ \gamma_1],
 %   \]
 %   gdzie $m$ to południk wzdłuż $\gamma_2(1)$.
-    Zbiór $Q(K)$ nazywamy kwandlem fundamentalnym (podstawowym?). 
-\end{definition} 
+    Zbiór $Q(K)$ nazywamy kwandlem fundamentalnym (podstawowym?).
+\end{definition}
 
 Muszę w tym miejscu wtrącić uwagę jężykową.
 Conway nazwał wraki wrakami (\emph{wracks}), by częściowo zażartować z nazwiska jego kolegi Gavina Wraitha,

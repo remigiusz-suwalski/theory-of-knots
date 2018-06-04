@@ -56,7 +56,7 @@ Sugestia ta była błędna, wystarczy użyć alternatywnej definicji.
 	Równość ta zachodzi nawet po przemnożeniu kolumny indeksu $n$ przez $t^{-n}$: $\sum_n t^{-n}S_n = 0$, co prowadzi do relacji $\sum_n (t^{-n}-1) S_n = 0$.
 	Jeśli więc indeks kolumny $v_j$ wynosi $n$, to $(t^{-n}-1)v_j$ jest kombinacją liniową innych kolumn niezerowego indeksu (ponieważ $t^0 - 1 = 0$).
 
-	Rozpatrzmy macierze $M_{0,j}, M_{0,k}$, gdzie indeksy $j$-tej i $k$-tej kolumny to odpowiednio $p$ i $q$. 
+	Rozpatrzmy macierze $M_{0,j}, M_{0,k}$, gdzie indeksy $j$-tej i $k$-tej kolumny to odpowiednio $p$ i $q$.
 	Z powyższych rozważań wynika, że $(t^{-q}-1) \Delta_{0,j} = \pm (t^{-p}-1)\Delta_{0,k}$, ale indeksy obszarów są wyznaczone z dokładnością do stałej addytywnej.
 	Biorąc $i$-tą oraz $l$-tą kolumnę, indeksów $r$ oraz $s$, dostaniemy zależności
 	$$(t^{r-q}-1) \Delta_{l,j} = \pm (t^{r-p} - 1)\Delta_{l,i}$$
@@ -82,11 +82,11 @@ Sugestia ta była błędna, wystarczy użyć alternatywnej definicji.
 
 Dla wygody można przeprowadzić normalizację wielomianu przez wzięcie reprezentanta, który jest symetryczny w zmiennych $t$ oraz $t^{-1}$ i przyjmuje w punkcie $1$ wartość $\Delta(1) = 1$.
 Odwrotnie, każdy wielomian Laurenta z całkowitymi współczynnikami o takich własnościach jest wielomianem Alexandera pewnego węzła.
-% Kawauchi 1996 
+% Kawauchi 1996
 
 Wielomian nie odróżnia luster i odwrotności od wyjściowych węzłów.
 Znane są przykłady nietrywialnych węzłów o trywialnym wielomianie Alexandera ($1$), chociaż żaden z nich nie ma dziesięciu lub mniej skrzyżowań.
-Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, strona 167) lub cztery inne z 167 strony książki \cite{rolfsen76} Rolfsena. 
+Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, strona 167) lub cztery inne z 167 strony książki \cite{rolfsen76} Rolfsena.
 
 \todo[inline]{\url{https://mathoverflow.net/questions/185486/can-infinitely-many-alternating-knots-have-the-same-alexander-polynomial}}
 
@@ -210,7 +210,7 @@ Przedstawimy teraz kilka innych definicji, które prowadzą do tego samego niezm
 \begin{definition}
 	Wielomian Alexandera $\Delta_L(t) \in \Z[t^{-1/2}, t^{1/2}]$ zorientowanego splotu $L$ to taki wielomian Laurenta, który spełnia relację kłębiastą (przy oznaczeniach z twierdzenia \ref{tracheotomia}):
 	\begin{enumerate}
-		\item $\Delta_{\MalyNieWezel}(t) = 1$
+		\item $\Delta_{\LittleUnknot}(t) = 1$
 		\item $\Delta_{L_+}(t) - \Delta_{L_-}(t) - (t^{1/2} - t^{-1/2}) \Delta_{L_0}(t) = 0$.
 	\end{enumerate}
 \end{definition}

@@ -42,7 +42,7 @@
 
 \RequirePackage{amsmath} % \DeclareMathOperator
 \RequirePackage{amssymb} % \mathbb
-\RequirePackage{amsthm}  % \newtheorem 
+\RequirePackage{amsthm}  % \newtheorem
 
 \RequirePackage{float}      % figures with [H]
 \RequirePackage{subcaption} % captions to subfigures

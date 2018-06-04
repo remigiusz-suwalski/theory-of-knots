@@ -13,7 +13,7 @@ Nie stanowi to wielkiego powodu do radości ze względu na wysoką złożoność
 Nasz nowy niezmiennik, kolorowalność, opisuje, czy włókna diagramu dają się pomalować ograniczoną paletą kolorów.
 Przed wyłożeniem właściwego materiału potrzebne nam będą dwie definicje.
 
-\begin{definition}[włókno] 
+\begin{definition}[włókno]
 	Fragment diagramu, który biegnie między dwoma kolejnymi tunelami (podskrzyżowaniami) nazywamy włóknem.
 \end{definition}
 
@@ -32,7 +32,7 @@ Metoda ta została odkryta razem z uogólnieniem do $n$ kolorów przez Ralpha Fo
 	Takie przyporządkowanie nazywamy (nietrywialnym) kolorowaniem.
 	\[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
 	\useasboundingbox (-5, -5) rectangle (5,5);
-	\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}] 
+	\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
 		\strand[semithick] (-5,5) to (5,-5);
 		\strand[semithick] (-5,-5) to (5,5);
 		\node[darkblue] at (5, 5)[below right] {$c$};
@@ -50,7 +50,7 @@ Opierając się jedynie na definicji kolorowania oraz ruchach Reidemeistera jest
 
 \begin{proof}
 	Załóżmy nie wprost, że istnieje nietrywialne kolorowanie.
-	Analiza czterech możliwych skrzyżowań pokazuje, 
+	Analiza czterech możliwych skrzyżowań pokazuje,
 	że włókna wychodzące z tunelu muszą mieć ten sam kolor.
 	Przechodząc wzdłuż węzła widzimy jeden kolor, wbrew założeniu nie wprost.
 \end{proof}
@@ -69,7 +69,7 @@ Co więcej, rozszczepialne sploty są kolorowalne modulo $n$ dla każdego $n \ge
 	\[
 		\fbox{
 		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
-		\begin{knot}[clip width=5] 
+		\begin{knot}[clip width=5]
 			\strand[semithick] (-10,10) .. controls (-10,2) and (-10,2) .. (-6,-2);
 			\strand[semithick] (-10,-10) .. controls (-10,-2) and (-10,-1) .. (-9,0);
 
@@ -81,7 +81,7 @@ Co więcej, rozszczepialne sploty są kolorowalne modulo $n$ dla każdego $n \ge
 		\end{tikzpicture}
 		$\stackrel{R_1}{\cong} \,\,$
 		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
-		\begin{knot}[clip width=5] 
+		\begin{knot}[clip width=5]
 			\strand[semithick] (0,10) -- (0,-10);
 			\node[darkblue] at (0, 0)[left] {$a$};
 		\end{knot}
@@ -89,7 +89,7 @@ Co więcej, rozszczepialne sploty są kolorowalne modulo $n$ dla każdego $n \ge
 		%%%
 		\quad \fbox{
 		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
-		\begin{knot}[clip width=5] 
+		\begin{knot}[clip width=5]
 			\strand[semithick] (4,-10) .. controls (4,-4) and (-4,-4) .. (-4,0);
 			\node[darkblue] at (-4, -10)[above left] {$d \equiv b$};
 			\strand[semithick] (4,10) .. controls (4, 4) and (-4, 4) .. (-4,0);
@@ -102,7 +102,7 @@ Co więcej, rozszczepialne sploty są kolorowalne modulo $n$ dla każdego $n \ge
 		\end{tikzpicture}
 		$\stackrel{R_2}{\cong} \,\,$
 		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
-		\begin{knot}[clip width=5] 
+		\begin{knot}[clip width=5]
 			\strand[semithick] (4,-10) .. controls (4,-4) and (1,-4) .. (1,0);
 			\strand[semithick] (4,10) .. controls (4, 4) and (1, 4) .. (1,0);
 			\strand[semithick] (-4,-10) .. controls (-4,-4) and (-1,-4) .. (-1,0);
@@ -115,7 +115,7 @@ Co więcej, rozszczepialne sploty są kolorowalne modulo $n$ dla każdego $n \ge
 	\[
 	 \fbox{
 		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
-		\begin{knot}[clip width=5, flip crossing/.list={1,2,3}] 
+		\begin{knot}[clip width=5, flip crossing/.list={1,2,3}]
 			\node[darkblue] at (-10, 10) [above] {$b$};
 			\node[darkblue] at (10, 10) [above] {$c$};
 			\node[darkblue] at (-10, -10) [below] {$2a-2b+c$};
@@ -129,7 +129,7 @@ Co więcej, rozszczepialne sploty są kolorowalne modulo $n$ dla każdego $n \ge
 		\end{tikzpicture}
 		$\stackrel{R_3}{\cong} \,\,$
 		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
-		\begin{knot}[clip width=5, flip crossing/.list={1,2,3}] 
+		\begin{knot}[clip width=5, flip crossing/.list={1,2,3}]
 			\node[darkblue] at (-10, 10) [above] {$b$};
 			\node[darkblue] at (10, 10) [above] {$c$};
 			\node[darkblue] at (-10, -10) [below] {$2a-2b+c$};
@@ -153,7 +153,7 @@ Poniższy akapit można spokojnie pominąć przy pierwszym czytaniu.
 Niech $L$ będzie splotem, zaś $\pi$ grupą podstawową jego dopełnienia.
 Reprezentację $\rho$ dla $\pi$ na $D_{2n}$, grupę diedralną, nazywamy $n$-kolorowaniem Foxa.
 Grupa splotu generowana jest przez ścieżki z punktu bazowego w $S^3$ do brzegu rurowego otoczenia splotu, wokół południka i znowu do bazowego punktu.
-Obrazami tych generatorów są odbicia $n$-kąta foremne, które zapisujemy jako $ts^i$ ($t$ to odbicie, zaś $s$ jest najmniejszym obrotem). 
+Obrazami tych generatorów są odbicia $n$-kąta foremne, które zapisujemy jako $ts^i$ ($t$ to odbicie, zaś $s$ jest najmniejszym obrotem).
 Każdy generator odpowiada pewnemu łukowi, przypiszmy mu liczbę $i \in \Z/n\Z$.
 Dostaliśmy zwykłe kolorowanie.
 
