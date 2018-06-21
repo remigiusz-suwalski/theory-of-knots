@@ -114,8 +114,17 @@ które są rozcinane przez skrzyżowanie.
 Pomijamy tę prezentację dla oszczędności miejsca.
 Klasycznie (jak na przykład w \cite{crowell63}) macierz, a co za tym idzie,
 także wielomian Alexandera wprowadza się przy użyciu prezentacji Wirtingera i pochodnej Foxa.
-\todo[inline]{Pochodna Foxa}
 Oryginalna praca Alexandera była jednak bliższa duchem pomysłom Dehna.
+
+\begin{definition}
+    Niech $G$ będzie grupą generowaną przez (niekoniecznie skończony) podzbiór $\{g_i\}_{i \in I}$..
+    Pochodna Foxa to różniczkowanie $G \to \Z G$: addytywne odwzorowanie spełniające trzy aksjomaty:
+    \begin{enumerate}
+        \item $(\partial/\partial g_i)(e) = 0$;
+        \item $(\partial/\partial g_i)(g_j) = 1$, jeśli $i = j$, $0$ w przeciwnym razie;
+        \item $(\partial/\partial g_i)(uw) = (\partial/\partial g_i)(u) + u(\partial/\partial g_i)(w)$ dla dowolnych słów $u, w \in G$.
+    \end{enumerate}
+\end{definition}
 
 Nietrywialne węzły, których grupa ma nietrywialne centrum, to dokładnie węzły torusowe.
 Wszystkie one są węzłami Neuwirtha
