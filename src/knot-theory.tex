@@ -1,90 +1,9 @@
 \documentclass{createspace}
-\input{00-meta-latex/shortcuts}
-
-\usepackage{enumitem}
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage[table]{xcolor}
-\usepackage[colorinlistoftodos,prependcaption]{todonotes}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta}
-\usetikzlibrary{decorations.markings}
-\usetikzlibrary{decorations.pathreplacing}
-\usetikzlibrary{knots}
-\colorlet{darkblue}{blue!80!black}
-\input{00-meta-latex/diagrams}
-
-% makes compilation faster, breaks few diagrams
-% \usetikzlibrary{external}
-% \tikzexternalize[prefix=tikz/]
-
-\definecolor{lightgray}{gray}{0.9} % define lightgray
-\let\oldtabular\tabular % alternate rowcolors for all tables
-\let\endoldtabular\endtabular
-\renewenvironment{tabular}
-{\rowcolors{2}{white}{lightgray}\oldtabular}
-{\endoldtabular}
-\let\oldlongtable\longtable % alternate rowcolors for all long-tables
-\let\endoldlongtable\endlongtable
-\renewenvironment{longtable}
-{\rowcolors{2}{white}{lightgray}\oldlongtable}
-{\endoldlongtable}
-
-\author{Leon Suwalski}
-\title{Krótkie wprowadzenie do teorii węzłów (wersja robocza)}
-\date{2018}
-
-\begin{document}
-\maketitle
-\tableofcontents
-\chapter{Preludium}
-\label{cha:preludium}
-\input{10-introduction/knots}
-\input{10-introduction/reidemeister}
-\input{10-introduction/operations}
-\input{10-introduction/primality}
-\input{10-introduction/numerical_invariants}
-
-\chapter{Niezmienniki kolorowe}
-\input{20-colours/intro}
-\input{20-colours/matrix}
-\input{20-colours/group}
-
-\chapter{Niezmienniki wielomianowe}
-\input{30-polynomials/intro}
-\input{30-polynomials/alexander}
-\input{30-polynomials/jones}
-\input{30-polynomials/arf}
-\input{30-polynomials/homfly}
-\input{30-polynomials/blmho}
-\input{30-polynomials/kauffman}
-
-\chapter{Topologia algebraiczna}
-\input{40-topology/group}
-\input{40-topology/seifert}
-\input{40-topology/quandle}
-\input{40-topology/homology}
-
-\chapter{Wybrane rodziny węzłów}
-\input{50-families/intro}
-\input{50-families/torus}
-\input{50-families/satellite}
-\input{50-families/hyperbolic}
-\input{50-families/slice}
-\input{50-families/braid}
-\input{50-families/tangle}
-\input{50-families/pretzel}
-\todo[inline]{\url{https://en.wikipedia.org/wiki/Lissajous_knot}}
-
-\chapter{Tablice węzłów pierwszych}
-\input{90-appendix/table_invariants}
-\input{90-appendix/table_prime}
-
-\raggedright
-\bibliographystyle{plain}
-%\bibliographystyle{plunsrt}
-\bibliography{knot_theory}
-
-\newpage
-\listoftodos[Lista rzeczy do poprawienia]
-\end{document}
+\input{include/head}
+\input{include/01}
+\input{include/02}
+\input{include/03}
+\input{include/04}
+\input{include/05}
+\input{include/99}
+\input{include/foot}

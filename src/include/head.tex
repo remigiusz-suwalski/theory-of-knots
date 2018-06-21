@@ -1,0 +1,38 @@
+\input{00-meta-latex/shortcuts}
+
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{knots}
+\colorlet{darkblue}{blue!80!black}
+\input{00-meta-latex/diagrams}
+
+% makes compilation faster, breaks few diagrams
+% \usetikzlibrary{external}
+% \tikzexternalize[prefix=tikz/]
+
+\definecolor{lightgray}{gray}{0.9} % define lightgray
+\let\oldtabular\tabular % alternate rowcolors for all tables
+\let\endoldtabular\endtabular
+\renewenvironment{tabular}
+{\rowcolors{2}{white}{lightgray}\oldtabular}
+{\endoldtabular}
+\let\oldlongtable\longtable % alternate rowcolors for all long-tables
+\let\endoldlongtable\endlongtable
+\renewenvironment{longtable}
+{\rowcolors{2}{white}{lightgray}\oldlongtable}
+{\endoldlongtable}
+
+\author{Leon Suwalski}
+\title{Krótkie wprowadzenie do teorii węzłów (wersja robocza)}
+\date{2018}
+
+\begin{document}
+\maketitle
+\tableofcontents
