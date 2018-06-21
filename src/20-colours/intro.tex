@@ -1,47 +1,51 @@
-Zamknęliśmy już pierwszy rozdział, ale wciąż nie pokazaliśmy, że istnieje przynajmniej jeden węzeł różny od niewęzła.
-Temu między innymi poświęcony jest rozdział drugi.
-Poznamy prosty niezmiennik, trójkolorowalność, do zdefiniowania którego nie trzeba odwoływać się nawet do pojęcia liczby.
-Później zostanie on oczywiście odpowiednio wzmocniony.
+Zamknęliśmy już pierwszy rozdział,
+Wciąż nie pokazaliśmy jednak pełnego dowodu, że dwa konkretne węzły (na przykład niewęzeł i~trójlistnik) są od siebie różne.
+Dlatego teraz podamy proste narzędzie odróżniające węzły: \emph{trójkolorowalność}, która przypisuje włóknom diagramu różne kolory.
+Następnie rozszerzymy paletę do dowolnie wielu kolorów i~zastąpimy ją grupą skończoną.
 
-Kolorowanie nie jest idealnym narzędziem klasyfikującym, istnieją węzły, których nie odróżnia.
-Problem ten dotyka wielu późniejszych niezmienników, dość ważna hipoteza Jonesa \ref{jones_conjecture} pyta, czy wielomian Jonesa jest zupełny (tak nazywamy niezmienniki, które wykrywają każdą różnicę).
-Pierwszy niezmiennik zupełny poznamy w rozdziale czwartym.
+Nawet ten wzmocniony wariant nie jest idealnym narzędziem klasyfikującym.
+Istnieją węzły, których nie odróżnia.
+Problem ten dotyka wielu późniejszych niezmienników, dość ważna hipoteza Jonesa \ref{jones_conjecture} pyta, czy wielomian Jonesa jest zupełny (tak nazywamy niezmienniki, które różnym węzłom przypisują różne wartości).
+Pierwszy niezmiennik zupełny poznamy w~rozdziale czwartym.
 Nie stanowi to wielkiego powodu do radości ze względu na wysoką złożoność obliczeniową.
 
 \section{Kolorowanie splotów} % (fold)
 \label{sec:colour_links}
-Nasz nowy niezmiennik, kolorowalność, opisuje, czy włókna diagramu dają się pomalować ograniczoną paletą kolorów.
-Przed wyłożeniem właściwego materiału potrzebne nam będą dwie definicje.
-
-\begin{definition}[włókno]
-	Fragment diagramu, który biegnie między dwoma kolejnymi tunelami (podskrzyżowaniami) nazywamy włóknem.
-\end{definition}
-
-\begin{definition}[rozszczepialność]
-	Splot, który jest niespójną sumą niepustych splotów, nazywamy rozszczepialnym.
-\end{definition}
-
 Oto mniej mętny opis trójkolorowalności, czyli jak nietrudno się domyślić, kolorowalności trzema kolorami.
 Diagram $D$ splotu $K$ jest trójkolorowalny, jeśli każdemu włóknu można przypisać jeden z trzech kolorów tak, by co najmniej dwa zostały użyte.
-Wymagamy przy tym, by przy żadnym skrzyżowaniu nie spotykały się tylko dwa kolory.
-Metoda ta została odkryta razem z uogólnieniem do $n$ kolorów przez Ralpha Foxa w 1956, kiedy próbował uczynić teorię węzłów bardziej przystępną dla studentów.
+Wymagamy przy tym, by przy żadnym skrzyżowaniu nie spotykały się dokładnie dwa kolory.
+
+Dla własnej wygody jako kolorów używać będziemy kolejnych liczb naturalnych $0, 1, 2, \ldots$.
+Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
 
 \begin{definition}[kolorowanie] \label{def:colour_equation}
 	Niech $L$ będzie splotem, zaś $n$ liczbą naturalną.
 	Mówimy, że splot $L$ jest kolorowalny modulo $n$, jeśli posiada diagram, którego włóknom można przypisać liczby całkowite $0, \ldots, n - 1$ tak, by równanie $a + b \equiv 2c$ modulo $n$ było spełnione przy każdym skrzyżowaniu oraz istniały dwa włókna różnych kolorów.
 	Takie przyporządkowanie nazywamy (nietrywialnym) kolorowaniem.
-	\[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
-	\useasboundingbox (-5, -5) rectangle (5,5);
-	\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
-		\strand[semithick] (-5,5) to (5,-5);
-		\strand[semithick] (-5,-5) to (5,5);
-		\node[darkblue] at (5, 5)[below right] {$c$};
-		\node[darkblue] at (5, -5)[above right] {$b$};
-		\node[darkblue] at (-5, 5)[below left] {$a$};
-	\end{knot}
-	\end{tikzpicture}\]
+	\[
+		\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
+			\useasboundingbox (-5, -5) rectangle (5,5);
+			\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
+				\strand[semithick] (-5,5) to (5,-5);
+				\strand[semithick] (-5,-5) to (5,5);
+				\node[darkblue] at (5, 5)[below right] {$c$};
+				\node[darkblue] at (5, -5)[above right] {$b$};
+				\node[darkblue] at (-5, 5)[below left] {$a$};
+			\end{knot}
+		\end{tikzpicture}
+	\]
 \end{definition}
 
+Metoda ta została odkryta razem z uogólnieniem do $n$ kolorów przez Ralpha Foxa w 1956, kiedy próbował uczynić teorię węzłów bardziej przystępną
+\footnote{
+	Niech $L$ będzie splotem, zaś $\pi$ grupą podstawową jego dopełnienia.
+	Reprezentację $\rho$ dla $\pi$ na $D_{2n}$, grupę diedralną, nazywamy $n$-kolorowaniem Foxa.
+	Grupa splotu generowana jest przez ścieżki z punktu bazowego w $S^3$ do brzegu rurowego otoczenia splotu, wokół południka i znowu do bazowego punktu.
+	Obrazami tych generatorów są izometrie $n$-kąta foremnego, które zapisujemy jako $ts^i$ ($t$ to odbicie, zaś $s$ jest najmniejszym obrotem).
+	Każdy generator odpowiada pewnemu łukowi, przypiszmy mu liczbę $i \in \Z/n\Z$.
+	Dostaliśmy zwykłe kolorowanie, przystępne dla studentów.
+}
+dla studentów.
 Opierając się jedynie na definicji kolorowania oraz ruchach Reidemeistera jesteśmy w stanie wykazać pierwsze własności niezmiennika.
 
 \begin{proposition}
@@ -55,12 +59,12 @@ Opierając się jedynie na definicji kolorowania oraz ruchach Reidemeistera jest
 	Przechodząc wzdłuż węzła widzimy jeden kolor, wbrew założeniu nie wprost.
 \end{proof}
 
-Oczywiście wszystkie sploty o wielu składowych kolorują się modulo dwa: wystarczy pomalować jedną składową zerem, a pozostałe jedynkami.
-Powyższe rozumowanie dowodzi, że nie można pomalować żadnej składowej dwoma kolorami.
-Co więcej, rozszczepialne sploty są kolorowalne modulo $n$ dla każdego $n \ge 2$: można skorzystać z tego samego schematu kolorowania.
+Sploty o wielu składowych są dwukolorowalne.
+Wystarczy pomalować jedną składową zerem, a pozostałe jedynkami.
+Sploty rozszczepialne są $n$-kolorowalne dla każdego $n \ge 2$, można skorzystać z tego samego schematu kolorowania.
 
 \begin{proposition} \label{color_invariant}
-	Kolorowalność modulo $n$ jest niezmiennikiem węzłów.
+	,,Bycie $n$-kolorowalnym'' jest niezmiennikiem węzłów.
 \end{proposition}
 
 \begin{proof}
@@ -147,16 +151,63 @@ Co więcej, rozszczepialne sploty są kolorowalne modulo $n$ dla każdego $n \ge
 Trójlistnik koloruje się dokładnie modulo krotności trójk, ósemka zaś -- piątki.
 Pierścienie Boromeuszy nie kolorują się modulo trzy, nie są zatem rozszczepialne.
 Sama kolorowalność nie mówi wiele, splot jest kolorowalny lub nie.
-Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, być może trywialnych, także jest niezmiennikiem.
+Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, być może trywialnych, także jest niezmiennikiem (mocniejszym).
 
-Poniższy akapit można spokojnie pominąć przy pierwszym czytaniu.
-Niech $L$ będzie splotem, zaś $\pi$ grupą podstawową jego dopełnienia.
-Reprezentację $\rho$ dla $\pi$ na $D_{2n}$, grupę diedralną, nazywamy $n$-kolorowaniem Foxa.
-Grupa splotu generowana jest przez ścieżki z punktu bazowego w $S^3$ do brzegu rurowego otoczenia splotu, wokół południka i znowu do bazowego punktu.
-Obrazami tych generatorów są odbicia $n$-kąta foremne, które zapisujemy jako $ts^i$ ($t$ to odbicie, zaś $s$ jest najmniejszym obrotem).
-Każdy generator odpowiada pewnemu łukowi, przypiszmy mu liczbę $i \in \Z/n\Z$.
-Dostaliśmy zwykłe kolorowanie.
+Jako kolorów użyjemy teraz elementów $g_1, \ldots, g_n$ pewnej skończonej grupy $G$.
 
-Później (fakt \ref{morphism_colour}) pokażemy, że kolorowania to dokładnie homomorfizmy z pewnej grupy związanej z węzłem w $\Z/n$.
+\begin{definition}[etykietowanie]
+	Mówimy, że zorientowany węzeł $K$ jest etykietowalny grupą $G$ generowaną przez elementy $g_1, \ldots, g_n$, jeśli posiada diagram, którego włóknom przypisano elementy $g_1, \ldots, g_n$ tak, by równanie $gk=hg$ było spełnione przy każdym skrzyżowaniu ($g$: włókno biegnące górą, $k$: bo jego lewej stronie, $h$: po prawej).
+	\[
+		\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
+			\useasboundingbox (-5, -5) rectangle (5,5);
+			\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
+				\strand[semithick] (-5,5) to (5,-5);
+				\strand[semithick, -Latex] (-5,-5) to (5,5);
+				\node[darkblue] at (5, 5)[below right] {$g$};
+				\node[darkblue] at (5, -5)[above right] {$h$};
+				\node[darkblue] at (-5, 5)[below left] {$k$};
+			\end{knot}
+		\end{tikzpicture}
+	\]
+\end{definition}
+
+Równanie $gkg^{-1}=h$ mówi, że etykiety włókien wchodzących oraz wychodzących są sprzężone.
+Wynika stąd, że wszystkie etykiety pochodzą z jednej klasy sprzężoności.
+Muszą jednocześnie generować calą grupę, dlatego $G$ musi być grupą nieprzemienną lub trywialną.
+Etykietowalność jest niezmiennikiem węzłów i nie zależy od orientacji węzła.
+Jeżeli elementy $g_1, \ldots, g_n$ generują grupę, to ich odwrotności także.
+
+Rozpatrzmy węzły $4_2$ oraz $9_{46}$ i spróbujmy etykietować je transpozycjami z grupy $S_4$.
+Wybranie dwóch etykiet przy jednym skrzyżowaniu $4_2$ wymusza etykiety dla wszystkich włókien.
+Dwie transpozycje nie mogą generować grupy $S_4$, natomiast włókna węzła $9_{46}$ dają się etykietować samymi transpozycjami.
+Węzły te są więc różne.
+Nie odróżniają ich ani kolorowania, ani wielomian Alexandera.
+
+Livingston pisze w swojej książce,\footnote{Rozdział 5.2: Węzły i grupy} że Thistlethwaite tworząc tablice węzłów pierwszych znalazł 12965 węzłów o 13 skrzyżowaniach o 5639 różnych wielomianach Alexandera.
+Używając etykietowań podgrupami grupy $S_5$ zmniejszył liczbę nierozwiązanych przypadków do mniej niż tysiąca.
+Perko pokazał zaś, że każdy $S_3$-kolorowalny węzęł jest $S_4$-kolorowalny.
+
+Niech $p \ge 3$ będzie liczbą pierwszą, natomiast $D_p = \langle r, s \mid r^p = s^2 = e, rsr = s \rangle$ grupą diedralną rzędu $2p$.
+Elementy tej grupy to $1, r, r^2, \ldots, r^{p-1}, s, sr, \ldots, sr^{p-1}$.
+,,Obrót'' $r^k$ jest sprzężony tylko ze swoją odwrotnością, ale ,,symetrie osiowe'' $sr^k$ tworzą jedną klasę sprzężoności.
+Łatwo widać, że dowolne dwie z nich generują całą grupę $D_p$.
+
+\begin{proposition}
+	Węzeł $K$ jest $p$-kolorowalny wtedy i tylko wtedy, gdy jest $D_p$-etykietowalny.
+\end{proposition}
+
+\begin{proof}
+	Załóżmy, że $K$ ma $n$ włókien.
+	Wiemy już, że każde $D_p$-etykietowanie wykorzystuje tylko elementy $sr^{a_1}, \ldots, sr^{a_n}$ dla $1 \le a_i \le p$.
+	Jest ono prawidłowe dokładnie wtedy, gdy analogiczne kolorowanie liczbami $a_1, \ldots, a_n$ jest prawidłowe.
+\end{proof}
+
+Etykietowania są więc uogólnieniem kolorowań.
+Istnieje prosta klasyfikacja grup, których można użyć do etykietowania.
+
+\begin{proposition}
+	Niech $K$ będzie węzłem, $\pi_1$ grupą podstawową jego dopełnienia, zaś $G$ dowolną grupą.
+	Następujące warunki są równoważne: $K$ jest $G$-etykietowalny; istnieje surjekcja $\pi_1 \to G$.
+\end{proposition}
 
 % Koniec sekcji Kolorowanie splotów
