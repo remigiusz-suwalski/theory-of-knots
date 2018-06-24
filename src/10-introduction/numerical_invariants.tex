@@ -121,7 +121,9 @@ Kolejne w hierarchi skomplikowania, czyli dwumostowe,
 to domknięcia wymiernych supłów, patrz fakt \ref{prp:two_bridge_tangle}.
 Węzły trójmostowe pozostają nie do końca zbadane.
 
-\todo[inline]{Hipoteza mówi, że $c \ge 3 br - 3$, z równością dla inewęzła i sum trójlistników.}
+\begin{conjecture}
+    Jeśli $K$ jest węzłem, to $c(K) \ge 3 br(K) - 3$, przy czym równość zachodzi dokładnie dla niewęzła, trójlistnika i sumy spójnej trójlistników (rozdział 4.3 z podręcznika \cite{murasugi96}).
+\end{conjecture}
 
 % Koniec podsekcji Liczba mostowa
 
@@ -287,6 +289,25 @@ Węzeł torusowy $T_{2,n}$ jest dwumostowy, jego sygnatura wynosi $n - 1$.
 Suma spójna węzłów prostych ma zerową sygnaturę i nieograniczoną liczbę mostową.
 
 % Koniec podsekcji Sygnatura
+
+\subsection{Liczba patykowa} % (fold)
+\label{sub:stick_index}
+Z angielskiego \emph{stick index}.
+
+\begin{definition}
+    Liczba patykowa $\operatorname{s}(K)$ to minimalna liczba odcinków w łamanej, która przedstawia węzeł.
+\end{definition}
+
+Liczba patykowa niewęzła to $3$, sumy spójnej $n$ trójlistników to $2n+4$ (wynik z \cite{greilsheimer97}).
+Negami pokazał w \cite{negami91}, że prawdziwe są nierówności
+\[
+    \frac{5+\sqrt{9 + 8 \operatorname{cr} K}}{2} \le \operatorname{s} K \le 2 \operatorname{cr} K
+\]
+Nie jest znany węzeł realizujący dolne ograniczenie, górne realizuje trójlistnik.
+W 2010 roku Huh oraz Oh poprawili górne ograniczenie do $3/2(\operatorname{cr} K+1)$ (pomijając niewęzeł, patrz \cite{huh11}).
+Dla węzłów torusowych znamy dokładne wartości: jeśli $2 \le p < q \le 2p$, to $\operatorname{s} T_{p,q} = 2q$ oraz $\operatorname{s} T_{p, p-1} = 2p$ (dowód pierwszej równości w \cite{jin97}).
+
+% Koniec podsekcji Liczba patykowa
 
 \subsection{Długość sznurowa} % (fold)
 \label{sub:ropelength}
