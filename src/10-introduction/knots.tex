@@ -1,47 +1,47 @@
 Teoria węzłów to gałąź topologii,
 która powstała z inspiracji węzłami,
-jakie pojawiają się w codziennym życiu: przy wiązaniu butów albo cumowaniu statków.
+jakie pojawiają się w~codziennym życiu: przy wiązaniu butów albo cumowaniu statków.
 Zajmuje się ona badaniem przede wszystkim węzłów,
 czyli pewnych włożeń okręgu $S^1$ w trójwymiarową przestrzeń euklidesową $\R^3$ lub sferę $S^3$,
 ale także splotów (zaplątanych w sobie węzłów), warkoczy, supłów oraz podobnych obiektów.
 Matematyczne węzły różnią się tym od zwykłych, że ich końce są ze sobą połączone.
+
 Oto kilka przykładów.
+Węzeł (a) nazywamy niewęzłem (jest to kalka angielskiego \emph{unknot}).
+Następne w kolejce widoczne są trójlistnik (b,~\emph{trefoil}), ósemka (c,~\emph{figure-eight}), pięciolistnik (d,~\emph{cinquefoil}) oraz słynna para Perko (e,~f~wg oryginalnej numeracji Rolfsena).
 
 \begin{figure}[H]
-	\begin{minipage}[b]{.11\linewidth}
+	\centering
+	\begin{minipage}[b]{.14\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{?}
+		$\begin{tikzpicture}[baseline=-0.65ex, scale=0.5] \begin{knot}[clip width=5, end tolerance=1pt] \strand[semithick] (0,0) circle (\linewidth); \end{knot}
+\end{tikzpicture}$
+		\subcaption{}
 	\end{minipage}
-	\begin{minipage}[b]{.11\linewidth}
+	\begin{minipage}[b]{.14\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{?}
+		\includegraphics[width=\linewidth]{../data/3_1.png}
+		\subcaption{$3_1$}
 	\end{minipage}
-	\begin{minipage}[b]{.11\linewidth}
+	\begin{minipage}[b]{.14\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{?}
+		\includegraphics[width=\linewidth]{../data/4_1.png}
+		\subcaption{$4_1$}
 	\end{minipage}
-	\begin{minipage}[b]{.11\linewidth}
+	\begin{minipage}[b]{.14\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{?}
+		\includegraphics[width=\linewidth]{../data/5_1.png}
+		\subcaption{$5_1$}
 	\end{minipage}
-	\begin{minipage}[b]{.11\linewidth}
+	\begin{minipage}[b]{.14\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{?}
+		\includegraphics[width=\linewidth]{../data/perko1.png}
+		\subcaption{$10_{161}$}
 	\end{minipage}
-	\begin{minipage}[b]{.11\linewidth}
+	\begin{minipage}[b]{.14\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{?}
-	\end{minipage}
-	\begin{minipage}[b]{.11\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{?}
+		\includegraphics[width=\linewidth]{../data/perko2.png}
+		\subcaption{$10_{162}$}
 	\end{minipage}
 \end{figure}
 
@@ -63,8 +63,6 @@ Można przyjąć nieidealną, naiwną definicję:
 \begin{definition}
 	Ciągłe oraz różnowartościowe odwzorowanie $S^1 \to \R^3$ to \textbf{węzeł}.
 \end{definition}
-
-\todo[inline]{Zdefiniować niewęzeł i narysować go.}
 
 Zastanówmy się, jakim formalizmem opisać manipulowanie fizycznym sznurkiem.
 Nie można użyć izotopii
