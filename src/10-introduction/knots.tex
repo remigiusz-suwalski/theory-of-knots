@@ -168,6 +168,10 @@ Stwierdzenie to przestaje być prawdziwe po zastąpieniu przestrzeni $\R^m$ prze
 	\end{figure}
 \end{example}
 
+\begin{definition}[rozszczepialność]
+	Splot, który jest niespójną sumą niepustych splotów, nazywamy rozszczepialnym.
+\end{definition}
+
 Jeśli dwa węzły są równoważne, to ich dopełnienia są oczywiście homeomorficzne.
 Pytanie o prawdziwość implikacji odwrotnej jako pierwszy zadał najprawdopodobniej Tietze\footnote{Praca \emph{Über die topologischen Invarianten mehrdimensionaler Mannigfaltigkeiten}.} w 1908 roku.
 Odpowiedź jest pozytywna: każdy węzeł jest wyznaczony jednoznacznie przez swoje dopełnienie.
@@ -191,11 +195,15 @@ których nie da się, patrząc na samo dopełnienie, odróżnić od splotu White
 Chociaż w świetle definicji \ref{def:knot} węzły są pewnymi regularnymi podzbiorami przestrzeni $\R^3$,
 z kombinatorycznego punktu widzenia wygodniej jest rysować je na  płaszczyźnie.
 
-\begin{definition} \label{def_diagrams}
+\begin{definition} [diagram] \label{def_diagrams}
 	Cień to rzut węzła $K \subseteq \R^3$ na płaszczyznę.
 	Diagram to cień bez katastrof
 	(potrójnych przecięć, stycznych i dziobów)
 	razem z informacją o tym, jak przebiegają skrzyżowania.
+\end{definition}
+
+\begin{definition} [włókno]
+	Fragment diagramu, który biegnie między dwoma kolejnymi tunelami (podskrzyżowaniami) nazywamy włóknem.
 \end{definition}
 
 \begin{proposition}
@@ -233,8 +241,7 @@ czy powierzchnia normalna na striangulowanej 3-rozmaitości jest (nie)ściśliwa
 To okazało się być wystarczającym do udzielenia negatywnej odpowiedzi na pytanie Thurstona:
 ,,czy przestrzeń Seiferta-Webera jest rozmaitością Hakena?'',
 a zatem wykraczającego poza poziom tej pracy.
-
-\todo[inline]{\url{http://geometrygames.org/SnapPea/index.html}}
+Patrz także {\url{http://geometrygames.org/SnapPea/index.html}.
 
 Przykładami trudnych w rozpoznaniu niewęzłów są: niewęzeł Goritza, Freedmana.
 
@@ -269,14 +276,14 @@ Nie możemy liczyć na istotne przyspieszenie:
 znalezienie przybliżenia wielomianu Jonesa jest problemem \#P-trudnym (\cite{kuperberg15}, \cite{vertigan05}),
 a przy znanych homologiach -- wręcz trywialnym.
 
-\todo[inline]{Metody kodowania węzłów i splotów}
+\subsection{Metody kodowania węzłów i splotów}
 Tait, Little wyprodukowali prawie bezbłędną tablicę węzłów o co najwyżej 11 skrzyżowaniach przy użyciu grafów.
 
-Todo:
-\begin{definition}[włókno]
-	Fragment diagramu, który biegnie między dwoma kolejnymi tunelami (podskrzyżowaniami) nazywamy włóknem.
-\end{definition}
+\subsubsection{Notacja Conwaya}
+Wprowadzona przez Conwaya w pracy ,,An Enumeration of Knots and Links, and Some of Their Algebraic Properties''.
 
-\begin{definition}[rozszczepialność]
-	Splot, który jest niespójną sumą niepustych splotów, nazywamy rozszczepialnym.
-\end{definition}
+\subsubsection{Notacja Dowkera--Thistlethwaite'a}
+Poprawia notację Taita.
+
+\subsubsection{Notacja Alexandera-Briggsa}
+Najbardziej tradycyjna, wprowadzona w 1927 roku, rozszerzona później przez Rolfsena.
