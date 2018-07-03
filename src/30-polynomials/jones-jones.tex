@@ -10,9 +10,9 @@
 
 Połączenie \emph{writhe} z nawiasem nazywamy ,,trikiem Kauffmana''.
 
-\begin{theorem}
+\begin{proposition}
 	Wielomian Jonesa jest niezmiennikiem zorientowanych splotów.
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
 	%Skorzystamy z tego, że indeks zaczepienia jest niezmiennikiem.
@@ -35,11 +35,21 @@ Pozwala bowiem odróżnić dowolne dwa węzły pierwsze o co najwyżej dziewięc
 Istnieją natomiast sploty o trywialnym wielomianie Jonesa, jest ich nawet nieskończenie wiele, jak Eliahou, Kauffman i Thistlethwaite pokazali w pracy \cite{eliahou03}.
 
 Wartości wielomianu Jonesa w niektórych pierwiastkach jedności są związane z innymi niezmiennikami węzłów.
-I tak dla splotu o $k$ komponentach mamy $V(1) = (-2)^k$, $V(-1) = (-1)^{k-1} \Delta(-1)$, $V(\omega) = 1$ (gdzie $\omega$ to nierzeczywisty pierwiastek trzeciego stopnia).
-Jeśli $\Delta(-1)$ jest postaci $8k \pm 1$, to $V(i) = 1$, w przeciwnym razie $V(i) = -1$.
+I tak przyjmując oznaczenie $\omega_n = \exp(2\pi i/n)$ mamy
 
-\todo[inline]{\url{https://mathoverflow.net/questions/176862/the-jones-polynomial-at-specific-values-of-t}}
+\begin{proposition} \label{jones_sharp_p_hard}
+	Niech $V$ będzie wielomianem Jonesa splotu $K$ o $n$ składowych spójności.
+	Wtedy:
+	\begin{itemize}
+		\item $V(1) = (-2)^{n-1}$;
+		\item $V(-1)$ jest rzędem pierwszej grupy homologii podwójnego nakrycia $S^3$ rozgałęzionego nad składowymi, jeśli jest torsyjna; $V(-1) = 0$ w przeciwnym razie;
+		\item $V(\omega_3) = 1$;
+		\item $V(i) = (-\sqrt 2)^{n-1}(-1)^{\operatorname{Arf} K}$ jeśli $K$ jest właściwym splotem (indeks zaczepienia każdej składowej o resztę splotu jest parzysty), $V(i) = 0$ w przeciwnym razie;
+		\item wielkość $3|V(\omega_6)|^2$ opisuje liczbę trzy-kolorowań splotu.
+	\end{itemize}
+	Dla węzłów te zależności można uprościć: $V(1) = 1$; $V(-1) = \pm \det K$; $V(i) = 1$ jeśli $\Delta(-1)$ jest postaci $8k \pm 1$, w przeciwnym razie $V(i) = -1$.
+\end{proposition}
 
-
+Poza powyżej opisanymi przypadkami, wartości wielomianu Jonesa nie można znaleźć w czasie wielomianowym od ilości skrzyżowań na diagramie (jest to problem $\#P$-trudny).
 
 % Koniec podsekcji Wielomian Jonesa
