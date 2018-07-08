@@ -93,6 +93,34 @@ z bazy danych ``The On-Line Encyclopedia of Integer Sequences'' (OEIS).
     \label{tablica_wezlow}
 \end{table}
 
+Można wyróżnić jeszcze jeden rodzaj symetrii.
+
+\begin{definition}
+    Węzeł $K$ nazywamy $n$-okresowym, jeśli istnieje obrót $f \colon \R^3 \to \R^3$ o kąt $2\pi/n$ wokół pewnej prostej $l$, rozłącznej z węzłem, taki że $f(K) = K$.
+\end{definition}
+
+Trójlistnik jest 3-okresowy, węzeł $5_1$ 5-okresowy (widać to na standardowym diagramie) i~2-okresowy.
+Tę drugą symetrię można dostrzec na diagramie realizującym indeks mostowy.
+Z~każdym węzłem okresowym związany jest inny, prostszy węzeł.
+Niech $p \colon \R^3 \to \R^3/f \simeq \R^3$ będzie rzutem na przestrzeń ilorazową.
+Wtedy $p(K)$ jest \emph{węzłem ilorazowym}, zaś $K$ to jego $n$-krotne nakrycie.
+
+Murasugi podał dwa warunki, które musi spełniać węzeł o okresie $n = p^r$, gdzie $r$ jest liczbą pierwszą.
+Do ich zrozumienia potrzebujemy prostej definicji.
+Ustalmy półprostą, która nie jest styczna do węzła $K$, po czym zorientujmy ją oraz węzeł.
+Indeksem zaczepienia $\lambda$ węzła $p(K)$ jest różnica między liczbą skrzyżowań dodatnich oraz ujemnych wzdłuż półprostej (bez znaku).
+
+\begin{proposition}
+    Niech $K$ będzie węzłem o okresie $n = p^r$, gdzie $p$ jest liczbą pierwszą.
+    Niech $J$ będzie jego węzłem ilorazowym, z indeksem zaczepienia $\lambda$.
+    Wtedy wielomian $\Delta_J$ jest dzielnikiem wielomianu $\Delta_K$ oraz istnieje pewna całkowita liczba $k$, taka że
+    \[
+        \Delta_K = \pm \Delta_J^n \left(1 + t + t^2 + \ldots + t^{\lambda - 1}\right)^{n-1} \mod p.
+    \]
+\end{proposition}
+
+Dowód to, jak zwykle, mozolne operacje na macierzach.
+
 % Koniec podsekcji Operacje na pojedynczym splocie
 
 \subsection{Sumy wielu węzłów} % (fold)
