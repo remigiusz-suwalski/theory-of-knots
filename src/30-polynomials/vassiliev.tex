@@ -1,0 +1,53 @@
+\section{Niezmienniki Wasiljewa} % (fold)
+\label{sec:vassiliev}
+Będziemy teraz rozważać węzły z samoprzecięciami.
+
+\begin{definition}
+	Obraz kawałkami liniowej funkcji $f \colon S^1 \to \R^3$ nazywamy węzłem singularnym, jeżeli funkcja $f$ jest różnowartościowa poza skończenie wieloma punktami.
+	Jeśli dwa punkty na okręgu mają ten sam obraz, to $K$ przecina się tam pod kątem prostym.
+	Dodatkowo wymagamy, by w żadnych trzech punktach funkcja $f$ nie przybierała tej samej wartości.
+\end{definition}
+
+Gdy używamy słowa węzeł, nigdy nie mamy na myśli węzła singularnego.
+Punkt, gdzie węzeł tnie samego siebie, nazywamy wierzchołkiem.
+
+Do każdego wierzchołka $A$ przypiszmy małe otoczenie domknięte $U_A$ oraz płaszczyznę $P_A$, która zawiera $U_A \cap K$, mały fragment węzła wokół punktu $A$. Dysk $P_A \cap U_A$ nazywamy płaskim dyskiem wokół wierzchołka $A$.
+
+\begin{definition}
+	Dwa singularne węzły $K, L$ traktujemy jako równoważne: $K \approx L$, jeśli istnieje zachowujący orientację homeomorfizm $\varphi$ przestrzeni $\R^3$ w siebie, który przenosi jeden węzeł na drugi: $\varphi(K) = L$ oraz indukuje bijekcję między rodzinami płaskich dysków $K$ i $L$.
+\end{definition}
+
+Ten drugi warunek gwarantuje nam, że skrzyżowania wokół podwójnych punktów nie ulegną zniszczeniu.
+Istnieje podobne kryterium dla diagramów.
+Dwa singularne diagramy są równoważne dokładnie wtedy, kiedy można między nimi przejść przy użyciu ciągu operacji $\Omega$:
+
+oraz ruchów Reidemeistera (poza małymi otoczeniami wierzchołków).
+
+Załóżmy teraz, że $v$ jest jakimś niezmiennikiem węzłów o wymiernych wartościach.
+Można indukcyjnie próbować go przedłużyć do węzłów singularnych.
+Znając jego wartości dla węzłów o co najwyżej $n - 1$ wierzchołkach,  wybieramy węzeł $K$ o $n$ wierzchołkach i kładziemy $v(K) = v(K_+) - v(K_-)$.
+Tak otrzymany byt nazywamy niezmiennikiem Wasiljewa rzędu co najwyżej $m$, gdy znika na wszystkich singularnych węzłach o $m + 1$ wierzchołkach.
+
+Istnieje jeden niezmiennik Wasiljewa rzędu zero i żadnych niezmienników rzędu jeden.
+
+\begin{example}
+	Niech $a_m$ będzie współczynnikiem stojącym przy $z^{2m}$ w wielomianie Conwaya.
+	Jest to niezmiennik Wasiljewa rzędu $2m$.
+\end{example}
+
+\begin{example}
+	Niech $b_m$ będzie współczynnikiem stojącym przy $q^m$ w rozwinięciu Taylora dla funkcji $V(e^q)$, gdzie $V$ oznacza wielomian Jonesa.
+	Jest to niezmiennik Wasiljewa rzędu co najwyżej $m$.
+\end{example}
+
+\begin{example}
+	Niech $c_m$ będzie $m$-tym współczynnikiem rozwinięcia Taylora dla wielomianu Jonesa wokół punktu $t = 1$.
+	Jest to niezmiennik Wasiljewa rzędu co najwyżej $m$.
+\end{example}
+
+% Niezmiennik Wasiljewa węzła z pętelką to zero.	
+
+Następujące nie są niezmiennikami Wasiljewa: sygnatura, indeks skrrzyżowaniowy, liczba gordyjska, indeks mostowy, indeks warkoczowy, genus.
+
+Ohyama pokazał w \cite{ohyama95}, że dla każdego węzła $K$ i liczby naturalnej $n$ istnieje nieskończona rodzina węzłów, których niezmienniki rzędu co najwyżej $n$ nie odróżniają od $K$.
+Istnieje przypuszczenie, że wszystkie niezmienniki Wasiljewa (jednocześnie) są już niezmiennikiem zupełnym.
