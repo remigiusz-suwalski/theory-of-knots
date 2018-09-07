@@ -1,5 +1,7 @@
 src/*.pdf
+knot-theory.pdf
 build
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
