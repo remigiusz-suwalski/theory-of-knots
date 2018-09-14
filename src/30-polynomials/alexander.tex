@@ -88,7 +88,18 @@ Wielomian nie odróżnia luster i odwrotności od wyjściowych węzłów.
 Znane są przykłady nietrywialnych węzłów o trywialnym wielomianie Alexandera ($1$), chociaż żaden z nich nie ma dziesięciu lub mniej skrzyżowań.
 Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, strona 167) lub cztery inne z 167 strony książki \cite{rolfsen76} Rolfsena.
 
-\todo[inline]{\url{https://mathoverflow.net/questions/185486/can-infinitely-many-alternating-knots-have-the-same-alexander-polynomial}}
+\begin{proposition}
+	Tylko skończenie wiele węzłów alternujących może mieć ten sam wielomian Alexandera.
+\end{proposition}
+
+\begin{proof}
+	Przeprowadzimy rozumowanie nie wprost.
+	Załóżmy, że istnieje ciąg $K_n$ węzłów alternujących o tym samym wielomianie Alexandera $\Delta_K(t)$.
+	Wszystkie jego wyrazy mają ten sam wyznacznik, ponieważ $\det K_n = |\Delta_K(-1)|$.
+	Z twierdzenia Bankwitza (\ref{thm:bankwitz}) wynika, że indeks skrzyżowaniowy węzłów $K_n$ jest wspólnie ograniczony.
+	
+	To prowadzi do sprzeczności: węzłów o danym indeksie skrzyżowaniowym jest tylko skończenie wiele. 
+\end{proof}
 
 \begin{proposition}
 	Niech $L$ będzie zorientowanym splotem.
