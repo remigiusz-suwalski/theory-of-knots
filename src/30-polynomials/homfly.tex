@@ -8,18 +8,21 @@ Jego nazwa pochodzi od sześciu odkrywców -- Hoste, Ocneanu, Millett, Freyd, Li
 Dwa lata później i niezależnie od nich, Przytycki z Traczykiem otrzymał ten sam obiekt w \cite{przytycki87}.
 Ich nazwiska czasami są pomijane ze względu na wolno działającą pocztę (!).
 
-\begin{definition} \label{homflydef}
+\begin{definition}
+    \label{homflydef}
+    \index{wielomian!HOMFLY}
     Wielomian HOMFLY zorientowanego splotu $L$ to niezmienniczy na izotopie wielomian Laurenta dwóch zmiennych $m, l$ taki, że $P(\LittleUnknot) = 1$ oraz
     \[
         l P(L_+) +  \frac 1l P(L_-) + mP(L_0) = 0,
     \]
-    przy oznaczeniach ze stwierdzenia \ref{tracheotomia}. \index{Wielomian!HOMFLY}
+    przy oznaczeniach ze stwierdzenia \ref{tracheotomia}.
 \end{definition}
 
 Relacja kłębiasta pozwala wywnioskować własności wielomianu sumy spójnej i prostej.
 Potrzebować będziemy lematu:
 
-\begin{lemma} \label{links_homfly}
+\begin{lemma}
+    \label{links_homfly}
     Wielomianem HOMFLY dla niesplotu o $n$ składowych jest
     \[
         P(U_n) = \left(-\frac{l+1/l}{m}\right)^{n-1}.
@@ -31,7 +34,8 @@ Potrzebować będziemy lematu:
 Można potraktować to jako proste ćwiczenie z indukcji matematycznej, pozostawiam je uwadze Czytelnika.
 %\end{proof}
 
-\begin{proposition} \label{homfly_sums}
+\begin{proposition}
+    \label{homfly_sums}
     Dla splotów $L_1, L_2$ zachodzą równości:
     \begin{align*}
         P(L_1 \sqcup L_2) & = - \frac{l + 1/l}{m} \cdot P(L_1) P(L_2) \\
@@ -125,7 +129,6 @@ M. B. Thistlethwaite wyznaczył wielomiany HOMFLY dla wszystkich 12966 węzłów
 Wśród nich 30 posiada wielomian Conwaya $1 + 2z^2 + 2z^4$, ale pary rozróżniane wielomianem HOMFLY mają także różne wielomiany Jonesa.
 Wielomian HOMFLY odróżnia $11_{388}$ od swojego odbicia, wielomiany Jonesa i Conwaya nie -- jest więc od nich istotnie mocniejszy.
 
-
 Jak elementarnie pokazał Kanenobu w pracy \cite{kanenobu86} z 1986 roku, istnieje nieskończenie wiele parami różnych węzłów o tym samym wielomianie.
 Wielomian HOMFLY nie odróżnia od siebie mutantów (z definicji \ref{def:mutant}).
 
@@ -136,8 +139,6 @@ Wielomian HOMFLY nie odróżnia od siebie mutantów (z definicji \ref{def:mutant
 
 % A POLYNOMIAL INVARIANT OF ORIENTED LINKS W. B. R. LICKORISH and KENNETH C. MILLET
 % Example 16 - książka
-
-
 
 Dla każdego splotu $L$ o $k$ składowych, $P_L(x,y) - 1$ jest krotnością $x+y-1$, zaś $P_L(x,y) + (-1)^K$ jest krotnością $x +y + 1$, zatem wielomian HOMFLY nigdy nie jest zerem.
 Uwaga: to jest inna parametryzacja!
