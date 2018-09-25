@@ -5,13 +5,13 @@ Rozpatrzmy węzeł $K$ w sferze $S^3$ jako brzegu czterowymiarowej kuli $B^4$.
 Punkt wewnętrzny $P$ dysku $D$ w tej kuli nazywamy osobliwym, jeśli nie można wskazać dla niego żadnego otoczenia $U$, homeomorficznego z $B^4$, takiego że $\partial U \cap D$ jest węzłem trywialnym w $\partial U$, 3-sferze.
 Jeśli $K$ jest brzegiem dysku $D$ pozbawionego punktów osobliwych, to jest on węzłem plastrowym.
 
-
 W tej sekcji opiszemy pewną czterowymiarową własność węzłów.
 Węzły plastrowe na sferze $S^3$ to takie, które są brzegiem ładnie zanurzonego dysku $D$ w 4-kuli.
 Co dokładnie znaczy wyrażenie ,,ładnie zanurzony'' zależy od kontekstu: istnieją węzły gładko albo też topologicznie plastrowe.
 Precyzuje to pochodząca najwyraźniej od Foxa (1962) definicja:
 
 \begin{definition}
+    \index{węzeł!plastrowy}
     Węzeł $K \subseteq S^3$ nazywamy plastrowym, jeśli istnieje płaski dysk $D$ zawarty w $B^4$ taki, że $K = \partial D = D \cap S^3$.
     Płaski, czyli: dysk $D$ posiada otoczenie $N$ będące kopią zbioru $D \times I^2$, która spotyka sferę $S^3$ dokładnie w $\partial D \times I^2$.
 \end{definition}
@@ -26,7 +26,8 @@ Lista ta powstała na podstawie portalu KnotAtlas.
 Węzły plastrowe (slice), skręcone (twist).
 
 \begin{definition} \label{twist_knots}
-    Węzeł powstały przez $n$-krotne półskręcanie domkniętej pętli oraz splecienie końców nazywamy węzłem skręconym. \index{Węzeł!skręcony}
+    \index{węzeł!skręcony}
+    Węzeł powstały przez $n$-krotne półskręcanie domkniętej pętli oraz splecienie końców nazywamy węzłem skręconym.
 \end{definition}
 
 Węzły skręcone to dokładnie towarzyszące niewęzłowi w węzłach satelitarnych, tak zwane whiteheadowskie duble niewęzła.
@@ -62,14 +63,16 @@ Dwa sploty $K, L \subseteq S^n$ nazywamy zgodnymi (\emph{concordant}), jeśli is
 
 Zgodność jest relacją równoważności, słabszą od izotopii, ale mocniejszą od homotopii.
 Oznaczmy zbiór jej klas abstrakcji przez $C^1$.
-Stanowi on grupę abelową, z działaniem danym wzorem $[K] + [L] = [K \shrap L]$ i niewęzłem jako element neutralny. \index{Grupa!zgodności}
+\index{grupa!zgodności}
+Stanowi on grupę abelową, z działaniem danym wzorem $[K] + [L] = [K \shrap L]$ i niewęzłem jako element neutralny.
 Elementem odwrotnym do $[K]$ jest $[-K^*]$.
 
 \begin{proposition}
     Albo wszystkie trzy węzły $K, L, K \shrap L$ są plastrowe, albo co najwyżej jeden z nich.
 \end{proposition}
 
-Poniższa własność znana jest w literaturze jako warunek Foxa-Milnora. \index{Warunek Foxa-Milnora}
+\index{warunek Foxa-Milnora}
+Poniższa własność znana jest w literaturze jako warunek Foxa-Milnora.
 
 \begin{proposition}
     Wielomian Alexandera węzła plastrowego $K$ jest postaci $f(t) f(1/t)$, gdzie $f(t)$ jest pewnym wielomianem Laurenta nad pierścieniem $\Z$.
@@ -84,7 +87,8 @@ Poniższa własność znana jest w literaturze jako warunek Foxa-Milnora. \index
 \end{proof}
 
 \begin{definition}
-    Węzeł $K = f(S^1)$ będący brzegiem singularnego dysku $f \colon D \to S^3$ posiadającego następującą własność: każda przecinająca siebie składowa jest łukiem $A \subseteq f(D^2)$, dla którego $f^{-1}(A)$ składa się z dwóch łuków w $D^2$ (jeden z nich jest wewnętrzny), nazywamy taśmowym. \index{Węzeł!taśmowy}
+    \index{węzeł!taśmowy}
+    Węzeł $K = f(S^1)$ będący brzegiem singularnego dysku $f \colon D \to S^3$ posiadającego następującą własność: każda przecinająca siebie składowa jest łukiem $A \subseteq f(D^2)$, dla którego $f^{-1}(A)$ składa się z dwóch łuków w $D^2$ (jeden z nich jest wewnętrzny), nazywamy taśmowym.
 \end{definition}
 
 Suma spójna dowolnego węzła $K$ oraz jego lustra $mK$ jest taśmowa.

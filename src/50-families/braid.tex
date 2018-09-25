@@ -4,7 +4,9 @@ Podam teraz opis grupy warkoczy, rozważanej po raz pierwszy niejawnie przez A. 
 O dwóch punktach $(d_1, t_1)$, $(d_2, t_2)$ w $B^2 \times [0, 1] \subseteq \R^3$ powiemy, że łączący je odcinek jest malejący, jeśli $t_1 > t_2$.
 Łamaną złożoną z malejących odcinków także można nazwać malejącą.
 
-\begin{definition}[warkocz] \label{braid_def}
+\begin{definition}[warkocz]
+    \label{braid_def}
+    \index{warkocz}
     Teoriomnogościową sumę parami rozłącznych łamanych malejących, które łączą zbiory $\{x_1, \ldots, x_n\} \times \{1\}$ oraz $\{x_1, \ldots, x_n\} \times \{0\}$, nazywamy warkoczem o $n$ pasmach.
 \end{definition}
 
@@ -13,7 +15,8 @@ Wtedy dwa warkocze uznajemy za równoważne, jeśli istnieje między nimi izotop
 Przez analogię do węzłów można zdefiniować diagramy warkoczy jako cienie bez katastrof.
 Najczęściej rzutujemy prostopadle do odcinka $\{0\} \times [0, 1]$.
 
-\begin{definition} \index{Grupa!warkoczy}
+\begin{definition}
+    \index{grupa!warkoczy}
     Określmy pomocniczo dwie kontrakcje $B^2 \times [0,1] \to B^2 \times [0,1]$:
     \begin{align*}
         \psi_1(d, t)&  = (d, t/2) \\
@@ -133,7 +136,7 @@ Co ciekawe, domknięcia warkoczy były rozważane przed samymi warkoczami!
 
 \begin{theorem}[Alexander, 1923] \label{alex_thm}
      Każdy węzeł i splot powstaje przez domknięcie pewnego splotu.
-     \index{Twierdzenie!Alexandera}
+     \index{twierdzenie!Alexandera}
 \end{theorem}
 
 Wielomian Alexandera wykrywa czasami węzły, których nie otrzyma się domykając ,,małe'' warkocze.
@@ -155,6 +158,7 @@ Dowody tych faktów zawiera praca \cite{jones85} Jonesa.
     Kompletny i godny naśladowania dowód znajduje się w książce \cite{birman74} Birman.
 \end{proof}
 
+\index{reprezentacja Burau}
 Na zakończenie sekcji wspomnijmy o macierzowej reprezentacji Burau.
 Wyznaczona jest ona przez obrazy generatorów:
 \[
@@ -173,7 +177,5 @@ Bigelow w 1999 roku znalazł nietrywialne elementy jądra zadane komutatorem $[\
         \psi_1 & = \sigma_3^{{-1}}\sigma_2\sigma_1^2\sigma_2\sigma_4^3\sigma_3\sigma_2, \\
 \psi_2 & = \sigma_4^{{-1}}\sigma_3\sigma_2\sigma_1^{{-2}}\sigma_2\sigma_1^2\sigma_2^2\sigma_1\sigma_4^5.
     \end{align*}
-
-
 
 % Koniec sekcji warkocze
