@@ -98,8 +98,8 @@ Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, s
 	Załóżmy, że istnieje ciąg $K_n$ węzłów alternujących o tym samym wielomianie Alexandera $\Delta_K(t)$.
 	Wszystkie jego wyrazy mają ten sam wyznacznik, ponieważ $\det K_n = |\Delta_K(-1)|$.
 	Z twierdzenia Bankwitza (\ref{thm:bankwitz}) wynika, że indeks skrzyżowaniowy węzłów $K_n$ jest wspólnie ograniczony.
-	
-	To prowadzi do sprzeczności: węzłów o danym indeksie skrzyżowaniowym jest tylko skończenie wiele. 
+
+	To prowadzi do sprzeczności: węzłów o danym indeksie skrzyżowaniowym jest tylko skończenie wiele.
 \end{proof}
 
 \begin{proposition}
@@ -250,6 +250,22 @@ Spełniona jest wtedy inna relacja kłębiasta:
 Wielomian Jonesa (zdefiniowany w kolejnej sekcji) spełnia podobną równość.
 Ich istnienie może nasunąć przypuszczenie, że dają się wspólnie uogólnić.
 Tak jest w rzeczywistości -- mocniejszym niezmiennikiem okazał się wielomian HOMFLY-PT.
+
+Poniższa hipoteza pochodzi od Stojmenowa.
+
+\begin{conjecture}
+	Niech $\nabla_k$ będzie współczynnikiem przy $z^k$ w wielomianie Conwaya, zaś $c$ indeksem skrzyżowaniowym splotu $L$.
+	Wtedy spełniona jest nierówność
+	\[
+		|\nabla_k(L)| \le \underbrace{\frac{1}{2^kk!}}_{C_k} \cdot c^k.
+	\]
+\end{conjecture}
+
+Nierówność jest nietrywialna tylko dla splotu $L$ z $k+1, k-1, \ldots$ składowymi; trywialna dla $k = 0$, łatwa dla $k=1$ (wtedy $\nabla_1$ jest indeksem zaczepienia splotów o dwóch składowych) oraz udowodniona dla węzłów i $k=2$ przez Polyaka, Viro w 2001 (,,On the Casson knot invariant'').
+Istnienie stałej $C_k$ wynika z dowodu hipotezy Lin-Wanga, patrz prace:
+,,Polynomial invariants are polynomial'' (Bar-Natan dla splotów) i ,,On finiteness of Vassiliev invariants and a proof of the Lin-Wang conjecture via braiding polynomials'' (Stojmenow dla splotów), ale trudno obliczyć jej wartość.
+
+\todo{Użyć prawdziwych referencji bibliograficznych.}
 
 \begin{proposition}
 	Wielomianem Alexandera splotu rozszczepialnego jest $1$.
