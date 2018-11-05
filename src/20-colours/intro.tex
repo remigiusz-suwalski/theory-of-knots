@@ -152,12 +152,18 @@ Pierścienie Boromeuszy nie kolorują się modulo trzy, nie są zatem rozszczepi
 Sama kolorowalność nie mówi wiele, splot jest kolorowalny lub nie.
 Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, być może trywialnych, także jest niezmiennikiem (mocniejszym).
 
+Niech $\tau_3(K)$ oznacza liczbę trójkolorowań węzła $K$.
+
 \begin{proposition}
-	Istnieje nieskończenie wiele węzłów.
+	Jeśli $K, L$ są węzłami, to $3\tau_3(K \shrap L) = \tau_3(K)\tau_3(L)$.
 \end{proposition}
 
+\begin{corollary}
+	Istnieje nieskończenie wiele węzłów.
+\end{corollary}
+
 \begin{proof}
-	Suma spójna $n$ trójlistników ma $3^n - 3$ nietrywialnych $3$-kolorowań.
+	Suma spójna $n$ trójlistników ma $3^n$ (być może trywialnych) $3$-kolorowań.
 \end{proof}
 
 \begin{proposition}
@@ -228,5 +234,7 @@ Istnieje prosta klasyfikacja grup, których można użyć do etykietowania.
 	Niech $K$ będzie węzłem, $\pi_1$ grupą podstawową jego dopełnienia, zaś $G$ dowolną grupą.
 	Następujące warunki są równoważne: $K$ jest $G$-etykietowalny; istnieje surjekcja $\pi_1 \to G$.
 \end{proposition}
+
+
 
 % Koniec sekcji Kolorowanie splotów
