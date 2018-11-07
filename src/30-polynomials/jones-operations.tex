@@ -30,7 +30,9 @@
 \begin{proof}
     Wybierzmy diagramy $D, E$ dla (odpowiednio) $L, M$.
     Po podstawieniu $t^{1/2}=A^{-2}$ widzimy, że chcemy pokazać
-    $(-A)^{-3w(D\sqcup E)}\langle D\sqcup E\rangle =(-A^2-A^{-2})(-A)^{-3(w(D)+w(E))}\langle D\rangle  \langle E\rangle$.
+    \[
+        (-A)^{-3w(D\sqcup E)} \langle D\sqcup E\rangle = (-A^2-A^{-2})(-A)^{-3(w(D)+w(E))} \langle D \rangle \langle E \rangle.
+    \]
 
     Oczywiście $w(D\sqcup E)=w(D)+w(E)$, więc wystarczy udowodnić, że
     \[
@@ -40,10 +42,12 @@
     Oznaczmy przez $f_1(D)$, $f_2(D)$ lewą i prawą stronę ostatniego równania.
     Są to wielomiany Laurenta, które zależą tylko od $D$.
     Aksjomaty Kauffmana pozwalają na pokazanie, że obie funkcje mają następujące własności:
-    $f_i(\LittleUnknot)=(-A^2-A^{-2})\langle E\rangle$,
-    $f_i(D\sqcup\LittleUnknot)=(-A^2-A^{-2})f_i(D)$,
-    $f_i(\LittleRightCrossing)=Af_i(\LittleRightSmoothing) + A^{-1}f_i(\LittleLeftSmoothing)$.
-    To pozwala na wyznaczenie ich wartości dla dowolnego $D$, zatem $f_1 \equiv f_2$, co kończy dowód.
+    \begin{align*}
+        f_i(\LittleUnknot)        & = (-A^2-A^{-2}) \langle E \rangle \\
+        f_i(D\sqcup\LittleUnknot) & = (-A^2-A^{-2}) f_i(D) \\
+        f_i(\LittleRightCrossing) & = Af_i(\LittleRightSmoothing) + A^{-1}f_i(\LittleLeftSmoothing).
+    \end{align*}
+    To wyznacza ich wartości dla dowolnego diagramu $D$, zatem $f_1 \equiv f_2$, co kończy dowód.
 \end{proof}
 
 \begin{proof}
