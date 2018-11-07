@@ -9,6 +9,8 @@
 \RequirePackage{Alegreya}
 \RequirePackage[tracking]{microtype}
 \RequirePackage[compact]{titlesec}
+\RequirePackage{paralist}
+
 % \RequirePackage[table]{xcolor} legacy stuff?
 \RequirePackage[
     paperwidth=6.14in,
