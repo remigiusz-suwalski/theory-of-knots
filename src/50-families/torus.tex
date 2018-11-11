@@ -69,24 +69,6 @@ Okazuje się, że innych obiektów już nie ma.
 % Axes -> False
 % ]
 
-Nietrywialne węzły torusowe są pierwsze i odwracalne, ale nie achiralne (mają niezerową sygnaturę).
-
-\begin{proposition}
-    Dla $q, r > 0$ zdefiniujmy wielkość $\sigma(q, r) = - \sigma(K_{q, r})$.
-    Wtedy, jeśli
-    \begin{itemize}[leftmargin=*]
-    \itemsep0em
-        \item $2r < q$ i $r$ jest parzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2$.
-        \item $2r < q$ i $r$ jest nieparzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2 - 1$.
-        \item $\sigma(2r, r) = r^2 - 1$.
-        \item jeśli $r \le q < 2r$ i $r$ jest parzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-1$.
-        \item jeśli $r \le q < 2r$ i $r$ jest nieparzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-2$.
-    \end{itemize}
-    Co więcej, $\sigma(q, r) = \sigma(r, q)$, $\sigma(q, 1) = 0$, $\sigma(q, 2) = q-1$.
-\end{proposition}
-
-Dowód zawiera praca \cite{litherland81}.
-
 \begin{proposition}
     Ustalmy względnie pierwsze $q, r$ takie, że $|q|, |r| \ge 2$.
     Splot $K(q, r)$ jest równoważny z odwrotnym do niego splotem $K(-q, -r)$.
@@ -99,7 +81,7 @@ Sfera $S^3$ powstaje z powierzchni dwóch węzłów trywialnych z wnętrzem ($D^
 % {\color{red} Longitude, meridian -- ustalić słownictwo}
 
 Macierze Seiferta $M$ mają nieskomplikowaną blokową budowę, która może posłużyć do znalezienia wielomianu Alexandera (wzorem $\Delta = \det (M - tM^t)$).
-Rachunki są nieco uciążliwe, oto ich wynik:
+Rachunki są nieco uciążliwe.
 
 \begin{proposition}
     Wielomianem Alexandera splotu torusowego $K(q, r) \neq K(0,0)$ o $d$ składowych jest
@@ -107,6 +89,29 @@ Rachunki są nieco uciążliwe, oto ich wynik:
         \Delta_{q, r}(t) = (-1)^{d-1} \frac{(1-t)(1 - t^{qr/d})^d}{(1-t^q)(1-t^r)} \left/t^{(q-1)(r-1)/2}\right. .
     \]
 \end{proposition}
+
+\begin{proof}
+    Macierzą Seiferta węzła torusowego $K(q,r)$ jest macierz
+    \[
+        M = \begin{bmatrix}
+            B & & & & \\
+            -B & B & & & \\
+            & \ddots & \ddots & & \\
+            & & \ddots & B & \\
+            & & & -B & B
+        \end{bmatrix}
+    \]
+    złożona z $(r-1)^2$ bloków o wymiarach $(q-1) \times (q-1)$:
+    \[
+        B \begin{bmatrix}
+            -1 & & & & \\
+            1 & -1 & & & \\
+            & 1 & \ddots & & \\
+            & & \ddots & -1 & \\
+            & & & 1 & -1
+        \end{bmatrix} \qedhere
+    \]
+\end{proof}
 
 Znajomość wielomianu Alexandera wystarcza na szczęście do podania pełnej klasyfikacji węzłów torusowych bez uciążliwego dowodu.
 
@@ -124,6 +129,27 @@ Znajomość wielomianu Alexandera wystarcza na szczęście do podania pełnej kl
 \end{proof}
 
 Podamy teraz wartości całkowitoliczbowych niezmienników dla węzłów torusowych przy założeniu, że $q$ lub $r$ nie jest zerem.
+Nietrywialne węzły torusowe są pierwsze i odwracalne, ale nie achiralne (mają niezerową sygnaturę).
+
+\begin{proposition}
+    Węzeł torusowy $K(q, r)$ ma okres $|q|$ oraz $|r|$.
+\end{proposition}
+
+\begin{proposition}
+    Dla $q, r > 0$ zdefiniujmy wielkość $\sigma(q, r) = - \sigma(K_{q, r})$.
+    Wtedy, jeśli
+    \begin{itemize}[leftmargin=*]
+    \itemsep0em
+        \item $2r < q$ i $r$ jest parzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2$.
+        \item $2r < q$ i $r$ jest nieparzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2 - 1$.
+        \item $\sigma(2r, r) = r^2 - 1$.
+        \item jeśli $r \le q < 2r$ i $r$ jest parzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-1$.
+        \item jeśli $r \le q < 2r$ i $r$ jest nieparzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-2$.
+    \end{itemize}
+    Co więcej, $\sigma(q, r) = \sigma(r, q)$, $\sigma(q, 1) = 0$, $\sigma(q, 2) = q-1$.
+\end{proposition}
+
+Dowód zawiera praca \cite{litherland81}.
 
 \begin{proposition}[Murasugi, 1991]
     Mamy $cr(K_{q,r}) = \min\{|q|(|r| -1), |r|(|q|-1)\}$.
