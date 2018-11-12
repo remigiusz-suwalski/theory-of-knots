@@ -281,20 +281,106 @@ C. Petronio, A. Zanellatiego.
 Innym narzędziem wykrywającym niewęzły jest homologia Chowanowa (opisana później),
 jak pokazał Kronheimer z~Mrówką \cite{kronheimer11}.
 Bar-Natan, topolog izraelski, napisał program liczący te homologie szybko \cite{barnatan07},
-zapewne w czasie $O(\exp(c \sqrt n))$, dla diagramu o $n$ skrzyżowaniach.
+zapewne w~czasie $O(\exp(c \sqrt n))$, dla diagramu o~$n$ skrzyżowaniach.
 Nie możemy liczyć na istotne przyspieszenie:
 znalezienie przybliżenia wielomianu Jonesa jest problemem \#P-trudnym (\cite{kuperberg15}, \cite{vertigan05}),
 a przy znanych homologiach -- wręcz trywialnym.
 Patrz też \ref{jones_sharp_p_hard}.
 
-\subsection{Metody kodowania węzłów i splotów}
-Tait, Little wyprodukowali prawie bezbłędną tablicę węzłów o co najwyżej 11 skrzyżowaniach przy użyciu grafów.
+\subsection{Historia tablic węzłów}
+Pierwszą osobą, która podjęła się szukania węzłów, był Peter Guthrie Tait, szkocki fizyk.
+Razem z Thomsonem (lordem Kelvinem) wierzyli, że węzły są kluczem do zrozumienia widma spektroskopowego różnych pierwiastków: na przykład atom sodu mógł być splotem Hopfa ze względu na dwie linie emisyjne.
+Eksperyment Michelsona-Morleya z 1887 roku zabił ich ,,wirową teorię atomu'', ale nie miało to znaczenia dla teorii węzłów jako działu matematyki.
 
-\subsubsection{Notacja Conwaya}
-Wprowadzona przez Conwaya w pracy ,,An Enumeration of Knots and Links, and Some of Their Algebraic Properties''.
+Używana po dziś dzień strategia, którą przyjął Tait, jest stosunkowa prosta: narysować wszysktie możliwe diagramy o~zadanym indeksie skrzyżowaniowym, po czym połączyć ze sobą te, które przedstawiają jeden węzeł.
+Na potrzeby pierwszego etapu Tait wymyślił schemat kodowania diagramów.
+Wiele lat wcześniej, Gauss wraz ze swoim uczniem Listingiem badał węzły i~opracował (niezależnie!) podobną notację.
+My przytoczymy opis dalszego ulepszenia tej metody, zwanego notacją Dowkera-Thistletwaite’a.
 
+Tait wykorzystując swoją notację podał w~1876 pierwszą tablicę piętnastu węzłów o~mniej niż ośmiu skrzyżowaniach.
+Nie należy traktować tego jako skromny wynik: nie miał on do dyspozycji żadnych twierdzeń topologicznych do odróżniania węzłów.
+Onieśmielony przez liczbę możliwych ciągów dla kolejnych indeksów skrzyżowaniowych, powstrzymał się przed rozszerzaniem swojej tablicy.
+To właśnie grupowanie diagramów przedstawiających ten sam węzeł, a~nie samo szukanie wszystkich możliwych diagramów, sprawia trudność.
+
+Aby sobie pomóc, Tait znalazł lokalną modyfikację diagramu, która nie zmienia indeksu skrzyżowaniowego, znaną obecnie jako flype.
+
+\todo[inline]{Narysować ruch flype.}
+
+Inną taktykę szukania węzłów przyjał wielebny Thomas Kirkman: zaczynał od małego zbioru "nieredukowalnych" rzutów, do których systematycznie dokładał skrzyżowania.
+Tait przeczytał pracę Kirkmana, po czym w~latach 1884/1885 opracował listę węzłów alternujących o~mniej niż 11 skrzyżowaniach.
+Tuż przed oddaniem jej do druku odkrył inny spis węzłów stworzony przez amerykańskiego naukowca Charlesa Little'a.
+Znalazł wtedy jeden duplikat u~siebie, natomiast u Little'a jeden duplikat i~jedno pominięcie.
+
+Zachęcony przez Taita, Little zabrał się za alternujące węzły o~11 skrzyżowaniach i~za trudniejsze zadanie, stablicowanie węzłów niealternujących, czyli takich, które nie posiadają alternującego diagramu.
+Jak wynika z~pierwszej pracy Taita, początkowo nie wierzono, że takie w~ogóle istnieją.
+Dowód znaleziono dopiero w~1930 roku, niealternujące są $8_{19}$, $8_{20}$, $8_{21}$, ale nie węzły o mniejszej liczbie skrzyżowań.
+Little pracował przez sześć lat (1893 -- 1899) i~znalazł 43 niealternujące węzły o~10 skrzyżowaniach.
+Żadnego nie pominął, ale trafił mu się jeden duplikat.
+Sundberg, Thistlethwaite pokazali w 1998 roku, że stosunek liczby splotów alternujących do wszystkich maleje wykładniczo (\cite{sundberg98}):
+
+\begin{proposition}
+    Niech $a_n$ oznacza liczbę pierwszych, alternujących supłów o $n$ skrzyżowaniach.
+    Wtedy $a_n \sim (3c_1/4\sqrt{\pi})n^{-5/2}\lambda^{n-3/2}$, gdzie $c_1$ i $\lambda = (101 + \sqrt{21001})/40$ są jawnie znanymi stałymi.
+    Niech $A_n$ oznacza liczbę pierwszych, alternujących splotów o $n$ skrzyżowaniach.
+    Wtedy $A_n \approx \lambda^n$, dokładniej: jeśli $n \ge 3$, to 
+    \[
+    	\frac{a_{n-1}}{16n - 24} \le A \le \frac{a_n - 1}{2}.
+    \]
+\end{proposition}
+
+W kolejnych dziesięcioleciach nie nastąpił znaczący postęp, zarówno w~rozszerzaniu tablic jak i~sprawdzaniu tych już istniejących.
+Haseman w~1918 roku znalazł achiralne węzły o~12 i~14 skrzyżowaniach.
+W 1927 roku Alexander z~Briggsem przy użyciu pierwszej grupy homologii rozgałęzionego nakrycia cyklicznego (!) potrafili odróżnić od siebie dowolne dwa węzły (z~pominięciem trzech par) o~co najwyżej 9 skrzyżowaniach.
+Reidemeister poradził sobie z~tymi wyjątkami w~1932 roku, korzystając z~indeksu zaczepienia i~homomorfizmów z~grupy węzła na grupy diedralne.
+% branch curves in irregular covers associated to homomorphisms of the knot group onto dihedral groups
+
+%%%%% Tait, Little wyprodukowali prawie bezbłędną tablicę węzłów o~co najwyżej 11 skrzyżowaniach przy użyciu grafów.
+
+Dopiero Conway w~latach sześćdziesiątych minionego wieku znalazł pierwsze węzły o~mniej niż 12 skrzyżowaniach oraz wszystkie sploty o~mniej niż 11 skrzyżowaniach w~oparciu o~pomysły Kirkmana.
+% An enumeration of knots and links, 1970.
+Zajęło mu to jedynie kilka godzin!
+Conway znalazł 1 duplikat oraz 11 pominięć w~tablicach Little'a, ale sam popełnił 4 pominięcia.
+Przeoczył między innymi słynny duplikat w~niealternującej tablicy Little'a, parę Perko.
+% 1974?
+Przyczyną było prawdopodobnie to, że dwa diagramy miały różny spin:
+Little błędnie twierdził, że spin minimalnego diagramu jest niezmiennikiem, gdyż błędnie założył, że flype oraz 2-przejścia wystarczają do zmiany jednego minimalnego diagramu w~inny.
+
+Pominęcia w~tablicy Conwaya znalazł Caudron w~1980 roku.
+Nieopublikowany manuskrypt Bonahona, Siebenmanna klasyfikuje węzły algebraiczne.
+Z~nielicznymi niealgebraicznymi węzłami do 11 skrzyżowań poradził sobie Perko około 1980 roku (,,Invariants of 11-crossing knots'').
+To był kres ery ręcznych obliczeń.
+
+Na początku lat osiemdziesiątych Dowker i~Thistlethwaite stabularyzowali z~pomocą komputera węzły do 13 skrzyżowań. 
+Przez blisko dekadę nic się nie działo, aż grupa studentów wygrała dostęp do superkomputera Cray.
+Razem z~Hoste znaleźli alternujące węzły do 14 skrzyżowań, jednocześnie sprawdzając istniejące tabele Thistlethwaite'a.
+Około roku 1998 Hoste z~Weeksem (oraz niezależnie Thistlethwaite) znaleźli 1701936 pierwszych węzłów do 16 skrzyżowań.
+Spośród nich, tylko 32 nie jest węzłami hiperbolicznymi, wszystkie pozostałe poddają się maszynerii geometrii hiperbolicznej.
+
+\subsection{Hipotezy Taita}
+\begin{conjecture}[I hipoteza Taita]
+	Zredukowany alternujący diagram (splotu) ma minimalny indeks skrzyżowaniowy.
+\end{conjecture}
+
+\begin{conjecture}[II hipoteza Taita]
+	Achiralny splot alternujący ma zerowy spin.
+\end{conjecture}
+
+\begin{conjecture}[III hipoteza Taita]
+	Niech $D_1, D_2$ będą zredukowanymi alternującymi diagramami zorientowanego pierwszego splotu.
+	Wtedy diagram $D_2$ można otrzymać z~$D_1$ korzystając jedynie z~ruchu \emph{flype}.
+\end{conjecture}
+
+Z III hipotezy Taita wynika, że dwa zredukowane diagramy alternujące tego samego węzła mają ten sam spin: ruch flype nie zmienia spinu.
+Bezpośredni dowód przeprowadzili Murasugi (1987) i Thistlethwaite (1988).
+My pokażemy nieco później, czyli po poznaniu wielomianu Jonesa, że wszystkie trzy hipotezy są prawdziwe.
+
+\subsection{Metody kodowania}
 \subsubsection{Notacja Dowkera--Thistlethwaite'a}
 Poprawia notację Taita.
+Przypisuje ona (niejednocznacznie) każdemu węzłowi permutację znakowanych liczb parzystych $\pm 2, \pm 4, \ldots, \pm 2N$.
 
 \subsubsection{Notacja Alexandera-Briggsa}
-Najbardziej tradycyjna, wprowadzona w 1927 roku, rozszerzona później przez Rolfsena.
+Najbardziej tradycyjna, wprowadzona w~1927 roku, rozszerzona później przez Rolfsena.
+
+\subsubsection{Notacja Conwaya}
+Wprowadzona przez Conwaya w~pracy ,,An Enumeration of Knots and Links, and Some of Their Algebraic Properties''.
