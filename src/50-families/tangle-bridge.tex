@@ -1,19 +1,19 @@
-\subsection{Sploty o dwóch mostach} % (fold)
+\subsection{Sploty o~dwóch mostach} % (fold)
 \label{sub:twobridge}
 
 \todo[inline]{sygnatura: Murasugi, 192.}
 
 Zajmiemy się teraz indeksem mostowym.
 Wiemy, że węzeł trywialny jest jednomostowy.
-Następne węzły (lub sploty) dwumostowe są pierwsze, alternujące, odwracalne i mają co najwyżej dwie składowe.
-Jako pierwszy studiował je Bankwitz z Schumannem w 1934 roku.
+Następne węzły (lub sploty) dwumostowe są pierwsze, alternujące, odwracalne i~mają co najwyżej dwie składowe.
+Jako pierwszy studiował je Bankwitz z~Schumannem w~1934 roku.
 
 \begin{proposition}
 \label{prp:two_bridge_tangle}
-	Sploty z dwoma mostami to dokładnie sploty typu $D(T)$ dla pewnego supła wymiernego $T$.
+	Sploty z~dwoma mostami to dokładnie sploty typu $D(T)$ dla pewnego supła wymiernego $T$.
 \end{proposition}
 
-Sploty otrzymane z supłów określa się czasami jako wymierne albo \emph{4-plats}.
+Sploty otrzymane z~supłów określa się czasami jako wymierne albo \emph{4-plats}.
 
 \begin{proposition}
 \label{prp:two_bridge_hyperbolic}
@@ -25,7 +25,7 @@ Sploty otrzymane z supłów określa się czasami jako wymierne albo \emph{4-pla
 \end{proof}
 
 %\todo[inline]{Murasugi Theorem 9.3.3 (138) lub Janiak-Osajca, Pogoda (34).}
-% Aus der unten stehenden Klassifikation ergibt sich, dass man jede Verschlingung mit 2 Brücken wie im Bild rechts darstellen kann, wobei {\displaystyle a_{i}\in \mathbb {Z} } a_{i}\in \mathbb{Z }  die Anzahl der Halbtwists in der jeweiligen Box bezeichnet und für gerade bzw. ungerade {\displaystyle i} i positive {\displaystyle a_{i}} a_{i} links- bzw. rechtshändigen Halbtwists entsprechen.
+% Aus der unten stehenden Klassifikation ergibt sich, dass man jede Verschlingung mit 2 Brücken wie im Bild rechts darstellen kann, wobei {\displaystyle a_{i}\in \mathbb {Z} } a_{i}\in \mathbb{Z }  die Anzahl der Halbtwists in der jeweiligen Box bezeichnet und für gerade bzw. ungerade {\displaystyle i} i~positive {\displaystyle a_{i}} a_{i} links- bzw. rechtshändigen Halbtwists entsprechen.
 % Diese Darstellung wird als Conway-Normalform bezeichnet.
 % Man kann stets erreichen, dass alle {\displaystyle a_{i}} a_{i} dasselbe Vorzeichen haben.[1] Insbesondere gibt die Conway-Normalform dann ein alternierendes Knotendiagramm.[2]
 %Insbesondere ist ein 2-Brücken-Knoten genau dann amphichiral, wenn {\displaystyle q^{2}\equiv -1\ mod\ p} q^{2}\equiv -1\ mod\ p ist.
@@ -35,26 +35,26 @@ Każdy splot dwumostowy można przedstawić następującym diagramem:
 
 \todo[inline]{Conway Normal Form}
 
-% \todo[inline]{Uwaga: Janiak-Osajca, Pogoda definiują osobny diagram o $2k$ skrętach!}
+% \todo[inline]{Uwaga: Janiak-Osajca, Pogoda definiują osobny diagram o~$2k$ skrętach!}
 
-Oto reguła, zgodnie z którą wybieramy znaki liczb $a_i$:
+Oto reguła, zgodnie z~którą wybieramy znaki liczb $a_i$:
 jeśli $i$ jest nieparzyste, prawy skręt jest dodatni, jeśli parzyste -- lewy jest dodatni.
 Przez analogię do supłów, definiujemy ułamek łańcuchowy
 \[
 	\frac \alpha \beta = a_1 + \frac{1}{a_2 + 1/\ldots}
 \]
 
-Wartość bezwzględna ułamka $\alpha/\beta$ zawsze przekracza $1$ i odwrotnie, każdy taki ułamek pochodzi od pewnego węzła.
+Wartość bezwzględna ułamka $\alpha/\beta$ zawsze przekracza $1$ i~odwrotnie, każdy taki ułamek pochodzi od pewnego węzła.
 Parę $(\alpha, \beta)$ (o względnie pierwszych współrzędnych) nazywamy typem węzła dwumostowego.
 
 \begin{proposition}
 \label{prp:tangle_equivalence}
-	Dwumostowe sploty typów $(\alpha, \beta)$ oraz $(\alpha', \beta')$ są (pomijając orientację) równoważne wtedy i tylko wtedy, gdy $\alpha = \alpha'$ i $\beta \equiv \beta'$ lub $\beta \beta'\equiv 1$ modulo $\alpha$.
+	Dwumostowe sploty typów $(\alpha, \beta)$ oraz $(\alpha', \beta')$ są (pomijając orientację) równoważne wtedy i~tylko wtedy, gdy $\alpha = \alpha'$ i~$\beta \equiv \beta'$ lub $\beta \beta'\equiv 1$ modulo $\alpha$.
 \end{proposition}
 
 \begin{proof}
 	Dowód opiera się na tym, że podwójnie cykliczna przestrzeń nakrywająca rozcięta wzdłuż splotu jest przestrzenią soczewkową typu $(\alpha, \beta)$.
-	Nie definiowaliśmy nawet tych przestrzeni, szczegóły można znaleźć w podręczniku \cite{murasugi96} albo \cite{schubert56}.
+	Nie definiowaliśmy nawet tych przestrzeni, szczegóły można znaleźć w~podręczniku \cite{murasugi96} albo \cite{schubert56}.
 \end{proof}
 
 \begin{proposition}
@@ -75,11 +75,11 @@ Węzłów dwumostowych nie można odróżniać od siebie samym wyznacznikiem, gd
 
 \begin{proposition}
 \label{prp:tangle_signature}
-	Rozpatrzmy węzeł dwumostowy typu $(\alpha, \beta)$, gdzie $0 < \beta < \alpha$ i $\beta$ jest nieparzyste.
-	Niech $r_i$ będzie resztą z dzielenia $i\beta$ przez $2\alpha$ leżącą w przedziale $(-\alpha, \alpha)$ dla $i = 0, 1, \ldots, \alpha - 1$.
-	Różnica między ilością dodatnich reszt i ujemnych reszt to sygnatura węzła.
+	Rozpatrzmy węzeł dwumostowy typu $(\alpha, \beta)$, gdzie $0 < \beta < \alpha$ i~$\beta$ jest nieparzyste.
+	Niech $r_i$ będzie resztą z~dzielenia $i\beta$ przez $2\alpha$ leżącą w~przedziale $(-\alpha, \alpha)$ dla $i = 0, 1, \ldots, \alpha - 1$.
+	Różnica między ilością dodatnich reszt i~ujemnych reszt to sygnatura węzła.
 \end{proposition}
 
 Wygląda na to, że jedynym niewyznaczonym do końca klasycznym niezmiennikiem jest liczba gordyjska.
 
-% Koniec podsekcji Sploty o dwóch mostach
+% Koniec podsekcji Sploty o~dwóch mostach

@@ -1,12 +1,12 @@
 \subsection{Oryginalna praca Jonesa} % (fold)
 \label{sub:jones_paper}
-Jones otrzymał swój wielomian jako efekt uboczny badań nad algebrami operatorowymi: wziął ślad pewnej reprezentacji warkoczy w algebrę, która miała ważne znaczenie w mechanice statystycznej.
+Jones otrzymał swój wielomian jako efekt uboczny badań nad algebrami operatorowymi: wziął ślad pewnej reprezentacji warkoczy w~algebrę, która miała ważne znaczenie w~mechanice statystycznej.
 
-% Reszta rozdziału powstała częściowo w oparciu o notatki autorstwa Andrew Bergera oraz Chrisa Geriga\footnote{dostępne pod adresem \url{https://math.berkeley.edu/~cgerig/notes}}.
-% Połączymy warkocze z wielomianem Jonesa i zobaczymy, jak definiowano ten ostatni przed Kauffmanem.
+% Reszta rozdziału powstała częściowo w~oparciu o~notatki autorstwa Andrew Bergera oraz Chrisa Geriga\footnote{dostępne pod adresem \url{https://math.berkeley.edu/~cgerig/notes}}.
+% Połączymy warkocze z~wielomianem Jonesa i~zobaczymy, jak definiowano ten ostatni przed Kauffmanem.
 
 \begin{definition}[algebra Temperleya-Lieba]
-	Niech $R$ będzie przemiennym pierścieniem, w którym ustalono element $\delta \in R$.
+	Niech $R$ będzie przemiennym pierścieniem, w~którym ustalono element $\delta \in R$.
 	Algebrą Temperleya-Lieba nazywamy $R$-algebrę $TL_n(\delta)$ generowaną przez elementy $e_1, \ldots, e_{n-1}$, które związane są relacjami (dla $|i-j| \ge 2$):
 	\begin{align*}
 		e_i^2 & = \delta e_i \\
@@ -17,17 +17,17 @@ Jones otrzymał swój wielomian jako efekt uboczny badań nad algebrami operator
 	% Zmienna $\tau$ komutuje ze wszystkimi generatorami, generatory zaś spełniają relacje ($j$ jest różne od $i - 1, i, i+1$):
 \end{definition}
 
-$TL_n(\delta)$ można przedstawić przy użyciu diagramów: prostokątów, których przeciwległe boki zawierają po $n$ punktów połączonych w pary tak, by uniknąć samoprzecięć. Mnożenie elementów algebry odpowiada sklejaniu dwóch diagramów, przy czym każdą zamkniętą pętlę zamieniamy na dodatkowy czynnik $\delta$.
-(To w gruncie rzeczy są warkocze).
+$TL_n(\delta)$ można przedstawić przy użyciu diagramów: prostokątów, których przeciwległe boki zawierają po $n$ punktów połączonych w~pary tak, by uniknąć samoprzecięć. Mnożenie elementów algebry odpowiada sklejaniu dwóch diagramów, przy czym każdą zamkniętą pętlę zamieniamy na dodatkowy czynnik $\delta$.
+(To w~gruncie rzeczy są warkocze).
 
 \begin{definition}[ślad Markowa]
-	Niech $K \in TL_n(\delta)$ będzie elementem algebry Temperleya-Lieba będącym iloczynem generatorów\footnote{Czyli element $K$ utożsamia się z pewnym warkoczem o $n$ pasmach.} $e_1, \ldots, e_{n-1}$, którego domknięcie rozpada się na $m$ składowych spójności.
+	Niech $K \in TL_n(\delta)$ będzie elementem algebry Temperleya-Lieba będącym iloczynem generatorów\footnote{Czyli element $K$ utożsamia się z~pewnym warkoczem o~$n$ pasmach.} $e_1, \ldots, e_{n-1}$, którego domknięcie rozpada się na $m$ składowych spójności.
 	Śladem Markowa elementu $K$ nazywamy wielkość $\operatorname{tr} K = \delta^{m-n}$.
 \end{definition}
 
 Ustalmy splot $L$.
-Na mocy twierdzenia Alexandera \ref{alex_thm}, splot $L$ jest domknięciem pewnego warkocza o $n$ pasmach.
-Zdefiniujmy reprezentację $\rho$ grupy warkoczy $B_n$ w algebrę $TL_n$ o współczynnikach z pierścienia $\Z[A, 1/A]$ (gdzie $\delta = -A^2 - A^{-2}$): standardowy generator warkoczowy $\sigma_i$ poślijmy na $A \cdot e_i + 1/A \cdot 1$.
+Na mocy twierdzenia Alexandera \ref{alex_thm}, splot $L$ jest domknięciem pewnego warkocza o~$n$ pasmach.
+Zdefiniujmy reprezentację $\rho$ grupy warkoczy $B_n$ w~algebrę $TL_n$ o~współczynnikach z~pierścienia $\Z[A, 1/A]$ (gdzie $\delta = -A^2 - A^{-2}$): standardowy generator warkoczowy $\sigma_i$ poślijmy na $A \cdot e_i + 1/A \cdot 1$.
 Wtedy $\langle K \rangle = \delta^{n-1} \operatorname{tr} \rho (\sigma)$ jest klamrą Kauffmana!
 
 Sploty nie przedstawiają się jednak jako domknięcia warkoczy jednoznacznie, musimy wziąć pod uwagę wpływ ruchów Markowa na złożenie $\operatorname{tr} \circ \rho$.

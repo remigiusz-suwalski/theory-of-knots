@@ -1,17 +1,17 @@
 \section{Operacje na węzłach} % (fold)
 \label{sec:knot_operations}
-W tej sekcji poznamy sposoby otrzymywania nowych obiektów z już istniejących (rewers i lustro splotu).
-Rodzina węzłów wyposażona w sumę spójną tworzy przemienny monoid z jednoznacznością rozkładu.
+W tej sekcji poznamy sposoby otrzymywania nowych obiektów z~już istniejących (rewers i~lustro splotu).
+Rodzina węzłów wyposażona w~sumę spójną tworzy przemienny monoid z~jednoznacznością rozkładu.
 Znacznie później (w sekcji \ref{sec:tangle}) określimy jeszcze sumę oraz iloczyn supłów.
 
-\subsection{Lustro i rewers} % (fold)
+\subsection{Lustro i~rewers} % (fold)
 \label{sub:single_operations}
 \begin{definition}
     \index{lustro}
     \index{rewers}
     Niech $L$ będzie zorientowanym splotem.
     Przez \textbf{rewers} $L$, $rL$,
-    rozumiemy ten sam splot z przeciwną orientacją.
+    rozumiemy ten sam splot z~przeciwną orientacją.
     \textbf{Lustrem} $L$, $mL$,
     będziemy nazywać odbicia $L$ względem płaszczyzny.
     \begin{figure}[H]
@@ -55,7 +55,7 @@ Węzeł $9_{32}$ jest całkowicie skrętny.
 zaś $8_{17}$ to najprostszy przykład węzła nieodwracalnego.
 Ten ostatni fakt jest jednak daleki od oczywistego --
 sześćdziesiąt lat temu nie było pewne,
-czy węzły nieodwracalne w ogóle istnieją.
+czy węzły nieodwracalne w~ogóle istnieją.
 W roku 1962 Ralph Fox wskazał kilku kandydatów do tego tytułu.
 Hale Trotter odkrył rok później nieskończoną rodzinę nieodwracalnych precli (patrz \ref{def:pretzel}).
 Obecnie wiadomo, że prawie wszystkie węzły są nieodwracalne (\cite[s.~46]{murasugi96}).
@@ -66,15 +66,15 @@ Wszystkie węzły torusowe są skrętne.
 \end{proposition}
 
 \begin{proof}
-    Praca \cite{trotter63} sprowadza w elementarny sposób problem do pytania, czy pewna grupa posiada inwersję.
+    Praca \cite{trotter63} sprowadza w~elementarny sposób problem do pytania, czy pewna grupa posiada inwersję.
 \end{proof}
 
 Tait odnosił wrażenie, że zwierciadlane węzły mają parzysty indeks skrzyżowań,
-ale Hoste (Thistlethwaite?) znalazł w 1998 kontrprzykład o piętnastu skrzyżowaniach.
+ale Hoste (Thistlethwaite?) znalazł w~1998 kontrprzykład o~piętnastu skrzyżowaniach.
 Jest on jedynym znanym nam dzisiaj.
 Hipoteza Taita jest prawdziwa dla węzłów pierwszych, alternujących.
 
-Poniższa tabela oparta jest (kolejno) o ciągi
+Poniższa tabela oparta jest (kolejno) o~ciągi
 \href{https://oeis.org/A051766}{51766},
 \href{https://oeis.org/A051769}{51769},
 \href{https://oeis.org/A051768}{51768},
@@ -94,7 +94,7 @@ z bazy danych ``The On-Line Encyclopedia of Integer Sequences'' (OEIS).
         \bottomrule
         \hline
     \end{tabular}
-    \caption{Liczba węzłów o poszczególnych typach symetrii}
+    \caption{Liczba węzłów o~poszczególnych typach symetrii}
     \label{tablica_wezlow}
 \end{table}
 
@@ -102,7 +102,7 @@ Można wyróżnić jeszcze jeden rodzaj symetrii.
 
 \begin{definition}
     \index{węzeł!okresowy}
-    Węzeł $K$ nazywamy $n$-okresowym, jeśli istnieje obrót $f \colon \R^3 \to \R^3$ o kąt $2\pi/n$ wokół pewnej prostej $l$, rozłącznej z węzłem, taki że $f(K) = K$.
+    Węzeł $K$ nazywamy $n$-okresowym, jeśli istnieje obrót $f \colon \R^3 \to \R^3$ o~kąt $2\pi/n$ wokół pewnej prostej $l$, rozłącznej z~węzłem, taki że $f(K) = K$.
 \end{definition}
 
 Trójlistnik jest 3-okresowy, węzeł $5_1$ 5-okresowy (widać to na standardowym diagramie) i~2-okresowy.
@@ -111,15 +111,15 @@ Z~każdym węzłem okresowym związany jest inny, prostszy węzeł.
 Niech $p \colon \R^3 \to \R^3/f \simeq \R^3$ będzie rzutem na przestrzeń ilorazową.
 Wtedy $p(K)$ jest \emph{węzłem ilorazowym}, zaś $K$ to jego $n$-krotne nakrycie.
 
-Murasugi podał dwa warunki, które musi spełniać węzeł o okresie $n = p^r$, gdzie $r$ jest liczbą pierwszą.
+Murasugi podał dwa warunki, które musi spełniać węzeł o~okresie $n = p^r$, gdzie $r$ jest liczbą pierwszą.
 Do ich zrozumienia potrzebujemy prostej definicji.
 Ustalmy półprostą, która nie jest styczna do węzła $K$, po czym zorientujmy ją oraz węzeł.
 Indeksem zaczepienia $\lambda$ węzła $p(K)$ jest różnica między liczbą skrzyżowań dodatnich oraz ujemnych wzdłuż półprostej (bez znaku).
 
 \begin{proposition}[warunek Murasugiego]
     \index{warunek Murasugiego}
-    Niech $K$ będzie węzłem o okresie $n = p^r$, gdzie $p$ jest liczbą pierwszą.
-    Niech $J$ będzie jego węzłem ilorazowym, z indeksem zaczepienia $\lambda$.
+    Niech $K$ będzie węzłem o~okresie $n = p^r$, gdzie $p$ jest liczbą pierwszą.
+    Niech $J$ będzie jego węzłem ilorazowym, z~indeksem zaczepienia $\lambda$.
     Wtedy wielomian $\Delta_J$ jest dzielnikiem wielomianu $\Delta_K$ oraz istnieje pewna całkowita liczba $k$, taka że
     \[
         \Delta_K = \pm \Delta_J^n \left(1 + t + t^2 + \ldots + t^{\lambda - 1}\right)^{n-1} \mod p.
@@ -128,9 +128,9 @@ Indeksem zaczepienia $\lambda$ węzła $p(K)$ jest różnica między liczbą skr
 
 Dowód to, jak zwykle, mozolne operacje na macierzach.
 
-% Koniec podsekcji Lustro i rewers
+% Koniec podsekcji Lustro i~rewers
 
-\subsection{Suma niespójna i suma spójna} % (fold)
+\subsection{Suma niespójna i~suma spójna} % (fold)
 \label{sub:knot_sum}
 Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wzdłuż brzegu.
 
@@ -139,12 +139,12 @@ Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wz
     Niech $L_1, L_2$ będą splotami.
     Ich \textbf{sumą niespójną}, $L_1 \sqcup L_2$,
     jest teoriomnogościowa suma rozłączna splotów
-    $L_1$ i $L_2$ leżących po różnych stronach pewnej płaszczyzny.
+    $L_1$ i~$L_2$ leżących po różnych stronach pewnej płaszczyzny.
 \end{definition}
 
 \begin{definition}
     \index{suma!spójna}
-    Nacinając dwa zorientowane węzły w dwóch bliskich punktach i
+    Nacinając dwa zorientowane węzły w~dwóch bliskich punktach i
     ponownie zszywając je dwoma łukami nieprzecinającymi już
     istniejących otrzymujemy \textbf{sumę spójną}, $K_1 \shrap K_2$.
     \[
@@ -223,14 +223,14 @@ Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wz
 \end{definition}
 
 Uogólnieniem tego działania oraz
-(nieopisanej w naszej pracy) operacji \emph{plumbing}
-jest suma Murasugiego, dobrze wyjaśniona w czwartym rozdziale \cite{kawauchi96}.
+(nieopisanej w~naszej pracy) operacji \emph{plumbing}
+jest suma Murasugiego, dobrze wyjaśniona w~czwartym rozdziale \cite{kawauchi96}.
 
 Ważna jest orientacja składników:
 suma dwóch trójlistników może być,
 w zależności od ich orientacji,
 węzłem babskim\footnote{Nazewnictwo pochodzi od żeglarzy, nie matematyków. Z angielskiego \emph{granny knot}, \emph{square knot}.} lub prostym.
-Fox pokazał w 1952 roku,
+Fox pokazał w~1952 roku,
 że dopełnienia tych dwóch węzłów nie są homeomorficzne.
 Suma przeciwnie skręconych trójlistników jest plastrowa
 (definicja \ref{def:slice_knot}),
@@ -247,8 +247,8 @@ nie istnieje kanoniczny wybór, które składowe łączyć ze sobą.
     Niech dane będą węzły $K_1$ oraz $K_2$
     oraz dwa różne łuki $\gamma_1$, $\gamma_2$,
     których można użyć do konstrukcji sumy spójnej.
-    Skurczmy $K_1$, przeciągnijmy najpierw przez łuk $\gamma_1$, a następnie wzdłuż węzła $K_2$.
-    Teraz wystarczy odwrócić ten proces z $\gamma_2$ w miejscu $\gamma_1$.
+    Skurczmy $K_1$, przeciągnijmy najpierw przez łuk $\gamma_1$, a~następnie wzdłuż węzła $K_2$.
+    Teraz wystarczy odwrócić ten proces z~$\gamma_2$ w~miejscu $\gamma_1$.
 \end{proof}
 
 \begin{proposition}
@@ -265,7 +265,7 @@ nie istnieje kanoniczny wybór, które składowe łączyć ze sobą.
 \end{proposition}
 
 Prosty dowód tego faktu pozostawiamy Czytelnikowi.
-Pokażemy za to, iż węzły z sumą spójną nie tworzą grupy -- brakuje elementów przeciwnych.
+Pokażemy za to, iż węzły z~sumą spójną nie tworzą grupy -- brakuje elementów przeciwnych.
 
 \begin{proposition}
     Jeśli $K \shrap L = \Unknot$, to $K = L = \Unknot$.
@@ -273,7 +273,7 @@ Pokażemy za to, iż węzły z sumą spójną nie tworzą grupy -- brakuje eleme
 
 \begin{proof}[Niedowód]
     Technika ta zwana jest szwindlem Mazura.
-    Załóżmy, że $K \shrap L = \Unknot$ i dopuśćmy wyjątkowo węzły dzikie.
+    Załóżmy, że $K \shrap L = \Unknot$ i~dopuśćmy wyjątkowo węzły dzikie.
     Skonstruujmy sumę $K \shrap L \shrap K \shrap \ldots$,
     przy czym kolejne składniki powinny zmniejszać się,
     aby ich suma nadal była węzłem.
@@ -290,15 +290,15 @@ Pokażemy za to, iż węzły z sumą spójną nie tworzą grupy -- brakuje eleme
 Później poznamy prawdziwy, oparty na topologii algebraicznej, dowód.
 Połączymy fakty \ref{genus_one} oraz \ref{genus_sum}.
 
-Półgrupę węzłów z operacją sumy spójnej można ulepszyć do grupy na dwa sposoby:
-albo poprzez zmianę działania, w jakie jest wyposażona,
+Półgrupę węzłów z~operacją sumy spójnej można ulepszyć do grupy na dwa sposoby:
+albo poprzez zmianę działania, w~jakie jest wyposażona,
 albo osłabiając definicję węzłów równoważnych.
 Drugi pomysł jest dużo lepszy niż pierwszy.
 Na początku lat pięćdziesiątych J. Milnor wprowadził do matematyki pojęcie zgodności
 (z angielskiego \emph{concordance}), które zastąpiło zwykłą równoważność.
-Element neutralny nowej grupy to węzły plastrowe, ich opis leży w sekcji \ref{sec:slice}.
-Zagadnienia te zakorzenione są w czterowymiarowej topologii.
+Element neutralny nowej grupy to węzły plastrowe, ich opis leży w~sekcji \ref{sec:slice}.
+Zagadnienia te zakorzenione są w~czterowymiarowej topologii.
 
-% Koniec podsekcji Suma niespójna i suma spójna
+% Koniec podsekcji Suma niespójna i~suma spójna
 
 % Koniec sekcji Operacje na węzłach

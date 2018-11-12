@@ -1,6 +1,6 @@
 \section{Węzły torusowe} % (fold)
 \label{sec:torus}
-W tej sekcji przyjrzymy się węzłom o specjalnym ułożeniu w przestrzeni $\R^3$.
+W tej sekcji przyjrzymy się węzłom o~specjalnym ułożeniu w~przestrzeni $\R^3$.
 Do ich określenia potrzebny jest torus trywialny,
 powierzchnia otrzymana przez obrót okręgu $(x-2)^2 + y^2 = 1$ wokół osi $y$.
 Można go także uzyskać przez sklejenie podstaw walca tak, by go przy tym nie zapętlić.
@@ -11,15 +11,15 @@ Oczywiście istnieją też nietrywialne torusy, na przykład rurowe otoczenie tr
     Węzeł (splot) torusowy to taki, który leży na powierzchni niezaplątanego torusa.
 \end{definition}
 
-Na walcu $S^2 \times [0,1]$, którego podstawa leży w płaszczyźnie $xy$, rozpatrzmy $r$ skierowanych odcinkach (dla $k = 0, 1, \ldots, r - 1$) o końcach w punktach
+Na walcu $S^2 \times [0,1]$, którego podstawa leży w~płaszczyźnie $xy$, rozpatrzmy $r$ skierowanych odcinkach (dla $k = 0, 1, \ldots, r - 1$) o~końcach w~punktach
 \begin{align*}
     \left(\cos \frac{2k \pi}{r}, \sin \frac{2k\pi}{r}, 0 \right), \quad
     \left(\cos \frac{2k \pi}{r}, \sin \frac{2k\pi}{r}, 1 \right).
 \end{align*}
-Przekręćmy górną podstawę walca wokół osi $z$ o skierowany kąt $2\pi q / r$ oraz utożsammy ze sobą pary punktów $(x, y, 0) \sim (x, y, 1)$,
-Uzyskaliśmy splot torusowy $K_{q, r}$: okrąża on $q$ razy rdzeń torusa i $p$ razy jego oś symetrii obrotowej.
+Przekręćmy górną podstawę walca wokół osi $z$ o~skierowany kąt $2\pi q / r$ oraz utożsammy ze sobą pary punktów $(x, y, 0) \sim (x, y, 1)$,
+Uzyskaliśmy splot torusowy $K_{q, r}$: okrąża on $q$ razy rdzeń torusa i~$p$ razy jego oś symetrii obrotowej.
 Określimy jeszcze kilka splotów torusowych.
-Węzeł $K_{0, 0}$ leży na powierzchni torusa i jest ściągalny do punktu, zaś $K_{1, 0}$ to nawinięta toroidalnie pętla.
+Węzeł $K_{0, 0}$ leży na powierzchni torusa i~jest ściągalny do punktu, zaś $K_{1, 0}$ to nawinięta toroidalnie pętla.
 Węzeł $K_{p, q}$ posiada następującą parametryzację:
 \[
     x = (2+\cos q \phi) \cos p \phi, \quad
@@ -71,12 +71,12 @@ Okazuje się, że innych obiektów już nie ma.
 
 \begin{proposition}
     Ustalmy względnie pierwsze $q, r$ takie, że $|q|, |r| \ge 2$.
-    Splot $K(q, r)$ jest równoważny z odwrotnym do niego splotem $K(-q, -r)$.
+    Splot $K(q, r)$ jest równoważny z~odwrotnym do niego splotem $K(-q, -r)$.
 \end{proposition}
 
 Sploty $K(q, r)$ oraz $K(r, q)$ również są równoważne.
-Murasugi prezentuje w książce \cite{murasugi96} przyjemny dowód opierający się na następującym lemacie:
-Sfera $S^3$ powstaje z powierzchni dwóch węzłów trywialnych z wnętrzem ($D^2 \times S^1$) przez wzajemne sklejenie południka i równoleżnika z równoleżnikiem i południkiem.
+Murasugi prezentuje w~książce \cite{murasugi96} przyjemny dowód opierający się na następującym lemacie:
+Sfera $S^3$ powstaje z~powierzchni dwóch węzłów trywialnych z~wnętrzem ($D^2 \times S^1$) przez wzajemne sklejenie południka i~równoleżnika z~równoleżnikiem i~południkiem.
 
 % {\color{red} Longitude, meridian -- ustalić słownictwo}
 
@@ -84,7 +84,7 @@ Macierze Seiferta $M$ mają nieskomplikowaną blokową budowę, która może pos
 Rachunki są nieco uciążliwe.
 
 \begin{proposition}
-    Wielomianem Alexandera splotu torusowego $K(q, r) \neq K(0,0)$ o $d$ składowych jest
+    Wielomianem Alexandera splotu torusowego $K(q, r) \neq K(0,0)$ o~$d$ składowych jest
     \[
         \Delta_{q, r}(t) = (-1)^{d-1} \frac{(1-t)(1 - t^{qr/d})^d}{(1-t^q)(1-t^r)} \left/t^{(q-1)(r-1)/2}\right. .
     \]
@@ -101,7 +101,7 @@ Rachunki są nieco uciążliwe.
             & & & -B & B
         \end{bmatrix}
     \]
-    złożona z $(r-1)^2$ bloków o wymiarach $(q-1) \times (q-1)$:
+    złożona z~$(r-1)^2$ bloków o~wymiarach $(q-1) \times (q-1)$:
     \[
         B \begin{bmatrix}
             -1 & & & & \\
@@ -116,20 +116,20 @@ Rachunki są nieco uciążliwe.
 Znajomość wielomianu Alexandera wystarcza na szczęście do podania pełnej klasyfikacji węzłów torusowych bez uciążliwego dowodu.
 
 \begin{proposition}
-    Węzły torusowe $K(q, r)$, $K(p, s)$ są równoważne wtedy i tylko wtedy, gdy $\{q, r\} = \{p, s\}$ lub $\{q, r\} = \{-p, -s\}$.
+    Węzły torusowe $K(q, r)$, $K(p, s)$ są równoważne wtedy i~tylko wtedy, gdy $\{q, r\} = \{p, s\}$ lub $\{q, r\} = \{-p, -s\}$.
 \end{proposition}
 
 \begin{proof}
     Ograniczymy się do przypadku, gdy $p, q, r, s \ge 2$.
-    Tylko jedna implikacja wymaga dowodu, w prawo.
+    Tylko jedna implikacja wymaga dowodu, w~prawo.
     Bez straty ogólności załóżmy więc, że $q > r$, $p > s$.
-    Skoro węzły $K(q, r)$ i $K(p,s)$ są równoważne, to porównanie najwyższych współczynników w ich wielomianach Alexandera daje równość $(q-1)(r-1) = (p-1)(s-1)$.
-    Wymnożenie wszystkiego prowadzi do czterech przypadków: $s = r$, $s = ps$, $qr = r$, $qr = ps$, z których dwa środkowe nie mogą zachodzić (gdyż $p, q > 1$).
+    Skoro węzły $K(q, r)$ i~$K(p,s)$ są równoważne, to porównanie najwyższych współczynników w~ich wielomianach Alexandera daje równość $(q-1)(r-1) = (p-1)(s-1)$.
+    Wymnożenie wszystkiego prowadzi do czterech przypadków: $s = r$, $s = ps$, $qr = r$, $qr = ps$, z~których dwa środkowe nie mogą zachodzić (gdyż $p, q > 1$).
     Z czwartego wynika, że $qr \le s < ps$, czyli sprzeczność.
 \end{proof}
 
 Podamy teraz wartości całkowitoliczbowych niezmienników dla węzłów torusowych przy założeniu, że $q$ lub $r$ nie jest zerem.
-Nietrywialne węzły torusowe są pierwsze i odwracalne, ale nie achiralne (mają niezerową sygnaturę).
+Nietrywialne węzły torusowe są pierwsze i~odwracalne, ale nie achiralne (mają niezerową sygnaturę).
 
 \begin{proposition}
     Węzeł torusowy $K(q, r)$ ma okres $|q|$ oraz $|r|$.
@@ -140,11 +140,11 @@ Nietrywialne węzły torusowe są pierwsze i odwracalne, ale nie achiralne (maj�
     Wtedy, jeśli
     \begin{itemize}[leftmargin=*]
     \itemsep0em
-        \item $2r < q$ i $r$ jest parzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2$.
-        \item $2r < q$ i $r$ jest nieparzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2 - 1$.
+        \item $2r < q$ i~$r$ jest parzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2$.
+        \item $2r < q$ i~$r$ jest nieparzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2 - 1$.
         \item $\sigma(2r, r) = r^2 - 1$.
-        \item jeśli $r \le q < 2r$ i $r$ jest parzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-1$.
-        \item jeśli $r \le q < 2r$ i $r$ jest nieparzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-2$.
+        \item jeśli $r \le q < 2r$ i~$r$ jest parzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-1$.
+        \item jeśli $r \le q < 2r$ i~$r$ jest nieparzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-2$.
     \end{itemize}
     Co więcej, $\sigma(q, r) = \sigma(r, q)$, $\sigma(q, 1) = 0$, $\sigma(q, 2) = q-1$.
 \end{proposition}
@@ -156,13 +156,13 @@ Dowód zawiera praca \cite{litherland81}.
 \end{proposition}
 
 Wyznaczenie indeksu rozwiązującego było dużo trudniejsze.
-Murasugi pisze w książce \cite{murasugi96}, że mamy nierówność
+Murasugi pisze w~książce \cite{murasugi96}, że mamy nierówność
 \[
     u(K(q, r)) \le \frac 12 (q-1)(r-1),
 \]
 z równością dla względnie pierwszych $q, r > 0$.
-Hipoteza Milnora głosiła, że w rzeczywistości równość zachodzi zawsze.
-Dowód został odnaleziony w latach 1993-1995 przy użyciu tzw. \emph{gauge theory} (działu teorii pola, gdzie lagranżjan jest niezmienniczy względem grup Liego lokalnych transformacji...).
+Hipoteza Milnora głosiła, że w~rzeczywistości równość zachodzi zawsze.
+Dowód został odnaleziony w~latach 1993-1995 przy użyciu tzw. \emph{gauge theory} (działu teorii pola, gdzie lagranżjan jest niezmienniczy względem grup Liego lokalnych transformacji...).
 Patrz prace \cite{kronheimer93} oraz \cite{kronheimer95}.
 
 \begin{proposition}[Kronheimer, Mrówka] \label{torus_unknotting}
@@ -172,10 +172,10 @@ Patrz prace \cite{kronheimer93} oraz \cite{kronheimer95}.
     \]
 \end{proposition}
 
-Genus pokrywa się z liczbą gordyjską dla węzłów (czyli względnie pierwszych $q, r$).
+Genus pokrywa się z~liczbą gordyjską dla węzłów (czyli względnie pierwszych $q, r$).
 
 \begin{proposition} \label{torus_bridge}
-    Indeksem mostowym węzła $K_{q,r}$ jest mniejsza z liczb $|q|, |r|$.
+    Indeksem mostowym węzła $K_{q,r}$ jest mniejsza z~liczb $|q|, |r|$.
 \end{proposition}
 
 \begin{proposition}
@@ -190,8 +190,8 @@ Genus pokrywa się z liczbą gordyjską dla węzłów (czyli względnie pierwszy
     \]
 \end{proposition}
 
-Murasugi i Neuwirth w 1961 dla węzłów alternujących,
-zaś Burde z Zieschangiem w 1965 pokazali, że nietrywialny węzeł,
+Murasugi i~Neuwirth w~1961 dla węzłów alternujących,
+zaś Burde z~Zieschangiem w~1965 pokazali, że nietrywialny węzeł,
 którego grupa ma nietrywialne centrum, jest torusowy.
 
 \begin{proposition}
@@ -203,8 +203,8 @@ którego grupa ma nietrywialne centrum, jest torusowy.
 
 \begin{proof}
     Przypadek $p = 2$ wymaga prostego rozumowania indukcyjnego.
-    Samo ćwiczenie pojawia się w wielu podręcznikach topologii.
-    Pełny dowód można znaleźć w przykładzie 9.15 książki ,,Knots'' Burdego oraz Zieschanga.
+    Samo ćwiczenie pojawia się w~wielu podręcznikach topologii.
+    Pełny dowód można znaleźć w~przykładzie 9.15 książki ,,Knots'' Burdego oraz Zieschanga.
     Inne podejście, tak zwaną formułę Seiferta-Torresa, prezentuje przeglądowa praca Turaewa ,,Reidemeister torsion in knot theory'', 119-182.
 \end{proof}
 

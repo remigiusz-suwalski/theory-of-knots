@@ -6,7 +6,7 @@ Zaczniemy jednak od przyjrzenia się powierzchniom.
 
 \begin{definition}
 \index{powierzchnia}
-    Powierzchnia to dwuwymiarowa podrozmaitość topologiczna $M \subseteq \R^3$, czyli obiekt wyglądający lokalnie jak płaszczyzna: każdy punkt $x \in M$ posiada otwarte otoczenie homeomorficzne z otwartym dyskiem $\{(x,y) : x^2 + y^2 < 1\}$.
+    Powierzchnia to dwuwymiarowa podrozmaitość topologiczna $M \subseteq \R^3$, czyli obiekt wyglądający lokalnie jak płaszczyzna: każdy punkt $x \in M$ posiada otwarte otoczenie homeomorficzne z~otwartym dyskiem $\{(x,y) : x^2 + y^2 < 1\}$.
 \end{definition}
 
 Przykładami powierzchni są sfera oraz brzeg torusa, ale też koło otwarte albo pierścień $\{(x, y) \in \R^2 : 0 < a < x^2 + y^2 < b\}$.
@@ -21,12 +21,12 @@ Podane wcześniej powierzchnie są orientowalne.
     Charakterystyka Eulera $\chi(M) \in \Z$ to niezmiennik
     topologiczny powierzchni $M$, którego definicji nie podamy.
     Zamiast tego wymienimy dość reguł,
-    by wyznaczyć go w interesujących nas przypadkach:
+    by wyznaczyć go w~interesujących nas przypadkach:
     \begin{itemize}
         \item Charakterystyka dysku to $1$.
         \item $\chi(M_1 \sqcup M_2)=\chi(M_1) + \chi(M_2)$ dla każdych powierzchni $M_1, M_2$.
-        \item Dołączenie paska zmniejsza charakterystykę powierzchni o $1$.
-        \item Dołączenie dysku do całej składowej spójności brzegu powierzchni zwiększa charakterystykę o $1$.
+        \item Dołączenie paska zmniejsza charakterystykę powierzchni o~$1$.
+        \item Dołączenie dysku do całej składowej spójności brzegu powierzchni zwiększa charakterystykę o~$1$.
     \end{itemize}
 \end{definition}
 
@@ -39,16 +39,16 @@ Podane wcześniej powierzchnie są orientowalne.
 \end{definition}
 
 \begin{proposition}
-    Dwie spójne, zorientowane powierzchnie są homeomorficzne wtedy i tylko
-    wtedy, gdy mają ten sam genus i tyle samo składowych spójności brzegu.
+    Dwie spójne, zorientowane powierzchnie są homeomorficzne wtedy i~tylko
+    wtedy, gdy mają ten sam genus i~tyle samo składowych spójności brzegu.
 \end{proposition}
 
 Najważniejsze dla nas są powierzchnie Seiferta:
 
 \begin{definition}
 \index{powierzchnia!Seiferta}
-    Powierzchnia Seiferta związana z węzłem $K$ to spójna,
-    orientowanlna powierzchnia zanurzona w $\R^3$, której brzegiem jest $K$.
+    Powierzchnia Seiferta związana z~węzłem $K$ to spójna,
+    orientowanlna powierzchnia zanurzona w~$\R^3$, której brzegiem jest $K$.
 \end{definition}
 
 % \begin{example}
@@ -80,11 +80,11 @@ Pomimo to prawdziwe jest następujące stwierdzenie.
     Każdy węzeł posiada powierzchnię Seiferta.
 \end{proposition}
 
-Dowód tego faktu opiera się na bezpośredniej konstrukcji i pochodzi od Seiferta.
+Dowód tego faktu opiera się na bezpośredniej konstrukcji i~pochodzi od Seiferta.
 
 \begin{proof}
     Wybierzmy diagram $D$ dla węzła oraz orientację,
-    a następnie wyprostujmy wszystkie skrzyżowania zgodnie z ich orientacją:
+    a~następnie wyprostujmy wszystkie skrzyżowania zgodnie z~ich orientacją:
 
     \[
     \begin{tikzpicture}[scale=0.12, baseline=-3]
@@ -108,13 +108,13 @@ Dowód tego faktu opiera się na bezpośredniej konstrukcji i pochodzi od Seifer
     \end{tikzpicture}
     \]
 
-    Otrzymany diagram składa się teraz z pewnej liczby zamkniętych krzywych,
+    Otrzymany diagram składa się teraz z~pewnej liczby zamkniętych krzywych,
     zwanych okręgami Seiferta, które wypełniamy do dysków.
     Tam, gdzie jeden okrąg leżał wewnątrz drugiego, podnosimy wewnętrzny nad zewnętrzny.
     Przy każdym skrzyżowaniu pierwotnego diagramu doklejamy skręcony pasek do obydwu dysków.
 
     Dyski są dwustronne, więc ich górnej stronie przypisujemy znak $+$,
-    jeśli tylko brzeg jest zorientowany dodatnio i $-$ w przeciwnym razie.
+    jeśli tylko brzeg jest zorientowany dodatnio i~$-$ w~przeciwnym razie.
 
     \begin{center}
         %\includegraphics[width=0.75\textwidth]{seifert.png}
@@ -122,7 +122,7 @@ Dowód tego faktu opiera się na bezpośredniej konstrukcji i pochodzi od Seifer
     \end{center}
 \end{proof}
 
-\todo[inline]{graf Seiferta jest dwudzielny i planarny}
+\todo[inline]{graf Seiferta jest dwudzielny i~planarny}
 
 Otrzymana powierzchnia zorientowana, $M_D$,
 nie daje się łatwo wyobrazić, ale można policzyć jej genus.
@@ -131,32 +131,32 @@ Posiada bowiem dokładnie jedną składową spójności brzegu.
 %\todo[inline]{Fałsz, jest to możliwe, ale muszę nauczyć się rysować kręcone paski.}
 
 \begin{proposition}
-    Niech $K$ będzie węzłem z diagramem $D$. Wtedy $\chi(M_D) = s - n$, gdzie $n$ jest liczbą skrzyżowań $D$, zaś $s$ jest liczbą okręgów Seiferta.
+    Niech $K$ będzie węzłem z~diagramem $D$. Wtedy $\chi(M_D) = s - n$, gdzie $n$ jest liczbą skrzyżowań $D$, zaś $s$ jest liczbą okręgów Seiferta.
 \end{proposition}
 
 \begin{proof}
-    Powierzchnia $M_d$ powstaje z sumy rozłącznej dysków (po jednym dla każdego okręgu Seiferta) przez dołączanie pasków do ich brzegów (po jednym dla każdego skrzyżowania).
+    Powierzchnia $M_d$ powstaje z~sumy rozłącznej dysków (po jednym dla każdego okręgu Seiferta) przez dołączanie pasków do ich brzegów (po jednym dla każdego skrzyżowania).
 \end{proof}
 
 Uwaga: sploty też posiadają powierzchnie Seiferta, ale odwrócenie tylko jednej składowej potrafi kompletnie zmienić powierzchnię!
 
 Skupimy się wreszcie na genusie węzła.
-Do matematyki wprowadził go Seifert w 1934 roku.
+Do matematyki wprowadził go Seifert w~1934 roku.
 
 \begin{definition}
     Genusem węzła $K$ nazywamy minimalny genus jego powierzchni Seiferta.
 \end{definition}
 
 To daje namiastkę tego, dlaczego wyznaczenie genusu jest trudne.
-W rzeczywistości jest jeszcze gorzej: w 1986 Morton pokazał, że genus pewnych węzłów nie jest realizowany przez żaden diagram (do którego stosuje się algorytm Seiferta), choćby $10_{165}$.
-Następujący przypadek stanowi wyjątek: algorytm Seiferta zastosowany do alternującego diagramu zawsze daje powierzchnię o minimalnej powierzchni.
+W rzeczywistości jest jeszcze gorzej: w~1986 Morton pokazał, że genus pewnych węzłów nie jest realizowany przez żaden diagram (do którego stosuje się algorytm Seiferta), choćby $10_{165}$.
+Następujący przypadek stanowi wyjątek: algorytm Seiferta zastosowany do alternującego diagramu zawsze daje powierzchnię o~minimalnej powierzchni.
 Najprostszy dowód pochodzi od Davida Gabaia.
 
 \begin{example}
     Dubel Whiteheada dowolnego nietrywialnego węzła posiada genus $1$.
 \end{example}
 
-Z pracy Mortona wynika, że algorytm Seiferta zastosowany do dubla trójlistnika produkuje powierzchnie o genusie co najmniej $3$ (to dolne ograniczenie oparte jest o wielomian HOMFLY).
+Z pracy Mortona wynika, że algorytm Seiferta zastosowany do dubla trójlistnika produkuje powierzchnie o~genusie co najmniej $3$ (to dolne ograniczenie oparte jest o~wielomian HOMFLY).
 Patrz \cite{morton86}.
 
 \begin{proposition}
@@ -166,8 +166,8 @@ Patrz \cite{morton86}.
 
 \begin{proof}
     Oto szkic dowodu.
-    Jeżeli genus wynosi zero, to $K$ ma powierzchnię Seiferta o jednej składowej brzegowej i genusie zero.
-Dysk też ma te własności, więc korzystamy z klasyfikacji powierzchni (dysk jest powierzchnią).
+    Jeżeli genus wynosi zero, to $K$ ma powierzchnię Seiferta o~jednej składowej brzegowej i~genusie zero.
+Dysk też ma te własności, więc korzystamy z~klasyfikacji powierzchni (dysk jest powierzchnią).
 \end{proof}
 
 \begin{proposition}
@@ -177,8 +177,8 @@ Dysk też ma te własności, więc korzystamy z klasyfikacji powierzchni (dysk j
 
 \begin{proof}
     Pokażemy najpierw, że $g(J \# K) \le g(J) + g(K)$.
-    Wybierzmy powierzchnie Seiferta $M_J$ oraz $M_K$ dla $J$ oraz $K$ o minimalnym genusie.
-    Suma $J \shrap K$ powstaje z $J$ oraz $K$, podobnie jest z powierzchniami Seiferta:
+    Wybierzmy powierzchnie Seiferta $M_J$ oraz $M_K$ dla $J$ oraz $K$ o~minimalnym genusie.
+    Suma $J \shrap K$ powstaje z~$J$ oraz $K$, podobnie jest z~powierzchniami Seiferta:
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.12]
         \draw[semithick,-Latex] (-7, -5) to (-5, -5) [in=right, out=right] to (-5, 5) to (-7, 5);
@@ -208,11 +208,11 @@ Dysk też ma te własności, więc korzystamy z klasyfikacji powierzchni (dysk j
         \end{tikzpicture}
     \]
 
-    Skoro $M_{J\#K}$ powstaje z $M_J \sqcup M_K$ przez dołączenie paska do brzegu, mamy
+    Skoro $M_{J\#K}$ powstaje z~$M_J \sqcup M_K$ przez dołączenie paska do brzegu, mamy
     \[
         \chi(M_{J\#K}) = \chi(M_J \sqcup M_K) - 1 = \chi(M_J) + \chi(M_K)-1,
     \]
-    a przez to
+    a~przez to
     \[
         g(M_{J\#K}) = \frac{1-\chi(M_{J\#K})}{2} =
         \frac{1-\chi(M_{J})}{2} + \frac{1-\chi(M_{K})}{2}
@@ -221,8 +221,8 @@ Dysk też ma te własności, więc korzystamy z klasyfikacji powierzchni (dysk j
     \]
     To kończy dowód pierwszej nierówności.
     Pokażemy jeszcze, że $g(J \# K) \ge g(J)+g(K)$.
-    Zaczynamy od powierzchni Seiferta $M_{J\#K}$ dla $J\#K$ o minimalnym genusie $g(M_{J\#K})$ równym $g(J\#K)$.
-    Poprzez wykonanie chirurgii na powierzchni, możemy przyjąć specjalną postać jak w poprzednim dowodzie:
+    Zaczynamy od powierzchni Seiferta $M_{J\#K}$ dla $J\#K$ o~minimalnym genusie $g(M_{J\#K})$ równym $g(J\#K)$.
+    Poprzez wykonanie chirurgii na powierzchni, możemy przyjąć specjalną postać jak w~poprzednim dowodzie:
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.16]
             \fill[blue!10!white] (-5, -5) rectangle(5, 5);
@@ -236,7 +236,7 @@ Dysk też ma te własności, więc korzystamy z klasyfikacji powierzchni (dysk j
     \[
         g(M_J)+g(M_K)=g(M_{J\#K})=g(J\#K).
     \]
-    Oznacza to, że $g(J)+g(K)\leqslant g(M_J)+g(M_K)=g(J\#K)$ i tak naprawdę mamy równość.
+    Oznacza to, że $g(J)+g(K)\leqslant g(M_J)+g(M_K)=g(J\#K)$ i~tak naprawdę mamy równość.
 \end{proof}
 
 \begin{corollary}
@@ -252,8 +252,8 @@ Powrócimy teraz do węzłów pierwszych (definicja \ref{primeknot}).
 
 \begin{proof}
     Załóżmy, że $K=K_1\#K_2$.
-    Wtedy $g(K_1)+g(K_2)=g(K)=1$ na mocy faktu  \ref{genus_sum} o genusie sumy.
-    Jedyna możliwość: $K_1$ lub $K_1$ ma genus zero, drugi z nich ma genus $1$. To oznacza, że jeden z nich jest trywialny, więc $K$ jest pierwszy.
+    Wtedy $g(K_1)+g(K_2)=g(K)=1$ na mocy faktu  \ref{genus_sum} o~genusie sumy.
+    Jedyna możliwość: $K_1$ lub $K_1$ ma genus zero, drugi z~nich ma genus $1$. To oznacza, że jeden z~nich jest trywialny, więc $K$ jest pierwszy.
 \end{proof}
 
 \begin{proposition}
@@ -267,7 +267,7 @@ Powrócimy teraz do węzłów pierwszych (definicja \ref{primeknot}).
     Niech $K$ będzie genusu $n + 1$.
 
     Jeśli $K$ jest pierwszy, nie ma czego dowodzić.
-    W przeciwnym razie jest równoważny z $J_1 \shrap J_2$, gdzie $J_1$ i $J_2$ są nietrywialne.
+    W przeciwnym razie jest równoważny z~$J_1 \shrap J_2$, gdzie $J_1$ i~$J_2$ są nietrywialne.
     Mamy $g(J_1)+g(J_2)=g(K)$ oraz $g(J_1),g(J_2)\geqslant 1$.
     Zatem $g(J_1),g(J_2)\leqslant n$.
     Na mocy hipotezy indukcyjnej, $J_1$ oraz $J_2$ są równoważne sumom
@@ -276,7 +276,7 @@ Powrócimy teraz do węzłów pierwszych (definicja \ref{primeknot}).
         J_2 \cong K_{s+1}\#\cdots\# K_r,
     \]
     gdzie $K_i$ są pierwsze.
-    Zatem $K$ jest równoważny z $K_1\#\cdots\# K_r$, co kończy dowód.
+    Zatem $K$ jest równoważny z~$K_1\#\cdots\# K_r$, co kończy dowód.
 \end{proof}
 
 Rozkład jest jednoznaczny, ale nie pokażemy tego.
@@ -313,13 +313,13 @@ Rozkład jest jednoznaczny, ale nie pokażemy tego.
             \strand[semithick] (30,  5) to [out=right, in=up]   (35,0);
             \strand[semithick] (30, -5) to [out=right, in=down] (35,0);
 
-            % jak w drugim ruchu Reidemeistera - lewe
+            % jak w~drugim ruchu Reidemeistera - lewe
             \strand[semithick] (-30, 15) .. controls (-24, 15) and (-24,  5) .. (-20,  5);
             \strand[semithick] (-30,  5) .. controls (-24,  5) and (-24, 15) .. (-20, 15);
             \strand[semithick] (-10, 15) .. controls (-16, 15) and (-16,  5) .. (-20,  5);
             \strand[semithick] (-10,  5) .. controls (-16,  5) and (-16, 15) .. (-20, 15);
 
-            % jak w drugim ruchu Reidemeistera - prawe
+            % jak w~drugim ruchu Reidemeistera - prawe
             \strand[semithick] (30, 15) .. controls (24, 15) and (24,  5) .. (20,  5);
             \strand[semithick] (10, 15) .. controls (16, 15) and (16,  5) .. (20,  5);
             \strand[semithick] (30,  5) .. controls (24,  5) and (24, 15) .. (20, 15);
@@ -357,28 +357,28 @@ Rozkład jest jednoznaczny, ale nie pokażemy tego.
         \end{tikzpicture}
     \]
     Wynika stąd, że genus wynosi $\frac 12 (1 - (1+2n) + (2+2n)) = 1$, ponieważ wyznacznik ma wartość $4n+1$,
-    węzły $2n+2)_1$ nie są trywialne i są parami różne.
+    węzły $2n+2)_1$ nie są trywialne i~są parami różne.
 \end{proof}
 
 \begin{proposition}
-    Genus węzła $K$ jest związany z wielomianem Alexandera oraz liczbą skrzyżowań:
+    Genus węzła $K$ jest związany z~wielomianem Alexandera oraz liczbą skrzyżowań:
     \[
         c(K) \ge 2 g(K) \ge \operatorname{Span}(\Delta_K(t)),
     \]
-    przy czym (między innymi) dla węzłów o co najwyżej 10 skrzyżowaniach mamy nawet równość po prawej stronie.
+    przy czym (między innymi) dla węzłów o~co najwyżej 10 skrzyżowaniach mamy nawet równość po prawej stronie.
 \end{proposition}
 
 \index{homologia!Floera}
 Wielomian Alexandera uogólnia się do (skomplikowanej) homologii Floera, pozwala ona dokładniej szacować genus węzła.
 
 \index{węzeł!rozwłókniony}
-Wspomnijmy jeszcze krótko o specjalnym rodzaju węzłów.
+Wspomnijmy jeszcze krótko o~specjalnym rodzaju węzłów.
 Mówimy, że węzeł $K \subseteq S^3$ jest rozwłókniony\footnote{fibered}, jeśli istnieje rodzina $F_t$ powierzchni Seiferta dla $K$ sparametryzowana przez $t \in S^1$ taka, że $F_t \cap F_s = K$ dla $t \neq s$.
 Dawniej nazywano je węzłami Neuwirtha.
 
-Niewęzeł, trójlistnik i ósemka są rozwłóknione.
-Pierwszy i ostatni współczynnik wielomianu Alexandera węzła rozwłóknionego to $\pm 1$.
-Wielomianem węzła skręconego z $q$ półskrętami jest $\Delta_q = qt - (2q+1)+q/t$, więc nie jest on rozwłókniony (dla $q \neq 1$).
+Niewęzeł, trójlistnik i~ósemka są rozwłóknione.
+Pierwszy i~ostatni współczynnik wielomianu Alexandera węzła rozwłóknionego to $\pm 1$.
+Wielomianem węzła skręconego z~$q$ półskrętami jest $\Delta_q = qt - (2q+1)+q/t$, więc nie jest on rozwłókniony (dla $q \neq 1$).
 
 % Węzeł jest rozwłókniony dokładnie wtedy, gdy stanowi grzbiet pewnego 'open book decomposition' $S^3$.
 
@@ -399,4 +399,4 @@ Wielomianem węzła skręconego z $q$ półskrętami jest $\Delta_q = qt - (2q+1
 
 \todo[inline]{$-M_{K} \approx_S M_{K*}$}
 
-\todo[inline]{Trotter, 1962, Homology...: macierz Seiferta i S-równoważność jest niezmiennikiem węzłów}
+\todo[inline]{Trotter, 1962, Homology...: macierz Seiferta i~S-równoważność jest niezmiennikiem węzłów}

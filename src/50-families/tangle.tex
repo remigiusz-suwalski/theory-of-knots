@@ -1,26 +1,26 @@
 \section{Supły} % (fold)
 \label{sec:tangle}
 
-\todo[inline]{Murasugi i Pogoda używają innej konwencji nazewniczej!}
+\todo[inline]{Murasugi i~Pogoda używają innej konwencji nazewniczej!}
 
-Na przełomie lat sześćdziesiątych i siedemdziesiątych Conway szukał sposobu na zbudowanie kompletnej tablicy węzłów.
-Niezmienniki znane w tym czasie nie były dostatecznie mocne, by sprostać temu wyzwaniu.
-Conway wprowadził pojęcie supła i chociaż wszystkich węzłów nie można z nich uzyskać, teoria została pchnięta do przodu.
-Supły stanowią budulec splotów takich jak na przykład precle z definicji \ref{def:pretzel}.
+Na przełomie lat sześćdziesiątych i~siedemdziesiątych Conway szukał sposobu na zbudowanie kompletnej tablicy węzłów.
+Niezmienniki znane w~tym czasie nie były dostatecznie mocne, by sprostać temu wyzwaniu.
+Conway wprowadził pojęcie supła i~chociaż wszystkich węzłów nie można z~nich uzyskać, teoria została pchnięta do przodu.
+Supły stanowią budulec splotów takich jak na przykład precle z~definicji \ref{def:pretzel}.
 
-Sekcja oparta jest na podręczniku Murasugiego \cite{murasugi96} i pracach \cite{conway70}, \cite{kauffman97}, \cite{kauffman04}, a także \cite{schubert56}.
-Po raz pierwszy z supłami zetknęliśmy się w pracy \cite{janiak04}, także czerpiącej inspirację z \cite{murasugi96}.
+Sekcja oparta jest na podręczniku Murasugiego \cite{murasugi96} i~pracach \cite{conway70}, \cite{kauffman97}, \cite{kauffman04}, a~także \cite{schubert56}.
+Po raz pierwszy z~supłami zetknęliśmy się w~pracy \cite{janiak04}, także czerpiącej inspirację z~\cite{murasugi96}.
 
 \begin{definition}[supeł]
 	\label{def:tangle}
 	\index{supeł}
-	Zawarty w kole fragment diagramu splotu o dwóch łukach wyjściowych oraz dwóch wejściowych, nazywamy supłem.
+	Zawarty w~kole fragment diagramu splotu o~dwóch łukach wyjściowych oraz dwóch wejściowych, nazywamy supłem.
 \end{definition}
 
-Istnieją dwa rodzaje supłów -- naprzemienne i sąsiadujące.
+Istnieją dwa rodzaje supłów -- naprzemienne i~sąsiadujące.
 \input{50-families/tangle_01}
 
-Podobnie jak dla węzłów, pojawia się naturalne pytanie o równoważność dwóch supłów.
+Podobnie jak dla węzłów, pojawia się naturalne pytanie o~równoważność dwóch supłów.
 Jest tak wtedy, gdy istnieje homeomorfizm* kuli na siebie, który przekształca jeden supeł na drugi, ale nie rusza sfery otaczającej.
 Dla diagramów odpowiada to ruchom Reidemeistera, nie mamy jednak prawa opuszczać kuli zawierającej supeł.
 
@@ -30,13 +30,13 @@ Oto cztery podstawowe supły:
 
 \begin{definition}
 	\label{def:rational_tangle}
-	Supły powstające z $(0)$ lub $(\infty)$ przez homeomorfizm kuli na siebie permutujący wejścia i wyjścia nazywamy wymiernymi.
+	Supły powstające z~$(0)$ lub $(\infty)$ przez homeomorfizm kuli na siebie permutujący wejścia i~wyjścia nazywamy wymiernymi.
 \end{definition}
 
 \todo[inline]{Definicja: homeomorfizm kuli na siebie, który... twierdzenie: ale można się ograniczyć do...!}
 
 Wystarczy się przy tym ograniczyć do ciągu obrotów półsfery dolnej (SW--SE) oraz lewej (SW--NW)
-Z obrotami prawoskrętnymi wiążemy liczby dodatnie, natomiast z lewoskrętnymi -- ujemne.
+Z obrotami prawoskrętnymi wiążemy liczby dodatnie, natomiast z~lewoskrętnymi -- ujemne.
 Otrzymujemy tak pewną krotkę $(a_1, \ldots, a_n)$.
 Jeśli $n$ jest parzyste, zaczynamy od supła $(\infty)$, jeśli nie -- od $(0)$.
 Ostatni obrót dotyczy półsfery dolnej.
@@ -58,11 +58,11 @@ Potrzebować będziemy prostej definicji, uzasadniającej określenie ,,supły w
 
 \begin{proposition}
 \label{prp:continued_fractions_2}
-	Supły o łańcuchowych ułamkach różnych od $0$ i $\infty$ można kodować ciągami liczb całkowitych tego samego znaku.
+	Supły o~łańcuchowych ułamkach różnych od $0$ i~$\infty$ można kodować ciągami liczb całkowitych tego samego znaku.
 \end{proposition}
 
 Z każdym supłem $T$ związane jest jego odbicie $\overline T$, obraz wyjściowego przez symetrię względem prostej $y = -x$.
-Mając dwa supły obok siebie, można dokonać ich sklejenia wzdłuż połówek kul, w których leżą:
+Mając dwa supły obok siebie, można dokonać ich sklejenia wzdłuż połówek kul, w~których leżą:
 \input{50-families/tangle_03}
 
 Oznaczmy tak otrzymany węzeł przez $T_1 + T_2$.
@@ -71,7 +71,7 @@ Rodzina supłów wymiernych jest zamknięta na branie produktów, ale nie sum.
 Wprowadzamy więc następującą, ogólniejszą definicję.
 Supeł będący skończoną sumą supłów wymiernych, ich luster, odbić lub odbić luster nazywamy algebraicznym.
 
-Przez zszycie par łuków wejściowych (lub wyjściowych) zamieniamy supły w węzły:
+Przez zszycie par łuków wejściowych (lub wyjściowych) zamieniamy supły w~węzły:
 \input{50-families/tangle_04}
 
 Oznaczenia $N(T)$ oraz $D(T)$ pochodzą od angielskich słów \emph{numerator}, \emph{denominator}.
@@ -93,7 +93,7 @@ Nazewnictwo nie jest przypadkowe. %, wrócimy do tego tematu wkrótce.
 Istnieją supły $T_1$, $T_2$ takie, że węzły $N(T_i)$ są nietrywialne, ale $N(T_1 + T_2)$ to niewęzeł.
 Co gorsza, dla każdego wymiernego supła $A$ istnieje taki supeł $B$, że $N(A+B)$ jest niewęzłem.
 
-Praca \cite{conway70} zawiera jeszcze jeden ciekawy rezultat, uogólniony przez Lickorisha i Milletta w \cite{lickorish87}.
+Praca \cite{conway70} zawiera jeszcze jeden ciekawy rezultat, uogólniony przez Lickorisha i~Milletta w~\cite{lickorish87}.
 Przyjmijmy następujące skróty: niech $A_n = P_{N(A)}(x,y)$, $A_d = P_{D(A)}(x,y)$.
 
 \begin{proposition}
@@ -108,30 +108,30 @@ Przyjmijmy następujące skróty: niech $A_n = P_{N(A)}(x,y)$, $A_d = P_{D(A)}(x
 \end{proposition}
 
 Uwaga, zastosowano tu nieco inną parametryzację wielomianu HOMFLY.
-Na zakończenie wspomnimy o mutacjach.
+Na zakończenie wspomnimy o~mutacjach.
 
 \begin{definition}[mutacja]
 \label{def:mutant}
-	Półobrót supła względem osi poziomej, pionowej albo też prostopadłej do płaszczyzny, w jakiej leży diagram, nazywamy mutacją, zaś otrzymany tak splot -- mutantem.
+	Półobrót supła względem osi poziomej, pionowej albo też prostopadłej do płaszczyzny, w~jakiej leży diagram, nazywamy mutacją, zaś otrzymany tak splot -- mutantem.
 	W razie potrzeby zmieniamy orientację supła na przeciwną.
 \end{definition}
 
-Mutacja węzła o co najwyżej dziesięciu skrzyżowaniach nie zmienia jego klasy abstrakcji.
+Mutacja węzła o~co najwyżej dziesięciu skrzyżowaniach nie zmienia jego klasy abstrakcji.
 Najsłynniejszą parę mutantów stanowią węzeł Conwaya oraz Kinoshity-Terasakiego.
-Dowód ich nierównoważności podał jako pierwszy prawdopodobnie Riley w 1971 \cite{riley71}:
-wykorzystał on homomorfizmy z grupy węzła w $PSL(2, 7)$.
-Genusy (odpowiednio: $3$ i $2$) wyznaczył Gabai w 1986 roku \cite{gabai86}, używał foliacji.
+Dowód ich nierównoważności podał jako pierwszy prawdopodobnie Riley w~1971 \cite{riley71}:
+wykorzystał on homomorfizmy z~grupy węzła w~$PSL(2, 7)$.
+Genusy (odpowiednio: $3$ i~$2$) wyznaczył Gabai w~1986 roku \cite{gabai86}, używał foliacji.
 
-Livingston pokazał istnienie mutantów o różnym genusie plastrowym.
+Livingston pokazał istnienie mutantów o~różnym genusie plastrowym.
 % TODO: C Livingston, Knots which are not concordant to their reverses, Quart. J. Math. Oxford (Ser. 2) 34 (1983) 323–328
-Nie wiadomo, czy mutacja jest w stanie zmienić liczbę gordyjską.
-Gordon i Luecke pokazali w 2006, że rodzina węzłów $1$-gordyjskich jest zamknięta na mutacje (\cite{gordon06}).
-Dużo wcześniej wiedzieliśmy tylko, że jedynym mutantem niewęzła jest niewęzeł (Rolfsen w \cite{rolfsen93}?).
+Nie wiadomo, czy mutacja jest w~stanie zmienić liczbę gordyjską.
+Gordon i~Luecke pokazali w~2006, że rodzina węzłów $1$-gordyjskich jest zamknięta na mutacje (\cite{gordon06}).
+Dużo wcześniej wiedzieliśmy tylko, że jedynym mutantem niewęzła jest niewęzeł (Rolfsen w~\cite{rolfsen93}?).
 Mutacja nie zmienia sygnatury.
 Mutacja alternującego diagramu jest alternującym węzłem.
 
-Chmutov, Duzhin oraz Lando pokazali, że niezmienniki Wasiljewa stopnia co najwyżej ósmego nie rozróżniają mutantów (\cite{chmutov94} z 1994).
-Wynik poprawił Murakami do dziesiątego stopnia (,,Finite type invariants detecting the mutant knots'' z 2000 roku, dostępny na stronie internetowej autora) i potwierdził, że pewien niezmiennik stopnia 11 (używany przez Mortona i Cromwella) odróżnia węzeł Conwaya od węzła Kinoshity-Terasakiego.
+Chmutov, Duzhin oraz Lando pokazali, że niezmienniki Wasiljewa stopnia co najwyżej ósmego nie rozróżniają mutantów (\cite{chmutov94} z~1994).
+Wynik poprawił Murakami do dziesiątego stopnia (,,Finite type invariants detecting the mutant knots'' z~2000 roku, dostępny na stronie internetowej autora) i~potwierdził, że pewien niezmiennik stopnia 11 (używany przez Mortona i~Cromwella) odróżnia węzeł Conwaya od węzła Kinoshity-Terasakiego.
 
 Niedawno Stojmenow podjął się systematycznie znalezienia mutantów wśród węzłów o~mniej niż dziewiętnastu skrzyżowaniach (praca \cite{stoimenow10} z~2010 roku).
 

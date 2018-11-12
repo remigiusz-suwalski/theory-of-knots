@@ -1,34 +1,34 @@
-\section{Wraki i kwandle} % (fold)
+\section{Wraki i~kwandle} % (fold)
 % TODO: Problems  on invariants of knots and 3-manifolds, rozdział 3
 \label{sec:quandle}
-Sekcja ta powstała częściowo w oparciu o notatki autorstwa Andrew Bergera, Chrisa Geriga
+Sekcja ta powstała częściowo w~oparciu o~notatki autorstwa Andrew Bergera, Chrisa Geriga
 \footnote{dostępne pod adresem \url{https://math.berkeley.edu/~cgerig/notes}}
-oraz Andrew Bergera, Brandona Flannery'ego i Chrisa Sumnichta
+oraz Andrew Bergera, Brandona Flannery'ego i~Chrisa Sumnichta
 \footnote{dostępne pod adresem \url{https://github.com/thyrgle/191_Final_Project/blob/master/paper.pdf}}.
-Kwandle, z angielskiego \emph{quandle}, są strukturami algebraicznymi przypominającymi grupy,
+Kwandle, z~angielskiego \emph{quandle}, są strukturami algebraicznymi przypominającymi grupy,
 jednak których aksjomaty nie odzwierciedlają własności symetrii, tylko ruchów Reidemeistera.
 
 \begin{definition}[wrak]
     \index{wrak}
-    Zbiór $R$ z binarnym działaniem $\triangleleft$, które spełnia relację
+    Zbiór $R$ z~binarnym działaniem $\triangleleft$, które spełnia relację
     \[
-        a \triangleleft (b \triangleleft c) = (a \triangleleft b) \triangleleft (a \triangleleft c)
+        a~\triangleleft (b \triangleleft c) = (a \triangleleft b) \triangleleft (a \triangleleft c)
     \]
     dla wszystkich $a, b, c \in R$, nazywamy wrakiem,
     jeśli każdej parze elementów $a, b \in R$ odpowiada dokładnie jeden $c \in R$ taki,
     że $a \triangleleft c = b$.
 \end{definition}
 
-Ta definicja, chociaż zwięzła i powszechnie używana, nie jest optymalna.
+Ta definicja, chociaż zwięzła i~powszechnie używana, nie jest optymalna.
 Pozbędziemy się kwantyfikatora egzystencjalnego za cenę wprowadzenia drugiego działania.
 
 Jedyny $c \in R$ dla pary $(a,b)$ oznaczmy przez $b \triangleright a$.
-To oznacza, że $a \triangleleft c = b$, wtedy i tylko wtedy gdy $c = b \triangleright a$,
+To oznacza, że $a \triangleleft c = b$, wtedy i~tylko wtedy gdy $c = b \triangleright a$,
 a zatem $a \triangleleft (b \triangleright a) = b$ oraz $(a \triangleleft b) \triangleright a = b$.
-Korzystając z tego pomysłu możemy podać alternatywną definicję.
+Korzystając z~tego pomysłu możemy podać alternatywną definicję.
 
 \begin{definition}[wrak]
-    Zbiór $R$ z dwoma binarnymi działaniami,
+    Zbiór $R$ z~dwoma binarnymi działaniami,
     $\triangleleft$ oraz $\triangleright$,
     które spełniają następujące aksjomaty:
     \begin{enumerate}
@@ -44,16 +44,16 @@ Korzystając z tego pomysłu możemy podać alternatywną definicję.
     \index{kwandel}
 \end{definition}
 
-Wiele znanych z algebry obiektów można zmienić w kwandle.
+Wiele znanych z~algebry obiektów można zmienić w~kwandle.
 \begin{itemize}
 \item grupa abelowa $G$: %\todo[inline]{z działaniem $x \triangleright y = 2y - x$}
 \item grupa $G$: %\todo[inline]{z działaniem  $x \triangleright y = y^{-n}xy^n$ ($n \in \Z$ dowolne)}
 \item Moduł nad pierścieniem $\Z[t^{\pm 1}]$ wielomianów Laurenta: %\todo[inline]{$x \triangleright y = tx + (1-t)y$}
-\item Przestrzeń liniowa z dwuliniową formą antysymetryczną: %\todo[inline]{$x \triangleright y = x + \langle x \mid y \rangle \cdot y$}
+\item Przestrzeń liniowa z~dwuliniową formą antysymetryczną: %\todo[inline]{$x \triangleright y = x + \langle x \mid y \rangle \cdot y$}
 \end{itemize}
 
 %Pokażemy, że kwandle uogólniają kolorowania.
-%Niech $X$ będzie zbiorem kolorów z operacją $\triangleright$, które spełnia aksjomaty z definicji kwandli.
+%Niech $X$ będzie zbiorem kolorów z~operacją $\triangleright$, które spełnia aksjomaty z~definicji kwandli.
 %Wtedy przy każdym skrzyżowaniu występują trzy kolory: $x$, $y$ oraz $x \triangleright y$.
 
 \begin{tikzpicture}[scale=0.18, baseline=0]
@@ -65,17 +65,17 @@ Wiele znanych z algebry obiektów można zmienić w kwandle.
     \node[darkblue] at (-4, 8)[below left] {$x$};
 \end{tikzpicture}
 
-%Przypomnijmy, że 3-kolorowanie diagramu polegało na przypisaniu każdemu włóknu pewnego koloru (z trzech) tak, by każdy został użyty, a żadne skrzyżowanie nie stało się dwubarwne.
+%Przypomnijmy, że 3-kolorowanie diagramu polegało na przypisaniu każdemu włóknu pewnego koloru (z trzech) tak, by każdy został użyty, a~żadne skrzyżowanie nie stało się dwubarwne.
 %Ogólniej, jeśli kolorami były liczby $0, \ldots, n - 1$, żądaliśmy od skrzyżowań, by kolor $y$ po przejściu pod kolorem $x$ stawał się $z$, gdzie $z \equiv 2x - y$ modulo $n$.
-%Można to uogólnić jeszcze bardziej, właśnie do quandli: $\Z/n$-kolorowanie węzła to quandle związany z pierścieniem $\Z/n$ operacją $x \triangleright y =  2y - x$}
+%Można to uogólnić jeszcze bardziej, właśnie do quandli: $\Z/n$-kolorowanie węzła to quandle związany z~pierścieniem $\Z/n$ operacją $x \triangleright y =  2y - x$}
 
 Z każdym węzłem związany jest specjalny kwandel.
 
 \begin{definition}
-%Wspomnieć o związku z prezentacją Wirtingera (i zajrzeć do hiszpańskiego skryptu).
+%Wspomnieć o~związku z~prezentacją Wirtingera (i zajrzeć do hiszpańskiego skryptu).
 %   Niech $K \subseteq S^3$ będzie węzłem, natomiast $X_K = S^3 \setminus \operatorname{int} N(K)$ dopełnieniem jego regularnego otoczenia.
 %   Wybierzmy $x_0 \in \partial X_K$.
-%   Zdefiniujmy $Q(K) = \pi_1(C(K), \partial C(K), x_0)$ z dobrze określonym działaniem
+%   Zdefiniujmy $Q(K) = \pi_1(C(K), \partial C(K), x_0)$ z~dobrze określonym działaniem
 %   \[
 %       [\gamma_1] \triangleright [\gamma_2] = [\gamma_2 \circ m \circ \gamma_2^{-1} \circ \gamma_1],
 %   \]
@@ -83,10 +83,10 @@ Z każdym węzłem związany jest specjalny kwandel.
     Zbiór $Q(K)$ nazywamy kwandlem fundamentalnym (podstawowym?).
 \end{definition}
 
-Muszę w tym miejscu wtrącić uwagę językową.
-Conway nazwał wraki wrakami (\emph{wracks}), by częściowo zażartować z nazwiska jego kolegi Gavina Wraitha,
-a częściowo by zaznaczyć, że są one tym, co zostaje z grupy, w której zapomniano o mnożeniu, ale nie sprzęganiu.
-Obecnie w języku angielskim dominuje określenie \emph{racks}.
+Muszę w~tym miejscu wtrącić uwagę językową.
+Conway nazwał wraki wrakami (\emph{wracks}), by częściowo zażartować z~nazwiska jego kolegi Gavina Wraitha,
+a częściowo by zaznaczyć, że są one tym, co zostaje z~grupy, w~której zapomniano o~mnożeniu, ale nie sprzęganiu.
+Obecnie w~języku angielskim dominuje określenie \emph{racks}.
 
 % Historia:
 % \begin{itemize}
@@ -94,4 +94,4 @@ Obecnie w języku angielskim dominuje określenie \emph{racks}.
     %\item 1959 Conway, Wraith: racks
     %\item 1980s Joyce, niezależnie. Matveev: niekoniecznie skończone kwandle fundamentalne, zainspirowani (przynajmniej Joyce) przez prezentację Wirtingera.
 %\end{itemize}
-% Koniec sekcji Wraki i kwandle
+% Koniec sekcji Wraki i~kwandle

@@ -12,7 +12,7 @@ Nie stanowi to wielkiego powodu do radości ze względu na wysoką złożoność
 \section{Kolorowanie splotów} % (fold)
 \label{sec:colour_links}
 Oto mniej mętny opis trójkolorowalności, czyli jak nietrudno się domyślić, kolorowalności trzema kolorami.
-Diagram $D$ splotu $K$ jest trójkolorowalny, jeśli każdemu włóknu można przypisać jeden z trzech kolorów tak, by co najmniej dwa zostały użyte.
+Diagram $D$ splotu $K$ jest trójkolorowalny, jeśli każdemu włóknu można przypisać jeden z~trzech kolorów tak, by co najmniej dwa zostały użyte.
 Wymagamy przy tym, by przy żadnym skrzyżowaniu nie spotykały się dokładnie dwa kolory.
 
 Dla własnej wygody jako kolorów używać będziemy kolejnych liczb naturalnych $0, 1, 2, \ldots$.
@@ -36,16 +36,16 @@ Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
 	\]
 \end{definition}
 
-Metoda ta została odkryta razem z uogólnieniem do $n$ kolorów przez Ralpha Foxa w 1956, kiedy próbował uczynić teorię węzłów bardziej przystępną\footnote{
+Metoda ta została odkryta razem z~uogólnieniem do $n$ kolorów przez Ralpha Foxa w~1956, kiedy próbował uczynić teorię węzłów bardziej przystępną\footnote{
 	Niech $L$ będzie splotem, zaś $\pi$ grupą podstawową jego dopełnienia.
 	Reprezentację $\rho$ dla $\pi$ na $D_{2n}$, grupę diedralną, nazywamy $n$-kolorowaniem Foxa.
-	Grupa splotu generowana jest przez ścieżki z punktu bazowego w $S^3$ do brzegu rurowego otoczenia splotu, wokół południka i znowu do bazowego punktu.
+	Grupa splotu generowana jest przez ścieżki z~punktu bazowego w~$S^3$ do brzegu rurowego otoczenia splotu, wokół południka i~znowu do bazowego punktu.
 	Obrazami tych generatorów są izometrie $n$-kąta foremnego, które zapisujemy jako $ts^i$ ($t$ to odbicie, zaś $s$ jest najmniejszym obrotem).
 	Każdy generator odpowiada pewnemu łukowi, przypiszmy mu liczbę $i \in \Z/n\Z$.
 	Dostaliśmy zwykłe kolorowanie, przystępne dla studentów.
 }
 dla studentów.
-Opierając się tylko na definicji kolorowania oraz ruchach Reidemeistera jesteśmy w stanie wykazać pierwsze własności niezmiennika.
+Opierając się tylko na definicji kolorowania oraz ruchach Reidemeistera jesteśmy w~stanie wykazać pierwsze własności niezmiennika.
 
 \begin{proposition}
 	Żaden węzeł nie koloruje się modulo dwa.
@@ -54,13 +54,13 @@ Opierając się tylko na definicji kolorowania oraz ruchach Reidemeistera jeste�
 \begin{proof}
 	Załóżmy nie wprost, że istnieje nietrywialne kolorowanie.
 	Analiza czterech możliwych skrzyżowań pokazuje,
-	że włókna wychodzące z tunelu muszą mieć ten sam kolor.
+	że włókna wychodzące z~tunelu muszą mieć ten sam kolor.
 	Przechodząc wzdłuż węzła widzimy jeden kolor, wbrew założeniu nie wprost.
 \end{proof}
 
-Sploty o wielu składowych są dwukolorowalne.
-Wystarczy pomalować jedną składową zerem, a pozostałe jedynkami.
-Sploty rozszczepialne są $n$-kolorowalne dla każdego $n \ge 2$, można skorzystać z tego samego schematu kolorowania.
+Sploty o~wielu składowych są dwukolorowalne.
+Wystarczy pomalować jedną składową zerem, a~pozostałe jedynkami.
+Sploty rozszczepialne są $n$-kolorowalne dla każdego $n \ge 2$, można skorzystać z~tego samego schematu kolorowania.
 
 \begin{proposition} \label{color_invariant}
 	,,Bycie $n$-kolorowalnym'' jest niezmiennikiem węzłów.
@@ -68,7 +68,7 @@ Sploty rozszczepialne są $n$-kolorowalne dla każdego $n \ge 2$, można skorzys
 
 \begin{proof}
 	Wystarczy sprawdzić, jak ruchy Reidemeistera zmieniają kolory.
-	Pierwszy i drugi:
+	Pierwszy i~drugi:
 	\[
 		\fbox{
 		\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
@@ -169,8 +169,8 @@ Niech $\tau_3(K)$ oznacza liczbę trójkolorowań węzła $K$.
 
 \begin{proposition}
 	Niech $n$ będzie liczbą pierwszą.
-	Węzeł $p, q, r$-preclowy jest $n$-kolorowalny wtedy i tylko wtedy, gdy $n$ dzieli $|pq+qr+pr|$.
-	Jeśli przynajmniej jedna z liczba $p, q, r$ nie jest wielokrotnością $n$, kolorowanie jest jedyne.
+	Węzeł $p, q, r$-preclowy jest $n$-kolorowalny wtedy i~tylko wtedy, gdy $n$ dzieli $|pq+qr+pr|$.
+	Jeśli przynajmniej jedna z~liczba $p, q, r$ nie jest wielokrotnością $n$, kolorowanie jest jedyne.
 	W przeciwnym przypadku istnieją cztery kolorowania (z dokładnością do permutacji!).
 \end{proposition}
 
@@ -198,28 +198,28 @@ Jako kolorów użyjemy teraz elementów $g_1, \ldots, g_n$ pewnej skończonej gr
 \end{definition}
 
 Równanie $gkg^{-1}=h$ mówi, że etykiety włókien wchodzących oraz wychodzących są sprzężone.
-Wynika stąd, że wszystkie etykiety pochodzą z jednej klasy sprzężoności.
+Wynika stąd, że wszystkie etykiety pochodzą z~jednej klasy sprzężoności.
 Muszą jednocześnie generować całą grupę, dlatego $G$ musi być grupą nieprzemienną lub trywialną.
-Etykietowalność jest niezmiennikiem węzłów i nie zależy od orientacji węzła:
+Etykietowalność jest niezmiennikiem węzłów i~nie zależy od orientacji węzła:
 jeżeli elementy $g_1, \ldots, g_n$ generują grupę, to ich odwrotności także.
 
-Rozpatrzmy węzły $6_1$ oraz $9_{46}$ i spróbujmy etykietować je transpozycjami z grupy $S_4$.
+Rozpatrzmy węzły $6_1$ oraz $9_{46}$ i~spróbujmy etykietować je transpozycjami z~grupy $S_4$.
 Wybranie dwóch etykiet przy jednym skrzyżowaniu $6_1$ wymusza etykiety dla wszystkich włókien.
 Dwie transpozycje nie mogą generować grupy $S_4$, natomiast włókna węzła $9_{46}$ dają się etykietować samymi transpozycjami.
 Węzły te są więc różne.
 Nie odróżniają ich ani kolorowania, ani wielomian Alexandera.
 
-Livingston pisze w swojej książce,\footnote{Rozdział 5.2: Węzły i grupy} że Thistlethwaite tworząc tablice węzłów pierwszych znalazł 12965 węzłów o 13 skrzyżowaniach o 5639 różnych wielomianach Alexandera.
+Livingston pisze w~swojej książce,\footnote{Rozdział 5.2: Węzły i~grupy} że Thistlethwaite tworząc tablice węzłów pierwszych znalazł 12965 węzłów o~13 skrzyżowaniach o~5639 różnych wielomianach Alexandera.
 Używając etykietowań podgrupami grupy $S_5$ zmniejszył liczbę nierozwiązanych przypadków do mniej niż tysiąca.
 Perko pokazał zaś, że każdy $S_3$-kolorowalny węzeł jest $S_4$-kolorowalny.
 
 Niech $p \ge 3$ będzie liczbą pierwszą, natomiast $D_p = \langle r, s \mid r^p = s^2 = e, rsr = s \rangle$ grupą diedralną rzędu $2p$.
 Elementy tej grupy to $1, r, r^2, \ldots, r^{p-1}, s, sr, \ldots, sr^{p-1}$.
 ,,Obrót'' $r^k$ jest sprzężony tylko ze swoją odwrotnością, ale ,,symetrie osiowe'' $sr^k$ tworzą jedną klasę sprzężoności.
-Łatwo widać, że dowolne dwie z nich generują całą grupę $D_p$.
+Łatwo widać, że dowolne dwie z~nich generują całą grupę $D_p$.
 
 \begin{proposition}
-	Węzeł $K$ jest $p$-kolorowalny wtedy i tylko wtedy, gdy jest $D_p$-etykietowalny.
+	Węzeł $K$ jest $p$-kolorowalny wtedy i~tylko wtedy, gdy jest $D_p$-etykietowalny.
 \end{proposition}
 
 \begin{proof}

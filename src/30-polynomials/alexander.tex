@@ -1,13 +1,13 @@
 \section{Wielomian Alexandera} % (fold)
 \label{sec:alexander}
 
-Wielomian Alexandera został odkryty w 1923 roku i aż do roku 1984 pozostał jedynym znanym niezmiennikiem wielomianowym węzłów zorientowanych.
-Przytoczymy jego opis oparty nie o teorię homologii, a równania kolorujące -- głównym powodem jest elementarność takiego podejścia.
+Wielomian Alexandera został odkryty w~1923 roku i~aż do roku 1984 pozostał jedynym znanym niezmiennikiem wielomianowym węzłów zorientowanych.
+Przytoczymy jego opis oparty nie o~teorię homologii, a~równania kolorujące -- głównym powodem jest elementarność takiego podejścia.
 Uogólnijmy najpierw równania kolorujące.
 
 \begin{definition}
 \label{def:polynomial_colouring}
-	Wielomianowe równanie kolorujące związane z poniższym skrzyżowaniem splotu zorientowanego to $a + tc - ta - b = 0$.
+	Wielomianowe równanie kolorujące związane z~poniższym skrzyżowaniem splotu zorientowanego to $a + tc - ta - b = 0$.
 	Tylko orientacja górnej wiązki ma znaczenie.
 	\[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
 	\useasboundingbox (-5, -5) rectangle (5,5);
@@ -26,45 +26,45 @@ Istotnie, wystarczy podstawić tutaj $t = 1$, by otrzymać mniej ogólną defini
 \begin{definition}
 	\label{def:alexander_polynomial}
 	\index{wielomian!Alexandera}
-	Niech $L$ będzie zorientowanym splotem z diagramem bez krzywych zamkniętych.
+	Niech $L$ będzie zorientowanym splotem z~diagramem bez krzywych zamkniętych.
 	Przypiszmy etykiety $x_0, \ldots, x_m$ do włókien oraz $0, \ldots, m$ do skrzyżowań.
-	Z macierzy $P$, której wyraz $P_{ij}$ określony jest jako współczynnik przy $x_j$ w wielomianowym równaniu kolorującym nad $i$-tym wierzchołkiem, wykreślmy jedną kolumnę i jeden wiersz.
+	Z macierzy $P$, której wyraz $P_{ij}$ określony jest jako współczynnik przy $x_j$ w~wielomianowym równaniu kolorującym nad $i$-tym wierzchołkiem, wykreślmy jedną kolumnę i~jeden wiersz.
 	Wyznacznik tak otrzymanej macierzy nazywamy wielomianem Alexandera $\Delta_L(t)$.
 \end{definition}
 
 Nasz nowy niezmiennik nie jest zwykłym wielomianem, tylko wielomianem Laurenta jednej zmiennej, czyli elementem pierścienia $\Z[t, t^{-1}]$.
 
 \begin{proposition} \label{alexander_invariance}
-	Wielomian Alexandera z dokładnością do relacji równoważności
+	Wielomian Alexandera z~dokładnością do relacji równoważności
 	\[
 		f(t) \equiv g(t) \iff f(t) = \pm t^m g(t) \mbox{ dla pewnego } m \in \Z
 	\]
 	jest niezmiennikiem zorientowanych splotów.
 \end{proposition}
 
-W dowodzie niezmienniczości wyznacznika węzła skorzystaliśmy z relacji między nim a grupą kolorującą.
-Poprzednie wydanie książki zawierało sugestię, że elementarny (czyli taki, który nie korzysta z teorii modułów) dowód niezmienniczości wielomianu Alexandera nie istnieje.
+W dowodzie niezmienniczości wyznacznika węzła skorzystaliśmy z~relacji między nim a~grupą kolorującą.
+Poprzednie wydanie książki zawierało sugestię, że elementarny (czyli taki, który nie korzysta z~teorii modułów) dowód niezmienniczości wielomianu Alexandera nie istnieje.
 Sugestia ta była błędna, wystarczy użyć alternatywnej definicji.
 
 \begin{proof}[Szkic dowodu]
-	Ustalmy diagram o $k$ skrzyżowaniach, który rozcina płaszczyznę na $k+2$ obszarów i utwórzmy macierz o wymiarach $k \times k$, której kolumny odpowiadają obszarom, wiersze zaś skrzyżowaniom -- pomijając przy tym dwa sąsiadujące ze sobą obszary -- o wyrazach ze współczynników równań kolorujących.
+	Ustalmy diagram o~$k$ skrzyżowaniach, który rozcina płaszczyznę na $k+2$ obszarów i~utwórzmy macierz o~wymiarach $k \times k$, której kolumny odpowiadają obszarom, wiersze zaś skrzyżowaniom -- pomijając przy tym dwa sąsiadujące ze sobą obszary -- o~wyrazach ze współczynników równań kolorujących.
 	Jej wyznacznik jest wielomianem Alexandera.
 
 	Sąsiadującym ze sobą obszarom przypiszmy kolejne liczby całkowite tak, by obszar leżący po prawej stronie włókna miał niższy indeks.
-	Pokażemy najpierw, że skasowanie kolumny indeksu $n$ oraz $n+1$ sprawia, że wyznacznik zmienia się co najwyżej o czynnik $\pm t^m$ dla pewnego $m$.
+	Pokażemy najpierw, że skasowanie kolumny indeksu $n$ oraz $n+1$ sprawia, że wyznacznik zmienia się co najwyżej o~czynnik $\pm t^m$ dla pewnego $m$.
 	Niech $S_n$ oznacza sumę kolumn indeksu $n$.
 	Każdy wiersz macierzy zawiera cztery niezerowe wyrazy: $\pm 1, \pm t$, zatem $\sum_n S_n = 0$.
 	Równość ta zachodzi nawet po przemnożeniu kolumny indeksu $n$ przez $t^{-n}$: $\sum_n t^{-n}S_n = 0$, co prowadzi do relacji $\sum_n (t^{-n}-1) S_n = 0$.
 	Jeśli więc indeks kolumny $v_j$ wynosi $n$, to $(t^{-n}-1)v_j$ jest kombinacją liniową innych kolumn niezerowego indeksu (ponieważ $t^0 - 1 = 0$).
 
-	Rozpatrzmy macierze $M_{0,j}, M_{0,k}$, gdzie indeksy $j$-tej i $k$-tej kolumny to odpowiednio $p$ i $q$.
-	Z powyższych rozważań wynika, że $(t^{-q}-1) \Delta_{0,j} = \pm (t^{-p}-1)\Delta_{0,k}$, ale indeksy obszarów są wyznaczone z dokładnością do stałej addytywnej.
+	Rozpatrzmy macierze $M_{0,j}, M_{0,k}$, gdzie indeksy $j$-tej i~$k$-tej kolumny to odpowiednio $p$ i~$q$.
+	Z powyższych rozważań wynika, że $(t^{-q}-1) \Delta_{0,j} = \pm (t^{-p}-1)\Delta_{0,k}$, ale indeksy obszarów są wyznaczone z~dokładnością do stałej addytywnej.
 	Biorąc $i$-tą oraz $l$-tą kolumnę, indeksów $r$ oraz $s$, dostaniemy zależności
 	$$(t^{r-q}-1) \Delta_{l,j} = \pm (t^{r-p} - 1)\Delta_{l,i}$$
 	$$(t^{q-s}-1) \Delta_{k,l} = \pm (t^{q-r} - 1)\Delta_{k,i}$$
 	co prowadzi do
 	$$\Delta_{l,j} = \pm \frac{t^{q-r}(t^{r-p}-1)}{t^{q-s}-1} \Delta_{k,i}$$
-	Położenie $p = r +1$, $s =q+1$ pokazuje, że różny wybór kolumn do skreślenia zmienia wyznacznik macierzy co najwyżej o czynnik $\pm t^m$.
+	Położenie $p = r +1$, $s =q+1$ pokazuje, że różny wybór kolumn do skreślenia zmienia wyznacznik macierzy co najwyżej o~czynnik $\pm t^m$.
 
 	Wprowadźmy jeszcze jedną techniczną definicję.
 	Dwie kwadratowe macierze będą dla nas równoważne, jeśli można przejść od jednej do drugiej przy użyciu pięciu operacji:
@@ -74,20 +74,20 @@ Sugestia ta była błędna, wystarczy użyć alternatywnej definicji.
 		\item zamiana dwóch wierszy lub kolumn miejscami;
 		\item dodanie jednego wiersza do innego (lub kolumny do innej);
 		\item przemnożenie lub podzielenie kolumny przez $t$;
-		\item rozszerzenie lub zmniejszenie macierzy o $1$ na przekątnej i zera w innych miejscach.
+		\item rozszerzenie lub zmniejszenie macierzy o~$1$ na przekątnej i~zera w~innych miejscach.
 	\end{enumerate}
 
 	Ruchy Reidemeistera prowadzą do macierzy równoważnych wyjściowym.
-	Każda z tych operacji zmienia wyznacznik macierzy o czynnik $\pm t^{-m}$, co kończy dowód.
+	Każda z~tych operacji zmienia wyznacznik macierzy o~czynnik $\pm t^{-m}$, co kończy dowód.
 \end{proof}
 
-Dla wygody można przeprowadzić normalizację wielomianu przez wzięcie reprezentanta, który jest symetryczny w zmiennych $t$ oraz $t^{-1}$ i przyjmuje w punkcie $1$ wartość $\Delta(1) = 1$.
-Odwrotnie, każdy wielomian Laurenta z całkowitymi współczynnikami o takich własnościach jest wielomianem Alexandera pewnego węzła.
+Dla wygody można przeprowadzić normalizację wielomianu przez wzięcie reprezentanta, który jest symetryczny w~zmiennych $t$ oraz $t^{-1}$ i~przyjmuje w~punkcie $1$ wartość $\Delta(1) = 1$.
+Odwrotnie, każdy wielomian Laurenta z~całkowitymi współczynnikami o~takich własnościach jest wielomianem Alexandera pewnego węzła.
 % Kawauchi 1996
 
-Wielomian nie odróżnia luster i odwrotności od wyjściowych węzłów.
-Znane są przykłady nietrywialnych węzłów o trywialnym wielomianie Alexandera ($1$), chociaż żaden z nich nie ma dziesięciu lub mniej skrzyżowań.
-Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, strona 167) lub cztery inne z 167 strony książki \cite{rolfsen76} Rolfsena.
+Wielomian nie odróżnia luster i~odwrotności od wyjściowych węzłów.
+Znane są przykłady nietrywialnych węzłów o~trywialnym wielomianie Alexandera ($1$), chociaż żaden z~nich nie ma dziesięciu lub mniej skrzyżowań.
+Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, strona 167) lub cztery inne z~167 strony książki \cite{rolfsen76} Rolfsena.
 
 \begin{proposition}
 	Tylko skończenie wiele węzłów alternujących może mieć ten sam wielomian Alexandera.
@@ -95,11 +95,11 @@ Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, s
 
 \begin{proof}
 	Przeprowadzimy rozumowanie nie wprost.
-	Załóżmy, że istnieje ciąg $K_n$ węzłów alternujących o tym samym wielomianie Alexandera $\Delta_K(t)$.
+	Załóżmy, że istnieje ciąg $K_n$ węzłów alternujących o~tym samym wielomianie Alexandera $\Delta_K(t)$.
 	Wszystkie jego wyrazy mają ten sam wyznacznik, ponieważ $\det K_n = |\Delta_K(-1)|$.
 	Z twierdzenia Bankwitza (\ref{thm:bankwitz}) wynika, że indeks skrzyżowaniowy węzłów $K_n$ jest wspólnie ograniczony.
 
-	To prowadzi do sprzeczności: węzłów o danym indeksie skrzyżowaniowym jest tylko skończenie wiele.
+	To prowadzi do sprzeczności: węzłów o~danym indeksie skrzyżowaniowym jest tylko skończenie wiele.
 \end{proof}
 
 \begin{proposition}
@@ -115,9 +115,9 @@ Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, s
 \begin{proof}
 	(1) Wystarczy porównać definicje $\Delta_L$ oraz $\det L$.
 
-	(2) Po odbiciu diagramu względem pionowej prostej skrzyżowanie z definicji \ref{def:colour_equation} również się odbija.
-	Równanie związane z nim zmienia się z $a + tc - ta - b = 0$ w $a + tb - ta - c = 0$.
-	Zauważmy, że pierwsze równanie z $t$ zamienionym na $1/t$ staje się drugim równaniem przemnożonym przez $-1/t$.
+	(2) Po odbiciu diagramu względem pionowej prostej skrzyżowanie z~definicji \ref{def:colour_equation} również się odbija.
+	Równanie związane z~nim zmienia się z~$a + tc - ta - b = 0$ w~$a + tb - ta - c = 0$.
+	Zauważmy, że pierwsze równanie z~$t$ zamienionym na $1/t$ staje się drugim równaniem przemnożonym przez $-1/t$.
 
 	(3) Analogicznie.
 \end{proof}
@@ -157,7 +157,7 @@ Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, s
 	\end{knot}
 	\end{tikzpicture}
 \]
-	Niech $A$ oraz $B$ oznaczają macierze otrzymane z wielomianowych równań kolorujących dla $J$ oraz $K$ przez skreślenie skrajnie lewej kolumny i górnego wiersza.
+	Niech $A$ oraz $B$ oznaczają macierze otrzymane z~wielomianowych równań kolorujących dla $J$ oraz $K$ przez skreślenie skrajnie lewej kolumny i~górnego wiersza.
 	Wtedy $\Delta_J(t) = \det A$ oraz $\Delta_K(t) = \det B$.
 	Poniższy diagram przedstawia sumę $J \shrap K$:
 
@@ -207,7 +207,7 @@ Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, s
 	\end{align*}
 
 	Skreśliliśmy lewą kolumnę oraz górny wiersz.
-	Zatem $\Delta_{J \shrap K}(t) = t^?\Delta_J(t) \Delta_K(t)$, jeśli nie pomyliliśmy się w obliczeniach.
+	Zatem $\Delta_{J \shrap K}(t) = t^?\Delta_J(t) \Delta_K(t)$, jeśli nie pomyliliśmy się w~obliczeniach.
 \end{proof}
 
 \begin{proposition}
@@ -220,7 +220,7 @@ Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, s
 Przedstawimy teraz kilka innych definicji, które prowadzą do tego samego niezmiennika.
 
 \begin{definition}
-	Wielomian Alexandera $\Delta_L(t) \in \Z[t^{-1/2}, t^{1/2}]$ zorientowanego splotu $L$ to taki wielomian Laurenta, który spełnia relację kłębiastą (przy oznaczeniach z twierdzenia \ref{tracheotomia}):
+	Wielomian Alexandera $\Delta_L(t) \in \Z[t^{-1/2}, t^{1/2}]$ zorientowanego splotu $L$ to taki wielomian Laurenta, który spełnia relację kłębiastą (przy oznaczeniach z~twierdzenia \ref{tracheotomia}):
 	\begin{enumerate}
 		\item $\Delta_{\LittleUnknot}(t) = 1$
 		\item $\Delta_{L_+}(t) - \Delta_{L_-}(t) - (t^{1/2} - t^{-1/2}) \Delta_{L_0}(t) = 0$.
@@ -235,8 +235,8 @@ Relacja kłębiasta wystarcza do wyznaczenia $\Delta_L$ dla każdego splotu na m
 
 \begin{proof}
 	Wystarczy ograniczyć się do diagramu węzła.
-	Wybierzmy jakiś początkowy punkt na nim, różny od skrzyżowania wraz z kierunkiem, wzdłuż którego będziemy przemierzać węzeł.
-	Za każdym razem, kiedy odwiedzamy nowe skrzyżowanie, zmieniamy je w razie potrzeby na takie, przez które przemieszczamy się górnym łukiem.
+	Wybierzmy jakiś początkowy punkt na nim, różny od skrzyżowania wraz z~kierunkiem, wzdłuż którego będziemy przemierzać węzeł.
+	Za każdym razem, kiedy odwiedzamy nowe skrzyżowanie, zmieniamy je w~razie potrzeby na takie, przez które przemieszczamy się górnym łukiem.
 	Skrzyżowań już odwiedzonych nie zmieniamy wcale. Po powrocie do punktu wybranego na początku uzyskamy diagram niewęzła.
 \end{proof}
 
@@ -247,23 +247,23 @@ Spełniona jest wtedy inna relacja kłębiasta:
 	\nabla_{L_+}(x)- \nabla_{L_-}(x) = x \nabla_{L_0}(x).
 \]
 
-Wielomian Jonesa (zdefiniowany w kolejnej sekcji) spełnia podobną równość.
+Wielomian Jonesa (zdefiniowany w~kolejnej sekcji) spełnia podobną równość.
 Ich istnienie może nasunąć przypuszczenie, że dają się wspólnie uogólnić.
-Tak jest w rzeczywistości -- mocniejszym niezmiennikiem okazał się wielomian HOMFLY-PT.
+Tak jest w~rzeczywistości -- mocniejszym niezmiennikiem okazał się wielomian HOMFLY-PT.
 
 Poniższa hipoteza pochodzi od Stojmenowa.
 
 \begin{conjecture}
-	Niech $\nabla_k$ będzie współczynnikiem przy $z^k$ w wielomianie Conwaya, zaś $c$ indeksem skrzyżowaniowym splotu $L$.
+	Niech $\nabla_k$ będzie współczynnikiem przy $z^k$ w~wielomianie Conwaya, zaś $c$ indeksem skrzyżowaniowym splotu $L$.
 	Wtedy spełniona jest nierówność
 	\[
 		|\nabla_k(L)| \le \underbrace{\frac{1}{2^kk!}}_{C_k} \cdot c^k.
 	\]
 \end{conjecture}
 
-Nierówność jest nietrywialna tylko dla splotu $L$ z $k+1, k-1, \ldots$ składowymi; trywialna dla $k = 0$, łatwa dla $k=1$ (wtedy $\nabla_1$ jest indeksem zaczepienia splotów o dwóch składowych) oraz udowodniona dla węzłów i $k=2$ przez Polyaka, Viro w 2001 (,,On the Casson knot invariant'').
-Istnienie stałej $C_k$ wynika z dowodu hipotezy Lin-Wanga, patrz prace:
-,,Polynomial invariants are polynomial'' (Bar-Natan dla splotów) i ,,On finiteness of Vassiliev invariants and a proof of the Lin-Wang conjecture via braiding polynomials'' (Stojmenow dla splotów), ale trudno obliczyć jej wartość.
+Nierówność jest nietrywialna tylko dla splotu $L$ z~$k+1, k-1, \ldots$ składowymi; trywialna dla $k = 0$, łatwa dla $k=1$ (wtedy $\nabla_1$ jest indeksem zaczepienia splotów o~dwóch składowych) oraz udowodniona dla węzłów i~$k=2$ przez Polyaka, Viro w~2001 (,,On the Casson knot invariant'').
+Istnienie stałej $C_k$ wynika z~dowodu hipotezy Lin-Wanga, patrz prace:
+,,Polynomial invariants are polynomial'' (Bar-Natan dla splotów) i~,,On finiteness of Vassiliev invariants and a~proof of the Lin-Wang conjecture via braiding polynomials'' (Stojmenow dla splotów), ale trudno obliczyć jej wartość.
 
 \todo{Użyć prawdziwych referencji bibliograficznych.}
 
@@ -271,7 +271,7 @@ Istnienie stałej $C_k$ wynika z dowodu hipotezy Lin-Wanga, patrz prace:
 	Wielomianem Alexandera splotu rozszczepialnego jest $1$.
 \end{proposition}
 
-Za to wielomian Jonesa, zgodnie z faktem \ref{prp:jones_trivial_link}, rozróżnia sploty trywialne.
+Za to wielomian Jonesa, zgodnie z~faktem \ref{prp:jones_trivial_link}, rozróżnia sploty trywialne.
 
 Macierz Seiferta -- wymaga definicji.
 \begin{proposition}
@@ -281,21 +281,21 @@ Macierz Seiferta -- wymaga definicji.
 Można scharakteryzować możliwe postacie wielomianu Alexandera.
 
 \begin{proposition}[Hosokowa, 1958]
-	Każdy wielomian Laurenta $p(t)$ o całkowitych współczynnikach taki, że $p(1/t) = p(t)$ i $p(1) = \pm 1$ może być wielomianem Alexandera jakiegoś węzła.
+	Każdy wielomian Laurenta $p(t)$ o~całkowitych współczynnikach taki, że $p(1/t) = p(t)$ i~$p(1) = \pm 1$ może być wielomianem Alexandera jakiegoś węzła.
 \end{proposition}
 
-Murasugi podejrzewał, że w przypadku węzłów alternujących ciąg współczynników jest unimodalny.
-Dowód podano dla węzłów algebraicznych (Murasugi, MR0802722) oraz genusu dwa (Ozsvath i Szabo w arXiv:0209149).
-Hipoteza w ogólnym przypadku pozostaje otwarta.
+Murasugi podejrzewał, że w~przypadku węzłów alternujących ciąg współczynników jest unimodalny.
+Dowód podano dla węzłów algebraicznych (Murasugi, MR0802722) oraz genusu dwa (Ozsvath i~Szabo w~arXiv:0209149).
+Hipoteza w~ogólnym przypadku pozostaje otwarta.
 
-% Remark (M. Hutchings) There does exist a categorification of the Alexander polynomial, or more precisely of ∆K(t)/(1 − t)2, where ∆K(t) denotes the (symmetrized) Alexander polynomial of the knot K. It is a kind of Seiberg-Witten Floer homology of the three-manifold obtained by zero surgery on K.
+% Remark (M. Hutchings) There does exist a~categorification of the Alexander polynomial, or more precisely of ∆K(t)/(1 − t)2, where ∆K(t) denotes the (symmetrized) Alexander polynomial of the knot K. It is a~kind of Seiberg-Witten Floer homology of the three-manifold obtained by zero surgery on K.
 % One can regard it as Z×Z/2Z graded, although in fact the column whose Euler characteristic gives the coefficient of tk is relatively Z/2kZ graded.
 
 Na sam koniec pozostawiliśmy najstarszą definicję wielomianu Alexandera.
-Niech $K$ będzie węzłem w 3-sferze, zaś $X$ nieskończonym nakryciem cyklicznym jego dopełnienia.
+Niech $K$ będzie węzłem w~3-sferze, zaś $X$ nieskończonym nakryciem cyklicznym jego dopełnienia.
 Można je otrzymać rozcinając dopełnienie wzdłuż powierzchni Seiferta.
-Na $X$, a przez to także na grupie homologii $H_1(X)$, działa automorfizm $t$, który czyni z niej moduł nad pierścieniem $\Z[t, t^{-1}]$, i to skończenie prezentowalny.
-Jeśli posiada przedstawienie z $r$ generatorami i $s$ relacjami, gdzie $r \le s$, rozpatrzmy ideał generowany przez minory $r \times r$ macierzy prezentacji (jeśli nie, weźmy ideał zerowy).
-Alexander pokazał, że ideał ten zawsze jest niezerowy i główny.
+Na $X$, a~przez to także na grupie homologii $H_1(X)$, działa automorfizm $t$, który czyni z~niej moduł nad pierścieniem $\Z[t, t^{-1}]$, i~to skończenie prezentowalny.
+Jeśli posiada przedstawienie z~$r$ generatorami i~$s$ relacjami, gdzie $r \le s$, rozpatrzmy ideał generowany przez minory $r \times r$ macierzy prezentacji (jeśli nie, weźmy ideał zerowy).
+Alexander pokazał, że ideał ten zawsze jest niezerowy i~główny.
 
 % Koniec sekcji Wielomian Alexandera

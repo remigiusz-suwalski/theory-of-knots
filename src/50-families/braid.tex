@@ -1,16 +1,16 @@
 \section{Warkocze} % (fold)
 \label{sec:braid}
-Podam teraz opis grupy warkoczy, rozważanej po raz pierwszy niejawnie przez A. Hurwitza w 1885 roku i jawnie przez E. Artina czterdzieści lat później.
-O dwóch punktach $(d_1, t_1)$, $(d_2, t_2)$ w $B^2 \times [0, 1] \subseteq \R^3$ powiemy, że łączący je odcinek jest malejący, jeśli $t_1 > t_2$.
-Łamana malejąca to taka, która jest złożona z malejących odcinków.
+Podam teraz opis grupy warkoczy, rozważanej po raz pierwszy niejawnie przez A. Hurwitza w~1885 roku i~jawnie przez E. Artina czterdzieści lat później.
+O dwóch punktach $(d_1, t_1)$, $(d_2, t_2)$ w~$B^2 \times [0, 1] \subseteq \R^3$ powiemy, że łączący je odcinek jest malejący, jeśli $t_1 > t_2$.
+Łamana malejąca to taka, która jest złożona z~malejących odcinków.
 
 \begin{definition}[warkocz]
     \label{braid_def}
     \index{warkocz}
-    Teoriomnogościową sumę parami rozłącznych łamanych malejących, które łączą zbiory $\{x_1, \ldots, x_n\} \times \{1\}$ oraz $\{x_1, \ldots, x_n\} \times \{0\}$, nazywamy warkoczem o $n$ pasmach.
+    Teoriomnogościową sumę parami rozłącznych łamanych malejących, które łączą zbiory $\{x_1, \ldots, x_n\} \times \{1\}$ oraz $\{x_1, \ldots, x_n\} \times \{0\}$, nazywamy warkoczem o~$n$ pasmach.
 \end{definition}
 
-Poszczególne pasma warkocza możemy utożsamiać z wykresami pewnych (gładkich) funkcji $f_i \colon [0, 1] \to \R^2$, jeśli zbiory $\{f_i(0) : 1 \le i \le n\} = \{f_i(1) : 1 \le i \le n\}$ są równe.
+Poszczególne pasma warkocza możemy utożsamiać z~wykresami pewnych (gładkich) funkcji $f_i \colon [0, 1] \to \R^2$, jeśli zbiory $\{f_i(0) : 1 \le i \le n\} = \{f_i(1) : 1 \le i \le n\}$ są równe.
 Wtedy dwa warkocze uznajemy za równoważne, jeśli istnieje między nimi izotopia: funkcje ciągłe dwóch zmiennych $F_i(t, s)$ określone na zbiorze $[0,1] \times [0,1]$ takie, że $F_i(t,0)= f_i(t)$ oraz $F_i(t, 1) = g_i(t)$.
 Przez analogię do węzłów można zdefiniować diagramy warkoczy jako cienie bez katastrof.
 Najczęściej rzutujemy prostopadle do odcinka $\{0\} \times [0, 1]$.
@@ -22,7 +22,7 @@ Najczęściej rzutujemy prostopadle do odcinka $\{0\} \times [0, 1]$.
         \psi_1(d, t)&  = (d, t/2) \\
         \psi_2(d, t)&  = (d, \frac12 (t+1))
     \end{align*}
-    Klasy abstrakcji warkoczy z mnożeniem danym wzorem $z_1z_2 = \psi_1(z_1) \cup \psi_2(z_2)$ tworzą grupę warkoczy $B_n$.
+    Klasy abstrakcji warkoczy z~mnożeniem danym wzorem $z_1z_2 = \psi_1(z_1) \cup \psi_2(z_2)$ tworzą grupę warkoczy $B_n$.
     Jej elementem neutralnym jest warkocz $1_n = \bigcup_{i = 1}^n \{x_1\} \times [0,1]$.
 \end{definition}
 
@@ -90,11 +90,11 @@ pozostawiając mu małą wskazówkę graficzną:
     \end{tikzpicture}
 \]
 
-Grupy $B_n$ mogą być obiektem badań algebry bez związku z teorią węzłów.
-Wszystkie są beztorsyjne (tylko jeden ich element jest skończonego rzędu) i Hopfa, czyli każdy epimorfizm $B_n \to B_n$ jest jednocześnie izomorfizmem.
+Grupy $B_n$ mogą być obiektem badań algebry bez związku z~teorią węzłów.
+Wszystkie są beztorsyjne (tylko jeden ich element jest skończonego rzędu) i~Hopfa, czyli każdy epimorfizm $B_n \to B_n$ jest jednocześnie izomorfizmem.
 
 \begin{proposition}
-    Grupa warkoczy jest izomorficzna z grupę prezentowaną przez generatory $\sigma_1, \ldots, \sigma_{n-1}$ oraz relacje:
+    Grupa warkoczy jest izomorficzna z~grupę prezentowaną przez generatory $\sigma_1, \ldots, \sigma_{n-1}$ oraz relacje:
     $\sigma_i \sigma_j = \sigma_j \sigma_i$ dla $|i - j| \neq 1$,
     $\sigma_i\sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ dla $1 \le i \le n-2$.
 \end{proposition}
@@ -124,7 +124,7 @@ Generatory $\sigma_i$ posiadają prostą interpretację graficzną:
 \end{proposition}
 
 Grupa $B_1$ jest trywialna, $B_2$ cykliczna, zaś $B_3$ to grupa podstawowa trójlistnika.
-Nie istnieje węzeł, którego grupą podstawową byłaby jednak $B_n$ dla $n \ge 4$: tam elementy $\sigma_1$, $\sigma_n$ oraz generator centrum rozpinają grupę izomorficzną z $\Z^3$.
+Nie istnieje węzeł, którego grupą podstawową byłaby jednak $B_n$ dla $n \ge 4$: tam elementy $\sigma_1$, $\sigma_n$ oraz generator centrum rozpinają grupę izomorficzną z~$\Z^3$.
 Natomiast asferyczna, niezwarta 3-rozmaitość nie może mieć grupy podstawowej $\Z^3$.
 Musimy pominąć czysto kohomologiczny dowód faktu, ale zaiste prowadzi to do sprzeczności.
 
@@ -135,7 +135,7 @@ Jeden węzeł może być przy tym domknięciem różnych warkoczy.
 Co ciekawe, domknięcia warkoczy były rozważane przed samymi warkoczami!
 
 \begin{theorem}[Alexander, 1923] \label{alex_thm}
-     Każdy węzeł i splot powstaje przez domknięcie pewnego splotu.
+     Każdy węzeł i~splot powstaje przez domknięcie pewnego splotu.
      \index{twierdzenie!Alexandera}
 \end{theorem}
 
@@ -143,27 +143,27 @@ Wielomian Alexandera wykrywa czasami węzły, których nie otrzyma się domykaj�
 Jeśli $|\Delta(i)| > 3$, to węzeł nie jest domknięciem 3-warkocza.
 Jeśli zaś spełniona jest nierówność $\Delta (\exp (2\pi i / 5)) > 13/2$,
 nie jest on domknięciem 4-warkocza.
-Jeśli $b_+$ jest sumą dodatnich wykładników, zaś $b_-$ ujemnych w grupie $B_n$ i $b_+ - 3b_- \ge n$, to domknięcie warkocza $a$ nie jest achiralne.
+Jeśli $b_+$ jest sumą dodatnich wykładników, zaś $b_-$ ujemnych w~grupie $B_n$ i~$b_+ - 3b_- \ge n$, to domknięcie warkocza $a$ nie jest achiralne.
 Dowody tych faktów zawiera praca \cite{jones85} Jonesa.
 
 \begin{theorem}[Markow, 1936]
     % Każdy splot jest domknięciem pewnego warkocza. -- Alexander
-    Dwa domknięte warkocze są równoważne jako sploty wtedy i tylko wtedy,
-    gdy jeden powstaje z drugiego przez ciąg
+    Dwa domknięte warkocze są równoważne jako sploty wtedy i~tylko wtedy,
+    gdy jeden powstaje z~drugiego przez ciąg
     sprzężeń: $z_1 \mapsto z_2 z_1 z_2^{-1}$ oraz procesów Markowa,
     które zastępują $n$-warkocz $\beta$ przez $(n+1)$-warkocz $\beta\sigma_n^{\pm 1}$.
 \end{theorem}
 
 \begin{proof}
-    Kompletny i godny naśladowania dowód znajduje się w książce \cite{birman74} Birman.
-    Jest ona trudno dostępna, więc warto sprawdzić też \cite{birman02}, artykuł napisany przez Birman i Menasco.
+    Kompletny i~godny naśladowania dowód znajduje się w~książce \cite{birman74} Birman.
+    Jest ona trudno dostępna, więc warto sprawdzić też \cite{birman02}, artykuł napisany przez Birman i~Menasco.
 \end{proof}
 
-Problem słowa (czy dane słowo przedstawia element neutralny?) oraz sprzężoności (czy dwa słowa są sprzeżone?) są rozwiązalne w grupach warkoczowych.
+Problem słowa (czy dane słowo przedstawia element neutralny?) oraz sprzężoności (czy dwa słowa są sprzeżone?) są rozwiązalne w~grupach warkoczowych.
 Problem, czy dwa słowa prezentują równoważne węzły -- nie.
 
 \index{reprezentacja Burau}
-Na zakończenie sekcji wspomnijmy o macierzowej reprezentacji Burau.
+Na zakończenie sekcji wspomnijmy o~macierzowej reprezentacji Burau.
 Wyznaczona jest ona przez obrazy generatorów:
 \[
     \varphi(\sigma_i) = I_{i-1} \oplus \begin{pmatrix}
@@ -171,12 +171,12 @@ Wyznaczona jest ona przez obrazy generatorów:
         1   & 0
     \end{pmatrix} \oplus I_{n-i-1}
 \]
-Reprezentacja $\varphi$ jest wierna dla $n = 2, 3$ i niewierna dla $n \ge 5$.
+Reprezentacja $\varphi$ jest wierna dla $n = 2, 3$ i~niewierna dla $n \ge 5$.
 Czy reprezentacja Burau dla $B_4$ jest wierna?
 Negatywna odpowiedź na to pytanie prawie na pewno prowadziłaby do
 nietrywialnego węzła, którego wielomianem HOMFLY jest $1$,
 natomiast odpowiedź pozytywna raczej nie ma aż tak dramatycznych następstw.
-Bigelow w 1999 roku znalazł nietrywialne elementy jądra zadane komutatorem $[\psi_1^{{-1}}\sigma_4\psi_1,\psi_2^{{-1}}\sigma_4\sigma_3\sigma_2\sigma_1^2\sigma_2\sigma_3\sigma_4\psi_2]$, gdzie
+Bigelow w~1999 roku znalazł nietrywialne elementy jądra zadane komutatorem $[\psi_1^{{-1}}\sigma_4\psi_1,\psi_2^{{-1}}\sigma_4\sigma_3\sigma_2\sigma_1^2\sigma_2\sigma_3\sigma_4\psi_2]$, gdzie
     \begin{align*}
         \psi_1 & = \sigma_3^{{-1}}\sigma_2\sigma_1^2\sigma_2\sigma_4^3\sigma_3\sigma_2, \\
 \psi_2 & = \sigma_4^{{-1}}\sigma_3\sigma_2\sigma_1^{{-2}}\sigma_2\sigma_1^2\sigma_2^2\sigma_1\sigma_4^5.

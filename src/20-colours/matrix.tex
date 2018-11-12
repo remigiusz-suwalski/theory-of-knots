@@ -1,15 +1,15 @@
-\section{Macierz i wyznacznik} % (fold)
+\section{Macierz i~wyznacznik} % (fold)
 \label{sec:colour_matrix}
 Zajmiemy się teraz wyznacznikiem, pierwszym nieoczywistym niezmiennikiem splotów, który przypisuje każdemu pewną liczbę całkowitą.
-Jest on blisko związany z kolorowaniem.
+Jest on blisko związany z~kolorowaniem.
 Zauważmy, że pierwszy ruch Reidemeistera usuwa zamknięte krzywe, czyli pojedyncze łuki bez skrzyżowań.
 Diagram bez takich krzywych ma tyle samo skrzyżowań, co łuków.
 
 \begin{definition}[macierz kolorująca]
     \index{macierz!kolorująca}
-    Ustalmy diagram bez zamkniętych krzywych dla splotu $L$ z łukami $x_0, \ldots, x_m$ oraz skrzyżowaniami $0, \ldots, m$.
-    Definiujemy macierz $A$, której wyraz $a_{lj}$ jest współczynnikiem przy $x_j$ w $l$-tym równaniu kolorującym: $x_j+x_k - 2x_i \equiv 0 \mod n$.
-    Macierz kolorująca $A_+$ powstaje z macierzy $A$ przez skreślenie dowolnego wiersza i kolumny.
+    Ustalmy diagram bez zamkniętych krzywych dla splotu $L$ z~łukami $x_0, \ldots, x_m$ oraz skrzyżowaniami $0, \ldots, m$.
+    Definiujemy macierz $A$, której wyraz $a_{lj}$ jest współczynnikiem przy $x_j$ w~$l$-tym równaniu kolorującym: $x_j+x_k - 2x_i \equiv 0 \mod n$.
+    Macierz kolorująca $A_+$ powstaje z~macierzy $A$ przez skreślenie dowolnego wiersza i~kolumny.
     \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
     \useasboundingbox (-5, -5) rectangle (5,5);
     \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
@@ -22,8 +22,8 @@ Diagram bez takich krzywych ma tyle samo skrzyżowań, co łuków.
     \end{tikzpicture}\]
 \end{definition}
 
-Taka macierz jest kwadratowa, ponieważ z każdego skrzyżowania wychodzą (tunelem) dwa włókna mające dwa końce.
-Wykreślenie wiersza i kolumny jest konieczne.
+Taka macierz jest kwadratowa, ponieważ z~każdego skrzyżowania wychodzą (tunelem) dwa włókna mające dwa końce.
+Wykreślenie wiersza i~kolumny jest konieczne.
 Gdybyśmy tego zaniechali, otrzymana macierz nie byłaby odwracalna, bowiem wiersze sumują się do zera.
 Dla alternujących diagramów możemy żądać, by górą $i$-tego skrzyżowania biegło $i$-te włókno, wtedy na diagonali macierzy $A$ znajdą się same minus dwójki.
 
@@ -38,26 +38,26 @@ Dla alternujących diagramów możemy żądać, by górą $i$-tego skrzyżowania
 \end{definition}
 
 Defekty modulo różne liczby pierwsze są niezależne od siebie.
-Na przykład suma spójna $k$ trójlistników i $j$ węzłów $T_{2,5}$ posiada defekt $k$ modulo $3$ oraz $j$ modulo $5$.
+Na przykład suma spójna $k$ trójlistników i~$j$ węzłów $T_{2,5}$ posiada defekt $k$ modulo $3$ oraz $j$ modulo $5$.
 Podobne przykłady istnieją dla innych zbiorów liczb pierwszych.
 
-Pokażemy później (po poznaniu grupy kolorującej, czyli we wniosku \ref{det_invariant}) lub jeszcze później (po wprowadzeniu wielomianu Alexandera, w dowodzie faktu \ref{alexander_invariance}), że wyznacznik splotu jest dobrze określony: nie zależy on od wyboru etykietowania, minora macierzy oraz diagramu i że jest niezmiennikiem.
+Pokażemy później (po poznaniu grupy kolorującej, czyli we wniosku \ref{det_invariant}) lub jeszcze później (po wprowadzeniu wielomianu Alexandera, w~dowodzie faktu \ref{alexander_invariance}), że wyznacznik splotu jest dobrze określony: nie zależy on od wyboru etykietowania, minora macierzy oraz diagramu i~że jest niezmiennikiem.
 Teraz ograniczymy się do jego kilku własności.
 
 Defekt także jest niezmiennikiem, choć rzadziej używanym.
-Węzeł o defekcie $n$ modulo $p$ posiada $p(p^n-1)$ kolorowań $p$ kolorami.
+Węzeł o~defekcie $n$ modulo $p$ posiada $p(p^n-1)$ kolorowań $p$ kolorami.
 Węzły $8_{18}$ oraz $9_{24}$ mają ten sam wyznacznik, $45$.
-Ich defekty modulo $3$ to $1$ i $2$, zatem są różne.
+Ich defekty modulo $3$ to $1$ i~$2$, zatem są różne.
 
 % Każde $p$-kolorowanie węzła $n$-mostowego jest wyznaczone przez kolory $n$ mostów
-% % To brzmi podejrzanie: więc przestrzeń kolorowań ma wymiar co najwyżej $n$ i defekt modulo $p$ nie przekracza $\operatorname{br} - 1$.
+% % To brzmi podejrzanie: więc przestrzeń kolorowań ma wymiar co najwyżej $n$ i~defekt modulo $p$ nie przekracza $\operatorname{br} - 1$.
 % Wnioskujemy stąd, że $(3,3,3)$-precel nie jest dwumostowy.
 
 % \begin{proof}
 %     \emph{Krok pierwszy}.
 %     Pokażemy, że żaden ruch Reidemeistera nie zmienia wyznacznika.
 %     \begin{enumerate}
-%         \item \emph{Ruch $R_1$}. Diagram przed lub po ruchu zawiera co najmniej jedno włókno, które łączy tunel z mostem pewnego skrzyżowania.
+%         \item \emph{Ruch $R_1$}. Diagram przed lub po ruchu zawiera co najmniej jedno włókno, które łączy tunel z~mostem pewnego skrzyżowania.
 %         \item \emph{Ruch $R_2$}.
 %         \item \emph{Ruch $R_3$}.
 %     \end{enumerate}
@@ -66,14 +66,14 @@ Ich defekty modulo $3$ to $1$ i $2$, zatem są różne.
 %     Niech $A_{i,j}$ oznacza minor powstały przez skreślenie $i$-tego wiersza oraz $j$-tej kolumny.
 %     Pokażemy, że wartość wyznacznika nie zależy od wyboru $i$ oraz $j$.
 
-%     Niech $X$ będzie macierzą $k \times k$ złożoną z samych jedynek.
-%     Suma elementów w każdej kolumnie oraz każdym wierszu macierzy $A + X$ wynosi $k$, ponieważ znaki równań zostały dobrze wybrane.
+%     Niech $X$ będzie macierzą $k \times k$ złożoną z~samych jedynek.
+%     Suma elementów w~każdej kolumnie oraz każdym wierszu macierzy $A + X$ wynosi $k$, ponieważ znaki równań zostały dobrze wybrane.
 %     Wykonujemy kolejno operacje:
 %     \begin{enumerate}
 %         \item Dodajemy do $i$-tego wiersza sumę pozostałych.
 %         \item Dodajemy do $j$-tej kolumny sumę pozostałych.
-%         Teraz $i$-ty wiersz oraz $j$-ta kolumna zawierają wyrazy $k$ z wyjątkiem $a_{ij}$, który wynosi $k^2$.
-%         \item Wyciągamy $k$ z $i$-tego wiersza przed wyznacznik.
+%         Teraz $i$-ty wiersz oraz $j$-ta kolumna zawierają wyrazy $k$ z~wyjątkiem $a_{ij}$, który wynosi $k^2$.
+%         \item Wyciągamy $k$ z~$i$-tego wiersza przed wyznacznik.
 %         \item Odejmujemy $i$-ty wiersz od pozostałych.
 %     \end{enumerate}
 %     Rozwinięcie Laplace'a względem $j$-tej kolumny mówi, że $|\det (A+X)| = k^2 |(-1)^{i+j} \det A_{i,j}|$, co kończy dowód drugiego kroku.
@@ -83,32 +83,32 @@ Ich defekty modulo $3$ to $1$ i $2$, zatem są różne.
 % \end{proof}
 
 \begin{proposition}
-    Splot $L$ koloruje się modulo $n$ wtedy i tylko wtedy, gdy liczby $\det L$ oraz $n$ nie są względnie pierwsze.
+    Splot $L$ koloruje się modulo $n$ wtedy i~tylko wtedy, gdy liczby $\det L$ oraz $n$ nie są względnie pierwsze.
 \end{proposition}
 
 \begin{proof}
     Bez straty ogólności ograniczmy się do tych kolorowań, gdzie $x_0 = 0$.
     Kolorowanie modulo $n$ istnieje dokładnie wtedy, gdy istnieje niezerowy wektor $(x_1, x_2, \ldots, x_m)$ taki, że $Ax \equiv 0 \mod n$.
-    Ale z algebry liniowej wiemy, że dla pewnych całkowitoliczbowych macierzy $C, R$ macierz $RAC = diag(y_1, \ldots, y_m)$ jest diagonalna.
-    Warunek z faktu tłumaczy się wtedy na istnienie rozwiązania dla przynajmniej jednego z równań $x_iy_i \equiv 0 \mod n$.
+    Ale z~algebry liniowej wiemy, że dla pewnych całkowitoliczbowych macierzy $C, R$ macierz $RAC = diag(y_1, \ldots, y_m)$ jest diagonalna.
+    Warunek z~faktu tłumaczy się wtedy na istnienie rozwiązania dla przynajmniej jednego z~równań $x_iy_i \equiv 0 \mod n$.
 \end{proof}
 
 Poniższy problem pochodzi od Stojmenowa.
 
 \begin{conjecture}
     Niech $n$ będzie nieparzystą sumą dwóch kwadratów różną od $1, 9, 49$.
-    Czy istnieje pierwszy, alternujący, achiralny węzeł o wyznaczniku $n$?
+    Czy istnieje pierwszy, alternujący, achiralny węzeł o~wyznaczniku $n$?
 \end{conjecture}
 
 Oto, co już wiemy.
 Wyznacznik węzła achiralnego jest nieparzystą sumą dwóch kwadratów.
 Implikacja odwrotna także jest prawdziwa, od węzła można dodatkowo żądać bycia pierwszym albo achiralnym (ale nie jednocześnie).
-Jeśli węzeł z hipotezy istnieje, to $n > 2000$ nie jest kwadratem.
+Jeśli węzeł z~hipotezy istnieje, to $n > 2000$ nie jest kwadratem.
 
 Istnieje jeszcze jedna kombinatoryczna metoda badania węzłów, która prowadzi między innymi do pojęcia wyznacznika.
 W latach 30. ubiegłego wieku L. Goeritz pokazał, jak diagram węzła wyznacza specjalną formę kwadratowej.
 Nieco później H. F. Trotter zmodyfikował jego pomysł, by sygnatura formy stanowiła niezmiennik splotów.
-Gordon, Litherland ujednolicili dwa wyżej wymienione podejścia w pracy \cite{litherland81}.
+Gordon, Litherland ujednolicili dwa wyżej wymienione podejścia w~pracy \cite{litherland81}.
 My opiszemy krótko macierz Goeritza, gdyż jej wyznaczenie wymaga mniejszej ilości rachunków (niż macierz kolorująca).
 Ustalmy diagram uszachowiony $D$ dla splotu $L$.
 Oznaczmy białe regiony $0,1,\ldots,m$, przy czym $0$ jest regionem nieograniczonym.
@@ -138,7 +138,7 @@ Przydzielmy skrzyżowaniom znaki:
 
 \begin{definition}
     \index{macierz!Goeritza}
-    Macierz Goeritza powstaje przez skreślenie z macierzy $G_+$ jednego wiersza oraz jednej kolumny:
+    Macierz Goeritza powstaje przez skreślenie z~macierzy $G_+$ jednego wiersza oraz jednej kolumny:
     \[
         G_+=\begin{pmatrix}
         G_{00} & \cdots & G_{0m} \\
@@ -150,7 +150,7 @@ Przydzielmy skrzyżowaniom znaki:
     Dla $i = j$, $G_{ii}$ jest minus sumą znaków skrzyżowań wokół $j$-tego obszaru.
 \end{definition}
 
-Macierz $G_+$ posiada dwie własności pozwalające wykryć proste błędy rachunkowe: jest symetryczna, a jej kolumny i wiersze sumują się do zera.
+Macierz $G_+$ posiada dwie własności pozwalające wykryć proste błędy rachunkowe: jest symetryczna, a~jej kolumny i~wiersze sumują się do zera.
 
 \begin{proposition}
     Macierz Goeritza oraz kolorująca mają ten sam wyznacznik (bez znaku).
@@ -161,7 +161,7 @@ Macierz Goeritza nie jest niezmiennikiem splotów.
 Jeśli jednak równoważnym diagramom $D_1, D_2$ odpowiadają macierze $G_1, G_2$, to można między nimi przejść skończoną liczbą dwóch ruchów:
 \begin{enumerate}[leftmargin=*]
 \itemsep0em
-    \item zamiany macierzy $G$ na $PGP^{-1}$, gdzie $P$ i $P^{-1}$ mają całkowite wyrazy
+    \item zamiany macierzy $G$ na $PGP^{-1}$, gdzie $P$ i~$P^{-1}$ mają całkowite wyrazy
     \item dopisania lub skreślenia $\pm 1$ na przekątnej (dla węzłów) albo $-1, 0, 1$ (dla splotów).
 \end{enumerate}
 
@@ -169,7 +169,7 @@ Jeśli jednak równoważnym diagramom $D_1, D_2$ odpowiadają macierze $G_1, G_2
 %     Wyznacznik jest niezmiennikiem splotów.
 %     Jeśli diagramy $D_1, D_2$ przedstawiają ten sam splot, to od macierzy Goeritza $G_1$ pierwszego do macierzy $G_2$ drugiego można dojść, wykonując trzy rodzaje ruchów:
 %     \begin{enumerate}
-%         \item zamieniając $G$ z $P^t G P$, gdzie macierz $P$ jest całkowitoliczbowa i $\det P = \pm 1$.
+%         \item zamieniając $G$ z~$P^t G P$, gdzie macierz $P$ jest całkowitoliczbowa i~$\det P = \pm 1$.
 %         \item zamieniając $G$ z
 %         \[
 %             \begin{pmatrix}
@@ -182,8 +182,8 @@ Jeśli jednak równoważnym diagramom $D_1, D_2$ odpowiadają macierze $G_1, G_2
 %     \end{enumerate}
 % \end{proposition}
 
-% Dowód opiera się na prostych rachunkach i ruchach Reidemeistera.
+% Dowód opiera się na prostych rachunkach i~ruchach Reidemeistera.
 
-% Z macierzy Goeritza można otrzymać sygnaturę: $\sigma(G) - \mu$, gdzie $\mu$ to to suma znaków skrzyżowań o odpowiednio dobranej orientacji.
+% Z macierzy Goeritza można otrzymać sygnaturę: $\sigma(G) - \mu$, gdzie $\mu$ to to suma znaków skrzyżowań o~odpowiednio dobranej orientacji.
 
-% Koniec sekcji Macierz i wyznacznik
+% Koniec sekcji Macierz i~wyznacznik

@@ -2,9 +2,9 @@
 \label{sub:kauffman_bracket}
 Zaczniemy od zdefiniowania nawiasu Kauffmana.
 Przypomnijmy, wielomian Laurenta zmiennej $X$ to formalny symbol $f=a_r X^r + \ldots + a_s X^s$,
-gdzie $r, s, a_r, \ldots, a_s$ są całkowite i $r \le s$.
+gdzie $r, s, a_r, \ldots, a_s$ są całkowite i~$r \le s$.
 
-Poszukujemy niezmiennika dla splotów o kilku prostych własnościach.
+Poszukujemy niezmiennika dla splotów o~kilku prostych własnościach.
 Przede wszystkim żądamy,
 by niewęzłowi przypisany był wielomian $1$: $\bracket{\LittleUnknot} = 1$.
 Po drugie chcemy wyznaczać nawiasy znając je dla prostszych splotów,
@@ -27,7 +27,7 @@ W ten sposób odkryliśmy następującą definicję.
     \index{nawias!Kauffmana}
     Wielomian Laurenta $\bracket{D}$ dla diagramu splotu $D$ zmiennej $A$,
     który jest niezmienniczy ze względu na gładkie deformacje diagramu,
-    a przy tym spełnia trzy poniższe aksjomaty, to nawias Kauffmana.
+    a~przy tym spełnia trzy poniższe aksjomaty, to nawias Kauffmana.
     \begin{align}
         \bracket{\LittleUnknot} & = 1 \\
         \bracket{D \sqcup \LittleUnknot} & = (-A^{-2} - A^2) \bracket{D} \\
@@ -37,26 +37,26 @@ W ten sposób odkryliśmy następującą definicję.
 
 Tutaj $\LittleUnknot$ oznacza standardowy diagram dla niewęzła,
 zaś trzy symbole $\LittleRightCrossing$, $\LittleRightSmoothing$ oraz $\LittleLeftSmoothing$ odnoszą się do diagramów,
-które są identyczne wszędzie poza małym obszarem (tak jak w relacji kłębiastej).
+które są identyczne wszędzie poza małym obszarem (tak jak w~relacji kłębiastej).
 
 Diagramy $\LittleRightSmoothing$ oraz $\LittleLeftSmoothing$ nazywa się odpowiednio
-dodatnim (prawym) i ujemnym (lewym) wygładzeniem $\LittleRightCrossing$.
+dodatnim (prawym) i~ujemnym (lewym) wygładzeniem $\LittleRightCrossing$.
 
 \begin{lemma}
-    Nawias Kauffmana każdego diagramu wyznacza się w skończenie wielu krokach.
+    Nawias Kauffmana każdego diagramu wyznacza się w~skończenie wielu krokach.
 \end{lemma}
 
 \begin{proof}
     Jeżeli diagram $D$ ma $n$ skrzyżowań, to nieustanne stosowanie aksjomatu trzeciego pozwala na zapisanie $\bracket{D}$ jako sumy $2^n$ składników,
-    z których każdy jest po prostu zamkniętą krzywą i ma trywialny nawias ($\bracket{\LittleUnknot} = 1$).
-    Nawias sumy wyznacza się korzystając z drugiego aksjomatu.
+    z~których każdy jest po prostu zamkniętą krzywą i~ma trywialny nawias ($\bracket{\LittleUnknot} = 1$).
+    Nawias sumy wyznacza się korzystając z~drugiego aksjomatu.
 \end{proof}
 
 Przedstawimy teraz wpływ ruchów Reidemeistera na nawias Kauffmana.
 
 \begin{lemma}
-    Drugi i trzeci ruch Reidemeistera nie ma wpływu na klamrę Kauffmana,
-    pierwszy ruch zmienia ją zgodnie z regułą:
+    Drugi i~trzeci ruch Reidemeistera nie ma wpływu na klamrę Kauffmana,
+    pierwszy ruch zmienia ją zgodnie z~regułą:
     \[
         \bracket{\reidemeisterIa} = -A^{-3} \bracket{\,\reidemeisterIb\,}.
     \]
@@ -90,7 +90,7 @@ Pierwszy ruch Reidemeistera:
     = -A^{-3}\bracket{\,\reidemeisterIb\,}
 \]
 
-Pierwsza równość wynika z $K3$, druga z $K2$, trzecia jest oczywista.
+Pierwsza równość wynika z~$K3$, druga z~$K2$, trzecia jest oczywista.
 Dla drugiego ruchu:
 \begin{align*}
     \bracket{\reidemeisterIIa} &\stackrel{K3}{=} A
@@ -135,14 +135,14 @@ Dla trzeciego ruchu:
 & \stackrel{R2}{=} A \bracket{\,\LeftCrossSmoothing\,} +A^{-1} \bracket{\RightCrossSmoothing}
 \stackrel{K3}{=} \bracket{\,\reidemeisterIIIb\,}
 \end{align*}
-korzystaliśmy tu z własności drugiego ruchu.
+korzystaliśmy tu z~własności drugiego ruchu.
 \end{proof}
 
-Zaniechamy ratowania niezmienniczości nawiasu Kauffmana na ruchy Reidemeistera, zamiast tego przejdziemy do kolejnego składnika w przepisie na wielomian Jonesa.
-Prostym wnioskiem z lematu jest niezmienniczość rozpiętości (różnicy pomiędzy najwyższym oraz najniższym wykładnikiem) nawiasu.
+Zaniechamy ratowania niezmienniczości nawiasu Kauffmana na ruchy Reidemeistera, zamiast tego przejdziemy do kolejnego składnika w~przepisie na wielomian Jonesa.
+Prostym wnioskiem z~lematu jest niezmienniczość rozpiętości (różnicy pomiędzy najwyższym oraz najniższym wykładnikiem) nawiasu.
 
-Gregor Schaumann w notatkach \cite{schaumann16} wprowadza rachunek schematyczny,
-który pozwala spojrzeć na nawias Kauffmana z nowej perspektywy.
+Gregor Schaumann w~notatkach \cite{schaumann16} wprowadza rachunek schematyczny,
+który pozwala spojrzeć na nawias Kauffmana z~nowej perspektywy.
 Definiuje kwantowe niezmienniki oraz plątaniny (równoważne wtedy,
 kiedy związane są przez ciąg tożsamości wężowych, ruchów Turaewa oraz Reidemeistera).
 Wspomniane są też dokonania Wasiljewa.
