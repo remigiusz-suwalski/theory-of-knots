@@ -26,44 +26,20 @@ build/knot-theory.pdf: src/knot-theory.tex src/*/*.tex
 
 build/draft-01.pdf: src/draft-01.tex src/10*/*.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) draft-01.tex
-	cp src/knot_theory.bib build/knot_theory.bib
-	-cd build && bibtex draft-01
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-01.tex
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-01.tex
 
 build/draft-02.pdf: src/draft-02.tex src/20*/*.tex
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-02.tex
-	cp src/knot_theory.bib build/knot_theory.bib
-	-cd build && bibtex draft-02
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-02.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) draft-02.tex
 
 build/draft-03.pdf: src/draft-03.tex src/30*/*.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) draft-03.tex
-	cp src/knot_theory.bib build/knot_theory.bib
-	-cd build && bibtex draft-03
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-03.tex
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-03.tex
 
 build/draft-04.pdf: src/draft-04.tex src/40*/*.tex
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-04.tex
-	cp src/knot_theory.bib build/knot_theory.bib
-	-cd build && bibtex draft-04
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-04.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) draft-04.tex
 
 build/draft-05.pdf: src/draft-05.tex src/50*/*.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) draft-05.tex
-	cp src/knot_theory.bib build/knot_theory.bib
-	-cd build && bibtex draft-05
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-05.tex
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-05.tex
 
 build/draft-99.pdf: src/draft-99.tex src/90*/*.tex
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-99.tex
-	cp src/knot_theory.bib build/knot_theory.bib
-	-cd build && bibtex draft-99
-	cd src && pdflatex $(PDFLATEX_FLAGS) draft-99.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) draft-99.tex
 
 release-draft:
