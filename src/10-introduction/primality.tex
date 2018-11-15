@@ -18,15 +18,14 @@ Jako pierwszy fakt ten został wykazany przez Menasco w~\cite{menasco84}.
 Dowód opiera się na multiplikatywności wielomianu BLM/Ho (opisuje go definicja \ref{def:blm_ho}).
 
 Czy węzłów pierwszych jest nieskończenie wiele?
-Tak (patrz fakt \ref{infty_primes}), potrafimy nawet oszacować ich liczbę.
-W roku 1987 C. Ernst, D. Sumners w~oparciu o~wyniki Thistlethwaite'a, Kauffmana, oraz Murasugiego dotyczące węzłów alternujących pokazali w~\cite{ernst87},
-że różnych węzłów pierwszych o~$n$ skrzyżowaniach jest co najmniej $\frac 1 3 (2^{n- 2} - 1)$ dla $n \ge 4$,
-przy czym węzły lustrzane traktowane są jako różne.
-Welsh znalazł ograniczenie
+Tak (patrz fakt \ref{infty_primes}), potrafimy nawet oszacować liczbę $K_n$ węzłów pierwszych oraz $L_n$ splotów pierwszych.
+W roku 1987 C. Ernst, D. Sumners w~oparciu o~wyniki Thistlethwaite'a, Kauffmana, oraz Murasugiego dotyczące węzłów alternujących pokazali w~\cite{ernst87}, że $K_n \ge \frac 1 3 (2^{n- 2} - 1)$, przy czym węzły lustrzane traktowane są jako różne.
+Welsh rozpatruje w \cite{welsh92} węzły bez orientacji i znajduje ograniczenia:
 \[
-    \limsup_{n \to \infty} \sqrt[n]{N(n)} \le 13.5,
+    2.68 \le \liminf_{n \to \infty}  \sqrt[n]{K_n} \le \limsup_{n \to \infty} \sqrt[n]{L_n} \le \frac {27}{2}.
 \]
-gdzie $N(n)$ jest ilością pierwszych węzłów o~$n$ skrzyżowaniach.
+
+% "On the number of knots and links" (MR1218230)
 
 Czy niewęzeł nie daje się zapisać jako suma dwóch innych węzłów?
 Byłoby to skrajnie niepożądane, gdyż każdy węzeł jest naturalnie spójną sumą siebie oraz niewęzła.
