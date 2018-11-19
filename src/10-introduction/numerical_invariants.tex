@@ -98,19 +98,22 @@ kiedy policzył liczbę gordyjską węzła babskiego używając homologii rozga�
 W pracy \cite{shimizu14} Ayaka Shimizu pokazuje przykład innej operacji rozwiązującej węzły, ale nie sploty:
 zmianę skrzyżowań wokół obszaru na diagramie.
 
-Przestrzeń gordyjska
-(wszystkich węzłów wyposażona w~metrykę pochodzącą od liczby gordyjskiej)
-bywa sprzeczna z~intuicją.
-W pracy ,,Braids and signatures'' J. Gambaudo, E. Ghys (twierdzenie C) pokazali,
-że przestrzeń węzłów zawiera prawie idealną kopię przestrzeni euklidesowej dowolnego wymiaru.
+Liczbę gordyjską można uogólnić w naturalny sposób do metryki.
+Mianowicie mając dane dwa węzły $K_0, K_1$, rozpatrzmy wszystkie homotopie $f : [0,1] \times S^1 \to \R^3$ takie, że wszystkie funkcje $f_t$ są zanurzeniami z co najwyżej jednym punktem podwójnym.
+Zażądajmy dodatkowo, by styczne do krótkich łuków, które przecinają się w tym punkcie, były od siebie różne.
+Odległością gordyjską między węzłami $K_0, K_1$ jest minimalna liczba podwójnych punktów, jakie posiada homotopia $f$.
+
+Przestrzeń węzłów z~tą metryką bywa sprzeczna z~intuicją: twierdzenie C~z~pracy \cite{gambaudo05} głosi, że zawiera ona prawie idealną kopię przestrzeni euklidesowej dowolnego wymiaru.
 Dokładniej:
 
 \begin{proposition}
-    Dla każdej liczby całkowitej $d \ge 1$ istnieje funkcja $\xi: \Z^d \to \mathcal{K}$, która dla pewnych stałych $A, B, C \ge 0$ i~pewnej normy $\|\cdot\|$ spełnia podwójną nierówność
+    Dla każdej liczby całkowitej $d \ge 1$ istnieje funkcja $\xi: \Z^d \to \mathcal{K}$, dodatnie stałe $A, B, C$ oraz norma $\|\cdot\|$ na przestrzeni $\R^d$ takie, że spełniona jest podwójna nierówność
     \[
         A\|x-y\|  - B \le d(\xi(x), \xi(y)) \le C\|x-y\|.
     \]
 \end{proposition}
+
+Dowód korzysta z grup warkoczowych, które poznamy w sekcji \ref{sec:braid}.
 
 \begin{conjecture}[Bernhard, Jablan 199?]
     \todo[inline]{Liczba Bernharda-Jablana to liczba gordyjska.}
