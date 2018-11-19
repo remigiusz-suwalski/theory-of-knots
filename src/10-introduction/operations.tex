@@ -100,16 +100,22 @@ z bazy danych ``The On-Line Encyclopedia of Integer Sequences'' (OEIS).
 
 Można wyróżnić jeszcze jeden rodzaj symetrii.
 
-\begin{definition}
+\begin{definition} \label{def_period}
     \index{węzeł!okresowy}
     Węzeł $K$ nazywamy $n$-okresowym, jeśli istnieje obrót $f \colon \R^3 \to \R^3$ o~kąt $2\pi/n$ wokół pewnej prostej $l$, rozłącznej z~węzłem, taki że $f(K) = K$.
 \end{definition}
 
 Trójlistnik jest 3-okresowy, węzeł $5_1$ 5-okresowy (widać to na standardowym diagramie) i~2-okresowy.
 Tę drugą symetrię można dostrzec na diagramie realizującym indeks mostowy.
+
+\begin{proposition}
+    Zbiór wszystkich okresów jest niezmiennikiem węzłów.
+\end{proposition}
+
 Z~każdym węzłem okresowym związany jest inny, prostszy węzeł.
-Niech $p \colon \R^3 \to \R^3/f \simeq \R^3$ będzie rzutem na przestrzeń ilorazową.
-Wtedy $p(K)$ jest \emph{węzłem ilorazowym}, zaś $K$ to jego $n$-krotne nakrycie.
+Niech $f$ będzie obrotem z definicji \ref{def_period}, zaś $p \colon \R^3 \to \R^3/f \simeq \R^3$ rzutem na przestrzeń ilorazową.
+\index{węzeł!ilorazowy}
+Wtedy $p(K)$ nazywamy \emph{węzłem ilorazowym}, zaś $K$ to jego $n$-krotne nakrycie.
 
 Murasugi podał dwa warunki, które musi spełniać węzeł o~okresie $n = p^r$, gdzie $r$ jest liczbą pierwszą.
 Do ich zrozumienia potrzebujemy prostej definicji.
