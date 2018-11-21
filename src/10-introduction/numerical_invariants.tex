@@ -198,7 +198,6 @@ Poniższy dowód zakłada znajomość warkoczy (rozdział piąty).
 
 \subsection{Indeks zaczepienia} % (fold)
 \label{sub:linking_number}
-\index{indeks!zaczepienia}
 \begin{definition} \label{sign_def}
     Na diagramie zorientowanego splotu, każdemu skrzyżowaniu przypisujemy \textbf{znak} równy $\pm 1$.
     Skrzyżowania dodatnie nazywamy praworęcznymi, ujemne zaś: leworęcznymi.
@@ -214,14 +213,23 @@ Poniższy dowód zakłada znajomość warkoczy (rozdział piąty).
         \strand[semithick,Latex-] (-5,5) -- (5,-5);
         \end{knot}\end{tikzpicture}\,\,\Bigr) = -1
     \]
-    \textbf{Indeks zaczepienia} splotu zorientowanego $L$ o~diagramie $D$ to $\frac 12 \sum_c \sign (c)$,
-    gdzie $c$ przebiega każde skrzyżowanie, przy którym spotykają się \emph{różne} składowe.
-    Oznaczenie: $\operatorname{lk}(L)$.
+\end{definition}
+
+\begin{definition} \label{sign_def}
+    \index{indeks!zaczepienia}
+    Niech $L = K_1 \sqcup K_2$ będzie splotem o dwóch ogniwach.
+    Wielkość
+    \[
+        \operatorname{lk}(K_1, K_2) = \frac 12 \sum_i \sign c_i,
+    \]
+    gdzie sumowanie rozciąga się na wszystkie skrzyżowania, gdzie spotykają się łuki z różnych ogniw, nazywamy \textbf{indeksem zaczepienia} węzłów $K_1, K_2$.
+    Ogólniej, jeśli $L = K_1 \sqcup \ldots \sqcup K_n$ jest splotem o $n$ ogniwach, to jego indeks zaczepienia wyznacza wzór $\operatorname{lk}(L) = \sum_{i < j} \operatorname{lk}(K_i, K_j)$.
 \end{definition}
 
 Zauważmy, że indeks zaczepienia splotu Hopfa wynosi $1$, natomiast splotu Whiteheada $0$.
-Są więc istotnie różne.
-Indeks zaczepienia przyjmuje całkowite wartości (na mocy twierdzenia Jordana).
+Są zatem istotnie różne.
+W obydwu przypadkach indeks zaczepienia jest liczbą całkowitą, nie stanowi to przypadku.
+Na mocy twierdzenia Jordana $\operatorname{lk}$ jest funkcją o całkowitych wartościach.
 
 \begin{proposition}
     Indeks zaczepienia jest dobrze określonym niezmiennikiem zorientowanych splotów.
