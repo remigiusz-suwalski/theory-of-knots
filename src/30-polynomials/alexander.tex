@@ -36,9 +36,9 @@ Nasz nowy niezmiennik nie jest zwykłym wielomianem, tylko wielomianem Laurenta 
 
 \begin{proposition} \label{alexander_invariance}
 	Wielomian Alexandera z~dokładnością do relacji równoważności
-	\[
+	\begin{equation}
 		f(t) \equiv g(t) \iff f(t) = \pm t^m g(t) \mbox{ dla pewnego } m \in \Z
-	\]
+	\end{equation}
 	jest niezmiennikiem zorientowanych splotów.
 \end{proposition}
 
@@ -60,10 +60,14 @@ Sugestia ta była błędna, wystarczy użyć alternatywnej definicji.
 	Rozpatrzmy macierze $M_{0,j}, M_{0,k}$, gdzie indeksy $j$-tej i~$k$-tej kolumny to odpowiednio $p$ i~$q$.
 	Z powyższych rozważań wynika, że $(t^{-q}-1) \Delta_{0,j} = \pm (t^{-p}-1)\Delta_{0,k}$, ale indeksy obszarów są wyznaczone z~dokładnością do stałej addytywnej.
 	Biorąc $i$-tą oraz $l$-tą kolumnę, indeksów $r$ oraz $s$, dostaniemy zależności
-	$$(t^{r-q}-1) \Delta_{l,j} = \pm (t^{r-p} - 1)\Delta_{l,i}$$
-	$$(t^{q-s}-1) \Delta_{k,l} = \pm (t^{q-r} - 1)\Delta_{k,i}$$
+	\begin{align}
+		(t^{r-q}-1) \Delta_{l,j} & = \pm (t^{r-p} - 1)\Delta_{l,i} \\
+		(t^{q-s}-1) \Delta_{k,l} & = \pm (t^{q-r} - 1)\Delta_{k,i}
+	\end{align}
 	co prowadzi do
-	$$\Delta_{l,j} = \pm \frac{t^{q-r}(t^{r-p}-1)}{t^{q-s}-1} \Delta_{k,i}$$
+	\begin{equation}
+		\Delta_{l,j} = \pm \frac{t^{q-r}(t^{r-p}-1)}{t^{q-s}-1} \Delta_{k,i}
+	\end{equation}
 	Położenie $p = r +1$, $s =q+1$ pokazuje, że różny wybór kolumn do skreślenia zmienia wyznacznik macierzy co najwyżej o~czynnik $\pm t^m$.
 
 	Wprowadźmy jeszcze jedną techniczną definicję.
@@ -212,9 +216,9 @@ Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, s
 
 \begin{proposition}
 	Wielomian Alexandera zadaje ograniczenie na indeks skrzyżowaniowy $c$:
-	\[
+	\begin{equation}
 		\deg \Delta_K(t) < c(K).
-	\]
+	\end{equation}
 \end{proposition}
 
 Przedstawimy teraz kilka innych definicji, które prowadzą do tego samego niezmiennika.
@@ -243,9 +247,9 @@ Relacja kłębiasta wystarcza do wyznaczenia $\Delta_L$ dla każdego splotu na m
 Conway chcąc szybko liczyć wielomian Alexandera zaproponował, by reparametryzować go wzorem $\Delta(x^2) = \nabla(x - 1/x)$.
 Wzór ten był znany Alexanderowi, nie wiedzieć jednak czemu nie zyskał uwagi.
 Spełniona jest wtedy inna relacja kłębiasta:
-\[
+\begin{equation}
 	\nabla_{L_+}(x)- \nabla_{L_-}(x) = x \nabla_{L_0}(x).
-\]
+\end{equation}
 
 Wielomian Jonesa (zdefiniowany w~kolejnej sekcji) spełnia podobną równość.
 Ich istnienie może nasunąć przypuszczenie, że dają się wspólnie uogólnić.
