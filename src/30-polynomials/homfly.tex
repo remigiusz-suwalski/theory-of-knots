@@ -12,9 +12,9 @@ Ich nazwiska czasami są pomijane, gdyż polska poczta była spowolniona w tamty
     \label{homflydef}
     \index{wielomian!HOMFLY}
     Wielomian HOMFLY zorientowanego splotu $L$ to niezmienniczy na izotopie wielomian Laurenta dwóch zmiennych $m, l$ taki, że $P(\LittleUnknot) = 1$ oraz
-    \[
+    \begin{equation}
         l P(L_+) +  \frac 1l P(L_-) + mP(L_0) = 0,
-    \]
+    \end{equation}
     przy oznaczeniach ze stwierdzenia \ref{tracheotomia}.
 \end{definition}
 \todo[inline]{Ta postać bierze się z~jednorodnej (każdy jednomian tego samego stopnia) i~podstawienia $z = 1$}
@@ -26,9 +26,9 @@ Potrzebować będziemy lematu:
 \begin{lemma}
     \label{links_homfly}
     Wielomianem HOMFLY dla niesplotu o~$n$ składowych jest
-    \[
+    \begin{equation}
         P(U_n) = \left(-\frac{l+1/l}{m}\right)^{n-1}.
-    \]
+    \end{equation}
 \end{lemma}
 
 %\begin{proof}
@@ -50,16 +50,16 @@ Można potraktować to jako proste ćwiczenie z~indukcji matematycznej, pozostaw
 
     Każdy splot $L$ jest kombinacją liniową (o współczynnikach będących wielomianami w~$m$ oraz $l$) niesplotów $U_k$ o~różnej liczbie składowych $k$.
     Mamy więc
-    \[
+    \begin{equation}
         L_1 = \sum_{k=1}^n a_k U_k, \quad
         L_2 = \sum_{k=1}^n b_k U_k.
-    \]
+    \end{equation}
 
     Skorzystamy w~tym miejscu z~lematu \ref{links_homfly}.
     Wynika z~niego, że $P(U_i)P(U_j) = P(U_{i+j-1})$ i~bezpośrednio
-    \[
+    \begin{equation}
         P(L_1)P(L_2) = \sum_{k=1}^{2n} \sum_{i=1}^{k-1} a_i b_{k-i}P(U_{k-1}).
-    \]
+    \end{equation}
 
     Pozostało spojrzeć na sumę spójną diagramów  $L_1 \shrap L_2$.
     Jeśli usuniemy teraz wszystkie skrzyżowania z~diagramu $L_1$ relacją kłębiastą, dostaniemy $L_1 \# L_2 = \sum_{k=1}^n a_k (U_{k-1} \cup L_2)$, gdyż jedna z~niezawęźlonych składowych zostanie wchłonięta do diagramu diagramu $L_2$.
@@ -117,7 +117,7 @@ Warto pamiętać, że żaden z~nich nie jest mocniejszy od drugiego, gdyż istni
 
 \begin{proposition}
     Dla dowolnego zorientowanego węzła zachodzą równości:
-        \begin{align*}
+    \begin{align*}
         V(t) & = P(l = i/t, m = i(t^{-1/2} - t^{1/2})) \\
         \Delta(t) & = P(l = i, m = i(t^{-1/2} - t^{1/2}))
     \end{align*}

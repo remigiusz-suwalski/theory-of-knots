@@ -53,9 +53,9 @@ Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
 \begin{proposition}[o sumowaniu stanów]
     Niech $D$ będzie diagramem splotu.
     Wtedy
-    \[
+    \begin{equation}
         \langle D\rangle = \sum_s \underbrace{(-A^2-A^{-2})^{|sD|-1} A^{|s|}}_{\langle D \mid s \rangle},
-    \]
+    \end{equation}
     gdzie sumujemy po wszystkich stanach $s$ dla $D$.
 \end{proposition}
 
@@ -71,7 +71,7 @@ Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
     Wtedy $|u| = |s|$ oraz $|u(D \sqcup \LittleUnknot)| = |sD| + 1$.
     Zatem
     \begin{align*}
-        [D \sqcup \LittleUnknot]
+        \left[D \sqcup \LittleUnknot\right]
         & = \sum_u (-A^2-A^{-2})^{|u(D\sqcup\LittleUnknot)|-1} A^{|u|} \\
         & = \sum_s (-A^2-A^{-2})^{|sD|} A^{|s|} = (-A^2-A^{-2}) [D].
     \end{align*}
@@ -81,9 +81,11 @@ Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
     Ale $\LittleRightSmoothing$ to $\LittleRightCrossing$ ze skrzyżowaniem (powiedzmy, $c$) wygładzonym dodatnio,
     co daje bijekcję między stanami $u$ dla $\LittleRightSmoothing$ i~$s$ dla $\LittleRightCrossing$, dla których $s(c) = + 1$.
     Wtedy $|s\LittleRightCrossing|=|u\LittleRightSmoothing|$ i~$|s|=|u|+1$ oraz
-    \[
-    A[\LittleRightSmoothing] = \sum_u (-A^2-A^{-2})^{|u\,\LittleRightSmoothing|-1}A^{|u|+1} = \sum_{s(c)=1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|},
-    \]
+    \begin{equation}
+    A\left[\LittleRightSmoothing\right] =
+    \sum_u (-A^2-A^{-2})^{|u\,\LittleRightSmoothing|-1}A^{|u|+1} =
+    \sum_{s(c)=1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|},
+    \end{equation}
     podobne rozumowanie pokazuje, że $A^{-1}[\LittleLeftSmoothing] = \sum_{s(c)=-1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|}$.
     Teraz wystarczy dodać do siebie dwa ostatnie równania. %: $A[\PrawyGladki]+A^{-1}[\LewyGladki] = \sum_s(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|} = [\RightCrossing]$.
 \end{proof}
