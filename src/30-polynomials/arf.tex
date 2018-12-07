@@ -5,41 +5,40 @@ Dwa węzły nazwiemy równoważnymi przez przejścia, jeśli są związane skoń
 \[
 	\begin{tikzpicture}[baseline=-0.65ex,scale=0.35]
 	\begin{knot}[clip width=7]
-		\strand[-latex, thick] (-2.5,-0.5) to (2.5,-0.5);
-		\strand[-latex, thick] (2.5,0.5) to (-2.5,0.5);
-		\strand[-latex, thick] (-0.5,-2.5) to (-0.5,2.5);
-		\strand[-latex, thick] (0.5,2.5) to (0.5,-2.5);
+		\strand[-latex, thick] (-2.5,-1.0) to (2.5,-1.0);
+		\strand[-latex, thick] (2.5,1.0) to (-2.5,1.0);
+		\strand[-latex, thick] (-1.0,-2.5) to (-1.0,2.5);
+		\strand[-latex, thick] (1.0,2.5) to (1.0,-2.5);
 	\end{knot}
 	\end{tikzpicture}
 	\cong
 	\begin{tikzpicture}[baseline=-0.65ex,scale=0.35]
 	\begin{knot}[clip width=7, flip crossing/.list={1,2,3,4}]
-		\strand[-latex, thick] (-2.5,-0.5) to (2.5,-0.5);
-		\strand[-latex, thick] (2.5,0.5) to (-2.5,0.5);
-		\strand[-latex, thick] (-0.5,-2.5) to (-0.5,2.5);
-		\strand[-latex, thick] (0.5,2.5) to (0.5,-2.5);
+		\strand[-latex, thick] (-2.5,-1.0) to (2.5,-1.0);
+		\strand[-latex, thick] (2.5,1.0) to (-2.5,1.0);
+		\strand[-latex, thick] (-1.0,-2.5) to (-1.0,2.5);
+		\strand[-latex, thick] (1.0,2.5) to (1.0,-2.5);
 	\end{knot}
 	\end{tikzpicture}
 	\quad\mbox{albo}\quad
 	\begin{tikzpicture}[baseline=-0.65ex,scale=0.35]
 	\begin{knot}[clip width=7]
-		\strand[-latex, thick] (-2.5,-0.5) to (2.5,-0.5);
-		\strand[-latex, thick] (2.5,0.5) to (-2.5,0.5);
-		\strand[latex-, thick] (-0.5,-2.5) to (-0.5,2.5);
-		\strand[latex-, thick] (0.5,2.5) to (0.5,-2.5);
+		\strand[-latex, thick] (-2.5,-1.0) to (2.5,-1.0);
+		\strand[-latex, thick] (2.5,1.0) to (-2.5,1.0);
+		\strand[latex-, thick] (-1.0,-2.5) to (-1.0,2.5);
+		\strand[latex-, thick] (1.0,2.5) to (1.0,-2.5);
 	\end{knot}
 	\end{tikzpicture}
 	\cong
 	\begin{tikzpicture}[baseline=-0.65ex,scale=0.35]
 	\begin{knot}[clip width=7, flip crossing/.list={1,2,3,4}]
-		\strand[-latex, thick] (-2.5,-0.5) to (2.5,-0.5);
-		\strand[-latex, thick] (2.5,0.5) to (-2.5,0.5);
-		\strand[latex-, thick] (-0.5,-2.5) to (-0.5,2.5);
-		\strand[latex-, thick] (0.5,2.5) to (0.5,-2.5);
+		\strand[-latex, thick] (-2.5,-1.0) to (2.5,-1.0);
+		\strand[-latex, thick] (2.5,1.0) to (-2.5,1.0);
+		\strand[latex-, thick] (-1.0,-2.5) to (-1.0,2.5);
+		\strand[latex-, thick] (1.0,2.5) to (1.0,-2.5);
 	\end{knot}
 	\end{tikzpicture}
 \]
-\todo[inline]{Za krótkie pasma.}
 
 \index{niezmiennik!Arfa}
 Każdy węzeł jest równoważny przez przejścia z~niewęzłem (powiemy, że wyznacznik Arfa wynosi $0$) albo trójlistnikiem (że niezmiennik Arfa przyjmuje wartość $1$).
@@ -55,7 +54,11 @@ Takie podejście zaproponował Louis Kauffman.
 \end{proposition}
 
 \begin{proposition}[Robertello]
-	Niech $ \Delta (t)=c_{0}+c_{1}t+\cdots +c_{n}t^{n}+\cdots +c_{0}t^{2n}$ będzie wielomianem Alexandera.
+	Niech
+	\begin{equation}
+		\Delta (t)=c_{0}+c_{1}t+\cdots +c_{n}t^{n}+\cdots +c_{0}t^{2n}
+	\end{equation}
+	będzie wielomianem Alexandera.
 	Wtedy niezmiennik Arfa to $ c_{n-1}+c_{n-3}+\cdots +c_{r}\mod 2$, gdzie $r = 0$ dla nieparzystych $n$, $r = 1$ w~przeciwnym razie.
 \end{proposition}
 
