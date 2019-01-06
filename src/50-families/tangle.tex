@@ -12,9 +12,9 @@ Sekcja oparta jest na podręczniku Murasugiego \cite{murasugi96} i~pracach \cite
 Po raz pierwszy z~supłami zetknęliśmy się w~pracy \cite{janiak04}, także czerpiącej inspirację z~\cite{murasugi96}.
 
 \begin{definition}[supeł]
-	\label{def:tangle}
-	\index{supeł}
-	Zawarty w~kole fragment diagramu splotu o~dwóch łukach wyjściowych oraz dwóch wejściowych, nazywamy supłem.
+    \label{def:tangle}
+    \index{supeł}
+    Zawarty w~kole fragment diagramu splotu o~dwóch łukach wyjściowych oraz dwóch wejściowych, nazywamy supłem.
 \end{definition}
 
 Istnieją dwa rodzaje supłów -- naprzemienne i~sąsiadujące.
@@ -29,8 +29,8 @@ Oto cztery podstawowe supły:
 \input{50-families/tangle_02}
 
 \begin{definition}
-	\label{def:rational_tangle}
-	Supły powstające z~$(0)$ lub $(\infty)$ przez homeomorfizm kuli na siebie permutujący wejścia i~wyjścia nazywamy wymiernymi.
+    \label{def:rational_tangle}
+    Supły powstające z~$(0)$ lub $(\infty)$ przez homeomorfizm kuli na siebie permutujący wejścia i~wyjścia nazywamy wymiernymi.
 \end{definition}
 
 \todo[inline]{Definicja: homeomorfizm kuli na siebie, który... twierdzenie: ale można się ograniczyć do...!}
@@ -46,19 +46,19 @@ Potrzebować będziemy prostej definicji, uzasadniającej określenie ,,supły w
 
 \begin{proposition}
 \label{prp:continued_fractions}
-	Istnieje bijekcja między klasami supłów wymiernych oraz łańcuchowymi ułamkami, które je przedstawiają:
-	\[
-		\frac \alpha \beta = a_n + \frac{1}{a_{n-1} + 1 / (a_{n-2} +  \ldots + 1/a_1)} \in \Q \cup \{\infty\}.
-	\]
+    Istnieje bijekcja między klasami supłów wymiernych oraz łańcuchowymi ułamkami, które je przedstawiają:
+    \[
+        \frac \alpha \beta = a_n + \frac{1}{a_{n-1} + 1 / (a_{n-2} +  \ldots + 1/a_1)} \in \Q \cup \{\infty\}.
+    \]
 \end{proposition}
 
 \begin{proof}
-	Praca \cite{conway70} Conwaya.
+    Praca \cite{conway70} Conwaya.
 \end{proof}
 
 \begin{proposition}
 \label{prp:continued_fractions_2}
-	Supły o~łańcuchowych ułamkach różnych od $0$ i~$\infty$ można kodować ciągami liczb całkowitych tego samego znaku.
+    Supły o~łańcuchowych ułamkach różnych od $0$ i~$\infty$ można kodować ciągami liczb całkowitych tego samego znaku.
 \end{proposition}
 
 Z każdym supłem $T$ związane jest jego odbicie $\overline T$, obraz wyjściowego przez symetrię względem prostej $y = -x$.
@@ -79,15 +79,15 @@ Być może nie jest jasne, dlaczego terminy stosowane zazwyczaj do opisu ułamk�
 Nazewnictwo nie jest przypadkowe. %, wrócimy do tego tematu wkrótce.
 \begin{proposition}
 \label{prp:knot_fraction}
-	Ułamek supła zadany wzorem
-	\[
-		F(A) = \frac{\nabla_{N(A)}(z)}{\nabla_{D(A)}(z)}
-	\]
-	spełnia zależność $F(A+B) = F(A) + F(B)$.
+    Ułamek supła zadany wzorem
+    \[
+        F(A) = \frac{\nabla_{N(A)}(z)}{\nabla_{D(A)}(z)}
+    \]
+    spełnia zależność $F(A+B) = F(A) + F(B)$.
 \end{proposition}
 
 \begin{proof}
-	Praca \cite{conway70} Conwaya.
+    Praca \cite{conway70} Conwaya.
 \end{proof}
 
 Istnieją supły $T_1$, $T_2$ takie, że węzły $N(T_i)$ są nietrywialne, ale $N(T_1 + T_2)$ to niewęzeł.
@@ -97,14 +97,14 @@ Praca \cite{conway70} zawiera jeszcze jeden ciekawy rezultat, uogólniony przez 
 Przyjmijmy następujące skróty: niech $A_n = P_{N(A)}(x,y)$, $A_d = P_{D(A)}(x,y)$.
 
 \begin{proposition}
-	Dla dowolnych supłów $A, B$ mamy
-	\[
-	(1 - (x+y)^2)(A+B)_n = (A_nB_d + A_dB_n) - (x+y)(A_nB_n+  A_dB_d)
-	\]
-	oraz
-	\[
-		(A+B)_d = A_dB_d.
-	\]
+    Dla dowolnych supłów $A, B$ mamy
+    \[
+    (1 - (x+y)^2)(A+B)_n = (A_nB_d + A_dB_n) - (x+y)(A_nB_n+  A_dB_d)
+    \]
+    oraz
+    \[
+        (A+B)_d = A_dB_d.
+    \]
 \end{proposition}
 
 Uwaga, zastosowano tu nieco inną parametryzację wielomianu HOMFLY.
@@ -112,8 +112,8 @@ Na zakończenie wspomnimy o~mutacjach.
 
 \begin{definition}[mutacja]
 \label{def:mutant}
-	Półobrót supła względem osi poziomej, pionowej albo też prostopadłej do płaszczyzny, w~jakiej leży diagram, nazywamy mutacją, zaś otrzymany tak splot -- mutantem.
-	W razie potrzeby zmieniamy orientację supła na przeciwną.
+    Półobrót supła względem osi poziomej, pionowej albo też prostopadłej do płaszczyzny, w~jakiej leży diagram, nazywamy mutacją, zaś otrzymany tak splot -- mutantem.
+    W razie potrzeby zmieniamy orientację supła na przeciwną.
 \end{definition}
 
 Mutacja węzła o~co najwyżej dziesięciu skrzyżowaniach nie zmienia jego klasy abstrakcji.

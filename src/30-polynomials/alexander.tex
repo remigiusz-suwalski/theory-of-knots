@@ -7,39 +7,39 @@ Uogólnijmy najpierw równania kolorujące.
 
 \begin{definition}
 \label{def:polynomial_colouring}
-	Wielomianowe równanie kolorujące związane z~poniższym skrzyżowaniem splotu zorientowanego to $a + tc - ta - b = 0$.
-	Tylko orientacja górnej wiązki ma znaczenie.
-	\[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
-	\useasboundingbox (-5, -5) rectangle (5,5);
-	\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
-		\strand[semithick] (-5,5) to (5,-5);
-		\strand[semithick,-Latex] (-5,-5) to (5,5);
-		\node[darkblue] at (5, 5)[below right] {$a$};
-		\node[darkblue] at (5, -5)[above right] {$b$};
-		\node[darkblue] at (-5, 5)[below left] {$c$};
-	\end{knot}
-	\end{tikzpicture}\]
+    Wielomianowe równanie kolorujące związane z~poniższym skrzyżowaniem splotu zorientowanego to $a + tc - ta - b = 0$.
+    Tylko orientacja górnej wiązki ma znaczenie.
+    \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
+    \useasboundingbox (-5, -5) rectangle (5,5);
+    \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
+        \strand[semithick] (-5,5) to (5,-5);
+        \strand[semithick,-Latex] (-5,-5) to (5,5);
+        \node[darkblue] at (5, 5)[below right] {$a$};
+        \node[darkblue] at (5, -5)[above right] {$b$};
+        \node[darkblue] at (-5, 5)[below left] {$c$};
+    \end{knot}
+    \end{tikzpicture}\]
 \end{definition}
 
 Istotnie, wystarczy podstawić tutaj $t = 1$, by otrzymać mniej ogólną definicję \ref{coleqn-definition}.
 
 \begin{definition}
-	\label{def:alexander_polynomial}
-	\index{wielomian!Alexandera}
-	Niech $L$ będzie zorientowanym splotem z~diagramem bez krzywych zamkniętych.
-	Przypiszmy etykiety $x_0, \ldots, x_m$ do włókien oraz $0, \ldots, m$ do skrzyżowań.
-	Z macierzy $P$, której wyraz $P_{ij}$ określony jest jako współczynnik przy $x_j$ w~wielomianowym równaniu kolorującym nad $i$-tym wierzchołkiem, wykreślmy jedną kolumnę i~jeden wiersz.
-	Wyznacznik tak otrzymanej macierzy nazywamy wielomianem Alexandera $\Delta_L(t)$.
+    \label{def:alexander_polynomial}
+    \index{wielomian!Alexandera}
+    Niech $L$ będzie zorientowanym splotem z~diagramem bez krzywych zamkniętych.
+    Przypiszmy etykiety $x_0, \ldots, x_m$ do włókien oraz $0, \ldots, m$ do skrzyżowań.
+    Z macierzy $P$, której wyraz $P_{ij}$ określony jest jako współczynnik przy $x_j$ w~wielomianowym równaniu kolorującym nad $i$-tym wierzchołkiem, wykreślmy jedną kolumnę i~jeden wiersz.
+    Wyznacznik tak otrzymanej macierzy nazywamy wielomianem Alexandera $\Delta_L(t)$.
 \end{definition}
 
 Nasz nowy niezmiennik nie jest zwykłym wielomianem, tylko wielomianem Laurenta jednej zmiennej, czyli elementem pierścienia $\Z[t, t^{-1}]$.
 
 \begin{proposition} \label{alexander_invariance}
-	Wielomian Alexandera z~dokładnością do relacji równoważności
-	\begin{equation}
-		f(t) \equiv g(t) \iff f(t) = \pm t^m g(t) \mbox{ dla pewnego } m \in \Z
-	\end{equation}
-	jest niezmiennikiem zorientowanych splotów.
+    Wielomian Alexandera z~dokładnością do relacji równoważności
+    \begin{equation}
+        f(t) \equiv g(t) \iff f(t) = \pm t^m g(t) \mbox{ dla pewnego } m \in \Z
+    \end{equation}
+    jest niezmiennikiem zorientowanych splotów.
 \end{proposition}
 
 W dowodzie niezmienniczości wyznacznika węzła skorzystaliśmy z~relacji między nim a~grupą kolorującą.
@@ -47,42 +47,42 @@ Poprzednie wydanie książki zawierało sugestię, że elementarny (czyli taki, 
 Sugestia ta była błędna, wystarczy użyć alternatywnej definicji.
 
 \begin{proof}[Szkic dowodu]
-	Ustalmy diagram o~$k$ skrzyżowaniach, który rozcina płaszczyznę na $k+2$ obszarów i~utwórzmy macierz o~wymiarach $k \times k$, której kolumny odpowiadają obszarom, wiersze zaś skrzyżowaniom -- pomijając przy tym dwa sąsiadujące ze sobą obszary -- o~wyrazach ze współczynników równań kolorujących.
-	Jej wyznacznik jest wielomianem Alexandera.
+    Ustalmy diagram o~$k$ skrzyżowaniach, który rozcina płaszczyznę na $k+2$ obszarów i~utwórzmy macierz o~wymiarach $k \times k$, której kolumny odpowiadają obszarom, wiersze zaś skrzyżowaniom -- pomijając przy tym dwa sąsiadujące ze sobą obszary -- o~wyrazach ze współczynników równań kolorujących.
+    Jej wyznacznik jest wielomianem Alexandera.
 
-	Sąsiadującym ze sobą obszarom przypiszmy kolejne liczby całkowite tak, by obszar leżący po prawej stronie włókna miał niższy indeks.
-	Pokażemy najpierw, że skasowanie kolumny indeksu $n$ oraz $n+1$ sprawia, że wyznacznik zmienia się co najwyżej o~czynnik $\pm t^m$ dla pewnego $m$.
-	Niech $S_n$ oznacza sumę kolumn indeksu $n$.
-	Każdy wiersz macierzy zawiera cztery niezerowe wyrazy: $\pm 1, \pm t$, zatem $\sum_n S_n = 0$.
-	Równość ta zachodzi nawet po przemnożeniu kolumny indeksu $n$ przez $t^{-n}$: $\sum_n t^{-n}S_n = 0$, co prowadzi do relacji $\sum_n (t^{-n}-1) S_n = 0$.
-	Jeśli więc indeks kolumny $v_j$ wynosi $n$, to $(t^{-n}-1)v_j$ jest kombinacją liniową innych kolumn niezerowego indeksu (ponieważ $t^0 - 1 = 0$).
+    Sąsiadującym ze sobą obszarom przypiszmy kolejne liczby całkowite tak, by obszar leżący po prawej stronie włókna miał niższy indeks.
+    Pokażemy najpierw, że skasowanie kolumny indeksu $n$ oraz $n+1$ sprawia, że wyznacznik zmienia się co najwyżej o~czynnik $\pm t^m$ dla pewnego $m$.
+    Niech $S_n$ oznacza sumę kolumn indeksu $n$.
+    Każdy wiersz macierzy zawiera cztery niezerowe wyrazy: $\pm 1, \pm t$, zatem $\sum_n S_n = 0$.
+    Równość ta zachodzi nawet po przemnożeniu kolumny indeksu $n$ przez $t^{-n}$: $\sum_n t^{-n}S_n = 0$, co prowadzi do relacji $\sum_n (t^{-n}-1) S_n = 0$.
+    Jeśli więc indeks kolumny $v_j$ wynosi $n$, to $(t^{-n}-1)v_j$ jest kombinacją liniową innych kolumn niezerowego indeksu (ponieważ $t^0 - 1 = 0$).
 
-	Rozpatrzmy macierze $M_{0,j}, M_{0,k}$, gdzie indeksy $j$-tej i~$k$-tej kolumny to odpowiednio $p$ i~$q$.
-	Z powyższych rozważań wynika, że $(t^{-q}-1) \Delta_{0,j} = \pm (t^{-p}-1)\Delta_{0,k}$, ale indeksy obszarów są wyznaczone z~dokładnością do stałej addytywnej.
-	Biorąc $i$-tą oraz $l$-tą kolumnę, indeksów $r$ oraz $s$, dostaniemy zależności
-	\begin{align}
-		(t^{r-q}-1) \Delta_{l,j} & = \pm (t^{r-p} - 1)\Delta_{l,i} \\
-		(t^{q-s}-1) \Delta_{k,l} & = \pm (t^{q-r} - 1)\Delta_{k,i}
-	\end{align}
-	co prowadzi do
-	\begin{equation}
-		\Delta_{l,j} = \pm \frac{t^{q-r}(t^{r-p}-1)}{t^{q-s}-1} \Delta_{k,i}
-	\end{equation}
-	Położenie $p = r +1$, $s =q+1$ pokazuje, że różny wybór kolumn do skreślenia zmienia wyznacznik macierzy co najwyżej o~czynnik $\pm t^m$.
+    Rozpatrzmy macierze $M_{0,j}, M_{0,k}$, gdzie indeksy $j$-tej i~$k$-tej kolumny to odpowiednio $p$ i~$q$.
+    Z powyższych rozważań wynika, że $(t^{-q}-1) \Delta_{0,j} = \pm (t^{-p}-1)\Delta_{0,k}$, ale indeksy obszarów są wyznaczone z~dokładnością do stałej addytywnej.
+    Biorąc $i$-tą oraz $l$-tą kolumnę, indeksów $r$ oraz $s$, dostaniemy zależności
+    \begin{align}
+        (t^{r-q}-1) \Delta_{l,j} & = \pm (t^{r-p} - 1)\Delta_{l,i} \\
+        (t^{q-s}-1) \Delta_{k,l} & = \pm (t^{q-r} - 1)\Delta_{k,i}
+    \end{align}
+    co prowadzi do
+    \begin{equation}
+        \Delta_{l,j} = \pm \frac{t^{q-r}(t^{r-p}-1)}{t^{q-s}-1} \Delta_{k,i}
+    \end{equation}
+    Położenie $p = r +1$, $s =q+1$ pokazuje, że różny wybór kolumn do skreślenia zmienia wyznacznik macierzy co najwyżej o~czynnik $\pm t^m$.
 
-	Wprowadźmy jeszcze jedną techniczną definicję.
-	Dwie kwadratowe macierze będą dla nas równoważne, jeśli można przejść od jednej do drugiej przy użyciu pięciu operacji:
-	\begin{enumerate}[leftmargin=*]
-	\itemsep0em
-		\item przemnożenie wiersza lub kolumny przez $-1$;
-		\item zamiana dwóch wierszy lub kolumn miejscami;
-		\item dodanie jednego wiersza do innego (lub kolumny do innej);
-		\item przemnożenie lub podzielenie kolumny przez $t$;
-		\item rozszerzenie lub zmniejszenie macierzy o~$1$ na przekątnej i~zera w~innych miejscach.
-	\end{enumerate}
+    Wprowadźmy jeszcze jedną techniczną definicję.
+    Dwie kwadratowe macierze będą dla nas równoważne, jeśli można przejść od jednej do drugiej przy użyciu pięciu operacji:
+    \begin{enumerate}[leftmargin=*]
+    \itemsep0em
+        \item przemnożenie wiersza lub kolumny przez $-1$;
+        \item zamiana dwóch wierszy lub kolumn miejscami;
+        \item dodanie jednego wiersza do innego (lub kolumny do innej);
+        \item przemnożenie lub podzielenie kolumny przez $t$;
+        \item rozszerzenie lub zmniejszenie macierzy o~$1$ na przekątnej i~zera w~innych miejscach.
+    \end{enumerate}
 
-	Ruchy Reidemeistera prowadzą do macierzy równoważnych wyjściowym.
-	Każda z~tych operacji zmienia wyznacznik macierzy o~czynnik $\pm t^{-m}$, co kończy dowód.
+    Ruchy Reidemeistera prowadzą do macierzy równoważnych wyjściowym.
+    Każda z~tych operacji zmienia wyznacznik macierzy o~czynnik $\pm t^{-m}$, co kończy dowód.
 \end{proof}
 
 Dla wygody można przeprowadzić normalizację wielomianu przez wzięcie reprezentanta, który jest symetryczny w~zmiennych $t$ oraz $t^{-1}$ i~przyjmuje w~punkcie $1$ wartość $\Delta(1) = 1$.
@@ -94,143 +94,143 @@ Znane są przykłady nietrywialnych węzłów o~trywialnym wielomianie Alexander
 Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, strona 167) lub cztery inne z~167 strony książki \cite{rolfsen76} Rolfsena.
 
 \begin{proposition}
-	Tylko skończenie wiele węzłów alternujących może mieć ten sam wielomian Alexandera.
+    Tylko skończenie wiele węzłów alternujących może mieć ten sam wielomian Alexandera.
 \end{proposition}
 
 \begin{proof}
-	Przeprowadzimy rozumowanie nie wprost.
-	Załóżmy, że istnieje ciąg $K_n$ węzłów alternujących o~tym samym wielomianie Alexandera $\Delta_K(t)$.
-	Wszystkie jego wyrazy mają ten sam wyznacznik, ponieważ $\det K_n = |\Delta_K(-1)|$.
-	Z twierdzenia \ref{thm:bankwitz} (Bankwitza) wynika, że indeks skrzyżowaniowy węzłów $K_n$ jest wspólnie ograniczony: $c_k \le \det K_n = \det K$.
+    Przeprowadzimy rozumowanie nie wprost.
+    Załóżmy, że istnieje ciąg $K_n$ węzłów alternujących o~tym samym wielomianie Alexandera $\Delta_K(t)$.
+    Wszystkie jego wyrazy mają ten sam wyznacznik, ponieważ $\det K_n = |\Delta_K(-1)|$.
+    Z twierdzenia \ref{thm:bankwitz} (Bankwitza) wynika, że indeks skrzyżowaniowy węzłów $K_n$ jest wspólnie ograniczony: $c_k \le \det K_n = \det K$.
 
-	To prowadzi do sprzeczności: węzłów o~danym indeksie skrzyżowaniowym jest tylko skończenie wiele.
+    To prowadzi do sprzeczności: węzłów o~danym indeksie skrzyżowaniowym jest tylko skończenie wiele.
 \end{proof}
 
 \begin{proposition}
-	Niech $L$ będzie zorientowanym splotem.
-	Wtedy:
-	\begin{enumerate}
-		\item $\Delta_L(-1) = \pm \det L$,
-		\item $\Delta_{mL}(t) = \Delta_L(1/t)$,
-		\item $\Delta_{rL}(t) = \Delta_L(1/t)$.
-	\end{enumerate}
+    Niech $L$ będzie zorientowanym splotem.
+    Wtedy:
+    \begin{enumerate}
+        \item $\Delta_L(-1) = \pm \det L$,
+        \item $\Delta_{mL}(t) = \Delta_L(1/t)$,
+        \item $\Delta_{rL}(t) = \Delta_L(1/t)$.
+    \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-	(1) Wystarczy porównać definicje $\Delta_L$ oraz $\det L$.
+    (1) Wystarczy porównać definicje $\Delta_L$ oraz $\det L$.
 
-	(2) Po odbiciu diagramu względem pionowej prostej skrzyżowanie z~definicji \ref{def:colour_equation} również się odbija.
-	Równanie związane z~nim zmienia się z~$a + tc - ta - b = 0$ w~$a + tb - ta - c = 0$.
-	Zauważmy, że pierwsze równanie z~$t$ zamienionym na $1/t$ staje się drugim równaniem przemnożonym przez $-1/t$.
+    (2) Po odbiciu diagramu względem pionowej prostej skrzyżowanie z~definicji \ref{def:colour_equation} również się odbija.
+    Równanie związane z~nim zmienia się z~$a + tc - ta - b = 0$ w~$a + tb - ta - c = 0$.
+    Zauważmy, że pierwsze równanie z~$t$ zamienionym na $1/t$ staje się drugim równaniem przemnożonym przez $-1/t$.
 
-	(3) Analogicznie.
+    (3) Analogicznie.
 \end{proof}
 
 \begin{proposition}
-	Jeśli $J, K$ są zorientowanymi węzłami, to $\Delta_{J \shrap K}(t) \equiv \Delta_J(t) \Delta_K(t)$.
+    Jeśli $J, K$ są zorientowanymi węzłami, to $\Delta_{J \shrap K}(t) \equiv \Delta_J(t) \Delta_K(t)$.
 \end{proposition}
 
 \begin{proof}
-	Wybierzmy poniższe diagramy dla węzłów $J$ oraz $K$:
-	\[\begin{tikzpicture}[baseline=-0.65ex, scale=0.07]
-	%\useasboundingbox (-5, -5) rectangle (5,5);
-	\begin{knot}[clip width=5, end tolerance=1pt]
-		\strand[semithick] (-70, -10) rectangle (-30, 10);
-		\strand[semithick] ( 30, -10) rectangle ( 70, 10);
-		\strand[semithick,Latex-] (-30, 5) .. controls (-22, 5) and (-18, -5) .. (-10, -5);
-		\strand[semithick] (-30,-5) .. controls (-22, -5) and (-18, 5) .. (-10,  5);
-		\strand[semithick] (-10, 5) [in=up, out=right] to (-5, 0) [in=right, out=down] to (-10, -5);
+    Wybierzmy poniższe diagramy dla węzłów $J$ oraz $K$:
+    \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.07]
+    %\useasboundingbox (-5, -5) rectangle (5,5);
+    \begin{knot}[clip width=5, end tolerance=1pt]
+        \strand[semithick] (-70, -10) rectangle (-30, 10);
+        \strand[semithick] ( 30, -10) rectangle ( 70, 10);
+        \strand[semithick,Latex-] (-30, 5) .. controls (-22, 5) and (-18, -5) .. (-10, -5);
+        \strand[semithick] (-30,-5) .. controls (-22, -5) and (-18, 5) .. (-10,  5);
+        \strand[semithick] (-10, 5) [in=up, out=right] to (-5, 0) [in=right, out=down] to (-10, -5);
 
-		% prawe strzalki
-		\strand[semithick,-Latex] (30, 5) .. controls (22, 5) and (18, -5) .. (10, -5);
-		\strand[semithick] (30,-5) .. controls (22, -5) and (18, 5) .. (10,  5);
-		\strand[semithick] (10, 5) [in=up, out=left] to (5, 0) [in=left, out=down] to (10, -5);
+        % prawe strzalki
+        \strand[semithick,-Latex] (30, 5) .. controls (22, 5) and (18, -5) .. (10, -5);
+        \strand[semithick] (30,-5) .. controls (22, -5) and (18, 5) .. (10,  5);
+        \strand[semithick] (10, 5) [in=up, out=left] to (5, 0) [in=left, out=down] to (10, -5);
 
-		\node[darkblue] at (-50,5) {$x_1,\ldots,x_{m-1}$};
-		\node[red] at (-50,-5) {$1,\ldots,m$};
+        \node[darkblue] at (-50,5) {$x_1,\ldots,x_{m-1}$};
+        \node[red] at (-50,-5) {$1,\ldots,m$};
 
-		\node[darkblue] at (50,5) {$y_1,\ldots,y_{n-1}$};
-		\node[red] at (50,-5) {$1,\ldots,n$};
+        \node[darkblue] at (50,5) {$y_1,\ldots,y_{n-1}$};
+        \node[red] at (50,-5) {$1,\ldots,n$};
 
-		\node[darkblue] at (-30,-5)[below right] {$x_m$};
-		\node[darkblue] at (-15,-5)[below] {$x_0$};
-		\node[darkblue] at (30,-5)[below left] {$y_n$};
-		\node[darkblue] at (15,-5)[below] {$y_0$};
-		\node[red] at ( 19.5,  1)[above]{$0$};
-		\node[red] at (-19.5,  1)[above]{$0$};
-	\end{knot}
-	\end{tikzpicture}
+        \node[darkblue] at (-30,-5)[below right] {$x_m$};
+        \node[darkblue] at (-15,-5)[below] {$x_0$};
+        \node[darkblue] at (30,-5)[below left] {$y_n$};
+        \node[darkblue] at (15,-5)[below] {$y_0$};
+        \node[red] at ( 19.5,  1)[above]{$0$};
+        \node[red] at (-19.5,  1)[above]{$0$};
+    \end{knot}
+    \end{tikzpicture}
 \]
-	Niech $A$ oraz $B$ oznaczają macierze otrzymane z~wielomianowych równań kolorujących dla $J$ oraz $K$ przez skreślenie skrajnie lewej kolumny i~górnego wiersza.
-	Wtedy $\Delta_J(t) = \det A$ oraz $\Delta_K(t) = \det B$.
-	Poniższy diagram przedstawia sumę $J \shrap K$:
+    Niech $A$ oraz $B$ oznaczają macierze otrzymane z~wielomianowych równań kolorujących dla $J$ oraz $K$ przez skreślenie skrajnie lewej kolumny i~górnego wiersza.
+    Wtedy $\Delta_J(t) = \det A$ oraz $\Delta_K(t) = \det B$.
+    Poniższy diagram przedstawia sumę $J \shrap K$:
 
 \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.07]
-	%\useasboundingbox (-5, -5) rectangle (5,5);
-	\begin{knot}[clip width=5, end tolerance=1pt]
-		\strand[semithick] (-70, -10) rectangle (-30, 10);
-		\strand[semithick] ( 30, -10) rectangle ( 70, 10);
-		\strand[semithick,Latex-] (-30, 5) .. controls (-22, 5) and (-18, -5) .. (-10, -5);
-		\strand[semithick] (-30,-5) .. controls (-22, -5) and (-18, 5) .. (-10,  5);
+    %\useasboundingbox (-5, -5) rectangle (5,5);
+    \begin{knot}[clip width=5, end tolerance=1pt]
+        \strand[semithick] (-70, -10) rectangle (-30, 10);
+        \strand[semithick] ( 30, -10) rectangle ( 70, 10);
+        \strand[semithick,Latex-] (-30, 5) .. controls (-22, 5) and (-18, -5) .. (-10, -5);
+        \strand[semithick] (-30,-5) .. controls (-22, -5) and (-18, 5) .. (-10,  5);
 
-		% prawe strzalki
-		\strand[semithick] (30, 5) .. controls (22, 5) and (18, -5) .. (10, -5);
-		\strand[semithick] (30,-5) .. controls (22, -5) and (18, 5) .. (10,  5);
-		\strand[semithick] (10, 5) to (-10, 5);
-		\strand[semithick,-Latex] (10, -5) to (-10, -5);
+        % prawe strzalki
+        \strand[semithick] (30, 5) .. controls (22, 5) and (18, -5) .. (10, -5);
+        \strand[semithick] (30,-5) .. controls (22, -5) and (18, 5) .. (10,  5);
+        \strand[semithick] (10, 5) to (-10, 5);
+        \strand[semithick,-Latex] (10, -5) to (-10, -5);
 
-		\node[darkblue] at (-50,5) {$x_1,\ldots,x_{m-1}$};
-		\node[red] at (-50,-5) {$1,\ldots,m$};
+        \node[darkblue] at (-50,5) {$x_1,\ldots,x_{m-1}$};
+        \node[red] at (-50,-5) {$1,\ldots,m$};
 
-		\node[darkblue] at (50,5) {$y_1,\ldots,y_{n-1}$};
-		\node[red] at (50,-5) {$1,\ldots,n$};
+        \node[darkblue] at (50,5) {$y_1,\ldots,y_{n-1}$};
+        \node[red] at (50,-5) {$1,\ldots,n$};
 
-		\node[darkblue] at (-30,-5)[below right] {$x_m$};
-		\node[darkblue] at (0,-5)[below] {$x_0 = y_0$};
-		\node[darkblue] at (0, 5)[above] {$z$};
-		\node[darkblue] at (30,-5)[below left] {$y_n$};
-		\node[red] at ( 19.5,  1)[above]{$\zeta$};
-		\node[red] at (-19.5,  1)[above]{$0$};
-	\end{knot}
-	\end{tikzpicture}\]
+        \node[darkblue] at (-30,-5)[below right] {$x_m$};
+        \node[darkblue] at (0,-5)[below] {$x_0 = y_0$};
+        \node[darkblue] at (0, 5)[above] {$z$};
+        \node[darkblue] at (30,-5)[below left] {$y_n$};
+        \node[red] at ( 19.5,  1)[above]{$\zeta$};
+        \node[red] at (-19.5,  1)[above]{$0$};
+    \end{knot}
+    \end{tikzpicture}\]
 
-	Uporządkujmy łuki na diagramie jako $x_0 = y_0$, $x_1, \ldots, x_m$, $y_1, \ldots, y_n$, $z$; skrzyżowania: $0, 1, \ldots, m$ (z $J$), $1, \ldots, n$ (z $K$), $\zeta$.
-	Wielomianowe równanie kolorujące dla $J \shrap K$ nad skrzyżowaniami $1, \ldots, m$ ($1, \ldots, n$) są takie same, jak przed dodaniem do siebie węzłów.
-	Nad skrzyżowaniem $\zeta$ równanie orzeka, że $(1-t)y_0+t z-y_n=0$.
+    Uporządkujmy łuki na diagramie jako $x_0 = y_0$, $x_1, \ldots, x_m$, $y_1, \ldots, y_n$, $z$; skrzyżowania: $0, 1, \ldots, m$ (z $J$), $1, \ldots, n$ (z $K$), $\zeta$.
+    Wielomianowe równanie kolorujące dla $J \shrap K$ nad skrzyżowaniami $1, \ldots, m$ ($1, \ldots, n$) są takie same, jak przed dodaniem do siebie węzłów.
+    Nad skrzyżowaniem $\zeta$ równanie orzeka, że $(1-t)y_0+t z-y_n=0$.
 
-	Wynika stąd, że $\Delta_{J \shrap K}(t)$ jest wyznacznikiem macierzy
-	\begin{align*}
-		M &= \left(\begin{array}{cc|cc|c}
-			& & & & \\
-			\multicolumn{2}{c|}{\smash{\raisebox{.5\normalbaselineskip}{$A$}}} & & \\
-			\hline \\[-\normalbaselineskip]
-			& & & & \\
-			& & \multicolumn{2}{c|}{\smash{\raisebox{.5\normalbaselineskip}{$B$}}}\\ \hline
-			& & & -1 & t
-	\end{array}\right)
-	\end{align*}
+    Wynika stąd, że $\Delta_{J \shrap K}(t)$ jest wyznacznikiem macierzy
+    \begin{align*}
+        M &= \left(\begin{array}{cc|cc|c}
+            & & & & \\
+            \multicolumn{2}{c|}{\smash{\raisebox{.5\normalbaselineskip}{$A$}}} & & \\
+            \hline \\[-\normalbaselineskip]
+            & & & & \\
+            & & \multicolumn{2}{c|}{\smash{\raisebox{.5\normalbaselineskip}{$B$}}}\\ \hline
+            & & & -1 & t
+    \end{array}\right)
+    \end{align*}
 
-	Skreśliliśmy lewą kolumnę oraz górny wiersz.
-	Zatem $\Delta_{J \shrap K}(t) = t^?\Delta_J(t) \Delta_K(t)$, jeśli nie pomyliliśmy się w~obliczeniach.
+    Skreśliliśmy lewą kolumnę oraz górny wiersz.
+    Zatem $\Delta_{J \shrap K}(t) = t^?\Delta_J(t) \Delta_K(t)$, jeśli nie pomyliliśmy się w~obliczeniach.
 \end{proof}
 
 \begin{proposition}
-	Wielomian Alexandera zadaje ograniczenie na indeks skrzyżowaniowy $c$:
-	\begin{equation}
-		\deg \Delta_K(t) < c(K).
-	\end{equation}
+    Wielomian Alexandera zadaje ograniczenie na indeks skrzyżowaniowy $c$:
+    \begin{equation}
+        \deg \Delta_K(t) < c(K).
+    \end{equation}
 \end{proposition}
 
 Przedstawimy teraz kilka innych definicji, które prowadzą do tego samego niezmiennika.
 
 \begin{definition}
-	Wielomian Alexandera $\Delta_L(t) \in \Z[t^{-1/2}, t^{1/2}]$ zorientowanego splotu $L$ to taki wielomian Laurenta, który spełnia relację kłębiastą (przy oznaczeniach z~twierdzenia \ref{tracheotomia}):
-	\begin{enumerate}
-		\item $\Delta_{\LittleUnknot}(t) = 1$
-		\item $\Delta_{L_+}(t) - \Delta_{L_-}(t) - (t^{1/2} - t^{-1/2}) \Delta_{L_0}(t) = 0$,
-	\end{enumerate}
+    Wielomian Alexandera $\Delta_L(t) \in \Z[t^{-1/2}, t^{1/2}]$ zorientowanego splotu $L$ to taki wielomian Laurenta, który spełnia relację kłębiastą (przy oznaczeniach z~twierdzenia \ref{tracheotomia}):
+    \begin{enumerate}
+        \item $\Delta_{\LittleUnknot}(t) = 1$
+        \item $\Delta_{L_+}(t) - \Delta_{L_-}(t) - (t^{1/2} - t^{-1/2}) \Delta_{L_0}(t) = 0$,
+    \end{enumerate}
 
-	gdzie $L_+$, $L_-$, $L_0$ to zorientowane sploty, które różnią się jedynie na małym obszarze:
+    gdzie $L_+$, $L_-$, $L_0$ to zorientowane sploty, które różnią się jedynie na małym obszarze:
     \[
         \skeinplus \quad\quad\quad\quad
         \skeinminus \quad\quad\quad\quad
@@ -241,21 +241,21 @@ Przedstawimy teraz kilka innych definicji, które prowadzą do tego samego niezm
 Relacja kłębiasta wystarcza do wyznaczenia $\Delta_L$ dla każdego splotu na mocy następującego lematu:
 
 \begin{lemma}
-	Dowolny diagram węzła można przekształcić do diagramu niewęzła przez odwrócenie pewnej liczby skrzyżowań.
+    Dowolny diagram węzła można przekształcić do diagramu niewęzła przez odwrócenie pewnej liczby skrzyżowań.
 \end{lemma}
 
 \begin{proof}
-	Wystarczy ograniczyć się do diagramu węzła.
-	Wybierzmy jakiś początkowy punkt na nim, różny od skrzyżowania wraz z~kierunkiem, wzdłuż którego będziemy przemierzać węzeł.
-	Za każdym razem, kiedy odwiedzamy nowe skrzyżowanie, zmieniamy je w~razie potrzeby na takie, przez które przemieszczamy się górnym łukiem.
-	Skrzyżowań już odwiedzonych nie zmieniamy wcale. Po powrocie do punktu wybranego na początku uzyskamy diagram niewęzła.
+    Wystarczy ograniczyć się do diagramu węzła.
+    Wybierzmy jakiś początkowy punkt na nim, różny od skrzyżowania wraz z~kierunkiem, wzdłuż którego będziemy przemierzać węzeł.
+    Za każdym razem, kiedy odwiedzamy nowe skrzyżowanie, zmieniamy je w~razie potrzeby na takie, przez które przemieszczamy się górnym łukiem.
+    Skrzyżowań już odwiedzonych nie zmieniamy wcale. Po powrocie do punktu wybranego na początku uzyskamy diagram niewęzła.
 \end{proof}
 
 Conway chcąc szybko liczyć wielomian Alexandera zaproponował, by reparametryzować go wzorem $\Delta(x^2) = \nabla(x - 1/x)$.
 Wzór ten był znany Alexanderowi, nie wiedzieć jednak czemu nie zyskał uwagi.
 Spełniona jest wtedy inna relacja kłębiasta:
 \begin{equation}
-	\nabla_{L_+}(x)- \nabla_{L_-}(x) = x \nabla_{L_0}(x).
+    \nabla_{L_+}(x)- \nabla_{L_-}(x) = x \nabla_{L_0}(x).
 \end{equation}
 
 Wielomian Jonesa (zdefiniowany w~kolejnej sekcji) spełnia podobną równość.
@@ -265,11 +265,11 @@ Tak jest w~rzeczywistości -- mocniejszym niezmiennikiem okazał się wielomian 
 Poniższa hipoteza pochodzi od Stojmenowa.
 
 \begin{conjecture}
-	Niech $\nabla_k$ będzie współczynnikiem przy $z^k$ w~wielomianie Conwaya, zaś $c$ indeksem skrzyżowaniowym splotu $L$.
-	Wtedy spełniona jest nierówność
-	\begin{equation}
-		|\nabla_k(L)| \le \underbrace{\frac{1}{2^kk!}}_{C_k} \cdot c^k.
-	\end{equation}
+    Niech $\nabla_k$ będzie współczynnikiem przy $z^k$ w~wielomianie Conwaya, zaś $c$ indeksem skrzyżowaniowym splotu $L$.
+    Wtedy spełniona jest nierówność
+    \begin{equation}
+        |\nabla_k(L)| \le \underbrace{\frac{1}{2^kk!}}_{C_k} \cdot c^k.
+    \end{equation}
 \end{conjecture}
 
 Istnienie stałej $C_k$ wynika z~dowodu hipotezy Lin-Wanga, patrz prace: \cite{barnatan_95} (Bar-Natan dla węzłów) oraz \cite{stoimenow_01} (Stojmenow dla splotów), ale trudno obliczyć jej wartość.
@@ -277,20 +277,20 @@ Nierówność jest nietrywialna tylko dla splotu $L$ z~$k+1, k-1, \ldots$ skład
 % The Casson knot invariant (to be distinguished from the better-known Casson invariant) is defined to be the Vassiliev knot invariant v_2, which turns out to be \Delta_k''(1) / 2 , where \Delta_k is the Alexander polynomial of k. It can be characterized as the unique Vassiliev invariant of degree 2 that takes value 0 on the trivial knot and value 1 on the trefoil knot.
 
 \begin{proposition}
-	Wielomianem Alexandera splotu rozszczepialnego jest $1$.
+    Wielomianem Alexandera splotu rozszczepialnego jest $1$.
 \end{proposition}
 
 Za to wielomian Jonesa, zgodnie z~faktem \ref{prp:jones_trivial_link}, rozróżnia sploty trywialne.
 
 Macierz Seiferta -- wymaga definicji.
 \begin{proposition}
-	Spełniona jest relacja $\Delta(t)=\det(V^T-tV)$, gdzie $V$ to macierz Seiferta.
+    Spełniona jest relacja $\Delta(t)=\det(V^T-tV)$, gdzie $V$ to macierz Seiferta.
 \end{proposition}
 
 Można scharakteryzować możliwe postacie wielomianu Alexandera.
 
 \begin{proposition}[Hosokowa, 1958]
-	Każdy wielomian Laurenta $p(t)$ o~całkowitych współczynnikach taki, że $p(1/t) = p(t)$ i~$p(1) = \pm 1$ może być wielomianem Alexandera jakiegoś węzła.
+    Każdy wielomian Laurenta $p(t)$ o~całkowitych współczynnikach taki, że $p(1/t) = p(t)$ i~$p(1) = \pm 1$ może być wielomianem Alexandera jakiegoś węzła.
 \end{proposition}
 
 Murasugi podejrzewał, że w~przypadku węzłów alternujących ciąg współczynników jest unimodalny.

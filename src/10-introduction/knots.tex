@@ -11,38 +11,38 @@ Węzeł (a) nazywamy niewęzłem (jest to kalka angielskiego \emph{unknot}).
 Następne w~kolejce widoczne są trójlistnik (b,~\emph{trefoil}), ósemka (c,~\emph{figure-eight}), pięciolistnik (d,~\emph{cinquefoil}) oraz słynna para Perko (e,~f~wg oryginalnej numeracji Rolfsena).
 
 \begin{figure}[H]
-	\centering
-	\begin{minipage}[b]{.14\linewidth}
-		\centering
-		$\begin{tikzpicture}[baseline=-0.65ex, scale=0.5] \begin{knot}[clip width=5, end tolerance=1pt] \strand[semithick] (0,0) circle (\linewidth); \end{knot}
+    \centering
+    \begin{minipage}[b]{.14\linewidth}
+        \centering
+        $\begin{tikzpicture}[baseline=-0.65ex, scale=0.5] \begin{knot}[clip width=5, end tolerance=1pt] \strand[semithick] (0,0) circle (\linewidth); \end{knot}
 \end{tikzpicture}$
-		\subcaption{}
-	\end{minipage}
-	\begin{minipage}[b]{.14\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/3_1.png}
-		\subcaption{$3_1$}
-	\end{minipage}
-	\begin{minipage}[b]{.14\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/4_1.png}
-		\subcaption{$4_1$}
-	\end{minipage}
-	\begin{minipage}[b]{.14\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/5_1.png}
-		\subcaption{$5_1$}
-	\end{minipage}
-	\begin{minipage}[b]{.14\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/perko1.png}
-		\subcaption{$10_{161}$}
-	\end{minipage}
-	\begin{minipage}[b]{.14\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/perko2.png}
-		\subcaption{$10_{162}$}
-	\end{minipage}
+        \subcaption{}
+    \end{minipage}
+    \begin{minipage}[b]{.14\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/3_1.png}
+        \subcaption{$3_1$}
+    \end{minipage}
+    \begin{minipage}[b]{.14\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/4_1.png}
+        \subcaption{$4_1$}
+    \end{minipage}
+    \begin{minipage}[b]{.14\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/5_1.png}
+        \subcaption{$5_1$}
+    \end{minipage}
+    \begin{minipage}[b]{.14\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/perko1.png}
+        \subcaption{$10_{161}$}
+    \end{minipage}
+    \begin{minipage}[b]{.14\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/perko2.png}
+        \subcaption{$10_{162}$}
+    \end{minipage}
 \end{figure}
 
 Początkowo celem teorii węzłów była klasyfikacja wszystkich węzłów.
@@ -61,7 +61,7 @@ Największą różnicą między węzłami matematycznymi oraz tymi z~prawdziwego
 Można przyjąć nieidealną, naiwną definicję:
 
 \begin{definition}
-	Ciągłe oraz różnowartościowe odwzorowanie $S^1 \to \R^3$ to \textbf{węzeł}.
+    Ciągłe oraz różnowartościowe odwzorowanie $S^1 \to \R^3$ to \textbf{węzeł}.
 \end{definition}
 
 Zastanówmy się, jakim formalizmem opisać manipulowanie fizycznym sznurkiem.
@@ -70,21 +70,21 @@ Nie można użyć izotopii
 Zauważmy, że każde splątanie ściąga się do punktu.
 Dowolny węzeł jest równoważny z~trywialnym, zatem istnieje tylko jedna klasa abstrakcji.
 \begin{figure}[H]
-	\begin{minipage}[b]{.23\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{węzeł}
-	\end{minipage}
-	\begin{minipage}[b]{.23\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{prostszy węzeł}
-	\end{minipage}
-	\begin{minipage}[b]{.23\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{niewęzeł}
-	\end{minipage}
+    \begin{minipage}[b]{.23\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/missing.jpg}
+        \subcaption{węzeł}
+    \end{minipage}
+    \begin{minipage}[b]{.23\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/missing.jpg}
+        \subcaption{prostszy węzeł}
+    \end{minipage}
+    \begin{minipage}[b]{.23\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/missing.jpg}
+        \subcaption{niewęzeł}
+    \end{minipage}
 \end{figure}
 
 Trzeba uwzględnić to, jak węzeł leży w~przestrzeni.
@@ -93,17 +93,17 @@ Intuicyjnie: dwa węzły uznajemy za równoważne,
 jeśli można przejść od jednego do drugiego przy użyciu deformacji całej przestrzeni $\R^3$.
 
 \begin{definition}[izotopia otaczająca] \label{def_ambient_isotopy}
-	Ciągłe odwzorowanie $F \colon \R^3 \times [0,1] \to \R^3$,
-	które staje się homeomorfizmem po ustaleniu drugiego argumentu i~takie,
-	że $F(-, 0)$ jest funkcją tożsamościową,
-	zaś $F(-, 1)$ złożona z~pierwszym węzłem daje drugi węzeł,
-	nazywamy izotopią otaczającą.
+    Ciągłe odwzorowanie $F \colon \R^3 \times [0,1] \to \R^3$,
+    które staje się homeomorfizmem po ustaleniu drugiego argumentu i~takie,
+    że $F(-, 0)$ jest funkcją tożsamościową,
+    zaś $F(-, 1)$ złożona z~pierwszym węzłem daje drugi węzeł,
+    nazywamy izotopią otaczającą.
 \end{definition}
 
 \begin{definition}[węzeł]
-	\label{def:knot}
-	\index{węzeł}
-	Gładkie włożenie $S^1 \to \R^3$ izotopijne otaczająco z~zamkniętą łamaną bez samoprzecięć nazywamy węzłem poskromionym.
+    \label{def:knot}
+    \index{węzeł}
+    Gładkie włożenie $S^1 \to \R^3$ izotopijne otaczająco z~zamkniętą łamaną bez samoprzecięć nazywamy węzłem poskromionym.
 \end{definition}
 
 Wykluczamy w~ten sposób patologiczne z~kombinatorycznego punktu widzenia węzły dzikie.
@@ -118,67 +118,67 @@ a przy tym nie pozwala na rozwiązanie nietrywialnych węzłów przez ściągni�
 Istnieje jeszcze jedna, konkurencyjna definicja węzłów równoważnych:
 
 \begin{definition}
-	Dwa węzły są równoważne, gdy jeden z~nich jest obrazem drugiego przez zachowujący orientację homeomorfizm $\R^3 \to \R^3$.
+    Dwa węzły są równoważne, gdy jeden z~nich jest obrazem drugiego przez zachowujący orientację homeomorfizm $\R^3 \to \R^3$.
 \end{definition}
 
 Stwierdzenie to przestaje być prawdziwe po zastąpieniu przestrzeni $\R^m$ przez $S^m$.
 
 \begin{proof}
-	Podany niżej dowód pochodzi z~książki ,,Topology from the differentiable viewpoint'' Johna Milnora.
-	Musimy pokazać, że dyfeomorfizm $f \colon \R^m \to \R^m$ jest gładko izotopijny z~identycznością.
-	Translacje są izotopiami, więc bez straty ogólności zakładamy, że $f(0) = 0$.
-	Pochodna $f$ w~zerze jest dana wzorem $\mathrm{d}f_0(x) = \lim_{t \to 0} f(tx) /t$,
-	naturalną definicją	izotopii $F \colon \R^m \times [0, 1] \to \R^m$ jest więc
-	\[
-		F(x, t) = \begin{cases}
-			f(tx) / t & 0 < t \le 1 \\
-			\mathrm{d}f_0(x) & t = 0
-		\end{cases} .
-	\]
+    Podany niżej dowód pochodzi z~książki ,,Topology from the differentiable viewpoint'' Johna Milnora.
+    Musimy pokazać, że dyfeomorfizm $f \colon \R^m \to \R^m$ jest gładko izotopijny z~identycznością.
+    Translacje są izotopiami, więc bez straty ogólności zakładamy, że $f(0) = 0$.
+    Pochodna $f$ w~zerze jest dana wzorem $\mathrm{d}f_0(x) = \lim_{t \to 0} f(tx) /t$,
+    naturalną definicją    izotopii $F \colon \R^m \times [0, 1] \to \R^m$ jest więc
+    \[
+        F(x, t) = \begin{cases}
+            f(tx) / t & 0 < t \le 1 \\
+            \mathrm{d}f_0(x) & t = 0
+        \end{cases} .
+    \]
 
-	Funkcja $F$ jest gładka,
-	gdyż na mocy lematu Hadamarda funkcja $f$ zapisuje się jako suma $x_1 g_1(x) + \ldots + x_mg_m(x)$,
-	gdzie funkcje $g_i$ są gładkie, co jakoś kończy dowód.
+    Funkcja $F$ jest gładka,
+    gdyż na mocy lematu Hadamarda funkcja $f$ zapisuje się jako suma $x_1 g_1(x) + \ldots + x_mg_m(x)$,
+    gdzie funkcje $g_i$ są gładkie, co jakoś kończy dowód.
 \end{proof}
 
 \begin{definition}[splot]
-	\label{def_link}
-	\index{splot}
-	Sumę rozłączną skończenie wielu węzłów nazywamy splotem.
+    \label{def_link}
+    \index{splot}
+    Sumę rozłączną skończenie wielu węzłów nazywamy splotem.
 \end{definition}
 
 Podobnie jak dla węzłów mówimy, że dwa sploty są równoważne, jeśli jeden jest obrazem drugiego przez zachowujący orientację homeomorfizm $\R^3 \to \R^3$.
 Wtedy obydwa sploty mają tyle samo składowych.
 
 \begin{example}
-	\index{splot!Hopfa}
-	Whitehead w~1934 odkrył kontrprzykład do nieudanego dowodu hipotezy Poincarego.
-	Był nim splot o~dwóch składowych przedstawiony na poniższym rysunku.
-	Splot Hopfa to najprostszy splot nietrywialny, którym w~1931 r. zajmował się Heinz Hopf,
-	topolog niemiecki, w~ramach badań nad tzw. rozwłóknieniem (Hopf fibration).
+    \index{splot!Hopfa}
+    Whitehead w~1934 odkrył kontrprzykład do nieudanego dowodu hipotezy Poincarego.
+    Był nim splot o~dwóch składowych przedstawiony na poniższym rysunku.
+    Splot Hopfa to najprostszy splot nietrywialny, którym w~1931 r. zajmował się Heinz Hopf,
+    topolog niemiecki, w~ramach badań nad tzw. rozwłóknieniem (Hopf fibration).
 
-	\begin{figure}[H]
-		\begin{minipage}[b]{.32\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{../data/missing.jpg}
-			\subcaption{splot Whiteheada}
-		\end{minipage}
-		\begin{minipage}[b]{.32\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{../data/missing.jpg}
-			\subcaption{splot Heada}
-		\end{minipage}
-		\begin{minipage}[b]{.32\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{../data/missing.jpg}
-			\subcaption{splot jakiś inny}
-		\end{minipage}
-	\end{figure}
+    \begin{figure}[H]
+        \begin{minipage}[b]{.32\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{../data/missing.jpg}
+            \subcaption{splot Whiteheada}
+        \end{minipage}
+        \begin{minipage}[b]{.32\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{../data/missing.jpg}
+            \subcaption{splot Heada}
+        \end{minipage}
+        \begin{minipage}[b]{.32\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{../data/missing.jpg}
+            \subcaption{splot jakiś inny}
+        \end{minipage}
+    \end{figure}
 \end{example}
 
 \begin{definition}[rozszczepialność]
-	\index{splot!rozszczepialny}
-	Splot, który jest niespójną sumą niepustych splotów, nazywamy rozszczepialnym.
+    \index{splot!rozszczepialny}
+    Splot, który jest niespójną sumą niepustych splotów, nazywamy rozszczepialnym.
 \end{definition}
 
 Jeśli dwa węzły są równoważne, to ich dopełnienia są oczywiście homeomorficzne.
@@ -187,16 +187,16 @@ Od 1989 roku znamy odpowiedź na nie, jest pozytywna: każdy węzeł jest wyznac
 Wcześniej pokazano, że istnieją co najwyżej dwa węzły o~zadanym dopełnieniu.
 
 \begin{theorem}[Gordon, Luecke, 1989] \label{thm_gordon_luecke}
-	\index{twierdzenie!Gordona-Lueckego}
-	Poskromione węzły o~homeomorficznych (z zachowaniem orientacji) dopełnieniach są wzajemnie izotopijne.
+    \index{twierdzenie!Gordona-Lueckego}
+    Poskromione węzły o~homeomorficznych (z zachowaniem orientacji) dopełnieniach są wzajemnie izotopijne.
 \end{theorem}
 
 Twierdzenie to zamienia problem lokalny (czy dwa węzły w kuli $S^3$ są równoważne?) w~problem globalny (czy dwie przestrzenie topologiczne są homeomorficzne?).
 
 \begin{proof}[Niedowód]
-	Wynika to z~ogólniejszego stwierdzenia:
-	nietrywialna chirurgia Dehna na węźle w~3-sferze nigdy nie daje 3-sfery.
-	Pełny dowód zawiera praca \cite{gordon89}.
+    Wynika to z~ogólniejszego stwierdzenia:
+    nietrywialna chirurgia Dehna na węźle w~3-sferze nigdy nie daje 3-sfery.
+    Pełny dowód zawiera praca \cite{gordon89}.
 \end{proof}
 
 Istnieje nieskończenie wiele (jakich?) kontrprzykładów do odpowiednika twierdzenia Gordona-Lueckego dla splotów,
@@ -207,38 +207,38 @@ Chociaż w~świetle definicji \ref{def:knot} węzły są pewnymi regularnymi pod
 z kombinatorycznego punktu widzenia wygodniej jest rysować je na  płaszczyźnie.
 
 \begin{definition} [diagram] \label{def_diagrams}
-	\index{diagram}
-	Cień to rzut węzła $K \subseteq \R^3$ na płaszczyznę.
-	Diagram to cień bez katastrof
-	(potrójnych przecięć, stycznych i~dziobów)
-	razem z~informacją o~tym, jak przebiegają skrzyżowania.
+    \index{diagram}
+    Cień to rzut węzła $K \subseteq \R^3$ na płaszczyznę.
+    Diagram to cień bez katastrof
+    (potrójnych przecięć, stycznych i~dziobów)
+    razem z~informacją o~tym, jak przebiegają skrzyżowania.
 \end{definition}
 
 \begin{definition} [włókno]
-	\index{włókno}
-	Fragment diagramu, który biegnie między dwoma kolejnymi tunelami (podskrzyżowaniami) nazywamy włóknem.
+    \index{włókno}
+    Fragment diagramu, który biegnie między dwoma kolejnymi tunelami (podskrzyżowaniami) nazywamy włóknem.
 \end{definition}
 
 \begin{proposition}
-	Każdy splot posiada diagram -- zbiór diagramów jest otwarty i~gęsty w~zbiorze wszystkich.
+    Każdy splot posiada diagram -- zbiór diagramów jest otwarty i~gęsty w~zbiorze wszystkich.
 \end{proposition}
 
 \begin{proof}
-	Rzut splotu na równoległe płaszczyzny jest taki sam,
-	a te można sparametryzować prostymi przechodzącymi przez początek układu współrzędnych,
-	które tworzą przestrzeń rzutową $\R \mathbb P^2$.
-	Niech $S$ będzie zbiorem prostych, które dają złe rzuty.
-	Wystarczy pokazać jego nigdziegęstość.
-	Okazuje się, że $S$ jest też jednowymiarowy.
-	(Dowód za \cite{crowell63}).
+    Rzut splotu na równoległe płaszczyzny jest taki sam,
+    a te można sparametryzować prostymi przechodzącymi przez początek układu współrzędnych,
+    które tworzą przestrzeń rzutową $\R \mathbb P^2$.
+    Niech $S$ będzie zbiorem prostych, które dają złe rzuty.
+    Wystarczy pokazać jego nigdziegęstość.
+    Okazuje się, że $S$ jest też jednowymiarowy.
+    (Dowód za \cite{crowell63}).
 \end{proof}
 
 \begin{definition}
-	\index{węzeł!alternujący}
-	Diagram jest alternujący,
-	gdy podczas poruszania się wzdłuż splotu
-	mijamy jego skrzyżowania na zmianę z~góry oraz z~dołu.
-	Splot jest alternujący, gdy posiada taki diagram.
+    \index{węzeł!alternujący}
+    Diagram jest alternujący,
+    gdy podczas poruszania się wzdłuż splotu
+    mijamy jego skrzyżowania na zmianę z~góry oraz z~dołu.
+    Splot jest alternujący, gdy posiada taki diagram.
 \end{definition}
 
 Nierozwiązanym problemem jest podanie definicji węzła alternującego, która nie odnosi się bezpośrednio do diagramów.
@@ -262,21 +262,21 @@ Patrz także {\url{http://geometrygames.org/SnapPea/index.html}.
 Przykładami trudnych w~rozpoznaniu niewęzłów są: niewęzeł Goritza, Freedmana.
 
 \begin{figure}[H]
-	\begin{minipage}[b]{.32\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{normalny}
-	\end{minipage}
-	\begin{minipage}[b]{.32\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{Goritza}
-	\end{minipage}
-	\begin{minipage}[b]{.32\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{../data/missing.jpg}
-		\subcaption{Freedmana}
-	\end{minipage}
+    \begin{minipage}[b]{.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/missing.jpg}
+        \subcaption{normalny}
+    \end{minipage}
+    \begin{minipage}[b]{.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/missing.jpg}
+        \subcaption{Goritza}
+    \end{minipage}
+    \begin{minipage}[b]{.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/missing.jpg}
+        \subcaption{Freedmana}
+    \end{minipage}
 \end{figure}
 
 Więcej trudnych niewęzłów zawiera świeża praca
@@ -330,7 +330,7 @@ Sundberg, Thistlethwaite pokazali w 1998 roku, że stosunek liczby splotów alte
     Niech $A_n$ oznacza liczbę pierwszych, alternujących splotów o $n$ skrzyżowaniach.
     Wtedy $A_n \approx \lambda^n$, dokładniej: jeśli $n \ge 3$, to
     \[
-    	\frac{a_{n-1}}{16n - 24} \le A \le \frac{a_n - 1}{2}.
+        \frac{a_{n-1}}{16n - 24} \le A \le \frac{a_n - 1}{2}.
     \]
 \end{proposition}
 
@@ -364,22 +364,22 @@ Spośród nich, tylko 32 nie jest węzłami hiperbolicznymi, wszystkie pozostał
 
 \subsection{Hipotezy Taita}
 \begin{conjecture}[I hipoteza Taita]
-	\label{conj_tait_i}
-	\index{hipoteza!Taita}
-	Zredukowany alternujący diagram (splotu) ma minimalny indeks skrzyżowaniowy.
+    \label{conj_tait_i}
+    \index{hipoteza!Taita}
+    Zredukowany alternujący diagram (splotu) ma minimalny indeks skrzyżowaniowy.
 \end{conjecture}
 % To bardzo ważny rezultat, którego prawdziwość przypuszczał już P. G. Tait w~XIX wieku.
 % Nikt nie był w~stanie podać dowodu przed pojawieniem się wielomianu Jonesa.
 
 \begin{conjecture}[II hipoteza Taita]
-	\label{conj_tait_ii}
-	Achiralny splot alternujący ma zerowy spin.
+    \label{conj_tait_ii}
+    Achiralny splot alternujący ma zerowy spin.
 \end{conjecture}
 
 \begin{conjecture}[III hipoteza Taita]
-	\label{conj_tait_iii}
-	Niech $D_1, D_2$ będą zredukowanymi alternującymi diagramami zorientowanego pierwszego splotu.
-	Wtedy diagram $D_2$ można otrzymać z~$D_1$ korzystając jedynie z~ruchu \emph{flype}.
+    \label{conj_tait_iii}
+    Niech $D_1, D_2$ będą zredukowanymi alternującymi diagramami zorientowanego pierwszego splotu.
+    Wtedy diagram $D_2$ można otrzymać z~$D_1$ korzystając jedynie z~ruchu \emph{flype}.
 \end{conjecture}
 
 Z III hipotezy Taita wynika, że dwa zredukowane diagramy alternujące tego samego węzła mają ten sam spin: ruch flype nie zmienia spinu.
