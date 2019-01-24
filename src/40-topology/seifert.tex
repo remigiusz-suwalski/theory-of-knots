@@ -385,18 +385,15 @@ Wielomianem węzła skręconego z~$q$ półskrętami jest $\Delta_q = qt - (2q+1
 % Koniec sekcji Genus
 
 \section{Macierz Seiferta} % (fold)
-\todo[inline]{Podręcznik Murasugiego, strona 84}
+Niech $K$ będzie węzłem z powierzchnią Seiferta $S$.
+Macierz Seiferta $M$ zdefiniowana jest następująco:
+\[
+	m_{i,j} = \operatorname{lk}(x_i, x_j^*),
+\]
+gdzie łuki $x_1, x_2, \ldots, x_m$ są generatorami grupy podstawowej $\pi_1(S)$, zaś gwiazdka oznacza dodatnie wypchnięcie.
 
-\todo[inline]{$\sigma K$ to sygnatura $M + M^t$}
-
-\todo[inline]{$\det K = |\det (M+M^t)|$}
-
-\todo[inline]{$1 = \det (M-M^t)$}
-
-\todo[inline]{Wielomian Alexandera: $\det (M-tM^t)$ po przemnożeniu przez $t^{-k/2}$, gdzie $k$ to rząd $M$}
-
-\todo[inline]{$M_{-K} \approx_S M_K^t$}
-
-\todo[inline]{$-M_{K} \approx_S M_{K*}$}
+Pozwala na zdefiniowanie różnych, znanych nam już niezmienników.
+I tak, sygnatura węzła $\sigma(K)$ to sygnatura macierzy $M + M^t$, wyznacznik węzła to $|\det(M+M^t)|$, zaś wielomian Alexandera to $t^{-k/2}\det(M - tM^t)$, gdzie $k$ to rząd macierzy $M$.
+To dopiero zalążek, więcej informacji zawiera sekcja 5.3 w podręczniku Murasugiego \cite{murasugi96}.
 
 Trotter pokazał w 1962, że macierz Seiferta modulo $S$-równoważność stanowi niezmiennik węzłów (\cite{trotter62}).
