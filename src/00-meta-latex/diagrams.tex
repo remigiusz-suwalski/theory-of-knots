@@ -39,11 +39,11 @@
     \end{knot}
 \end{tikzpicture}}
 
-\newcommand{\LittleLeftCrossing} {
-    \begin{tikzpicture}[baseline=-0.65ex,scale=0.03]
+\newcommand{\LittleLeftCrossing} {\begin{tikzpicture}[baseline=-0.65ex, scale=0.03]
+    \useasboundingbox (-5, -5) rectangle (5,5);
     \begin{knot}[clip width=5, end tolerance=1pt]
-        \strand[semithick] (-5, -5) to [out=up, in=up] (5, -5);
-        \strand[semithick] (-5, 5) to [out=down, in=down] (5, 5);
+        \strand[semithick] (-5,5) to (5,-5);
+        \strand[semithick] (-5,-5) to (5,5);
     \end{knot}
     \end{tikzpicture}
 }
