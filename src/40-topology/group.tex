@@ -129,11 +129,17 @@ Oryginalna praca Alexandera była jednak bliższa duchem pomysłom Dehna.
     \end{enumerate}
 \end{definition}
 
-\todo[inline]{Macierz pochodnych, potem zamiana wszystkich zmiennych na $t$, potem policzenie wyznacznika: to jest wielomian Alexandera?}
+Ustalmy prezentację grupy węzła z $n$ relacjami (słowami) $w_1, \ldots, w_n$ nad $n$-literowym alfabetem $x_1, \ldots, x_n$.
+Zdefiniujmy następnie macierz Jacobiego $n \times n$, której elementami są pochodne Foxa słów $w_i$ względem zmiennej $x_j$:
+\begin{equation}
+    J = \left(\frac{\partial w_i}{\partial x_j}\right).
+\end{equation}
 
-Nietrywialne węzły, których grupa ma nietrywialne centrum, to dokładnie węzły torusowe.
-Wszystkie one są węzłami Neuwirtha
-(z grupą o~skończenie generowanym komutancie, wprowadzone w~1965 roku).
+Wykreślmy z macierzy $J$ najpiew jedną kolumnę oraz jeden wiersz z tej macierzy, po czym podstawmy za wszystkie litery zmienną $t$ i policzmy wyznacznik.
+Otrzymaliśmy znowu wielomian Alexandera.
+
+Jeżeli grupa węzła $K$ posiada nietrywialne centrum, to $K$ jest niewęzłem albo węzłem torusowym.
+Zarówno węzły torusowe, jak i~alternujące węzły z~wielomianem Alexandera o~wiodącym współczynniku $\pm 1$, są węzłami Neuwirtha: z~grupą o~skończenie generowanym komutancie, wprowadzone w~1965 roku.
 
 \begin{corollary}
     \label{prop:knot_group_abelianisation}
