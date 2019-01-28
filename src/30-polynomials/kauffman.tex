@@ -1,16 +1,23 @@
 \section{Wielomian Kauffmana} % (fold)
 \label{sec:kauffman_polynomial}
 Mniej więcej w~tym samym czasie, gdy odkryto wielomian BLM/Ho, Kauffman zaproponował sposób, dzięki któremu ten wielomian można uogólnić do odróżniającego lustra.
-Dopuszczał stosowanie tylko drugiego i~trzeciego ruchu Reidemeistera.
+% Dopuszczał stosowanie tylko drugiego i~trzeciego ruchu Reidemeistera.
 
 \index{wielomian!Kauffmana}
 Wielomianu Kauffmana nie należy mylić z~nawiasem Kauffmana!
 Jest to półzorientowany wielomian dwóch zmiennych dany wzorem
 \begin{equation}
-    F_L(a, z) = a^{-w(L)} \langle |L| \rangle,
+    % F_L(a, z) = a^{-w(L)} \langle |L| \rangle,
+    F_K(a, z) = a^{-w(K)} L(K),
 \end{equation}
-\todo[inline]{Co oznacza $z$?}
-gdzie $w$ to writhe zorientowanego diagramu splotu, zaś $|L|$ to $L$ bez orientacji.
+gdzie $w$ to spin zorientowanego diagramu splotu, zaś $L(K)$ jest wielomianem wyznaczonym jednoznacznie przez cztery własności:
+\begin{enumerate}
+	\item $L(\LittleUnknot) = 1$,
+	\item $L(s) = a^{-1} L(s_r) = a L(s_l)$, gdzie $s$ jest pojedynczym węzłem, zaś $s_r, s_l$ to jego obrazy względem dwóch wariantów I ruchu Reidemeistera,
+	\item $L$ jest niezmienniczy względem II i III ruchu Reidemeistera,
+	\item $L(\LittleLeftCrossing) + L(\LittleRightCrossing) = z L(\LittleLeftSmoothing) + z L(\LittleRightSmoothing)$.
+\end{enumerate}
+
 Stanowi uogólnienie wielomianu BLM/Ho: $F(1, x) = Q(x)$ oraz wielomianu Jonesa:
 \begin{equation}
     V(t)=F(-t^{-3/4},t^{-1/4}+t^{1/4}).
