@@ -20,11 +20,49 @@ Do każdego wierzchołka $A$ przypiszmy małe otoczenie domknięte $U_A$ oraz p�
 
 Ten drugi warunek gwarantuje nam, że skrzyżowania wokół podwójnych punktów nie ulegną zniszczeniu.
 Istnieje podobne kryterium dla diagramów.
-Dwa singularne diagramy są równoważne dokładnie wtedy, kiedy można między nimi przejść przy użyciu ciągu operacji $\Omega$:
+Dwa singularne diagramy są równoważne dokładnie wtedy, kiedy można między nimi przejść przy użyciu ciągu ruchów Reidemeistera (poza małymi otoczeniami wierzchołków) oraz operacji $\Omega$:
+\[
+\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1,2,3,4}]
+    \strand[semithick] (-15, 5) to (0, 5) to (5, 0) to (0, -5) to (-15, -5);
+    \strand[semithick] (-2, -2) to (-10, -10);
+    \strand[semithick] (-2, 2) to (-10, 10);
+    \strand[semithick] (2, -2) to (10, -10);
+    \strand[semithick] (2, 2) to (10, 10);
+    \draw[semithick] (2, 2) to (-2, -2);
+    \draw[semithick] (2, -2) to (-2, 2);
+    \draw[black,fill=black] (0,0) circle (.5);
+\end{knot}
+\end{tikzpicture}
+\quad\cong_\Omega\quad
+\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1,2,3,4}]
+    \strand[semithick] (-15, 5) to (-10, 5) to (-5, 0) to (-10, -5) to (-15, -5);
+    \strand[semithick] (-2, -2) to (-10, -10);
+    \strand[semithick] (-2, 2) to (-10, 10);
+    \strand[semithick] (2, -2) to (10, -10);
+    \strand[semithick] (2, 2) to (10, 10);
+    \draw[semithick] (2, 2) to (-2, -2);
+    \draw[semithick] (2, -2) to (-2, 2);
+    \draw[black,fill=black] (0,0) circle (.5);
+\end{knot}
+\end{tikzpicture}
+\quad\cong_\Omega\quad
+\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+\begin{knot}[clip width=5, end tolerance=1pt]
+    \strand[semithick] (-15, 5) to (0, 5) to (5, 0) to (0, -5) to (-15, -5);
+    \strand[semithick] (-2, -2) to (-10, -10);
+    \strand[semithick] (-2, 2) to (-10, 10);
+    \strand[semithick] (2, -2) to (10, -10);
+    \strand[semithick] (2, 2) to (10, 10);
+    \draw[semithick] (2, 2) to (-2, -2);
+    \draw[semithick] (2, -2) to (-2, 2);
+    \draw[black,fill=black] (0,0) circle (.5);
+\end{knot}
+\end{tikzpicture}
+\]
 
-\todo[inline]{Dye definiuje zupełnie inne ruchy!}
-
-oraz ruchów Reidemeistera (poza małymi otoczeniami wierzchołków).
+Uwaga: Dye w \cite{dye16} definiuje zupełnie inne ruchy!
 
 Załóżmy teraz, że $v$ jest jakimś niezmiennikiem węzłów o~wymiernych wartościach.
 Można indukcyjnie próbować go przedłużyć do węzłów singularnych.
