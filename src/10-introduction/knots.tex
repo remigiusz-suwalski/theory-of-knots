@@ -292,7 +292,29 @@ To właśnie grupowanie diagramów przedstawiających ten sam węzeł, a~nie sam
 
 Aby sobie pomóc, Tait znalazł lokalną modyfikację diagramu, która nie zmienia indeksu skrzyżowaniowego, znaną obecnie jako flype.
 
-\todo[inline]{Narysować ruch flype.}
+\[
+\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
+    \strand[semithick] (-21, -5) [in=180, out=0] to (-7, 5);
+    \strand[semithick] (-21, 5) [in=180, out=0] to (-7, -5);
+    \draw (-7, -7) rectangle (7, 7);
+    \node at (0, 0) {\Huge {$T$}};
+    \draw[semithick] (7, -5) to (21, -5);
+    \draw[semithick] (7, 5) to (21, 5);
+\end{knot}
+\end{tikzpicture}
+\quad \cong_{\mathrm{flype}} \quad
+\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+\begin{knot}[clip width=5, end tolerance=1pt]
+    \strand[semithick] (21, -5) [in=0, out=180] to (7, 5);
+    \strand[semithick] (21, 5) [in=0, out=180] to (7, -5);
+    \draw (-7, -7) rectangle (7, 7);
+    \node at (0, 0) {\rotatebox[origin=c]{-180}{\Huge $T$}};
+    \draw[semithick] (-7, -5) to (-21, -5);
+    \draw[semithick] (-7, 5) to (-21, 5);
+\end{knot}
+\end{tikzpicture}
+\]
 
 Inną taktykę szukania węzłów przyjał wielebny Thomas Kirkman: zaczynał od małego zbioru "nieredukowalnych" rzutów, do których systematycznie dokładał skrzyżowania.
 Tait przeczytał pracę Kirkmana, po czym w~latach 1884/1885 opracował listę węzłów alternujących o~mniej niż 11 skrzyżowaniach.
