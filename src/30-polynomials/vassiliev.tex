@@ -50,9 +50,30 @@ Istnieje jeden niezmiennik Wasiljewa rzędu zero i~żadnych niezmienników rzęd
 
 % Niezmiennik Wasiljewa węzła z~pętelką to zero.
 
-Następujące nie są niezmiennikami Wasiljewa: sygnatura, indeks skrrzyżowaniowy, liczba gordyjska, indeks mostowy, indeks warkoczowy, genus.
+Pójdźmy w ślad za Murasugim i zdefiniujmy nieskończoną rodzinę węzłów wirtualnych $K[p, q]$, gdzie $p$ jest liczbą wierzchołków, zaś $|q|$ liczbą klasycznych skrzyżowań.
+Jeśli $q < 0$, wszystkie skrzyżowania odwracamy:
+\[
+\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={2}]
+    % left part
+    \draw[semithick] (5, 0) [in=-60, out=-120] to (-5, 0) [in=60, out=120] to (-15, 0) [in=-60, out=-120] to (-25, 0) [in=60, out=120] to (-35, 0) [in=180, out=-120] to (-35, -10);
+    \draw[semithick] (5, 0) [in=60, out=120] to (-5, 0) [in=-60, out=-120] to (-15, 0) [in=60, out=120] to (-25, 0) [in=-60, out=-120] to (-35, 0) [in=-180, out=120] to (-35, 10);
+    % right part
+    \strand[semithick] (5, 0) [in=120, out=60] to (15, 0) [in=-120, out=-60] to (25, 0) [in=120, out=60] to (35, 0) [in=0, out=-60] to (35, -10);
+    \strand[semithick] (5, 0) [in=-120, out=-60] to (15, 0) [in=120, out=60] to (25, 0) [in=-120, out=-60] to (35, 0) [in=0, out=60] to (35, 10);
+    % external lines
+    \draw[semithick] (-35, 10) to (35, 10);
+    \draw[semithick] (-35, -10) to (35, -10);
+    \draw[black,fill=black] (5,0) circle (0.5);
+    \draw[black,fill=black] (-5,0) circle (0.5);
+    \draw[black,fill=black] (-15,0) circle (0.5);
+    \draw[black,fill=black] (-25,0) circle (0.5);
+    \draw[black,fill=black] (-35,0) circle (0.5);
+\end{knot}
+\end{tikzpicture}\]
 
-\todo[inline]{Ponieważ wirtualny węzeł $K[n+1, n]$, patrz Murasugi.}
+Następujące nie są niezmiennikami Wasiljewa: sygnatura, indeks skrrzyżowaniowy, liczba gordyjska, indeks mostowy, indeks warkoczowy, genus.
+Świadkiem jest za każdym razem węzeł $K[n+1, n]$.
 
 Ohyama pokazał w~\cite{ohyama95}, że dla każdego węzła $K$ i~liczby naturalnej $n$ istnieje nieskończona rodzina węzłów, których niezmienniki rzędu co najwyżej $n$ nie odróżniają od $K$.
 Istnieje przypuszczenie, że wszystkie niezmienniki Wasiljewa (jednocześnie) są już niezmiennikiem zupełnym.
