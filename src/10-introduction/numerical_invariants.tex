@@ -369,20 +369,37 @@ Stojmenow twierdzi, że jeśli tak jest, to wszystkie pierwsze dzielniki $n$ daj
 \subsection{Liczba patykowa} % (fold)
 \label{sub:stick_index}
 \index{liczba!patykowa}
-Z angielskiego \emph{stick index}.
+Z angielskiego \emph{stick number}.
 
 \begin{definition}
-    Liczba patykowa $\operatorname{s}(K)$ to minimalna liczba odcinków w~łamanej, która przedstawia węzeł.
+	Minimalną liczbę odcinków w~łamanej, która przedstawia węzeł $K$, nazywamy jego liczbą patykową i~oznaczamy $\operatorname{s}(K)$.
 \end{definition}
 
-Liczba patykowa niewęzła to $3$, sumy spójnej $n$ trójlistników to $2n+4$ (wynik z~\cite{greilsheimer97}).
-Negami pokazał w~\cite{negami91}, że prawdziwe są nierówności
-\[
-    \frac{5+\sqrt{9 + 8 \operatorname{cr} K}}{2} \le \operatorname{s} K \le 2 \operatorname{cr} K
-\]
-Nie jest znany węzeł realizujący dolne ograniczenie, górne realizuje trójlistnik.
-W 2010 roku Huh oraz Oh poprawili górne ograniczenie do $3/2(\operatorname{cr} K+1)$ (pomijając niewęzeł, patrz \cite{huh11}).
-Dla węzłów torusowych znamy dokładne wartości: jeśli $2 \le p < q \le 2p$, to $\operatorname{s} T_{p,q} = 2q$ oraz $\operatorname{s} T_{p, p-1} = 2p$ (dowód pierwszej równości w~\cite{jin97}).
+Wielkość tę wprowadził do matematyki Randell w 1988 i~znalazł dokładną jej wartość dla niewęzła (3), trójlistnika (6) oraz ósemki (7).
+Negami trzy lata później w~\cite{negami91} pokazał przy użyciu teorii grafów, że dla nietrywialnych węzłów prawdziwe są nierówności
+\begin{equation}
+    \frac{5+\sqrt{9 + 8 \operatorname{cr} K}}{2} \le \operatorname{s} K \le 2 \operatorname{cr} K.
+\end{equation}
+
+Trójlistnik to jedyny węzeł realizujący górne ograniczenie.
+Z~pracy Elrifaia wynika, że dolne ograniczenie nie jest osiągane przez żaden węzeł o co najwyżej 26 skrzyżowaniach (\cite{elifrai06}).
+
+Jin oraz Kim w 1993 ograniczyli liczby patykowe dla węzłów torusowych korzystając z~liczby supermostowej.
+Wkrótce wynik został poprawiony przez samego Jina, w pracy \cite{jin97} znalazł dokładne wartości dla niektórych węzłów.
+I~tak, jeśli $2 \le p < q \le 2p$, to $\operatorname{s} T_{p,q} = 2q$ oraz $\operatorname{s} T_{p, p-1} = 2$.
+Ten sam wynik, choć dla węższego zakresu parametrów, odkryto w~\cite{greilsheimer97}.
+Autorzy niezależnie od siebie znaleźli proste oszacowanie z góry dla liczby patykowej sumy spójnej:
+\begin{equation}
+	\operatorname{s}(K_1 \shrap K_2) \le \operatorname{s}(K_1) + \operatorname{s}(K_2) - 3.
+\end{equation}
+
+Koniec dekady przyniósł jeszcze jedną pracę McCabe'a z nierównością $\operatorname{s}(K) \le 3 + \operatorname{cr} (K)$ dla węzłów dwumostowych (\cite{mccabe98}) oraz odkrycie Calvo: jeśli ograniczymy się do łamanych o co najwyżej siedmiu odcinkach, ósemka przestaje być odwracalna.
+
+Na początku XX wieku nierówności Negamiego poprawiono, z dołu dokonał tego Calvo w~\cite{calvo01}, z góry natomiast Huh, Oh w \cite{huh11}.
+Górne ograniczenie można poprawić o $3/2$, jeżeli $K$ jest niealternującym węzłem pierwszym.
+\begin{equation}
+    \frac{7+\sqrt{1 + 8 \operatorname{cr} K}}{2} \le \operatorname{s} K \le \frac{3}{2} (1 + \operatorname{cr} K).
+\end{equation}
 
 % Koniec podsekcji Liczba patykowa
 
