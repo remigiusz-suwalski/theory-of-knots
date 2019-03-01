@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import os
 import re
 import sys
 
@@ -12,13 +12,15 @@ def sort_key(entry):
     return "{} {}".format(year, name)
 
 def print_nicely(lst):
+    output = ""
     for entry in lst:
         bibtex_name = entry.pop("bibtex_name")
         bibtex_type = entry.pop("bibtex_type")
-        print ("@{} {{{},".format(bibtex_type, bibtex_name))
         tags = sorted(["    {} = {}".format(key, entry[key]) for key in entry])
-        print("\n".join(tags))
-        print ("}\n")
+        output += "@{} {{{},\n".format(bibtex_type, bibtex_name)
+        output += "\n".join(tags)
+        output += "\n}\n\n"
+    return output
 
 def parse_bib(bib_file):
     entries = dict()
@@ -43,6 +45,8 @@ def parse_bib(bib_file):
                 entries[bibtex_name][key] = value
     return entries
 
-raw_entries = parse_bib(sys.argv[1])
+BIB_FILE = os.path.abspath(os.path.join(sys.path[0], '..', 'src', "knot_theory.bib"))
+raw_entries = parse_bib(BIB_FILE)
 sorted_entries = sorted(list(raw_entries.values()), key=sort_key)
-print_nicely(sorted_entries)
+with open(BIB_FILE, "w") as f:
+    f.write(print_nicely(sorted_entries))
