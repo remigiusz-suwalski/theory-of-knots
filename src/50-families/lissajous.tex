@@ -1,15 +1,17 @@
 \section{Węzły Lissajous} % (fold)
 \label{sec:lissajous}
 
+Węzły Lissajous zdefiniowali Bogle, Hearst, Jones i Stoilov w 1994 roku jako węzły, których pewien diagram jest krzywą Lissajous.
+
 \begin{definition}
     \index{węzeł!Lissajous}
     Węzłem Lissajous nazywamy węzeł zadany parametrycznie:
-    \[
+    \begin{equation}
         x = \cos(n_xt + \varphi_x) \quad
         y = \cos(n_yt + \varphi_y) \quad
         z = \cos(n_zt + \varphi_z),
-    \]
-    gdzie $n_x, n_y, n_z$ to stałe całkowite, zaś $\varphi_x, \varphi_y, \varphi_z$ rzeczywiste.
+    \end{equation}
+    gdzie $n_x, n_y, n_z$ (,,częstotliwości'') to stałe całkowite, zaś $\varphi_x, \varphi_y, \varphi_z$ (,,fazy'') są rzeczywiste.
 \end{definition}
 
 Węzeł nie może posiadać samoprzecięć, dlatego żadna z~wielkości $n_i\varphi_j-n_j\varphi_i$, dla różnych indeksów $i, j$ nie może być krotnością $\pi$.
@@ -17,19 +19,150 @@ Bez straty ogólności możemy założyć, że $\varphi_z = 0$.
 Dodatkowo stałe $n_x, n_y, n_z$ muszą być parami względnie pierwsze.
 
 Przykładem są $5_2$ (dla $n_x = 3$, $n_y = 2$, $n_z = 7$, $\varphi_x = 7/10$, $\varphi_y = 2/10$), $6_1$, $7_4$, $8_{15}$, $10_1$, $10_{35}$, $10_{58}$, suma prawego i~lewego trójlistnika, suma dwóch kopii $5_2$.
-Istnieje nieskończenie wiele węzłów Lissajous (\cite{lamm97}).
-Każdy skręcony węzeł z~zerowym niezmiennikiem Arfa jest Lissajous.
+
+\begin{proposition}
+    Istnieje nieskończenie wiele węzłów Lissajous.
+\end{proposition}
+
+\begin{proof}
+	Niech $a, b > 1$ będą względnie pierwsze.
+	Lamm w \cite{lamm97} pokazał dużo ogólniejszy wynik.
+	Mianowicie: węzeł Lissajous o~częstotliwościach $n_x = a$, $n_y = b$, $n_z = 2ab-a-b$ oraz fazach:
+    \begin{equation}
+        \varphi_x = \frac{2n_x-1}{n_z} \pi, \quad
+        \varphi_y = \frac{\pi}{n_z}, \quad
+        \varphi_z = 0
+    \end{equation}
+    posiada sygnaturę $\sigma = a+b-ab-1$ i genus $g = -\sigma/2$.
+\end{proof}
 
 Węzły Lissajous są bardzo symetryczne.
-Jeśli wszystkie stałe $n_x, n_y, n_z$ są nieparzyste, węzeł jest silnie dodatnio achiralny.
-Jeśli jedna z~nich, na przykład $n_x$, jest parzysta, to półobrót wokół osi $x$ odwzorowuje węzeł w~siebie.
+
+\begin{proposition}
+    Jeśli wszystkie stałe $n_x, n_y, n_z$ są nieparzyste, węzeł jest silnie dodatnio achiralny.
+\end{proposition}
+
+\begin{proposition}
+    \label{lissajous_two_periodic}
+    Jeśli jedna z częstotliwości jest parzysta, to węzeł jest 2-okresowy.
+\end{proposition}
+
+\begin{proof}
+    Załóżmy, że częstotliwość $n_x$ jest parzysta.
+    Wtedy półobrót wokół osi $x$ odwzorowuje węzeł w~siebie.
+\end{proof}
+
 To nakłada ograniczenia na wielomian Alexandera.
-W przypadku nieparzystym (parzystym), $\Delta(t)$ jest kwadratem w~pierścieniu $\Z[t]$ (w $\Z/2[t]$).
-Dowód ostatniego stwierdzenia zawierają prace \cite{hartley79} oraz \cite{murasugi71}.
+
+\begin{proposition}
+    \label{lissajous_square}
+    Niech $K$ będzie węzłem Lissajous.
+    Wtedy $\Delta(x)$, jego wielomian Alexandera, jest kwadratem w~pierścieniu $\Z_2[x]$.
+\end{proposition}
+
+\begin{proof}
+    Rozpatrzmy dwa przypadki.
+
+    Jeśli wszystkie częstotliwości są nieparzyste, węzeł jest silnie dodatnio achiralny.
+    Wtedy wielomian $\Delta(x)$ jest kwadratem w pierścieniu $\Z[x]$ (pokazano to w \cite{hartley79}).
+
+    W przeciwnym razie możemy powołać się na fakt \ref{lissajous_two_periodic} oraz \ref{murasugi_periodic} (z $n=2^1$ oraz $\lambda = 1$).
+    Dostaniemy równość
+    \begin{equation}
+    	\label{lissajous_square_equiv}
+        \Delta_K(t) \equiv \Delta^2_{J}(t) \mod 2,
+    \end{equation}
+    która kończy dowód.
+\end{proof}
+
+Warto zwrócić uwagę, że bycie silnie dodatnio achiralnym jest bardzo restrykcyjnym warunkiem.
+Spośród pierwszych węzłów o~co najwyżej 12 skrzyżowaniach, tylko trzy go spełnia: 10a103 ($10_{99}$), 10a121 ($10_{123}$) oraz 12a427.
+Tylko pierwszy z nich jest na pewno węzłem Lissajous (stan na 2018).
+
+\begin{example}
+    Trójlistnik oraz ósemka nie są węzłami Lissajous.
+\end{example}
+
+Wygodnie jest przeformułować warunek z faktu \ref{lissajous_square} do następującej postaci.
+Wielomian $\Delta(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kwadratem modulo $2$ wtedy i tylko wtedy, gdy współczynniki $A_{2k+1}$ są parzyste dla $k \ge 0$.
 
 \begin{corollary}
-    Trójlistnik, ósemka, węzły torusowe oraz dwumostowe węzły włókniste nie są węzłami Lissajous.
+    Jeśli $K$ jest wezłem Lissajous, to jego niezmiennik Arfa znika.
 \end{corollary}
+
+\begin{proof}
+    Niech $\Delta(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ będzie  wielomianem Alexandera.
+    Wtedy $\Delta_K(1) = \pm 1$, zatem $0 = \pm 1 + A_0 + 2A_1 + \ldots + 2A_n$.
+    Możemy teraz odjąć to od $\Delta_K(-1) = A_0 - 2A_1 \pm \ldots$, by uzyskać $\Delta_K(-1) = \pm 1 - 4A_1 - 4A_3 - \ldots$.
+    Razem z wygodnym przeformułowaniem daje to $\Delta_K(-1) \equiv \pm 1 \mod 8$, co w połączeniu z~\ref{arf_murasugi} kończy dowód.
+\end{proof}
+
+\begin{corollary}
+	\label{lissajous_fiber}
+    Włókniste węzły o nieparzystym genusie nie są węzłami Lissajous.
+\end{corollary}
+
+\begin{proof}
+    Wynika to z~naszego wygodnego przeformułowania oraz stwierdzenia 8.16 w książce \cite{burde03}: jeśli $K$ jest włóknistym węzłem o genusie $g$, to wielomian Alexandera $\Delta_K$ jest stopnia $2g$ i~ma wiodący współczynnik $\pm 1$.
+\end{proof}
+
+\begin{corollary}
+	\label{lissajous_twobridge}
+    Jeśli $K$ jest dwumostowym wezłem Lissajous, to $\Delta_K(t) \equiv 1 \mod 2$.
+\end{corollary}
+
+\begin{proof}
+    Nietrywialny węzeł o dwóch mostach nie może być silnie dodatnio achiralny (patrz \cite{hartley79}).
+    Jeśli jest węzłem Lissajous, jedna z jego częstotliwości okazuje się być parzysta.
+    Wtedy jego faktor jest trywialny i~kongruencja \ref{lissajous_square_equiv} daje $\Delta_K(t) \equiv 1 \mod 2$.
+\end{proof}
+
+\begin{corollary}
+    Dwumostowe węzły włókniste nie są węzłami Lissajous.
+\end{corollary}
+
+Można skorzystać z tego samego argumentu, co w dowodzie wniosku \ref{lissajous_fiber} oraz \ref{lissajous_twobridge}.
+
+\begin{proposition}
+	Niech $p, q$ będą względnie pierwszymi liczbami różnymi od $0, \pm 1$, zaś $K$ węzłem.
+	Wtedy $(p, q)$-kabel węzła $K$ nie jest węzłem Lissajous.
+\end{proposition}
+
+Obiekt ten, $(p, q)$-kabel, zdefiniowano w książce Eisenbuda/Neumanna ,,Three-dimensional link theory and invariants of plane curve singularities'', celowo pominiętej w bibliografii.
+
+\begin{proof}
+	Niech $L$ będzie $(p, q)$-kablem węzła $K$.
+	Seifert pokazał w 1950 (praca \cite{seifert50}), że
+    \begin{equation}
+    	\Delta_L(t) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)} \Delta_K(t^p).
+    \end{equation}
+    Dwa najwyższe współczynniki w wielomianie ułamkowym to $\pm 1$, a skoro $|p| > 1$, dwa najwyższe współczynniki $\Delta_L$ to także $\pm 1$.
+    ,,Wygodne sformułowanie'' kończy dowód.
+\end{proof}
+
+\begin{corollary}
+    Nietrywialne węzły torusowe nie są węzłami Lissajous.
+\end{corollary}
+
+\begin{proof}
+	Węzły torusowe to kable niewęzła.
+\end{proof}
+
+\begin{corollary}
+    Nietrywialne węzły algebraniczne nie są węzłami Lissajous.
+\end{corollary}
+
+\begin{proof}
+	Wynika to z ogólniejszego stwierdzenia: jeśli spełniony jest warunek $|p_n|, |q_n| > 1$, to iterowane węzły torusowe typu $((p_n, q_n), (p_1, q_1))$ nie są węzłami Lissajous.
+\end{proof}
+
+Podamy teraz pierwszy warunek wystarczający, by być węzłem Lissajous.
+Znaleźli go Hoste z Zirbel w~\cite{zirbel06}:
+
+\begin{proposition}
+	Niech $K$ będzie węzłem skręconym.
+	Następujące warunki są równoważne: $K$ jest węzłem Lissajous; niezmiennik Arfa węzła $K$ znika.
+\end{proposition}
 
 Węzły bilardowe to zamknięte trajektorie kuli, która zostaje wystrzelona z jednej ze ścian sześcianu, odbija się pod takim samym kątem, pod jakim pada na ściany.
 Jones, Przytycki pokazali w \cite{jones98}, że węzły bilardowe to dokładnie węzły Lissajous i zadali pytanie, czy każdy węzeł można zrealizować jako trajektorię kuli w jakimś wielościanie.
