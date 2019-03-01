@@ -1,17 +1,30 @@
 #!/usr/bin/env python3
+"""
+This script opens .bib file and sorts it's entries by year
+"""
+
 import os
 import re
 import sys
 
+
 def strip_year(text):
-    return int("".join(filter(lambda ch: ch not in " {},", text)))
+    """Filter non-digit characters and convert to int"""
+
+    return int("".join([ch for ch in text if ch not in " {},"]))
+
 
 def sort_key(entry):
+    """Print 'year name', key for sorting function"""
+
     name = entry["bibtex_name"]
     year = strip_year(entry["year"])
     return "{} {}".format(year, name)
 
+
 def print_nicely(lst):
+    """Convert list of dicts into nice .bib content"""
+
     output = ""
     for entry in lst:
         bibtex_name = entry.pop("bibtex_name")
@@ -22,10 +35,12 @@ def print_nicely(lst):
         output += "\n}\n\n"
     return output
 
-def parse_bib(bib_file):
+
+def parse_bib(input_bib_file):
+    """Converts .bib file into list of entries"""
     entries = dict()
-    with open(bib_file, "r") as f:
-        for raw_line in f:
+    with open(input_bib_file, "r") as bib_file:
+        for raw_line in bib_file:
             line = raw_line.strip()
             match = re.search(" *@([^ ]+) *{ *([^,]+),", line)
             if match:
@@ -45,8 +60,18 @@ def parse_bib(bib_file):
                 entries[bibtex_name][key] = value
     return entries
 
-BIB_FILE = os.path.abspath(os.path.join(sys.path[0], '..', 'src', "knot_theory.bib"))
-raw_entries = parse_bib(BIB_FILE)
-sorted_entries = sorted(list(raw_entries.values()), key=sort_key)
-with open(BIB_FILE, "w") as f:
-    f.write(print_nicely(sorted_entries))
+
+def bibliography_sort(input_bib_file):
+    """Main function sorting bibliography entries"""
+
+    entries = parse_bib(input_bib_file)
+    entries = sorted(list(entries.values()), key=sort_key)
+    with open(input_bib_file, "w") as output_bib_file:
+        output_bib_file.write(print_nicely(entries))
+
+
+if __name__ == "__main__":
+    BIB_FILE = os.path.abspath(
+        os.path.join(sys.path[0], "..", "src", "knot_theory.bib")
+    )
+    bibliography_sort(BIB_FILE)
