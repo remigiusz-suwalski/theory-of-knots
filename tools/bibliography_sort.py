@@ -4,9 +4,9 @@ This script opens .bib file and sorts it's entries by year
 """
 
 import os
+import logging
 import re
 import sys
-
 
 def strip_year(text):
     """Filter non-digit characters and convert to int"""
@@ -19,7 +19,10 @@ def sort_key(entry):
 
     name = entry["bibtex_name"]
     year = strip_year(entry["year"])
-    return "{} {}".format(year, name)
+    output = "{} {}".format(year, name)
+
+    logging.info("sort_key => {}".format(output))
+    return output
 
 
 def print_nicely(lst):
@@ -47,6 +50,8 @@ def parse_bib(input_bib_file):
                 # when line is: "@article {alexander28,"
                 bibtex_type = match.group(1).lower()
                 bibtex_name = match.group(2)
+                logging.info("parse_bib => type {} name {}".format(bibtex_type, bibtex_name))
+
                 entries[bibtex_name] = {
                     "bibtex_type": bibtex_type,
                     "bibtex_name": bibtex_name
@@ -57,6 +62,8 @@ def parse_bib(input_bib_file):
                 # when line is: "    author = {Alexander, J. W.},"
                 key = match.group(1).lower()
                 value = match.group(2)
+                logging.info("parse_bib => key {} value {}".format(key, value))
+
                 entries[bibtex_name][key] = value
     return entries
 
@@ -64,6 +71,8 @@ def parse_bib(input_bib_file):
 def bibliography_sort(input_bib_file):
     """Main function sorting bibliography entries"""
 
+    logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
+    logging.info("X")
     entries = parse_bib(input_bib_file)
     entries = sorted(list(entries.values()), key=sort_key)
     with open(input_bib_file, "w") as output_bib_file:
