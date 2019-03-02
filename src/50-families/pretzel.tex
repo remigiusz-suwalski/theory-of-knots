@@ -77,8 +77,29 @@ Wiele twierdzeń, które dotyczą takich rozmaitości, opiera się na przykład 
 \end{proposition}
 
 \begin{proof}
-    Praca \cite{trotter63} sprowadza w~elementarny sposób problem do pytania, czy pewna grupa posiada inwersję.
+    Zgodnie z sugestią Foxa, Trotter w \cite{63} tłumaczy problem na język teorii grup.
+    Wyróżnia mianowicie w~grupie węzła dwa elementy -- (zorientowany) południk i równoleżnik.
+    Jeśli dwa węzły są równoważne, to homeomorfizm $\R^3 \to \R^3$ posyłający jeden na drugi wyznacza izomorfizm ich grup podstawowych, który posyła południk na południk i równoleżnik na równoleżnik.
+    W szczególności, jeśli węzeł jest odwracalny, to jego grupa posiada specjalny automorfizm (,,inwersję'') odwracający zarówno południk, jak i równoleżnik.
+    To prowadzi do sprzeczności w przypadku rozpatrywanych precli.
 \end{proof}
+
+Wystarczający warunek z tego stwierdzenia jest prawie konieczny.
+Jeśli $p = r$, węzeł można odwrócić przez półobrót wokół środkowej osi.
+Cykliczne permutacje trójki $(p, q, r)$ nie zmieniają węzła, więc wszystkie trzy liczby $p, q, r$ muszą być różne.
+Jeśli jedna z tych liczb jest parzysta, półobrót wokół poziomej osi odwraca węzeł.
+Z pracy Bankwitza i Schumanna wynika, że jeśli któryś z parametrów ma wartość $\pm 1$, to węzeł też jest odwracalny.
+Nie jest trudno pokazać to wprost.
+Zatem nie wiemy jedynie jakie są precle $(p, q, -q)$, gdzie $|p| \neq |q|$ oraz $|p|, |q| \ge 3$.
+
+Jeśli liczby $p, q, r$ są nieparzyste i tego samego znaku, to wyznacznik precla $(p, q, r)$ jest postaci $4n+3$.
+Wtedy używając formy kwadratowej (jak Reidemeister w 1932!) można pokazać, że taki węzeł nie jest achiralny.
+Niech $K$ będzie zorientowanym preclem $(3, 5, 7)$.
+Wtedy $K$, $mK$, $rK$, $mrK$ są parami nierównoważne. 
+Węzeł $K \shrap mK$ jest dodatnio zwierciadlany, zaś $rK \shrap mK$ ujemnie zwierciadlany.
+Trójlistnik jest odwracalny, ale nie zwierciadlany, ósemka jest zwierciadlana i~odwracalna.
+To pokazuje, że wszystkie typy symetrii są realizowane przez precle lub sumy precli.
+
 % Koniec sekcji Precle
 
 Wielomian Alexandera precla $(p_1, \ldots, p_n)$ nie zależy od kolejności współczynników (jest to ćwiczenie 10.9 w~książce Livingstona).
