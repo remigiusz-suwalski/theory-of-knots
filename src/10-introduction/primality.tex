@@ -20,10 +20,26 @@ Dowód opiera się na multiplikatywności wielomianu BLM/Ho (opisuje go definicj
 Czy węzłów pierwszych jest nieskończenie wiele?
 Tak (patrz fakt \ref{infty_primes}), potrafimy nawet oszacować liczbę $K_n$ węzłów pierwszych oraz $L_n$ splotów pierwszych.
 W roku 1987 C. Ernst, D. Sumners w~oparciu o~wyniki Thistlethwaite'a, Kauffmana, oraz Murasugiego dotyczące węzłów alternujących pokazali w~\cite{ernst87}, że $K_n \ge \frac 1 3 (2^{n- 2} - 1)$, przy czym węzły lustrzane traktowane są jako różne.
-Welsh rozpatruje w \cite{welsh92} węzły bez orientacji i znajduje ograniczenia:
-\[
+Dokładniej:
+
+\begin{proposition}
+    Niech $f(n)$ oznacza liczbę węzłów dwumostowych o indeksie skrzyżowaniowym $n$.
+    Wtedy
+    \begin{equation}
+        f(n) = \begin{cases}
+        \frac 13 (2^{n-2} - 1) & \text{dla } n = 2k \ge 4 \\
+        \frac 13 (2^{n-2} + 2^{(n-1)/2}) & \text{dla } n = 4k + 1 \ge 5 \\
+        \frac 13 (2^{n-2} + 2^{(n-1)/2} + 2) & \text{dla } n = 4k + 3 \ge 7
+        \end{cases}
+    \end{equation}
+\end{proposition}
+
+
+Welsh rozpatruje w \cite{welsh92} węzły bez orientacji i znajduje poniższe ograniczenia.
+Nie wiadomo, czy zwykłe granice istnieją.
+\begin{equation}
     2.68 \le \liminf_{n \to \infty}  \sqrt[n]{K_n} \le \limsup_{n \to \infty} \sqrt[n]{L_n} \le \frac {27}{2}.
-\]
+\end{equation}
 
 % "On the number of knots and links" (MR1218230)
 
