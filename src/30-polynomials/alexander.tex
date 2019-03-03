@@ -262,17 +262,24 @@ Wielomian Jonesa (zdefiniowany w~kolejnej sekcji) spełnia podobną równość.
 Ich istnienie może nasunąć przypuszczenie, że dają się wspólnie uogólnić.
 Tak jest w~rzeczywistości -- mocniejszym niezmiennikiem okazał się wielomian HOMFLY-PT.
 
-Poniższa hipoteza pochodzi od Stojmenowa.
+Niech $\nabla_k$ będzie współczynnikiem przy $z^k$ w~wielomianie Conwaya.
+Jest to przykład niezmiennika Wasiljewa rzędu $k$, poznamy je w~sekcji \ref{sec:vassiliev}.
+Lin oraz Wang w~1994 roku na podstawie niezmienników małych rzędów, to jest $v_2$ oraz $v_3$, wysunęli następującą hipotezę: istnieje uniwersalna stała $C$ taka, że
+\begin{equation}
+    |v_k(K)| \le C (\operatorname{cr} K)^k.
+\end{equation}
+
+Hipotezę wkrótce udowodniono, najpierw dla węzłów (Bar-Natan, \cite{barnatan95}), nieco później także dla splotów (Stojmenow, \cite{stoimenow_01}).
+Wartość stałej $C$ trudno obliczyć, dlatego Stojmenow zaproponował ograniczenie się do przypadku $v_k = \nabla_k$.
 
 \begin{conjecture}
-    Niech $\nabla_k$ będzie współczynnikiem przy $z^k$ w~wielomianie Conwaya, zaś $c$ indeksem skrzyżowaniowym splotu $L$.
-    Wtedy spełniona jest nierówność
+    Niech $L$ będzie splotem.
+    Wtedy
     \begin{equation}
-        |\nabla_k(L)| \le \underbrace{\frac{1}{2^kk!}}_{C_k} \cdot c^k.
+        |\nabla_k(L)| \le \frac{1}{2^kk!} \cdot c^k.
     \end{equation}
 \end{conjecture}
 
-Istnienie stałej $C_k$ wynika z~dowodu hipotezy Lin-Wanga, patrz prace: \cite{barnatan_95} (Bar-Natan dla węzłów) oraz \cite{stoimenow_01} (Stojmenow dla splotów), ale trudno obliczyć jej wartość.
 Nierówność jest nietrywialna tylko dla splotu $L$ z~$k+1, k-1, \ldots$ składowymi; trywialna dla $k = 0$, łatwa dla $k=1$ (wtedy $\nabla_1$ jest indeksem zaczepienia splotów o~dwóch składowych) oraz udowodniona dla węzłów i~$k=2$ przez Polyaka, Viro w~2001 (\cite{polyak01}).
 % The Casson knot invariant (to be distinguished from the better-known Casson invariant) is defined to be the Vassiliev knot invariant v_2, which turns out to be \Delta_k''(1) / 2 , where \Delta_k is the Alexander polynomial of k. It can be characterized as the unique Vassiliev invariant of degree 2 that takes value 0 on the trivial knot and value 1 on the trefoil knot.
 
