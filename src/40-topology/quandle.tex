@@ -1,75 +1,85 @@
-\section{Wraki i~kwandle} % (fold)
+\section{Kwandle i wraki} % (fold)
 % TODO: Problems  on invariants of knots and 3-manifolds, rozdział 3
 \label{sec:quandle}
-Sekcja ta powstała częściowo w~oparciu o~notatki autorstwa Andrew Bergera, Chrisa Geriga
-\footnote{dostępne pod adresem \url{https://math.berkeley.edu/~cgerig/notes}}
-oraz Andrew Bergera, Brandona Flannery'ego i~Chrisa Sumnichta
-\footnote{dostępne pod adresem \url{https://github.com/thyrgle/191_Final_Project/blob/master/paper.pdf}}.
-Kwandle, z~angielskiego \emph{quandle}, są strukturami algebraicznymi przypominającymi grupy,
-jednak których aksjomaty nie odzwierciedlają własności symetrii, tylko ruchów Reidemeistera.
+Sekcja ta powstała częściowo w~oparciu o~notatki autorstwa Andrew Bergera, Chrisa Geriga\footnote{dostępne pod adresem \url{https://math.berkeley.edu/~cgerig/notes}} oraz Andrew Bergera, Brandona Flannery'ego i~Chrisa Sumnichta\footnote{dostępne pod adresem \url{https://github.com/thyrgle/191_Final_Project/blob/master/paper.pdf}}.
+Kwandle, z~angielskiego \emph{quandle}, są strukturami algebraicznymi przypominającymi grupy.
+Aksjomaty grupy stanowią uogólnienie symetrii -- symetrie są odwracalne, można je składać, identyczność jest symetrią.
+Aksjomaty kwandli będą odzwierciedlać ruchy Reidemeistera.
 
-\begin{definition}[wrak]
-    \index{wrak}
-    Zbiór $R$ z~binarnym działaniem $\triangleleft$, które spełnia relację
-    \[
-        a~\triangleleft (b \triangleleft c) = (a \triangleleft b) \triangleleft (a \triangleleft c)
-    \]
-    dla wszystkich $a, b, c \in R$, nazywamy wrakiem,
-    jeśli każdej parze elementów $a, b \in R$ odpowiada dokładnie jeden $c \in R$ taki,
-    że $a \triangleleft c = b$.
-\end{definition}
+Niech $X$ będzie skończonym zbiorów, zaś $K$ węzłem.
+Elementy $x \in X$ będą dla nas kolorami, którymi oznaczymy długie łuki na diagramie węzła $K$.
+Gdy trzy kolory spotykają się przy jednym skrzyżowaniu, definiujemy funkcję $\triangleright \colon X \times X \to X$, jak na rysunku.
+To znaczy: kiedy łuk o kolorze $x$ przechodzi pod łukiem koloru $y$, staje się łukiem w kolorze $x \triangleright y$.
 
-Ta definicja, chociaż zwięzła i~powszechnie używana, nie jest optymalna.
-Pozbędziemy się kwantyfikatora egzystencjalnego za cenę wprowadzenia drugiego działania.
+\[
+    \begin{tikzpicture}[scale=0.18, baseline=0]
+        \path[TIKZ_ARCH,Latex-] (-4,0) -- (4,8);
+        \path[TIKZ_ARCH] (4,0) -- (1,3);
+        \path[TIKZ_ARCH] (-1,5) -- (-4,8);
+        \node[darkblue] at (-4, 0)[above left] {$y$};
+        \node[darkblue] at (4, 0)[above right] {$x \triangleright y$};
+        \node[darkblue] at (-4, 8)[below left] {$x$};
+    \end{tikzpicture}
+\]
 
-Jedyny $c \in R$ dla pary $(a,b)$ oznaczmy przez $b \triangleright a$.
-To oznacza, że $a \triangleleft c = b$, wtedy i~tylko wtedy gdy $c = b \triangleright a$,
-a zatem $a \triangleleft (b \triangleright a) = b$ oraz $(a \triangleleft b) \triangleright a = b$.
-Korzystając z~tego pomysłu możemy podać alternatywną definicję.
+Teraz możemy przetłumaczyć ruchy Reidemeistera w aksjomaty kwandli.
 
-\begin{definition}[wrak]
-    Zbiór $R$ z~dwoma binarnymi działaniami,
-    $\triangleleft$ oraz $\triangleright$,
-    które spełniają następujące aksjomaty:
+\begin{definition}[kwandl]
+    \index{quandle}
+    Zbiór $X$ wyposażony w dwuargumentowe działanie $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi:
     \begin{enumerate}
-        \item $a \triangleleft (b \triangleleft c) = (a \triangleleft b) \triangleleft (a \triangleleft c)$
-        oraz $(c \triangleright b) \triangleright a = (c \triangleright a) \triangleright (b \triangleright a)$
-        \item $(a \triangleleft b) \triangleright a = b$ oraz $a \triangleleft (b \triangleright a) = b$
+        \item $x \triangleright x = x$,
+        \item odwzorowanie $\beta_y \colon X \to X$ dane wzorem $\beta_y(x) = x \triangleright y$ jest odwracalne,
+        \item $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$
     \end{enumerate}
-    nazywamy wrakiem.
+    nazywamy kwandlem.
 \end{definition}
 
-\begin{definition}[kwandel]
-    Wrak $Q$, którego każdy element $a$ spełnia relację $a \triangleleft a = a$, nazywamy kwandlem.
-    \index{kwandel}
+Ta definicja pochodzi z~nieopublikowanej korespondencji między Johnem Conwayem i~Gavenem Wraithem, którzy w 1959 byli studentami I stopnia na uniwersytecie w Cambridge.
+Ponownie odkryto ją w latach 80. XX wieku: Joyce w 1982 po raz pierwszy nazwał te obiekty kwandlami, Matwiejow w tym samym roku jako grupoidy rozdzielne, Brieskorn w 1986 jako zbiory automorficzne.
+
+Drugi aksjomat nazywa się czasem odwracalnością z prawej strony: znając $x \triangleright y$ oraz $y$ możemy odtworzyć element $x$, jednak znając $x$ być może nie jesteśmy w stanie odtworzyć elementu $y$.
+Jedyny element $x$ taki, że $x \triangleright y = z$ nazwijmy $y \triangleleft z$.
+To pozwala podać trochę inną definicję kwandli, my nie będziemy jej używać.
+
+\begin{definition}
+    Zbiór $X$ z dwuargumentowymi działaniami $\triangleright, \triangleleft$ taki, że dla wszystkich $x, y, z \in X$ zachodzi:
+    \begin{align*}
+    x \triangleright x = x \triangleleft x & = x \\
+    (x \triangleleft y) \triangleright x & = y \\
+    x \triangleleft (y \triangleright x) & = y \\
+     (x \triangleright z) \triangleright (y \triangleright z) & = (x \triangleright y) \triangleright z \\
+    (x \triangleleft y) \triangleleft (x \triangleleft z) & = x \triangleleft (y \triangleright z)
+    \end{align*}
+    nazywamy kwandlem.
 \end{definition}
 
-Wiele znanych z~algebry obiektów można zmienić w~kwandle.
-\begin{itemize}
-\item grupa abelowa $G$: %\todo[inline]{z działaniem $x \triangleright y = 2y - x$}
-\item grupa $G$: %\todo[inline]{z działaniem  $x \triangleright y = y^{-n}xy^n$ ($n \in \Z$ dowolne)}
-\item Moduł nad pierścieniem $\Z[t^{\pm 1}]$ wielomianów Laurenta: %\todo[inline]{$x \triangleright y = tx + (1-t)y$}
-\item Przestrzeń liniowa z~dwuliniową formą antysymetryczną: %\todo[inline]{$x \triangleright y = x + \langle x \mid y \rangle \cdot y$}
-\end{itemize}
+Homomorfizmy definiujemy standardowo, przez analogię do grup:
 
-%Pokażemy, że kwandle uogólniają kolorowania.
-%Niech $X$ będzie zbiorem kolorów z~operacją $\triangleright$, które spełnia aksjomaty z~definicji kwandli.
-%Wtedy przy każdym skrzyżowaniu występują trzy kolory: $x$, $y$ oraz $x \triangleright y$.
+\begin{definition}
+    Niech $Q_1, Q_2$ będą kwandlami.
+    Odwzorowanie $f \colon Q_1 \to Q_2$, które dla waszystkich $x,y \in Q_1$ spełnia warunek $f(x \triangleright y) = f(x) \triangleright f(y)$, nazywamy homomorfizmem.
+\end{definition}
 
-\begin{tikzpicture}[scale=0.18, baseline=0]
-    \path[TIKZ_ARCH,Latex-] (-4,0) -- (4,8);
-    \path[TIKZ_ARCH] (4,0) -- (1,3);
-    \path[TIKZ_ARCH] (-1,5) -- (-4,8);
-    \node[darkblue] at (-4, 0)[above left] {$y$};
-    \node[darkblue] at (4, 0)[above right] {$x \triangleright y$};
-    \node[darkblue] at (-4, 8)[below left] {$x$};
-\end{tikzpicture}
+Wiele znanych struktur algebraicznych okazuje się być źródłem kwandli.
 
-%Przypomnijmy, że 3-kolorowanie diagramu polegało na przypisaniu każdemu włóknu pewnego koloru (z trzech) tak, by każdy został użyty, a~żadne skrzyżowanie nie stało się dwubarwne.
-%Ogólniej, jeśli kolorami były liczby $0, \ldots, n - 1$, żądaliśmy od skrzyżowań, by kolor $y$ po przejściu pod kolorem $x$ stawał się $z$, gdzie $z \equiv 2x - y$ modulo $n$.
-%Można to uogólnić jeszcze bardziej, właśnie do quandli: $\Z/n$-kolorowanie węzła to quandle związany z~pierścieniem $\Z/n$ operacją $x \triangleright y =  2y - x$}
+\begin{example}[kwandl cykliczny/diedralny]
+    Grupa abelowa z działaniem $x \triangleright y = 2y - x$.
+\end{example}
 
-Z każdym węzłem związany jest specjalny kwandel.
+\begin{example}[kwandle sprzężone]
+    Grupa z działaniem $x \triangleright y = y^{-n} x y^n$.
+\end{example}
+
+\begin{example}[kwandl Alexandera]
+    Moduł nad pierścieniem $\Z[t, 1/t]$ wielomianów Laurenta z~działaniem $x \triangleright y =tx + (1-t) y$.
+\end{example}
+
+\begin{example}[kwandl symplektyczny]
+    Przestrzeń liniowa i antysymetryczna forma dwuliniowa $\langle \cdot | \cdot \rangle$ z działaniem $x \triangleright y = x + \langle x | y \rangle y$.
+\end{example}
+
+Z każdym węzłem związany jest specjalny kwandl.
 
 \begin{definition}
 %Wspomnieć o~związku z~prezentacją Wirtingera (i zajrzeć do hiszpańskiego skryptu).
@@ -83,15 +93,63 @@ Z każdym węzłem związany jest specjalny kwandel.
     Zbiór $Q(K)$ nazywamy kwandlem fundamentalnym (podstawowym?).
 \end{definition}
 
-Muszę w~tym miejscu wtrącić uwagę językową.
-Conway nazwał wraki wrakami (\emph{wracks}), by częściowo zażartować z~nazwiska jego kolegi Gavina Wraitha,
-a częściowo by zaznaczyć, że są one tym, co zostaje z~grupy, w~której zapomniano o~mnożeniu, ale nie sprzęganiu.
-Obecnie w~języku angielskim dominuje określenie \emph{racks}.
+Kwandl $Q(K)$ został wprowadzony do matematyki w 1980 roku przez Davida Joyce'a.
+Pokazał on, że $Q(K)$ wyznacza węzeł $K$ jednoznacznie z dokładnością do orientacji.
 
-% Historia:
-% \begin{itemize}
-    %\item 1943 Takasaki: keis
-    %\item 1959 Conway, Wraith: racks
-    %\item 1980s Joyce, niezależnie. Matveev: niekoniecznie skończone kwandle fundamentalne, zainspirowani (przynajmniej Joyce) przez prezentację Wirtingera.
-%\end{itemize}
+\begin{proposition}
+    Niech $X$ będzie ustalonym kwandlem.
+    Wtedy liczba homomorfizmów $Q(K) \to X$ stanowi niezmiennik węzłów.
+\end{proposition}
+
+Aksjomaty grupy można wzmacniać (grupy abelowe) lub osłabiać (monoidy).
+Podobnie czyni się z aksjomatami kwandli.
+Kwandle inwolutywne odpowiadają węzłom bez orientacji, wraki dobrze opisują węzły obramowane (\emph{framed}), i tak dalej.
+
+\begin{definition}[kwandl inwolutywny]
+    Kwandl $Q$, w którym dla wszystkich $x, y \in Q$ zachodzi $x \triangleleft (x \triangleleft y) = y$, nazywamy inwolutywnym (albo kei).
+\end{definition}
+
+Kwandle inwolutywne badał jako pierwszy Mituhisa Takasaki (1943).
+Szukał niełącznej struktury, która dobrze opisywałaby odbicia w skończonej geometrii.
+
+\begin{definition}[półka]
+    \index{shelf}
+    Zbiór $X$ z dwuargumentowym działaniem $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$ nazywamy półką (z angielskiego \emph{shelf}).
+\end{definition}
+
+Półkę można uogólnić na dwa sposoby:
+
+\begin{definition}[wrak]
+    \index{wrack}
+    Zbiór $X$ z dwuargumentowym działaniem $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi:
+    \begin{enumerate}
+        \item odwzorowanie $\beta_y \colon X \to X$ dane wzorem $\beta_y(x) = x \triangleright y$ jest odwracalne,
+        \item $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$
+    \end{enumerate}
+    nazywamy wrakiem (z angielskiego \emph{wrack}).
+\end{definition}
+
+\begin{definition}[wrzeciono]
+    \index{spindle}
+    Zbiór $X$ z dwuargumentowym działaniem $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi:
+    \begin{enumerate}
+        \item $x \triangleright x = x$,
+        \item $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$
+    \end{enumerate}
+    nazywamy wrzecionem (z angielskiego \emph{spindle}).
+\end{definition}
+
+Zatem kwandle to wraki, które są też wrzecionami.
+Muszę w~tym miejscu wtrącić uwagę językową.
+Conway nazwał wraki wrakami (\emph{wracks}), by częściowo zażartować z~nazwiska jego kolegi Gavina Wraitha, a częściowo by zaznaczyć, że są one tym, co zostaje z~grupy, w~której zapomniano o~mnożeniu, ale nie sprzęganiu (w~języku angielskim co najmniej od XVI wieku funkcjonuje zwrot ,,wrack and ruin'' oznaczający zniszczenie).
+Obecnie dominuje określenie \emph{racks}.
+
+%Pokażemy, że kwandle uogólniają kolorowania.
+%Niech $X$ będzie zbiorem kolorów z~operacją $\triangleright$, które spełnia aksjomaty z~definicji kwandli.
+%Wtedy przy każdym skrzyżowaniu występują trzy kolory: $x$, $y$ oraz $x \triangleright y$.
+
+%Przypomnijmy, że 3-kolorowanie diagramu polegało na przypisaniu każdemu włóknu pewnego koloru (z trzech) tak, by każdy został użyty, a~żadne skrzyżowanie nie stało się dwubarwne.
+%Ogólniej, jeśli kolorami były liczby $0, \ldots, n - 1$, żądaliśmy od skrzyżowań, by kolor $y$ po przejściu pod kolorem $x$ stawał się $z$, gdzie $z \equiv 2x - y$ modulo $n$.
+%Można to uogólnić jeszcze bardziej, właśnie do quandli: $\Z/n$-kolorowanie węzła to quandle związany z~pierścieniem $\Z/n$ operacją $x \triangleright y =  2y - x$}
+
 % Koniec sekcji Wraki i~kwandle
