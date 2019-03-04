@@ -6,7 +6,21 @@ Kwandle, z~angielskiego \emph{quandle}, są strukturami algebraicznymi przypomin
 Aksjomaty grupy stanowią uogólnienie symetrii -- symetrie są odwracalne, można je składać, identyczność jest symetrią.
 Aksjomaty kwandli będą odzwierciedlać ruchy Reidemeistera.
 
-Niech $X$ będzie skończonym zbiorów, zaś $K$ węzłem.
+David Joyce zapytany o znaczenie słowa \emph{quandle} odpowiedział: ,,I needed a usable word. “Distributive algebra” had too many syllables. Piffle was already taken. I tried trindle and quagle, but they didn’t seem right, so I went with quandle.''.
+
+\begin{definition}[kwandl]
+    \index{quandle}
+    Zbiór $X$ wyposażony w dwuargumentowe działanie $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi:
+    \begin{enumerate}
+        \item $x \triangleright x = x$,
+        \item odwzorowanie $\beta_y \colon X \to X$ dane wzorem $\beta_y(x) = x \triangleright y$ jest odwracalne,
+        \item $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$
+    \end{enumerate}
+    nazywamy kwandlem.
+\end{definition}
+
+Kwandle można rozpatrywać jako samodzielne konstrukcje algebraiczne, ale my pokażemy, że są naturalnym niezmiennikiem węzłów.
+Niech $X$ będzie skończonym kwandlem, zaś $K$ węzłem.
 Elementy $x \in X$ będą dla nas kolorami, którymi oznaczymy długie łuki na diagramie węzła $K$.
 Gdy trzy kolory spotykają się przy jednym skrzyżowaniu, definiujemy funkcję $\triangleright \colon X \times X \to X$, jak na rysunku.
 To znaczy: kiedy łuk o kolorze $x$ przechodzi pod łukiem koloru $y$, staje się łukiem w kolorze $x \triangleright y$.
@@ -21,19 +35,6 @@ To znaczy: kiedy łuk o kolorze $x$ przechodzi pod łukiem koloru $y$, staje si�
         \node[darkblue] at (-4, 8)[below left] {$x$};
     \end{tikzpicture}
 \]
-
-Teraz możemy przetłumaczyć ruchy Reidemeistera w aksjomaty kwandli.
-
-\begin{definition}[kwandl]
-    \index{quandle}
-    Zbiór $X$ wyposażony w dwuargumentowe działanie $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi:
-    \begin{enumerate}
-        \item $x \triangleright x = x$,
-        \item odwzorowanie $\beta_y \colon X \to X$ dane wzorem $\beta_y(x) = x \triangleright y$ jest odwracalne,
-        \item $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$
-    \end{enumerate}
-    nazywamy kwandlem.
-\end{definition}
 
 Ta definicja pochodzi z~nieopublikowanej korespondencji między Johnem Conwayem i~Gavenem Wraithem, którzy w 1959 byli studentami I stopnia na uniwersytecie w Cambridge.
 Ponownie odkryto ją w latach 80. XX wieku: Joyce w 1982 po raz pierwszy nazwał te obiekty kwandlami, Matwiejow w tym samym roku jako grupoidy rozdzielne, Brieskorn w 1986 jako zbiory automorficzne.
@@ -53,6 +54,84 @@ To pozwala podać trochę inną definicję kwandli, my nie będziemy jej używa�
     \end{align*}
     nazywamy kwandlem.
 \end{definition}
+
+Teraz możemy przetłumaczyć ruchy Reidemeistera w aksjomaty kwandli.
+
+\begin{proposition}
+    Liczba etykietowań diagramu elementami ustalonego skończonego kwandla jest niezmiennikiem węzłów, zwanym niezmiennikiem zliczającym.
+\end{proposition}
+
+\begin{proof}
+    Musimy pokazać, że etykiety na diagramiem przed każdym ruchem Reidemeistera wyznaczają jednoznacznie układ etykiet po tym ruchu.
+    Pierwszy ruch:
+    \[
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5,flip crossing/.list={1}]
+            \strand[semithick,Latex-] (15, 0) [in=up,out=left] to (-5, -7);
+            \strand[semithick] (-5, -7) [in=down,out=down] to (5, -7);
+            \strand[semithick] (5, -7) [in=right,out=up] to (-15, 0);
+            \node[darkblue] at (-15, 0)[left] {$x$};
+            \node[darkblue] at (15, 0)[right] {$x \triangleright x$};
+        \end{knot}
+        \end{tikzpicture}
+        \stackrel{R_1}{\cong} \,\,
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+            \strand[semithick,-Latex] (-15, 0) to (15, 0);
+            \node[darkblue] at (-15, 0)[left] {$x$};
+        \end{knot}
+        \end{tikzpicture}
+    \]
+    Drugi ruch:
+    \[
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=4, flip crossing/.list={1,2}]
+            \strand[semithick,-Latex] (-10, -4) to (-7, -4) [in=left, out=right] to (0, 4) [in=left, out=right] to (7, -4) to (10, -4) to (15, -4);
+            \strand[semithick] (-10, 4) to (-7, 4) [in=left, out=right] to (0, -4) [in=left, out=right] to (7, 4) to (10, 4) to (15, 4);
+            \node[darkblue] at (-10, -4)[left] {$y$};
+            \node[darkblue] at (-10, 4)[left] {$x$};
+            \node[darkblue] at (0, 4) [above] {$y \triangleright x$};
+            \node[darkblue] at (15, -4) [right] {$x \triangleleft (y \triangleright x)$};
+        \end{knot}
+        \end{tikzpicture}
+        \stackrel{R_2}{\cong} \,\,
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=4]
+            \strand[semithick,-Latex] (-10, -4) to (-7, -4) [in=left, out=right] to (0, -1) [in=left, out=right] to (7, -4) to (10, -4) to (15, -4);
+            \strand[semithick] (-10, 4) to (-7, 4) [in=left, out=right] to (0, 1) [in=left, out=right] to (7, 4) to (10, 4) to (15, 4);
+            \node[darkblue] at (-10, -4)[left] {$y$};
+            \node[darkblue] at (-10, 4)[left] {$x$};
+        \end{knot}
+        \end{tikzpicture}
+    \]
+    Trzeci ruch:
+    \[
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5, flip crossing/.list={3}]
+            \node[darkblue] at (-10, 10) [left] {$z$};
+            \strand[semithick,-Latex] (-10, 10) [in=left, out=right] to (10,-10) to (15,-10);
+            \node[darkblue] at (-10, 0) [left] {$y$};
+            \strand[semithick,-Latex] (-10, 0) [in=left, out=right] to (0, 10) [in=left, out=right] to (10, 0) to (15, 0);
+            \node[darkblue] at (-10, -10) [left] {$x$};
+            \strand[semithick,-Latex] (-10, -10) [in=left, out=right] to (10,10) to (15,10);
+            \node[darkblue] at (0, 10) [above] {$y \triangleright z$};
+            \node[darkblue] at (15, 10) [right] {$(x \triangleright z) \triangleright (y \triangleright z)$};
+        \end{knot}
+        \end{tikzpicture}
+        \stackrel{R_3}{\cong} \,\,
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5, flip crossing/.list={3}]
+            \node[darkblue] at (-10, 10) [left] {$z$};
+            \strand[semithick,-Latex] (-10, 10) [in=left, out=right] to (10,-10)  to (15, -10);
+            \node[darkblue] at (-10, 0) [left] {$y$};
+            \strand[semithick,-Latex] (-10, 0) [in=left, out=right] to (0, -10) [in=left, out=right] to (10, 0) to (15, 0);
+            \node[darkblue] at (-10, -10) [left] {$x$};
+            \strand[semithick,-Latex] (-10, -10) [in=left, out=right] to (10,10) to (15, 10);
+            \node[darkblue] at (15, 10) [right] {$(x \triangleright y) \triangleright z$};
+        \end{knot}
+        \end{tikzpicture}
+    \]
+\end{proof}
 
 Homomorfizmy definiujemy standardowo, przez analogię do grup:
 
@@ -85,9 +164,6 @@ Joyce pokazał, że kwandl $Q(K)$ wyznacza węzeł $K$ jednoznacznie z dokładno
 Nie czyni to jednak nowego niezmiennika użytecznym, gdyż wyznaczenie go nawet w najprostszych przypadkach stanowi trudność.
 Niebrzydowski, Przytycki pokazali w 2008 roku, że kwandl podstawowy trójlistnika jest izomorficzny z~rzutowym pierwotnym podkwandlem pewnych odwzorowań liniowych przestrzeni symplektycznej $\Z \oplus \Z$, cokolwiek to znaczy.
 
-Niech $X$ będzie ustalonym kwandlem.
-Liczba homomorfizmów $Q(K) \to X$ stanowi niezmiennik węzłów, zwany czasem niezmiennikiem zliczającym.
-
 Aksjomaty grupy można wzmacniać (grupy abelowe) lub osłabiać (monoidy).
 Podobnie czyni się z aksjomatami kwandli.
 Kwandle inwolutywne odpowiadają węzłom bez orientacji, wraki dobrze opisują węzły obramowane (\emph{framed}), i tak dalej.
@@ -104,7 +180,9 @@ Szukał niełącznej struktury, która dobrze opisywałaby odbicia w skończonej
     Zbiór $X$ z dwuargumentowym działaniem $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$ nazywamy półką (z angielskiego \emph{shelf}).
 \end{definition}
 
-Półkę można uogólnić na dwa sposoby:
+Półki zdefiniowała Alissa Crans w pracy doktorskiej.
+To nieprzetłumaczalna gra słów: dwie półki, lewa i prawa, które dobrze do siebie pasują, dają stojak (\emph{rack}).
+Półka stanowi uogólnienie dwóch obiektów -- wraków i wrzecion.
 
 \begin{definition}[wrak]
     \index{wrack}
@@ -115,6 +193,38 @@ Półkę można uogólnić na dwa sposoby:
     \end{enumerate}
     nazywamy wrakiem (z angielskiego \emph{wrack}).
 \end{definition}
+
+\begin{example}
+    Zbiór $X = \{1, 2, \ldots, n\}$ i permutacja $\sigma \in S_n$ z działaniem $x \triangleright y = \sigma(x)$.
+\end{example}
+
+\begin{example}
+    Moduł nad pierścieniem $\Z[t^{\pm 1}, s]/(s^2 - (1-t)s)$ z działaniem $x \triangleright y = tx+sy$.
+\end{example}
+
+Wraki dobrze współgrają z podwójnym pierwszym ruchem Reidemeistera, który to nie zmienia spinu diagramu:
+\[
+    \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+    \begin{knot}[clip width=5,flip crossing/.list={1}]
+        \strand[semithick] (15, 0) [in=up,out=left] to (-5, -7);
+        \strand[semithick] (-5, -7) [in=down,out=down] to (5, -7);
+        \strand[semithick] (5, -7) [in=right,out=up] to (-15, 0);
+        \strand[semithick,Latex-] (45, 0) [in=up,out=left] to (25, -7);
+        \strand[semithick] (25, -7) [in=down,out=down] to (35, -7);
+        \strand[semithick] (35, -7) [in=right,out=up] to (15, 0);
+        \node[darkblue] at (-15, 0)[left] {$x$};
+        \node[darkblue] at (15, 0)[above] {$x \triangleright x$};
+        \node[darkblue] at (45, 0)[right] {$x$};
+    \end{knot}
+    \end{tikzpicture}
+    \cong
+    \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+    \begin{knot}[clip width=5]
+        \strand[semithick,-Latex] (-15, 0) to (15, 0);
+        \node[darkblue] at (-15, 0)[left] {$x$};
+    \end{knot}
+    \end{tikzpicture}
+\]
 
 \begin{definition}[wrzeciono]
     \index{spindle}
