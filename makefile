@@ -15,6 +15,7 @@ chapter-04: prepare build/draft-04.pdf
 chapter-05: prepare build/draft-05.pdf
 chapter-99: prepare build/draft-99.pdf
 chapter-all: build/knot-theory.pdf
+chapter-test: prepare build/draft-test.pdf
 
 build/knot-theory.pdf: src/knot-theory.tex src/*/*.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) knot-theory.tex
@@ -41,6 +42,14 @@ build/draft-05.pdf: src/draft-05.tex src/50*/*.tex
 
 build/draft-99.pdf: src/draft-99.tex src/90*/*.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) draft-99.tex
+
+build/draft-test.pdf: src/draft-test.tex src/include/test.tex
+	cd src && pdflatex $(PDFLATEX_FLAGS) draft-test.tex
+	cp src/knot_theory.bib build/knot_theory.bib
+	-cd build && bibtex draft-test
+	cd build && makeindex draft-test
+	cd src && pdflatex $(PDFLATEX_FLAGS) draft-test.tex
+	cd src && pdflatex $(PDFLATEX_FLAGS) draft-test.tex
 
 release-draft:
 	pdfunite build/*.pdf draft.pdf
