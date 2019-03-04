@@ -19,7 +19,9 @@ David Joyce zapytany o znaczenie słowa \emph{quandle} odpowiedział: ,,I needed
     nazywamy kwandlem.
 \end{definition}
 
-Kwandle można rozpatrywać jako samodzielne konstrukcje algebraiczne, ale my pokażemy, że są naturalnym niezmiennikiem węzłów.
+Kwandle można rozpatrywać jako samodzielne konstrukcje algebraiczne.
+My pokażemy, że są naturalnym niezmiennikiem węzłów.
+
 Niech $X$ będzie skończonym kwandlem, zaś $K$ węzłem.
 Elementy $x \in X$ będą dla nas kolorami, którymi oznaczymy długie łuki na diagramie węzła $K$.
 Gdy trzy kolory spotykają się przy jednym skrzyżowaniu, definiujemy funkcję $\triangleright \colon X \times X \to X$, jak na rysunku.
@@ -50,7 +52,7 @@ To pozwala podać trochę inną definicję kwandli, my nie będziemy jej używa�
     (x \triangleleft y) \triangleright x & = y \\
     x \triangleleft (y \triangleright x) & = y \\
      (x \triangleright z) \triangleright (y \triangleright z) & = (x \triangleright y) \triangleright z \\
-    (x \triangleleft y) \triangleleft (x \triangleleft z) & = x \triangleleft (y \triangleright z)
+    (x \triangleleft y) \triangleleft (x \triangleleft z) & = x \triangleleft (y \triangleleft z)
     \end{align*}
     nazywamy kwandlem.
 \end{definition}
@@ -58,7 +60,8 @@ To pozwala podać trochę inną definicję kwandli, my nie będziemy jej używa�
 Teraz możemy przetłumaczyć ruchy Reidemeistera w aksjomaty kwandli.
 
 \begin{proposition}
-    Liczba etykietowań diagramu elementami ustalonego skończonego kwandla jest niezmiennikiem węzłów, zwanym niezmiennikiem zliczającym.
+    Niech $X$ będzie skończonym kwandlem.
+    Liczba etykietowań diagramu elementami kwandla $X$ jest niezmiennikiem węzłów, zwanym niezmiennikiem zliczającym.
 \end{proposition}
 
 \begin{proof}
@@ -130,6 +133,7 @@ Teraz możemy przetłumaczyć ruchy Reidemeistera w aksjomaty kwandli.
             \node[darkblue] at (15, 10) [right] {$(x \triangleright y) \triangleright z$};
         \end{knot}
         \end{tikzpicture}
+        \qedhere
     \]
 \end{proof}
 
@@ -177,11 +181,16 @@ Szukał niełącznej struktury, która dobrze opisywałaby odbicia w skończonej
 
 \begin{definition}[półka]
     \index{shelf}
-    Zbiór $X$ z dwuargumentowym działaniem $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$ nazywamy półką (z angielskiego \emph{shelf}).
+    Zbiór $X$ wyposażony w dwuargumentowe działanie $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$, nazywamy półką.
 \end{definition}
 
+\begin{example}
+    Niech $B_\infty$ oznacza grupę wszystkich warkoczy, zaś $\phi$ będzie jej endomorfizmem posyłającym generator $\sigma_k$ na $\sigma_{k+1}$.
+    Zbiór $B_\infty$ z działaniem $a \triangleleft b = a\phi(b)\sigma_1 \phi{a} ^{-1}$ jest półką.
+\end{example}
+
 Półki zdefiniowała Alissa Crans w pracy doktorskiej.
-To nieprzetłumaczalna gra słów: dwie półki, lewa i prawa, które dobrze do siebie pasują, dają stojak (\emph{rack}).
+To nieprzetłumaczalna gra słów: dwie półki (\emph{shelves}), lewa i prawa, które dobrze do siebie pasują, dają stojak (\emph{rack}).
 Półka stanowi uogólnienie dwóch obiektów -- wraków i wrzecion.
 
 \begin{definition}[wrak]
