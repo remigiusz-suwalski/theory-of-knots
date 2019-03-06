@@ -1,17 +1,46 @@
 % \subsection{Odwrotności, lustra i~sumy}
+Wielomian Jonesa nie wykrywa orientacji splotu.
+
 \begin{proposition}
     Niech $L$ będzie zorientowanym splotem.
-    $V(rL)=V(L)$, $V(mL)(t)=V(L)(t^{-1})$.
+    Wtedy $V(rL)=V(L)$.
 \end{proposition}
 
 \begin{proof}
     Aby obliczyć wielomian rewersu, wykorzystujemy te same diagramy kłębiaste,
     jak dla zwykłego, a~przy tym nie zmieniamy znaku żadnego skrzyżowania.
-
-    Druga część: Florian Gellert, Kombinatorische Invarianten, strona 12.
 \end{proof}
 
-Wielomian Jonesa odróżnia lewy trójlistnik od prawego, co po raz pierwszy pokazał Dehn w~1914 roku (,,Die beiden Kleeblattschlingen'').
+Ale czasami potrafi odróżnić splot od jego lustra:
+
+\begin{proposition}
+    Niech $L$ będzie zorientowanym splotem.
+    Wtedy $V(mL)(t)=V(L)(t^{-1})$.
+\end{proposition}
+
+\begin{proof}
+    Zauważmy, że diagramy $L_-$ oraz $L_+$ są wzajemnymi lustrami.
+    Dlatego każda relacja kłębiasta dla splotu postaci
+    \begin{equation}
+        t^{-1} V(L_+)(t) - tV(L_-)(t) + (t^{-1/2} - t^{1/2}) V(L_0)(t) = 0
+    \end{equation}
+    odpowiada pewnej relacji dla lustra splotu:
+    \begin{equation}
+        -tV(L_+)(t) + t^{-1} V(L_-)(t) + (t^{-1/2} - t^{1/2}) V(L_0)(t) = 0,
+    \end{equation}
+    co po zamianie zmiennych $t \mapsto t^{-1}$ i przemnożeniu przez $-1$ daje
+    \begin{equation}
+        -t^{-1} V(L_+)(t^{-1}) + t V(L_-)(t^{-1}) + (t^{1/2} - t^{-1/2}) V(L_0)(t^{-1}) = 0.
+    \end{equation}
+
+    Patrz też: Florian Gellert, Kombinatorische Invarianten, strona 12.
+\end{proof}
+
+Równość $V(mL)(t)=V(L)(t^{-1})$ nie jest spełniona dla trójlistnika, zatem ten nie jest równoważny ze swoim lustrem.
+Po raz pierwszy pokazał to Dehn w 1914 roku (,,Die beiden Kleeblattschlingen'').
+Zanurzył on iloraz grafu Cayleya dla grupy podstawowej trójlistnika, $G = \pi_1(S^3 - K)$, w $\mathbb H^2 \times \R$, by wyznaczyć grupę zewnętrznych automorfizmów grupy $G$.
+Okazuje się nią być $\Z/2\Z$.
+Korzystając z południków i równoleżników pokazał następnie, że nietrywialny automorfizm odwraca orientację przestrzeni otaczającej.
 
 \begin{corollary}
     Wielomian Jonesa nie zależy od orientacji węzła.
