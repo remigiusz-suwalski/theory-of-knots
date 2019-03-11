@@ -71,6 +71,14 @@ Precel $(1,1,1)$ to prawy trójlistnik, $(5, -1, -1)$ to węzeł dokerski $6_1$,
 Precle $(-2, 3, 2n+1)$ są szczególnie użyteczne jako narzędzie do badania 3-rozmaitości.
 Wiele twierdzeń, które dotyczą takich rozmaitości, opiera się na przykład na chirurgii Dehna precla $(-2, 3, 7)$.
 
+\begin{proposition}
+    \label{prp:pretzel_alexander}
+    Jeżeli liczby $p, q, r$ są nieprzyste, to wielomianem Alexandera $(p, q, r)$-precla jest
+    \begin{equation}
+        \Delta = \frac 14 ((pq+qr+pr) (t^2-2t-1) + (t+1)^2).
+    \end{equation}
+\end{proposition}
+
 \begin{proposition}[Trotter, 1963] \label{trotter}
     Niech $p, q, r$ będą liczbami nieparzystymi takimi, że $|p|, |q|, |r|$ są parami różne i większe niż $1$.
     Wtedy precel $(p, q, r)$ jest nieodwracalny.
@@ -99,6 +107,19 @@ Wtedy $K$, $mK$, $rK$, $mrK$ są parami nierównoważne.
 Węzeł $K \shrap mK$ jest dodatnio zwierciadlany, zaś $rK \shrap mK$ ujemnie zwierciadlany.
 Trójlistnik jest odwracalny, ale nie zwierciadlany, ósemka jest zwierciadlana i~odwracalna.
 To pokazuje, że wszystkie typy symetrii są realizowane przez precle lub sumy precli.
+
+\begin{proposition}
+    Niech $n$ będzie liczbą pierwszą.
+    Węzeł $p, q, r$-preclowy jest $n$-kolorowalny wtedy i~tylko wtedy, gdy $n$ dzieli $|pq+qr+pr|$.
+    Jeśli przynajmniej jedna z~liczba $p, q, r$ nie jest wielokrotnością $n$, kolorowanie z dokładnością do permutacji jest jedyne.
+    W przeciwnym przypadku istnieją cztery różne kolorowania.
+\end{proposition}
+
+\begin{proof}
+    Pierwsza część jest wnioskiem ze stwierdzeeń \ref{prp:colour_det}, \ref{prp:alexander_det} oraz \ref{prp:pretzel_alexander}.
+    Dowód drugiej zawiera praca \emph{Counting $m$-coloring classes of knots and links} autorstwa K. Brownell, K. O'Neil oraz L. Taalman, trzech amerykanek.
+    Podano tam także ogólny wzór na liczbę $n$-kolorowań dowolnego węzła.
+\end{proof}
 
 % Koniec sekcji Precle
 
