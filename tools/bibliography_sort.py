@@ -32,7 +32,7 @@ def print_nicely(lst):
     for entry in lst:
         bibtex_name = entry.pop("bibtex_name")
         bibtex_type = entry.pop("bibtex_type")
-        tags = sorted(["    {} = {}".format(key, entry[key]) for key in entry])
+        tags = sorted(["    {} = {}".format(key.upper(), entry[key]) for key in entry])
         output += "@{} {{{},\n".format(bibtex_type, bibtex_name)
         output += "\n".join(tags)
         output += "\n}\n\n"
