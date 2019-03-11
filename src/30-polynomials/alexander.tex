@@ -90,33 +90,10 @@ Dla wygody można przeprowadzić normalizację wielomianu przez wzięcie repreze
 Odwrotnie, każdy wielomian Laurenta z~całkowitymi współczynnikami o~takich własnościach jest wielomianem Alexandera pewnego węzła.
 % Kawauchi 1996
 
-Wielomian nie odróżnia luster i~odwrotności od wyjściowych węzłów.
-Znane są przykłady nietrywialnych węzłów o~trywialnym wielomianie Alexandera ($1$), chociaż żaden z~nich nie ma dziesięciu lub mniej skrzyżowań.
-Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, strona 167) lub cztery inne z~167 strony książki \cite{rolfsen76} Rolfsena.
+Wielomian nie odróżnia luster i~odwrotności od wyjściowych węzłów:
 
 \begin{proposition}
-    Tylko skończenie wiele węzłów alternujących może mieć ten sam wielomian Alexandera.
-\end{proposition}
-
-\begin{proof}
-    Przeprowadzimy rozumowanie nie wprost.
-    Załóżmy, że istnieje ciąg $K_n$ węzłów alternujących o~tym samym wielomianie Alexandera $\Delta_K(t)$.
-    Wszystkie jego wyrazy mają ten sam wyznacznik, ponieważ $\det K_n = |\Delta_K(-1)|$.
-    Z twierdzenia \ref{thm:bankwitz} (Bankwitza) wynika, że indeks skrzyżowaniowy węzłów $K_n$ jest wspólnie ograniczony: $c_k \le \det K_n = \det K$.
-
-    To prowadzi do sprzeczności: węzłów o~danym indeksie skrzyżowaniowym jest tylko skończenie wiele.
-\end{proof}
-
-\begin{proposition}
-    Niech $L$ będzie zorientowanym splotem.
-    Wtedy $\Delta_L(-1) = \pm \det L$.
-\end{proposition}
-
-\begin{proof}
-    Wystarczy porównać definicję dla $\Delta_L$ (\ref{def:alexander_polynomial}) oraz $\det L$ (\ref{def:determinant}).
-\end{proof}
-
-\begin{proposition}
+    \label{prp:alexander_mirror_reverse}
     Niech $L$ będzie zorientowanym splotem.
     Wtedy $\Delta_{mL}(t) = \Delta_L(1/t) = \Delta_{rL}(t)$.
 \end{proposition}
@@ -129,6 +106,18 @@ Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, s
     \end{equation}
     Pierwsze równanie z~$t$ zamienionym na $1/t$ staje się drugim równaniem przemnożonym przez $-1/t$.
     Dowód drugiej równości przebiega analogicznie.
+\end{proof}
+
+Nasz niezmiennik nie wykrywa niewęzła.
+Na przykład $11_{471} = 11n_{34}$, $11_{473} = 11n_{42}$ albo $(-3, 5, 7)$-precel posiadają trywialny wielomian Alexandera, zjawisko to nie występuje wśród nietrywialnych węzłów o co najwyżej 10 skrzyżowaniach.
+
+\begin{proposition}
+    Niech $L$ będzie zorientowanym splotem.
+    Wtedy $\Delta_L(-1) = \pm \det L$.
+\end{proposition}
+
+\begin{proof}
+    Wystarczy porównać definicję dla $\Delta_L$ (\ref{def:alexander_polynomial}) oraz $\det L$ (\ref{def:determinant}).
 \end{proof}
 
 \begin{proposition}
@@ -225,6 +214,19 @@ Takim węzłem jest między innymi  $(-3, 5, 7)$-precel (patrz \cite{adams94}, s
         \deg \Delta_K(t) < c(K).
     \end{equation}
 \end{proposition}
+
+\begin{proposition}
+    Tylko skończenie wiele węzłów alternujących może mieć ten sam wielomian Alexandera.
+\end{proposition}
+
+\begin{proof}
+    Przeprowadzimy rozumowanie nie wprost.
+    Załóżmy, że istnieje ciąg $K_n$ węzłów alternujących o~tym samym wielomianie Alexandera $\Delta_K(t)$.
+    Wszystkie jego wyrazy mają ten sam wyznacznik, ponieważ $\det K_n = |\Delta_K(-1)|$.
+    Z twierdzenia \ref{thm:bankwitz} (Bankwitza) wynika, że indeks skrzyżowaniowy węzłów $K_n$ jest wspólnie ograniczony: $c_k \le \det K_n = \det K$.
+
+    To prowadzi do sprzeczności: węzłów o~danym indeksie skrzyżowaniowym jest tylko skończenie wiele.
+\end{proof}
 
 Przedstawimy teraz kilka innych definicji, które prowadzą do tego samego niezmiennika.
 
