@@ -150,7 +150,11 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~bia�
 
 \begin{lemma}
     Niech $D$ będzie spójnym diagramem splotu o~$n$ skrzyżowaniach.
-    Wtedy mamy nierówność $|s_+D|+|s_-D|\le n+2$, z~równością dla zredukowanego i~alternującego $D$.
+    Wtedy
+    \begin{equation}
+        |s_+D|+|s_-D|\le n+2,
+    \end{equation}
+    z~równością gdy diagram $D$ jest alternujący i~zredukowany.
 \end{lemma}
 
 \begin{proof}
@@ -163,9 +167,15 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~bia�
     Wtedy zachodzi $|s_+D'| = |s_+D|$, ale $|s_-D'|=|s_-D|\pm 1$, ponieważ $s_-D'$ powstaje z~$s_-D$ przez zastąpienie pewnej części
     $\LittleRightSmoothing$ z~$\LittleLeftSmoothing$.
     To rozrywa jedną krzywą na dwa kawałki lub scala dwie krzywe w~jedną.
-    Teraz $|s_+D|+|s_-D| = |s_+D'|+|s_-D'|\pm 1 \le (n-1)+2\pm 1 \le n+2$ (pierwsza nierówność wynika z~założenia indukcyjnego).
+    Teraz z założenia indukcyjnego wynika
+    \begin{equation}
+    |s_+D|+|s_-D|
+    =   |s_+D'| + |s_-D'| \pm 1
+    \le (n - 1) + 2 \pm 1
+    \le n + 2.
+    \end{equation}
 
-    Załóżmy, że $D$ jest spójny, alternujący i~zredukowany.
+    Załóżmy, że $D$ jest spójny, alternujący oraz zredukowany.
     Musimy pokazać, że ostatnie dwie nierówności tak naprawdę są równościami.
     Pierwsza wynika z~tego, że $D'$ jest spójny, alternujący i~zredukowany.
     Z drugiej strony $|s_-D'|=|s_-D|-1$, ponieważ przejście od $s_-D$ do $s_-D'$ skleja dwa czarne obszary.
