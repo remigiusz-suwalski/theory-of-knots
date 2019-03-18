@@ -9,6 +9,15 @@ wraz z~różniczkami, morfizmami $\partial_n \colon C_n \to C_{n-1}$ takimi,
 że złożenie $\partial_{n-1} \circ \partial_n = 0$ jest trywialne.
 Iloraz $\ker \partial_n / \operatorname{im} \partial_{n+1}$ nazywamy $n$-tą grupą homologii, $H_n$.
 
+Innym narzędziem wykrywającym niewęzły jest homologia Chowanowa (opisana później),
+jak pokazał Kronheimer z~Mrówką \cite{kronheimer11}.
+Bar-Natan, topolog izraelski, napisał program liczący te homologie szybko \cite{barnatan07},
+zapewne w~czasie $O(\exp(c \sqrt n))$, dla diagramu o~$n$ skrzyżowaniach.
+Nie możemy liczyć na istotne przyspieszenie:
+znalezienie przybliżenia wielomianu Jonesa jest problemem \#P-trudnym (\cite{kuperberg15}, \cite{vertigan05}),
+a przy znanych homologiach -- wręcz trywialnym.
+Patrz też \ref{jones_sharp_p_hard}.
+
 % Przykładem takiego obiektu jest kompleks symplicjalny
 % Kompleks symplicjalny: para $K = (V, P)$, gdzie $P \subseteq \mathfrak P(V)$ jest
 % taką rodziną skończonych podzbiorów zamkniętą na branie podzbiorów, że $v \in V \implies \{v\} \in P$.
