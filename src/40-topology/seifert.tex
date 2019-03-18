@@ -143,25 +143,72 @@ Uwaga: sploty też posiadają powierzchnie Seiferta, ale odwrócenie tylko jedne
 Skupimy się wreszcie na genusie węzła.
 Do matematyki wprowadził go Seifert w~1934 roku.
 
-\begin{definition}
-    Genusem węzła $K$ nazywamy minimalny genus jego powierzchni Seiferta.
+\begin{definition}[3-genus]
+    Niech $K$ będzie węzłem.
+    Minimalny genus spośród wszystkich powierzchni Seiferta węzła $K$ nazywamy 3-genusem i oznaczamy $g$.
 \end{definition}
 
-To daje namiastkę tego, dlaczego wyznaczenie genusu jest trudne.
-W rzeczywistości jest jeszcze gorzej: w~1986 Morton pokazał, że genus pewnych węzłów nie jest realizowany przez żaden diagram (do którego stosuje się algorytm Seiferta), choćby $10_{165}$.
-Następujący przypadek stanowi wyjątek: algorytm Seiferta zastosowany do alternującego diagramu zawsze daje powierzchnię o~minimalnej powierzchni.
-Najprostszy dowód pochodzi od Davida Gabaia.
-
-\begin{example}
-    Dubel Whiteheada dowolnego nietrywialnego węzła posiada genus $1$.
-\end{example}
-
-Z pracy Mortona wynika, że algorytm Seiferta zastosowany do dubla trójlistnika produkuje powierzchnie o~genusie co najmniej $3$ (to dolne ograniczenie oparte jest o~wielomian HOMFLY).
-Patrz \cite{morton86}.
+Znalezienie 3-genusu dowolnego węzła sprawia te same trudności, co wyznaczenie jego liczby gordyjskiej.
+Dowolna powierzchnia Seiferta zadaje ograniczenie z góry.
+Z dołu 3-genus można szacować przy użyciu wielomianu Alexandera:
 
 \begin{proposition}
-\label{genus_one}
-    Dokładnie jeden węzeł posiada zerowy genus: niewęzeł.
+    Niech $K$ będzie węzłem.
+    Wtedy $\operatorname{span} \Delta(t) \le 2g$.
+\end{proposition}
+
+To dolne ograniczenie jest realizowane przez pewną powierzchnię Seiferta dla każdego pierwszego węzła o~co najwyżej 11 skrzyżowaniach poza siedmioma wyjątkami: 11n42, 11n67, 11n97 ($g = 2$), 11n34, 11n45, 11n73 oraz 11n152 ($g=3$).
+Jeżeli nie powoduje to nieporozumień, zamiast 3-genus można pisać po prostu genus.
+
+Czy w definicji genusu można ograniczyć się do powierzchni Seiferta, które pochodzą od algorytmu Seiferta?
+Niestety, poza pewnymi wyjątkami, nie.
+Zanim przekonamy się, dlaczego tak jest, zdefiniujmy jeszcze dwa niezmienniki.
+
+\begin{definition}[genus kanoniczny]
+    Niech $K$ będzie węzłem.
+    Minimalny genus spośród wszystkich powierzchni Seiferta węzła $K$, które pochodzą z~algorytmu Seiferta, nazywamy genusem klasycznym i~oznaczamy $g_c$.
+\end{definition}
+
+Algorytm Seiferta zastosowany wobec dubla trójlistnika produkuje powierzchnie o genusie co najmniej $3$ (ograniczenie związane z wielomianem HOMFLY, znalazł je Morton), ale sam węzeł ma genus równy $1$.
+
+Pod koniec lat pięćdziesiątych Crowell i~Murasugi niezależnie zauważyli, że algorytm Seiferta zastosowany do alternującego diagramu zawsze daje powierzchnię o~minimalnej powierzchni.
+Ich kombinatoryczne uzasadnienie było dość zawiłe, elementarny dowód podał Gabai w \cite{gabai86}.
+
+\begin{definition}[genus wolny]
+    Niech $K$ będzie węzłem.
+    Minimalny genus spośród powierzchni Seiferta węzła $K$, których dopełnienie w 3-sferze jest \emph{ciałem z rączkami} (handlebody, czyli ma wolną grupę podstawową), nazywamy genusem wolnym i~oznaczamy $g_f$.
+\end{definition}
+
+Dopełnienie powierzchni Seiferta jest zawsze handlebody, dlatego też mamy oczywiste nierówności $g \le g_f \le g_c$.
+Morton w 1986 roku pokazał, że genus pewnych węzłów nie jest realizowany przez żaden diagram do którego stosuje się algorytm Seiferta, choćby $10_{165}$.
+Patrz \cite{morton86}.
+Moriah, matematyk izraelski, mniej więcej w tym samym czasie rozwiązał problem postawiony dekadę wcześniej przez Kirby'ego \cite{kirby78}: jak duża może być różnica $g_f - g$?
+
+\begin{proposition}
+    Niech $K$ będzie węzłem, $D_k(K)$ jego dublem Whiteheada z $k \neq 0$ skręceniami, zaś $B_n(K)$ to $n$-krotne nakrycie cykliczne sfery $S^3$ rozgałęzione nad węzłem $K$.
+    Jeżeli ranga pierwszej grupy homologii $B_{|4k+1|}(K)$ wynosi $r$, to
+    \begin{equation}
+        g_f(D_k(K)) \ge \frac {2r-1} {|8k+2|}.
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    Praca \cite{moriah87}.
+    Dowód opiera się na chirurgii węzłów i splotów w sferze $S^3$.
+\end{proof}
+
+\begin{corollary}
+    Niech $K$ bedzie sumą spójną $n$ trójlistników, połóżmy $k = -1$.
+    Wtedy pierwsza grupa homologii ma rangę $r = 2n$ i~genus wolny jest nieograniczony
+    \begin{equation}
+        g_f(D_{-1}(3_1^n)) \ge \frac {4n-1} {6},
+    \end{equation}
+    podczas gdy zwykły genus to $g(D_{-1}(3_1^n)) = 1$.
+\end{corollary}
+
+\begin{proposition}
+    \label{genus_one}
+    Genus wykrywa niewęzły: $K$ jest niewęzłem wtedy i tylko wtedy, gdy $g(K) = 0$.
 \end{proposition}
 
 \begin{proof}
