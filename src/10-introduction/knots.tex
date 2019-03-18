@@ -223,6 +223,39 @@ z kombinatorycznego punktu widzenia wygodniej jest rysować je na  płaszczyźni
 \end{definition}
 
 Nierozwiązanym problemem jest podanie definicji węzła alternującego, która nie odnosi się bezpośrednio do diagramów.
+Sundberg oraz Thistlethwaite pokazali w 1998 roku, że liczba splotów alternujących rośnie wykładniczo (\cite{sundberg98}):
+
+\begin{proposition}
+    Niech $a_n$ oznacza liczbę pierwszych, alternujących supłów o~$n$ skrzyżowaniach.
+    Wtedy
+    \begin{equation}
+        a_n \sim (3c_1/4\sqrt{\pi})n^{-5/2}\lambda^{n-3/2},
+    \end{equation}
+    gdzie zarówno $c_1$, pierwszy współczynnik rozwinięcia Taylora funkcji $\Phi(\eta)$ zdefiniowanej w \cite{sundberg98}, jak i $\lambda$ są jawnie znanymi stałymi:
+    \begin{align}
+        c_1 & = \sqrt{\frac{5^7 \cdot (21001 + 371 \sqrt{21001})^3}{2 \cdot 3^{10} \cdot (17 + 3\sqrt{21001})^5}} \\
+        \lambda & = \frac {1}{40} (101 + \sqrt{21001})
+    \end{align}
+    Niech $A_n$ oznacza liczbę pierwszych, alternujących splotów o $n$ skrzyżowaniach.
+    Wtedy $A_n \approx \lambda^n$, dokładniej: jeśli $n \ge 3$, to
+    \begin{equation}
+        \frac{a_{n-1}}{16n - 24} \le A \le \frac{a_n - 1}{2}.
+    \end{equation}
+\end{proposition}
+
+Poniższy fakt stanowi jedynie szokującą ciekawostkę i także pochodzi z pracy \cite{sundberg98}.
+
+\begin{proposition}
+    Niech $a_n$ oznacza liczbę pierwszych, alternujących supłów o~$n$ skrzyżowaniach.
+    Wtedy funkcja tworząca $f(z) = \sum_n a_n z^n$ spełnia równanie
+    \begin{equation}
+    f(1+z) - f(z)^2 - (1+f(z))q(f(z)) -z - \frac{2z^2}{1-z} = 0,
+    \end{equation}
+    gdzie $q(z)$ jest pomocniczą funkcją
+    \begin{equation}
+        q(z) = \frac{2z^2 - 10z - 1 + \sqrt{(1-4z)^3}} {2(z+2)^3} - \frac{2}{1+z} -z + 2.
+    \end{equation}
+\end{proposition}
 
 %Niestety pomimo upływu czasus, nikt nie napisał komputerowego programu realizującego ten algorytm (stan na 1994).
 %Może podejmie się tego Czytelnik?
@@ -315,17 +348,6 @@ Jak wynika z~pierwszej pracy Taita, początkowo nie wierzono, że takich w~ogól
 Dowód istnienia znaleziono dopiero w~1930 roku, niealternujące są $8_{19}$, $8_{20}$, $8_{21}$, ale nie pierwsze węzły o mniejszej liczbie skrzyżowań.
 Little pracował przez sześć lat (1893 -- 1899) i~znalazł 43 niealternujące węzły o~10 skrzyżowaniach.
 Żadnego nie pominął, ale trafił mu się jeden duplikat.
-Sundberg, Thistlethwaite pokazali w 1998 roku, że stosunek liczby splotów alternujących do wszystkich maleje wykładniczo (\cite{sundberg98}):
-
-\begin{proposition}
-    Niech $a_n$ oznacza liczbę pierwszych, alternujących supłów o $n$ skrzyżowaniach.
-    Wtedy $a_n \sim (3c_1/4\sqrt{\pi})n^{-5/2}\lambda^{n-3/2}$, gdzie $c_1$ i $\lambda = (101 + \sqrt{21001})/40$ są jawnie znanymi stałymi.
-    Niech $A_n$ oznacza liczbę pierwszych, alternujących splotów o $n$ skrzyżowaniach.
-    Wtedy $A_n \approx \lambda^n$, dokładniej: jeśli $n \ge 3$, to
-    \[
-        \frac{a_{n-1}}{16n - 24} \le A \le \frac{a_n - 1}{2}.
-    \]
-\end{proposition}
 
 W kolejnych dziesięcioleciach nie nastąpił znaczący postęp, zarówno w~rozszerzaniu tablic jak i~sprawdzaniu tych już istniejących.
 Haseman w~1918 roku znalazł achiralne węzły o~12 i~14 skrzyżowaniach.
