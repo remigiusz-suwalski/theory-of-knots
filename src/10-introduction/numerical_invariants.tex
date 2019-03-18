@@ -13,19 +13,30 @@ oraz różne wartości niezmiennika $\Rightarrow$ różne sploty.
 Z angielskiego \emph{crossing number}.
 
 \begin{definition}
-    Indeks skrzyżowaniowy $\operatorname{cr}(L)$ splotu $L$ to
-    minimalna liczba skrzyżowań widocznych na diagramie,
-    który przedstawia splot $L$.
+    Niech $L$ będzie splotem.
+    Minimalną liczbę skrzyżowań widocznych na diagramie, który przedstawia splot $L$, nazywamy indeksem skrzyżowaniowym i~oznaczamy $\operatorname{cr}(L)$.
 \end{definition}
 
-Jeśli $K_1, K_2$ są alternującymi węzłami o~$c_1, c_2$ skrzyżowaniach, to istnieje alternujący diagram ich sumy $K_1 \shrap K_2$ o~$c_1 + c_2$ skrzyżowaniach.
+Pytanie, czy indeks skrzyżowaniowy jest addytywny, to jeden z najstarszych problemów teorii węzłów.
+
+\begin{conjecture}
+    \label{cnj:crossing_additive}
+    Niech $K$ oraz $L$ będą węzłami.
+    Wtedy $\operatorname{cr}(K) + \operatorname{cr}(L) = \operatorname{cr}(K \shrap L)$.
+\end{conjecture}
+
+Oto częściowe odpowiedzi.
+Jeśli $K_1, K_2$ są alternującymi węzłami o~odpowiednio $c_1, c_2$ skrzyżowaniach, to istnieje alternujący diagram ich sumy $K_1 \shrap K_2$ o~$c_1 + c_2$ skrzyżowaniach.
+Kauffman, Murasugi oraz Thistlethwaite pokazali niezależnie, że diagram ten jest minimalny (patrz na przykład \cite{murasugi87}, wniosek 6).
+Thistlethwaite rozszerzył wynik do tak zwanych węzłów adekwatnych w \cite{thistlethwaite88}.
+Wreszcie Gruber w \cite{gruber03} udowodnił hipotezę \ref{cnj:crossing_additive} dla węzłów torusowych.
+
 Lackenby w~pracy \cite{lackenby09} pokazał, że dla pewnej stałej $N \le 152$ zachodzi
-\[
+\begin{equation}
     \frac 1 N \sum_{i=1}^n \operatorname{cr} K_i \le \operatorname{cr} \left(\bigshrap_{i=1}^n K_i\right) \le \sum_{i=1}^n \operatorname{cr} K_i.
-\]
+\end{equation}
 (Tylko pierwsza nierówność jest ciekawa).
-Jego argumentu (wykorzystującego powierzchnie normalne) nie można poprawić tak, by otrzymać stałą $N = 1$.
-Wiadomo jednak, że indeks skrzyżowaniowy jest addytywny dla niektórych klas węzłów: alternujących (\cite{kauffman88}), adekwatnych\footnote{Węzły adekwatne nie pojawiają się na żadnej innej stronie tej książki.} czy torusowych (\cite{gruber03}).
+Jego argumentu wykorzystującego powierzchnie normalne nie można poprawić tak, by otrzymać stałą $N = 1$.
 
 \begin{proposition} \label{prp:bankwitz}
     Wyznacznik splotu alternującego $L$ jest nie mniejszy od jego indeksu skrzyżowaniowego: $\det L \ge \operatorname{cr} L$.
