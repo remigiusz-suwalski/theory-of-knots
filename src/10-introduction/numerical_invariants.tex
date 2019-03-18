@@ -324,6 +324,37 @@ Na mocy twierdzenia Jordana $\operatorname{lk}$ jest funkcją o całkowitych war
     Na mocy twierdzenia Reidemeistera dowód został zakończony.
 \end{proof}
 
+\subsection{Spin} % (fold)
+\label{sub:writhe}
+Przypomnijmy, że znak skrzyżowania na diagramie to liczba $1$ lub $-1$ (definicja \ref{sign_def}).
+
+\begin{definition}[spin]
+    \index{spin}
+    Wielkość
+    \begin{equation}
+        w(D) = \sum_c \operatorname{sign} c,
+    \end{equation}
+    gdzie sumowanie przebiega po wszystkich skrzyżowaniach diagramu $D$ zorientowanego splotu lub węzła, nazywamy spinem.
+    Z angielskiego \emph{writhe}.
+\end{definition}
+
+Co ważne, spin nie jest niezmiennikiem splotów ani węzłów.
+Para Perko przedstawia ten sam węzeł z~minimalną liczbą skrzyżowań i~spinem równym siedem lub dziewięć.
+Dzięki temu przez wiele lat nie została dostrzeżona.
+Spin jest za to niezmiennikiem węzłów alternujących, mówi o~tym druga hipoteza Taita.
+
+\begin{lemma}
+    Spin nie zależy od orientacji.
+    Tylko I ruch Reidemeistera zmienia spin: $w(\MalyreidemeisterIa) = w(\MalyreidemeisterIb )-1$, pozostałe ruchy nie mają na niego wpływu.
+\end{lemma}
+
+%\begin{proof}
+    %Proste ćwiczenie.
+%\end{proof}
+
+% Koniec sekcji Spin
+
+
 Kawauchi definiuje jeszcze \emph{twisting number}: sumę spinów po wszystkich składowych.
 
 % Koniec podsekcji Indeks zaczepienia
