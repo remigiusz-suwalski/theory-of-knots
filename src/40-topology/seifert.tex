@@ -169,10 +169,21 @@ Zanim przekonamy się, dlaczego tak jest, zdefiniujmy jeszcze dwa niezmienniki.
     Minimalny genus spośród wszystkich powierzchni Seiferta węzła $K$, które pochodzą z~algorytmu Seiferta, nazywamy genusem klasycznym i~oznaczamy $g_c$.
 \end{definition}
 
-Algorytm Seiferta zastosowany wobec dubla trójlistnika produkuje powierzchnie o genusie co najmniej $3$ (ograniczenie związane z wielomianem HOMFLY, znalazł je Morton), ale sam węzeł ma genus równy $1$.
-
 Pod koniec lat pięćdziesiątych Crowell i~Murasugi niezależnie zauważyli, że algorytm Seiferta zastosowany do alternującego diagramu zawsze daje powierzchnię o~minimalnej powierzchni.
 Ich kombinatoryczne uzasadnienie było dość zawiłe, elementarny dowód podał Gabai w \cite{gabai86}.
+
+Dubel trójlistnika ma genus równy $1$, ale algorytm Seiferta zastosowany wobec węzła produkuje powierzchnie o genusie co najmniej $3$, jak przewiduje ograniczenie znalezione przez Mortona w \cite{morton86} jako twierdzenie 2:
+
+\begin{proposition}
+    Niech $P(v, z)$ będzie wersją wielomianu HOMFLY spełniającą zależność
+    \begin{equation}
+        \frac 1v P_+ - vP_- = zP_0.
+    \end{equation}
+    Wtedy $M = \max \deg_z P(v, z) \le 2g_c$.
+\end{proposition}
+
+Nierówność Mortona jest równością dla wielu klas węzłów, w tym alternujących (Crowell, Murasugi), jednorodnych (które stanowią uogólnienie węzłów alternujących, Crowell w \cite{cromwell89}), whiteheadowskich dubli węzłów dwumostowych (Nakamura w \cite{nakamura06}, Tripp w \cite{tripp02}) albo precli (Brittenham w \cite{brittenham07}).
+Stojmenow pokazał, że staje się równością dla węzłów o co najwyżej 12 skrzyżowaniach i znalazł przykład węzła, dla którego jest ostra.
 
 \begin{definition}[genus wolny]
     Niech $K$ będzie węzłem.
