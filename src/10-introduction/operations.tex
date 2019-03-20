@@ -130,19 +130,17 @@ Dowód to, jak zwykle, mozolne operacje na macierzach.
 \label{sub:knot_sum}
 Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wzdłuż brzegu.
 
-\begin{definition}
+\begin{definition}[suma niespójna]
     \index{suma!niespójna}
-    Niech $L_1, L_2$ będą splotami.
-    Ich \textbf{sumą niespójną}, $L_1 \sqcup L_2$,
-    jest teoriomnogościowa suma rozłączna splotów
-    $L_1$ i~$L_2$ leżących po różnych stronach pewnej płaszczyzny.
+    Niech $L_1$ oraz $L_2$ będą splotami, które leżą po różnych stronach ustalonej płaszczyzny w przestrzeni $\R^3$.
+    Teoriomnogościową sumę $L_1 \sqcup L_2$ nazywamy sumą niespójną splotów.
 \end{definition}
 
-\begin{definition}
+\begin{definition}[suma spójna]
     \index{suma!spójna}
-    Nacinając dwa zorientowane węzły w~dwóch bliskich punktach i
-    ponownie zszywając je dwoma łukami nieprzecinającymi już
-    istniejących otrzymujemy \textbf{sumę spójną}, $K_1 \shrap K_2$.
+    Niech $K_1, K_2$ będą zorientowanymi węzłami.
+    Natnijmy każdy z nich w dwóch punktach tego samego krótkiego łuku, a następnie zszyjmy dwoma łukami, które nie przecinają już istniejących, jak na obrazku.
+    Otrzymany węzeł nazywamy sumą spójną węzłów $K_1$ oraz $K_2$.
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
         \begin{knot}[clip width=5, flip crossing/.list={5}, ignore endpoint intersections=false,]
@@ -218,9 +216,9 @@ Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wz
         \]
 \end{definition}
 
-Uogólnieniem tego działania oraz
-(nieopisanej w~naszej pracy) operacji \emph{plumbing}
-jest suma Murasugiego, dobrze wyjaśniona w~czwartym rozdziale \cite{kawauchi96}.
+Uogólnieniem sumy spójnej oraz (nieopisanej w~naszej pracy) operacji \emph{plumbing} jest suma Murasugiego, dobrze wyjaśniona w~czwartym rozdziale książki \cite{kawauchi96}.
+W topologii rozważa się podobną operację dla dwóch $n$-wymiarowych rozmaitości: z~każdej z nich usuwa się kulę, po czym skleja wzdłuż brzegu kuli.
+Kiedy zajmujemy się węzłami, nie interesuje nas jednak struktura rozmaitości (gdyż każdy węzeł jest równoważny z okręgiem), ale zanurzenie w~otaczającą przestrzeń.
 
 Ważna jest orientacja składników:
 suma dwóch trójlistników może być,
