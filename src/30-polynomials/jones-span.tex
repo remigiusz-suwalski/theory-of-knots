@@ -38,14 +38,16 @@ W dowodzie hipotezy Taita użyjemy rozpiętości wielomianu Jonesa.
 Zajmiemy się teraz wzorem pozwalającym na wyznaczenie nawiasu Kauffmana dowolnego splotu o~$n$ skrzyżowaniach przez dodanie $2^n$ wyrazów (które odpowiadają digramom bez skrzyżowań).
 Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
 
-\begin{definition}
+\begin{definition}[stan]
     Niech $D$ będzie diagramem splotu.
-    \begin{enumerate}
-        \item \emph{Stan} $D$ to funkcja $s$ ze zbioru skrzyżowań $D$ w~$\{-1, +1\}$.
-        \item Dla ustalonego stanu $s$ diagramu $D$ przez $sD$ rozumiemy diagram powstały przez wygładzenie
-        wszystkich skrzyżowań zgodnie z~ich nowym znakiem ($\pm 1$), wtedy $|s|$ to suma wartości $s$.
-        \item Diagram dla $sD$ jest sumą zamkniętych krzywych, ich liczbę oznaczamy przez $|sD|$.
-    \end{enumerate}
+    Każdą funkcję $s$ ze zbioru skrzyżowań diagramu $D$ o wartościach $\pm 1$ nazywamy stanem.
+    Sumę wszystkich wartości $s$ oznaczamy $|s|$.
+\end{definition}
+
+\begin{definition}
+    Niech $D$ będzie diagramem splotu, zaś $s$ jego stanem.
+    Diagram powstały przez wygładzenie wszystkich skrzyżowań zgodnie z~ich stanem oznaczamy $sD$.
+    Przez $|sD|$ rozumiemy liczbę zamkniętych, nieprzecinających się krzywych, z których składa się nowy diagram.
 \end{definition}
 
 \begin{proposition}[o sumowaniu stanów]
@@ -54,7 +56,7 @@ Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
     \begin{equation}
         \langle D\rangle = \sum_s \underbrace{(-A^2-A^{-2})^{|sD|-1} A^{|s|}}_{\langle D \mid s \rangle},
     \end{equation}
-    gdzie sumujemy po wszystkich stanach $s$ dla $D$.
+    gdzie sumujemy po wszystkich stanach $s$ dla diagramu $D$.
 \end{proposition}
 
 \begin{proof}
