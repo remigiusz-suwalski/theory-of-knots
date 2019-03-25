@@ -150,6 +150,44 @@ Nietrywialne węzły torusowe są pierwsze i~odwracalne, ale mają niezerową sy
 \end{proposition}
 
 Dowód zawiera praca \cite{litherland81}.
+Borodzik niedawno przyjrzał się dokładniej sygnaturom węzłów torusowych.
+W pracy \cite{borodzik10} napisanej z K. Oleszkiewiczem pokazał, że nie istnieje wymierna funkcja $R(p, q)$, która pokrywałaby się z sygnaturą węzła torusowego $T_{p, q}$ dla wszystkich względnie pierwszych i nieparzystych $p$ oraz $q$.
+Uwaga: definicja funkcji $s$ z \cite{borodzik10} zawiera złośliwą literówkę.
+
+\begin{proposition}
+    Niech $p, q$ będą względnie pierwszymi liczbami, zaś $C \in [0, 1)$ stałą taką, że $Cpq$ nie jest liczbą całkowitą.
+    Przyjmijmy $z = \exp (2 \pi i C)$ i zdefinujmy pomocnicze funkcje: niech $\{x\} = x - \lfloor x \rfloor$ oznacza część ułamkową, zaś
+    \begin{equation}
+        \langle x \rangle = \begin{cases}
+            0 & \text{dla } x \in \Z \\
+            \{x\} - 1/2 & \text{dla } x \not \in \Z
+        \end{cases}
+    \end{equation}
+    funkcję piłę.
+    Dalej, określmy sumę Dedekinda
+    \begin{equation}
+        s(p, q, x) = \sum_{j = 0}^{q-1} \left\langle \frac {j}{q} \right\rangle \left\langle \frac {jp}{q} + x \right\rangle.
+    \end{equation}
+    Przy tych oznaczeniach, sygnatura węzła $(p, q)$-torusowego wyznacza się wzorem
+    \begin{align}
+        \sigma(z) & = \frac{1}{3pq} \left (p^2 + q^2 + 6 \langle Cpq \rangle^2 - \frac {1}{2} \right)  + 2(C^2 - C) pq + (2-4C) \langle Cpq \rangle + {} \\
+        & - 2s(p, q, Cp) - 2s(q, p, Cq) - 2s(p, q, p-pC) - 2s(q, p, q-qC). \nonumber
+    \end{align}
+\end{proposition}
+
+\begin{corollary}
+    Jeśli $p, q$ są nieparzyste i względnie pierwsze, to
+    \begin{equation}
+        \sigma(T_{p,q}) = \frac{1}{6pq} + \frac{2p}{3q} + \frac{2q}{3p} - \frac{pq}{2} - 4(s(2p, q, 0) + s(2q, p, 0)) - 1.
+    \end{equation}
+\end{corollary}
+
+\begin{corollary}
+    Jeśli $p$ jest nieparzyste, zaś $q > 2$ parzyste, to
+    \begin{equation}
+        \sigma(T_{p,q}) = - \frac{pq}{2} + 4s(2p, q, 0) - 8s(p, q, 0) + 1.
+    \end{equation}
+\end{corollary}
 
 \begin{proposition}[Murasugi, 1991]
     Mamy $cr(K_{q,r}) = \min\{|q|(|r| -1), |r|(|q|-1)\}$.
