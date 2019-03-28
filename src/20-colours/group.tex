@@ -11,29 +11,63 @@
     Splot $L$ koloruje się modulo $n$, wtedy i~tylko wtedy gdy istnieje nietrywialny homomorfizm $\operatorname{Col}(L) \to \Z/n\Z$.
 \end{proposition}
 
+\begin{proof}
+    Niech $a$ będzie ustalonym łukiem na diagramie splotu $L$ z definicji \ref{colgrp_def}.
+    Funkcja $\varphi \colon \operatorname{Col}(L) \to \Z/n\Z$ jest nietrywialnym morfizmem, jeśli przyjmuje choć raz wartość różną od zera, spełnia warunek $\varphi(a) = 0$ i~dla każdego skrzyżowania prawdziwe jest równanie
+    \begin{equation}
+        \varphi(x_j) + \varphi(x_k) - 2\varphi(x_i) = 0
+    \end{equation}
+    przy oznaczeniach z definicji \ref{def:colour_equation}.
+    To pokazuje, że niezerowe morfizmy $\operatorname{Col}(L) \to \Z/n\Z$ to dokładnie kolorowania modulo $n$, z kolorem $\varphi(l)$ na łuku $l$.
+\end{proof}
+
 \begin{proposition}
     Grupa kolorująca (z dokładnością do izomorfizmu) jest niezmiennikiem węzłów.
 \end{proposition}
+
+\begin{proof}[Szkic dowodu]
+    Do wyznaczenia grupy kolorującej potrzebujemy diagramu $D$ z wybranym łukiem $a$.
+    Musimy zatem sprawdzić, że ustalenie innego diagramu lub łuku prowadzi do grupy izomorficznej z wyjściową.
+    Dla diagramów wystarczy sprawdzić, co dzieje się podczas ruchów Reidemeistera jak w dowodzie faktu \ref{color_invariant}.
+    W przypadku łuku rozumowanie przebiega analogicznie do dowodu lematu \ref{lem:colouring_arc}.
+\end{proof}
+
+Oto metoda pozwalająca na znalezienie grupy kolorującej splotu $L$.
+Wybierzmy diagram dla $L$ bez zamkniętych krzywych, etykietowanie $x_0, \ldots, x_m$ dla łuków oraz $0, \ldots, m$ dla skrzyżowań.
+Utwórzmy macierz kolorującą $A$.
+Grupy abelowe $\operatorname{Col}(L)$ oraz $\Z^m / A^t \Z^m$ są izomorficzne, wynika to bezpośrednio z~definicji macierzy $A$.
+Następnie znajdźmy macierz diagonalną $D = \operatorname{diag}(d_1, \ldots, d_m)$, taką że $D = RAC$, gdzie całkowite macierze $R, C$ mają wyznacznik $1$.
+Z~algebry liniowej wiemy, że to zawsze się uda: macierz $D$ nazywamy postacią normalną Smitha.
+Wtedy funkcja
+\begin{equation}
+    f(x) \colon \Z^m/A^t \Z^m \to \Z^m / D\Z^m, \quad f(x) = C^t x
+\end{equation}
+stanowi izomorfizm, a~skoro $D$ jest macierzą diagonalną, to 
+\begin{equation}
+    \Z^m/D\Z^m \cong \bigoplus_{k=1}^m \Z/{|d_k|} \Z
+\end{equation}
+Macierz $A$ można zastąpić przez macierz Goeritza $G$.
+Podsumujmy.
+
+\begin{proposition}
+    Niech $L$ będzie splotem z~macierzą kolorującą $A$, zaś $R, C$ macierzami o wyznaczniku $1$ tak, że macierz $D=RAC$ jest diagonalna, postaci $\operatorname{diag}(d_1, \ldots, d_n)$.
+    Wtedy grupy $\operatorname{Col}(L)$ oraz $\Z/|d_1| \Z \times \ldots \times \Z/|d_n| \Z$ są izomorficzne.
+\end{proposition}
+
+\begin{corollary}
+    Grupa kolorująca splotu jest skończona wtedy i tylko wtedy, gdy wyznacznik tego splotu jest niezerowy.
+\end{corollary}
+
+\begin{proof}
+    Przy oznaczeniach z powyższego faktu, $\det(L) = |d_1| \cdot \ldots \cdot |d_n|$.
+\end{proof}
 
 \begin{corollary} \label{det_invariant}
     Wyznacznik jest niezmiennikiem splotów.
 \end{corollary}
 
-Grupa jest mocniejszym niezmiennikiem niż wyznacznik.
-Na przykład węzły $6_1$ oraz $3_1 \shrap 3_1$ mają ten sam wyznacznik, $9$, ale różne grupy kolorujące: odpowiednio $\Z/9$ i $(\Z/3)^2$.
-
-Oto metoda pozwalająca na znalezienie grupy kolorującej splotu $L$.
-Wybierzmy diagram dla $L$ bez zamkniętych krzywych, etykietowanie $x_0, \ldots, x_m$ dla łuków oraz $0, \ldots, m$ dla skrzyżowań.
-Utwórzmy macierz kolorującą $A$.
-Grupy abelowe $\operatorname{Col}(L)$ oraz $\Z^m / A^t \Z^m$ są izomorficzne.
-Następnie znajdźmy macierz diagonalną $D = \operatorname{diag}(d_1, \ldots, d_m)$, taką że $D = RAC$, gdzie całkowite macierze $R, C$ mają wyznacznik $1$ (to tak zwana postać normalna Smitha).
-
-Wtedy funkcja $f(x) = C^tx$ jest izomorfizmem $\Z^m/A^t \Z^m \to \Z^m / D\Z^m$, a~skoro $D$ jest macierzą diagonalną, to $\Z^m/D\Z^m \cong \bigoplus_{k=1}^m \Z/{|d_k|} \Z$.
-Macierz $A$ można zastąpić przez macierz Goeritza $G$.
-
-\begin{proposition}
-    Grupa kolorująca splotu jest skończona, wtedy i~tylko wtedy gdy wyznacznik splotu jest niezerowy.
-\end{proposition}
+Grupa jest istotnie mocniejszym niezmiennikiem niż wyznacznik.
+Na przykład węzły $6_1$ oraz $3_1 \shrap 3_1$ mają ten sam wyznacznik, $9$, ale różne grupy kolorujące: odpowiednio $\Z/9$ i~$(\Z/3)^2$.
 
 Podamy teraz za S. Cyganem przykład nieskończonej rodziny węzłów,
 której elementy rozróżnia właśnie wyznacznik.

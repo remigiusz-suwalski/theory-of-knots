@@ -36,6 +36,9 @@ Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
     \]
 \end{definition}
 
+Dla pewnych splotów nie istnieje żadna liczba naturalna $n$ spełniająca założenia powyższej definicji.
+Nazywa się je czasem niewidzialnymi, dwa węzły do dziesięciu skrzyżowań mają tę własność: $10_{124}$ oraz $10_{153}$.
+
 Metoda ta została odkryta razem z~uogólnieniem do $n$ kolorów przez Ralpha Foxa w~1956, kiedy próbował uczynić teorię węzłów bardziej przystępną\footnote{
     Niech $L$ będzie splotem, zaś $\pi$ grupą podstawową jego dopełnienia.
     Reprezentację $\rho$ dla $\pi$ na $D_{2n}$, grupę diedralną, nazywamy $n$-kolorowaniem Foxa.
@@ -46,21 +49,6 @@ Metoda ta została odkryta razem z~uogólnieniem do $n$ kolorów przez Ralpha Fo
 }
 dla studentów.
 Opierając się tylko na definicji kolorowania oraz ruchach Reidemeistera jesteśmy w~stanie wykazać pierwsze własności niezmiennika.
-
-\begin{proposition}
-    Żaden węzeł nie koloruje się modulo dwa.
-\end{proposition}
-
-\begin{proof}
-    Załóżmy nie wprost, że istnieje nietrywialne kolorowanie.
-    Analiza czterech możliwych skrzyżowań pokazuje,
-    że włókna wychodzące z~tunelu muszą mieć ten sam kolor.
-    Przechodząc wzdłuż węzła widzimy jeden kolor, wbrew założeniu nie wprost.
-\end{proof}
-
-Sploty o~wielu składowych są dwukolorowalne.
-Wystarczy pomalować jedną składową zerem, a~pozostałe jedynkami.
-Sploty rozszczepialne są $n$-kolorowalne dla każdego $n \ge 2$, można skorzystać z~tego samego schematu kolorowania.
 
 \begin{proposition} \label{color_invariant}
     ,,Bycie $n$-kolorowalnym'' jest niezmiennikiem węzłów.
@@ -147,11 +135,40 @@ Sploty rozszczepialne są $n$-kolorowalne dla każdego $n \ge 2$, można skorzys
     \]
 \end{proof}
 
+\begin{lemma}
+    \label{lem:colouring_arc}
+    Niech $D$ będzie diagramem z definicji \ref{def:colour_equation} z wybranym łukiem, zaś $k \in \{0, \ldots, n - 1\}$ pewnym kolorem.
+    Bez straty ogólności możemy założyć, że krótki łuk jest koloru $k$.
+\end{lemma}
+
+Kolorem tym zazwyczaj jest $0$.
+
+\begin{proof}
+    Dodanie tej samej wartości do wszystkich łuków na dobrze pokolorowanym diagramie daje nowy, także dobrze pokolorowany diagram.
+\end{proof}
+
 Trójlistnik koloruje się dokładnie modulo krotności trójki, ósemka zaś -- piątki.
-Pierścienie Boromeuszy nie kolorują się modulo trzy, nie są zatem rozszczepialne.
 Sama kolorowalność nie mówi wiele, splot jest kolorowalny lub nie.
 Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, być może trywialnych, także jest niezmiennikiem (mocniejszym).
-Węzły, których żadne kolorowanie nie odróżnia od niewęzła, nazywa się czasem niewidzialnymi.
+
+\begin{proposition}
+    Żaden węzeł nie koloruje się modulo dwa.
+\end{proposition}
+
+\begin{proof}
+    Załóżmy nie wprost, że istnieje nietrywialne kolorowanie.
+    Analiza czterech możliwych skrzyżowań pokazuje,
+    że włókna wychodzące z~tunelu muszą mieć ten sam kolor.
+    Przechodząc wzdłuż węzła widzimy jeden kolor, wbrew założeniu nie wprost.
+\end{proof}
+
+Sploty o~wielu składowych są dwukolorowalne.
+Wystarczy pomalować jedną składową zerem, a~pozostałe jedynkami.
+Sploty rozszczepialne są $n$-kolorowalne dla każdego $n \ge 2$, można skorzystać z~tego samego schematu kolorowania.
+Pierścienie Boromeuszy nie kolorują się modulo trzy, nie są zatem rozszczepialne.
+
+% TODO: krótkie łuki, uszachowienie. 
+% TODO: suma dobrze oznakowanych równań jest zerem.
 
 Niech $\tau_3(K)$ oznacza liczbę trójkolorowań węzła $K$.
 
@@ -223,7 +240,5 @@ Istnieje prosta klasyfikacja grup, których można użyć do etykietowania.
     Niech $K$ będzie węzłem, $\pi_1$ grupą podstawową jego dopełnienia, zaś $G$ dowolną grupą.
     Następujące warunki są równoważne: $K$ jest $G$-etykietowalny; istnieje surjekcja $\pi_1 \to G$.
 \end{proposition}
-
-
 
 % Koniec sekcji Kolorowanie splotów
