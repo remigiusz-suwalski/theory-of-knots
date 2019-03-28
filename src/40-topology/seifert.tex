@@ -305,14 +305,17 @@ Dysk też ma te własności, więc korzystamy z~klasyfikacji powierzchni (dysk j
 Powrócimy teraz do węzłów pierwszych (definicja \ref{primeknot}).
 
 \begin{proposition}
-    Jeśli genus węzła wynosi $g(K) = 1$, to sam węzeł jest pierwszy.
+    Niech $K$ będzie węzłem.
+    Jeśli $g(K) = 1$, to $K$ jest węzłem pierwszym.
 \end{proposition}
 
 \begin{proof}
-    Załóżmy, że $K=K_1\#K_2$.
-    Wtedy $g(K_1)+g(K_2)=g(K)=1$ na mocy faktu  \ref{genus_sum} o~genusie sumy.
-    Jedyna możliwość: $K_1$ lub $K_1$ ma genus zero, drugi z~nich ma genus $1$. To oznacza, że jeden z~nich jest trywialny, więc $K$ jest pierwszy.
+    Załóżmy nie wprost, że $K = K_1 \# K_2$ jest sumą dwóch nietrywialnych węzłów.
+    Z~faktu \ref{genus_sum} wynika wtedy, że $g(K) = g(K_1) + g(K_2)$.
+    Zatem jeden z węzłów $K_1, K_2$ ma genus zero i jest trywialny, wbrew naszemu założeniu.
 \end{proof}
+
+Implikacja odwrotna jest fałszywa: pięciolistnik jest pierwszy, ale jego genus wynosi $2$.
 
 \begin{proposition}
     Każdy węzeł można zapisać jako suma spójna pewnej liczby węzłów pierwszych (niewęzeł jest sumą pustej rodziny węzłów).
