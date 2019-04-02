@@ -181,46 +181,6 @@ Podobnie nie ma zależności między liczbą mostową oraz genusem.
 
 % Koniec podsekcji Liczba mostowa
 
-\subsection{Liczba warkoczowa} % (fold)
-\label{sub:braid_number}
-\index{liczba!warkoczowa}
-Z angielskiego \emph{braid number}.
-Do zrozumienia tej podsekcji konieczne może być zapoznanie się najpierw z~treścią sekcji \ref{sec:braid} o~ warkoczach.
-
-\begin{definition}
-    Liczba warkoczowa to minimalna liczba pasm, na których można zbudować warkocz, którego domknięciem jest wyjściowy splot.
-\end{definition}
-
-Tylko jeden węzeł ma liczbę warkoczową $1$, jest to niewęzeł.
-Dwuwarkoczowe są dokładnie węzły torusowe typu $(2, n)$ dla $|n| \ge 3$.
-Węzły spełniające $\operatorname{br} (K) = 3$ nie zostały jeszcze sklasyfikowane.
-Liczba warkoczowa splotu zależy od orientacji ogniw i~trudno wyznacza się w~ogólnym przypadku.
-
-\begin{proposition}
-    Węzeł o~$n$ skrzyżowaniach można zapleść na $n - 1$ pasmach.
-\end{proposition}
-
-Powyższe ograniczenie ($\operatorname{b} \le \operatorname{cr} - 1$) nie jest zbyt użyteczne, równość mamy jedynie dla trójlistnika i ósemki.
-Dokładną wartość liczby warkoczowej znamy między innymi dla węzłów torusowych:
-
-\begin{proposition}
-    Indeksem warkoczowym węzła torusowego $T_{p, q}$, $p, q \neq 0$, jest $\min\{|p|, |q|\}$.
-\end{proposition}
-
-\begin{proof}
-    Niech $K$ będzie węzłem torusowym typu $(p,q)$ z~minimalnym przedstawieniem jako warkocz $\beta$.
-    Z konstrukcji domknięcia (czyli dołączenia rozłącznych półokręgów) wynika,
-    że diagram $K$ ma dokładnie $b(K)$ lokalnych maksimów.
-    Definicja indeksu mostowego orzeka, iż $br(K) \le b(K)$.
-    Bez straty ogólności niech $p > q > 0$.
-    Skoro węzeł $K$ powstaje z~$q$-warkocza $(\sigma_{q-1} \ldots \sigma_2\sigma_1)^p$,
-    indeks $b(K)$ nie przekracza $q = br(K)$.
-
-    Skorzystaliśmy z~faktu \ref{torus_bridge}.
-\end{proof}
-
-% Koniec podsekcji Liczba warkoczowa
-
 \subsection{Indeks zaczepienia} % (fold)
 \label{sub:linking_number}
 \begin{definition} \label{sign_def}
