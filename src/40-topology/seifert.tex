@@ -1,47 +1,22 @@
-\section{Genus} % (fold)
-\label{sec:genus}
-W tej sekcji zbadamy bardzo geometryczny niezmiennik węzłów, genus.
-Wyznaczenie genusu konkretnego węzła przysparza wiele trudności, jednak jest on potężnym narzędziem podczas dowodzenia twierdzeń.
-Zaczniemy jednak od przyjrzenia się powierzchniom.
+\section{Macierz Seiferta} % (fold)
+W tej sekcji pogłębimy nasze rozumienie wielomianu Alexandera i~odkryjemy jego powiązania z topologicznymi własnościami węzłów.
+Poznamy także zupełnie nowy sposób na wyznaczanie jego wartości,
+Jak nie jest trudno się domyślić, posłuży do tego macierz Seiferta.
 
+Zaczniemy jednak od przyjrzenia się powierzchniom.
 \begin{definition}
-\index{powierzchnia}
+    \index{powierzchnia}
     Powierzchnia to dwuwymiarowa podrozmaitość topologiczna $M \subseteq \R^3$, czyli obiekt wyglądający lokalnie jak płaszczyzna: każdy punkt $x \in M$ posiada otwarte otoczenie homeomorficzne z~otwartym dyskiem $\{(x,y) : x^2 + y^2 < 1\}$.
 \end{definition}
 
 Przykładami powierzchni są sfera oraz brzeg torusa, ale też koło otwarte albo pierścień $\{(x, y) \in \R^2 : 0 < a < x^2 + y^2 < b\}$.
-Dwa ostatnie przykłady mają brzeg, dwa pierwsze są brzegu pozbawione (nazywamy je powierzchniami zamkniętymi).
+Dwie pierwsze powierzchnie są pozbawione brzegu, dlatego nazywamy je zamkniętymi.
+Otwarte koło oraz pierścień mają brzeg.
+Dokładne znaczenie tych słów tłumaczy teoria rozmaitości, dlatego nie będziemy się w nie zagłębiać.
 
-Rozważane przez nas powierzchnie będą posiadać dodatkowo dwie cechy: ograniczoność oraz orientowalność.
-Ta druga własność sprowadza się na mocy klasyfikacji powierzchni (spójna powierzchnia zamknięta jest sferą, sumą spójną torusów lub sumą spójną rzutowych (rzeczywistych) płaszczyzn) do niezawierania homeomorficznej kopii wstęgi Möbiusa.
-Podane wcześniej powierzchnie są orientowalne.
-
-\begin{definition}
-\index{charakterystyka Eulera}
-    Charakterystyka Eulera $\chi(M) \in \Z$ to niezmiennik
-    topologiczny powierzchni $M$, którego definicji nie podamy.
-    Zamiast tego wymienimy dość reguł,
-    by wyznaczyć go w~interesujących nas przypadkach:
-    \begin{itemize}
-        \item Charakterystyka dysku to $1$.
-        \item $\chi(M_1 \sqcup M_2)=\chi(M_1) + \chi(M_2)$ dla każdych powierzchni $M_1, M_2$.
-        \item Dołączenie paska zmniejsza charakterystykę powierzchni o~$1$.
-        \item Dołączenie dysku do całej składowej spójności brzegu powierzchni zwiększa charakterystykę o~$1$.
-    \end{itemize}
-\end{definition}
-
-\begin{definition}
-\index{genus}
-    Genus powierzchni $M$ posiadającej $c$ składowych spójności brzegu to
-    \[
-        g(M) = 1 - \frac{\chi(M) + c}{2}.
-    \]
-\end{definition}
-
-\begin{proposition}
-    Dwie spójne, zorientowane powierzchnie są homeomorficzne wtedy i~tylko
-    wtedy, gdy mają ten sam genus i~tyle samo składowych spójności brzegu.
-\end{proposition}
+Ograniczymy się za to do powierzchni, które oprócz tego, że zamknięte, są jeszcze ograniczone oraz orientowalne.
+% Ta druga własność sprowadza się na mocy klasyfikacji powierzchni (spójna powierzchnia zamknięta jest sferą, sumą spójną torusów lub sumą spójną rzutowych (rzeczywistych) płaszczyzn) do niezawierania homeomorficznej kopii wstęgi Möbiusa.
+% Podane wcześniej powierzchnie są orientowalne.
 
 Najważniejsze dla nas są powierzchnie Seiferta:
 
@@ -74,13 +49,14 @@ Najważniejsze dla nas są powierzchnie Seiferta:
 
 Nie każde uszachowienie diagramu węzła prowadzi do powierzchni Seiferta:
 widać to po standardowym diagramie trójlistnika.
-Pomimo to prawdziwe jest następujące stwierdzenie.
+Pomimo to...
 
-\begin{proposition}[Pontriagin, Frankl 1930]
+\begin{proposition}
+    \label{seifert_existence}
     Każdy węzeł posiada powierzchnię Seiferta.
 \end{proposition}
 
-Dowód tego faktu opiera się na bezpośredniej konstrukcji i~pochodzi od Seiferta.
+Powyższe stwiedzenie uzasadnili Pontriagin oraz Frankl w~1930 roku, my jednak podamy bardzo przyjemny i~konstruktywny dowód podany przez Seiferta cztery lata później.
 
 \begin{proof}
     Wybierzmy diagram $D$ dla węzła oraz orientację,
@@ -122,7 +98,78 @@ Dowód tego faktu opiera się na bezpośredniej konstrukcji i~pochodzi od Seifer
     \end{center}
 \end{proof}
 
-% \todo[inline]{graf Seiferta jest dwudzielny i~planarny}
+Powierzchnia Seiferta dziedziczy orientację po węźle.
+Nawet niewinne odwrócenie jednego z ogniw splotu potrafi istotnie zmienić jego powierzchnię, dlatego potrzebna jest ostrożność!
+
+\begin{definition}[graf Seiferta]
+    Jeżeli ściągniemy dyski z dowodu faktu \ref{seifert_existence} do punktów, zaś doklejane paski skurczymy, otrzymamy graf zwany grafem Seiferta diagramu $D$.
+\end{definition}
+
+\begin{proposition}
+    Graf Seiferta jest dwudzielny i planarny.
+\end{proposition}
+
+Zanim przejdziemy do zdefiniowania macierzy Seiferta, potrzebować będziemy krótkiego skoku w bok -- zrozumieć bardzo geometryczny niezmiennik węzłów, genus.
+
+\subsection{Genus} % (fold)
+\label{sec:genus}
+Zaczniemy od starego twierdzenia, które klasyfikuje zwarte powierzchnie orientowalne.
+Głosi ono, że taka powierzchnia jest homeomorficzna z sumą spójną pewnej liczby torusów (lub równoważnie, ze sferą, do której doklejono pewną liczbę ,,uchwytów''), w~których wydrążono pewną liczbę otworów: tyle, ile składowych spójności ma brzeg powierzchni.
+W~przypadku powierzchni Seiferta mamy do czynienia z jednym otworem.
+
+\begin{definition}[genus powierzchni]
+    Ilość torusów nazywamy genusem powierzchni i oznaczamy literą $g$.
+\end{definition}
+
+Przypomnijmy jeszcze definicję klasycznego niezmiennika powierzchni:
+
+\begin{definition}[charakterystyka Eulera]
+    \index{charakterystyka Eulera}
+    Niech $M$ będzie domkniętą powierzchnią orientowalną.
+    Po striangulowaniu, składa się z $k_0$ wierzchołków, $k_1$ krawędzi oraz $k_2$ ścian.
+    Wielkość
+    \begin{equation}
+        \chi = k_0 - k_1 + k_2
+    \end{equation}
+    jest niezmiennikiem powierzchni, zwanym zazwyczaj charakterystyką Eulera.
+\end{definition}
+
+Jeśli $M$ jest powierzchnią o genusie $g$ i $\mu$ składowych spójności brzegu, to $\chi = 2 - \mu - 2g$.
+Nas interesują głównie powierzchnie Seiferta węzłów: jeśli $d$ oznacza liczbę dysków, zaś $b$ pasków, to $k_0 = 4b$, $k_1 = 6b$, zaś $k_2 = b+d$, zatem $2g = 1-d+b$.
+Wróćmy myślami do grafu Seiferta $\Gamma$.
+Jest planarny, więc dzieli sferę $S^2$ na $f$ obszarów.
+Wyznaczmy ich liczbę.
+Łatwo widać, że mamy 
+\begin{equation}
+    \chi(S^2) = d - b + f = 2,
+\end{equation}
+zatem $f - 1 = 1 - d + b$ jest jednocześnie liczbą ograniczonych obszarów.
+
+%%% PONIŻSZE WYMAGA WERYFIKACJI %%%
+
+Charakterystyka Eulera $\chi(M) \in \Z$ to niezmiennik
+topologiczny powierzchni $M$, którego definicji nie podamy.
+Zamiast tego wymienimy dość reguł,
+by wyznaczyć go w~interesujących nas przypadkach:
+\begin{itemize}
+    \item Charakterystyka dysku to $1$.
+    \item $\chi(M_1 \sqcup M_2)=\chi(M_1) + \chi(M_2)$ dla każdych powierzchni $M_1, M_2$.
+    \item Dołączenie paska zmniejsza charakterystykę powierzchni o~$1$.
+    \item Dołączenie dysku do całej składowej spójności brzegu powierzchni zwiększa charakterystykę o~$1$.
+\end{itemize}
+
+\begin{definition}
+\index{genus}
+    Genus powierzchni $M$ posiadającej $c$ składowych spójności brzegu to
+    \[
+        g(M) = 1 - \frac{\chi(M) + c}{2}.
+    \]
+\end{definition}
+
+\begin{proposition}
+    Dwie spójne, zorientowane powierzchnie są homeomorficzne wtedy i~tylko
+    wtedy, gdy mają ten sam genus i~tyle samo składowych spójności brzegu.
+\end{proposition}
 
 Otrzymana powierzchnia zorientowana, $M_D$,
 nie daje się łatwo wyobrazić, ale można policzyć jej genus.
@@ -138,10 +185,10 @@ Posiada bowiem dokładnie jedną składową spójności brzegu.
     Powierzchnia $M_d$ powstaje z~sumy rozłącznej dysków (po jednym dla każdego okręgu Seiferta) przez dołączanie pasków do ich brzegów (po jednym dla każdego skrzyżowania).
 \end{proof}
 
-Uwaga: sploty też posiadają powierzchnie Seiferta, ale odwrócenie tylko jednej składowej potrafi kompletnie zmienić powierzchnię!
-
 Skupimy się wreszcie na genusie węzła.
 Do matematyki wprowadził go Seifert w~1934 roku.
+
+%%% POWYŻSZE WYMAGA WERYFIKACJI %%%
 
 \begin{definition}[3-genus]
     Niech $K$ będzie węzłem.
@@ -441,9 +488,36 @@ Wielomianem węzła skręconego z~$q$ półskrętami jest $\Delta_q = qt - (2q+1
 
 % Węzeł jest rozwłókniony dokładnie wtedy, gdy stanowi grzbiet pewnego 'open book decomposition' $S^3$.
 
-% Koniec sekcji Genus
+% Koniec podsekcji Genus
 
-\section{Macierz Seiferta} % (fold)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Niech $K$ będzie węzłem z powierzchnią Seiferta $S$.
 Macierz Seiferta $M$ zdefiniowana jest następująco:
 \[
