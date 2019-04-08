@@ -466,34 +466,7 @@ Wielomianem węzła skręconego z~$q$ półskrętami jest $\Delta_q = qt - (2q+1
 
 % Koniec podsekcji Genus
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection{Macierz Seiferta}
 Niech $K$ będzie węzłem z powierzchnią Seiferta $S$.
 Macierz Seiferta $M$ zdefiniowana jest następująco:
 \[
@@ -501,11 +474,65 @@ Macierz Seiferta $M$ zdefiniowana jest następująco:
 \]
 gdzie łuki $x_1, x_2, \ldots, x_m$ są generatorami grupy podstawowej $\pi_1(S)$, zaś gwiazdka oznacza dodatnie wypchnięcie.
 
-Pozwala na zdefiniowanie różnych, znanych nam już niezmienników.
-I tak, sygnatura węzła $\sigma(K)$ to sygnatura macierzy $M + M^t$, wyznacznik węzła to $|\det(M+M^t)|$, zaś wielomian Alexandera to $t^{-k/2}\det(M - tM^t)$, gdzie $k$ to rząd macierzy $M$.
-To dopiero zalążek, więcej informacji zawiera sekcja 5.3 w podręczniku Murasugiego \cite{murasugi96}.
+Konstrukcja macierzy Seiferta zależy od wyboru diagramu, dlatego nie jest  niezmiennikiem węzłów.
+Musimy jeszcze uwzględnić wpływ ruchów Reidemeistera.
 
-Trotter pokazał w 1962, że macierz Seiferta modulo $S$-równoważność stanowi niezmiennik węzłów (\cite{trotter62}).
+\begin{definition}
+    Operacja $\Lambda_1$ dla pewnej odwracalnej macierzy $P$ o całkowitych wyrazach (czyli $\det P = \pm 1$) to
+    \begin{equation}
+        \Lambda_1 \colon M \mapsto PMP^t.
+    \end{equation}
+    Natomiast
+    \begin{equation}
+        \Lambda_2 \colon M \mapsto \begin{bmatrix}
+  &   &  & 0 & 0 \\
+  & M &  & \vdots & \vdots \\
+  &   &  & 0 & 0 \\
+* & \dots & * & 0 & 0 \\
+0 & \dots & 0 & 1 & 0
+\end{bmatrix} \textrm{albo} \begin{bmatrix}
+  &   &  & * & 0 \\
+  & M &  & \vdots & \vdots \\
+  &   &  & * & 0 \\
+0 & \dots & 0 & 0 & 1 \\
+0 & \dots & 0 & 0 & 0
+\end{bmatrix},
+    \end{equation}
+    gdzie gwiazdka zastępuje ustaloną liczbę całkowitą.
+\end{definition}
+
+\begin{definition}
+    Niech $M_1, M_2$ będą macierzami.
+    Jeśli $M_2$ można otrzymać z $M_1$ przez skończony ciąg operacji $\Lambda_1, \Lambda_2$ oraz ich odwrotności, to macierze nazywamy $S$-równoważnymi.
+\end{definition}
+
+Litera $S$, jak nietrudno się domyślić, pochodzi od Seiferta.
+Badania powyższej relacji równoważności prowadzili w~latach sześćdziesiątych ubiegłego stulecia Trotter \cite{trotter62}, Murasugi oraz Levine.
+
+\begin{proposition}
+    Macierz Seiferta modulo $S$-równoważność jest niezmiennikiem splotów.
+\end{proposition}
+
+Dowód tego faktu jest elementarny, ale dość długi.
+Razem z~ułatwiającymi zrozumienie diagramami można znaleźć go w podręczniku Murasugiego, dlatego pominiemy go i skupimy się na tym, jakie niezmienniki można otrzymać z macierzy Seiferta.
+
+Wyznacznik samej macierzy Seiferta nie jest niezmiennikiem.
+Jeśli jednak najpierw dokonamy jej symetryzacji, dostaniemy znany już niezmiennik.
+
+\begin{proposition}
+    Niech $M$ będzie macierzą Seiferta węzła $K$.
+    Wtedy $\det K = |\det(M + M^t)|$.
+\end{proposition}
+
+Przez wprowadzenie dodatkowej zmiennej, ponownie uogólnimy wyznacznik do wielomianu Alexandera.
+
+\begin{proposition}
+    Niech $M$ będzie macierzą Seiferta węzła $K$ rzędu $k$.
+    Wtedy $\Delta_K (t) = t^{-k/2}\det(M - tM^t)$.
+\end{proposition}
+
+Określimy jeszcze jeden, niewystępujący wcześniej niezmiennik.
+
 
 \subsection{Sygnatura} % (fold)
 \label{sub:signature}
@@ -513,7 +540,14 @@ Trotter pokazał w 1962, że macierz Seiferta modulo $S$-równoważność stanow
 Sygnatura pojawia się w~fakcie \ref{slice_signature}.
 
 \begin{definition}
-    Sygnatura to niezmiennik topologiczny zadany (kłębiastą) relacją rekurencyjną:
+    Niech $M$ będzie macierzą Seiferta węzła $K$ rzędu $k$.
+    Wielkość $\sigma K = \sigma(M + M^t)$ nazywamy sygnaturą węzła $K$.
+\end{definition}
+
+Istnieje równoważna definicja, która nie wymaga czasochłonnego wyznaczania macierzy Seiferta.
+
+\begin{definition}
+    Sygnatura to niezmiennik topologiczny zadany kłębiastą relacją rekurencyjną:
     \begin{itemize}[leftmargin=*]
     \itemsep0em
         \item $\sigma (\LittleUnknot) = 0$,
@@ -522,17 +556,32 @@ Sygnatura pojawia się w~fakcie \ref{slice_signature}.
     \end{itemize}
 \end{definition}
 
-\begin{proposition} \label{prop_sigma_inverse}
-    Mamy $\sigma(K^*) = -\sigma(K)$ oraz $\sigma(-K) = \sigma(K)$.
-\end{proposition}
-
-\begin{proof}
-    To jest twierdzenie 6.4.5 z podręcznika \cite{murasugi96}.
-\end{proof}
-
 \begin{proposition} \label{prop_sigma_additive}
     Sygnatura jest addytywna: $\sigma(K_1 \shrap \ldots \shrap K_n) = \sum_{k=1}^n \sigma(K_k)$.
 \end{proposition}
+
+\begin{proof}
+    Bez straty ogólności ograniczmy się do przypadku $n = 2$ i~ustalmy powierzchnie Seiferta $F_1, F_2$ dla węzłów $K_1, K_2$ z~macierzami Seiferta $M_1, M_2$.
+    Powierzchnia dla ich sumy spójnej $K_1 \shrap K_2$ powstaje przez sklejenie $F_1$ oraz $F_2$ paskiem.
+    W języku macierzy oznacza to, że macierz Seiferta węzła $K_1 \shrap K_2$ ma postać $M = M_1 \oplus M_2$.
+    Zatem:
+    \begin{equation}
+        \sigma(K_1 \shrap K_2) = \sigma(M + M^t) = \sigma(M_1 + M_1^t) + \sigma(M_2 + M_2^t) = \sigma(K_1) + \sigma(K_2),
+    \end{equation}
+    co kończy dowód.
+\end{proof}
+
+\begin{proposition} \label{prop_sigma_inverse}
+    Niech $L$ będzie splotem.
+    Wtedy $\sigma(mL) = -\sigma(L)$ oraz $\sigma(rL) = \sigma(L)$.
+\end{proposition}
+
+\begin{proof}
+    Wynika to z podobnych faktów dla macierzy Seiferta.
+    Równoważność $M_{mL} \simeq - M_L^t$ wynika z tego, że zamiana nad- i podskrzyżowań odwraca wzajemne położenie krzywych, których indeksu zaczepienia szukamy.
+
+    Podobnie pokazuje się, że $M_{rL} \simeq M_L^t$.
+\end{proof}
 
 Węzły achiralne mają zerową sygnaturę, zatem trójlistnik nie jest achiralny.
 Z faktów \ref{prop_sigma_inverse} oraz \ref{prop_sigma_additive} wynika, że suma tak samo skręconych trójlistników nie jest achiralna ($\sigma = \pm 4$), natomiast węzeł prosty (suma różnie skręconych) ma zerową sygnaturę i jak można przekonać się ze standardowego diagramu, jest achiralny.
@@ -549,8 +598,7 @@ Sygnatura pozwala uzyskać proste oszacowanie liczby gordyjskiej od dołu:
 
 Nie istnieje bezpośredni związek między sygnaturą i~liczbą mostową.
 Węzeł torusowy $T_{2,n}$ jest dwumostowy, jego sygnatura wynosi $n - 1$.
-Suma spójna węzłów prostych ma zerową sygnaturę i~nieograniczoną liczbę mostową.
-Wynika to z~ogólniejszego faktu:
+Suma spójna węzłów prostych ma zerową sygnaturę, ale na mocy faktu \ref{bridge_additive} jej liczba mostowa jest nieograniczona.
 
 Czy istnieje węzeł o~sygnaturze $4$ i~wyznaczniku postaci $n = 4k + 1$ dla $k$ całkowitego dodatniego?
 Stojmenow twierdzi, że jeśli tak jest, to wszystkie pierwsze dzielniki $n$ dają resztę $1$ z~dzielenia przez $24$ i~są większe od $2857$.
