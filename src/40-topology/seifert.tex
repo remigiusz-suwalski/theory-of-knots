@@ -3,6 +3,8 @@ W tej sekcji pogłębimy nasze rozumienie wielomianu Alexandera i~odkryjemy jego
 Poznamy także zupełnie nowy sposób na wyznaczanie jego wartości,
 Jak nie jest trudno się domyślić, posłuży do tego macierz Seiferta.
 
+\subsection{Powierzchnia Seiferta}
+
 Zaczniemy jednak od przyjrzenia się powierzchniom.
 \begin{definition}
     \index{powierzchnia}
@@ -121,75 +123,6 @@ W~przypadku powierzchni Seiferta mamy do czynienia z jednym otworem.
     Ilość torusów nazywamy genusem powierzchni i oznaczamy literą $g$.
 \end{definition}
 
-Przypomnijmy jeszcze definicję klasycznego niezmiennika powierzchni:
-
-\begin{definition}[charakterystyka Eulera]
-    \index{charakterystyka Eulera}
-    Niech $M$ będzie domkniętą powierzchnią orientowalną.
-    Po striangulowaniu, składa się z $k_0$ wierzchołków, $k_1$ krawędzi oraz $k_2$ ścian.
-    Wielkość
-    \begin{equation}
-        \chi = k_0 - k_1 + k_2
-    \end{equation}
-    jest niezmiennikiem powierzchni, zwanym zazwyczaj charakterystyką Eulera.
-\end{definition}
-
-Jeśli $M$ jest powierzchnią o genusie $g$ i $\mu$ składowych spójności brzegu, to $\chi = 2 - \mu - 2g$.
-Nas interesują głównie powierzchnie Seiferta węzłów: jeśli $d$ oznacza liczbę dysków, zaś $b$ pasków, to $k_0 = 4b$, $k_1 = 6b$, zaś $k_2 = b+d$, zatem $2g = 1-d+b$.
-Wróćmy myślami do grafu Seiferta $\Gamma$.
-Jest planarny, więc dzieli sferę $S^2$ na $f$ obszarów.
-Wyznaczmy ich liczbę.
-Łatwo widać, że mamy 
-\begin{equation}
-    \chi(S^2) = d - b + f = 2,
-\end{equation}
-zatem $f - 1 = 1 - d + b$ jest jednocześnie liczbą ograniczonych obszarów.
-
-%%% PONIŻSZE WYMAGA WERYFIKACJI %%%
-
-Charakterystyka Eulera $\chi(M) \in \Z$ to niezmiennik
-topologiczny powierzchni $M$, którego definicji nie podamy.
-Zamiast tego wymienimy dość reguł,
-by wyznaczyć go w~interesujących nas przypadkach:
-\begin{itemize}
-    \item Charakterystyka dysku to $1$.
-    \item $\chi(M_1 \sqcup M_2)=\chi(M_1) + \chi(M_2)$ dla każdych powierzchni $M_1, M_2$.
-    \item Dołączenie paska zmniejsza charakterystykę powierzchni o~$1$.
-    \item Dołączenie dysku do całej składowej spójności brzegu powierzchni zwiększa charakterystykę o~$1$.
-\end{itemize}
-
-\begin{definition}
-\index{genus}
-    Genus powierzchni $M$ posiadającej $c$ składowych spójności brzegu to
-    \[
-        g(M) = 1 - \frac{\chi(M) + c}{2}.
-    \]
-\end{definition}
-
-\begin{proposition}
-    Dwie spójne, zorientowane powierzchnie są homeomorficzne wtedy i~tylko
-    wtedy, gdy mają ten sam genus i~tyle samo składowych spójności brzegu.
-\end{proposition}
-
-Otrzymana powierzchnia zorientowana, $M_D$,
-nie daje się łatwo wyobrazić, ale można policzyć jej genus.
-Posiada bowiem dokładnie jedną składową spójności brzegu.
-
-%\todo[inline]{Fałsz, jest to możliwe, ale muszę nauczyć się rysować kręcone paski.}
-
-\begin{proposition}
-    Niech $K$ będzie węzłem z~diagramem $D$. Wtedy $\chi(M_D) = s - n$, gdzie $n$ jest liczbą skrzyżowań $D$, zaś $s$ jest liczbą okręgów Seiferta.
-\end{proposition}
-
-\begin{proof}
-    Powierzchnia $M_d$ powstaje z~sumy rozłącznej dysków (po jednym dla każdego okręgu Seiferta) przez dołączanie pasków do ich brzegów (po jednym dla każdego skrzyżowania).
-\end{proof}
-
-Skupimy się wreszcie na genusie węzła.
-Do matematyki wprowadził go Seifert w~1934 roku.
-
-%%% POWYŻSZE WYMAGA WERYFIKACJI %%%
-
 \begin{definition}[3-genus]
     Niech $K$ będzie węzłem.
     Minimalny genus spośród wszystkich powierzchni Seiferta węzła $K$ nazywamy 3-genusem i oznaczamy $g$.
@@ -263,6 +196,49 @@ Moriah, matematyk izraelski, mniej więcej w tym samym czasie rozwiązał proble
     \end{equation}
     podczas gdy zwykły genus to $g(D_{-1}(3_1^n)) = 1$.
 \end{corollary}
+
+Dla wygody przypomnijmy jeszcze definicję klasycznego niezmiennika powierzchni:
+
+\begin{definition}[charakterystyka Eulera]
+    \index{charakterystyka Eulera}
+    Niech $M$ będzie domkniętą powierzchnią orientowalną.
+    Po striangulowaniu, składa się z $k_0$ wierzchołków, $k_1$ krawędzi oraz $k_2$ ścian.
+    Wielkość
+    \begin{equation}
+        \chi = k_0 - k_1 + k_2
+    \end{equation}
+    jest niezmiennikiem powierzchni, zwanym zazwyczaj charakterystyką Eulera.
+\end{definition}
+
+Jeśli $M$ jest powierzchnią o genusie $g$ i $\mu$ składowych spójności brzegu, to $\chi = 2 - \mu - 2g$.
+Nas interesują głównie powierzchnie Seiferta węzłów:
+
+\begin{proposition}
+    Niech $K$ będzie węzłem z~diagramem $D$.
+    Wtedy $\chi(M_D) = d - b$, gdzie $b$ jest liczbą skrzyżowań $D$, zaś $d$ jest liczbą okręgów Seiferta.
+\end{proposition}
+
+\begin{proof}
+    W~dowodzie faktu \ref{seifert_existence} widzieliśmy, że liczba skrzyżowań $b$ jest jednocześnie liczbą pasków doklejonych do dysków.
+    Bezpośredni rachunek pokazuje, że wtedy $k_0 = 4b$, $k_1 = 6b$ oraz $k_2 = b+d$.
+    Wynika stąd, że $\chi = 4b - 6b + b + d = d - b$.
+\end{proof}
+
+%%% PONIŻSZE WYMAGA WERYFIKACJI %%%
+
+zatem $2g = 1-d+b$.
+$\chi = 2 - \mu - (1 - d + b) = 2 - 1 - 1 + d - b = d - b$.
+
+Wróćmy myślami do grafu Seiferta $\Gamma$.
+Jest planarny, więc dzieli sferę $S^2$ na $f$ obszarów.
+Wyznaczmy ich liczbę.
+Łatwo widać, że mamy
+\begin{equation}
+    \chi(S^2) = d - b + f = 2,
+\end{equation}
+zatem $f - 1 = 1 - d + b$ jest jednocześnie liczbą ograniczonych obszarów.
+
+%%% POWYŻSZE WYMAGA WERYFIKACJI %%%
 
 \begin{proposition}
     \label{genus_one}
