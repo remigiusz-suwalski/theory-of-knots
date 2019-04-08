@@ -4,21 +4,21 @@ Poznamy także zupełnie nowy sposób na wyznaczanie jego wartości,
 Jak nie jest trudno się domyślić, posłuży do tego macierz Seiferta.
 
 \subsection{Powierzchnia Seiferta}
+Zaczniemy od przyjrzenia się powierzchniom.
+Niektóre stwierdzenia będziemy przyjmować bez dowodu, by nie rozwodzić się za bardzo nad topologią algebraiczną.
 
-Zaczniemy jednak od przyjrzenia się powierzchniom.
 \begin{definition}
     \index{powierzchnia}
-    Powierzchnia to dwuwymiarowa podrozmaitość topologiczna $M \subseteq \R^3$, czyli obiekt wyglądający lokalnie jak płaszczyzna: każdy punkt $x \in M$ posiada otwarte otoczenie homeomorficzne z~otwartym dyskiem $\{(x,y) : x^2 + y^2 < 1\}$.
+    Powierzchnia to dwuwymiarowa rozmaitość topologiczna $M \subseteq \R^3$.
 \end{definition}
 
-Przykładami powierzchni są sfera oraz brzeg torusa, ale też koło otwarte albo pierścień $\{(x, y) \in \R^2 : 0 < a < x^2 + y^2 < b\}$.
-Dwie pierwsze powierzchnie są pozbawione brzegu, dlatego nazywamy je zamkniętymi.
-Otwarte koło oraz pierścień mają brzeg.
-Dokładne znaczenie tych słów tłumaczy teoria rozmaitości, dlatego nie będziemy się w nie zagłębiać.
+Rozmaitość to obiekt, który wygląda lokalnie jak przestrzeń euklidesowa: każdy jej punkt $x \in M$ posiada otwarte otoczenie homeomorficzne z~otwartą kulą.
+Przykładami powierzchni są sfera, brzeg torusa albo hiperboloida jednopowłokowa.
+Istnieje ogólniejsze pojęcie, to jest rozmaitość z~brzegiem: każdy jej punkt posiada otoczenie homeomorficzne z otwartym podzbiorem górnej półpłaszczyzny $\{x \in \C: \mathfrak {Im} \ge 0\}$.
+Zwartą powierzchnię bez brzegu nazywamy \emph{domkniętą}.
 
-Ograniczymy się za to do powierzchni, które oprócz tego, że zamknięte, są jeszcze ograniczone oraz orientowalne.
-% Ta druga własność sprowadza się na mocy klasyfikacji powierzchni (spójna powierzchnia zamknięta jest sferą, sumą spójną torusów lub sumą spójną rzutowych (rzeczywistych) płaszczyzn) do niezawierania homeomorficznej kopii wstęgi Möbiusa.
-% Podane wcześniej powierzchnie są orientowalne.
+Powierzchnię nazywamy orientowalną, jeśli nie istnieje na niej zamknięta krzywa, podczas pokonywania której odwraca się kierownica.
+Orientowalne są dokładnie te powierzchnie, które nie zawierają w sobie kopii wstęgi Möbiusa.
 
 Najważniejsze dla nas są powierzchnie Seiferta:
 
@@ -102,26 +102,61 @@ Powyższe stwiedzenie uzasadnili Pontriagin oraz Frankl w~1930 roku, my jednak p
 
 Powierzchnia Seiferta dziedziczy orientację po węźle.
 Nawet niewinne odwrócenie jednego z ogniw splotu potrafi istotnie zmienić jego powierzchnię, dlatego potrzebna jest ostrożność!
-
-\begin{definition}[graf Seiferta]
-    Jeżeli ściągniemy dyski z dowodu faktu \ref{seifert_existence} do punktów, zaś doklejane paski skurczymy, otrzymamy graf zwany grafem Seiferta diagramu $D$.
-\end{definition}
-
-\begin{proposition}
-    Graf Seiferta jest dwudzielny i planarny.
-\end{proposition}
-
 Zanim przejdziemy do zdefiniowania macierzy Seiferta, potrzebować będziemy krótkiego skoku w bok -- zrozumieć bardzo geometryczny niezmiennik węzłów, genus.
 
 \subsection{Genus} % (fold)
 \label{sec:genus}
-Zaczniemy od starego twierdzenia, które klasyfikuje zwarte powierzchnie orientowalne.
-Głosi ono, że taka powierzchnia jest homeomorficzna z sumą spójną pewnej liczby torusów (lub równoważnie, ze sferą, do której doklejono pewną liczbę ,,uchwytów''), w~których wydrążono pewną liczbę otworów: tyle, ile składowych spójności ma brzeg powierzchni.
-W~przypadku powierzchni Seiferta mamy do czynienia z jednym otworem.
+Zaczniemy od starego twierdzenia, które klasyfikuje powierzchnie domknięte.
+
+\begin{proposition}
+    Każda powierzchnia domknięta jest członkiem jednej z dwóch nieskończonych rodzin:
+    \begin{enumerate}[leftmargin=*]
+        \itemsep0em
+        \item sumą spójną $g \ge 0$ torusów,
+        \item sumą spójną $k \ge 1$ rzeczywistych płaszczyzn rzutowych.
+    \end{enumerate}
+\end{proposition}
+
+Elementy pierwszej rodziny są orientowalne.
+Sferę traktujemy dla wygody jako sumę spójną $g = 0$ torusów.
+Wtedy sumę spójną $g$ torusów możemy wyobrazić sobie jako sferę, do której doklejono $g$ uchwytów.
 
 \begin{definition}[genus powierzchni]
     Ilość torusów nazywamy genusem powierzchni i oznaczamy literą $g$.
 \end{definition}
+
+Podobna charakteryzacja istnieje dla powierzchni z~brzegiem.
+Każdy taki obiekt jest homeomorficzny z~sumą spójną $g$ torusów, w~których wydrążono pewną liczbę otworów: tyle, ile składowych spójności ma brzeg powierzchni.
+W~przypadku powierzchni Seiferta mamy do czynienia z jednym otworem.
+
+Dla wygody przypomnijmy jeszcze definicję klasycznego niezmiennika powierzchni:
+
+\begin{definition}[charakterystyka Eulera]
+    \index{charakterystyka Eulera}
+    Niech $M$ będzie domkniętą powierzchnią orientowalną.
+    Po striangulowaniu, składa się z $k_0$ wierzchołków, $k_1$ krawędzi oraz $k_2$ ścian.
+    Wielkość
+    \begin{equation}
+        \chi = k_0 - k_1 + k_2
+    \end{equation}
+    jest niezmiennikiem powierzchni, zwanym zazwyczaj charakterystyką Eulera.
+\end{definition}
+
+Jeśli $M$ jest powierzchnią o genusie $g$ i $\mu$ składowych spójności brzegu, to $\chi = 2 - \mu - 2g$.
+Nas interesują głównie powierzchnie Seiferta węzłów:
+
+\begin{proposition}
+    Niech $K$ będzie węzłem z~diagramem $D$.
+    Wtedy $\chi(M_D) = d - b$, gdzie $b$ jest liczbą skrzyżowań $D$, zaś $d$ jest liczbą okręgów Seiferta.
+\end{proposition}
+
+\begin{proof}
+    W~dowodzie faktu \ref{seifert_existence} widzieliśmy, że liczba skrzyżowań $b$ jest jednocześnie liczbą pasków doklejonych do dysków.
+    Bezpośredni rachunek pokazuje, że wtedy $k_0 = 4b$, $k_1 = 6b$ oraz $k_2 = b+d$.
+    Wynika stąd, że $\chi = 4b - 6b + b + d = d - b$.
+\end{proof}
+
+Reszta tej podsekcji nie jest wymagana do zrozumienia macierzy Seiferta, przyjrzymy się genusowi jako obiektowi ciekawemu samemu w sobie.
 
 \begin{definition}[3-genus]
     Niech $K$ będzie węzłem.
@@ -196,49 +231,6 @@ Moriah, matematyk izraelski, mniej więcej w tym samym czasie rozwiązał proble
     \end{equation}
     podczas gdy zwykły genus to $g(D_{-1}(3_1^n)) = 1$.
 \end{corollary}
-
-Dla wygody przypomnijmy jeszcze definicję klasycznego niezmiennika powierzchni:
-
-\begin{definition}[charakterystyka Eulera]
-    \index{charakterystyka Eulera}
-    Niech $M$ będzie domkniętą powierzchnią orientowalną.
-    Po striangulowaniu, składa się z $k_0$ wierzchołków, $k_1$ krawędzi oraz $k_2$ ścian.
-    Wielkość
-    \begin{equation}
-        \chi = k_0 - k_1 + k_2
-    \end{equation}
-    jest niezmiennikiem powierzchni, zwanym zazwyczaj charakterystyką Eulera.
-\end{definition}
-
-Jeśli $M$ jest powierzchnią o genusie $g$ i $\mu$ składowych spójności brzegu, to $\chi = 2 - \mu - 2g$.
-Nas interesują głównie powierzchnie Seiferta węzłów:
-
-\begin{proposition}
-    Niech $K$ będzie węzłem z~diagramem $D$.
-    Wtedy $\chi(M_D) = d - b$, gdzie $b$ jest liczbą skrzyżowań $D$, zaś $d$ jest liczbą okręgów Seiferta.
-\end{proposition}
-
-\begin{proof}
-    W~dowodzie faktu \ref{seifert_existence} widzieliśmy, że liczba skrzyżowań $b$ jest jednocześnie liczbą pasków doklejonych do dysków.
-    Bezpośredni rachunek pokazuje, że wtedy $k_0 = 4b$, $k_1 = 6b$ oraz $k_2 = b+d$.
-    Wynika stąd, że $\chi = 4b - 6b + b + d = d - b$.
-\end{proof}
-
-%%% PONIŻSZE WYMAGA WERYFIKACJI %%%
-
-zatem $2g = 1-d+b$.
-$\chi = 2 - \mu - (1 - d + b) = 2 - 1 - 1 + d - b = d - b$.
-
-Wróćmy myślami do grafu Seiferta $\Gamma$.
-Jest planarny, więc dzieli sferę $S^2$ na $f$ obszarów.
-Wyznaczmy ich liczbę.
-Łatwo widać, że mamy
-\begin{equation}
-    \chi(S^2) = d - b + f = 2,
-\end{equation}
-zatem $f - 1 = 1 - d + b$ jest jednocześnie liczbą ograniczonych obszarów.
-
-%%% POWYŻSZE WYMAGA WERYFIKACJI %%%
 
 \begin{proposition}
     \label{genus_one}
@@ -467,15 +459,31 @@ Wielomianem węzła skręconego z~$q$ półskrętami jest $\Delta_q = qt - (2q+1
 % Koniec podsekcji Genus
 
 \subsection{Macierz Seiferta}
-Niech $K$ będzie węzłem z powierzchnią Seiferta $S$.
-Macierz Seiferta $M$ zdefiniowana jest następująco:
-\[
-	m_{i,j} = \operatorname{lk}(x_i, x_j^*),
-\]
-gdzie łuki $x_1, x_2, \ldots, x_m$ są generatorami grupy podstawowej $\pi_1(S)$, zaś gwiazdka oznacza dodatnie wypchnięcie.
+Niech $K$ będzie węzłem z diagramem $D$ i powierzchnią Seiferta $S$.
 
-Konstrukcja macierzy Seiferta zależy od wyboru diagramu, dlatego nie jest  niezmiennikiem węzłów.
-Musimy jeszcze uwzględnić wpływ ruchów Reidemeistera.
+\begin{definition}[graf Seiferta]
+    Jeżeli ściągniemy dyski z dowodu faktu \ref{seifert_existence} do punktów, zaś doklejane paski skurczymy, otrzymamy graf zwany grafem Seiferta diagramu $D$.
+\end{definition}
+
+\begin{proposition}
+    Graf Seiferta jest dwudzielny i planarny.
+\end{proposition}
+
+Skoro graf Seiferta jest planarny, to dzieli sferę $S^2$ na $f$ obszarów.
+Można wyznaczyć ich liczbę: skoro $\chi(S^2) = d - b + f = 2$, to $f - 1 = 1 - d + b$, pomijamy obszar nieograniczony.
+Brzeg każdego obszaru jest zamkniętą krzywą, z których tworzymy krzywe $x_1, \ldots, x_m$ na powierzchni Seiferta.
+Generują one grupę podstawową $\pi_1(S)$.
+
+Niech $S$ będzie powierzchnią Seiferta z wyróżnioną jedną stroną.
+Jeśli krzywa $x_i$ biegnie po powierzchni $S$, przez $x_i^*$ oznaczać będziemy dodatnie wypchnięcie: krzywą równoległą do $x_i$, która biegnie tuż nad nią.
+Potrzebowaliśmy wyróżnić jedną ze stron powierzchni $S$, by słowo ,,nad'' miało sens.
+
+\begin{definition}[macierz Seiferta]
+    Przy zachowaniu powyższych oznaczeń, macierz, której wyrazy określa wzór $M_{i,j} = \operatorname{lk}(x_i, x_j^*)$, nazywamy macierzą Seiferta.
+\end{definition}
+
+Konstrukcja macierzy Seiferta zależy od wyboru diagramu oraz orientacji krzywych $x_i$, dlatego nie jest niezmiennikiem węzłów.
+Stanie się nim, kiedy uwzględnimy jeszcze wpływ ruchów Reidemeistera.
 
 \begin{definition}
     Operacja $\Lambda_1$ dla pewnej odwracalnej macierzy $P$ o całkowitych wyrazach (czyli $\det P = \pm 1$) to
@@ -517,22 +525,28 @@ Dowód tego faktu jest elementarny, ale dość długi.
 Razem z~ułatwiającymi zrozumienie diagramami można znaleźć go w podręczniku Murasugiego, dlatego pominiemy go i skupimy się na tym, jakie niezmienniki można otrzymać z macierzy Seiferta.
 
 Wyznacznik samej macierzy Seiferta nie jest niezmiennikiem.
+Wykonując operację $\Lambda_2$ dostajemy macierz, której ostatnia kolumna albo ostatni wiersz są zerami, więc jej wyznacznik także jest zerem.
 Jeśli jednak najpierw dokonamy jej symetryzacji, dostaniemy znany już niezmiennik.
 
 \begin{proposition}
     Niech $M$ będzie macierzą Seiferta węzła $K$.
-    Wtedy $\det K = |\det(M + M^t)|$.
+    Wtedy
+    \begin{equation}
+        \det K = |\det(M + M^t)|.
+    \end{equation}
 \end{proposition}
 
-Przez wprowadzenie dodatkowej zmiennej, ponownie uogólnimy wyznacznik do wielomianu Alexandera.
+Przez wprowadzenie dodatkowej zmiennej $t \in \R$, ponownie uogólnimy wyznacznik do wielomianu Alexandera.
 
 \begin{proposition}
-    Niech $M$ będzie macierzą Seiferta węzła $K$ rzędu $k$.
-    Wtedy $\Delta_K (t) = t^{-k/2}\det(M - tM^t)$.
+    Niech $M$ będzie macierzą Seiferta rzędu $k$ węzła $K$.
+    Wtedy
+    \begin{equation}
+        \Delta_K (t) = t^{-k/2}\det(M - tM^t).
+    \end{equation}
 \end{proposition}
 
 Określimy jeszcze jeden, niewystępujący wcześniej niezmiennik.
-
 
 \subsection{Sygnatura} % (fold)
 \label{sub:signature}
@@ -541,7 +555,11 @@ Sygnatura pojawia się w~fakcie \ref{slice_signature}.
 
 \begin{definition}
     Niech $M$ będzie macierzą Seiferta węzła $K$.
-    Wielkość $\sigma K = \sigma(M + M^t)$ nazywamy sygnaturą węzła $K$.
+    Wielkość
+    \begin{equation}
+        \sigma K := \sigma(M + M^t)
+    \end{equation}
+    nazywamy sygnaturą węzła $K$.
 \end{definition}
 
 \begin{proposition} \label{prop_sigma_additive}
@@ -574,16 +592,6 @@ Sygnatura pojawia się w~fakcie \ref{slice_signature}.
 Węzły achiralne mają zerową sygnaturę, zatem trójlistnik nie jest achiralny.
 Z faktów \ref{prop_sigma_additive} oraz \ref{prop_sigma_inverse} wynika, że suma tak samo skręconych trójlistników nie jest achiralna ($\sigma = \pm 4$), natomiast węzeł prosty (suma różnie skręconych) ma zerową sygnaturę i jak można przekonać się ze standardowego diagramu, jest achiralny.
 
-Sygnatura pozwala uzyskać proste oszacowanie liczby gordyjskiej od dołu:
-
-\begin{proposition}
-    Mamy $2 u(K) \ge |\sigma(K)|$.
-\end{proposition}
-
-\begin{proof}
-    To jest twierdzenie 6.4.8 z podręcznika \cite{murasugi96}.
-\end{proof}
-
 Nie istnieje bezpośredni związek między sygnaturą i~liczbą mostową.
 Węzeł torusowy $T_{2,n}$ jest dwumostowy, jego sygnatura wynosi $n - 1$.
 Suma spójna węzłów prostych ma zerową sygnaturę, ale na mocy faktu \ref{bridge_additive} jej liczba mostowa jest nieograniczona.
@@ -600,9 +608,24 @@ Istnieje równoważna definicja, która nie wymaga czasochłonnego wyznaczania m
     \end{itemize}
 \end{definition}
 
+Sygnatura pozwala uzyskać proste oszacowanie liczby gordyjskiej od dołu:
+
+\begin{proposition}
+    Mamy $2 u(K) \ge |\sigma(K)|$.
+\end{proposition}
+
+Liczba gordyjska 87 z~801 węzłów pierwszych o mniej niż dwunastu skrzyżowaniach nie jest jeszcze znana.
+Dla 311 spośród pozostałych mamy równość $2u = |\sigma|$.
+
+\begin{proof}
+    Ustalmy diagram $D$ dla węzła $K$.
+    Odwrócenie dowolnego skrzyżowania polega na przejściu z~diagramu $D_+$ do $D_-$ lub z~$D_-$ do $D_+$.
+    Zgodnie z relacją kłębiastą, sygnatura pozostaje taka sama lub zmienia wartość o $2$.
+    Po wykonaniu $u$ odwróceń otrzymujemy diagram niewęzła o~sygnaturze zero, zatem sygnatura wyjściowego węzła nie mogła przekraczać $2u$.
+    To kończy dowód.
+\end{proof}
+
 Czy istnieje węzeł o~sygnaturze $4$ i~wyznaczniku postaci $n = 4k + 1$ dla $k$ całkowitego dodatniego?
 Stojmenow twierdzi, że jeśli tak jest, to wszystkie pierwsze dzielniki $n$ dają resztę $1$ z~dzielenia przez $24$ i~są większe od $2857$.
-
-
 
 % Koniec podsekcji Sygnatura
