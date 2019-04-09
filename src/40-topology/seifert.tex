@@ -197,7 +197,7 @@ Dubel trójlistnika ma genus równy $1$, ale algorytm Seiferta zastosowany wobec
     Wtedy $M = \max \deg_z P(v, z) \le 2g_c$.
 \end{proposition}
 
-Nierówność Mortona jest równością dla wielu klas węzłów, w tym alternujących (Crowell, Murasugi), jednorodnych (które stanowią uogólnienie węzłów alternujących, Crowell w \cite{cromwell89}), whiteheadowskich dubli węzłów dwumostowych (Nakamura w \cite{nakamura06}, Tripp w \cite{tripp02}) albo precli (Brittenham w \cite{brittenham07}).
+Nierówność Mortona jest równością dla wielu klas węzłów, w tym alternujących (Crowell, Murasugi), jednorodnych (które stanowią uogólnienie węzłów alternujących, Cromwell w \cite{cromwell89}), whiteheadowskich dubli węzłów dwumostowych (Nakamura w \cite{nakamura06}, Tripp w \cite{tripp02}) albo precli (Brittenham, Jensen w preprincie ,,Canonical genus and the Whitehead doubles of pretzel knots'').
 Stojmenow pokazał, że staje się równością dla węzłów o co najwyżej 12 skrzyżowaniach i znalazł przykład węzła, dla którego jest ostra.
 
 \begin{definition}[genus wolny]
@@ -462,7 +462,7 @@ Wielomianem węzła skręconego z~$q$ półskrętami jest $\Delta_q = qt - (2q+1
 Niech $K$ będzie węzłem z diagramem $D$ i powierzchnią Seiferta $S$.
 
 \begin{definition}[graf Seiferta]
-    Jeżeli ściągniemy dyski z dowodu faktu \ref{seifert_existence} do punktów, zaś doklejane paski skurczymy, otrzymamy graf zwany grafem Seiferta diagramu $D$.
+    Jeżeli ściągniemy dyski z dowodu faktu \ref{seifert_existence} do punktów jednocześnie kurcząc doklejone paski, otrzymamy graf zwany grafem Seiferta diagramu $D$.
 \end{definition}
 
 \begin{proposition}
@@ -515,7 +515,7 @@ Stanie się nim, kiedy uwzględnimy jeszcze wpływ ruchów Reidemeistera.
 \end{definition}
 
 Litera $S$, jak nietrudno się domyślić, pochodzi od Seiferta.
-Badania powyższej relacji równoważności prowadzili w~latach sześćdziesiątych ubiegłego stulecia Trotter \cite{trotter62}, Murasugi oraz Levine.
+Badania powyższej relacji równoważności prowadzili w~latach sześćdziesiątych ubiegłego stulecia Trotter \cite{trotter62}, Murasugi \cite{murasugi65} oraz Levine \cite{levine70}.
 
 \begin{proposition}
     Macierz Seiferta modulo $S$-równoważność jest niezmiennikiem splotów.
@@ -597,6 +597,7 @@ Węzeł torusowy $T_{2,n}$ jest dwumostowy, jego sygnatura wynosi $n - 1$.
 Suma spójna węzłów prostych ma zerową sygnaturę, ale na mocy faktu \ref{bridge_additive} jej liczba mostowa jest nieograniczona.
 
 Istnieje równoważna definicja, która nie wymaga czasochłonnego wyznaczania macierzy Seiferta.
+Wyjaśnia to trzecie spostrzeżenie z~\cite{giller82} oparte o~twierdzenie 5.6 z~\cite{murasugi65}.
 
 \begin{definition}
     Sygnatura to niezmiennik topologiczny zadany kłębiastą relacją rekurencyjną:
@@ -627,5 +628,15 @@ Dla 311 spośród pozostałych mamy równość $2u = |\sigma|$.
 
 Czy istnieje węzeł o~sygnaturze $4$ i~wyznaczniku postaci $n = 4k + 1$ dla $k$ całkowitego dodatniego?
 Stojmenow twierdzi, że jeśli tak jest, to wszystkie pierwsze dzielniki $n$ dają resztę $1$ z~dzielenia przez $24$ i~są większe od $2857$.
+
+Jeszcze w latach sześćdziesiątych sygnatura została uogólniona.
+
+\begin{definition}
+    Niech $M$ będzie macierzą Seiferta węzła $K$.
+    Sygnatura Levine'a-Tristrama to funkcja $\sigma_L \colon S^1 \to \Z$ zadana wzorem
+    \begin{equation}
+        \sigma_L(\omega) = \sigma[(1 - \omega)M + (1 - \overline \omega) M^t].
+    \end{equation}
+\end{definition}
 
 % Koniec podsekcji Sygnatura
