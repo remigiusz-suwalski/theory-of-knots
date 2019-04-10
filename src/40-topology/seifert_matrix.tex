@@ -1,0 +1,90 @@
+\subsection{Macierz Seiferta}
+Niech $K$ będzie węzłem z diagramem $D$ i powierzchnią Seiferta $S$.
+
+\begin{definition}[graf Seiferta]
+    Jeżeli ściągniemy dyski z dowodu faktu \ref{seifert_existence} do punktów jednocześnie kurcząc doklejone paski, otrzymamy graf zwany grafem Seiferta diagramu $D$.
+\end{definition}
+
+\begin{proposition}
+    Graf Seiferta jest dwudzielny i planarny.
+\end{proposition}
+
+Skoro graf Seiferta jest planarny, to dzieli sferę $S^2$ na $f$ obszarów.
+Można wyznaczyć ich liczbę: skoro $\chi(S^2) = d - b + f = 2$, to $f - 1 = 1 - d + b$, pomijamy obszar nieograniczony.
+Brzeg każdego obszaru jest zamkniętą krzywą, z których tworzymy krzywe $x_1, \ldots, x_m$ na powierzchni Seiferta.
+Generują one grupę podstawową $\pi_1(S)$.
+
+Niech $S$ będzie powierzchnią Seiferta z wyróżnioną jedną stroną.
+Jeśli krzywa $x_i$ biegnie po powierzchni $S$, przez $x_i^*$ oznaczać będziemy dodatnie wypchnięcie: krzywą równoległą do $x_i$, która biegnie tuż nad nią.
+Potrzebowaliśmy wyróżnić jedną ze stron powierzchni $S$, by słowo ,,nad'' miało sens.
+
+\begin{definition}[macierz Seiferta]
+    Przy zachowaniu powyższych oznaczeń, macierz, której wyrazy określa wzór $M_{i,j} = \operatorname{lk}(x_i, x_j^*)$, nazywamy macierzą Seiferta.
+\end{definition}
+
+Konstrukcja macierzy Seiferta zależy od wyboru diagramu oraz orientacji krzywych $x_i$, dlatego nie jest niezmiennikiem węzłów.
+Stanie się nim, kiedy uwzględnimy jeszcze wpływ ruchów Reidemeistera.
+
+\begin{definition}
+    Operacja $\Lambda_1$ dla pewnej odwracalnej macierzy $P$ o całkowitych wyrazach (czyli $\det P = \pm 1$) to
+    \begin{equation}
+        \Lambda_1 \colon M \mapsto PMP^t.
+    \end{equation}
+    Natomiast
+    \begin{equation}
+        \Lambda_2 \colon M \mapsto \begin{bmatrix}
+  &   &  & 0 & 0 \\
+  & M &  & \vdots & \vdots \\
+  &   &  & 0 & 0 \\
+* & \dots & * & 0 & 0 \\
+0 & \dots & 0 & 1 & 0
+\end{bmatrix} \textrm{albo} \begin{bmatrix}
+  &   &  & * & 0 \\
+  & M &  & \vdots & \vdots \\
+  &   &  & * & 0 \\
+0 & \dots & 0 & 0 & 1 \\
+0 & \dots & 0 & 0 & 0
+\end{bmatrix},
+    \end{equation}
+    gdzie gwiazdka zastępuje ustaloną liczbę całkowitą.
+\end{definition}
+
+\begin{definition}
+    Niech $M_1, M_2$ będą macierzami.
+    Jeśli $M_2$ można otrzymać z $M_1$ przez skończony ciąg operacji $\Lambda_1, \Lambda_2$ oraz ich odwrotności, to macierze nazywamy $S$-równoważnymi.
+\end{definition}
+
+Litera $S$, jak nietrudno się domyślić, pochodzi od Seiferta.
+Badania powyższej relacji równoważności prowadzili w~latach sześćdziesiątych ubiegłego stulecia Trotter \cite{trotter62}, Murasugi \cite{murasugi65} oraz Levine \cite{levine70}.
+
+\begin{proposition}
+    Macierz Seiferta modulo $S$-równoważność jest niezmiennikiem splotów.
+\end{proposition}
+
+Dowód tego faktu jest elementarny, ale dość długi.
+Razem z~ułatwiającymi zrozumienie diagramami można znaleźć go w podręczniku Murasugiego, dlatego pominiemy go i skupimy się na tym, jakie niezmienniki można otrzymać z macierzy Seiferta.
+
+Wyznacznik samej macierzy Seiferta nie jest niezmiennikiem.
+Wykonując operację $\Lambda_2$ dostajemy macierz, której ostatnia kolumna albo ostatni wiersz są zerami, więc jej wyznacznik także jest zerem.
+Jeśli jednak najpierw dokonamy jej symetryzacji, dostaniemy znany już niezmiennik.
+
+\begin{proposition}
+    Niech $M$ będzie macierzą Seiferta węzła $K$.
+    Wtedy
+    \begin{equation}
+        \det K = |\det(M + M^t)|.
+    \end{equation}
+\end{proposition}
+
+Przez wprowadzenie dodatkowej zmiennej $t \in \R$, ponownie uogólnimy wyznacznik do wielomianu Alexandera.
+
+\begin{proposition}
+    Niech $M$ będzie macierzą Seiferta rzędu $k$ węzła $K$.
+    Wtedy
+    \begin{equation}
+        \Delta_K (t) = t^{-k/2}\det(M - tM^t).
+    \end{equation}
+\end{proposition}
+
+Określimy jeszcze jeden, niewystępujący wcześniej niezmiennik.
+
