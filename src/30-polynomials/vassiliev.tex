@@ -1,90 +1,117 @@
 \section{Niezmienniki Wasiljewa} % (fold)
 \label{sec:vassiliev}
-Będziemy teraz rozważać węzły z~samoprzecięciami.
+Niezmienniki Wasiljewa (znane także jako niezmienniki skończonego typu) umożliwiają radykalnie nowe podejście do węzłów.
+Około 1989 roku odkryli je niezależnie Wiktor Wasiljew, w~oparciu o~teorię osobliwości, oraz Michaił Goussarow, metodami kombinatorycznymi.
+My przedstawimy to drugie podejście.
+Niezmienniki Wasiljewa najlepiej zrozumieć, jeśli osłabimy trochę definicję węzła i będziemy rozważać także krzywe z~samoprzecięciami.
 
-\begin{definition}
+\begin{definition}[węzeł singularny]
     \index{węzeł!singularny}
-    Obraz kawałkami liniowej funkcji $f \colon S^1 \to \R^3$ nazywamy węzłem singularnym, jeżeli funkcja $f$ jest różnowartościowa poza skończenie wieloma punktami.
-    Jeśli dwa punkty na okręgu mają ten sam obraz, to $K$ przecina się tam pod kątem prostym.
-    Dodatkowo wymagamy, by w~żadnych trzech punktach funkcja $f$ nie przybierała tej samej wartości.
+    Niech $f \colon S^1 \to \R^3$ będzie kawałkami liniową funkcją, która jest różnowartościowa poza skończenie wieloma punktami.
+    Załóżmy dodatkowo, że
+    \begin{itemize}
+        \item włókna funkcji $f$ (przeciwobrazy punktów) są co najwyżej dwuelementowe
+        \item jeżeli dwa różne punkty mają ten sam obraz, to $K = f(S^1)$ przecina się tam pod kątem prostym.
+    \end{itemize}
+    Obraz funkcji $f$ nazywamy węzłem singularnym.
 \end{definition}
 
 Gdy używamy słowa węzeł, nigdy nie mamy na myśli węzła singularnego.
-Punkt, gdzie węzeł tnie samego siebie, nazywamy wierzchołkiem.
+Punkt, gdzie węzeł singularny tnie samego siebie, nazywamy wierzchołkiem i~oznaczamy pogrubioną kropką na diagramie.
+Podamy teraz definicję równoważności dla węzłów singularnych przez analogię do zwykłych węzłów (definicja \ref{equivalent_knots_2}).
 
-Do każdego wierzchołka $A$ przypiszmy małe otoczenie domknięte $U_A$ oraz płaszczyznę $P_A$, która zawiera $U_A \cap K$, mały fragment węzła wokół punktu $A$. Dysk $P_A \cap U_A$ nazywamy płaskim dyskiem wokół wierzchołka $A$.
+\begin{definition}[płaski dysk]
+    Niech $A$ będzie wierzchołkiem węzła singularnego $K$, $B_A$ jego małym domkniętym otoczeniem, zaś $P_A$ płaszczyzną, która zawiera $B_A \cap K$, mały fragment węzła wokół wierzchołka.
+    Dysk $P_A \cap B_A$ nazywamy płaskim dyskiem wokół wierzchołka $A$.
+\end{definition}
 
 \begin{definition}
-    Dwa singularne węzły $K, L$ traktujemy jako równoważne: $K \approx L$, jeśli istnieje zachowujący orientację homeomorfizm $\varphi$ przestrzeni $\R^3$ w~siebie, który przenosi jeden węzeł na drugi: $\varphi(K) = L$ oraz indukuje bijekcję między rodzinami płaskich dysków $K$ i~$L$.
+    Dwa singularne węzły $K, L$ są równoważne, co zapisujemy jako $K \approx L$, jeśli istnieje zachowujący orientację homeomorfizm $\varphi$ przestrzeni $\R^3$ w~siebie, który przenosi jeden węzeł na drugi: $\varphi(K) = L$ oraz indukuje bijekcję między rodzinami płaskich dysków $K$ i~$L$.
 \end{definition}
 
 Ten drugi warunek gwarantuje nam, że skrzyżowania wokół podwójnych punktów nie ulegną zniszczeniu.
-Istnieje podobne kryterium dla diagramów.
-Dwa singularne diagramy są równoważne dokładnie wtedy, kiedy można między nimi przejść przy użyciu ciągu ruchów Reidemeistera (poza małymi otoczeniami wierzchołków) oraz operacji $\Omega$:
-\[
-\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
-\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1,2,3,4}]
-    \strand[semithick] (-15, 5) to (0, 5) to (5, 0) to (0, -5) to (-15, -5);
-    \strand[semithick] (-2, -2) to (-10, -10);
-    \strand[semithick] (-2, 2) to (-10, 10);
-    \strand[semithick] (2, -2) to (10, -10);
-    \strand[semithick] (2, 2) to (10, 10);
-    \draw[semithick] (2, 2) to (-2, -2);
-    \draw[semithick] (2, -2) to (-2, 2);
-    \draw[black,fill=black] (0,0) circle (.5);
-\end{knot}
-\end{tikzpicture}
-\quad\cong_\Omega\quad
-\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
-\begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1,2,3,4}]
-    \strand[semithick] (-15, 5) to (-10, 5) to (-5, 0) to (-10, -5) to (-15, -5);
-    \strand[semithick] (-2, -2) to (-10, -10);
-    \strand[semithick] (-2, 2) to (-10, 10);
-    \strand[semithick] (2, -2) to (10, -10);
-    \strand[semithick] (2, 2) to (10, 10);
-    \draw[semithick] (2, 2) to (-2, -2);
-    \draw[semithick] (2, -2) to (-2, 2);
-    \draw[black,fill=black] (0,0) circle (.5);
-\end{knot}
-\end{tikzpicture}
-\quad\cong_\Omega\quad
-\begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
-\begin{knot}[clip width=5, end tolerance=1pt]
-    \strand[semithick] (-15, 5) to (0, 5) to (5, 0) to (0, -5) to (-15, -5);
-    \strand[semithick] (-2, -2) to (-10, -10);
-    \strand[semithick] (-2, 2) to (-10, 10);
-    \strand[semithick] (2, -2) to (10, -10);
-    \strand[semithick] (2, 2) to (10, 10);
-    \draw[semithick] (2, 2) to (-2, -2);
-    \draw[semithick] (2, -2) to (-2, 2);
-    \draw[black,fill=black] (0,0) circle (.5);
-\end{knot}
-\end{tikzpicture}
-\]
+Istnieje podobne kryterium dla diagramów, odpowiednik twierdzenia Reidemeistera (\ref{thm:reidemeister}).
+
+\begin{proposition}
+    Dwa singularne diagramy są równoważne dokładnie wtedy, kiedy można między nimi przejść przy użyciu ciągu ruchów Reidemeistera (poza małymi otoczeniami wierzchołków) oraz operacji $\Omega$:
+    \[
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+    \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1,2,3,4}]
+        \strand[semithick] (-15, 5) to (0, 5) to (5, 0) to (0, -5) to (-15, -5);
+        \strand[semithick] (-2, -2) to (-10, -10);
+        \strand[semithick] (-2, 2) to (-10, 10);
+        \strand[semithick] (2, -2) to (10, -10);
+        \strand[semithick] (2, 2) to (10, 10);
+        \draw[semithick] (2, 2) to (-2, -2);
+        \draw[semithick] (2, -2) to (-2, 2);
+        \draw[black,fill=black] (0,0) circle (.5);
+    \end{knot}
+    \end{tikzpicture}
+    \quad\cong_\Omega\quad
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+    \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1,2,3,4}]
+        \strand[semithick] (-15, 5) to (-10, 5) to (-5, 0) to (-10, -5) to (-15, -5);
+        \strand[semithick] (-2, -2) to (-10, -10);
+        \strand[semithick] (-2, 2) to (-10, 10);
+        \strand[semithick] (2, -2) to (10, -10);
+        \strand[semithick] (2, 2) to (10, 10);
+        \draw[semithick] (2, 2) to (-2, -2);
+        \draw[semithick] (2, -2) to (-2, 2);
+        \draw[black,fill=black] (0,0) circle (.5);
+    \end{knot}
+    \end{tikzpicture}
+    \quad\cong_\Omega\quad
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+    \begin{knot}[clip width=5, end tolerance=1pt]
+        \strand[semithick] (-15, 5) to (0, 5) to (5, 0) to (0, -5) to (-15, -5);
+        \strand[semithick] (-2, -2) to (-10, -10);
+        \strand[semithick] (-2, 2) to (-10, 10);
+        \strand[semithick] (2, -2) to (10, -10);
+        \strand[semithick] (2, 2) to (10, 10);
+        \draw[semithick] (2, 2) to (-2, -2);
+        \draw[semithick] (2, -2) to (-2, 2);
+        \draw[black,fill=black] (0,0) circle (.5);
+    \end{knot}
+    \end{tikzpicture}
+    \]
+\end{proposition}
 
 Uwaga: Dye w \cite{dye16} definiuje zupełnie inne ruchy!
 
-Załóżmy teraz, że $v$ jest jakimś niezmiennikiem węzłów o~wymiernych wartościach.
-Można indukcyjnie próbować go przedłużyć do węzłów singularnych.
-Znając jego wartości dla węzłów o~co najwyżej $n - 1$ wierzchołkach,  wybieramy węzeł $K$ o~$n$ wierzchołkach i~kładziemy $v(K) = v(K_+) - v(K_-)$.
-Tak otrzymany byt nazywamy niezmiennikiem Wasiljewa rzędu co najwyżej $m$, gdy znika na wszystkich singularnych węzłach o~$m + 1$ wierzchołkach.
+Załóżmy teraz, że mamy jakiś niezmiennik węzłów $v$ o~wymiernych wartościach i~chcemy przedłużyć go do niezmiennika $\hat v$ węzłów singularnych.
+Najprościej zrobić to rekurencyjnie.
+Niech $\hat v$ będzie już określony dla węzłów singularnych o co najwyżej $n - 1$ wierzchołkach i~wybierzmy dowolny węzeł o~$n$ wierzchołkach.
+Okazuje się, że jeżeli położymy
+\begin{equation}
+    \hat v(K) = \hat v(K_+) - \hat v(K_-),
+\end{equation}
+to dostaniemy dobrze określoną funkcję: jeśli $L \approx K$ jest innym węzłem singularnym, to $\hat v(L) = \hat v(K)$.
+Nazywamy ją niezmiennikiem Wasiljewa indukowanym przez niezmiennik węzłów $v_0$.
 
-Istnieje jeden niezmiennik Wasiljewa rzędu zero i~żadnych niezmienników rzędu jeden.
+\begin{definition}[rząd niezmiennika]
+    Niech $v$ będzie niezmiennikiem Wasiljewa.
+    Mówimy, że $v$ jest rzędu co najwyżej $n$, jeśli dla dowolnego singularnego węzła $K$ o $n + 1$ wierzchołkach zachodzi $v(K) = 0$.
+    Jeśli dodatkowo $v$ nie jest rzędu co najwyżej $n - 1$, to mówimy, że jest rzędu dokładnie $n$.
+\end{definition}
 
-\begin{example}
-    Niech $a_m$ będzie współczynnikiem stojącym przy $z^{2m}$ w~wielomianie Conwaya.
-    Jest to niezmiennik Wasiljewa rzędu $2m$.
-\end{example}
+Udowodnimy kilka najprostszych własności niezmienników Wasiljewa.
 
-\begin{example}
-    Niech $b_m$ będzie współczynnikiem stojącym przy $q^m$ w~rozwinięciu Taylora dla funkcji $V(e^q)$, gdzie $V$ oznacza wielomian Jonesa.
-    Jest to niezmiennik Wasiljewa rzędu co najwyżej $m$.
-\end{example}
+% Niezmiennik Wasiljewa węzła z~pętelką to zero.
 
-\begin{example}
-    Niech $c_m$ będzie $m$-tym współczynnikiem rozwinięcia Taylora dla wielomianu Jonesa wokół punktu $t = 1$.
-    Jest to niezmiennik Wasiljewa rzędu co najwyżej $m$.
-\end{example}
+\begin{proposition}
+    Każdy niezmiennik Wasiljewa rzędu zero jest funkcją stałą.
+\end{proposition}
+
+\begin{proof}
+    Niech $v$ będzie niezmiennikiem rzędu zero i~znika na każdym singularnym węźle o~jednym wierzchołku.
+    Relacja kłębiasta mówi wtedy, że $v(\LittleLeftCrossing) = v(\LittleRightCrossing)$, to znaczy odwrócenie dowolnego skrzyżowania nie zmienia wartości niezmiennika.
+    Z lematu \ref{lem:gordian_number} wiemy jednak, że każdy węzeł można zmienić w niewęzeł odwracając niektóre skrzyżowania.
+    Wynika stąd, że $v(K) = v(\LittleUnknot)$, co należało udowodnić.
+\end{proof}
+
+\begin{proposition}
+    Nie istnieje niezmiennik Wasiljewa rzędu jeden.
+\end{proposition}
 
 Stojmenow w \cite{stoimenow_01} pokazał, że niezmienniki Wasiljewa każdego rzędu można wyznaczyć w~skończonym czasie.
 Dokładniej:
@@ -93,8 +120,29 @@ Dokładniej:
     Każdy niezmiennik Wasiljewa rzędu co najwyżej $k$ jest jednoznacznie określony przez swoje wartości na alternujących węzłach o co najwyżej $2k^2 + k$ skrzyżowaniach.
 \end{proposition}
 
+Czas na garść przykładów.
 
-% Niezmiennik Wasiljewa węzła z~pętelką to zero.
+\begin{example}
+    Niech $K$ będzie węzłem, zaś $\nabla_K(t) = \sum_k a_{2k} z^{2k}$ jego wielomianem Conwaya.
+    Współczynnik $a_{2k}$ indukuje niezmiennik Wasiljewa rzędu dokładnie $2k$.
+\end{example}
+
+\begin{example}
+    Niech $K$ będzie węzłem, zaś $V_K(t)$ jego wielomianem Jonesa.
+    Podstawmy za $t$ w wielomianie $V_K(t)$ formalny szereg potęgowy $e^x = 1 + x + \frac12 x^2 + \ldots$ i rozwińmy go w szereg Taylora:
+    \begin{equation}
+        V_K(e^x) = \sum_{k = 0}^\infty b_k x^k.
+    \end{equation}
+    Współczynnik $b_{k}$ indukuje niezmiennik Wasiljewa rzędu co najwyżej $k$.
+\end{example}
+
+\begin{example}
+    Niech $K$ będzie węzłem, zaś $f(t)$ rozwinięciem Taylora wokół $t = 1$ dla wielomianu Jonesa:
+    \begin{equation}
+        f(t) = \sum_{k = 0}^\infty c_k (t-1)^k.
+    \end{equation}
+    Współczynnik $c_{k}$ indukuje niezmiennik Wasiljewa rzędu co najwyżej $k$.
+\end{example}
 
 Pójdźmy w ślad za Murasugim i zdefiniujmy nieskończoną rodzinę węzłów wirtualnych $K[p, q]$, gdzie $p$ jest liczbą wierzchołków, zaś $|q|$ liczbą klasycznych skrzyżowań.
 Jeśli $q < 0$, wszystkie skrzyżowania odwracamy:
@@ -118,8 +166,32 @@ Jeśli $q < 0$, wszystkie skrzyżowania odwracamy:
 \end{knot}
 \end{tikzpicture}\]
 
-Następujące nie są niezmiennikami Wasiljewa: sygnatura, indeks skrrzyżowaniowy, liczba gordyjska, indeks mostowy, indeks warkoczowy, genus.
-Świadkiem jest za każdym razem węzeł $K[n+1, n]$.
+\begin{proposition}
+    Następujące funkcje nie są niezmiennikami Wasiljewa: indeks skrzyżowaniowy $\operatorname{cr}$, liczba gordyjska $\operatorname{u}$, indeks mostowy $\operatorname{br}$, indeks warkoczowy $\operatorname{b}$, genus $g$, sygnatura $\sigma$.
+\end{proposition}
 
-Ohyama pokazał w~\cite{ohyama95}, że dla każdego węzła $K$ i~liczby naturalnej $n$ istnieje nieskończona rodzina węzłów, których niezmienniki rzędu co najwyżej $n$ nie odróżniają od $K$.
-Istnieje przypuszczenie, że wszystkie niezmienniki Wasiljewa (jednocześnie) są już niezmiennikiem zupełnym.
+\begin{proof}
+    Każdy z tych niezmienników nie znika na singularnym węźle $K[n+1, n]$.
+\end{proof}
+
+Niezmienniki Wasiljewa nie są zupełne.
+Ohyama dla każdego węzła $K$ i~liczby naturalnej $n$ wskazał jawnie nieskończoną rodzinę węzłów, których niezmienniki rzędu co najwyżej $n$ nie odróżniają od $K$ (\cite{ohyama95}).
+
+W 1993 roku Maxim Koncewicz pokazał, że dla każdego węzła można policzyć pewną całkę (teraz nazywaną całką Koncewicza), która jest uniwersalnym niezmiennikiem Wasiljewa.
+Oznacza to, że z jej wartości można odtworzyć wszystkie inne niezmienniki skończonego typu.
+Bar-Natan w 1995 roku znalazł wartość tej całki dla niewęzła:
+\begin{equation}
+    I (\LittleUnknot) = \exp \left(\sum_{n=0}^\infty b_{2n} w_{2n}\right),
+\end{equation}
+gdzie $b_{2n}$ to zmodyfikowane liczby Bernoulliego o funkcji tworzącej
+\begin{equation}
+    \sum_{n=0}^\infty b_{2n} x^{2n} = \frac 12 \log \frac {e^{x/2} - e^{-x/2}}{x/2}, 
+\end{equation}
+zaś $w_{2n}$ to ,,koła'': diagramy okręgu z doczepionymi $2n$ promieniami.
+Liniową kombinację należy rozumieć jako element algebry chińskich znaków, opisanej w następnej wersji tej książki.
+Następnie Marché w~2003 roku znalazł wartości całki dla węzłów torusowych (\cite{marche04}).
+Wygląda na to, że nikt nie odważył się dokonać tego dla innych węzłów (stan na 2019).
+
+\begin{conjecture}
+    Uniwersalny niezmiennik Wasiljewa jest zupełny.
+\end{conjecture}
