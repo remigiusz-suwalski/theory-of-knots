@@ -5,6 +5,10 @@ Około 1989 roku odkryli je niezależnie Wiktor Wasiljew, w~oparciu o~teorię os
 My przedstawimy to drugie podejście.
 Niezmienniki Wasiljewa najlepiej zrozumieć, jeśli osłabimy trochę definicję węzła i będziemy rozważać także krzywe z~samoprzecięciami.
 
+Uważam, że przyjemnym wprowadzeniem do niezmienników Wasiljewa jest artykuł \cite{chmutov12} Chmutowa.
+Za najlepsze uważa się pracę \cite{barnatan_95}.
+Bar-Natan, jej autor, pozostaje do dziś jedną z~najważniejszych osób dla rozwoju tego działu matematyki.
+
 \begin{definition}[węzeł singularny]
     \index{węzeł!singularny}
     Niech $f \colon S^1 \to \R^3$ będzie kawałkami liniową funkcją, która jest różnowartościowa poza skończenie wieloma punktami.
@@ -86,11 +90,12 @@ Okazuje się, że jeżeli położymy
     \hat v(K) = \hat v(K_+) - \hat v(K_-),
 \end{equation}
 to dostaniemy dobrze określoną funkcję: jeśli $L \approx K$ jest innym węzłem singularnym, to $\hat v(L) = \hat v(K)$.
-Nazywamy ją niezmiennikiem Wasiljewa indukowanym przez niezmiennik węzłów $v_0$.
+Nazywamy ją niezmiennikiem singularnym indukowanym przez niezmiennik węzłów $v_0$.
 
-\begin{definition}[rząd niezmiennika]
-    Niech $v$ będzie niezmiennikiem Wasiljewa.
-    Mówimy, że $v$ jest rzędu co najwyżej $n$, jeśli dla dowolnego singularnego węzła $K$ o $n + 1$ wierzchołkach zachodzi $v(K) = 0$.
+\begin{definition}[rząd niezmiennika]\
+    \label{def:vassiliev_order}
+    Niech $v$ będzie niezmiennikiem singularnym.
+    Mówimy, że $v$ jest niezmiennikiem Wasiljewa rzędu co najwyżej $n$, jeśli dla dowolnego singularnego węzła $K$ o $n + 1$ wierzchołkach zachodzi $v(K) = 0$.
     Jeśli dodatkowo $v$ nie jest rzędu co najwyżej $n - 1$, to mówimy, że jest rzędu dokładnie $n$.
 \end{definition}
 
@@ -101,6 +106,8 @@ Czas na garść przykładów.
     Współczynnik $a_{2k}$ indukuje niezmiennik Wasiljewa rzędu dokładnie $2k$.
 \end{example}
 
+Pokazał to Bar-Natan w roku 1991.
+
 \begin{example}
     Niech $K$ będzie węzłem, zaś $V_K(t)$ jego wielomianem Jonesa.
     Podstawmy za $t$ w wielomianie $V_K(t)$ formalny szereg potęgowy $e^x = 1 + x + \frac12 x^2 + \ldots$ i rozwińmy go w szereg Taylora:
@@ -109,6 +116,9 @@ Czas na garść przykładów.
     \end{equation}
     Współczynnik $b_{k}$ indukuje niezmiennik Wasiljewa rzędu co najwyżej $k$.
 \end{example}
+
+Ten i podobne wyniki dla wielomianów HOMFLY, Kauffmana uzyskała Birman z~Linem w \cite{birman93}.
+Praca ta znacznie uprościła oryginalne techniki Wasiljewa.
 
 \begin{example}
     Niech $K$ będzie węzłem, zaś $f(t)$ rozwinięciem Taylora wokół $t = 1$ dla wielomianu Jonesa:
@@ -144,6 +154,8 @@ Jeśli $q < 0$, wszystkie skrzyżowania odwracamy:
     Następujące funkcje nie są niezmiennikami Wasiljewa: indeks skrzyżowaniowy $\operatorname{cr}$, liczba gordyjska $\operatorname{u}$, indeks mostowy $\operatorname{br}$, indeks warkoczowy $\operatorname{b}$, genus $g$, sygnatura $\sigma$.
 \end{proposition}
 
+Wynik był znany już w latach 90., na przykład Birman w \cite{birman93} pokazała, że liczba gordyjska nie jest niezmiennikiem Wasiljewa.
+
 \begin{proof}
     Każdy z tych niezmienników nie znika na singularnym węźle $K[n+1, n]$.
 \end{proof}
@@ -168,7 +180,7 @@ Udowodnimy kilka najprostszych własności niezmienników Wasiljewa.
 \end{proposition}
 
 Oznaczmy przez $\mathcal V_n$ zbiór niezmienników Wasiljewa rzędu co najwyżej $n$, o~wartościach w zbiorze liczb zespolonych $\C$.
-Z definicji ... wynika, że $\mathcal V_n$ jest przestrzenią wektorową nad ciałem $\C$ oraz $\mathcal V_n \subseteq \mathcal V_{n+1}$, zatem mamy rosnącą filtrację
+Z definicji \ref{def:vassiliev_order} wynika, że $\mathcal V_n$ jest przestrzenią wektorową nad ciałem $\C$ oraz $\mathcal V_n \subseteq \mathcal V_{n+1}$, zatem mamy rosnącą filtrację
 \begin{equation}
     \mathcal V_0 \subseteq \mathcal V_1 \subseteq \mathcal V_2 \subseteq \ldots \subseteq \mathcal V := \bigcup_{n=0}^\infty \mathcal V_n.
 \end{equation}
@@ -177,7 +189,7 @@ Dokładny wymiar przestrzeni $\mathcal V_n$ jest znany tylko dla $n \le 12$.
 Poniższa tabela ma dość ciekawą historię.
 Wasiljew znalazł ręcznie wartości w kolumnach dla $n \le 4$ w 1990 roku.
 Potem Bar-Natan napisał komputerowy program rozwiazujący pewne równania liniowe i~znalazł tak wymiary przestrzeni $\mathcal V_n$ dla $n \le 9$, miało to miejsce w roku 1993.
-Wreszcie Kneissler cztery lata później znalazł dolne oraz górne ograniczenia: dolne oparte o znaczone powierzchnie, górne pochodzące od tzw. algebry Vogela.
+Wreszcie Kneissler cztery lata później znalazł dolne oraz górne ograniczenia: dolne oparte o znaczone powierzchnie, górne pochodzące od algebry Vogela (\cite{kneissler97}).
 Dla $n \le 12$ ograniczenia te pokrywają się!
 
 \renewcommand*{\arraystretch}{1.4}
@@ -275,8 +287,6 @@ Dokładniej:
     Każdy niezmiennik Wasiljewa rzędu co najwyżej $k$ jest jednoznacznie określony przez swoje wartości na alternujących węzłach o co najwyżej $2k^2 + k$ skrzyżowaniach.
 \end{proposition}
 
-
-
 Niezmienniki Wasiljewa nie są zupełne.
 Ohyama dla każdego węzła $K$ i~liczby naturalnej $n$ wskazał jawnie nieskończoną rodzinę węzłów, których niezmienniki rzędu co najwyżej $n$ nie odróżniają od $K$ (\cite{ohyama95}).
 
@@ -298,3 +308,8 @@ Wygląda na to, że nikt nie odważył się dokonać tego dla innych węzłów (
 \begin{conjecture}
     Uniwersalny niezmiennik Wasiljewa jest zupełny.
 \end{conjecture}
+
+To jedna z najtrudniejszych hipotez teorii węzłów -- ponieważ całka Koncewicza jest mocniejsza od każdego wielomianowego niezmiennika, jaki dotąd poznaliśmy (wielomiany Alexandera, Jonesa, HOMFLY, Kauffmana), można o~niej myśleć jako o uogólnieniu hipotezy \ref{jones_conjecture}.
+
+% bez tego w poprzednim akapicie pojawia się artefakt
+${}$
