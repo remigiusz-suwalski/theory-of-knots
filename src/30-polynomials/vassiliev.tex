@@ -94,32 +94,6 @@ Nazywamy ją niezmiennikiem Wasiljewa indukowanym przez niezmiennik węzłów $v
     Jeśli dodatkowo $v$ nie jest rzędu co najwyżej $n - 1$, to mówimy, że jest rzędu dokładnie $n$.
 \end{definition}
 
-Udowodnimy kilka najprostszych własności niezmienników Wasiljewa.
-
-% Niezmiennik Wasiljewa węzła z~pętelką to zero.
-
-\begin{proposition}
-    Każdy niezmiennik Wasiljewa rzędu zero jest funkcją stałą.
-\end{proposition}
-
-\begin{proof}
-    Niech $v$ będzie niezmiennikiem rzędu zero i~znika na każdym singularnym węźle o~jednym wierzchołku.
-    Relacja kłębiasta mówi wtedy, że $v(\LittleLeftCrossing) = v(\LittleRightCrossing)$, to znaczy odwrócenie dowolnego skrzyżowania nie zmienia wartości niezmiennika.
-    Z lematu \ref{lem:gordian_number} wiemy jednak, że każdy węzeł można zmienić w niewęzeł odwracając niektóre skrzyżowania.
-    Wynika stąd, że $v(K) = v(\LittleUnknot)$, co należało udowodnić.
-\end{proof}
-
-\begin{proposition}
-    Nie istnieje niezmiennik Wasiljewa rzędu jeden.
-\end{proposition}
-
-Stojmenow w \cite{stoimenow_01} pokazał, że niezmienniki Wasiljewa każdego rzędu można wyznaczyć w~skończonym czasie.
-Dokładniej:
-
-\begin{proposition}
-    Każdy niezmiennik Wasiljewa rzędu co najwyżej $k$ jest jednoznacznie określony przez swoje wartości na alternujących węzłach o co najwyżej $2k^2 + k$ skrzyżowaniach.
-\end{proposition}
-
 Czas na garść przykładów.
 
 \begin{example}
@@ -173,6 +147,135 @@ Jeśli $q < 0$, wszystkie skrzyżowania odwracamy:
 \begin{proof}
     Każdy z tych niezmienników nie znika na singularnym węźle $K[n+1, n]$.
 \end{proof}
+
+Udowodnimy kilka najprostszych własności niezmienników Wasiljewa.
+
+% Niezmiennik Wasiljewa węzła z~pętelką to zero.
+
+\begin{proposition}
+    Każdy niezmiennik Wasiljewa rzędu zero jest funkcją stałą.
+\end{proposition}
+
+\begin{proof}
+    Niech $v$ będzie niezmiennikiem rzędu zero i~znika na każdym singularnym węźle o~jednym wierzchołku.
+    Relacja kłębiasta mówi wtedy, że $v(\LittleLeftCrossing) = v(\LittleRightCrossing)$, to znaczy odwrócenie dowolnego skrzyżowania nie zmienia wartości niezmiennika.
+    Z lematu \ref{lem:gordian_number} wiemy jednak, że każdy węzeł można zmienić w niewęzeł odwracając niektóre skrzyżowania.
+    Wynika stąd, że $v(K) = v(\LittleUnknot)$, co należało udowodnić.
+\end{proof}
+
+\begin{proposition}
+    Nie istnieje niezmiennik Wasiljewa rzędu jeden.
+\end{proposition}
+
+Oznaczmy przez $\mathcal V_n$ zbiór niezmienników Wasiljewa rzędu co najwyżej $n$, o~wartościach w zbiorze liczb zespolonych $\C$.
+Z definicji ... wynika, że $\mathcal V_n$ jest przestrzenią wektorową nad ciałem $\C$ oraz $\mathcal V_n \subseteq \mathcal V_{n+1}$, zatem mamy rosnącą filtrację
+\begin{equation}
+    \mathcal V_0 \subseteq \mathcal V_1 \subseteq \mathcal V_2 \subseteq \ldots \subseteq \mathcal V := \bigcup_{n=0}^\infty \mathcal V_n.
+\end{equation}
+
+Dokładny wymiar przestrzeni $\mathcal V_n$ jest znany tylko dla $n \le 12$.
+Poniższa tabela ma dość ciekawą historię.
+Wasiljew znalazł ręcznie wartości w kolumnach dla $n \le 4$ w 1990 roku.
+Potem Bar-Natan napisał komputerowy program rozwiazujący pewne równania liniowe i~znalazł tak wymiary przestrzeni $\mathcal V_n$ dla $n \le 9$, miało to miejsce w roku 1993.
+Wreszcie Kneissler cztery lata później znalazł dolne oraz górne ograniczenia: dolne oparte o znaczone powierzchnie, górne pochodzące od tzw. algebry Vogela.
+Dla $n \le 12$ ograniczenia te pokrywają się!
+
+\renewcommand*{\arraystretch}{1.4}
+\footnotesize
+\begin{longtable}{lcccccccccccccc}
+\hline
+    $n$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$ \\ \hline \endhead
+    $\dim \mathcal V_n$ & $1$ & $1$ & $2$ & $3$ & $6$ & $10$ & $19$ & $33$ & $60$ & $104$ & $184$ & $316$ & $548$ \\
+    $\dim \mathcal V_n / \mathcal V_{n-1}$ & $1$ & $0$ & $1$ & $1$ & $3$ & $4$ & $9$ & $14$ & $27$ & $44$ & $80$ & $132$ & $232$ \\
+    \hline
+\end{longtable}
+\normalsize
+
+Oznaczmy wymiar przestrzeni $\mathcal V_n / \mathcal V_{n-1}$ przez $d_n$.
+Dla wyższych rzędów nie dość, że nie znamy dokładnych wartości ciągu $d_n$, to dolne i górne ograniczenia asymptotyczne są od siebie bardzo różne: górne jest niemalże silnią, dolne natomiast jest podwykładnicze.
+
+\begin{proposition}
+    $d_n < (2n-1)!!$.
+\end{proposition}
+
+\begin{proposition}[Chmutov i Duzhin, 1993]
+    $d_n < (n-1)!$.
+\end{proposition}
+
+\begin{proposition}[Ng, 1995]
+    $d_n < \frac 12 (n-2)!$.
+\end{proposition}
+
+\begin{proposition}[Stojmenow, 1996]
+    Ciąg $d_n$ rośnie wolniej niż $n! \cdot (11/10)^n$.
+\end{proposition}
+
+\begin{proposition}[Bollobas i  Riordan, 2000]
+    $d_n \lesssim n! / (2 \log 2 + O(1))^n$.
+\end{proposition}
+
+\begin{proposition}[Zagier, 2001]
+    Niech $a < \frac 1 6 \pi^2$ będzie stałą.
+    Wtedy
+    \begin{equation}
+        \dim \mathcal V_n / \mathcal V_{n-1} \lesssim \frac{n!}{a^n}.
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    Zagier znalazł to ograniczenie przy użyciu szeregów Dirichleta w \cite{zagier01}.
+\end{proof}
+
+Zanim przejdziemy do ograniczeń z dołu, zdefinujmy jeszcze jedną przestrzeń, $\mathcal P_n \subseteq \mathcal V_n$.
+Składa się z~tych niezmienników Wasiljewa, które są jednocześnie morfizmami, to znaczy spełniają równość $v(K_1 \shrap K_2) = v(K_1) + v(K_2)$.
+Każdy niezmiennik jest wielomianową kombinacją niezmienników pierwotnch.
+
+\begin{proposition}[Chmutov, Duzhin i Lando, 1994]
+    $\dim \mathcal P_n \ge 1$.
+\end{proposition}
+
+\begin{proposition}[Melvin i Morton, Chmutov i Varchenko, 1995]
+    $\dim \mathcal P_n \ge [n/2]$.
+\end{proposition}
+
+\begin{proposition}[Duzhin, 1996]
+    $\dim \mathcal P_n \gtrsim \frac{1}{96} n^2$.
+\end{proposition}
+
+\begin{proposition}[Chmutov i Duzhin, 1997]
+    $\dim \mathcal P_n \gtrsim n^{\log_b n}$ dla $b > 4$.
+\end{proposition}
+
+\begin{proposition}[Koncewicz, 1997]
+    $\dim \mathcal P_n \gtrsim \exp (\pi \sqrt{n/3})$.
+\end{proposition}
+
+\begin{proposition}[Dasbach, 2000]
+    $\dim \mathcal P_n \gtrsim \exp (c \sqrt{n})$ dla każdej stałej $c < \pi \sqrt{2/3}$.
+\end{proposition}
+
+Ograniczenie Dasbacha pozostaje najlepsze (stan na 2011 rok).
+
+\begin{corollary}
+    Niech $a < \frac 1 6 \pi^2$ będzie stałą.
+    Wtedy
+    \begin{equation}
+        \exp \left(\frac {n}{\log_a n} \right) \lesssim \dim \mathcal V_n / \mathcal V_{n-1}.
+    \end{equation}
+\end{corollary}
+
+\begin{proof}
+    Dasbach w \cite{dasbach00}.
+\end{proof}
+
+Stojmenow w \cite{stoimenow_01} pokazał, że niezmienniki Wasiljewa każdego rzędu można wyznaczyć w~skończonym czasie.
+Dokładniej:
+
+\begin{proposition}
+    Każdy niezmiennik Wasiljewa rzędu co najwyżej $k$ jest jednoznacznie określony przez swoje wartości na alternujących węzłach o co najwyżej $2k^2 + k$ skrzyżowaniach.
+\end{proposition}
+
+
 
 Niezmienniki Wasiljewa nie są zupełne.
 Ohyama dla każdego węzła $K$ i~liczby naturalnej $n$ wskazał jawnie nieskończoną rodzinę węzłów, których niezmienniki rzędu co najwyżej $n$ nie odróżniają od $K$ (\cite{ohyama95}).
