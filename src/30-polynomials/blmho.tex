@@ -4,8 +4,6 @@ Na przełomie grudnia i~stycznia 1984 i~1985 roku, K. Nowiński sugerował uwzgl
 Nie udało się uzyskać niezmiennika splotów.
 Sukces odnieśli, dla niezorientowanych splotów, mniej więcej rok później Brandt, Lickorish, Millett oraz Ho (w pracy \cite{brandt86}).
 
-Rozszerzeniem tego niezmiennika jest wielomian $F$ Kauffmana: $Q(x) = F(1, x)$.
-
 \begin{definition}
     \label{def:blm_ho}
     \index{wielomian!BLM/Ho}
@@ -21,19 +19,34 @@ Nie odróżnia luster ani mutantów (patrz definicja \ref{def:mutant}) i~potrafi
 jeśli jest ich $c$, to najmniejszą potęgą $x$ występującą w~wielomianie $Q_L$ jest $x^{1-c}$.
 Jego stopień nie przekracza indeksu skrzyżowaniowego.
 
-\begin{proposition}[Brandt w~pracy \cite{brandt86}, 1986]
-    Znane są jawne wartości wielomianu BLM/Ho w~czterech punktach:
-    \label{prop:blmho_value}
-    \begin{align}
-        Q(-2) & = (-1)^{c-1} \\
-        Q(-1) & = 3^d \\
-        Q(1) & = 1 \\
-        Q(2) & = (\det L)^2,
-    \end{align}
-    gdzie $c$ oznacza ilość składowych spójności, zaś $d$ jest wymiarem homologii modulo $3$ dwukrotnie rozgałęzionego nakrycia $L$.
+Brandt w 1986 roku podał jawne wzory na wartości wielomianu BLM/Ho w~czterech punktach:
+
+Znane są jawne wartości wielomianu BLM/Ho w~czterech punktach
+w~pracy \cite{brandt86}
+
+\begin{proposition}
+    Niech $L$ będzie splotem.
+    Wtedy $Q_L(1) = 1$.
 \end{proposition}
 
-\begin{proposition}[Kanenobu i~Sumi w~pracy \cite{kanenobu93}, 1993]
+\begin{proposition}
+    Niech $L$ będzie splotem.
+    Wtedy $Q_L(2) = (\det L)^2$.
+\end{proposition}
+
+\begin{proposition}
+    Niech $L$ będzie splotem o $c$ ogniwach.
+    Wtedy $Q_L(-2) = (-1)^{c-1}$.
+\end{proposition}
+
+\begin{proposition}
+    Niech $L$ będzie splotem z $d$-wymiarową homologią modulo $3$ dla jego dwukrotnego nakrycia.
+    Wtedy $Q_L(-1) = 3^d$.
+\end{proposition}
+
+Kanenobu i~Sumi w~pracy \cite{kanenobu93} podali prosty test potrafiący czasem wykrywać, które węzły nie są dwumostowe:
+
+\begin{proposition}
     \label{prop:blmho_twobridge}
     Jeśli $L$ jest węzłem dwumostowym, to
     \begin{equation}
