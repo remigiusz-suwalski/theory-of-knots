@@ -244,6 +244,13 @@ Przedstawimy teraz kilka innych definicji, które prowadzą do tego samego niezm
     \]
 \end{definition}
 
+Conway chcąc szybko liczyć wielomian Alexandera zaproponował, by reparametryzować go wzorem $\Delta(x^2) = \nabla(x - 1/x)$.
+Wzór ten był znany Alexanderowi, nie wiedzieć jednak czemu nie zyskał uwagi.
+Spełniona jest wtedy inna relacja kłębiasta:
+\begin{equation}
+    \nabla_{L_+}(x)- \nabla_{L_-}(x) = x \nabla_{L_0}(x).
+\end{equation}
+
 Relacja kłębiasta wystarcza do wyznaczenia $\Delta_L$ dla każdego splotu na mocy następującego lematu:
 
 \begin{lemma}
@@ -272,39 +279,13 @@ Domknięcie warkocza $\sigma_{1} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_
 
 \begin{proof}
     (do napisania)
+    % dla niesplotów łatwo pokazać
+    % dla splotów wystarczy zauważyć, że drzewo kłębiaste zawsze kończy się na niesplotach
 \end{proof}
-
-Conway chcąc szybko liczyć wielomian Alexandera zaproponował, by reparametryzować go wzorem $\Delta(x^2) = \nabla(x - 1/x)$.
-Wzór ten był znany Alexanderowi, nie wiedzieć jednak czemu nie zyskał uwagi.
-Spełniona jest wtedy inna relacja kłębiasta:
-\begin{equation}
-    \nabla_{L_+}(x)- \nabla_{L_-}(x) = x \nabla_{L_0}(x).
-\end{equation}
 
 % Wielomian Jonesa (zdefiniowany w~kolejnej sekcji) spełnia podobną równość.
 % Ich istnienie może nasunąć przypuszczenie, że dają się wspólnie uogólnić.
 % Tak jest w~rzeczywistości -- mocniejszym niezmiennikiem okazał się wielomian HOMFLY-PT.
-
-Niech $\nabla_k$ będzie współczynnikiem przy $z^k$ w~wielomianie Conwaya.
-Jest to przykład niezmiennika Wasiljewa rzędu $k$, poznamy je w~sekcji \ref{sec:vassiliev}.
-Lin oraz Wang w~1994 roku na podstawie niezmienników małych rzędów, to jest $v_2$ oraz $v_3$, wysunęli następującą hipotezę: istnieje uniwersalna stała $C$ taka, że
-\begin{equation}
-    |v_k(K)| \le C (\operatorname{cr} K)^k.
-\end{equation}
-
-Hipotezę wkrótce udowodniono, najpierw dla węzłów (Bar-Natan, \cite{barnatan95}), nieco później także dla splotów (Stojmenow, \cite{stoimenow_01}).
-Wartość stałej $C$ trudno obliczyć, dlatego Stojmenow zaproponował ograniczenie się do przypadku $v_k = \nabla_k$.
-
-\begin{conjecture}
-    Niech $L$ będzie splotem.
-    Wtedy
-    \begin{equation}
-        |\nabla_k(L)| \le \frac{1}{2^kk!} \cdot c^k.
-    \end{equation}
-\end{conjecture}
-
-Nierówność jest nietrywialna tylko dla splotu $L$ z~$k+1, k-1, \ldots$ składowymi; trywialna dla $k = 0$, łatwa dla $k=1$ (wtedy $\nabla_1$ jest indeksem zaczepienia splotów o~dwóch składowych) oraz udowodniona dla węzłów i~$k=2$ przez Polyaka, Viro w~2001 (\cite{polyak01}).
-% The Casson knot invariant (to be distinguished from the better-known Casson invariant) is defined to be the Vassiliev knot invariant v_2, which turns out to be \Delta_k''(1) / 2 , where \Delta_k is the Alexander polynomial of k. It can be characterized as the unique Vassiliev invariant of degree 2 that takes value 0 on the trivial knot and value 1 on the trefoil knot.
 
 Można scharakteryzować możliwe postacie wielomianu Alexandera.
 
