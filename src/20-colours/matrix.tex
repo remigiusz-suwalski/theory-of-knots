@@ -8,18 +8,19 @@ Diagram bez takich krzywych ma tyle samo skrzyżowań, co łuków.
 \begin{definition}[macierz kolorująca]
     \index{macierz!kolorująca}
     Ustalmy diagram bez zamkniętych krzywych dla splotu $L$ z~łukami $x_0, \ldots, x_m$ oraz skrzyżowaniami $0, \ldots, m$.
-    Definiujemy macierz $A$, której wyraz $a_{lj}$ jest współczynnikiem przy $x_j$ w~$l$-tym równaniu kolorującym: $x_j+x_k - 2x_i \equiv 0 \mod n$.
-    Macierz kolorująca $A_+$ powstaje z~macierzy $A$ przez skreślenie dowolnego wiersza i~kolumny.
+    Definiujemy macierz $A_+$, której wyraz $a_{lj}$ jest współczynnikiem przy $x_j$ w~$l$-tym równaniu kolorującym:
     \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
-    \useasboundingbox (-5, -5) rectangle (5,5);
+    \useasboundingbox (-5, -10) rectangle (5,5);
     \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
         \strand[semithick] (-5,5) to (5,-5);
         \strand[semithick] (-5,-5) to (5,5);
         \node[darkblue] at (5, 5)[below right] {$x_i$};
         \node[darkblue] at (5, -5)[above right] {$x_j$};
         \node[darkblue] at (-5, 5)[below left] {$x_k$};
+        \node[black] at (0, -7)[below] {$x_j+x_k - 2x_i \equiv 0 \mod n$};
     \end{knot}
     \end{tikzpicture}\]
+    Macierz kolorująca $A$ powstaje z~macierzy $A_+$ przez skreślenie dowolnego wiersza i~kolumny.
 \end{definition}
 
 Taka macierz jest kwadratowa, ponieważ z~każdego skrzyżowania wychodzą (tunelem) dwa włókna mające dwa końce.
@@ -30,8 +31,8 @@ Dla alternujących diagramów możemy żądać, by górą $i$-tego skrzyżowania
 \begin{definition}[wyznacznik]
     \index{wyznacznik}
     \label{def:determinant}
-    Wyznacznik splotu różnego od niewęzła to wyznacznik jego macierzy kolorującej bez znaku.
-    Wyznacznikiem niewęzła jest $1$.
+    Wyznacznikiem splotu nazywamy wyznacznik macierzy kolorującej $A$ bez znaku: $\det K := |\det A_K|$.
+    Za wyznacznik niewęzła przyjmujemy liczbę $1$.
 \end{definition}
 
 \begin{definition}[defekt]
@@ -121,7 +122,7 @@ Istnieje jeszcze jedna kombinatoryczna metoda badania węzłów, która prowadzi
 W latach 30. ubiegłego wieku L. Goeritz pokazał, jak diagram węzła wyznacza specjalną formę kwadratowej.
 Nieco później H. F. Trotter zmodyfikował jego pomysł, by sygnatura formy stanowiła niezmiennik splotów.
 Gordon, Litherland ujednolicili dwa wyżej wymienione podejścia w~pracy \cite{litherland81}.
-My opiszemy krótko macierz Goeritza, gdyż jej wyznaczenie wymaga mniejszej ilości rachunków (niż macierz kolorująca).
+My opiszemy krótko macierz Goeritza.
 
 Diagram węzła wyznacza swoimi łukami rozbicie płaszczyzny na rozłączne obszary.
 Jeśli każdemu z nich przypisano kolor, czarny lub biały, by sąsiadujące obszary były różnobarwne, to diagram nazywamy uszachowionym.
@@ -167,9 +168,11 @@ Przydzielmy skrzyżowaniom znaki:
 \end{definition}
 
 Macierz $G_+$ posiada dwie własności pozwalające wykryć proste błędy rachunkowe: jest symetryczna, a~jej kolumny i~wiersze sumują się do zera.
+Jest przy tym zazwyczaj mniejsza od macierzy kolorującej.
 
 \begin{proposition}
-    Macierz Goeritza oraz kolorująca mają ten sam wyznacznik (bez znaku).
+    Niech $K$ będzie ustalonym węzłem, $G$ jego macierzą Goeritza, zaś $A$ macierzą kolorującą.
+    Z~dokładnością do znaku, obie macierze mają ten sam wyznacznik: $\det G = \pm \det A$.
 \end{proposition}
 
 Nie możemy niestety podać dowodu tego faktu, wymaga bowiem znajomości topologii algebraicznej, której wolelibyśmy nie zakładać.
