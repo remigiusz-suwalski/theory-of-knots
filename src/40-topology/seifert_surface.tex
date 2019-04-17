@@ -99,3 +99,34 @@ Powierzchnia Seiferta dziedziczy orientację po węźle.
 Nawet niewinne odwrócenie jednego z ogniw splotu potrafi istotnie zmienić jego powierzchnię, dlatego potrzebna jest ostrożność!
 Zanim przejdziemy do zdefiniowania macierzy Seiferta, potrzebować będziemy krótkiego skoku w bok -- zrozumieć bardzo geometryczny niezmiennik węzłów, genus.
 
+\index{węzeł!rozwłókniony}
+Wspomnijmy jeszcze krótko o~specjalnym rodzaju węzłów i splotów.
+
+\begin{definition}
+    Niech $L \subseteq S^3$ będzie splotem.
+    Jeśli istnieje rodzina $F_t$ powierzchni Seiferta dla splotu $K$ sparametryzowana przez $t \in S^1$ taka, że $F_t \cap F_s = K$ dla $t \neq s$, to splot $K$ nazywamy rozwłóknionym albo włóknistym(z~angielskiego \emph{fibered}.)
+\end{definition}
+
+Dawniej nazywano je splotami Neuwirtha, gdyż ten pokazał w~swojej pracy dyplomowej z~1959 roku, że można je scharakteryzować jako sploty, których komutant grupy podstawowej jest skończenie generowany, lub równoważnie, wolny.
+Niewęzeł, trójlistnik, ósemka i~splot Hopfa są rozwłóknione.
+
+\begin{proposition}
+    Pierwszy i~ostatni współczynnik wielomianu Alexandera węzła rozwłóknionego to $\pm 1$.
+\end{proposition}
+
+Kryterium to jest wystarczające dla węzłów pierwszych o co najwyżej 10 skrzyżowaniach oraz alternujących, ale znany jest przykład niewłóknistego węzła o 21 skrzyżowaniach, którego wielomian Alexandera ma postać $t^4 - t^3 + t^2 - t +1$.
+
+Wielomianem węzła skręconego (patrz \ref{twist_knots}) z~$q$ półskrętami jest
+\begin{equation}
+    \Delta_q(t) = q \cdot \left(t + \frac 1 t\right)  - (2q+1),
+\end{equation}
+więc poza przypadkiem $q = 1$ nie jest on rozwłókniony.
+W szczególności węzeł $6_2$ nie jest rozwłókniony.
+
+\begin{proposition}
+    Rodzina węzłów rozwłóknionych jest zamknięta na branie sum spójnych.
+\end{proposition}
+
+Rolfsen podaje to jako ćwiczenie w swojej książce.
+
+% Węzeł jest rozwłókniony dokładnie wtedy, gdy stanowi grzbiet pewnego 'open book decomposition' $S^3$.
