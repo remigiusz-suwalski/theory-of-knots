@@ -219,6 +219,21 @@ Genus pokrywa się z~liczbą gordyjską dla węzłów (czyli względnie pierwszy
     Indeksem mostowym węzła $K_{q,r}$ jest mniejsza z~liczb $|q|, |r|$.
 \end{proposition}
 
+\begin{corollary}
+    \index{braid_for_torus}
+    Indeksem warkoczowym węzła torusowego $T_{p, q}$, $p, q \neq 0$, jest $\min\{|p|, |q|\}$.
+\end{corollary}
+
+\begin{proof}
+    Niech $K$ będzie węzłem torusowym typu $(p,q)$ z~minimalnym przedstawieniem jako warkocz $\beta$.
+    Z konstrukcji domknięcia (czyli dołączenia rozłącznych półokręgów) wynika,
+    że diagram $K$ ma dokładnie $b(K)$ lokalnych maksimów.
+    Definicja indeksu mostowego orzeka, iż $br(K) \le b(K)$.
+    Bez straty ogólności niech $p > q > 0$.
+    Skoro węzeł $K$ powstaje z~$q$-warkocza $(\sigma_{q-1} \ldots \sigma_2\sigma_1)^p$,
+    indeks $b(K)$ nie przekracza $q = br(K)$.
+\end{proof}
+
 \begin{proposition}
     Mamy $\bracket{K_{2, n}} = A \bracket{K_{2,n-1}} + (-1)^{n-1} A^{2-3n}$
     oraz $\bracket{K_{2,1}} = -A^3$.
