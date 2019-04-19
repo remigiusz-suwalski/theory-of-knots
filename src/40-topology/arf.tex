@@ -1,6 +1,25 @@
 \section{Niezmiennik Cahita Arfa} % (fold)
 \label{sub:arf}
 Niezmiennik Arfa dla węzłów można zdefiniować na kilka sposobów, z~których żaden jest istotnie lepszy od pozostałych.
+Pierwszy był Robertello:
+
+\begin{proposition}[Robertello, 1965]
+    Niech
+    \begin{equation}
+        \Delta (t)=c_{0}+c_{1}t+\cdots +c_{n}t^{n}+\cdots +c_{0}t^{2n}
+    \end{equation}
+    będzie wielomianem Alexandera.
+    Wtedy niezmiennik Arfa to $c_{n-1}+c_{n-3}+\cdots +c_{r}\mod 2$, gdzie $r = 0$ dla nieparzystych $n$, $r = 1$ w~przeciwnym razie.
+\end{proposition}
+
+Nieco później Murasugi zauważył, że warunek można uprościć:
+
+\begin{proposition}[Murasugi, 1969]
+    \label{arf_murasugi}
+    $\operatorname{Arf}(K) = 0$ wtedy i~tylko wtedy, gdy $\Delta_K(-1) \equiv \pm 1 \mod 8$.
+\end{proposition}
+
+Louis Kauffman zaproponował inne podejście w~1983 roku, z wykorzystaniem diagramów.
 Dwa węzły nazwiemy równoważnymi przez przejścia, jeśli są związane skończenie wieloma ,,przejściami'':
 \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.35]
@@ -40,28 +59,20 @@ Dwa węzły nazwiemy równoważnymi przez przejścia, jeśli są związane skoń
     \end{tikzpicture}
 \]
 
-\index{niezmiennik!Arfa}
-Każdy węzeł jest równoważny przez przejścia z~niewęzłem (powiemy, że wyznacznik Arfa wynosi $0$) albo trójlistnikiem (że niezmiennik Arfa przyjmuje wartość $1$).
+\begin{definition}[Kauffman, 1983]
+    \index{niezmiennik!Arfa}
+    Niech $K$ będzie węzłem.
+    Jeśli jest równoważny przez przejścia z niewęzłem, to mówimy że jego niezmiennik Arfa znika: $\operatorname{Arf} K = 0$.
+    W przeciwnym razie węzeł $K$ jest równoważny z trójlistnikiem, wtedy kładziemy $\operatorname{Arf} K = 1$.
+\end{definition}
 
-Takie podejście zaproponował Louis Kauffman.
-
-\begin{proposition}[Murasugi]
-    \label{arf_murasugi}
-    $\operatorname{Arf}(K) = 0$ wtedy i~tylko wtedy, gdy $\Delta_K(-1) \equiv \pm 1 \mod 8$.
-\end{proposition}
+Wreszcie Jones zauważył, że jego wielomian także pozwala na określenie niezmiennika Arfa:
 
 \begin{proposition}[Jones, 1985]
     $\operatorname{Arf}(K) = V_K(i)$.
 \end{proposition}
 
-\begin{proposition}[Robertello]
-    Niech
-    \begin{equation}
-        \Delta (t)=c_{0}+c_{1}t+\cdots +c_{n}t^{n}+\cdots +c_{0}t^{2n}
-    \end{equation}
-    będzie wielomianem Alexandera.
-    Wtedy niezmiennik Arfa to $ c_{n-1}+c_{n-3}+\cdots +c_{r}\mod 2$, gdzie $r = 0$ dla nieparzystych $n$, $r = 1$ w~przeciwnym razie.
-\end{proposition}
+Na zakończenie zostawiliśmy definicję zakorzenioną w topologii algebraicznej.
 
 \begin{proposition}
     Niech $(v_{ij})$ będzie macierzą Seiferta powstałą z~krzywych genusu $g$, które reprezentują bazę pierwszej grupy homologii powierzchni.
