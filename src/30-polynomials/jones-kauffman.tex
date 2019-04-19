@@ -308,6 +308,149 @@ Wtedy otrzymamy $A\bracket{\LittleRightCrossing}-A^{-1}\bracket{\LittleLeftCross
 A^2\bracket{\LittleRightSmoothing} - A^{-2}\bracket{\LittleRightSmoothing}$.
 \end{proof}
 
+% \subsection{Odwrotności, lustra i~sumy}
+Wielomian Jonesa nie wykrywa orientacji splotu.
+
+\begin{proposition}
+    Niech $L$ będzie zorientowanym splotem.
+    Wtedy $V(rL)=V(L)$.
+\end{proposition}
+
+\begin{proof}
+    Aby obliczyć wielomian rewersu, wykorzystujemy te same diagramy kłębiaste,
+    jak dla zwykłego, a~przy tym nie zmieniamy znaku żadnego skrzyżowania.
+\end{proof}
+
+Ale czasami potrafi odróżnić splot od jego lustra:
+
+\begin{proposition}
+    Niech $L$ będzie zorientowanym splotem.
+    Wtedy $V(mL)(t)=V(L)(t^{-1})$.
+\end{proposition}
+
+\begin{proof}
+    Zauważmy, że diagramy $L_-$ oraz $L_+$ są wzajemnymi lustrami.
+    Dlatego każda relacja kłębiasta dla splotu postaci
+    \begin{equation}
+        t^{-1} V(L_+)(t) - tV(L_-)(t) + (t^{-1/2} - t^{1/2}) V(L_0)(t) = 0
+    \end{equation}
+    odpowiada pewnej relacji dla lustra splotu:
+    \begin{equation}
+        -tV(L_+)(t) + t^{-1} V(L_-)(t) + (t^{-1/2} - t^{1/2}) V(L_0)(t) = 0,
+    \end{equation}
+    co po zamianie zmiennych $t \mapsto t^{-1}$ i przemnożeniu przez $-1$ daje
+    \begin{equation}
+        -t^{-1} V(L_+)(t^{-1}) + t V(L_-)(t^{-1}) + (t^{1/2} - t^{-1/2}) V(L_0)(t^{-1}) = 0.
+    \end{equation}
+
+    Patrz też: Florian Gellert, Kombinatorische Invarianten, strona 12.
+\end{proof}
+
+\begin{corollary}
+    Jeśli $K$ jest węzłem zwierciadlanym, to wielomian $V_K$ jest symetryczny.
+\end{corollary}
+
+Implikacja odwrotna nie zachodzi na mocy wniosku \ref{crl:acheiral_signature}: węzeł $9_{42}$ ma symetryczny wielomian Jonesa, ale niezerową sygnaturę.
+Poniżej trzynastu skrzyżowań taka sytuacja ma miejsce dla dokładnie czternastu węzłów pierwszych.
+% 9_42, 10_125, 11n_19, 11n_24, 11n_82, 12a_0669, 12a_1171, 12a_1179, 12a_1205, 12n_0362, 12n_0506, 12n_0562, 12n_0571, 12n_0821
+
+Równość $V(mL)(t)=V(L)(t^{-1})$ nie jest spełniona dla trójlistnika, zatem ten nie jest równoważny ze swoim lustrem.
+Po raz pierwszy pokazał to Dehn w 1914 roku (,,Die beiden Kleeblattschlingen'').
+Zanurzył on iloraz grafu Cayleya dla grupy podstawowej trójlistnika, $G = \pi_1(S^3 - K)$, w $\mathbb H^2 \times \R$, by wyznaczyć grupę zewnętrznych automorfizmów grupy $G$.
+Okazuje się nią być $\Z/2\Z$.
+Korzystając z południków i równoleżników pokazał następnie, że nietrywialny automorfizm odwraca orientację przestrzeni otaczającej.
+
+\begin{corollary}
+    Wielomian Jonesa nie zależy od orientacji węzła.
+    Nie jest to prawdą dla splotów.
+\end{corollary}
+
+\begin{proof}
+    Każdy węzeł ma tylko dwie orientacje, splot może mieć ich $2^n$, gdzie $n$ to liczba składowych.
+\end{proof}
+
+\begin{proposition}
+    Niech $L, M$ będą zorientowanymi splotami, zaś $J, K$: zorientowanymi węzłami.
+    \begin{enumerate}
+        \item $V(L \sqcup M) = (-t^{1/2} - t^{-1/2}) V(L) V(M)$,
+        \item $V(J \# K) = V(J) V(K)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    Wybierzmy diagramy $D, E$ dla (odpowiednio) $L, M$.
+    Po podstawieniu $t^{1/2}=A^{-2}$ widzimy, że chcemy pokazać
+    \begin{equation}
+        (-A)^{-3w(D\sqcup E)} \langle D\sqcup E\rangle = (-A^2-A^{-2})(-A)^{-3(w(D)+w(E))} \langle D \rangle \langle E \rangle.
+    \end{equation}
+
+    Oczywiście $w(D\sqcup E)=w(D)+w(E)$, więc wystarczy udowodnić, że
+    \begin{equation}
+        \langle D\sqcup E\rangle = (-A^2-A^{-2})\langle D\rangle\langle E\rangle.
+    \end{equation}
+
+    Oznaczmy przez $f_1(D)$, $f_2(D)$ lewą i~prawą stronę ostatniego równania.
+    Są to wielomiany Laurenta, które zależą tylko od $D$.
+    Aksjomaty Kauffmana pozwalają na pokazanie, że obie funkcje mają następujące własności:
+    \begin{align*}
+        f_i(\LittleUnknot)        & = (-A^2-A^{-2}) \langle E \rangle \\
+        f_i(D\sqcup\LittleUnknot) & = (-A^2-A^{-2}) f_i(D) \\
+        f_i(\LittleRightCrossing) & = Af_i(\LittleRightSmoothing) + A^{-1}f_i(\LittleLeftSmoothing).
+    \end{align*}
+    To wyznacza ich wartości dla dowolnego diagramu $D$, zatem $f_1 \equiv f_2$, co kończy dowód.
+\end{proof}
+
+\begin{proof}
+    Rozpatrzmy sploty
+    \[
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5, flip crossing/.list={1}]
+            \strand[semithick] (-22, -5) rectangle (-12, 5);
+            \strand[semithick] (22, -5) rectangle (12, 5);
+
+            \strand[semithick,Latex-] (-12, 3) [in=left, out=right] to (12, -3);
+            \strand[semithick,Latex-] (12, 3) [in=right, out=left] to (-12, -3);
+
+            \node at (-17, 0) {$J$};
+            \node at (17, 0) {$K$};
+        \end{knot}
+        \end{tikzpicture}
+        \quad\quad
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+            \strand[semithick] (-22, -5) rectangle (-12, 5);
+            \strand[semithick] (22, -5) rectangle (12, 5);
+
+            \strand[semithick,Latex-] (-12, 3) [in=left, out=right] to (12, -3);
+            \strand[semithick,Latex-] (12, 3) [in=right, out=left] to (-12, -3);
+
+            \node at (-17, 0) {$J$};
+            \node at (17, 0) {$K$};
+        \end{knot}
+        \end{tikzpicture}
+        \quad\quad
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+            \strand[semithick] (-22, -5) rectangle (-12, 5);
+            \strand[semithick] (-12, -3) [in=down, out=right] to (-2, 0);
+            \strand[semithick,Latex-] (-12, 3) [in=up, out=right] to (-2, 0);
+
+            \strand[semithick] (22, -5) rectangle (12, 5);
+            \strand[semithick] (12, -3) [in=down, out=left] to (2, 0);
+            \strand[semithick,Latex-] (12, 3) [in=up, out=left] to (2, 0);
+
+            \node at (-17, 0) {$J$};
+            \node at (17, 0) {$K$};
+        \end{knot}
+        \end{tikzpicture}
+    \]
+    Relacja kłębiasta może zostać użyta do pokazania, że
+    \begin{equation}
+    t^{-1}V(J\#K)-tV(J\#K)+(t^{-1/2}-t^{1/2})V(J\sqcup K)=0.
+    \end{equation}
+    Ale $V(J\sqcup K)=(-t^{1/2}-t^{-1/2})V(J)V(K)$, co upraszcza się do $V(J\#K)=V(J)V(K)$ i~kończy dowód.
+\end{proof}
+
 % Koniec sekcji Relacja kłębiasta
 % Koniec podsekcji Wielomian Jonesa
 % Koniec podsekcji Nawias Kauffmana
