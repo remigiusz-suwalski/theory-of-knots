@@ -110,6 +110,21 @@ W szczególności, spośród tych o~co najwyżej siedmiu skrzyżowaniach, tylko 
 % http://citeseerx.ist.psu.edu/viewdoc/download?rep=rep1&type=pdf&doi=10.1.1.212.2610
 % http://people.brandeis.edu/~ruberman/drslides/wesleyan.pdf
 
+\begin{proposition}
+    Niech $K$ będzie węzłem plastrowym.
+    Wtedy $\operatorname{Arf} K = 0$.
+\end{proposition}
+
+\begin{proof}
+    Z kryterium Foxa-Milnora wynika, że wyznacznik węzła
+    \begin{equation}
+        \det K = |\Delta(-1)| = f(-1)\cdot f(-1)
+    \end{equation}
+    to kwadrat.
+    Fakt \ref{odd_determinant} mówi nam, iż wyznacznik jest jednocześnie liczbą nieparzystą.
+    Wynika stąd przystawanie $\det K \equiv 1 \mod 8$, które w~połączeniu z warunkiem Murasugiego (fakt \ref{arf_murasugi}) daje $\operatorname{Arf} K = 0$.
+\end{proof}
+
 \begin{proposition} \label{slice_signature}
     Plastrowe węzły mają zerową sygnaturę.
 \end{proposition}
