@@ -40,6 +40,7 @@ Jeśli $M$ jest powierzchnią o genusie $g$ i $\mu$ składowych spójności brze
 Nas interesują głównie powierzchnie Seiferta węzłów:
 
 \begin{proposition}
+    \label{euler_and_seifert}
     Niech $K$ będzie węzłem z~diagramem $D$.
     Wtedy $\chi(M_D) = d - b$, gdzie $b$ jest liczbą skrzyżowań $D$, zaś $d$ jest liczbą okręgów Seiferta.
 \end{proposition}
@@ -72,14 +73,50 @@ Z dołu 3-genus można szacować przy użyciu wielomianu Alexandera:
     (To ma sens dopiero po przeczytaniu podsekcji ,,macierz Seiferta''!)
 \end{proof}
 
+To dolne ograniczenie jest realizowane przez pewną powierzchnię Seiferta dla każdego pierwszego węzła o~co najwyżej 11 skrzyżowaniach poza siedmioma wyjątkami: 11n42, 11n67, 11n97 ($g = 2$), 11n34, 11n45, 11n73 oraz 11n152 ($g=3$).
+Jeżeli nie powoduje to nieporozumień, zamiast 3-genus można pisać po prostu genus.
+
 \begin{proposition}
     Niech $K$ będzie węzłem.
     Wtedy $\operatorname{span} \Delta(t) = 2g$ wtedy i tylko wtedy, gdy $\det M \neq 0$.
     % Murasugi
 \end{proposition}
 
-To dolne ograniczenie jest realizowane przez pewną powierzchnię Seiferta dla każdego pierwszego węzła o~co najwyżej 11 skrzyżowaniach poza siedmioma wyjątkami: 11n42, 11n67, 11n97 ($g = 2$), 11n34, 11n45, 11n73 oraz 11n152 ($g=3$).
-Jeżeli nie powoduje to nieporozumień, zamiast 3-genus można pisać po prostu genus.
+Z góry genus ograniczony jest przez kilka klasycznych niezmienników numerycznych.
+Zanim to pokażemy, przytoczymy techniczny lemat udowodniony przez Yamadę (\cite{yamada87}):
+
+\begin{proposition}
+    \label{seifert_circles_braid}
+    Niech $L$ będzie splotem, zaś $s(K)$ minimalną liczbą okręgów Seiferta, które dostajemy ze wszystkich możliwych diagramów splotu $L$.
+    Wtedy $s(K) = \operatorname{b}(K)$ pokrywa się wartością z indeksem warkoczowym.
+\end{proposition}
+
+\begin{proposition}
+    Niech $L$ będzie splotem.
+    Wtedy $\operatorname{cr} (K) - \operatorname{b} (K) - \mu(K) + 2 \ge 2 \operatorname{g}(K)$
+\end{proposition}
+
+\begin{proof}
+    Ustalmy minimalny diagram $D$ dla splotu $L$ i zastosujmy do niego algorytm Seiferta.
+    Dostaniemy tak $s$ okręgów Seiferta oraz powierzchnię o genusie $g$.
+    Fakt \ref{euler_and_seifert} mówiący, że $\chi = s - c$, można przekształcić do
+    \begin{equation}
+        g = \frac{c + 2 - s - \mu(K)}{2}.
+    \end{equation}
+    Z~minimalności diagramu wynika, że $c = \operatorname{cr}(K)$.
+    Fakt \ref{seifert_circles_braid} mówi, że $s \ge \operatorname{b}(K)$.
+    Nierówność $g \ge \operatorname{g}(K)$ wynika z~definicji genusu.
+    Z powyższych rozważań wynika, że
+    \begin{equation}
+        \operatorname{cr} (K) + 2 \ge  2 \operatorname{g}(K) + \operatorname{b} (K) + \mu(K),
+    \end{equation}
+    a to jest równoważnie nierówności, której prawdziwości dowodzimy.
+\end{proof}
+
+\begin{corollary}
+    Niech $K$ będzie węzłem .
+    Wtedy $\operatorname{cr} \ge 2 \operatorname{g}$.
+\end{corollary}
 
 Czy w definicji genusu można ograniczyć się do powierzchni Seiferta, które pochodzą od algorytmu Seiferta?
 Niestety, poza pewnymi wyjątkami, nie.
