@@ -1,21 +1,23 @@
 \section{Węzły pierwsze}
 \label{sec:prime_knots}
-Istnieje węzłowy odpowiednik liczb pierwszych.
-Jest on ściśle związany z~podaną wyżej operacją sumy spójnej.
-Do jego dostatecznie dobrego zrozumienia wymagana jest znajomość powierzchni Seiferta (opisanych w~sekcji \ref{sec:genus}).
+Suma spójna jest dla węzłów tym, czym mnożenie dla liczb naturalnych.
+Analogia ta nabiera sensu, gdy zdefiniujemy węzły pierwsze, odpowiedniki liczb pierwszych.
+Do ich dobrego zrozumienia warto znać powierzchnie Seiferta z~sekcji \ref{sec:genus}.
 
-\begin{definition}
+\begin{definition}[węzeł pierwszy]
     \label{primeknot}
     \index{węzeł!pierwszy}
-    Nietrywialny węzeł nazywamy \textbf{pierwszym},
-    kiedy nie można przedstawić go jako sumy spójnej $K_1 \shrap K_2$
-    dwóch nietrywialnych węzłów $K_1, K_2$ (nie jest złożony).
+    Niech $K$ będzie węzłem różnym od niewęzła.
+    Jeśli nie przedstawia się jako suma spójna $K_1 \shrap K_2$
+    dwóch nietrywialnych węzłów $K_1, K_2$, nazywamy go węzłem pierwszym.
+
+    W~przeciwnym razie mówimy, że jest złożony.
 \end{definition}
 
 Okazuje się, że jeśli alternujący splot nie jest pierwszy,
 to każdy jego alternujący diagram jest złożony.
 Jako pierwszy fakt ten został wykazany przez Menasco w~\cite{menasco84}.
-Dowód opiera się na multiplikatywności wielomianu BLM/Ho (opisuje go definicja \ref{def:blm_ho}).
+Dowód opiera się na multiplikatywności wielomianu BLM/Ho z~definicji \ref{def:blm_ho}.
 
 Czy węzłów pierwszych jest nieskończenie wiele?
 Tak (patrz fakt \ref{infty_primes}), potrafimy nawet oszacować liczbę $K_n$ węzłów pierwszych oraz $L_n$ splotów pierwszych.
@@ -43,21 +45,9 @@ Nie wiadomo, czy zwykłe granice istnieją.
 
 % "On the number of knots and links" (MR1218230)
 
-Czy niewęzeł nie daje się zapisać jako suma dwóch innych węzłów?
-Byłoby to skrajnie niepożądane, gdyż każdy węzeł jest naturalnie spójną sumą siebie oraz niewęzła.
-Na szczęście przy pomocy powierzchni Seiferta można pokazać, że tak się nie dzieje (jest to wniosek \ref{no_inverses}).
-Prawdziwe jest dużo mocniejsze stwierdzenie,
-którego nie udowodnimy ze względu na niedostatecznie rozwinięty aparat matematyczny.
-Należy o~nim myśleć jak o~analogonie zasadniczego twierdzenia arytmetyki.
+Każdy węzeł jest sumą spójną siebie oraz niewęzła, dlatego byłoby miło, gdyby niewęzeł nie dał się zapisać jako suma dwóch innych węzłów.
+Wniosek \ref{no_inverses} mówi więcej, że suma spójna nie posiada elementów odwrotnych.
+Ponadto odpowiednik zasadniczego twierdzenia arytmetyki jest prawdziwy dla węzłów.
+Później, czyli jako fakt \ref{genus_sum}, pokażemy, że rozkład na węzły pierwsze istnieje i~wspomnimy, dlaczego jest jedyny.
 
-\begin{theorem}[Schubert, 1949]
-    \label{thm:schubert}
-    Każdy różny od niewęzła węzeł rozkłada się jednoznacznie na węzły pierwsze
-    (jeśli tylko pominąć kolejność składników).
-\end{theorem}
-
-Schubert podał geometryczny dowód oparty o powierzchnie Seiferta; wyraził go w języku PL-rozmaitości (\cite{schubert49}), ale niedużym wysiłkiem można dokonać adaptacji do gładkiego świata.
-Praca Schuberta korzysta z twierdzenia Alexandera, że 2-sfera w przestrzeni $\R^3$ ogranicza dysk, i jego odpowiednika dla torusów w $S^3$
-
-My pokażemy tylko, że rozkład istnieje i jest skończony, to fakt \ref{genus_sum}.
 % koniec sekcji Węzły pierwsze
