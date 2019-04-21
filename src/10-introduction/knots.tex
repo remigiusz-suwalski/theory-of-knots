@@ -61,19 +61,27 @@ Będziemy starać się unikać tych uogólnień.
 Największą różnicą między węzłami matematycznymi oraz tymi z~prawdziwego jest życia jest to, że te pierwsze nie mają luźnych końców.
 Można przyjąć nieidealną, naiwną definicję:
 
-\begin{definition}[węzeł?]
+\begin{definition}[węzeł]
     Ciągłe oraz różnowartościowe odwzorowanie $S^1 \to \R^3$ nazywamy węzłem.
 \end{definition}
 
-Zastanówmy się, jakim formalizmem opisać manipulowanie fizycznym sznurkiem.
-Nie można użyć izotopii
-(dwa węzły są izotopijne, jeśli istnieje ciągła funkcja $F \colon S^1 \times [0, 1] \to \R^3$ taka, że $F(-, 0)$ jest pierwszym, zaś $F(-,1)$ drugim węzłem).
-Zauważmy, że każde splątanie ściąga się do punktu.
-Dowolny węzeł jest równoważny z~trywialnym, zatem istnieje tylko jedna klasa abstrakcji.
+Niestety, dopuszcza ona patologiczne z~kombinatorycznego punktu widzenia węzły dzikie, jak ten z~rysunku \ref{wild_knot}:
+
+\begin{figure}
+    \centering
+    \label{wild_knot}
+    \includegraphics[width=0.5\linewidth]{wild_knot.png}
+    \caption{Węzeł dziki}
+\end{figure}
+
+Zanim wykluczymy je z~naszych rozważań, zastanówmy się, jakim formalizmem opisać manipulowanie fizycznym sznurkiem.
+Nie można użyć izotopii (dwa węzły są izotopijne, jeśli istnieje ciągła funkcja $F \colon S^1 \times [0, 1] \to \R^3$ taka, że $F(-, 0)$ jest pierwszym, zaś $F(-,1)$ drugim węzłem), gdyż każdy supeł ściąga się do punktu:
+
+W podobny sposób moglibyśmy przekształcić dowolny węzeł w~niewęzeł.
+Teoria, w~której wszystkie obiekty są takie same, nie jest zbyt ciekawa.
+Oznacza to, że zwykła izotopia nie oddaje dobrze tego, czym jest równoważność węzłów wykonanych z~prawdziwego sznurka.
 Trzeba uwzględnić to, jak węzeł leży w~przestrzeni.
 Właściwym narzędziem jest więc izotopia otaczająca.
-Intuicyjnie: dwa węzły uznajemy za równoważne,
-jeśli można przejść od jednego do drugiego przy użyciu deformacji całej przestrzeni $\R^3$.
 
 \begin{definition}[izotopia otaczająca] \label{def_ambient_isotopy}
     Ciągłe odwzorowanie $F \colon \R^3 \times [0,1] \to \R^3$,
@@ -83,27 +91,21 @@ jeśli można przejść od jednego do drugiego przy użyciu deformacji całej pr
     nazywamy izotopią otaczającą.
 \end{definition}
 
+Intuicyjnie oznacza to, że dwa węzły uznajemy za jednakowe, jeśli można umieścić jeden z nich w~przestrzeni $\R^3$, zdeformować ją i~otrzymać drugi węzeł.
+Chwila namysłu wystarcza do przekonania się, że definicja \ref{def_ambient_isotopy} obejmuje zwykłą izotopię,
+a przy tym nie pozwala na rozwiązanie nietrywialnych węzłów przez ściągnięcie zaplątania do punktu.
+Homeomorfizmy $F_t$ można zastąpić przez dyfeomorfizmy zachowujące orientację.
+% https://math.stackexchange.com/questions/1311865/equivalence-of-knots-ambient-isotopy-vs-homeomorphism/1312016#1312016
+% https://mathoverflow.net/questions/185272/reference-for-a-fact-on-homeomorphic-knot-complements
+
 \begin{definition}[węzeł]
     \label{def:knot}
     \index{węzeł}
     Gładkie włożenie $S^1 \to \R^3$ izotopijne otaczająco z~zamkniętą łamaną bez samoprzecięć nazywamy węzłem poskromionym.
 \end{definition}
 
-Wykluczamy w~ten sposób patologiczne z~kombinatorycznego punktu widzenia węzły dzikie.
 Przez prawie całą książkę interesować nas będą jedynie węzły poskromione,
 dlatego jeśli nie zaznaczono inaczej, przez węzeł rozumiemy węzeł poskromiony.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\linewidth]{wild_knot.png}
-    \caption{Węzeł dziki}
-\end{figure}
-
-Dość często będziemy utożsamiać węzeł z~jego obrazem.
-
-Jednocześnie homeomorfizmy $F(-,t)$ zastępujemy przez dyfeomorfizmy zachowujące orientację.
-Chwila namysłu wystarcza do przekonania się, że definicja \ref{def_ambient_isotopy} obejmuje zwykłą izotopię,
-a przy tym nie pozwala na rozwiązanie nietrywialnych węzłów przez ściągnięcie zaplątania do punktu.
 Istnieje jeszcze jedna, konkurencyjna definicja węzłów równoważnych:
 
 \begin{definition}
@@ -130,6 +132,10 @@ Stwierdzenie to przestaje być prawdziwe po zastąpieniu przestrzeni $\R^m$ prze
     gdyż na mocy lematu Hadamarda funkcja $f$ zapisuje się jako suma $x_1 g_1(x) + \ldots + x_mg_m(x)$,
     gdzie funkcje $g_i$ są gładkie, co jakoś kończy dowód.
 \end{proof}
+
+Formalnie węzły to pewne odwzorowania, więc prawidłowym sposobem na zapisanie, że są równe, jest $K_1 \simeq K_2$.
+Dość często będziemy jednak utożsamiać węzeł z~jego obrazem, dlatego w~książce dominuje zapis $K_1 = K_2$.
+Nie prowadzi to do problemów.
 
 \begin{definition}[splot]
     \label{def_link}
