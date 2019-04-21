@@ -192,9 +192,9 @@ Twierdzenie to zamienia problem lokalny (czy dwa węzły w kuli $S^3$ są równo
 Istnieje nieskończenie wiele (jakich?) kontrprzykładów do odpowiednika twierdzenia Gordona-Lueckego dla splotów,
 których nie da się, patrząc na samo dopełnienie, odróżnić od splotu Whiteheada.
 
-\section{Diagramy}
+\section{Diagramy. Ruchy Reidemeistera}
 Chociaż w~świetle definicji \ref{def:knot} węzły są pewnymi regularnymi podzbiorami przestrzeni $\R^3$,
-z kombinatorycznego punktu widzenia wygodniej jest rysować je na  płaszczyźnie.
+z kombinatorycznego punktu widzenia wygodniej jest rysować je na płaszczyźnie.
 
 \begin{definition} [diagram] \label{def_diagrams}
     \index{diagram}
@@ -210,18 +210,144 @@ z kombinatorycznego punktu widzenia wygodniej jest rysować je na  płaszczyźni
 \end{definition}
 
 \begin{proposition}
-    Każdy splot posiada diagram -- zbiór diagramów jest otwarty i~gęsty w~zbiorze wszystkich.
+    Niech $K$ będzie węzłem.
+    Zbiór diagramów jest otwarty i~gęsty w~zbiorze wszystkich rzutów.
 \end{proposition}
 
 \begin{proof}
-    Rzut splotu na równoległe płaszczyzny jest taki sam,
-    a te można sparametryzować prostymi przechodzącymi przez początek układu współrzędnych,
-    które tworzą przestrzeń rzutową $\R \mathbb P^2$.
+    Rzut splotu na równoległe płaszczyzny jest taki sam, a te można sparametryzować prostymi przechodzącymi przez początek układu współrzędnych, które tworzą przestrzeń rzutową $\R \mathbb P^2$.
     Niech $S$ będzie zbiorem prostych, które dają złe rzuty.
     Wystarczy pokazać jego nigdziegęstość.
     Okazuje się, że $S$ jest też jednowymiarowy.
     (Dowód za \cite{crowell63}).
 \end{proof}
+
+Wynika stąd, że każdy węzeł ma wiele diagramów.
+Mając dane dwa różne diagramy chcielibyśmy wiedzieć, czy reprezentują ten sam węzeł.
+Na szczęście Reidemeister w latach 20. XX wieku podał proste kryterium rozstrzygające ten problem.
+Najpierw zdefiniujmy trzy lokalne operacje na diagramach.
+
+\begin{definition}
+    \index{ruchy Reidemeistera}
+    Trzy ruchy Reidemeistera, $R_1$, $R_2$, oraz $R_3$, to następujące deformacje diagramu:
+    \[
+        \underbrace{\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5]
+            \strand[thick] (-5, 10) to [in=left, out=down] (2, -5);
+            \strand[thick] (5, 0) to [in=right, out=down] (2, -5);
+            \strand[thick] (5, 0) to [in=right, out=up] (2, 5);
+            \strand[thick] (-5, -10) to [in=left, out=up] (2, 5);
+        \end{knot}
+        \end{tikzpicture}
+        \, \cong \,
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5]
+            \strand[thick] (0,10) to (0,-10);
+        \end{knot}
+        \end{tikzpicture}}_{R_1}
+        %%%
+        \quad \quad \quad
+        \underbrace{\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5]
+            \strand[thick] (-5, 10) to [in=up, out=down] (5, 0);
+            \strand[thick] (-5, -10) to [in=down, out=up] (5, 0);
+            \strand[thick] (5, 10) to [in=up, out=down] (-5, 0);
+            \strand[thick] (5, -10) to [in=down, out=up] (-5, 0);
+        \end{knot}
+        \end{tikzpicture}
+        \, \cong \,
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5]
+            \strand[thick] (-5, 10) to [in=up, out=down] (-2, 0);
+            \strand[thick] (-5, -10) to [in=down, out=up] (-2, 0);
+            \strand[thick] (5, 10) to [in=up, out=down] (2, 0);
+            \strand[thick] (5, -10) to [in=down, out=up] (2, 0);
+        \end{knot}
+        \end{tikzpicture}}_{R_2}
+        %%%
+        \quad \quad \quad
+        \underbrace{\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5, flip crossing/.list={1,2,3}]
+            \strand[thick] (-10, -10) -- (10, 10);
+            \strand[thick] (-10, 10) -- (10, -10);
+            \strand[thick] (-10, 0) to [in=left, out=right] (0, 10);
+            \strand[thick] (10, 0) to [in=right, out=left] (0, 10);
+        \end{knot}
+        \end{tikzpicture}
+        \, \cong \,
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
+        \begin{knot}[clip width=5, flip crossing/.list={1,2,3}]
+            \strand[thick] (-10, -10) -- (10, 10);
+            \strand[thick] (-10, 10) -- (10, -10);
+            \strand[thick] (-10, 0) to [in=left, out=right] (0, -10);
+            \strand[thick] (10, 0) to [in=right, out=left] (0, -10);
+        \end{knot}
+        \end{tikzpicture}}_{R_3}
+    \]
+\end{definition}
+
+Ruch $R_i$ operuje więc na $i$ łukach diagramu.
+Reidemeister w~swojej pierwszej pracy przyjął inną kolejność,
+jego drugi ruch jest naszym pierwszym.
+
+\begin{theorem}[Reidemeister, 1927]
+    \label{thm:reidemeister}
+    Każdy splot posiada diagram.
+    Dwa diagramy przedstawiają równoważne sploty,
+    wtedy i~tylko wtedy gdy pierwszy można otrzymać z~drugiego
+    wykonując skończenie wiele ruchów Reidemeistera
+    oraz gładko deformując łuki bez zmiany biegu skrzyżowań.
+\end{theorem}
+
+\begin{proof}
+    Szkielet dowodu można znaleźć w~książce Burdego i~Zieschanga.
+    Kluczowe pomysły zawiera ,,Knots, links, braids and $3$-manifolds''
+    Prasołowa i~Sosińskiego.
+    Innym przystępnym źródłem jest podręcznik \cite{murasugi96} Murasugiego ,,Knot theory and its applications''.
+\end{proof}
+
+W praktyce twierdzenia \ref{thm:reidemeister} nie stosuje się bezpośrednio do diagramów splotów.
+Jednym z~powodów jest wynik Cowarda i~Lackenby'a (\cite{coward11}): jeśli na dwóch diagramach tego samego węzła widać łącznie $n$ skrzyżowań, to ,,wystarcza''
+\[
+    R(n) = 2^{2^{\ldots^{2^n}}}
+\]
+ruchów Reidemeistera, by przejść między nimi; piętrowa potęga ma $10^{1000000n}$ warstw.
+Gdy jeden z~diagramów jest pozbawiony skrzyżowań, czyli przedstawia niewęzeł, wystarcza $(236n)^{11}$ ruchów.
+Zapewne lepsze ograniczenia istnieją, ale ich nie znamy.
+Ważne jest to, że wielkość $R(n)$ jest skończona.
+
+Zamiast tego definiuje się niezmienniki, czyli funkcje ze zbioru wszystkich diagramów, które nie zmieniają swojej wartości podczas wykonywania ruchów Reidemeistera.
+Kiedy pewien niezmiennik przyjmuje różne wartości na dwóch diagramach, te przedstawiają dwa istotnie różne sploty.
+Gdy wartości są te same, nie dostajemy żadnej informacji.
+Sploty mogą być równoważne albo nie.
+Niezmienniki będą nam stale towarzyszyć w~wędrówce po krainie węzłów.
+
+\begin{definition}
+    \index{węzeł!zorientowany}
+    Węzeł zorientowany to taki, w~którym wybrano kierunek, w~którym należy się po nim poruszać.
+\end{definition}
+
+Twierdzenie Reidemeistera pozostaje prawdziwe dla węzłów zorientowanych.
+
+% koniec sekcji Ruchy Reidemeistera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{definition}
     \index{węzeł!alternujący}
