@@ -331,65 +331,6 @@ Twierdzenie Reidemeistera pozostaje prawdziwe dla węzłów zorientowanych.
 
 % koniec sekcji Ruchy Reidemeistera
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{definition}
-    \index{węzeł!alternujący}
-    Diagram jest alternujący, gdy podczas poruszania się wzdłuż splotu mijamy jego skrzyżowania na zmianę z~góry oraz z~dołu.
-    Splot jest alternujący, gdy posiada taki diagram.
-\end{definition}
-
-Nierozwiązanym problemem jest podanie definicji węzła alternującego, która nie odnosi się bezpośrednio do diagramów.
-Sundberg oraz Thistlethwaite pokazali w 1998 roku, że liczba splotów alternujących rośnie wykładniczo (\cite{sundberg98}):
-
-\begin{proposition}
-    Niech $a_n$ oznacza liczbę pierwszych, alternujących supłów o~$n$ skrzyżowaniach.
-    Wtedy
-    \begin{equation}
-        a_n \sim (3c_1/4\sqrt{\pi})n^{-5/2}\lambda^{n-3/2},
-    \end{equation}
-    gdzie zarówno $c_1$, pierwszy współczynnik rozwinięcia Taylora funkcji $\Phi(\eta)$ zdefiniowanej w \cite{sundberg98}, jak i $\lambda$ są jawnie znanymi stałymi:
-    \begin{align}
-        c_1 & = \sqrt{\frac{5^7 \cdot (21001 + 371 \sqrt{21001})^3}{2 \cdot 3^{10} \cdot (17 + 3\sqrt{21001})^5}} \\
-        \lambda & = \frac {1}{40} (101 + \sqrt{21001})
-    \end{align}
-    Niech $A_n$ oznacza liczbę pierwszych, alternujących splotów o $n$ skrzyżowaniach.
-    Wtedy $A_n \approx \lambda^n$, dokładniej: jeśli $n \ge 3$, to
-    \begin{equation}
-        \frac{a_{n-1}}{16n - 24} \le A \le \frac{a_n - 1}{2}.
-    \end{equation}
-\end{proposition}
-
-Poniższy fakt stanowi jedynie szokującą ciekawostkę i także pochodzi z pracy \cite{sundberg98}.
-
-\begin{proposition}
-    Niech $a_n$ oznacza liczbę pierwszych, alternujących supłów o~$n$ skrzyżowaniach.
-    Wtedy funkcja tworząca $f(z) = \sum_n a_n z^n$ spełnia równanie
-    \begin{equation}
-    f(1+z) - f(z)^2 - (1+f(z))q(f(z)) -z - \frac{2z^2}{1-z} = 0,
-    \end{equation}
-    gdzie $q(z)$ jest pomocniczą funkcją
-    \begin{equation}
-        q(z) = \frac{2z^2 - 10z - 1 + \sqrt{(1-4z)^3}} {2(z+2)^3} - \frac{2}{1+z} -z + 2.
-    \end{equation}
-\end{proposition}
-
 %Niestety pomimo upływu czasus, nikt nie napisał komputerowego programu realizującego ten algorytm (stan na 1994).
 %Może podejmie się tego Czytelnik?
 %Inne algorytmy istnieją, jednak wszystkie działają w~wykładniczym czasie.
@@ -429,6 +370,52 @@ Więcej trudnych niewęzłów zawiera świeża praca
 ,,Algorithmic simplification of knot diagrams: new moves and experiments'
 \footnote{\url{https://arxiv.org/pdf/1508.03226.pdf}}
 C. Petronio, A. Zanellatiego.
+
+Zanim opowiemy, jak dotąd przebiegała klasyfikacja węzłów o małej liczbie skrzyżowań, zdefiniujemy klasę splotów ze specjalnymi diagramami.
+
+\begin{definition}
+    \index{węzeł!alternujący}
+    Diagram jest alternujący, gdy podczas poruszania się wzdłuż splotu mijamy jego skrzyżowania na zmianę z~góry oraz z~dołu.
+    Splot jest alternujący, gdy posiada taki diagram.
+\end{definition}
+
+Nierozwiązanym problemem jest podanie definicji węzła alternującego, która nie odnosi się bezpośrednio do diagramów.
+Sundberg oraz Thistlethwaite pokazali w 1998 roku, że liczba splotów alternujących rośnie wykładniczo (\cite{sundberg98}):
+
+\begin{proposition}
+    Niech $a_n$ oznacza liczbę pierwszych, alternujących supłów o~$n$ skrzyżowaniach.
+    Wtedy
+    \begin{equation}
+        a_n \sim (3c_1/4\sqrt{\pi})n^{-5/2}\lambda^{n-3/2},
+    \end{equation}
+    gdzie zarówno $c_1$, pierwszy współczynnik rozwinięcia Taylora funkcji $\Phi(\eta)$ zdefiniowanej w \cite{sundberg98}, jak i $\lambda$ są jawnie znanymi stałymi:
+    \begin{align}
+        c_1 & = \sqrt{\frac{5^7 \cdot (21001 + 371 \sqrt{21001})^3}{2 \cdot 3^{10} \cdot (17 + 3\sqrt{21001})^5}} \\
+        \lambda & = \frac {1}{40} (101 + \sqrt{21001})
+    \end{align}
+    Niech $A_n$ oznacza liczbę pierwszych, alternujących splotów o $n$ skrzyżowaniach.
+    Wtedy $A_n \approx \lambda^n$, dokładniej: jeśli $n \ge 3$, to
+    \begin{equation}
+        \frac{a_{n-1}}{16n - 24} \le A \le \frac{a_n - 1}{2}.
+    \end{equation}
+\end{proposition}
+
+Czasami będziemy używać słów przed ich zdefiniowaniem, tak jak uczyniliśmy tutaj: węzły pierwsze i~supły pojawiają się odpowiednio w definicjach \ref{primeknot}, \ref{def:tangle}.
+Książkę trzeba więc przeczytać co~najmniej dwa razy.
+
+Poniższy fakt stanowi jedynie szokującą ciekawostkę i także pochodzi z pracy \cite{sundberg98}.
+
+\begin{proposition}
+    Niech $a_n$ oznacza liczbę pierwszych, alternujących supłów o~$n$ skrzyżowaniach.
+    Wtedy funkcja tworząca $f(z) = \sum_n a_n z^n$ spełnia równanie
+    \begin{equation}
+    f(1+z) - f(z)^2 - (1+f(z))q(f(z)) -z - \frac{2z^2}{1-z} = 0,
+    \end{equation}
+    gdzie $q(z)$ jest pomocniczą funkcją
+    \begin{equation}
+        q(z) = \frac{2z^2 - 10z - 1 + \sqrt{(1-4z)^3}} {2(z+2)^3} - \frac{2}{1+z} -z + 2.
+    \end{equation}
+\end{proposition}
 
 \subsection{Historia tablic węzłów}
 Pierwszą osobą, która podjęła się szukania węzłów, był Peter Guthrie Tait, szkocki fizyk.
