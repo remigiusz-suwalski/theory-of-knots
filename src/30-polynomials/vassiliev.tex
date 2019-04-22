@@ -102,8 +102,8 @@ Nazywamy ją niezmiennikiem singularnym indukowanym przez niezmiennik węzłów 
 Czas na garść przykładów.
 
 \begin{example}
-    Niech $K$ będzie węzłem, zaś $\nabla_K(t) = \sum_k \nabla_{2k} z^{2k}$ jego wielomianem Conwaya.
-    Współczynnik $\nabla_{2k}$ indukuje niezmiennik Wasiljewa rzędu dokładnie $2k$.
+    Niech $K$ będzie węzłem, zaś $\conway_K(t) = \sum_k \conway_{2k} z^{2k}$ jego wielomianem Conwaya.
+    Współczynnik $\conway_{2k}$ indukuje niezmiennik Wasiljewa rzędu dokładnie $2k$.
 \end{example}
 
 Pokazał to Bar-Natan w roku 1991.
@@ -113,17 +113,17 @@ Lin oraz Wang w~1994 roku na podstawie niezmienników małych rzędów, to jest 
 \end{equation}
 
 Hipotezę wkrótce udowodniono, najpierw dla węzłów (Bar-Natan, \cite{barnatan95}), nieco później także dla splotów (Stojmenow, \cite{stoimenow_01}).
-Wartość stałej $C$ trudno obliczyć, dlatego Stojmenow zaproponował ograniczenie się do przypadku $v_k = \nabla_k$.
+Wartość stałej $C$ trudno obliczyć, dlatego Stojmenow zaproponował ograniczenie się do przypadku $v_k = \conway_k$.
 
 \begin{conjecture}
     Niech $L$ będzie splotem.
     Wtedy
     \begin{equation}
-        |\nabla_k(L)| \le \frac{1}{2^kk!} \cdot c^k.
+        |\conway_k(L)| \le \frac{1}{2^kk!} \cdot c^k.
     \end{equation}
 \end{conjecture}
 
-Nierówność jest nietrywialna tylko dla splotu $L$ z~$k+1, k-1, \ldots$ składowymi; trywialna dla $k = 0$, łatwa dla $k=1$ (wtedy $\nabla_1$ jest indeksem zaczepienia splotów o~dwóch składowych) oraz udowodniona dla węzłów i~$k=2$ przez Polyaka, Viro w~2001 (\cite{polyak01}).
+Nierówność jest nietrywialna tylko dla splotu $L$ z~$k+1, k-1, \ldots$ składowymi; trywialna dla $k = 0$, łatwa dla $k=1$ (wtedy $\conway_1$ jest indeksem zaczepienia splotów o~dwóch składowych) oraz udowodniona dla węzłów i~$k=2$ przez Polyaka, Viro w~2001 (\cite{polyak01}).
 % The Casson knot invariant (to be distinguished from the better-known Casson invariant) is defined to be the Vassiliev knot invariant v_2, which turns out to be \alexander_k''(1) / 2 , where \alexander_k is the Alexander polynomial of k. It can be characterized as the unique Vassiliev invariant of degree 2 that takes value 0 on the trivial knot and value 1 on the trefoil knot.
 
 \begin{example}
