@@ -150,9 +150,9 @@ Wspomniane są też dokonania Wasiljewa.
 \begin{definition}
     \index{wielomian!Jonesa}
     Niech $L$ będzie zorientowanym splotem.
-    Wielomian Laurenta $V(L) \in \Z[t^{\pm 1/2}]$ określony przez
+    Wielomian Laurenta $\jones(L) \in \Z[t^{\pm 1/2}]$ określony przez
     \begin{equation}
-        V(L)=\left[(-A)^{-3w(D)} \bracket{D}\right]_{t^{1/2}=A^{-2}},
+        \jones(L)=\left[(-A)^{-3w(D)} \bracket{D}\right]_{t^{1/2}=A^{-2}},
     \end{equation}
     gdzie $D$ to dowolny diagram dla $L$, nazywamy wielomianem Jonesa.
 \end{definition}
@@ -182,7 +182,7 @@ Dla porównania, wielomian Alexandera wszystkich splotów rozszczepialnych jest 
 \label{prp:jones_trivial_link}
     Wielomianem Jonesa splotu trywialnego o $n$ ogniwach jest
     \begin{equation}
-        V(K_n) = \left(-\sqrt{t} - \frac{1}{\sqrt {t}}\right)^{n-1}.
+        \jones(K_n) = \left(-\sqrt{t} - \frac{1}{\sqrt {t}}\right)^{n-1}.
     \end{equation}
 \end{proposition}
 
@@ -194,7 +194,7 @@ Pozostaje to otwartym problemem do dziś.
 
 \begin{conjecture} \label{jones_conjecture}
     Niech $K$ będzie węzłem.
-    Jeśli $V_K(t) \equiv 1$, to $K$ jest niewęzłem.
+    Jeśli $\jones_K(t) \equiv 1$, to $K$ jest niewęzłem.
 \end{conjecture}
 
 Hipotezę zweryfikowano komputerowo dla węzłów o~małej liczbie skrzyżowań.
@@ -213,16 +213,16 @@ Istnieją sploty o~trywialnym wielomianie Jonesa, jest ich nawet nieskończenie 
     Co więcej, można wymagać, by wszystkie te sploty były satelitami splotu Hopfa.s
 \end{proposition}
 
-Niech $V$ będzie wielomianem Jonesa splotu $K$ o~$n$ składowych spójności.
+Niech $\jones$ będzie wielomianem Jonesa splotu $K$ o~$n$ składowych spójności.
 Jego wartości w~niektórych pierwiastkach jedności są związane z~innymi niezmiennikami węzłów.
 I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 
 \begin{proposition} \label{jones_sharp_p_hard}
-    $V(\omega_3) = 1$.
+    $\jones(\omega_3) = 1$.
 \end{proposition}
 
 \begin{proposition}
-    $V(1) = (-2)^{n-1}$.
+    $\jones(1) = (-2)^{n-1}$.
 \end{proposition}
 
 \begin{proof}
@@ -231,7 +231,7 @@ I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 \end{proof}
 
 \begin{proposition}
-    Liczba trzy-kolorowań splotu wynosi $3|V(\omega_6)|^2$.
+    Liczba trzy-kolorowań splotu wynosi $3|\jones(\omega_6)|^2$.
 \end{proposition}
 
 \begin{proof}
@@ -239,8 +239,8 @@ I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 \end{proof}
 
 \begin{proposition}
-    Jeśli $K$ jest właściwym splotem (indeks zaczepienia każdej składowej o~resztę splotu jest parzysty), to $V(i) = (-\sqrt 2)^{n-1}(-1)^{\operatorname{Arf} K}$.
-    W przeciwnym razie $V(i) = 0$.
+    Jeśli $K$ jest właściwym splotem (indeks zaczepienia każdej składowej o~resztę splotu jest parzysty), to $\jones(i) = (-\sqrt 2)^{n-1}(-1)^{\operatorname{Arf} K}$.
+    W przeciwnym razie $\jones(i) = 0$.
 \end{proposition}
 
 \begin{proof}
@@ -249,8 +249,8 @@ I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 
 \begin{proposition}
     Niech $G$ będzie pierwszą grupą homologii podwójnego nakrycia $S^3$ rozgałęzionego nad składowymi.
-    Jeśli $G$ jest torsyjna, to $V(-1) = |G|$.
-    W przeciwnym razie $V(-1) = 0$.
+    Jeśli $G$ jest torsyjna, to $\jones(-1) = |G|$.
+    W przeciwnym razie $\jones(-1) = 0$.
 \end{proposition}
 
 \begin{proof}
@@ -263,9 +263,9 @@ Nie jest znana topologiczna interpretacja wielomianu Jonesa (którą posiada wie
     Niech $K$ będzie węzłem.
     Wtedy
     \begin{align}
-        V(1) & = 1 \\
-        V(-1) & = \pm \det K \\
-        V(i) & = \begin{cases}
+        \jones(1) & = 1 \\
+        \jones(-1) & = \pm \det K \\
+        \jones(i) & = \begin{cases}
             1 & \text{dla } \alexander(-1) \equiv \pm 1 \mod 8 \\
             -1 & \text{w przeciwnym razie.}
         \end{cases}
@@ -285,9 +285,9 @@ Dużo lepszym narzędziem jest następujące twierdzenie.
 \begin{theorem}[relacja kłębiasta]
     \label{tracheotomia}
     \index{relacja kłębiasta}
-    Wielomian Jonesa spełnia równość $V(\LittleUnknot) = 1$ oraz relację
+    Wielomian Jonesa spełnia równość $\jones(\LittleUnknot) = 1$ oraz relację
     \begin{equation}
-        t^{-1} V(L_+) - tV(L_-) + (t^{-1/2} - t^{1/2}) V(L_0) = 0,
+        t^{-1} \jones(L_+) - t\jones(L_-) + (t^{-1/2} - t^{1/2}) \jones(L_0) = 0,
     \end{equation}
 \end{theorem}
 
@@ -319,7 +319,7 @@ Wielomian Jonesa nie wykrywa orientacji splotu.
 
 \begin{proposition}
     Niech $L$ będzie zorientowanym splotem.
-    Wtedy $V(rL)=V(L)$.
+    Wtedy $\jones(rL)=\jones(L)$.
 \end{proposition}
 
 \begin{proof}
@@ -331,36 +331,36 @@ Ale czasami potrafi odróżnić splot od jego lustra:
 
 \begin{proposition}
     Niech $L$ będzie zorientowanym splotem.
-    Wtedy $V(mL)(t)=V(L)(t^{-1})$.
+    Wtedy $\jones(mL)(t)=\jones(L)(t^{-1})$.
 \end{proposition}
 
 \begin{proof}
     Zauważmy, że diagramy $L_-$ oraz $L_+$ są wzajemnymi lustrami.
     Dlatego każda relacja kłębiasta dla splotu postaci
     \begin{equation}
-        t^{-1} V(L_+)(t) - tV(L_-)(t) + (t^{-1/2} - t^{1/2}) V(L_0)(t) = 0
+        t^{-1} \jones(L_+)(t) - t\jones(L_-)(t) + (t^{-1/2} - t^{1/2}) \jones(L_0)(t) = 0
     \end{equation}
     odpowiada pewnej relacji dla lustra splotu:
     \begin{equation}
-        -tV(L_+)(t) + t^{-1} V(L_-)(t) + (t^{-1/2} - t^{1/2}) V(L_0)(t) = 0,
+        -t\jones(L_+)(t) + t^{-1} \jones(L_-)(t) + (t^{-1/2} - t^{1/2}) \jones(L_0)(t) = 0,
     \end{equation}
     co po zamianie zmiennych $t \mapsto t^{-1}$ i przemnożeniu przez $-1$ daje
     \begin{equation}
-        -t^{-1} V(L_+)(t^{-1}) + t V(L_-)(t^{-1}) + (t^{1/2} - t^{-1/2}) V(L_0)(t^{-1}) = 0.
+        -t^{-1} \jones(L_+)(t^{-1}) + t \jones(L_-)(t^{-1}) + (t^{1/2} - t^{-1/2}) \jones(L_0)(t^{-1}) = 0.
     \end{equation}
 
     Patrz też: Florian Gellert, Kombinatorische Invarianten, strona 12.
 \end{proof}
 
 \begin{corollary}
-    Jeśli $K$ jest węzłem zwierciadlanym, to wielomian $V_K$ jest symetryczny.
+    Jeśli $K$ jest węzłem zwierciadlanym, to wielomian $\jones_K$ jest symetryczny.
 \end{corollary}
 
 Implikacja odwrotna nie zachodzi na mocy wniosku \ref{crl:acheiral_signature}: węzeł $9_{42}$ ma symetryczny wielomian Jonesa, ale niezerową sygnaturę.
 Poniżej trzynastu skrzyżowań taka sytuacja ma miejsce dla dokładnie czternastu węzłów pierwszych.
 % 9_42, 10_125, 11n_19, 11n_24, 11n_82, 12a_0669, 12a_1171, 12a_1179, 12a_1205, 12n_0362, 12n_0506, 12n_0562, 12n_0571, 12n_0821
 
-Równość $V(mL)(t)=V(L)(t^{-1})$ nie jest spełniona dla trójlistnika, zatem ten nie jest równoważny ze swoim lustrem.
+Równość $\jones(mL)(t)=\jones(L)(t^{-1})$ nie jest spełniona dla trójlistnika, zatem ten nie jest równoważny ze swoim lustrem.
 Po raz pierwszy pokazał to Dehn w 1914 roku (,,Die beiden Kleeblattschlingen'').
 Zanurzył on iloraz grafu Cayleya dla grupy podstawowej trójlistnika, $G = \pi_1(S^3 - K)$, w $\mathbb H^2 \times \R$, by wyznaczyć grupę zewnętrznych automorfizmów grupy $G$.
 Okazuje się nią być $\Z/2\Z$.
@@ -378,8 +378,8 @@ Korzystając z południków i równoleżników pokazał następnie, że nietrywi
 \begin{proposition}
     Niech $L, M$ będą zorientowanymi splotami, zaś $J, K$: zorientowanymi węzłami.
     \begin{enumerate}
-        \item $V(L \sqcup M) = (-t^{1/2} - t^{-1/2}) V(L) V(M)$,
-        \item $V(J \# K) = V(J) V(K)$.
+        \item $\jones(L \sqcup M) = (-t^{1/2} - t^{-1/2}) \jones(L) \jones(M)$,
+        \item $\jones(J \# K) = \jones(J) \jones(K)$.
     \end{enumerate}
 \end{proposition}
 
@@ -452,9 +452,9 @@ Korzystając z południków i równoleżników pokazał następnie, że nietrywi
     \]
     Relacja kłębiasta może zostać użyta do pokazania, że
     \begin{equation}
-    t^{-1}V(J\#K)-tV(J\#K)+(t^{-1/2}-t^{1/2})V(J\sqcup K)=0.
+    t^{-1}\jones(J\#K)-t\jones(J\#K)+(t^{-1/2}-t^{1/2})\jones(J\sqcup K)=0.
     \end{equation}
-    Ale $V(J\sqcup K)=(-t^{1/2}-t^{-1/2})V(J)V(K)$, co upraszcza się do $V(J\#K)=V(J)V(K)$ i~kończy dowód.
+    Ale $\jones(J\sqcup K)=(-t^{1/2}-t^{-1/2})\jones(J)\jones(K)$, co upraszcza się do $\jones(J\#K)=\jones(J)\jones(K)$ i~kończy dowód.
 \end{proof}
 
 % Koniec sekcji Relacja kłębiasta
