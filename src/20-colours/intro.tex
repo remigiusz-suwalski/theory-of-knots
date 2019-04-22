@@ -168,9 +168,60 @@ Sploty rozszczepialne są $n$-kolorowalne dla każdego $n \ge 2$, można skorzys
 Pierścienie Boromeuszy nie kolorują się modulo trzy, nie są zatem rozszczepialne.
 Sploty, które nie są kolorowalne modulo $n$ dla każdej liczby $n \in \N$ nazywa się czasem niewidzialnymi, dwa węzły do dziesięciu skrzyżowań mają tę własność: $10_{124}$ oraz $10_{153}$.
 
-% TODO: krótkie łuki, uszachowienie.
-% TODO: suma dobrze oznakowanych równań jest zerem.
+Pokażemy teraz, że suma równań kolorujących z dobrze wybranymi znakami jest postaci $0 \equiv 0 \mod n$.
+Będziemy potrzebować kilku pomocniczych definicji.
+Każdy diagram węzła rozcina płaszczyznę na obszary, z~czego jeden jest nieograniczony.
 
+\begin{definition}[uszachowienie]
+    Przyporządkowanie każdemu z~obszarów, na jakie diagram rozcina płaszczyznę, jednego z~dwóch kolorów tak, by sąsiadujące ze sobą obszary były różnych kolorów, nazywamy uszachowieniem.
+\end{definition}
+
+Ustalmy węzeł $K$ oraz dowolne uszachowienie dla jego diagramu.
+Skojarzmy z~każdym skrzyżowaniem równanie kolorujące, zgodnie z~poniższym schematem:
+\[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
+    \useasboundingbox (-5, -10) rectangle (5,5);
+    \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
+        \strand[semithick] (-5,5) to (5,-5);
+        \strand[semithick] (-5,-5) to (5,5);
+        \fill[blue!20!white] (-4, 5) to (0, 1) to (4, 5);
+        \fill[blue!20!white] (-4, -5) to (0, -1) to (4, -5);
+        \node[darkblue] at (-5, -5)[left] {$a$};
+        \node[darkblue] at (-5, +5)[left] {$b$};
+        \node[darkblue] at (+5, -5)[right] {$c$};
+        \node[darkblue] at (+5, +5)[right] {$a$};
+        \node[darkblue] at (0, -10) {$+a-b+a-c=0 \mod n$};
+    \end{knot}
+    \end{tikzpicture}
+    \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
+    \useasboundingbox (-5, -10) rectangle (5,5);
+    \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
+        \strand[semithick] (-5,5) to (5,-5);
+        \strand[semithick] (-5,-5) to (5,5);
+        \fill[blue!20!white] (5, -4) to (1, 0) to (5, 4);
+        \fill[blue!20!white] (-5, -4) to (-1, 0) to (-5, 4);
+        \node[darkblue] at (-5, -5)[left] {$a$};
+        \node[darkblue] at (-5, +5)[left] {$b$};
+        \node[darkblue] at (+5, -5)[right] {$c$};
+        \node[darkblue] at (+5, +5)[right] {$a$};
+        \node[darkblue] at (0, -10) {$-a+b-a+c=0 \mod n$};
+    \end{knot}
+    \end{tikzpicture}
+\]
+
+\begin{proposition}
+    \label{prp:colouring_sum_zero}
+    Sumą równań kolorujących o dobrze wybranych znakach jest $0 \equiv 0 \mod n$.
+\end{proposition}
+
+Będziemy potrzebować tego do pokazania, że wyznacznik determinuje kolorowalność splotu.
+
+\begin{proof}
+    Każde równanie kolorujące składa się z~czterech wyrazów, po jednym od każdej nici, która spotyka się w~danym skrzyżowaniu.
+    Nić biegnie między dwoma skrzyżowaniami, więc suma wszystkich równań kolorujących składa się z~par składników, po jednej parze na nić.
+    Składniki te są przeciwnych znaków, zatem wzajemnie się znoszą.
+    Suma równań kolorujących jest sumą zer, a~to należało udowodnić.
+\end{proof}
 
 \begin{proposition}
     Jeśli $K, L$ są węzłami, to $3\tau_3(K \shrap L) = \tau_3(K)\tau_3(L)$.

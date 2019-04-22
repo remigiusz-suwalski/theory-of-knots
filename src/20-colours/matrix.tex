@@ -25,7 +25,7 @@ Diagram bez takich krzywych ma tyle samo skrzyżowań, co łuków.
 
 Taka macierz jest kwadratowa, ponieważ z~każdego skrzyżowania wychodzą (tunelem) dwa włókna mające dwa końce.
 Wykreślenie wiersza i~kolumny jest konieczne.
-Gdybyśmy tego zaniechali, otrzymana macierz nie byłaby odwracalna, bowiem wiersze sumują się do zera.
+Gdybyśmy tego zaniechali, otrzymana macierz nie byłaby odwracalna, bowiem wiersze sumują się do zera (patrz fakt \ref{prp:colouring_sum_zero}).
 Dla alternujących diagramów możemy żądać, by górą $i$-tego skrzyżowania biegło $i$-te włókno, wtedy na diagonali macierzy $A$ znajdą się same minus dwójki.
 
 \begin{definition}[wyznacznik]
@@ -98,7 +98,7 @@ Ich defekty modulo $3$ to $1$ i~$2$, zatem są różne.
 
 \begin{corollary}
     Niech $L$ będzie splotem.
-    Jeśli $\det L = 1$, to splot $L$ jest niewidzialny (nie kolorouje się module $n$ dla każdego naturalnego $n$).
+    Jeśli $\det L = 1$, to splot $L$ jest niewidzialny (nie kolorouje się modulo $n$ dla każdego naturalnego $n$).
     Jeśli $\det L = 0$, to splot $L$ koloruje się modulo $n$ dla każdego naturalnego $n$.
 \end{corollary}
 
@@ -123,9 +123,6 @@ W latach 30. ubiegłego wieku L. Goeritz pokazał, jak diagram węzła wyznacza 
 Nieco później H. F. Trotter zmodyfikował jego pomysł, by sygnatura formy stanowiła niezmiennik splotów.
 Gordon, Litherland ujednolicili dwa wyżej wymienione podejścia w~pracy \cite{litherland81}.
 My opiszemy krótko macierz Goeritza.
-
-Diagram węzła wyznacza swoimi łukami rozbicie płaszczyzny na rozłączne obszary.
-Jeśli każdemu z nich przypisano kolor, czarny lub biały, by sąsiadujące obszary były różnobarwne, to diagram nazywamy uszachowionym.
 
 Ustalmy szachowiony diagram $D$ dla splotu $L$.
 Oznaczmy białe obszary $0, 1, \ldots, m$, przy czym $0$ jest obszarem nieograniczonym.
