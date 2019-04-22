@@ -20,8 +20,11 @@ Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
 
 \begin{definition}[kolorowanie] \label{def:colour_equation}
     Niech $L$ będzie splotem, zaś $n$ liczbą naturalną.
-    Mówimy, że splot $L$ jest kolorowalny modulo $n$, jeśli posiada diagram, którego włóknom można przypisać liczby całkowite $0, \ldots, n - 1$ tak, by równanie $a + b \equiv 2c$ modulo $n$ było spełnione przy każdym skrzyżowaniu oraz istniały dwa włókna różnych kolorów.
-    Takie przyporządkowanie nazywamy (nietrywialnym) kolorowaniem.
+    Mówimy, że splot $L$ jest kolorowalny modulo $n$, jeśli posiada diagram, którego włóknom można przypisać liczby całkowite $0, \ldots, n - 1$ tak, by
+    \begin{enumerate}[leftmargin=*]
+        \item istniały dwa włókna różnych kolorów,
+        \item równanie $a + b \equiv 2c$ modulo $n$ było spełnione przy każdym skrzyżowaniu:
+    \end{enumerate}
     \[
         \begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
             \useasboundingbox (-5, -5) rectangle (5,5);
@@ -32,23 +35,13 @@ Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
                 \node[darkblue] at (5, -5)[above right] {$b$};
                 \node[darkblue] at (-5, 5)[below left] {$a$};
             \end{knot}
-        \end{tikzpicture}
+        \end{tikzpicture}.
     \]
+    Takie przyporządkowanie nazywamy (nietrywialnym) kolorowaniem.
 \end{definition}
 
-Dla pewnych splotów nie istnieje żadna liczba naturalna $n$ spełniająca założenia powyższej definicji.
-Nazywa się je czasem niewidzialnymi, dwa węzły do dziesięciu skrzyżowań mają tę własność: $10_{124}$ oraz $10_{153}$.
-
-Metoda ta została odkryta razem z~uogólnieniem do $n$ kolorów przez Ralpha Foxa w~1956, kiedy próbował uczynić teorię węzłów bardziej przystępną\footnote{
-    Niech $L$ będzie splotem, zaś $\pi$ grupą podstawową jego dopełnienia.
-    Reprezentację $\rho$ dla $\pi$ na $D_{2n}$, grupę diedralną, nazywamy $n$-kolorowaniem Foxa.
-    Grupa splotu generowana jest przez ścieżki z~punktu bazowego w~$S^3$ do brzegu rurowego otoczenia splotu, wokół południka i~znowu do bazowego punktu.
-    Obrazami tych generatorów są izometrie $n$-kąta foremnego, które zapisujemy jako $ts^i$ ($t$ to odbicie, zaś $s$ jest najmniejszym obrotem).
-    Każdy generator odpowiada pewnemu łukowi, przypiszmy mu liczbę $i \in \Z/n\Z$.
-    Dostaliśmy zwykłe kolorowanie, przystępne dla studentów.
-}
-dla studentów.
-Opierając się tylko na definicji kolorowania oraz ruchach Reidemeistera jesteśmy w~stanie wykazać pierwsze własności niezmiennika.
+Metoda ta została odkryta razem z~uogólnieniem do $n$ kolorów przez Ralpha Foxa w~1956, kiedy próbował uczynić teorię węzłów bardziej przystępną dla studentów.
+Opierając się tylko na definicji kolorowania oraz ruchach Reidemeistera możemy wykazać pierwsze własności kolorowań.
 
 \begin{proposition} \label{color_invariant}
     ,,Bycie $n$-kolorowalnym'' jest niezmiennikiem węzłów.
@@ -131,9 +124,14 @@ Opierając się tylko na definicji kolorowania oraz ruchach Reidemeistera jeste�
             \strand[semithick] (-10,2) .. controls (-4, 2) and (-4,-8) .. (0,-8);
             \strand[semithick] (10,2) .. controls (4, 2) and (4,-8) .. (0,-8);
         \end{knot}
-        \end{tikzpicture}}
+        \end{tikzpicture}} \qedhere
     \]
 \end{proof}
+
+Trójlistnik koloruje się dokładnie modulo krotności trójki, ósemka zaś -- piątki.
+Sama kolorowalność nie mówi wiele, splot jest kolorowalny lub nie.
+Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, być może trywialnych, jest mocniejszym niezmiennikiem.
+Liczbę kolorowań splotu $L$ modulo $n$, trywialnych lub nie, oznaczamy przez $\tau_n(L)$.
 
 \begin{lemma}
     \label{lem:colouring_arc}
@@ -147,10 +145,6 @@ Kolorem tym zazwyczaj jest $0$.
     Dodanie tej samej wartości do wszystkich łuków na dobrze pokolorowanym diagramie daje nowy, także dobrze pokolorowany diagram.
 \end{proof}
 
-Trójlistnik koloruje się dokładnie modulo krotności trójki, ósemka zaś -- piątki.
-Sama kolorowalność nie mówi wiele, splot jest kolorowalny lub nie.
-Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, być może trywialnych, także jest niezmiennikiem (mocniejszym).
-
 \begin{proposition}
     \label{no_knots_colours_mod_two}
     Żaden węzeł nie koloruje się modulo dwa.
@@ -158,20 +152,25 @@ Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, by�
 
 \begin{proof}
     Załóżmy nie wprost, że istnieje nietrywialne kolorowanie.
-    Analiza czterech możliwych skrzyżowań pokazuje,
-    że włókna wychodzące z~tunelu muszą mieć ten sam kolor.
+    Analiza czterech możliwych skrzyżowań pokazuje, że włókna wychodzące z~tunelu muszą mieć ten sam kolor.
     Przechodząc wzdłuż węzła widzimy jeden kolor, wbrew założeniu nie wprost.
 \end{proof}
 
-Sploty o~wielu składowych są dwukolorowalne.
-Wystarczy pomalować jedną składową zerem, a~pozostałe jedynkami.
+\begin{proposition}
+    Każdy splot o co najmniej dwóch ogniwach koloruje się modula dwa.
+\end{proposition}
+
+\begin{proof}
+    Wystarczy pomalować jedną składową zerem, a~pozostałe jedynkami.
+\end{proof}
+
 Sploty rozszczepialne są $n$-kolorowalne dla każdego $n \ge 2$, można skorzystać z~tego samego schematu kolorowania.
 Pierścienie Boromeuszy nie kolorują się modulo trzy, nie są zatem rozszczepialne.
+Sploty, które nie są kolorowalne modulo $n$ dla każdej liczby $n \in \N$ nazywa się czasem niewidzialnymi, dwa węzły do dziesięciu skrzyżowań mają tę własność: $10_{124}$ oraz $10_{153}$.
 
-% TODO: krótkie łuki, uszachowienie. 
+% TODO: krótkie łuki, uszachowienie.
 % TODO: suma dobrze oznakowanych równań jest zerem.
 
-Niech $\tau_3(K)$ oznacza liczbę trójkolorowań węzła $K$.
 
 \begin{proposition}
     Jeśli $K, L$ są węzłami, to $3\tau_3(K \shrap L) = \tau_3(K)\tau_3(L)$.
@@ -234,12 +233,18 @@ Elementy tej grupy to $1, r, r^2, \ldots, r^{p-1}, s, sr, \ldots, sr^{p-1}$.
     Jest ono prawidłowe dokładnie wtedy, gdy analogiczne kolorowanie liczbami $a_1, \ldots, a_n$ jest prawidłowe.
 \end{proof}
 
+Kolorowania definiowano kiedyś jako surjekcje $\rho \colon \pi \to D_{2n}$ z~grupy podstawowej.
+Jak mówi prezentacja Wirtingera, grupa splotu generowana jest przez ścieżki z~punktu bazowego w~$S^3$ do brzegu rurowego otoczenia splotu, wokół południka i~znowu do bazowego punktu.
+Fox zauważył, że z~surjektywności $\rho$ wynika, iż generatory mapują się na symetrie osiowe $sr^k$.
+Ponieważ istnieje wzajemnie jednoznaczna odpowiedniość między generatorami grupy splotu oraz łukami diagramu, każdemu możemy przypisać liczbę całkowitą $k$.
 Etykietowania są więc uogólnieniem kolorowań.
-Istnieje prosta klasyfikacja grup, których można użyć do etykietowania.
+Rozumowanie, które przedstawiliśmy, prowadzi do prostej klasyfikacji grup, których można użyć do etykietowania.
 
 \begin{proposition}
-    Niech $K$ będzie węzłem, $\pi_1$ grupą podstawową jego dopełnienia, zaś $G$ dowolną grupą.
+    Niech $K$ będzie węzłem, $\pi$ grupą podstawową jego dopełnienia, zaś $G$ dowolną grupą.
     Następujące warunki są równoważne: $K$ jest $G$-etykietowalny; istnieje surjekcja $\pi_1 \to G$.
 \end{proposition}
+
+Historycznie, prezentacja Wirtingera była pierwsza, zaś etykietowania odkryto później.
 
 % Koniec sekcji Kolorowanie splotów
