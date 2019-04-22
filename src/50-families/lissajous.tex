@@ -57,20 +57,20 @@ To nakłada ograniczenia na wielomian Alexandera.
 \begin{proposition}
     \label{lissajous_square}
     Niech $K$ będzie węzłem Lissajous.
-    Wtedy $\Delta(x)$, jego wielomian Alexandera, jest kwadratem w~pierścieniu $\Z_2[x]$.
+    Wtedy $\alexander(x)$, jego wielomian Alexandera, jest kwadratem w~pierścieniu $\Z_2[x]$.
 \end{proposition}
 
 \begin{proof}
     Rozpatrzmy dwa przypadki.
 
     Jeśli wszystkie częstotliwości są nieparzyste, węzeł jest silnie dodatnio achiralny.
-    Wtedy wielomian $\Delta(x)$ jest kwadratem w pierścieniu $\Z[x]$ (pokazano to w \cite{hartley79}).
+    Wtedy wielomian $\alexander(x)$ jest kwadratem w pierścieniu $\Z[x]$ (pokazano to w \cite{hartley79}).
 
     W przeciwnym razie możemy powołać się na fakt \ref{lissajous_two_periodic} oraz \ref{murasugi_periodic} (z $n=2^1$ oraz $\lambda = 1$).
     Dostaniemy równość
     \begin{equation}
     	\label{lissajous_square_equiv}
-        \Delta_K(t) \equiv \Delta^2_{J}(t) \mod 2,
+        \alexander_K(t) \equiv \alexander^2_{J}(t) \mod 2,
     \end{equation}
     która kończy dowód.
 \end{proof}
@@ -84,17 +84,17 @@ Tylko pierwszy z nich jest na pewno węzłem Lissajous (stan na 2018).
 \end{example}
 
 Wygodnie jest przeformułować warunek z faktu \ref{lissajous_square} do następującej postaci.
-Wielomian $\Delta(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kwadratem modulo $2$ wtedy i tylko wtedy, gdy współczynniki $A_{2k+1}$ są parzyste dla $k \ge 0$.
+Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kwadratem modulo $2$ wtedy i tylko wtedy, gdy współczynniki $A_{2k+1}$ są parzyste dla $k \ge 0$.
 
 \begin{corollary}
     Jeśli $K$ jest wezłem Lissajous, to jego niezmiennik Arfa znika.
 \end{corollary}
 
 \begin{proof}
-    Niech $\Delta(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ będzie  wielomianem Alexandera.
-    Wtedy $\Delta_K(1) = \pm 1$, zatem $0 = \pm 1 + A_0 + 2A_1 + \ldots + 2A_n$.
-    Możemy teraz odjąć to od $\Delta_K(-1) = A_0 - 2A_1 \pm \ldots$, by uzyskać $\Delta_K(-1) = \pm 1 - 4A_1 - 4A_3 - \ldots$.
-    Razem z wygodnym przeformułowaniem daje to $\Delta_K(-1) \equiv \pm 1 \mod 8$, co w połączeniu z~\ref{arf_murasugi} kończy dowód.
+    Niech $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ będzie  wielomianem Alexandera.
+    Wtedy $\alexander_K(1) = \pm 1$, zatem $0 = \pm 1 + A_0 + 2A_1 + \ldots + 2A_n$.
+    Możemy teraz odjąć to od $\alexander_K(-1) = A_0 - 2A_1 \pm \ldots$, by uzyskać $\alexander_K(-1) = \pm 1 - 4A_1 - 4A_3 - \ldots$.
+    Razem z wygodnym przeformułowaniem daje to $\alexander_K(-1) \equiv \pm 1 \mod 8$, co w połączeniu z~\ref{arf_murasugi} kończy dowód.
 \end{proof}
 
 \begin{corollary}
@@ -103,18 +103,18 @@ Wielomian $\Delta(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kwadra
 \end{corollary}
 
 \begin{proof}
-    Wynika to z~naszego wygodnego przeformułowania oraz stwierdzenia 8.16 w książce \cite{burde03}: jeśli $K$ jest włóknistym węzłem o genusie $g$, to wielomian Alexandera $\Delta_K$ jest stopnia $2g$ i~ma wiodący współczynnik $\pm 1$.
+    Wynika to z~naszego wygodnego przeformułowania oraz stwierdzenia 8.16 w książce \cite{burde03}: jeśli $K$ jest włóknistym węzłem o genusie $g$, to wielomian Alexandera $\alexander_K$ jest stopnia $2g$ i~ma wiodący współczynnik $\pm 1$.
 \end{proof}
 
 \begin{corollary}
 	\label{lissajous_twobridge}
-    Jeśli $K$ jest dwumostowym wezłem Lissajous, to $\Delta_K(t) \equiv 1 \mod 2$.
+    Jeśli $K$ jest dwumostowym wezłem Lissajous, to $\alexander_K(t) \equiv 1 \mod 2$.
 \end{corollary}
 
 \begin{proof}
     Nietrywialny węzeł o dwóch mostach nie może być silnie dodatnio achiralny (patrz \cite{hartley79}).
     Jeśli jest węzłem Lissajous, jedna z jego częstotliwości okazuje się być parzysta.
-    Wtedy jego faktor jest trywialny i~kongruencja \ref{lissajous_square_equiv} daje $\Delta_K(t) \equiv 1 \mod 2$.
+    Wtedy jego faktor jest trywialny i~kongruencja \ref{lissajous_square_equiv} daje $\alexander_K(t) \equiv 1 \mod 2$.
 \end{proof}
 
 \begin{corollary}
@@ -134,9 +134,9 @@ Obiekt ten, $(p, q)$-kabel, zdefiniowano w książce Eisenbuda/Neumanna ,,Three-
 	Niech $L$ będzie $(p, q)$-kablem węzła $K$.
 	Seifert pokazał w 1950 (praca \cite{seifert50}), że
     \begin{equation}
-    	\Delta_L(t) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)} \Delta_K(t^p).
+    	\alexander_L(t) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)} \alexander_K(t^p).
     \end{equation}
-    Dwa najwyższe współczynniki w wielomianie ułamkowym to $\pm 1$, a skoro $|p| > 1$, dwa najwyższe współczynniki $\Delta_L$ to także $\pm 1$.
+    Dwa najwyższe współczynniki w wielomianie ułamkowym to $\pm 1$, a skoro $|p| > 1$, dwa najwyższe współczynniki $\alexander_L$ to także $\pm 1$.
     ,,Wygodne sformułowanie'' kończy dowód.
 \end{proof}
 
