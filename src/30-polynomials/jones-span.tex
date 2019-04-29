@@ -11,7 +11,7 @@ Zanim przejdziemy do dowodu, wyjaśnimy użyte w tym stwierdzeniu przymiotniki.
 
 \begin{definition}
     \index{diagram!zredukowany}
-    Diagram jest zredukowany, gdy nie zawiera usuwalnych skrzyżowań:
+    Wąskie skrzyżowanie między dwiema rozłącznymi częśćmi diagramu nazywamy przesmykiem (\emph{isthmus}).
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
         \begin{knot}[clip width=5]
@@ -24,13 +24,18 @@ Zanim przejdziemy do dowodu, wyjaśnimy użyte w tym stwierdzeniu przymiotniki.
         \end{knot}
         \end{tikzpicture}
     \]
+    Diagram jest zredukowany, gdy nie zawiera przesmyków.
 \end{definition}
+
+Słowo przesmyk pochodzi z teorii grafów, skrzyżowanie jest przesmykiem dokładnie wtedy, gdy odpowiadająca mu krawędź w grafie węzła jest przesmykiem, czyli jej usunięcie zwiększa liczbę składowych spójności.
+Tam używa się także określenia most, które u~nas ma już inne znaczenie.
 
 \begin{definition}
     Diagram jest spójny, gdy nie można go podzielić na dwie niepuste części, które nie spotykają się na żadnym skrzyżowaniu.
 \end{definition}
 
-W dowodzie hipotezy Taita użyjemy rozpiętości wielomianu Jonesa.
+Jeżeli diagram nie jest spójny, możemy przesunąć rozłączne ogniwa na siebie przy użyciu II ruchu Reidemeistera.
+W~dowodzie hipotezy Taita użyjemy rozpiętości wielomianu Jonesa, która stanowi uogólnienie stopnia wielomianu.
 
 \begin{definition}
     Rozpiętością wielomianu Laurenta $f$ jednej zmiennej $X$ nazywamy różnicę między najwyższym oraz najmniejszym wykładnikiem pojawiającym się w~$f$: $\operatorname{span} f = M_f - m_f$.
@@ -60,33 +65,42 @@ Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
     gdzie sumujemy po wszystkich stanach $s$ dla diagramu $D$.
 \end{proposition}
 
+Dla wygody wprowadźmy skrót $\langle D \mid s \rangle := (-A^{-2}-A^2)^{|sD|-1}A^{|s|}$.
+
 \begin{proof}
     Oznaczmy prawą stronę dowodzonej równości przez $[D]$.
-    Pokażemy, że spełnia ona $[\LittleUnknot]=1$, $[D\sqcup\LittleUnknot]=(-A^{-2}-A^2) [D]$ oraz $[\LittleRightCrossing] = A [\LittleRightSmoothing] + A^{-1}[\LittleLeftSmoothing]$.
-    Stąd wynika już, że $[D] = \bracket{D}$.
+    Pokażemy, że spełnia ona aksjomaty Kauffmana z~definicji \ref{def:kauffman_bracket}, stąd wynika już, że $[D] = \bracket{D}$.
+    % ona $[\LittleUnknot]=1$, $[D\sqcup\LittleUnknot]=(-A^{-2}-A^2) [D]$ oraz $[\LittleRightCrossing] = A [\LittleRightSmoothing] + A^{-1}[\LittleLeftSmoothing]$.
+    S
 
-    Niewęzeł $\LittleUnknot$ ma tylko jeden stan $s$ z~$|s| = 0$ i~$|s\,\LittleUnknot| = 1$.
+    Pierwszy aksjomat mówi o niewęźle $\LittleUnknot$.
+    Posiada on tylko jeden stan $s$ dany wzorem $|s| = 0$, zatem $|s\,\LittleUnknot| = 1$ oraz $[D] = (-A^2 - A^{-2})^0 \cdot A^0 = 1$.
 
-    Zauważmy, że $D \sqcup \LittleUnknot$ i~$D$ mają te same skrzyżowania,
+    By pokazać, że funkcja $[\cdot]$ spełnia drugi aksjomat zauważmy, że diagramy $D \sqcup \LittleUnknot$ i~$D$ mają te same skrzyżowania,
     więc możemy utożsamiać stany $s$ dla $D$ ze stanami $u$ dla $D \sqcup \LittleUnknot$.
     Wtedy $|u| = |s|$ oraz $|u(D \sqcup \LittleUnknot)| = |sD| + 1$.
     Zatem
-    \begin{align*}
+    \begin{align}
         \left[D \sqcup \LittleUnknot\right]
         & = \sum_u (-A^2-A^{-2})^{|u(D\sqcup\LittleUnknot)|-1} A^{|u|} \\
-        & = \sum_s (-A^2-A^{-2})^{|sD|} A^{|s|} = (-A^2-A^{-2}) [D].
-    \end{align*}
+        & = \sum_s (-A^2-A^{-2})^{|sD|} A^{|s|} \\
+        & = (-A^2-A^{-2}) [D].
+    \end{align}
 
-    Pozostała trzecia własność. Z definicji $A[\LittleRightSmoothing]=\sum_u(-A^2-A^{-2})^{|u\LittleRightSmoothing|-1}A^{|u|+1}$,
-    gdzie $u$ przebiega wszystkie stany $\LittleRightSmoothing$.
-    Ale $\LittleRightSmoothing$ to $\LittleRightCrossing$ ze skrzyżowaniem (powiedzmy, $c$) wygładzonym dodatnio,
-    co daje bijekcję między stanami $u$ dla $\LittleRightSmoothing$ i~$s$ dla $\LittleRightCrossing$, dla których $s(c) = + 1$.
-    Wtedy $|s\LittleRightCrossing|=|u\LittleRightSmoothing|$ i~$|s|=|u|+1$ oraz
+    Pozostała trzecia własność.
+    Bezpośrednio z definicji mamy
     \begin{equation}
-    A\left[\LittleRightSmoothing\right] =
-    \sum_u (-A^2-A^{-2})^{|u\,\LittleRightSmoothing|-1}A^{|u|+1} =
-    \sum_{s(c)=1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|},
+       A[\LittleRightSmoothing]
+       = \sum_u(-A^2-A^{-2})^{|u\LittleRightSmoothing|-1}A^{|u|+1},
     \end{equation}
+    gdzie $u$ przebiega wszystkie stany $\LittleRightSmoothing$.
+    Ale $\LittleRightSmoothing$ to $\LittleRightCrossing$ z ustalonym skrzyżowaniem $c$ wygładzonym dodatnio, co daje bijekcję między stanami $u$ dla $\LittleRightSmoothing$ i~$s$ dla $\LittleRightCrossing$, dla których $s(c) = + 1$.
+    Wtedy $|s\LittleRightCrossing|=|u\LittleRightSmoothing|$, $|s|=|u|+1$ oraz
+    \begin{align}
+        A\left[\LittleRightSmoothing\right]
+        & = \sum_u (-A^2-A^{-2})^{|u\,\LittleRightSmoothing|-1}A^{|u|+1} \\
+        & = \sum_{s(c)=1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|},
+    \end{align}
     podobne rozumowanie pokazuje, że $A^{-1}[\LittleLeftSmoothing] = \sum_{s(c)=-1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|}$.
     Teraz wystarczy dodać do siebie dwa ostatnie równania. %: $A[\PrawyGladki]+A^{-1}[\LewyGladki] = \sum_s(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|} = [\RightCrossing]$.
 \end{proof}
@@ -94,8 +108,8 @@ Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
 Zbadamy teraz dwa najprostsze stany dowolnego diagramu.
 
 \begin{definition}
-    Stan przypisujący znak $+ 1$ każdemu skrzyżowaniu nazywamy $s_+$.
-    Analogicznie definiujemy $s_-$.
+    Stan przypisujący znak $+1$ każdemu skrzyżowaniu nazywamy $s_+$.
+    Analogicznie definiujemy $s_-$ jako stan przypisujący wszystkim skrzyżowaniom znak $-1$.
 \end{definition}
 
 Niech $D$ będzie alternującym, zredukowanym diagramem spójnym.
@@ -152,10 +166,11 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~bia�
 (nie mogą się spotkać w~innych miejscach), gdyż diagram był zredukowany.
 
 \begin{lemma}
+    \label{lem:pretait_lemma_1}
     Niech $D$ będzie spójnym diagramem splotu o~$n$ skrzyżowaniach.
     Wtedy
     \begin{equation}
-        |s_+D|+|s_-D|\le n+2,
+        |s_+D| + |s_-D| \le n+2,
     \end{equation}
     z~równością gdy diagram $D$ jest alternujący i~zredukowany.
 \end{lemma}
@@ -171,18 +186,17 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~bia�
     $\LittleRightSmoothing$ z~$\LittleLeftSmoothing$.
     To rozrywa jedną krzywą na dwa kawałki lub scala dwie krzywe w~jedną.
     Teraz z założenia indukcyjnego wynika
-    \begin{equation}
-    |s_+D|+|s_-D|
-    =   |s_+D'| + |s_-D'| \pm 1
-    \le (n - 1) + 2 \pm 1
-    \le n + 2.
-    \end{equation}
+    \begin{align}
+        |s_+D| + |s_-D|
+        & = |s_+D'| + |s_-D'| \pm 1 \\
+        & \le (n - 1) + 2 \pm 1 \\
+        & \le n + 2.
+    \end{align}
 
     Załóżmy, że $D$ jest spójny, alternujący oraz zredukowany.
     Musimy pokazać, że ostatnie dwie nierówności tak naprawdę są równościami.
     Pierwsza wynika z~tego, że $D'$ jest spójny, alternujący i~zredukowany.
-    Z drugiej strony $|s_-D'|=|s_-D|-1$, ponieważ przejście od $s_-D$ do $s_-D'$ skleja dwa czarne obszary.
-    To pokazuje drugą równość i~kończy dowód.
+    Z drugiej strony $|s_-D'|=|s_-D|-1$, ponieważ przejście od $s_-D$ do $s_-D'$ skleja dwa czarne obszary, jak na poniższym rysunku:
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.20]
         \begin{knot}[clip width=5]
@@ -212,42 +226,48 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~bia�
         \end{tikzpicture}
         \qedhere
     \]
+    To kończy dowód.
     \end{proof}
 
  \begin{lemma}
+    \label{lem:pretait_lemma_2}
     Niech $D$ będzie diagramem splotu o~$n$ skrzyżowaniach.
     Wtedy
-    \begin{enumerate}
-        \item $M \langle D \rangle \le n+2|s_+D|-2$
-        \item $m \langle D \rangle \ge -n-2|s_-D|+2$
-    \end{enumerate}
+    \begin{align}
+        M \langle D & \rangle \le n + 2|s_+D| - 2 \\
+        m \langle D & \rangle \ge -n - 2|s_-D| + 2
+    \end{align}
     z równością, jeżeli $D$ jest alternujący, zredukowany i~spójny.
 \end{lemma}
 
 \begin{proof}
     Udowodnimy tylko pierwszą część, druga jest do niej podobna.
-    Oznaczymy przez $\langle D \mid s \rangle$ wielkość $(-A^{-2}-A^2)^{|sD|-1}A^{|s|}$.
-    Zauważmy, że $M\langle D|s\rangle=2|sD|+|s|-2$,
-    a więc w~szczególności $M\langle D|s_+\rangle=2|s_+D|+n-2$.
-    Gdyby udało się nam pokazać, że $M\langle D|s\rangle \le M\langle D|s_+\rangle$
-    dla wszystkich innych stanów $s$, dowód nierówności byłby zakończony.
-    Ale możemy znaleźć ciąg $s_+ = s_0$, $s_1$, \ldots, $s_r=s$,
-    w którym $s_{i+1}$ powstaje z~$s_i$ przez pojedynczą zmianę $+1$ na $-1$.
 
-    Teraz $|s_{i+1}|=|s_i|-2$, podczas gdy $|s_{i+1}D|=|s_iD|\pm 1$,
-    ponieważ $s_{i+1}D$ uzyskujemy z~$s_{i}D$ przez połączenie dwóch zamkniętych krzywych lub podział jednej zamkniętej krzywej na dwie części.
-    Zatem
-    \begin{align*}
-        M \langle D \mid s_{i+1} \rangle & =
-        2|s_{i+1}D|+|s_{i+1}|-2 \\ & =
-        (2|s_iD| + |s_i| -2 ) + (\pm 2-2) \le
-        M \langle D|s_i\rangle.
-    \end{align*}
+    Niech $s$ będzie dowolnym stanem.
+    Zauważmy, że $M \langle D|s\rangle = 2|sD| + |s| - 2$, a więc w~szczególności $M \langle D|s_+\rangle = 2|s_+D| + n - 2$.
+    Gdyby udało się nam pokazać nierówność $M\langle D|s\rangle \le M\langle D|s_+\rangle$
+    dla wszystkich innych stanów $s$, dowód lematu byłby zakończony.
 
-    Widać już, że $M\langle D \mid s\rangle =M\langle D \mid s_r\rangle \le\ldots\le M\langle D \mid s_0\rangle=M\langle D \mid s_+\rangle$.
+    Kolejną ważną obserwacją jest to, że istnieje ciąg stanów $s_+ = s_0$, $s_1$, \ldots, $s_r=s$, w którym $s_{i+1}$ powstaje z~$s_i$ przez pojedynczą zmianę $+1$ na $-1$.
+    Diagram $s_{i+1}D$ uzyskujemy z~$s_{i}D$ przez połączenie dwóch zamkniętych krzywych lub podział jednej zamkniętej krzywej na dwie części.
+    Wynikają stąd równości $|s_{i+1}| = |s_i| - 2$ oraz $|s_{i+1}D| = |s_iD| \pm 1$.
+    To kończy dowód nierówności z lematu, ponieważ
+    \begin{align}
+        M \langle D \mid s_{i+1} \rangle
+        & = 2|s_{i+1}D| + |s_{i+1}|-2 \\
+        & = (2|s_iD| + |s_i| -2 ) + (\pm 2-2) \\
+        & \le M \langle D|s_i\rangle.
+    \end{align}
+    Powtarzając odpowiednio wiele razy dostajemy łańcuch nierówności
+    \begin{equation}
+        \langle D \mid s\rangle =M\langle D \mid s_r\rangle \le\ldots\le M\langle D \mid s_0\rangle=M\langle D \mid s_+\rangle
+    \end{equation}
 
     Pokażemy teraz, że jeśli $D$ jest zredukowany, alternujący i~spójny, to nierówność zamienia się w~równość.
-    Będzie to wynikało z~ $M\langle D|s\rangle<M\langle D| s_+\rangle$
+    Będzie to wynikało z ostrej nierówności
+    \begin{equation}
+        M\langle D|s\rangle < M\langle D| s_+\rangle
+    \end{equation}
     dla $s\neq s_+$, jeżeli tylko powołamy się na powyższy argument.
     Wystarczy ograniczyć się do tych $s$, które powstają z~$s_+$ przez zmianę pojedynczego stanu $+1$ na $-1$.
     Ale to już jest oczywiste, gdyż $sD$ otrzymujemy przez sklejenie dwóch białych obszarów $s_+ D$.
@@ -257,18 +277,20 @@ Możemy wreszcie zająć się rozpiętością wielomianu Jonesa.
 
 \begin{proposition}
     Niech $L$ będzie zorientowanym splotem o~spójnym diagramie $D$ z~$n$ skrzyżowaniami.
-    Wtedy $\operatorname{span}(\jones(L)) \le n$, z~równością dla zredukowanego i~alternującego $D$.
+    Wtedy $\operatorname{span} \jones(L) \le n$, z~równością dla zredukowanego i~alternującego $D$.
 \end{proposition}
 
 \begin{proof}
-    Pokażemy prawdziwość innego, równoważnego stwierdzenia: $\operatorname{span} \langle D\rangle\le 4n$
-    z~równością dla zredukowanego i~alternującego $D$.
-    Dwa poprzednie lematy mówią, że
-    \begin{align*}
+    Pokażemy prawdziwość innego, równoważnego stwierdzenia: $\operatorname{span} \langle D\rangle\le 4n$.
+    Dwa poprzednie lematy \ref{lem:pretait_lemma_1} oraz \ref{lem:pretait_lemma_2} raze, mówią, że
+    \begin{align}
         \operatorname{span}\langle D\rangle
-        & = M\langle D\rangle - m\langle D\rangle \le (2|s_+D|+n-2)+(2|s_-D|+n-2) \\
-        & = 2(|s_+D|+|s_- D|)+2n-4 \le 2(n+2)+2n-4 = 4n. \qedhere
-    \end{align*}
+        & = M\langle D\rangle - m\langle D\rangle \\
+        & \le (2|s_+D|+n-2)+(2|s_-D|+n-2) \\
+        & = 2(|s_+D|+|s_- D|)+2n-4 \\
+        & \le 2(n+2)+2n-4 \\
+        & = 4n. \qedhere
+    \end{align}
 \end{proof}
 
 Jesteśmy już w~stanie podać dowód twierdzenia \ref{taitjones} wspomnianego na początku sekcji.
@@ -285,10 +307,10 @@ jednak czasami możemy oszacować jego rozpiętość korzystając z~następując
 \begin{corollary}
     Niech $L$ będzie zorientowanym splotem ze spójnym diagramem $D$ o~$n$ skrzyżowaniach.
     Wtedy
-    \begin{align*}
+    \begin{align}
         3w(D)-2|s_+D|+2-n & \le 4 m(\jones(L) \\
         3w(D)+2|s_-D|+n-2 & \ge 4 M(\jones(L)),
-    \end{align*}
+    \end{align}
     z~równością dla zredukowanego i~alternującego $D$.
 \end{corollary}
 
