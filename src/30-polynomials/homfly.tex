@@ -6,20 +6,53 @@ Pierwszym takim węzłowym niezmiennikiem okazał się wielomian (Laurenta) HOMF
 Jego nazwa pochodzi od sześciu odkrywców -- Hoste, Ocneanu, Millett, Freyd, Lickorish, Yetter z~pracy \cite{homfly85}.
 
 Dwa lata później i~niezależnie od nich, Przytycki z~Traczykiem otrzymał ten sam obiekt w~\cite{przytycki87}.
-Ich nazwiska czasami są pomijane, gdyż polska poczta była spowolniona w tamtym czasie przez ruch solidarnościowy (pisze o tym Michael McDaniel w artykule ,,Knots to You'').
+Ich nazwiska czasami są pomijane, gdyż polska poczta była spowolniona w tamtym czasie przez ruch solidarnościowy, pisze o tym Michael McDaniel w artykule ,,Knots to You''.
+W przeciwnym razie używa się skrótu HOMFLY-PT.
 
-\begin{definition}
-    \label{homflydef}
+% To compute the HOMFLY-PT polynomial, one starts from an oriented link diagram? and uses the following rules:
+
+% PP is an isotopy invariant (thus, unchanged by Reidemeister moves).
+
+% P(unknot)=1P(\text{unknot}) = 1
+
+% Let L +L_+, L −L_-, and L 0L_0 be links which are the same except for one part where they differ according to the diagrams below. Then, depending on the choice of variables:
+% l⋅P(L +)+l −1⋅P(L −)+m⋅P(L 0)=0l \cdot P(L_+) + l^{-1} \cdot P(L_-) + m \cdot P(L_0) = 0.
+% a⋅P(L +)−a −1⋅P(L −)=z⋅P(L 0)a \cdot P(L_+) - a^{-1} \cdot P(L_-) = z \cdot P(L_0). (Sometimes ν\nu is used instead of aa)
+% α −1⋅P(L +)−α⋅P(L −)=z⋅P(L 0)\alpha^{-1} \cdot P(L_+) - \alpha \cdot P(L_-) = z \cdot P(L_0).
+% Using three variables: x⋅P(L +)+y⋅P(L −)+z⋅P(L 0)=0x \cdot P(L_+) + y \cdot P(L_-) + z \cdot P(L_0) = 0.
+
+\begin{definition}[wielomian HOMFLY]
+    \label{def:homfly}
     \index{wielomian!HOMFLY}
-    Wielomian HOMFLY zorientowanego splotu $L$ to niezmienniczy na izotopie wielomian Laurenta dwóch zmiennych $m, l$ taki, że $P(\LittleUnknot) = 1$ oraz
+    Niech $L$ będzie zorientowanym diagramem splotu.
+    Wielomian $P$ dwóch zmiennych, który spełnia relację kłębiastą
     \begin{equation}
-        l P(L_+) +  \frac 1l P(L_-) + mP(L_0) = 0,
+        l \cdot P_{L_+} + l^{-1} \cdot P_{L_-} + m \cdot P_{L_0} = 0
     \end{equation}
-    przy oznaczeniach ze stwierdzenia \ref{tracheotomia}.
+    z warunkiem początkowym $P_{\LittleUnknot} \equiv 1$ i jest niezmienniczy na izotopie (ruchy Reidemeistera) nazywamy wielomianem HOMFLY.
 \end{definition}
 
-Postać ta bierze się z jednorodnego wielomianu trzech zmiennych $P(x, y, z)$, który spełnia $xP(L_+) + yP(L_-) + zP(L_0) = 0$.
-Wystarczy podstawić $y = 1/x = 1/l$, $z = m$.
+Litery $l, m$ pochodzą od nazwisk odkrywców, Lickorisha i Milletta.
+To dość mylące, ale niektórzy autorzy używają innej, równoważnej relacji z~innymi zmiennymi.
+
+\begin{definition}[HOMFLY inaczej]
+    $a \cdot P_{L_+} - a^{-1} \cdot P_{L_-} = z \cdot P_{L_0}$.
+\end{definition}
+
+Czasami zamiast $a$ pisze się $v$.
+
+\begin{definition}[HOMFLY jeszcze inaczej]
+    $\alpha^{-1} \cdot P_{L_+} - \alpha \cdot P_{L_-} = z \cdot P_{L_0}$.
+\end{definition}
+
+\begin{definition}[HOMFLY jednorodny]
+    $x \cdot P_{L_+} + y \cdot P_{L_-} + z \cdot P_{L_0} = 0$.
+\end{definition}
+
+Jednorodny wielomian HOMFLY niesie taką samą informację jak jego wersja o~dwóch zmiennych.
+Istotnie, jeśli podstawimy $z = 1$, dostaniemy wielomian dwóch zmiennych.
+W~drugą stronę wystarczy każdy wyraz przemnożyć przez pewną potęgę $z$, by ten był stopnia zero.
+Wygodniej jest jednak nałożyć inny warunek, $xy=1$, co prowadzi do definicji \ref{def:homfly}.
 
 Relacja kłębiasta pozwala wywnioskować własności wielomianu sumy spójnej i~prostej.
 Potrzebować będziemy lematu:
@@ -39,11 +72,12 @@ Można potraktować to jako proste ćwiczenie z~indukcji matematycznej, pozostaw
 
 \begin{proposition}
     \label{homfly_sums}
-    Dla splotów $L_1, L_2$ zachodzą równości:
-    \begin{align*}
+    Niech $L_1, L_2$ będą splotami.
+    Wtedy
+    \begin{align}
         P(L_1 \sqcup L_2) & = - \frac{l + 1/l}{m} \cdot P(L_1) P(L_2) \\
-        P(L_1 \shrap L_2) & = P(L_1) P(L_2)
-    \end{align*}
+        P(L_1 \shrap L_2) & = P(L_1) P(L_2).
+    \end{align}
 \end{proposition}
 
 \begin{proof}
@@ -65,16 +99,19 @@ Można potraktować to jako proste ćwiczenie z~indukcji matematycznej, pozostaw
     Pozostało spojrzeć na sumę spójną diagramów  $L_1 \shrap L_2$.
     Jeśli usuniemy teraz wszystkie skrzyżowania z~diagramu $L_1$ relacją kłębiastą, dostaniemy $L_1 \# L_2 = \sum_{k=1}^n a_k (U_{k-1} \cup L_2)$, gdyż jedna z~niezawęźlonych składowych zostanie wchłonięta do diagramu diagramu $L_2$.
     Rozwijamy dalej i~otrzymujemy
-    \begin{align*}
-        L_1 \# L_2 & = \sum_{k=1}^n a_k \left(U_{k-1} \cup \sum_{k=1}^n b_k U_k\right) \\
-                   & = \sum_{k=1}^{2n} \sum_{i=1}^{k-1} a_i b_{k-i} U_{i-1} \cup U_{k-i} \\
-                   & = \sum_{k=1}^{2n} \sum_{i=1}^{k-1} a_i b_{k-i} U_{k-1},
-    \end{align*}
+    \begin{align}
+        L_1 \# L_2
+        & = \sum_{k=1}^n a_k \left(U_{k-1} \cup \sum_{k=1}^n b_k U_k\right) \\
+        & = \sum_{k=1}^{2n} \sum_{i=1}^{k-1} a_i b_{k-i} U_{i-1} \cup U_{k-i} \\
+        & = \sum_{k=1}^{2n} \sum_{i=1}^{k-1} a_i b_{k-i} U_{k-1},
+    \end{align}
     co kończy dowód.
 \end{proof}
 
-Nie wiemy jeszcze, czy definicja \ref{homflydef} pozwala wyliczyć wielomian w~skończenie wielu krokach, ani czy wynik jest jednoznaczny.
+Nie wiemy jeszcze, czy definicja \ref{def:homfly} pozwala wyliczyć wielomian w~skończenie wielu krokach, ani czy wynik jest jednoznaczny.
 Przejdę do pokazania, że tak istotnie jest.
+
+% istnienie trudno pokazać, jednoznaczność przebiega tak samo jak dla wielomianu Jonesa
 
 \begin{lemma}
     W dowolnym rzucie splotu można odwrócić pewne skrzyżowania tak, by uzyskać diagram niesplotu.
@@ -83,20 +120,20 @@ Przejdę do pokazania, że tak istotnie jest.
 Zauważmy, że wyznaczenie nawiasu Kauffmana było prostsze, ponieważ w~każdym kroku liczba skrzyżowań ulegała zmniejszeniu.
 
 \begin{proof}
-Bez straty ogólności założę, że diagram przedstawia węzeł.
-Ustalmy zatem diagram węzła i~wybierzmy jakiś początkowy punkt na nim, różny od skrzyżowania wraz z~kierunkiem, wzdłuż którego będziemy przemierzać węzeł.
-Za każdym razem, kiedy odwiedzamy nowe skrzyżowanie, zmieniamy je w~razie potrzeby na takie, przez które przemieszczamy się górnym łukiem.
-Skrzyżowań już odwiedzonych nie zmieniamy wcale.
-Po powrocie do punktu wybranego na początku uzyskamy diagram niewęzła.
+    Bez straty ogólności założę, że diagram przedstawia węzeł.
+    Ustalmy zatem diagram węzła i~wybierzmy jakiś początkowy punkt na nim, różny od skrzyżowania wraz z~kierunkiem, wzdłuż którego będziemy przemierzać węzeł.
+    Za każdym razem, kiedy odwiedzamy nowe skrzyżowanie, zmieniamy je w~razie potrzeby na takie, przez które przemieszczamy się górnym łukiem.
+    Skrzyżowań już odwiedzonych nie zmieniamy wcale.
+    Po powrocie do punktu wybranego na początku uzyskamy diagram niewęzła.
 
-Teraz wyobraźmy sobie nasz węzeł w~trójwymiarowej przestrzeni $\mathbb R^3$, przy czym oś $z$ skierowana jest z~płaszczyzny, w~której leży diagram, w~naszą stronę.
-Umieśćmy początkowy punkt tak, by jego trzecią współrzędną była $z = 1$.
+    Teraz wyobraźmy sobie nasz węzeł w~trójwymiarowej przestrzeni $\mathbb R^3$, przy czym oś $z$ skierowana jest z~płaszczyzny, w~której leży diagram, w~naszą stronę.
+    Umieśćmy początkowy punkt tak, by jego trzecią współrzędną była $z = 1$.
 
-Przemierzając węzeł, zmniejszamy stopniowo tę współrzędną, aż osiągniemy wartość $0$ tuż przed punktem, z~którego wyruszyliśmy.
-Połączmy obydwa punkty (początkowy oraz ten, w~którym osiągamy współrzędną $z = 0$) pionowym odcinkiem.
-Zauważmy, że kiedy patrzymy na węzeł w~kierunku osi $z$, nie widzimy żadnych skrzyżowań.
+    Przemierzając węzeł, zmniejszamy stopniowo tę współrzędną, aż osiągniemy wartość $0$ tuż przed punktem, z~którego wyruszyliśmy.
+    Połączmy obydwa punkty (początkowy oraz ten, w~którym osiągamy współrzędną $z = 0$) pionowym odcinkiem.
+    Zauważmy, że kiedy patrzymy na węzeł w~kierunku osi $z$, nie widzimy żadnych skrzyżowań.
 
-Oznacza to, że dostaliśmy niewęzeł.
+    Oznacza to, że dostaliśmy niewęzeł.
 \end{proof}
 
 \begin{proposition}
@@ -113,26 +150,25 @@ Oznacza to, że dostaliśmy niewęzeł.
     Powtarzając tę procedurę dojdziemy w~pewnym momencie do splotów trywialnych, gdzie powołujemy się na wniosek \ref{links_homfly}.
 \end{proof}
 
-Wielomian HOMFLY jest dużo mocniejszy od wielomianów Jonesa czy Alexandera -- są one jego szczególnymi przypadkami.
-Warto pamiętać, że żaden z~nich nie jest mocniejszy od drugiego, gdyż istnieją pary węzłów, które są rozróżnialne przez dokładnie jeden z~nich.
+Porównajmy wielomian HOMFLY ze znanymi już wielomianami Alexandera $\alexander$ oraz Jonesa $\jones$.
+Żaden z~nich nie jest mocniejszy od drugiego, istnieją pary węzłów rozróżnialne przez dokładnie jeden.
+Na przykład $4_1$ oraz $11n_{19}$ mają różne wielomiany Alexandera, zaś $8_{10}$ oraz $10_{143}$ różne wielomiany Jonesa.
 
 \begin{proposition}
-    Dla dowolnego zorientowanego węzła zachodzą równości:
-    \begin{align*}
-        \jones(t) & = P(l = i/t, m = i(t^{-1/2} - t^{1/2})) \\
-        \alexander(t) & = P(l = i, m = i(t^{-1/2} - t^{1/2}))
-    \end{align*}
+    Wielomian HOMFLY jest mocniejszy niż wielomiany Jonesa i~Alexandera jednocześnie.
 \end{proposition}
 
-Zaletą wielomianu HOMFLY jest to, że często wykrywa chiralność (węzeł chiralny nie jest równoważny swemu lustrzanemu odbiciu), ale nie odróżnia enancjomerów węzłów $9_{42}$, $10_{48}$, $10_{71}$, $10_{91}$, $10_{104}$, oraz $10_{125}$.
-Wśród węzłów do dziesięciu skrzyżowań dokładnie dwa opierają się testom chiralności opartym na niezmiennikach Jonesa, HOMFLY oraz Kauffmana: $9_{42}$ oraz $10_{71}$.
-Do jej wykrycia potrzebna jest na przykład $SU(2)$-teoria Cherna-Simonsa, wyjaśniona w~kolejnej wersji tego skryptu.
+\begin{proof}
+    Podstawiając $l = it^{-1}$, $m = i(t^{-1/2} - t^{1/2})$ w~definicji dostajemy relację kłębiastą dla wielomianu Jonesa.
+    Wielomian Alexandera otrzymamy kładąc $l = i$, $m = i(t^{-1/2} - t^{1/2})$.
+    Stąd wynika, że wielomian HOMFLY jest co najmniej tak samo mocny jak $\alexander$ oraz $\jones$.
 
-M. B. Thistlethwaite wyznaczył wielomiany HOMFLY dla wszystkich 12966 węzłów, które mają mniej niż 14 skrzyżowań.
-Wśród nich 30 posiada wielomian Conwaya $1 + 2z^2 + 2z^4$, ale pary rozróżniane wielomianem HOMFLY mają także różne wielomiany Jonesa.
-Wielomian HOMFLY odróżnia $11_{388}$ od swojego odbicia, wielomiany Jonesa i~Conwaya nie -- jest więc od nich istotnie mocniejszy.
+    Potrzebujemy jeszcze pary węzłów o różnych wielomianach HOMFLY.
+    W~\cite{dunfield10} znaleziono diagram pewnego węzła o~75 skrzyżowaniach, którego kablowe mutacje zachowują wielomiany Jonesa oraz Alexandera, ale nie zachowują wielomianu HOMFLY.
+    Wiadomo, że jeśli istnieje prostszy przykład, to ma co najmniej 13 skrzyżowań.
+\end{proof}
 
-Pomimo swej mocy nie jest jednak niezmiennikiem zupełnym, nie odróżnia od siebie mutantów (patrz definicja \ref{def:mutant}).
+Pomimo swej mocy nie jest jednak niezmiennikiem zupełnym, nie odróżnia od siebie mutantów.
 Konkretne przykłady kolizji to $5_1$ oraz $10_{132}$, $8_{8}$ oraz $10_{129}$, $8_{16}$ oraz $10_{156}$ albo $10_{25}$ oraz $10_{56}$.
 Co bardziej dramatyczne, Kanenobu wskazał (przy użyciu elementarnych metod!) w~pracy \cite{kanenobu86} z~1986:
 
@@ -142,11 +178,18 @@ Co bardziej dramatyczne, Kanenobu wskazał (przy użyciu elementarnych metod!) w
 
 Węzły w tej rodzinie posiadają nieizomorficzne moduły Alexandera, więc są parami różne.
 
+Zaletą wielomianu HOMFLY jest to, że często wykrywa chiralność (węzeł chiralny nie jest równoważny swemu lustrzanemu odbiciu), ale nie odróżnia enancjomerów węzłów $9_{42}$, $10_{48}$, $10_{71}$, $10_{91}$, $10_{104}$, oraz $10_{125}$.
+Wśród węzłów do dziesięciu skrzyżowań dokładnie dwa opierają się testom chiralności opartym na niezmiennikach Jonesa, HOMFLY oraz Kauffmana: $9_{42}$ oraz $10_{71}$.
+Do jej wykrycia potrzebna jest na przykład $SU(2)$-teoria Cherna-Simonsa, wyjaśniona w~kolejnej wersji tego skryptu.
+
+M. B. Thistlethwaite wyznaczył wielomiany HOMFLY dla wszystkich 12966 węzłów, które mają mniej niż 14 skrzyżowań.
+Wśród nich 30 posiada wielomian Conwaya $1 + 2z^2 + 2z^4$, ale pary rozróżniane wielomianem HOMFLY mają także różne wielomiany Jonesa.
+Wielomian HOMFLY odróżnia $11_{388}$ od swojego odbicia, wielomiany Jonesa i~Conwaya nie -- jest więc od nich istotnie mocniejszy.
+
 % A POLYNOMIAL INVARIANT OF ORIENTED LINKS W. B. R. LICKORISH and KENNETH C. MILLET
 % Example 16 - książka
 
 Dla każdego splotu $L$ o~$k$ składowych, $P_L(x,y) - 1$ jest krotnością $x+y-1$, zaś $P_L(x,y) + (-1)^K$ jest krotnością $x +y + 1$, zatem wielomian HOMFLY nigdy nie jest zerem.
 Uwaga: to jest inna parametryzacja!
 
-Podstawiając $x = a/z$ i~$y = -1/az$ mamy $a = l$, $z = -m$
 % Koniec sekcji Wielomian HOMFLY
