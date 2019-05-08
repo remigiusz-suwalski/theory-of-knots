@@ -104,62 +104,9 @@ Przyjmijmy następujące skróty: niech $A_n = P_{N(A)}(x,y)$, $A_d = P_{D(A)}(x
 \end{proposition}
 
 Uwaga, zastosowano tu nieco inną parametryzację wielomianu HOMFLY.
-Na zakończenie wspomnimy o~mutacjach.
-
-\begin{definition}[mutacja]
-\label{def:mutant}
-    Półobrót supła względem osi poziomej, pionowej albo też prostopadłej do płaszczyzny, w~jakiej leży diagram, nazywamy mutacją, zaś otrzymany tak splot -- mutantem.
-    W razie potrzeby zmieniamy orientację supła na przeciwną.
-\end{definition}
-
-Mutacja węzła o~co najwyżej dziesięciu skrzyżowaniach nie zmienia jego klasy abstrakcji.
-Najsłynniejszą parę mutantów stanowią węzeł Conwaya $11n_{34}$ oraz Kinoshity-Terasakiego $11n_{42}$.
-Conway zauważył podczas klasyfikacji niealternujących węzłów, że tylko one posiadają trywialny wielomian Alexandera.
-Mają też taki sam wielomian Jonesa,
-\begin{equation}
-    \jones(t) = t^{6} -2t^5 +2t^4 -2t^3 +t^2 +2t^{-1} -2t^{-2} +2t^{-3} -t^{-4}.
-\end{equation}
-Kinoshita, Terasaki zdefiniowali nieskończoną rodzinę węzłów o trywialnym wielomianie Alexandera, której pierwszym wyrazem jest węzeł $11n_{42}$ (w~\cite{kinoshita57}).
-Dowód tego, że $11n_{34}$ oraz $11n_{42}$ są różne, jako pierwszy podał prawdopodobnie Riley w~1971 roku \cite{riley71}: wykorzystał on homomorfizmy z~grupy węzła w~$PSL(2, 7)$.
-Genusy, odpowiednio: $3$ i~$2$, wyznaczył Gabai piętnaście lat później w~\cite{gabai86}, używał foliacji.
-
-Niedawno Stojmenow podjął się systematycznie znalezienia mutantów wśród węzłów o~mniej niż 19 skrzyżowaniach (praca \cite{stoimenow10} z~2010 roku).
-Twierdzi, że w~\cite{chmutov94} pokazano, że ,,niezmienniki Wasiljewa stopnia co najwyżej 8. nie rozróżniają mutantów''; ja tego nie widzę.
-Wynik poprawił Murakami sześć lat później do 10. stopnia w~dostępnej na swojej stronie internetowej pracy ,,Finite type invariants detecting the mutant knots''.
-Potwierdził też, że pewien niezmiennik stopnia 11. używany przez Mortona i~Cromwella odróżnia węzeł Conwaya od węzła Kinoshity-Terasakiego.
-
-Mutanty nie dają się łatwo odróżniać niezmiennikami.
-
-\begin{proposition}
-    Mutacja węzłów nie zmienia następujących niezmienników:
-    kablowego wielomianu Jonesa, % menasco91
-    2-kablowego wielomianu HOMFLY, % przytycki89
-    kablowego wielomianu Kauffmana, % lipson87
-    sygnatury Tristrama-Levine'a, % cooper99
-    symplicjalnej objętości Gromowa, % ruberman87
-    instanton homologii Floera, % ruberman99
-    niezmienników Wittena % rong94
-    ani Cassona. % kirk89
-\end{proposition}
-
-\begin{proof}
-    Prace \cite{menasco91}, \cite{przytycki89}, \cite{lipson87}, \cite{cooper99}, \cite{ruberman87}, \cite{ruberman99}, \cite{rong94} oraz \cite{kirk89}.
-\end{proof}
-
-Jeśli wyjściowy diagram był alternujący, to mutant też jest alternujący.
-Istnieje podejrzenie, że mutacja nie zmienia liczby gordyjskiej.
-Gordon i~Luecke w~2006 pokazali to dla klasy węzłów $1$-gordyjskich (\cite{gordon06}), dużo wcześniej wiedzieliśmy tylko, że jedynym mutantem niewęzła jest niewęzeł (Rolfsen w~\cite{rolfsen93}?).
-
-\begin{proposition}
-    Niech $m, n$ będą nieujemnymi liczbami całkowitymi.
-    Wtedy istnieje węzeł $K$ o genusie plastrowym równym $m$, którego pewien mutant ma genus plastrowy równy $n$.
-\end{proposition}
-
-\begin{proof}
-    Kim, Livingston w \cite{kim05}.
-    Wcześniej Livingston pokazał istnienie mutantów o~różnym genusie plastrowym (\cite{livingston83}).
-\end{proof}
 
 \input{50-families/tangle-bridge}
+
+\input{50-families/tangle-mutants}
 
 % Koniec sekcji Supły
