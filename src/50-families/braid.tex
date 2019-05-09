@@ -116,6 +116,26 @@ Generatory $\sigma_i$ posiadają prostą interpretację graficzną:
 \]
 
 \begin{proposition}
+    Grupa warkoczy $B_n$ jest nieprzemienna wtedy i tylko wtedy, gdy $n \ge 3$.
+\end{proposition}
+
+\begin{proof}
+    Dla $n = 1$ grupa warkoczowa jest trywialna, dla $n = 2$ mamy $B_2 \cong \Z$.
+
+    Jeśli zapomnimy, jak poszczególne pasma krzyżują się, każdy warkocz staje się permutacją zbioru $n$-elementowego.
+    To odwzorowanie jest ,,na'' i zgodne ze składaniem warkoczy, dlatego wyznacza homomorfizm $B_n \to S_n$.
+    Grupa $S_n$ dla $n \ge 2$ jest nieprzemienna, zatem grupa $B_n$ także taka jest.
+\end{proof}
+
+Obrazem generatora $\sigma_i \in B_n$ jest transpozycja $(i, i+1) \in S_n$, co pozwala przepisać prezentację Artina grupy $B_n$ do prezentacji Coxetera grupy symetrii:
+\begin{equation}
+    S_n = \langle s_1, \ldots, s_{n-1} \mid s_{i}s_{i+1}s_{i} = s_{i+1}s_{i}s_{i+1}, s_i^2 = 1, s_is_j=s_js_i \mbox { dla } |i-j| \ge 2\rangle.
+\end{equation}
+
+Jądrem homomorfizmu $B_n \to S_n$ jest podgrupa warkoczy czystych.
+Początek i~koniec każdego pasma czystego warkocza znajduje się w tej samej pozycji.
+
+\begin{proposition}
     Jeśli $n \ge 3$, to centrum grupy $B_n$ jest generowane
     przez warkocz $(\prod_{i = 1}^{n-1} \sigma_i)^n$.
 \end{proposition}
