@@ -81,24 +81,27 @@ Nie można użyć izotopii (dwa węzły są izotopijne, jeśli istnieje ciągła
 
 W podobny sposób moglibyśmy przekształcić dowolny węzeł w~niewęzeł.
 Teoria, w~której wszystkie obiekty są takie same, nie jest zbyt ciekawa.
-Oznacza to, że zwykła izotopia nie oddaje dobrze tego, czym jest równoważność węzłów wykonanych z~prawdziwego sznurka.
-Trzeba uwzględnić to, jak węzeł leży w~przestrzeni.
-Właściwym narzędziem jest więc izotopia otaczająca.
+Zwykła izotopia nie oddaje dobrze tego, czym jest równoważność węzłów wykonanych z~prawdziwego sznurka.
+Trzeba od niej wymagać dodatkowo, by była gładka albo lokalnie płaska.
+Z twierdzenia o rozszerzaniu izotopii wynika, że można ją wtedy podnieść do izotopii otaczającej.
+Ta ostatnia uwzględnia, jak węzeł leży w~przestrzeni i okazuje się być właściwym pojęciem równości dla teorii węzłów:
 
 \begin{definition}[izotopia otaczająca] \label{def_ambient_isotopy}
-    Ciągłe odwzorowanie $F \colon \R^3 \times [0,1] \to \R^3$,
-    które staje się homeomorfizmem po ustaleniu drugiego argumentu i~takie,
-    że $F(-, 0)$ jest funkcją tożsamościową,
-    zaś $F(-, 1)$ złożona z~pierwszym węzłem daje drugi węzeł,
-    nazywamy izotopią otaczającą.
+    Niech $N, M$ będą rozmaitościami, zaś $K_1, K_2 \colon N \to M$ włożeniami.
+    Ciągłe odwzorowanie $F \colon M \times [0,1] \to M$ spełniające następujące warunki:
+    \begin{enumerate}
+        \item funkcja $F(-, 0)$ jest odwzorowaniem tożsamościowym,
+        \item każda z funkcji $F(-, t)$ jest homeomorfizmem,
+        \item złożenie $F(-, 1)$ z pierwszym włożeniem $K_1$ daje drugie włożenie $K_2$
+    \end{enumerate}
+    nazywamy izotopią otaczającą przenoszącą $K_1$ na $K_2$.
 \end{definition}
 
-Intuicyjnie oznacza to, że dwa węzły uznajemy za jednakowe, jeśli można umieścić jeden z nich w~przestrzeni $\R^3$, zdeformować ją i~otrzymać drugi węzeł.
-Chwila namysłu wystarcza do przekonania się, że definicja \ref{def_ambient_isotopy} obejmuje zwykłą izotopię,
-a przy tym nie pozwala na rozwiązanie nietrywialnych węzłów przez ściągnięcie zaplątania do punktu.
-Homeomorfizmy $F_t$ można zastąpić przez dyfeomorfizmy zachowujące orientację.
-% https://math.stackexchange.com/questions/1311865/equivalence-of-knots-ambient-isotopy-vs-homeomorphism/1312016#1312016
-% https://mathoverflow.net/questions/185272/reference-for-a-fact-on-homeomorphic-knot-complements
+W topologii rozważa się włożenia dowolnych rozmaitości, nam wystarczy jeden szczególny przypadek $N = S^1$ oraz $M = \R^3$.
+Intuicyjnie, funkcja $F$ zniekształca przestrzeń $\R^3$ tak, że w~chwili początkowej $t = 0$ widzimy pierwszy, zaś w~chwili końcowej $t = 1$ drugi węzeł.
+Izotopia otaczająca nie pozwala na ściąganie zaplątanych fragmentów do punktu.
+
+\textbf{Homeomorfizmy $F_t$ można zastąpić przez dyfeomorfizmy zachowujące orientację. ???}
 
 \begin{definition}[węzeł]
     \label{def:knot}
@@ -167,22 +170,16 @@ W~takiej sytuacji obydwa sploty mają tyle samo ogniw.
     \end{figure}
 \end{example}
 
-\begin{definition}[rozszczepialność]
-    \index{splot!rozszczepialny}
-    Splot, który jest niespójną sumą niepustych splotów, nazywamy rozszczepialnym.
-\end{definition}
-
 Jeśli dwa węzły są równoważne, to ich dopełnienia są oczywiście homeomorficzne.
 Pytanie o~prawdziwość implikacji odwrotnej jako pierwszy zadał najprawdopodobniej w~1908 roku Tietze (,,Über die topologischen Invarianten mehrdimensionaler Mannigfaltigkeiten'').
-Od 1989 roku znamy odpowiedź na nie, jest pozytywna: każdy węzeł jest wyznaczony jednoznacznie przez swoje dopełnienie.
-Wcześniej pokazano, że istnieją co najwyżej dwa węzły o~zadanym dopełnieniu (\cite{culler87}).
+W roku 1987 pokazano, że istnieją co najwyżej dwa węzły o~zadanym dopełnieniu (\cite{culler87}).
+Dwa lata później poznaliśmy pozytywną odpowiedź na pytanie Tietzego: każdy węzeł jest wyznaczony jednoznacznie przez swoje dopełnienie.
 
-\begin{theorem}[Gordon, Luecke, 1989] \label{thm_gordon_luecke}
+\begin{theorem}[Gordon, Luecke, 1989]
+    \label{thm_gordon_luecke}
     \index{twierdzenie!Gordona-Lueckego}
     Poskromione węzły o~homeomorficznych (z zachowaniem orientacji) dopełnieniach są wzajemnie izotopijne.
 \end{theorem}
-
-Twierdzenie to zamienia problem lokalny (czy dwa węzły w kuli $S^3$ są równoważne?) w~problem globalny (czy dwie przestrzenie topologiczne są homeomorficzne?).
 
 \begin{proof}[Niedowód]
     Wynika to z~ogólniejszego stwierdzenia:
@@ -190,9 +187,29 @@ Twierdzenie to zamienia problem lokalny (czy dwa węzły w kuli $S^3$ są równo
     Pełny dowód zawiera praca \cite{gordon89}.
 \end{proof}
 
-Odpowiednik twierdzenia \ref{thm_gordon_luecke} dla splotów jest fałszywy.
-Wiedział o~tym już Whitehead w~1937 roku.
-Jego praca \cite{whitehead37} zawiera nieskończenie wiele splotów, których dopełnienia wyglądają jak dopełnienia splotu Whiteheada.
+Twierdzenie to zamienia problem lokalny (czy dwa węzły w kuli $S^3$ są równoważne?) w~problem globalny (czy dwie przestrzenie topologiczne są homeomorficzne?).
+Whitehead w~pracy \cite{whitehead37} z~1937 roku podał nieskończenie wiele splotów, których dopełnienia wyglądają jak dopełnienia splotu Whiteheada.
+Odpowiednik twierdzenia \ref{thm_gordon_luecke} dla splotów jest więc fałszywy.
+
+Poniższa definicja nie jest nam jeszcze potrzebna, ale wygodnie przytoczyć ją już teraz.
+
+\begin{definition}[rozszczepialność]
+    \index{splot!rozszczepialny}
+    Jeżeli splot $L$ można zanurzyć w przestrzeni $\R^3$ tak, że niektóre jego ogniwa będą leżeć nad pewną rozłączną ze splotem płaszczyzną, zaś pozostałe pod nią, to powiemy, że splot $L$ jest rozszczepialny.
+\end{definition}
+
+Liczbę nierozszczepialnych splotów, pierwszych lub złożonych, zebrano w tabeli.
+Źródło: baza danych OEIS, ciąg \href{https://oeis.org/A086825}{A086825}.
+
+\renewcommand*{\arraystretch}{1.4}
+\footnotesize
+\begin{longtable}{lccccccccc}
+    \hline
+    \textbf{skrzyżowania}  &  0  &  1  &  2  &  3  &  4  &  5  &  6   &  7   &  8   \\  \hline  \endhead
+    sploty                 &  1  &  0  &  1  &  1  &  3  &  4  &  15  &  24  &  82  \\
+    \hline
+\end{longtable}
+\normalsize
 
 \section{Diagramy. Ruchy Reidemeistera}
 Chociaż w~świetle definicji \ref{def:knot} węzły są pewnymi regularnymi podzbiorami przestrzeni $\R^3$,
