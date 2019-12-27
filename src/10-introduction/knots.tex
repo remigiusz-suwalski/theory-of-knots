@@ -7,7 +7,7 @@ ale także splotów (zaplątanych w~sobie węzłów), warkoczy, supłów oraz po
 Matematyczne węzły różnią się tym od zwykłych, że ich końce są ze sobą połączone.
 
 Oto kilka przykładów.
-Węzeł (a) nazywamy niewęzłem (jest to kalka angielskiego \emph{unknot}).
+Węzeł (a) nazywamy niewęzłem, jest to kalka angielskiego \emph{unknot}.
 Następne w~kolejce widoczne są trójlistnik (b,~\emph{trefoil}), ósemka (c,~\emph{figure-eight}), pięciolistnik (d,~\emph{cinquefoil}) oraz słynna para Perko (e,~f~wg oryginalnej numeracji Rolfsena).
 Pod diagramami umieściliśmy notację Alexandera-Briggsa, jeszcze do niej wrócimy.
 
@@ -74,8 +74,10 @@ Niestety, dopuszcza ona patologiczne z~kombinatorycznego punktu widzenia węzły
     \caption{Węzeł dziki}
 \end{figure}
 
-Zanim wykluczymy je z~naszych rozważań, zastanówmy się, jakim formalizmem opisać manipulowanie fizycznym sznurkiem.
-Nie można użyć izotopii (dwa węzły są izotopijne, jeśli istnieje ciągła funkcja $F \colon S^1 \times [0, 1] \to \R^3$ taka, że $F(-, 0)$ jest pierwszym, zaś $F(-,1)$ drugim węzłem), gdyż każdy supeł ściąga się do punktu:
+Zastanówmy się, jakim formalizmem opisać manipulowanie fizycznym sznurkiem, by wykluczyć węzły dzikie z~naszych rozważań.
+Nie można użyć izotopii (dwa węzły są izotopijne, jeśli istnieje ciągła funkcja $F \colon S^1 \times [0, 1] \to \R^3$ taka, że $F(-, 0)$ jest pierwszym, zaś $F(-,1)$ drugim węzłem), gdyż każdy węzeł jest izotopijny z punktem:
+
+\textbf{Tu brakuje obrazka.}
 
 W podobny sposób moglibyśmy przekształcić dowolny węzeł w~niewęzeł.
 Teoria, w~której wszystkie obiekty są takie same, nie jest zbyt ciekawa.
@@ -101,17 +103,17 @@ Homeomorfizmy $F_t$ można zastąpić przez dyfeomorfizmy zachowujące orientacj
 \begin{definition}[węzeł]
     \label{def:knot}
     \index{węzeł}
-    Gładkie włożenie $S^1 \to \R^3$ izotopijne otaczająco z~zamkniętą łamaną bez samoprzecięć nazywamy węzłem poskromionym.
+    Gładkie włożenie $S^1 \to \R^3$ otaczająco izotopijne z~zamkniętą łamaną bez samoprzecięć nazywamy węzłem poskromionym.
 \end{definition}
 
 Przez prawie całą książkę interesować nas będą jedynie węzły poskromione,
 dlatego jeśli nie zaznaczono inaczej, przez węzeł rozumiemy węzeł poskromiony.
 Istnieje jeszcze jedna, konkurencyjna definicja węzłów równoważnych:
 
-\begin{definition}
+\begin{proposition}
     \label{equivalent_knots_2}
     Dwa węzły są równoważne, gdy jeden z~nich jest obrazem drugiego przez zachowujący orientację homeomorfizm $\R^3 \to \R^3$.
-\end{definition}
+\end{proposition}
 
 Stwierdzenie to przestaje być prawdziwe po zastąpieniu przestrzeni $\R^m$ przez $S^m$.
 
@@ -120,31 +122,30 @@ Stwierdzenie to przestaje być prawdziwe po zastąpieniu przestrzeni $\R^m$ prze
     Musimy pokazać, że dyfeomorfizm $f \colon \R^m \to \R^m$ jest gładko izotopijny z~identycznością.
     Translacje są izotopiami, więc bez straty ogólności zakładamy, że $f(0) = 0$.
     Pochodna $f$ w~zerze jest dana wzorem $\mathrm{d}f_0(x) = \lim_{t \to 0} f(tx) /t$,
-    naturalną definicją    izotopii $F \colon \R^m \times [0, 1] \to \R^m$ jest więc
+    naturalną definicję izotopii $F \colon \R^m \times [0, 1] \to \R^m$ stanowi więc
     \[
         F(x, t) = \begin{cases}
-            f(tx) / t & 0 < t \le 1 \\
-            \mathrm{d}f_0(x) & t = 0
+            \mathrm{d}f_0(x) & t = 0 \\
+            f(tx) / t & 0 < t \le 1
         \end{cases} .
     \]
 
-    Funkcja $F$ jest gładka,
-    gdyż na mocy lematu Hadamarda funkcja $f$ zapisuje się jako suma $x_1 g_1(x) + \ldots + x_mg_m(x)$,
-    gdzie funkcje $g_i$ są gładkie, co jakoś kończy dowód.
+    Funkcja $F$ jest gładka, gdyż na mocy lematu Hadamarda funkcja $f$ zapisuje się jako suma $x_1 g_1(x) + \ldots + x_mg_m(x)$,gdzie funkcje $g_i$ są gładkie, co jakoś kończy dowód.
 \end{proof}
 
-Formalnie węzły to pewne odwzorowania, więc prawidłowym sposobem na zapisanie, że są równe, jest $K_1 \simeq K_2$.
-Dość często będziemy jednak utożsamiać węzeł z~jego obrazem, dlatego w~książce dominuje zapis $K_1 = K_2$.
-Nie prowadzi to do problemów.
+Formalnie węzły to pewne odwzorowania, więc prawidłowym sposobem na zapisanie, że są izotopijne (czyli dla nas: równe), jest $K_1 \simeq K_2$.
+Ponieważ nie prowadzi to do problemów, będziemy jednak stosować zapis $K_1 = K_2$.
+Jednocześnie często węzeł (jako odwzorowanie) nie będzie odróżniany od obrazu tego odwzorowania.
 
-\begin{definition}[splot]
+\begin{definition}[splot, ogniwo]
     \label{def_link}
     \index{splot}
-    Sumę rozłączną skończenie wielu węzłów nazywamy splotem.
+    Sumę parami rozłącznych węzłów $K_1, K_2, \ldots, K_n$ nazywamy splotem.
+    Składniki sumy nazywamy ogniwami.
 \end{definition}
 
-Podobnie jak dla węzłów mówimy, że dwa sploty są równoważne, jeśli jeden jest obrazem drugiego przez zachowujący orientację homeomorfizm $\R^3 \to \R^3$.
-Wtedy obydwa sploty mają tyle samo składowych.
+Przez analogię do węzłów mówimy, że dwa sploty są takie same, jeśli jeden jest obrazem drugiego przez zachowujący orientację homeomorfizm $\R^3 \to \R^3$.
+W~takiej sytuacji obydwa sploty mają tyle samo ogniw.
 
 \begin{example}
     \index{splot!Hopfa}
