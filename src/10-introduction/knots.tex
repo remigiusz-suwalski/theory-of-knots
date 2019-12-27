@@ -77,7 +77,7 @@ Niestety, dopuszcza ona patologiczne z~kombinatorycznego punktu widzenia węzły
 Zastanówmy się, jakim formalizmem opisać manipulowanie fizycznym sznurkiem, by wykluczyć węzły dzikie z~naszych rozważań.
 Nie można użyć izotopii (dwa węzły są izotopijne, jeśli istnieje ciągła funkcja $F \colon S^1 \times [0, 1] \to \R^3$ taka, że $F(-, 0)$ jest pierwszym, zaś $F(-,1)$ drugim węzłem), gdyż każdy węzeł jest izotopijny z punktem:
 
-\textbf{Tu brakuje obrazka.}
+{\color{red}\textbf{Tu brakuje obrazka.}}
 
 W podobny sposób moglibyśmy przekształcić dowolny węzeł w~niewęzeł.
 Teoria, w~której wszystkie obiekty są takie same, nie jest zbyt ciekawa.
@@ -101,7 +101,7 @@ W topologii rozważa się włożenia dowolnych rozmaitości, nam wystarczy jeden
 Intuicyjnie, funkcja $F$ zniekształca przestrzeń $\R^3$ tak, że w~chwili początkowej $t = 0$ widzimy pierwszy, zaś w~chwili końcowej $t = 1$ drugi węzeł.
 Izotopia otaczająca nie pozwala na ściąganie zaplątanych fragmentów do punktu.
 
-\textbf{Homeomorfizmy $F_t$ można zastąpić przez dyfeomorfizmy zachowujące orientację. ???}
+{\color{red}\textbf{Homeomorfizmy $F_t$ można zastąpić przez dyfeomorfizmy zachowujące orientację. ???}}
 
 \begin{definition}[węzeł]
     \label{def:knot}
@@ -215,17 +215,22 @@ Liczbę nierozszczepialnych splotów, pierwszych lub złożonych, zebrano w tabe
 Chociaż w~świetle definicji \ref{def:knot} węzły są pewnymi regularnymi podzbiorami przestrzeni $\R^3$,
 z kombinatorycznego punktu widzenia wygodniej jest rysować je na płaszczyźnie.
 
+\begin{definition}[orientacja]
+    \index{węzeł!zorientowany}
+    Węzeł, w~którym wybrano kierunek, w~którym należy się po nim poruszać, nazywamy zorientowanym.
+\end{definition}
+
 \begin{definition} [diagram] \label{def_diagrams}
     \index{diagram}
     Cień to rzut węzła $K \subseteq \R^3$ na płaszczyznę.
-    Diagram to cień bez katastrof
-    (potrójnych przecięć, stycznych i~dziobów)
-    razem z~informacją o~tym, jak przebiegają skrzyżowania.
+    Cień razem z~informacją o~tym, jak przebiegają skrzyżowania i pozbawiony katastrof: potrójnych przecięć, stycznych czy dziobów nazywamy diagramem.
 \end{definition}
+
+{\color{red}\textbf{Narysować katastrofy}}
 
 \begin{definition} [włókno]
     \index{włókno}
-    Fragment diagramu, który biegnie między dwoma kolejnymi tunelami (podskrzyżowaniami) nazywamy włóknem.
+    Fragment diagramu, który biegnie między dwoma kolejnymi tunelami, czyli podskrzyżowaniami, nazywamy włóknem.
 \end{definition}
 
 \begin{definition} [nić]
@@ -325,12 +330,16 @@ jego drugi ruch jest naszym pierwszym.
     oraz gładko deformując łuki bez zmiany biegu skrzyżowań.
 \end{theorem}
 
+Twierdzenie Reidemeistera jest prawdziwe zarówno dla splotów zorientowanych jak i~takich, które nie posiadają orientacji.
+
 \begin{proof}
     Szkielet dowodu można znaleźć w~książce Burdego i~Zieschanga.
     Kluczowe pomysły zawiera ,,Knots, links, braids and $3$-manifolds''
     Prasołowa i~Sosińskiego.
     Innym przystępnym źródłem jest podręcznik \cite{murasugi96} Murasugiego ,,Knot theory and its applications''.
 \end{proof}
+
+{\color{red}\textbf{Brakuje prawdziwych cytowań}}
 
 W praktyce twierdzenia \ref{thm:reidemeister} nie stosuje się bezpośrednio do diagramów splotów.
 Jednym z~powodów jest wynik Cowarda i~Lackenby'a (\cite{coward11}): jeśli na dwóch diagramach tego samego węzła widać łącznie $n$ skrzyżowań, to ,,wystarcza''
@@ -342,18 +351,13 @@ Gdy jeden z~diagramów jest pozbawiony skrzyżowań, czyli przedstawia niewęze�
 Zapewne lepsze ograniczenia istnieją, ale ich nie znamy.
 Ważne jest to, że wielkość $R(n)$ jest skończona.
 
+{\color{red}\textbf{Przedstawić rozumowanie (piramidka z węzłami), dlaczego to nie jest takie oczywiste.}}
+
 Zamiast tego definiuje się niezmienniki, czyli funkcje ze zbioru wszystkich diagramów, które nie zmieniają swojej wartości podczas wykonywania ruchów Reidemeistera.
 Kiedy pewien niezmiennik przyjmuje różne wartości na dwóch diagramach, te przedstawiają dwa istotnie różne sploty.
 Gdy wartości są te same, nie dostajemy żadnej informacji.
 Sploty mogą być równoważne albo nie.
 Niezmienniki będą nam stale towarzyszyć w~wędrówce po krainie węzłów.
-
-\begin{definition}
-    \index{węzeł!zorientowany}
-    Węzeł zorientowany to taki, w~którym wybrano kierunek, w~którym należy się po nim poruszać.
-\end{definition}
-
-Twierdzenie Reidemeistera pozostaje prawdziwe dla węzłów zorientowanych.
 
 % koniec sekcji Ruchy Reidemeistera
 
@@ -373,6 +377,7 @@ a zatem wykraczającego poza poziom tej pracy.
 Patrz także {\url{http://geometrygames.org/SnapPea/index.html}.
 
 Przykładami trudnych w~rozpoznaniu niewęzłów są: niewęzeł Goritza, Freedmana.
+Więcej trudnych niewęzłów zawiera praca \cite{zanellati16} autorstwa C. Petronio oraz A. Zanellatiego.
 
 \begin{figure}[H]
     \begin{minipage}[b]{.32\linewidth}
@@ -391,11 +396,6 @@ Przykładami trudnych w~rozpoznaniu niewęzłów są: niewęzeł Goritza, Freedm
         \subcaption{Freedmana}
     \end{minipage}
 \end{figure}
-
-Więcej trudnych niewęzłów zawiera świeża praca
-,,Algorithmic simplification of knot diagrams: new moves and experiments'
-\footnote{\url{https://arxiv.org/pdf/1508.03226.pdf}}
-C. Petronio, A. Zanellatiego.
 
 Zanim opowiemy, jak dotąd przebiegała klasyfikacja węzłów o małej liczbie skrzyżowań, zdefiniujemy klasę splotów ze specjalnymi diagramami.
 
