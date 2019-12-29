@@ -558,16 +558,46 @@ Tę hipotezę udowodnił Menasco z Thistlethwaitem, \ref{menasco91}.
 Wynika z~niej, że dwa zredukowane diagramy alternujące tego samego węzła mają ten sam spin: ruch flype nie zmienia spinu (dla niektórych to jest II hipoteza).	
 My pokażemy nieco później, czyli po poznaniu wielomianu Jonesa, że wszystkie trzy hipotezy są prawdziwe.
 
-\subsection{Metody kodowania}
-\subsubsection{Notacja Dowkera--Thistlethwaite'a}
-Poprawia notację Taita.
-Przypisuje ona (niejednocznacznie) każdemu węzłowi permutację znakowanych liczb parzystych $\pm 2, \pm 4, \ldots, \pm 2N$.
+\textbf{Wstawić odniesienia do naszego dowodu}
 
+\subsection{Metody kodowania}
 \subsubsection{Notacja Alexandera-Briggsa}
 Najbardziej tradycyjna, wprowadzona w~1927 roku, rozszerzona później przez Rolfsena.
 
+\subsubsection{Notacja Dowkera-Thistlethwaite'a}
+Poprawia notację Taita.
+Należy ustalić minimalny diagram węzła, dowolny punkt początkowy oraz kierunek i zacząć przemierzać węzeł.
+Za każdym razem, kiedy mijamy skrzyżowanie, przypisujemy mu kolejną liczbę naturalną, zaczynając od jedynki.
+Jeżeli znajdujemy się nad skrzyżowaniem, parzyste etykiety zapisujemy z przeciwnym znakiem.
+Kiedy skończymy, każde skrzyżowanie będzie mieć dwie etykiety.
+
+\begin{definition}
+	Ciąg parzystych liczb występujących na diagramie kolejno przy $1, 3, \ldots$ nazywamy kodem Dowkera-Thistlethwaite'a.
+\end{definition}
+
+Opisany powyżej kod nie jest idealny, ponieważ odtworzony z niego węzeł może być lustrzanym odbiciem wyjściowego.
+Ogólniej, odbicie dowolnego składnika sumy spójnej nie zmienia kodu całego węzła.
+Nie stanowi to jednak dużego problemu, ponieważ notacja została stworzona na potrzeby tablicowania węzłów pierwszych, a~te są niezorientowane.
+
+Zaczynając od zredukowanego diagramu o $n$ skrzyżowaniach nie można doprowadzić do sytuacji, gdzie do pewnego skrzyżowania przypisane są dwie kolejne liczby całkowite.
+Dzięki temu problem można przetłumaczyć na język teorii grafów.
+Rozpatrzmy graf $G$, którego wierzchołkami są liczby $1, 2, \ldots, 2n$.
+Połączmy niesąsiadujące modulo $2n$ wierzchołki o różnej parzystości krawędziami.
+Graf ten powstaje przez usunięcie cyklu Hamiltona (łączącego kolejne liczby) z pełnego grafu dwudzielnego.
+Zbiór par etykiet przy skrzyżowaniach węzła to skojarzenie doskonałe w grafie $G$.
+Liczba skojarzeń prawie pokrywa się z rozwiązaniem zadania znanego w literaturze jako ,,problème des ménages'': na ile sposobów $n$ małżeństw można posadzić przy okrągłym stole tak, by żadne małżeństwo nie siedziało obok siebie i~każdy mężczyzna znalazł się obok dwóch kobiet?
+Ustawienia, które powstają przez cykliczne permutowanie należy uznać za tożsame.
+Gilbert znalazł w \cite{gilbert56} wzór na $a_n$, liczbę różnych kodów:
+\begin{align}
+u(m, t) & = 2m \sum_{k=0}^m {2m-k \choose k} \cdot (m-k)! \cdot \frac{(t-1)^k}{2m - k}  \\
+a(n) & = \frac{1}{n} \sum_{d\mid n} \left(\frac{n}{d}\right)^d \cdot u \left(d, 1 - \frac{d}{n}\right) \cdot \varphi \left(\frac{n}{d}\right)
+\end{align}
+
+Kilka początkowych wartości to $a_3 = 1, 2, 5, 20, 87, 616, 4843, 44128, 444621, \ldots$ (ciąg A002484 w OEIS).
+
 \subsubsection{Notacja Conwaya}
 Wprowadzona przez Conwaya w~pracy \cite{conway70}.
+Opiera się na pojęciu supła, dlatego więcej szczegółów przedstawiamy dopiero w definicji \ref{conway_notation}.
 
 % A pictorial enumeration of prime knots of up to 10 crossings appears in Rolfsen (1976, Appendix C).
 % Note, however, that in this table, the Perko pair 10-161 and 10-162 are actually identical, and the uppermost crossing in 10-144 should be changed (Jones 1987).
