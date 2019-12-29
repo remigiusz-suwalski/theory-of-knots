@@ -10,17 +10,21 @@ Do ich dobrego zrozumienia warto znać powierzchnie Seiferta z~sekcji \ref{sec:g
     Niech $K$ będzie węzłem różnym od niewęzła.
     Jeśli nie przedstawia się jako suma spójna $K_1 \shrap K_2$
     dwóch nietrywialnych węzłów $K_1, K_2$, nazywamy go węzłem pierwszym.
-
     W~przeciwnym razie mówimy, że jest złożony.
 \end{definition}
 
-Okazuje się, że jeśli alternujący splot nie jest pierwszy,
-to każdy jego alternujący diagram jest złożony.
-Jako pierwszy fakt ten został wykazany przez Menasco w~\cite{menasco84}.
-Dowód opiera się na multiplikatywności wielomianu BLM/Ho z~definicji \ref{def:blm_ho}.
+\begin{proposition}
+    Niech $L$ będzie alternującym splotem bez przesmyków.
+    Jeśli diagram splotu $L$ jest spójny, to splot jest nierozszczepialny.
+    Jeśli splot nie jest rozszczepialny, to jest też pierwszy jeśli dla każdego okręgu przecinającego diagram w dwóch niepodwójnych punktach, przekrój wnętrza okręgu z~diagramem jest łukiem.
+\end{proposition}
+
+Innymi słowy, jeśli alternujący splot jest złożony, widać to bezpośrednio na każdym jego alternującym diagramie.
+Jako pierwszy pokazał to Menasco w~\cite{menasco84}.
+Jego dowód opiera się na multiplikatywności wielomianu BLM/Ho z~definicji \ref{def:blm_ho}.
 
 Czy węzłów pierwszych jest nieskończenie wiele?
-Tak (patrz fakt \ref{infty_primes}), potrafimy nawet oszacować liczbę $K_n$ węzłów pierwszych oraz $L_n$ splotów pierwszych.
+Tak, patrz fakt \ref{infty_primes}, potrafimy nawet oszacować liczbę $K_n$ węzłów pierwszych oraz $L_n$ splotów pierwszych.
 W roku 1987 C. Ernst, D. Sumners w~oparciu o~wyniki Thistlethwaite'a, Kauffmana, oraz Murasugiego dotyczące węzłów alternujących pokazali w~\cite{ernst87}, że $K_n \ge \frac 1 3 (2^{n- 2} - 1)$, przy czym węzły lustrzane traktowane są jako różne.
 Dokładniej:
 
@@ -45,8 +49,8 @@ Pytanie, czy zwykłe granice istnieją, pozostaje otwarte.
 % "On the number of knots and links" (MR1218230)
 
 Każdy węzeł jest sumą spójną siebie oraz niewęzła, dlatego byłoby miło, gdyby niewęzeł nie dał się zapisać jako suma dwóch innych węzłów.
-Wniosek \ref{no_inverses} mówi więcej, że suma spójna nie posiada elementów odwrotnych.
-Ponadto odpowiednik zasadniczego twierdzenia arytmetyki jest prawdziwy dla węzłów.
-Później, czyli jako fakt \ref{genus_sum}, pokażemy, że rozkład na węzły pierwsze istnieje i~wspomnimy, dlaczego jest jedyny.
+Jest to dokładnie wniosek \ref{no_inverses}: suma spójna nie posiada elementów odwrotnych.
+Pokażemy później, że rozkład na węzły pierwsze istnieje i~wspomnimy, dlaczego jest jedyny.
+Fakt \ref{genus_sum} stanowi odpowiednik zasadniczego twierdzenia arytmetyki.
 
 % koniec sekcji Węzły pierwsze
