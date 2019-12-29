@@ -399,13 +399,16 @@ Więcej trudnych niewęzłów zawiera praca \cite{zanellati16} autorstwa C. Petr
 
 Zanim opowiemy, jak dotąd przebiegała klasyfikacja węzłów o małej liczbie skrzyżowań, zdefiniujemy klasę splotów ze specjalnymi diagramami.
 
-\begin{definition}
+\begin{definition}[alternacja]
     \index{węzeł!alternujący}
-    Diagram jest alternujący, gdy podczas poruszania się wzdłuż splotu mijamy jego skrzyżowania na zmianę z~góry oraz z~dołu.
-    Splot jest alternujący, gdy posiada taki diagram.
+    Diagram splotu, gdzie podczas poruszania się wzdłuż każdego ogniwa nad- oraz podskrzyżowania mijane są naprzemiennie, nazywamy alternującym.
+    Splot jest alternujący, jeśli posiada alternujący diagram.
 \end{definition}
 
-Nierozwiązanym problemem jest podanie definicji węzła alternującego, która nie odnosi się bezpośrednio do diagramów.
+Około 1961 roku Fox zapytał ,,What is an alternating knot?''.
+Szukano takiej definicji węzła alternującego, która nie odnosi się bezpośrednio do diagramów, aż w~2015 roku Joshua Greene podał geometryczną charakteryzację: nierozdzielczy splot w $S^3$ jest alternujący wtedy i tylko wtedy, gdy ogranicza dodatnią oraz ujemną określoną powierzchnię rozpinającą \cite{greene17}.
+% definite spanning surface
+
 Sundberg oraz Thistlethwaite pokazali w 1998 roku, że liczba splotów alternujących rośnie wykładniczo (\cite{sundberg98}):
 
 \begin{proposition}
@@ -429,8 +432,6 @@ Sundberg oraz Thistlethwaite pokazali w 1998 roku, że liczba splotów alternuj�
 Czasami będziemy używać słów przed ich zdefiniowaniem, tak jak uczyniliśmy tutaj: węzły pierwsze i~supły pojawiają się odpowiednio w definicjach \ref{primeknot}, \ref{def:tangle}.
 Książkę trzeba więc przeczytać co~najmniej dwa razy.
 
-Poniższy fakt stanowi jedynie szokującą ciekawostkę i także pochodzi z pracy \cite{sundberg98}.
-
 \begin{proposition}
     Niech $a_n$ oznacza liczbę pierwszych, alternujących supłów o~$n$ skrzyżowaniach.
     Wtedy funkcja tworząca $f(z) = \sum_n a_n z^n$ spełnia równanie
@@ -442,6 +443,8 @@ Poniższy fakt stanowi jedynie szokującą ciekawostkę i także pochodzi z prac
         q(z) = \frac{2z^2 - 10z - 1 + \sqrt{(1-4z)^3}} {2(z+2)^3} - \frac{2}{1+z} -z + 2.
     \end{equation}
 \end{proposition}
+
+Fakt ten stanowi raczej ciekawostkę i także pochodzi z cytowanej wcześniej pracy \cite{sundberg98}.
 
 \subsection{Historia tablic węzłów}
 Pierwszą osobą, która podjęła się szukania węzłów, był Peter Guthrie Tait, szkocki fizyk.
