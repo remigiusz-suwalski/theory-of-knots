@@ -6,48 +6,52 @@ Znacznie później (w sekcji \ref{sec:tangle}) określimy jeszcze sumę oraz ilo
 
 \subsection{Lustro i~rewers} % (fold)
 \label{sub:single_operations}
-\begin{definition}
+
+\begin{definition}[lustro]
     \index{lustro}
-    \index{rewers}
     Niech $L$ będzie zorientowanym splotem.
-    Przez \textbf{rewers} $L$, $rL$,
-    rozumiemy ten sam splot z~przeciwną orientacją.
-    \textbf{Lustrem} $L$, $mL$,
-    będziemy nazywać odbicia $L$ względem płaszczyzny.
-    \begin{figure}[H]
-        \begin{minipage}[b]{.32\linewidth}
-            \centering
-            \includegraphics[width=\linewidth]{../data/link_mirror.png}
-            \subcaption{lustro $mL$}
-        \end{minipage}
-        \begin{minipage}[b]{.32\linewidth}
-            \centering
-            \includegraphics[width=\linewidth]{../data/link.png}
-            \subcaption{przykładowy splot $L$}
-        \end{minipage}
-        \begin{minipage}[b]{.32\linewidth}
-            \centering
-            \includegraphics[width=\linewidth]{../data/link_reverse.png}
-            \subcaption{rewers $rL$}
-        \end{minipage}
-    \end{figure}
+    Splot $mL$ powstały przez odbicie splotu $L$ względem dowolnej płaszczyzny nazywamy lustrem.
 \end{definition}
 
-Na lewym obrazku odbiliśmy diagram względem poziomej prostej,
-ale równie dobrze można po prostu zamienić każde nadskrzyżowanie na podskrzyżowanie.
-Zauważmy, że wykonując powyższe operacje na węźle możemy otrzymać mniej niż czterech różne obiekty
-($L$, $mL$, $rL$, $mrL$) -- na przykład trójlistnik jest własnym rewersem, ale nie lustrem.
+\begin{definition}[rewers]
+    \index{rewers}
+    Niech $L$ będzie zorientowanym splotem.
+    Splot $rL$ powstały przez odwrócenie orientacji wszystkich ogniw splotu $L$ nazywamy rewersem.
+\end{definition}
+
+\begin{figure}[H]
+    \begin{minipage}[b]{.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/link_mirror.png}
+        \subcaption{lustro $mL$}
+    \end{minipage}
+    \begin{minipage}[b]{.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/link.png}
+        \subcaption{przykładowy splot $L$}
+    \end{minipage}
+    \begin{minipage}[b]{.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../data/link_reverse.png}
+        \subcaption{rewers $rL$}
+    \end{minipage}
+\end{figure}
+
+Na lewym obrazku odbiliśmy diagram względem poziomej prostej, innym sposobem na otrzymanie lustra jest odwrócenie wszystkich skrzyżowań, co odpowiada odbijaniu względem płaszczyzny papieru.
+Zauważmy, że wykonując powyższe operacje na węźle możemy otrzymać mniej niż czterech różne obiekty ($L$, $mL$, $rL$, $mrL$) -- na przykład trójlistnik jest własnym rewersem, ale nie lustrem.
 
 \begin{definition}
     \index{węzeł!chiralny}
     \index{węzeł!odwracalny}
     \index{węzeł!zwierciadlany}
-    Istnieje pięć typów symetrii węzłów:
-    całkowicie chiralny albo skrętny (węzły $K$, $rK$, $mK$ są parami nierównoważne),
-    odwracalny ($K \cong rK$),
-    zwierciadlany ujemnie ($K \cong mrK$),
-    zwierciadlany dodatnio ($K \cong mK$) oraz
-    całkowicie zwierciadlany ($rK \cong K \cong mK$).
+    Wyróżniamy pięć typów symetrii węzłów:
+    \begin{itemize}
+        \item całkowicie chiralny albo skrętny (węzły $K$, $rK$, $mK$ są parami nierównoważne),
+        \item odwracalny ($K \cong rK$),
+        \item zwierciadlany ujemnie ($K \cong mrK$),
+        \item zwierciadlany dodatnio ($K \cong mK$) oraz
+        \item całkowicie zwierciadlany ($rK \cong K \cong mK$).
+    \end{itemize}
 \end{definition}
 
 Węzeł $9_{32}$ jest całkowicie skrętny.
@@ -122,7 +126,10 @@ Indeksem zaczepienia $\lambda$ węzła $p(K)$ jest różnica między liczbą skr
     \]
 \end{proposition}
 
-Dowód to, jak zwykle, mozolne operacje na macierzach.
+\begin{proof}
+    Mozolne operacje na macierzach, których wyznacznikiem jest wielomian Alexandera.
+    Patrz \cite{murasugi71}.
+\end{proof}
 
 % Koniec podsekcji Lustro i~rewers
 
@@ -216,19 +223,15 @@ Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wz
         \]
 \end{definition}
 
-Uogólnieniem sumy spójnej oraz (nieopisanej w~naszej pracy) operacji \emph{plumbing} jest suma Murasugiego, dobrze wyjaśniona w~czwartym rozdziale książki \cite{kawauchi96}.
-W topologii rozważa się podobną operację dla dwóch $n$-wymiarowych rozmaitości: z~każdej z nich usuwa się kulę, po czym skleja wzdłuż brzegu kuli.
-Kiedy zajmujemy się węzłami, nie interesuje nas jednak struktura rozmaitości (gdyż każdy węzeł jest równoważny z okręgiem), ale zanurzenie w~otaczającą przestrzeń.
+Ważna jest orientacja składników: suma dwóch trójlistników może być węzłem babskim lub prostym.
+Uzasadnienie, że te węzły są różne, nie jest łatwym zadaniem.
+Fox pokazał w~1952 roku, że ich dopełnienia nie są homeomorficzne.
+Suma przeciwnie skręconych trójlistników jest plastrowa, natomiast tak samo skręconych nie jest.
+(To jedno z niewielu miejsc, gdzie nomenklatura pochodzi od żeglarzy: z~angielskiego \emph{granny knot, square knot}.)
 
-Ważna jest orientacja składników:
-suma dwóch trójlistników może być,
-w zależności od ich orientacji,
-węzłem babskim\footnote{Nazewnictwo pochodzi od żeglarzy, nie matematyków. Z angielskiego \emph{granny knot}, \emph{square knot}.} lub prostym.
-Fox pokazał w~1952 roku,
-że dopełnienia tych dwóch węzłów nie są homeomorficzne.
-Suma przeciwnie skręconych trójlistników jest plastrowa
-(definicja \ref{def:slice_knot}),
-natomiast tak samo skręconych -- nie.
+Uogólnieniem sumy spójnej oraz (nieopisanej w~naszej pracy) operacji \emph{plumbing} jest suma Murasugiego, dobrze wyjaśniona w~czwartym rozdziale książki \cite{kawauchi96}.
+\textbf{W topologii rozważa się podobną operację dla dwóch $n$-wymiarowych rozmaitości: z~każdej z nich usuwa się kulę, po czym skleja wzdłuż brzegu kuli.
+Kiedy zajmujemy się węzłami, nie interesuje nas jednak struktura rozmaitości (gdyż każdy węzeł jest równoważny z okręgiem), ale zanurzenie w~otaczającą przestrzeń.}
 
 \begin{proposition}
     Suma spójna jest dobrze określonym działaniem.
