@@ -1,0 +1,3 @@
+[submodule "src/merridew"]
+	path = src/merridew
+	url = git@github.com:remigiusz-suwalski/merridew.git
