@@ -2,8 +2,8 @@
 \label{sec:homfly}
 Po tym, jak Jones przedstawił światu swój wielomian w~1984 roku, matematycy
 zaczęli szukać jego uogólnienia zależnego nie od jednej, lecz dwóch zmiennych.
-Pierwszym takim węzłowym niezmiennikiem okazał się wielomian (Laurenta) HOMFLY.
-Jego nazwa pochodzi od sześciu odkrywców -- Hoste, Ocneanu, Millett, Freyd, Lickorish, Yetter z~pracy \cite{homfly85}.
+Pierwszym takim węzłowym niezmiennikiem okazał się wielomian HOMFLY.
+Jego nazwa pochodzi od sześciu odkrywców: Hoste, Ocneanu, Millett, Freyd, Lickorish, Yetter z~pracy \cite{homfly85}.
 
 Dwa lata później i~niezależnie od nich, Przytycki z~Traczykiem otrzymał ten sam obiekt w~\cite{przytycki87}.
 Ich nazwiska czasami są pomijane, gdyż polska poczta była spowolniona w tamtym czasie przez ruch solidarnościowy, pisze o tym Michael McDaniel w artykule ,,Knots to You''.
@@ -25,11 +25,11 @@ W przeciwnym razie używa się skrótu HOMFLY-PT.
     \label{def:homfly}
     \index{wielomian!HOMFLY}
     Niech $L$ będzie zorientowanym diagramem splotu.
-    Wielomian $P$ dwóch zmiennych, który spełnia relację kłębiastą
+    Wielomian Laurenta $P$ dwóch zmiennych, który spełnia relację kłębiastą
     \begin{equation}
         l \cdot P_{L_+} + l^{-1} \cdot P_{L_-} + m \cdot P_{L_0} = 0
     \end{equation}
-    z warunkiem początkowym $P_{\LittleUnknot} \equiv 1$ i jest niezmienniczy na izotopie (ruchy Reidemeistera) nazywamy wielomianem HOMFLY.
+    z warunkiem początkowym $P_{\LittleUnknot} \equiv 1$, jest niezmienniczy na izotopie oraz ruchy Reidemeistera, nazywamy wielomianem HOMFLY.
 \end{definition}
 
 Litery $l, m$ pochodzą od nazwisk odkrywców, Lickorisha i Milletta.
@@ -80,9 +80,9 @@ Można potraktować to jako proste ćwiczenie z~indukcji matematycznej, pozostaw
     \end{align}
 \end{proposition}
 
-\begin{proof}
-    Dowód analogiczny do ,,multiplikatywności'' wielomianu Jonesa/Alexandera.
+Dowód przebiega analogicznie do dowodu ,,multiplikatywności'' wielomianów Alexandera (fakt \ref{prp:alexander_multiplicative}) oraz Jonesa (fakt \ref{prp:jones_multiplicative}).
 
+\begin{proof}
     Każdy splot $L$ jest kombinacją liniową (o współczynnikach będących wielomianami w~$m$ oraz $l$) niesplotów $U_k$ o~różnej liczbie składowych $k$.
     Mamy więc
     \begin{equation}
@@ -108,8 +108,9 @@ Można potraktować to jako proste ćwiczenie z~indukcji matematycznej, pozostaw
     co kończy dowód.
 \end{proof}
 
-Nie wiemy jeszcze, czy definicja \ref{def:homfly} pozwala wyliczyć wielomian w~skończenie wielu krokach, ani czy wynik jest jednoznaczny.
+Nie wiemy jeszcze, czy definicja \ref{def:homfly} pozwala wyliczyć wielomian w~skończenie wielu krokach. %, ani czy wynik jest jednoznaczny.
 Przejdę do pokazania, że tak istotnie jest.
+Zauważmy, że wyznaczenie nawiasu Kauffmana było prostsze, ponieważ w~każdym kroku liczba skrzyżowań ulegała zmniejszeniu.
 
 % istnienie trudno pokazać, jednoznaczność przebiega tak samo jak dla wielomianu Jonesa
 
@@ -117,23 +118,20 @@ Przejdę do pokazania, że tak istotnie jest.
     W dowolnym rzucie splotu można odwrócić pewne skrzyżowania tak, by uzyskać diagram niesplotu.
 \end{lemma}
 
-Zauważmy, że wyznaczenie nawiasu Kauffmana było prostsze, ponieważ w~każdym kroku liczba skrzyżowań ulegała zmniejszeniu.
-
 \begin{proof}
     Bez straty ogólności założę, że diagram przedstawia węzeł.
     Ustalmy zatem diagram węzła i~wybierzmy jakiś początkowy punkt na nim, różny od skrzyżowania wraz z~kierunkiem, wzdłuż którego będziemy przemierzać węzeł.
-    Za każdym razem, kiedy odwiedzamy nowe skrzyżowanie, zmieniamy je w~razie potrzeby na takie, przez które przemieszczamy się górnym łukiem.
+    Za każdym razem, kiedy odwiedzamy nowe skrzyżowanie, zmieniamy je w~razie potrzeby na takie, przez które przemieszczamy się wzdłuż górnego łuku.
     Skrzyżowań już odwiedzonych nie zmieniamy wcale.
-    Po powrocie do punktu wybranego na początku uzyskamy diagram niewęzła.
 
-    Teraz wyobraźmy sobie nasz węzeł w~trójwymiarowej przestrzeni $\mathbb R^3$, przy czym oś $z$ skierowana jest z~płaszczyzny, w~której leży diagram, w~naszą stronę.
+    Teraz wyobraźmy sobie nasz nowy węzeł w~trójwymiarowej przestrzeni $\mathbb R^3$, przy czym oś $z$ skierowana jest z~płaszczyzny, w~której leży diagram, w~naszą stronę.
     Umieśćmy początkowy punkt tak, by jego trzecią współrzędną była $z = 1$.
 
     Przemierzając węzeł, zmniejszamy stopniowo tę współrzędną, aż osiągniemy wartość $0$ tuż przed punktem, z~którego wyruszyliśmy.
     Połączmy obydwa punkty (początkowy oraz ten, w~którym osiągamy współrzędną $z = 0$) pionowym odcinkiem.
     Zauważmy, że kiedy patrzymy na węzeł w~kierunku osi $z$, nie widzimy żadnych skrzyżowań.
 
-    Oznacza to, że dostaliśmy niewęzeł.
+    Oznacza to, że nasza procedura przekształciła początkowy diagram w~diagram niewęzła, co należało okazać.
 \end{proof}
 
 \begin{proposition}
@@ -173,13 +171,15 @@ Wiadomo, że jeśli istnieje prostszy przykład, to ma co najmniej 13 skrzyżowa
 
 Pomimo swej mocy nie jest jednak niezmiennikiem zupełnym, nie odróżnia od siebie mutantów.
 Konkretne przykłady kolizji to $5_1$ oraz $10_{132}$, $8_{8}$ oraz $10_{129}$, $8_{16}$ oraz $10_{156}$ albo $10_{25}$ oraz $10_{56}$.
-Co bardziej dramatyczne, Kanenobu wskazał (przy użyciu elementarnych metod!) w~pracy \cite{kanenobu86} z~1986:
+Co bardziej dramatyczne, Kanenobu wskazał przy użyciu elementarnych metod (!) w~pracy \cite{kanenobu86} z~1986:
 
 \begin{proposition}
-    Istnieje przeliczalna rodzina węzłów, której elementy są jednocześnie hiperboliczne, włókniste, taśmowe, trzymostowe, o~genusie 2 i nieodróżnialne od siebie wielomianem HOMFLY.
+    Istnieje przeliczalna rodzina węzłów, której wszystkie elementy są hiperboliczne, włókniste, taśmowe, trzymostowe, o~genusie 2 oraz nieodróżnialne od siebie wielomianem HOMFLY.
 \end{proposition}
 
-Węzły w tej rodzinie posiadają nieizomorficzne moduły Alexandera, więc są parami różne.
+\begin{proof}[Niedowód]
+    Węzły w tej rodzinie posiadają nieizomorficzne moduły Alexandera, więc są parami różne.
+\end{proof}
 
 Zaletą wielomianu HOMFLY jest to, że często wykrywa chiralność (węzeł chiralny nie jest równoważny swemu lustrzanemu odbiciu), ale nie odróżnia enancjomerów węzłów $9_{42}$, $10_{48}$, $10_{71}$, $10_{91}$, $10_{104}$, oraz $10_{125}$.
 Wśród węzłów do 10 skrzyżowań dokładnie dwa opierają się testom chiralności opartym na niezmiennikach HOMFLY oraz Kauffmana: $9_{42}$ oraz $10_{71}$.
