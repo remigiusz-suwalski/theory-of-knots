@@ -1,8 +1,8 @@
-\subsection{Sygnatura} % (fold)
+\subsection{Sygnatura}
 \label{sub:signature}
 \index{sygnatura}
 Sygnatura jest jednym z wielu niezmienników, do zdefiniowania których wystarczy znać macierz Seiferta.
-Pochodzi prawdopodobnie z lat sześdziesiątych (Trotter 1962, Murasugi 1965) i~pojawia się jeszcze na przykład w~fakcie \ref{slice_signature}.
+Pochodzi prawdopodobnie z lat sześdziesiątych (Trotter \cite{trotter62} dla węzłów, Murasugi \cite{murasugi65} dla splotów) i~pojawia się jeszcze na przykład w~fakcie \ref{slice_signature}.
 
 \begin{definition}[sygnatura]
     Niech $M$ będzie macierzą Seiferta zorientowanego splotu $L$.
@@ -11,6 +11,19 @@ Pochodzi prawdopodobnie z lat sześdziesiątych (Trotter 1962, Murasugi 1965) i~
         \sigma_L := \operatorname{sign} (M + M^t)
     \end{equation}
     nazywamy sygnaturą splotu $L$.
+\end{definition}
+
+Istnieje równoważna definicja, która nie wymaga czasochłonnego wyznaczania macierzy Seiferta.
+Wyjaśnia to trzecie spostrzeżenie z~\cite{giller82} oparte o~twierdzenie 5.6 z~\cite{murasugi65}.
+
+\begin{definition}
+    Sygnatura to niezmiennik topologiczny zadany kłębiastą relacją rekurencyjną:
+    \begin{itemize}[leftmargin=*]
+    \itemsep0em
+        \item $\sigma (\LittleUnknot) = 0$,
+        \item $\sigma (K_+) - \sigma (K_-) \in \{0, 2\}$,
+        \item $4 \mid \sigma (K)$ wtedy i~tylko wtedy, gdy $\conway(2i) > 0$ (wielomian Conwaya).
+    \end{itemize}
 \end{definition}
 
 \begin{proposition} \label{prop_sigma_additive}
@@ -24,7 +37,8 @@ Pochodzi prawdopodobnie z lat sześdziesiątych (Trotter 1962, Murasugi 1965) i~
     Zatem:
     \begin{align}
         \sigma(K_1 \shrap K_2) & = \sigma(M + M^t) \\
-                               & = \sigma(M_1 + M_1^t) + \sigma(M_2 + M_2^t) = \sigma(K_1) + \sigma(K_2),
+                               & = \sigma(M_1 + M_1^t) + \sigma(M_2 + M_2^t) \\
+                               & = \sigma(K_1) + \sigma(K_2),
     \end{align}
     co kończy dowód.
 \end{proof}
@@ -62,18 +76,8 @@ Nie istnieje bezpośredni związek między sygnaturą i~liczbą mostową.
 Węzeł torusowy $T_{2,n}$ jest dwumostowy, jego sygnatura wynosi $n - 1$.
 Suma spójna węzłów prostych ma zerową sygnaturę, ale na mocy faktu \ref{bridge_additive} jej liczba mostowa jest nieograniczona.
 
-Istnieje równoważna definicja, która nie wymaga czasochłonnego wyznaczania macierzy Seiferta.
-Wyjaśnia to trzecie spostrzeżenie z~\cite{giller82} oparte o~twierdzenie 5.6 z~\cite{murasugi65}.
-
-\begin{definition}
-    Sygnatura to niezmiennik topologiczny zadany kłębiastą relacją rekurencyjną:
-    \begin{itemize}[leftmargin=*]
-    \itemsep0em
-        \item $\sigma (\LittleUnknot) = 0$,
-        \item $\sigma (K_+) - \sigma (K_-) \in \{0, 2\}$,
-        \item $4 \mid \sigma (K)$ wtedy i~tylko wtedy, gdy $\conway(2i) > 0$ (wielomian Conwaya).
-    \end{itemize}
-\end{definition}
+W~\cite{shinohara71} Shinohara pokazał, że dla każdej pary nieujemnych liczb całkowitych $m, n$ istnieje węzeł $K$ o wyznaczniku $4m+1$ ($8m+5$, $4m+3$) oraz sygnaturze bez znaku $8n$ ($8n+4$, $4n+2$).
+Ponadto, jeśli $m$ nie dzieli się przez $3$, istnieje węzeł o wyznaczniku $8m+1$ i sygnaturze bez znaku $8n+4$.
 
 Sygnatura pozwala uzyskać proste oszacowanie liczby gordyjskiej od dołu:
 
@@ -92,11 +96,8 @@ Dla 311 spośród pozostałych mamy równość $2u = |\sigma|$.
     To kończy dowód.
 \end{proof}
 
-Jeszcze w latach sześćdziesiątych sygnatura została uogólniona.
-Sygnatura Levine'a-Tristrama to funkcja $S^1 \to \Z$, niezmiennik zorientowanych splotów.
-Klasyczna sygnatura to wartość tej funkcji w punkcie $-1$.
-Większość podręczników, a także prace Levine'a \textbf{Jerome Levine. Knot cobordism groups in codimension two. Comment. Math. Helv., 44:229– 244, 1969.} oraz Tristrama (\textbf{Andrew Tristram. Some cobordism invariants for links. Proc. Cambridge Philos. Soc., 66:251–264, 1969.}) wprowadza ją przy użyciu macierzy Seiferta, my postąpimy dokładnie tak samo.
-Dużo pożytecznych informacji można znaleźć w pracy przeglądowej \cite{conway19}.
+Czytając przeglądową pracę \cite{conway19} dowiedzieliśmy się, że jeszcze w~latach sześćdziesiątych sygnatura została uogólniona do funkcji $\sigma_L \colon S^1 \to \Z$.
+Większość podręczników, a także prace Levine'a \cite{levine69} oraz Tristrama \cite{tristram69}, wprowadza ją przy użyciu macierzy Seiferta, więc my postąpimy dokładnie tak samo.
 
 \begin{definition}[sygnatura Levine'a-Tristrama]
     Niech $M$ będzie macierzą Seiferta zorientowanego splotu $L$.
@@ -105,14 +106,29 @@ Dużo pożytecznych informacji można znaleźć w pracy przeglądowej \cite{conw
         \sigma_L(\omega) := \operatorname{sign} [(1-\omega) M + (1 - \overline{\omega})M^t]
     \end{equation}
     nazywamy sygnaturą Levine'a-Tristrama splotu $L$.
+    Jest niezmiennikiem splotów.
 \end{definition}
 
 Funkcja $\sigma_L$ jest kawałkami stała.
 Conway pisze w \cite{conway19}, że wynika to ze wzoru na wielomian Alexandera $\Delta_L(t) = \det(tM - M^t)$.
-Jedynymi punktami nieciągłości są zera wielomianu $(t-1)\Delta^{tor}_L(t)$ (\textbf{Patrick M. Gilmer and Charles Livingston. Signature jumps and Alexander polynomials for links. Proc. Amer. Math. Soc., 144(12):5407–5417, 2016.}).
+Jedynymi punktami nieciągłości są zera wielomianu $(t-1)\Delta_L(t)$, to świeży wynik z \cite{gilmer16}.
 
-Livingston scharakteryzował w pełni funkcje $S^1 \to \Z$, które są realizowane jako sygnatura Levine'a-Tristrama pewnego węzła (\textbf{Charles Livingston. Signature functions of knots. September 2017.
-https://arxiv.org/pdf/1709.00732.pdf}), analogiczny problem dla splotów wydaje się być wciąż otwarty.
+Mówimy, że funkcja zdefiniowana na okręgu jest zbalansowana, jeżeli w każdym punkcie nieciągłości przyjmuje wartość równą średniej z~lewo- oraz prawostronnej granicy w tym punkcie.
+Livingston podał pełną charakteryzację zbilansowanych sygnatur Levine'a-Tristrama dla węzłów, analogiczny problem dla splotów wydaje się być wciąż otwarty.
+
+\begin{proposition}
+    Funkcja zbalansowana $\sigma \colon S^1 \to \Z$ jest realizowana jako sygnatura pewnego węzła wtedy i tylko wtedy, gdy:
+    \begin{enumerate}
+        \item dla każdego $\omega \in S^1$ mamy $\sigma(\omega) = \sigma(\overline{\omega})$
+        \item $\sigma(1) = 0$
+        \item każda nieciągłość funkcji $\sigma$ jest miejscem zerowym wielomianu Alexandera węzła
+        \item jeżeli argumenty $\omega_1, \omega_2$ są sprzężone w sensie Galois, to $\sigma(\omega_1) \equiv \sigma(\omega_2)$ modulo $2$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    Livingston pisze w \cite{livingston18}, że dowód w prawą stronę jest dość dobrze znany, natomiast w lewo korzysta z~wyników H. Kondo, T. Sakaiego, że każdy wielomian Alexandera węzła jest realizowany przez węzeł 1-gordyjski oraz zachowania zbalansowanej sygnatury podczas odwracania skrzyżowania.
+\end{proof}
 
 Wreszcie:
 
@@ -122,17 +138,15 @@ Wreszcie:
 \end{proposition}
 
 \begin{proof}
-    \textbf{Livio Liechti. Signature, positive Hopf plumbing and the Coxeter transformation. Osaka J.
-Math., 53(1):251–266, 2016. With an appendix by Peter Feller and Liechti.}
+    Appendix w \cite{liechti16}, sama praca nie wygląda na związaną z~teorią węzłów.
 \end{proof}
 
-Czas na raczej niezbyt użyteczne ciekawostki.
-Czy istnieje węzeł o~sygnaturze $4$ i~wyznaczniku postaci $n = 4k + 1$ dla $k$ całkowitego dodatniego?
+Czas na raczej niezbyt użyteczną ciekawostkę.
+
+\begin{conjecture}
+    Czy istnieje węzeł o~sygnaturze $4$ i~wyznaczniku postaci $n = 4k + 1$ dla $k$ całkowitego dodatniego?
+\end{conjecture}
+
 Stojmenow twierdzi, że jeśli tak jest, to wszystkie pierwsze dzielniki $n$ dają resztę $1$ z~dzielenia przez $24$ i~są większe od $2857$.
-
-% In a somewhat different direction, the Levine- Tristram signature is also a lower bound on the algebraic unknotting number [5, 6, 7, 27, 74].
-
-W~\cite{shinohara71} Shinohara pokazał, że dla każdej pary nieujemnych liczb całkowitych $m, n$ istnieje węzeł $K$ o wyznaczniku $4m+1$ ($8m+5$, $4m+3$) oraz sygnaturze bez znaku $8n$ ($8n+4$, $4n+2$).
-Ponadto, jeśli $m$ nie dzieli się przez $3$, istnieje węzeł o wyznaczniku $8m+1$ i sygnaturze bez znaku $8n+4$.
 
 % Koniec podsekcji Sygnatura
