@@ -43,6 +43,9 @@ W tej samej pracy (\cite{brandt86}) podano jawne wzory na wartości wielomianu B
 
 Kanenobu w~pracy \cite{kanenobu89} podał prosty test potrafiący czasem wykrywać, które węzły nie są dwumostowe.
 Jak pisze Stojmenow w~\cite{stoimenow00}: \emph{,,The converse of this criterion turns out not to be true; (...) these examples have been suggested by empirical calculations (...), which nevertheless reveal \ref{kanenobu_rationality_test} to be a surprisingly powerful test''}.
+Jakość testu można ocenić patrząc na węzły o małej liczbie skrzyżowań.
+Po pierwsze, wykrywa wszystkie niewymierne węzły pierwsze co najmniej do 10 skrzyżowań oraz rozstrzyga o wymierności dowolnego pierwszego, alternującego węzła co najmniej do 16 skrzyżowań.
+Zawodzi natomiast dla następujących węzłów pierwszych do 15 skrzyżowań: $12_{1879}$, $12_{2037}$, $13_{7750}$, $13_{7960}$, $14_{33787}$, $14_{43535}$, $14_{44370}$, $14_{46672}$, $14_{46862}$, $15_{157719}$, $15_{168643}$, $15_{233158}$, $15_{247180}$.
 
 \begin{proposition}
     \label{prop:blmho_twobridge}
@@ -53,5 +56,16 @@ Jak pisze Stojmenow w~\cite{stoimenow00}: \emph{,,The converse of this criterion
     \end{equation}
     gdzie $z = -t - t^{-1}$.
 \end{proposition}
+
+Jednocześnie równość \ref{kanenobu_rationality_test} nie zachodzi dla żadnego alternującego węzła złożonego oraz żadnego znanego (!) węzła złożonego.
+
+Stojmenow sugeruje jeszcze następujący problem.
+
+\begin{conjecture}
+    Niech $K_1, K_2$ będą dwoma węzłami o tym samym wielomianie $F$ Kauffmana.
+    Czy możliwe jest, by jeden z nich był węzłem wymiernym, zaś drugi niewymiernym?
+\end{conjecture}
+
+Wiadomo, że zarówno wśród węzłów wymiernych, jak i niewymiernych, istnieją węzły nierozróżnialne od siebie przy pomocy wielomianu $F$.
 
 % Koniec sekcji Wielomian BLM/Ho
