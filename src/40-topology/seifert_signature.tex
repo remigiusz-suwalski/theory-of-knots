@@ -13,24 +13,6 @@ Pochodzi prawdopodobnie z lat sześdziesiątych (Trotter \cite{trotter62} dla w�
     nazywamy sygnaturą splotu $L$.
 \end{definition}
 
-Istnieje równoważna definicja, która nie wymaga czasochłonnego wyznaczania macierzy Seiferta.
-
-\begin{proposition}
-    Sygnatura to niezmiennik topologiczny zadany kłębiastą relacją rekurencyjną:
-    \begin{itemize}[leftmargin=*]
-    \itemsep0em
-        \item $\sigma (\LittleUnknot) = 0$,
-        \item $\sigma (K_+) - \sigma (K_-) \in \{0, 2\}$,
-        \item $4 \mid \sigma (K)$ wtedy i~tylko wtedy, gdy $\conway(2i) > 0$ (wielomian Conwaya).
-    \end{itemize}
-\end{proposition}
-
-\begin{proof}
-    Wystarczy pokazać, że sygnatura węzła spełnia trzy powyższe aksjomaty, a~następnie zauważyć, że korzystając z~nich jesteśmy w~stanie wyznaczyć jednoznacznie sygnaturę dla dowolnego węzła.
-    Wynika to z~faktu, że każdy węzeł można zmienić w~niewęzeł odwracając pewne skrzyżowania.
-    Pomysł jest opisany dokładniej jako trzecie spostrzeżenie w~\cite{giller82} oparte o~twierdzenie 5.6 z~\cite{murasugi65}.
-\end{proof}
-
 \begin{proposition} \label{prop_sigma_additive}
     Sygnatura jest addytywna: $\sigma(K_1 \shrap \ldots \shrap K_n) = \sum_{k=1}^n \sigma(K_k)$.
 \end{proposition}
@@ -65,24 +47,26 @@ Istnieje równoważna definicja, która nie wymaga czasochłonnego wyznaczania m
     Jeśli $K$ jest węzłem achiralnym, to $\sigma(K) = 0$.
 \end{corollary}
 
+Węzły achiralne mają zerową sygnaturę, zatem trójlistnik nie jest achiralny.
+Z faktów \ref{prop_sigma_additive} oraz \ref{prop_sigma_inverse} wynika, że suma tak samo skręconych trójlistników nie jest achiralna ($\sigma = \pm 4$), natomiast suma różnie skręconych, ,,węzeł prosty'', ma zerową sygnaturę i jak można przekonać się ze standardowego diagramu, jest achiralna.
+
+Istnieje równoważna definicja, która nie wymaga czasochłonnego wyznaczania macierzy Seiferta.
+
 \begin{proposition}
-    Niech $L$ będzie węzłem.
-    Jeśli $\alexander_K(t) \equiv 1$, to $\sigma (K) = 0$.
+    Sygnatura to niezmiennik topologiczny zadany kłębiastą relacją rekurencyjną:
+    \begin{itemize}[leftmargin=*]
+    \itemsep0em
+        \item $\sigma (\LittleUnknot) = 0$,
+        \item $\sigma (K_+) - \sigma (K_-) \in \{0, 2\}$,
+        \item $4 \mid \sigma (K)$ wtedy i~tylko wtedy, gdy $\conway(2i) > 0$ (wielomian Conwaya).
+    \end{itemize}
 \end{proposition}
 
 \begin{proof}
-    Patrz \cite{milnor68}.
+    Wystarczy pokazać, że sygnatura węzła spełnia trzy powyższe aksjomaty, a~następnie zauważyć, że korzystając z~nich jesteśmy w~stanie wyznaczyć jednoznacznie sygnaturę dla dowolnego węzła.
+    Wynika to z~faktu, że każdy węzeł można zmienić w~niewęzeł odwracając pewne skrzyżowania.
+    Pomysł jest opisany dokładniej jako trzecie spostrzeżenie w~\cite{giller82} oparte o~twierdzenie 5.6 z~\cite{murasugi65}.
 \end{proof}
-
-Węzły achiralne mają zerową sygnaturę, zatem trójlistnik nie jest achiralny.
-Z faktów \ref{prop_sigma_additive} oraz \ref{prop_sigma_inverse} wynika, że suma tak samo skręconych trójlistników nie jest achiralna ($\sigma = \pm 4$), natomiast węzeł prosty (suma różnie skręconych) ma zerową sygnaturę i jak można przekonać się ze standardowego diagramu, jest achiralny.
-
-Nie istnieje bezpośredni związek między sygnaturą i~liczbą mostową.
-Węzeł torusowy $T_{2,n}$ jest dwumostowy, jego sygnatura wynosi $n - 1$.
-Suma spójna węzłów prostych ma zerową sygnaturę, ale na mocy faktu \ref{bridge_additive} jej liczba mostowa jest nieograniczona.
-
-W~\cite{shinohara71} Shinohara pokazał, że dla każdej pary nieujemnych liczb całkowitych $m, n$ istnieje węzeł $K$ o wyznaczniku $4m+1$ ($8m+5$, $4m+3$) oraz sygnaturze bez znaku $8n$ ($8n+4$, $4n+2$).
-Ponadto, jeśli $m$ nie dzieli się przez $3$, istnieje węzeł o wyznaczniku $8m+1$ i sygnaturze bez znaku $8n+4$.
 
 Sygnatura pozwala uzyskać proste oszacowanie liczby gordyjskiej od dołu:
 
@@ -99,6 +83,22 @@ Dla 311 spośród pozostałych mamy równość $2u = |\sigma|$.
     Zgodnie z relacją kłębiastą, sygnatura pozostaje taka sama lub zmienia wartość o $2$.
     Po wykonaniu $u$ odwróceń otrzymujemy diagram niewęzła o~sygnaturze zero, zatem sygnatura wyjściowego węzła nie mogła przekraczać $2u$.
     To kończy dowód.
+\end{proof}
+
+Nie istnieje bezpośredni związek między sygnaturą i~liczbą mostową.
+Węzeł torusowy $T_{2,n}$ jest dwumostowy, jego sygnatura wynosi $n - 1$.
+Suma spójna węzłów prostych ma zerową sygnaturę, ale na mocy faktu \ref{bridge_additive} jej liczba mostowa jest nieograniczona.
+
+W~\cite{shinohara71} Shinohara pokazał, że dla każdej pary nieujemnych liczb całkowitych $m, n$ istnieje węzeł $K$ o wyznaczniku $4m+1$ ($8m+5$, $4m+3$) oraz sygnaturze bez znaku $8n$ ($8n+4$, $4n+2$).
+Ponadto, jeśli $m$ nie dzieli się przez $3$, istnieje węzeł o wyznaczniku $8m+1$ i sygnaturze bez znaku $8n+4$.
+
+\begin{proposition}
+    Niech $L$ będzie węzłem.
+    Jeśli $\alexander_K(t) \equiv 1$, to $\sigma (K) = 0$.
+\end{proposition}
+
+\begin{proof}
+    Patrz \cite{milnor68}.
 \end{proof}
 
 Czytając przeglądową pracę \cite{conway19} dowiedzieliśmy się, że jeszcze w~latach sześćdziesiątych sygnatura została uogólniona do funkcji $\sigma_L \colon S^1 \to \Z$.
