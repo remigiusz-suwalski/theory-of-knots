@@ -2,7 +2,7 @@ Opisane w pierwszym rozdziale niezmienniki, takie jak liczba gordyjska czy liczb
 Nie potrafimy nawet uzasadnić, że niewęzeł oraz trójlistnik są różnymi węzłami.
 Dlatego teraz podamy prosty niezmiennik splotów: \emph{trójkolorowalność}, polegającą na przypisaniu włóknom diagramu jednego z~trzech kolorów według określonych reguł.
 
-Następnie rozszerzymy paletę do dowolnie wielu kolorów, by następnie zastąpić ją dowolną grupą skończoną.
+Następnie rozszerzymy paletę do dowolnie wielu kolorów, by następnie zastąpić ją dowolną nieprzemienną grupą skończoną.
 Nawet wzmocniony wariant nie jest idealnym narzędziem klasyfikującym: istnieją węzły, których nie odróżnia.
 Problem ten będzie powtarzać się dla prawie wszystkich późniejszych niezmienników, pierwszy niezmiennik zupełny poznamy dopiero w~rozdziale czwartym.
 Jest nim uniwersalny niezmiennik Wasiljewa.
@@ -36,11 +36,13 @@ Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
             \end{knot}
         \end{tikzpicture}.
     \]
-    Takie przyporządkowanie nazywamy (nietrywialnym) kolorowaniem.
+    Takie przyporządkowanie nazywamy kolorowaniem.
 \end{definition}
 
 Metoda ta została odkryta razem z~uogólnieniem do $n$ kolorów przez Ralpha Foxa w~1956, kiedy próbował uczynić teorię węzłów bardziej przystępną dla studentów.
 Opierając się na definicji oraz ruchach Reidemeistera możemy wykazać pierwsze własności kolorowań.
+
+Kolorowanie nazywamy trywialnym, jeśli używa tylko jednego koloru.
 
 \begin{proposition} \label{color_invariant}
     Własność ,,być $n$-kolorowalnym'' jest niezmiennikiem węzłów.
@@ -232,7 +234,7 @@ Liczbę kolorowań splotu $L$ modulo $n$, trywialnych lub nie, oznaczamy przez $
 \end{corollary}
 
 \begin{proof}
-    Suma spójna $n$ trójlistników ma $3^n$ (być może trywialnych) $3$-kolorowań.
+    Suma spójna $n$ trójlistników ma $3^{n+1}$, trywialnych lub nie, $3$-kolorowań.
 \end{proof}
 
 Jako kolorów użyjemy teraz elementów $g_1, \ldots, g_n$ pewnej skończonej grupy $G$.
