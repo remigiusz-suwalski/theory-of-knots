@@ -7,8 +7,8 @@ Przytoczmy raz jeszcze treść pierwszej hipotezy Taita (\ref{conj_tait_i}).
     Jeśli zorientowany splot $L$ posiada zredukowany, spójny, alternujący diagram o~$n$ skrzyżowaniach, to każdy jego diagram składa się z co najmniej $n$ skrzyżowań.
 \end{conjecture}
 
-Przedstawiony przez nas dowód nie będzie odbiegać znacząco od tego, co Kauffman przedstawił w~\cite{kauffman87}.
-Zanim do tego przejdziemy, wyjaśnimy znaczenie przymiotników z~hipotezy Taita.
+Przedstawiony przez nas dowód nie będzie odbiegać znacząco od podejścia Kauffmana w~\cite{kauffman87}.
+Najpierw wyjaśnimy znaczenie przymiotników z~hipotezy Taita.
 
 \begin{definition}
     \index{diagram!zredukowany}
@@ -42,8 +42,7 @@ W~dowodzie hipotezy Taita użyjemy rozpiętości wielomianu Jonesa, która stano
     Rozpiętością wielomianu Laurenta $f$ jednej zmiennej $X$ nazywamy różnicę między najwyższym oraz najmniejszym wykładnikiem pojawiającym się w~$f$: $\operatorname{span} f = M_f - m_f$.
 \end{definition}
 
-Zajmiemy się teraz wzorem pozwalającym na wyznaczenie nawiasu Kauffmana dowolnego splotu o~$n$ skrzyżowaniach przez dodanie $2^n$ wyrazów (które odpowiadają digramom bez skrzyżowań).
-Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
+Rozwiniemy teraz rekurencyją definicję klamry Kauffmana do sumy, która okaże się użyteczna przy dowodzeniu późniejszych twierdzeń.
 
 \begin{definition}[stan]
     Niech $D$ będzie diagramem splotu.
@@ -61,7 +60,7 @@ Wzór ten okaże się użyteczny przy dowodzeniu późniejszych twierdzeń.
     Niech $D$ będzie diagramem splotu.
     Wtedy
     \begin{equation}
-        \langle D\rangle = \sum_s \underbrace{(-A^2-A^{-2})^{|sD|-1} A^{|s|}}_{\langle D \mid s \rangle},
+        \langle D\rangle = \sum_s (-A^2-A^{-2})^{|sD|-1} A^{|s|},
     \end{equation}
     gdzie sumujemy po wszystkich stanach $s$ dla diagramu $D$.
 \end{proposition}
@@ -72,7 +71,6 @@ Dla wygody wprowadźmy skrót $\langle D \mid s \rangle := (-A^{-2}-A^2)^{|sD|-1
     Oznaczmy prawą stronę dowodzonej równości przez $[D]$.
     Pokażemy, że spełnia ona aksjomaty Kauffmana z~definicji \ref{def:kauffman_bracket}, stąd wynika już, że $[D] = \bracket{D}$.
     % ona $[\LittleUnknot]=1$, $[D\sqcup\LittleUnknot]=(-A^{-2}-A^2) [D]$ oraz $[\LittleRightCrossing] = A [\LittleRightSmoothing] + A^{-1}[\LittleLeftSmoothing]$.
-    S
 
     Pierwszy aksjomat mówi o niewęźle $\LittleUnknot$.
     Posiada on tylko jeden stan $s$ dany wzorem $|s| = 0$, zatem $|s\,\LittleUnknot| = 1$ oraz $[D] = (-A^2 - A^{-2})^0 \cdot A^0 = 1$.
@@ -102,11 +100,16 @@ Dla wygody wprowadźmy skrót $\langle D \mid s \rangle := (-A^{-2}-A^2)^{|sD|-1
         & = \sum_u (-A^2-A^{-2})^{|u\,\LittleRightSmoothing|-1}A^{|u|+1} \\
         & = \sum_{s(c)=1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|},
     \end{align}
-    podobne rozumowanie pokazuje, że $A^{-1}[\LittleLeftSmoothing] = \sum_{s(c)=-1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|}$.
-    Teraz wystarczy dodać do siebie dwa ostatnie równania. %: $A[\PrawyGladki]+A^{-1}[\LewyGladki] = \sum_s(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|} = [\RightCrossing]$.
+    podobne rozumowanie pokazuje, że
+    \begin{align}
+        A^{-1}\left[\LittleLeftSmoothing\right]
+        & = \sum_{s(c)=-1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|}.
+    \end{align}
+    Teraz wystarczy dodać do siebie dwa ostatnie równania.
+    %: $A[\PrawyGladki]+A^{-1}[\LewyGladki] = \sum_s(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|} = [\RightCrossing]$.
 \end{proof}
 
-Zbadamy teraz dwa najprostsze stany dowolnego diagramu.
+Zbadamy następnie dwa najprostsze stany dowolnego diagramu.
 
 \begin{definition}
     Stan przypisujący znak $+1$ każdemu skrzyżowaniu nazywamy $s_+$.
@@ -163,8 +166,7 @@ Porównajmy wygładzenie $s_+D$ z~$s_-D$:
 
 Zamknięte krzywe tworzące $s_+D$ są brzegami białych obszarów uszachowienia,
 podczas gdy te tworzące $s_-D$ stanowią brzeg czarnych obszarów.
-Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~białe obszary
-(nie mogą się spotkać w~innych miejscach), gdyż diagram był zredukowany.
+Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~białe obszary: nie mogą się spotkać w~innych miejscach, gdyż diagram był zredukowany.
 
 \begin{lemma}
     \label{lem:pretait_lemma_1}
@@ -249,9 +251,8 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~bia�
     Gdyby udało się nam pokazać nierówność $M\langle D|s\rangle \le M\langle D|s_+\rangle$
     dla wszystkich innych stanów $s$, dowód lematu byłby zakończony.
 
-    Kolejną ważną obserwacją jest to, że istnieje ciąg stanów $s_+ = s_0$, $s_1$, \ldots, $s_r=s$, w którym $s_{i+1}$ powstaje z~$s_i$ przez pojedynczą zmianę $+1$ na $-1$.
-    Diagram $s_{i+1}D$ uzyskujemy z~$s_{i}D$ przez połączenie dwóch zamkniętych krzywych lub podział jednej zamkniętej krzywej na dwie części.
-    Wynikają stąd równości $|s_{i+1}| = |s_i| - 2$ oraz $|s_{i+1}D| = |s_iD| \pm 1$.
+    Kolejną ważną dla dowodu obserwacją jest to, że istnieje ciąg stanów $s_+ = s_0$, $s_1$, \ldots, $s_r=s$, w~którym $s_{i+1}$ powstaje z~$s_i$ przez pojedynczą zmianę $+1$ na $-1$.
+    Skoro diagram $s_{i+1}D$ uzyskujemy z~$s_{i}D$ przez połączenie dwóch zamkniętych krzywych lub podział jednej zamkniętej krzywej na dwie części, to mamy dwie nowe równości: $|s_{i+1}| = |s_i| - 2$ oraz $|s_{i+1}D| = |s_iD| \pm 1$.
     To kończy dowód nierówności z lematu, ponieważ
     \begin{align}
         M \langle D \mid s_{i+1} \rangle
@@ -261,7 +262,7 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~bia�
     \end{align}
     Powtarzając odpowiednio wiele razy dostajemy łańcuch nierówności
     \begin{equation}
-        \langle D \mid s\rangle =M\langle D \mid s_r\rangle \le\ldots\le M\langle D \mid s_0\rangle=M\langle D \mid s_+\rangle
+        \langle D \mid s\rangle =M\langle D \mid s_r\rangle \le\ldots\le M\langle D \mid s_0\rangle=M\langle D \mid s_+\rangle.
     \end{equation}
 
     Pokażemy teraz, że jeśli $D$ jest zredukowany, alternujący i~spójny, to nierówność zamienia się w~równość.
@@ -297,16 +298,15 @@ Możemy wreszcie zająć się rozpiętością wielomianu Jonesa.
 Jesteśmy już w~stanie podać dowód twierdzenia \ref{taitjones} wspomnianego na początku sekcji.
 
 \begin{proof}
-    Założenia mówią nam, że $\operatorname{span} (\jones(L)) = n$.
-    Gdyby istniał diagram o~mniejszej liczbie skrzyżowań,
-    mielibyśmy $\operatorname{span} (\jones(L)) < n$, co prowadzi do sprzeczności.
+    Załóżmy nie wprost, że istnieje diagram o~mniejszej liczbie skrzyżowań,
+    mielibyśmy $\operatorname{span} (\jones(L)) < n$, co prowadzi do sprzeczności z~równością $\operatorname{span} (\jones(L)) = n$.
 \end{proof}
 
 Szukanie wielomianu Jonesa splotu bywa uciążliwe,
 jednak czasami możemy oszacować jego rozpiętość korzystając z~następujących nierówności:
 
 \begin{corollary}
-    Niech $L$ będzie zorientowanym splotem ze spójnym diagramem $D$ o~$n$ skrzyżowaniach.
+    Niech $L$ będzie zorientowanym splotem ze spójnym diagramem $D$, na którym widać $n$ skrzyżowań.
     Wtedy
     \begin{align}
         3w(D)-2|s_+D|+2-n & \le 4 m(\jones(L) \\
