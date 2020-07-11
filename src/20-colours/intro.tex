@@ -1,10 +1,11 @@
-Zamknęliśmy już pierwszy rozdział,
-Wciąż nie pokazaliśmy jednak pełnego dowodu, że dwa konkretne węzły (na przykład niewęzeł i~trójlistnik) są od siebie różne.
-Dlatego teraz podamy proste narzędzie odróżniające węzły: \emph{trójkolorowalność}, która przypisuje włóknom diagramu różne kolory.
-Następnie rozszerzymy paletę do dowolnie wielu kolorów i~zastąpimy ją grupą skończoną.
-Nawet wzmocniony wariant nie jest idealnym narzędziem klasyfikującym.
-Istnieją węzły, których nie odróżnia.
-Problem ten dotyka wielu późniejszych niezmienników, pierwszy niezmiennik zupełny poznamy dopiero w~rozdziale czwartym.
+Opisane w pierwszym rozdziale niezmienniki, takie jak liczba gordyjska czy liczba mostowa, pozwalają na odróżnienie od siebie niektórych węzłów, jednak wyznaczanie ich wartości nie jest łatwym zadaniem.
+Nie potrafimy nawet uzasadnić, że niewęzeł oraz trójlistnik są różnymi węzłami.
+Dlatego teraz podamy prosty niezmiennik splotów: \emph{trójkolorowalność}, polegającą na przypisaniu włóknom diagramu jednego z~trzech kolorów według określonych reguł.
+
+Następnie rozszerzymy paletę do dowolnie wielu kolorów, by następnie zastąpić ją dowolną grupą skończoną.
+Nawet wzmocniony wariant nie jest idealnym narzędziem klasyfikującym: istnieją węzły, których nie odróżnia.
+Problem ten będzie powtarzać się dla prawie wszystkich późniejszych niezmienników, pierwszy niezmiennik zupełny poznamy dopiero w~rozdziale czwartym.
+Jest nim uniwersalny niezmiennik Wasiljewa.
 Nie stanowi to wielkiego powodu do radości ze względu na trudności w~jego wyznaczaniu.
 
 \section{Kolorowanie splotów} % (fold)
@@ -39,10 +40,10 @@ Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
 \end{definition}
 
 Metoda ta została odkryta razem z~uogólnieniem do $n$ kolorów przez Ralpha Foxa w~1956, kiedy próbował uczynić teorię węzłów bardziej przystępną dla studentów.
-Opierając się tylko na definicji kolorowania oraz ruchach Reidemeistera możemy wykazać pierwsze własności kolorowań.
+Opierając się na definicji oraz ruchach Reidemeistera możemy wykazać pierwsze własności kolorowań.
 
 \begin{proposition} \label{color_invariant}
-    ,,Bycie $n$-kolorowalnym'' jest niezmiennikiem węzłów.
+    Własność ,,być $n$-kolorowalnym'' jest niezmiennikiem węzłów.
 \end{proposition}
 
 \begin{proof}
@@ -129,7 +130,6 @@ Opierając się tylko na definicji kolorowania oraz ruchach Reidemeistera możem
 Trójlistnik koloruje się dokładnie modulo krotności trójki, ósemka zaś -- piątki.
 Sama kolorowalność nie mówi wiele, splot jest kolorowalny lub nie.
 Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, być może trywialnych, jest mocniejszym niezmiennikiem.
-Liczbę kolorowań splotu $L$ modulo $n$, trywialnych lub nie, oznaczamy przez $\tau_n(L)$.
 
 \begin{lemma}
     \label{lem:colouring_arc}
@@ -220,6 +220,8 @@ Będziemy potrzebować tego do pokazania, że wyznacznik determinuje kolorowalno
     Składniki te są przeciwnych znaków, zatem wzajemnie się znoszą.
     Suma równań kolorujących jest sumą zer, a~to należało udowodnić.
 \end{proof}
+
+Liczbę kolorowań splotu $L$ modulo $n$, trywialnych lub nie, oznaczamy przez $\tau_n(L)$.
 
 \begin{proposition}
     Jeśli $K, L$ są węzłami, to $3\tau_3(K \shrap L) = \tau_3(K)\tau_3(L)$.
