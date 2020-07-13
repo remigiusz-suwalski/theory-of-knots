@@ -390,12 +390,11 @@ Korzystając z południków i równoleżników pokazał następnie, że nietrywi
     Każdy węzeł ma tylko dwie orientacje, splot może mieć ich $2^n$, gdzie $n$ to liczba składowych.
 \end{proof}
 
-\begin{proposition} \label{prp:jones_multiplicative}
-    Niech $L, M$ będą zorientowanymi splotami, zaś $J, K$: zorientowanymi węzłami.
-    \begin{enumerate}
-        \item $\jones(L \sqcup M) = (-t^{1/2} - t^{-1/2}) \jones(L) \jones(M)$,
-        \item $\jones(J \# K) = \jones(J) \jones(K)$.
-    \end{enumerate}
+\begin{proposition} \label{prp:jones_multiplicative_1}
+    Niech $L, M$ będą zorientowanymi splotami, wtedy
+    \begin{equation}
+        \jones(L \sqcup M) = (-t^{1/2} - t^{-1/2}) \jones(L) \jones(M).
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
@@ -420,6 +419,13 @@ Korzystając z południków i równoleżników pokazał następnie, że nietrywi
     \end{align*}
     To wyznacza ich wartości dla dowolnego diagramu $D$, zatem $f_1 \equiv f_2$, co kończy dowód.
 \end{proof}
+
+\begin{proposition} \label{prp:jones_multiplicative_2}
+    Niech $J, K$ będą zorientowanymi węzłami, wtedy
+    \begin{equation}
+        \jones(J \# K) = \jones(J) \jones(K).
+    \end{equation}
+\end{proposition}
 
 \begin{proof}
     Rozpatrzmy sploty
