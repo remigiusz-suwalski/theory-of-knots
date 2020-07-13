@@ -87,8 +87,19 @@ Sugestia ta była błędna, wystarczy użyć alternatywnej definicji.
 \end{proof}
 
 Dla wygody można przeprowadzić normalizację wielomianu przez wzięcie reprezentanta, który jest symetryczny w~zmiennych $t$ oraz $t^{-1}$ i~przyjmuje w~punkcie $1$ wartość $\alexander(1) = 1$.
-Odwrotnie, każdy wielomian Laurenta z~całkowitymi współczynnikami o~takich własnościach jest wielomianem Alexandera pewnego węzła.
-% Kawauchi 1996
+Odwrotnie, każdy wielomian Laurenta z~całkowitymi współczynnikami o~takich własnościach jest wielomianem Alexandera pewnego węzła:
+
+\begin{proposition}
+    Każdy wielomian Laurenta $p(t)$ o~całkowitych współczynnikach taki, że $p(1/t) = p(t)$ i~$p(1) = \pm 1$ jest wielomianem Alexandera pewnego węzła.
+\end{proposition}
+
+\begin{proof}[Niedowód]
+    Hosokawa w \cite{hosokawa58} udowodnił to dla pomocniczego wielomianu splotów
+    \begin{equation}
+        \frac{\Delta(t, \ldots, t)}{(1-t)^{\max(0, \mu - 2)}},
+    \end{equation}
+    gdzie $\mu$ oznacza liczbę ogniw.
+\end{proof}
 
 Wielomian nie odróżnia luster i~odwrotności od wyjściowych węzłów:
 
@@ -277,7 +288,8 @@ Jako proste zastosowanie relacji kłębiastej pokażemy, że wielomian Alexander
 
 Implikacja w drugą stronę jest fałszywa.
 Niech $\sigma_* = \sigma_{2} \sigma_{3}^{-2} \sigma_{2}$.
-Domknięcie warkocza $\sigma_{1} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_{3}$ nie jest rozszczepialne, ale jego wielomian Alexandera jest zerem (warkocze poznamy w rozdziale piątym).
+Domknięcie warkocza $\sigma_{1} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_{3}$ nie jest rozszczepialne, ale jego wielomian Alexandera jest zerem.
+Warkocze poznamy w rozdziale piątym.
 
 \begin{proof}
     (do napisania)
@@ -288,12 +300,6 @@ Domknięcie warkocza $\sigma_{1} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_
 % Wielomian Jonesa (zdefiniowany w~kolejnej sekcji) spełnia podobną równość.
 % Ich istnienie może nasunąć przypuszczenie, że dają się wspólnie uogólnić.
 % Tak jest w~rzeczywistości -- mocniejszym niezmiennikiem okazał się wielomian HOMFLY-PT.
-
-Można scharakteryzować możliwe postacie wielomianu Alexandera.
-
-\begin{proposition}[Hosokowa, 1958]
-    Każdy wielomian Laurenta $p(t)$ o~całkowitych współczynnikach taki, że $p(1/t) = p(t)$ i~$p(1) = \pm 1$ może być wielomianem Alexandera jakiegoś węzła.
-\end{proposition}
 
 Murasugi podejrzewał, że w~przypadku węzłów alternujących ciąg współczynników jest unimodalny.
 Dowód podano dla węzłów algebraicznych (Murasugi \cite{murasugi85}) oraz genusu dwa (Ozsvath i~Szabo w~\cite{ozsvath03}).
