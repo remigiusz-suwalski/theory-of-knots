@@ -95,7 +95,7 @@ Dla wygody wprowadźmy skrót $\langle D \mid s \rangle := (-A^{-2}-A^2)^{|sD|-1
     \end{equation}
     gdzie $u$ przebiega wszystkie stany $\LittleRightSmoothing$.
     Ale $\LittleRightSmoothing$ to $\LittleRightCrossing$ z ustalonym skrzyżowaniem $c$ wygładzonym dodatnio, co daje bijekcję między stanami $u$ dla $\LittleRightSmoothing$ i~$s$ dla $\LittleRightCrossing$, dla których $s(c) = + 1$.
-    Wtedy $|s\LittleRightCrossing|=|u\LittleRightSmoothing|$, $|s|=|u|+1$ oraz
+    W takiej sytuacji $|s\LittleRightCrossing| = |u\LittleRightSmoothing|$, $|s| = |u|+1$ oraz
     \begin{align}
         A\left[\LittleRightSmoothing\right]
         & = \sum_u (-A^2-A^{-2})^{|u\,\LittleRightSmoothing|-1}A^{|u|+1} \\
@@ -120,6 +120,7 @@ Zbadamy następnie dwa najprostsze stany dowolnego diagramu.
 Niech $D$ będzie alternującym, zredukowanym diagramem spójnym.
 Wtedy wszystkie jego skrzyżowania mają ten sam znak.
 Wybierzmy dla niego uszachowienie.
+Odwracając w~razie potrzeby kolory możemy założyć, że wszystkie skrzyżowania są dodatnie:
 \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.15]
     \begin{knot}[clip width=5]
@@ -140,8 +141,6 @@ Wybierzmy dla niego uszachowienie.
     \end{knot}
     \end{tikzpicture}
 \]
-
-Zamieniając biały i~czarny w~razie potrzeby możemy założyć, że wszystkie skrzyżowania są dodatnie ($+1$).
 Takie uszachowienie nazywamy \emph{standardowym}.
 Porównajmy wygładzenie $s_+D$ z~$s_-D$:
 \[
@@ -165,9 +164,8 @@ Porównajmy wygładzenie $s_+D$ z~$s_-D$:
     \end{tikzpicture}
 \]
 
-Zamknięte krzywe tworzące $s_+D$ są brzegami białych obszarów uszachowienia,
-podczas gdy te tworzące $s_-D$ stanowią brzeg czarnych obszarów.
-Zauważmy jeszcze, że na każdym skrzyżowaniu są cztery różne czarne i~białe obszary: nie mogą się spotkać w~innych miejscach, gdyż diagram był zredukowany.
+Zamknięte krzywe tworzące $s_+D$ są brzegami białych obszarów uszachowienia, podczas gdy te tworzące $s_-D$ stanowią brzeg czarnych obszarów.
+Zauważmy jeszcze, że na każdym skrzyżowaniu występują cztery różne czarne i~białe obszary: gdyby pewien obszar dotykał tam sam siebie, mielibyśmy do czynienia w~tym miejscu z~przesmykiem, a~założyliśmy przecież, że diagram jest zredukowany.
 
 \begin{lemma}
     \label{lem:pretait_lemma_1}

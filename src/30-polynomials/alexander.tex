@@ -5,6 +5,8 @@ Wielomian Alexandera został odkryty w~1923 roku i~aż do roku 1984 pozostał je
 Przytoczymy jego opis oparty nie o~teorię homologii, a~równania kolorujące -- głównym powodem jest elementarność takiego podejścia.
 Uogólnijmy najpierw równania kolorujące.
 
+\textbf{Dodać informację, że świat przeoczył relację kłębiastą od Alexandera, bo ten umieścił ją w rozdziale z różnościami.}
+
 \begin{definition}
 \label{def:polynomial_colouring}
     Wielomianowe równanie kolorujące związane z~poniższym skrzyżowaniem splotu zorientowanego to $a + tc - ta - b = 0$.
@@ -99,6 +101,7 @@ Odwrotnie, każdy wielomian Laurenta z~całkowitymi współczynnikami o~takich w
         \frac{\Delta(t, \ldots, t)}{(1-t)^{\max(0, \mu - 2)}},
     \end{equation}
     gdzie $\mu$ oznacza liczbę ogniw.
+    Książka \cite{rolfsen76} Rolfsena na stronach 171-172 zawiera natomiast jawną konstrukcję węzła o~danym wielomianie Alexandera.
 \end{proof}
 
 Wielomian nie odróżnia luster i~odwrotności od wyjściowych węzłów:
@@ -286,16 +289,22 @@ Jako proste zastosowanie relacji kłębiastej pokażemy, że wielomian Alexander
     Wtedy $\alexander_L(t) \equiv 0$.
 \end{proposition}
 
+Natomiast wielomian Jonesa $\jones$ odróżnia od siebie co najmniej niesploty.
+
+\begin{proof}
+    Skorzystamy z~relacji kłębiastej.
+    Niech $L_0$ będzie splotem rozsczepialnym z~dwoma ogniwami.
+    Wtedy węzły $L_+$ oraz $L_-$ powstałe przez dodanie skrzyżowania między ogniwami są tego samego typu, zatem
+    \begin{equation}
+        \alexander_{L_0} = \frac{\alexander_{L_+} - \alexander_{L_-}}{t^{1/2} - t^{-1/2}} = 0,
+    \end{equation}
+    a to chcieliśmy udowodnić.
+\end{proof}
+
 Implikacja w drugą stronę jest fałszywa.
 Niech $\sigma_* = \sigma_{2} \sigma_{3}^{-2} \sigma_{2}$.
 Domknięcie warkocza $\sigma_{1} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_{3}$ nie jest rozszczepialne, ale jego wielomian Alexandera jest zerem.
 Warkocze poznamy w rozdziale piątym.
-
-\begin{proof}
-    (do napisania)
-    % dla niesplotów łatwo pokazać
-    % dla splotów wystarczy zauważyć, że drzewo kłębiaste zawsze kończy się na niesplotach
-\end{proof}
 
 % Wielomian Jonesa (zdefiniowany w~kolejnej sekcji) spełnia podobną równość.
 % Ich istnienie może nasunąć przypuszczenie, że dają się wspólnie uogólnić.
@@ -318,5 +327,8 @@ Można je otrzymać rozcinając dopełnienie wzdłuż powierzchni Seiferta.
 Na $X$, a~przez to także na grupie homologii $H_1(X)$, działa automorfizm $t$, który czyni z~niej moduł nad pierścieniem $\Z[t, t^{-1}]$, i~to skończenie prezentowalny.
 Jeśli posiada przedstawienie z~$r$ generatorami i~$s$ relacjami, gdzie $r \le s$, rozpatrzmy ideał generowany przez minory $r \times r$ macierzy prezentacji (jeśli nie, weźmy ideał zerowy).
 Alexander pokazał, że ideał ten zawsze jest niezerowy i~główny.
+
+% https://math.berkeley.edu/~hutching/teach/215b-2004/yu.pdf
+\textbf{Definicja przy użyciu różniczek Foxa: https://math.berkeley.edu/hutching/teach/215b-2004/yu.pdf}
 
 % Koniec sekcji Wielomian Alexandera
