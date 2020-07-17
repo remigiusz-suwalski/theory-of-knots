@@ -58,8 +58,10 @@ Pewien węzeł o~dwunastu skrzyżowaniach i~$5_2$ mają jednak tę samą objęto
     Każdy węzeł hiperboliczny jest pierwszy.
 \end{proposition}
 
-Spośród wszystkich węzłów pierwszych o~mniej niż 17 skrzyżowaniach, prawie wszystkie są hiperboliczne: 12 z~nich to węzły torusowe, 20 to satelity trójlistnika (te ostatnie mają ponad 10 skrzyżowań).
-Jak pokazuje poniższa tabela (oparta na bazie ciągów OEIS, numery 51764, 51765, 52408), węzły pierwsze nie przypominają licznością liczb pierwszych.
+Prawie każdy węzeł pierwszy o~mniej niż 17 skrzyżowaniach jest hiperboliczny, na 32 wyjątki składa się 12 węzłów torusowych oraz 20 satelitów trójlistnika.
+Te ostatnie mają co najmniej 11 skrzyżowań.
+Baza ciągów liczb całkowitych OEIS zawiera informacje na temat liczności poszczególnych typów węzłów.
+Analizując ciągi A051764, A051765 oraz A052408 można dojść do wniosku, że wraz ze wzrostem liczby skrzyżowań, stosunek liczby węzłów hiperbolicznych do wszystkich węzłów dąży do $1$:
 
 \renewcommand*{\arraystretch}{1.4}
 \footnotesize
@@ -73,42 +75,44 @@ Jak pokazuje poniższa tabela (oparta na bazie ciągów OEIS, numery 51764, 5176
 \end{longtable}
 \normalsize
 
-Powysza tabela nasuwa hipotezę,
-że stosunek liczby węzłów hiperbolicznych do liczby wszystkich
-(o $n$ skrzyżowaniach) dąży do jedynki przy $n \to \infty$.
-W pracy ,,On the question of genericity of hyperbolic knots'' (dostępnej w~serwisie \href{https://arxiv.org/abs/1612.03368v1}{ArxiV}) A. Malyutin pokazał jednak, że to przypuszczenie jest sprzeczne z~wieloma innymi starymi hipotezami teorii węzłów.
+W pracy \cite{malyutin16} A. Malyutin pokazał jednak, że to przypuszczenie jest sprzeczne z~wieloma innymi starymi hipotezami teorii węzłów: \ref{malyutin1} -- \ref{malyutin4}.
 
 \begin{conjecture}
+    \label{malyutin1}
     Indeks skrzyżowaniowy jest addytywny względem sumy spójnej.
 \end{conjecture}
 
 (To jest powtórzenie hipotezy \ref{cnj:crossing_additive}).
-Murasugi pokazał prawdziwość hipotezy dla węzłów alternujących.
-Diao i~Gruber na początku XXI wieku udowodnili ją dla węzłów torusowych.
+Murasugi dowiódł prawdziwości hipotezy dla węzłów alternujących, w~pracy \cite{murasugi87} jest to wniosek z~dowodu hipotezy Taita.
+Krótko po tym Lickorish, Thistlethwaite powtórzyli to dla węzłów adekwatnych w \cite{lickorish88}.
+Na początku XX wieku Diao \cite{diao04} oraz Gruber \cite{gruber03} niezależnie udowodnili hipotezę \ref{malyutin1} dla pewnej szerokiej klasy węzłów, obejmującej wszystkie węzły torusowe oraz wiele węzłów alternujących oraz pewne inne obiekty, których nie chcemy opisywać.
 
 \begin{conjecture}
-    Satelita ma większy
-    (w słabszej wersji: nie mniejszy)
-    indeks skrzyżowaniowy niż jego towarzysze.
+    Satelita ma większy (w słabszej wersji: nie mniejszy) indeks skrzyżowaniowy niż jego towarzysze.
 \end{conjecture}
 
 Lackenby pokazał w~\cite{lackenby14}, że jeśli $K$ jest satelitą z towarzyszem $L$, to $\operatorname{cr} K \ge 10^{-13} \operatorname{cr} L$.
 
 \begin{conjecture}
-    Węzeł złożony ma większy
-    (w słabszej wersji: nie mniejszy)
-    indeks skrzyżowaniowy niż jego faktory.
+    Węzeł złożony ma większy (w słabszej wersji: nie mniejszy) indeks skrzyżowaniowy niż jego faktory.
 \end{conjecture}
 
-Mówimy, że węzeł pierwszy $P$ jest $\lambda$-regularny,
-jeśli $cr K \ge \lambda \cdot cr P$ za każdym razem,
-gdy węzeł $P$ jest faktorem węzła $K$.
-Węzły torusowe lub alternujące są $1$-regularne.
-Lackenby pokazał w~\cite{lackenby09}, że wszystkie węzły są $1/152$-regularne, pisaliśmy o tym w podsekcji \ref{sub:crossing_number}.
+Mówimy, że węzeł pierwszy $P$ jest $\lambda$-regularny, jeśli $cr K \ge \lambda \cdot cr P$ za każdym razem, gdy węzeł $P$ jest faktorem węzła $K$.
+Zatem hipotezę można wysłowić krótko ,,węzły pierwsze są $1$-regularne''.
+Na podstawie prac Murasugiego, Kauffmana i~Thistlethwaite'a z~końca lat 80. wiemy, że zachodzi dla węzłów alternujących.
+Diao pokazał w \cite[tw. 3.8]{diao04}, że węzły torusowe także są $1$-regularne, natomiast Lackenby przedstawił w~\cite{lackenby09} rozumowanie, dlaczego wszystkie węzły są $1/152$-regularne.
+Pisaliśmy o tym w podsekcji \ref{sub:crossing_number}.
 
 \begin{conjecture}
+    \label{malyutin4}
     Węzły pierwsze są $2/3$-regularne.
 \end{conjecture}
+
+Rozwiązanie zagadki przyniosła praca samego Malyutina \cite{malyutin19} opublikowana latem 2019 roku, przynajmniej dla splotów.
+Pokazał w~niej, że jeśli oznaczymy liczbę splotów pierwszych i~nierozszczepialnych o~$n$ lub mniej skrzyżowaniach przez $P_n$, zaś liczbę hiperbolicznych splotów, także o~$n$ lub mniej skrzyżowaniach, przez $H_n$, prawdziwe będzie oszacowanie
+\begin{equation}
+    \liminf_{n \to \infty} \frac{H_n}{P_n} < 1 - 10^{-13}.
+\end{equation}
 
 % Every non-split, prime, alternating link that is not a~torus link is hyperbolic by a~result of William Menasco.
 
