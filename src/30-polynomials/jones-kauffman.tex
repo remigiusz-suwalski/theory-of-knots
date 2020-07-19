@@ -292,21 +292,22 @@ Poza powyżej opisanymi przypadkami, wartości wielomianu Jonesa nie można znal
 Czemu wielomian Jonesa jest wielomianem?
 Odpowiedniki wielomianu Jonesa dla węzłów w~3-rozmaitościach innych niż sfera $S^3$ nie są wielomianami, ale funkcjami z~pierwiastków jedności w~zbiór elementów całkowitch\footnote{algebraic integers} (jak podaje J. Roberts).
 
-Dotychczas wyznaczyliśmy wielomian Jonesa jedynie dla trywialnych splotów.
-Spowodowane jest to tym, że chociaż nawias Kauffmana jest przydatny przy dowodzeniu różnych własności,
-to zupełnie nie nadaje się do obliczeń.
-Dużo lepszym narzędziem jest następujące twierdzenie.
+Dotychczas wyznaczyliśmy wielomian Jonesa jedynie dla splotów trywialnych (fakt \ref{prp:jones_trivial_link}).
+Dlaczego?
+Chociaż klamra Kauffmana to użyteczne narzędzie podczas dowodzenia różnych teoretycznych własności, niezbyt nadaje się do obliczeń, szczególnie ręcznych.
+Na szczęście wtedy z pomocą przychodzi:
 
 \begin{theorem}[relacja kłębiasta]
     \label{tracheotomia}
     \index{relacja kłębiasta}
-    Wielomian Jonesa spełnia równość $\jones(\LittleUnknot) = 1$ oraz relację
+    Wielomian Jonesa spełnia zależność rekurencyjną
     \begin{equation}
-        t^{-1} \jones(L_+) - t\jones(L_-) + (t^{-1/2} - t^{1/2}) \jones(L_0) = 0,
+        t^{-1} \jones(L_+) - t\jones(L_-) + (t^{-1/2} - t^{1/2}) \jones(L_0) = 0
     \end{equation}
+    z warunkiem brzegowym $\jones(\LittleUnknot) = 1$.
 \end{theorem}
 
-Słowo ,,skein'' (kłąb) wprowadził Conway około roku 1970, kontynuując tradycję używania słów, które kojarzą się ze sznurkami.
+Termin ,,skein'' (kłąb) wprowadził Conway około roku 1970, kontynuując tradycję używania słów, które kojarzą się ze sznurkami.
 
 \begin{proof}
 Wyraźmy wielomian Jonesa przez nawias Kauffmana i~spin.
