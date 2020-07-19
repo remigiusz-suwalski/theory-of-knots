@@ -46,21 +46,50 @@ Zauważmy, że wykonując powyższe operacje na węźle możemy otrzymać mniej 
     \index{węzeł!zwierciadlany}
     Wyróżniamy pięć typów symetrii węzłów:
     \begin{itemize}
-        \item całkowicie chiralny albo skrętny (węzły $K$, $rK$, $mK$ są parami nierównoważne),
-        \item odwracalny ($K \cong rK$),
-        \item zwierciadlany ujemnie ($K \cong mrK$),
-        \item zwierciadlany dodatnio ($K \cong mK$) oraz
-        \item całkowicie zwierciadlany ($rK \cong K \cong mK$).
+        \item całkowicie chiralny albo skrętny (węzły $K$, $rK$, $mK$ są parami nierównoważne), % chiral 9_32
+        \item odwracalny ($K \cong rK$), % reversible 3_1
+        \item zwierciadlany ujemnie ($K \cong mrK$), % negative amphicheiral 8_17
+        \item zwierciadlany dodatnio ($K \cong mK$) oraz % positive amphicheiral 12a_427
+        \item całkowicie zwierciadlany ($rK \cong K \cong mK$). % fully amphicheiral 4_1
     \end{itemize}
 \end{definition}
 
-Węzeł $9_{32}$ jest całkowicie skrętny.
-Ósemka jest zwierciadlana, trójlistnik jest odwracalny, zaś $8_{17}$ to najprostszy przykład węzła nieodwracalnego.
-Ten ostatni fakt jest jednak daleki od oczywistego -- sześćdziesiąt lat temu nie było pewne, czy węzły nieodwracalne w~ogóle istnieją.
-W roku 1962 Ralph Fox wskazał kilku kandydatów do tego tytułu.
-Hale Trotter odkrył rok później nieskończoną rodzinę nieodwracalnych precli (patrz \ref{trotter}).
-Obecnie wiadomo, że prawie wszystkie węzły są nieodwracalne (\cite[s.~46]{murasugi96}).
-Wszystkie węzły torusowe są skrętne.
+\begin{example}
+    Węzeł $9_{32}$ jest całkowicie skrętny.
+\end{example}
+
+Całkowicie skrętne są też między innymi wszystkie węzły torusowe.
+
+\begin{example}
+    \label{trefoil_is_chiral}
+    Trójlistnik jest odwracalny, ale nie zwierciadlany.
+\end{example}
+
+Po raz pierwszy odkrył to M. Dehn w 1914 roku \cite{dehn14}.
+Oto, jak tego dokonał.
+Iloraz grafu Cayleya dla grupy podstawowej trójlistnika, $G = \pi_1(S^3 - K)$, zanurza się w~produkt $\mathbb H^2 \times \R$, co pozwala wyznaczyć grupę zewnętrznych automorfizmów grupy $G$, $\Z/2\Z$.
+Korzystając z południków i równoleżników pokazał następnie, że nietrywialny automorfizm odwraca orientację przestrzeni otaczającej.
+My przekonamy się o~tym przez wyznaczenie wielomianu Jonesa trójlistnika, patrz wniosek \ref{amphicheiral_implies_jones}.
+
+\begin{example}
+    Węzeł $8_{17}$ jest zwierciadlany ujemnie, ale nie odwracalny.
+\end{example}
+
+Sześćdziesiąt lat temu nie było pewne, czy węzły nieodwracalne w~ogóle istnieją; obecnie wiadomo, że prawie wszystkie węzły są nieodwracalne (\cite[s.~46]{murasugi96}).
+W~roku 1962 Ralph Fox wskazał kilku kandydatów do tego tytułu.
+Hale Trotter odkrył rok później nieskończoną rodzinę nieodwracalnych precli, patrz \ref{trotter}.
+
+\begin{example}
+    Węzeł $12a427$ jest zwierciadlany dodatnio, ale nie odwracalny.
+\end{example}
+
+Żaden inny węzeł pierwszy o mniej niż 13 skrzyżowaniach nie ma tej cechy.
+
+\begin{example}
+    Ósemka $4_1$ jest całkowicie zwierciadlana.
+\end{example}
+
+To najprostszy typ symetrii, wystarczy jawnie wskazać przekształcenie między diagramem węzła, jego lustra oraz odwrotności.
 
 Tait odnosił wrażenie, że zwierciadlane węzły mają parzysty indeks skrzyżowań,
 ale Hoste (Thistlethwaite?) znalazł w~1998 kontrprzykład o~piętnastu skrzyżowaniach.
