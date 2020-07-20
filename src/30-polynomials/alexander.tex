@@ -1,16 +1,13 @@
 \section{Wielomian Alexandera} % (fold)
 \label{sec:alexander}
 
-Wielomian Alexandera został odkryty w~1923 roku i~aż do roku 1984 pozostał jedynym znanym niezmiennikiem wielomianowym węzłów zorientowanych.
+Wielomian Alexandera został odkryty w~1928 roku (\cite{alexander28}) i~aż do roku 1984 pozostał jedynym znanym niezmiennikiem wielomianowym węzłów zorientowanych.
 Przytoczymy jego opis oparty nie o~teorię homologii, a~równania kolorujące -- głównym powodem jest elementarność takiego podejścia.
-Uogólnijmy najpierw równania kolorujące.
-
-\textbf{Dodać informację, że świat przeoczył relację kłębiastą od Alexandera, bo ten umieścił ją w rozdziale z różnościami.}
+Najpierw trzeba je uogólnić.
 
 \begin{definition}
 \label{def:polynomial_colouring}
-    Wielomianowe równanie kolorujące związane z~poniższym skrzyżowaniem splotu zorientowanego to $a + tc - ta - b = 0$.
-    Tylko orientacja górnej wiązki ma znaczenie.
+    Wielomianowe równanie kolorujące związane ze skrzyżowaniem
     \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
     \useasboundingbox (-5, -5) rectangle (5,5);
     \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
@@ -21,6 +18,8 @@ Uogólnijmy najpierw równania kolorujące.
         \node[darkblue] at (-5, 5)[below left] {$c$};
     \end{knot}
     \end{tikzpicture}\]
+    splotu zorientowanego to $a + tc - ta - b = 0$.
+    Tylko orientacja górnej wiązki ma znaczenie.
 \end{definition}
 
 Istotnie, wystarczy podstawić tutaj $t = -1$, by otrzymać mniej ogólną definicję \ref{def:colour_equation}.
@@ -330,5 +329,7 @@ Alexander pokazał, że ideał ten zawsze jest niezerowy i~główny.
 
 % https://math.berkeley.edu/~hutching/teach/215b-2004/yu.pdf
 \textbf{Definicja przy użyciu różniczek Foxa: https://math.berkeley.edu/hutching/teach/215b-2004/yu.pdf}
+
+\textbf{Dodać informację, że świat przeoczył relację kłębiastą od Alexandera, bo ten umieścił ją w rozdziale z różnościami.}
 
 % Koniec sekcji Wielomian Alexandera
