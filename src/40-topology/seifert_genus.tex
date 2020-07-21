@@ -68,9 +68,6 @@ Z dołu 3-genus można szacować przy użyciu wielomianu Alexandera:
     Wtedy $\operatorname{span} \alexander(t) \le 2g$.
 \end{proposition}
 
-\index{homologia!Floera}
-Wielomian Alexandera uogólnia się do (skomplikowanej) homologii Floera, pozwala ona dokładniej szacować genus węzła.
-
 \begin{proof}
     Załóżmy, że $F$ jest powierzchnią Seiferta węzła $K$ o genusie $g$.
     Wtedy macierz Seiferta powstała z $F$ jest rzędu $2g$, więc żaden ze składników jej wyznacznika nie może mieć stopnia większego niż $2g$.
@@ -84,6 +81,12 @@ Jeżeli nie powoduje to nieporozumień, zamiast 3-genus można pisać po prostu 
     Wtedy $\operatorname{span} \alexander(t) = 2g$ wtedy i tylko wtedy, gdy $\det M \neq 0$.
     % Murasugi
 \end{proposition}
+
+Floer zdefiniował w~\cite{floer90} przestrzeń wektorową nazywaną teraz homologią Floera, jest ona wyposażona w~endomorfizm parzystego stopnia, który powstaje z 2-wymiarowej klasy homologii reprezentowanej przez powierzchnię Seiferta.
+%~kanoniczną gradację modulo $2$ oraz 
+\index{homologia!Floera}
+Ta homologiaa ozkłada się na sumę prostą przestrzeni własnych wyróżnionego endomorfizmu, ich charakterystyki Eulera są współczynnikami wielomianu Alexandera.
+Pozwala to na dokładniejsze szacowanie genusu węzła, patrz prace Ozsváth, Szabó \cite{szabo03} i Ghigginiego \cite{ghiggini08}.
 
 Z góry genus ograniczony jest przez kilka klasycznych niezmienników numerycznych.
 Zanim to pokażemy, przytoczymy techniczny lemat udowodniony przez Yamadę (\cite{yamada87}):
