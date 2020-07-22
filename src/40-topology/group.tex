@@ -158,34 +158,45 @@ twierdzenia o~sferze, o~pętli oraz hipotezy Knesera.
 
 \begin{proposition}
     \label{prop:knot_group_split}
-    Następujące warunki są równoważne:
-    splot $L$ nie jest rozszczepialny;
-    grupa podstawowa splotu $L$ nie jest produktem wolnym;
-    $L$ jest rozmaitością Hakena o~nieściśliwym brzegu.
+    Następujące warunki są równoważne dla splotu $L \subseteq S^3$:
+    \begin{enumerate}
+        \item splot $L$ nie jest rozszczepialny
+        \item grupa podstawowa splotu $L$ nie jest produktem wolnym
+        \item splot $L$ jest rozmaitością Hakena o~nieściśliwym brzegu.
+    \end{enumerate}
 \end{proposition}
+
+\begin{proof}[Niedowód]
+    Kawauchi w \cite{kawauchi96}, patrz twierdzenie 6.1.4.
+\end{proof}
 
 \begin{proposition}
     \label{prop:knot_group_free}
     Splot o~wolnej grupie podstawowej rangi $n$ to trywialny splot o~$n$ ogniwach.
 \end{proposition}
 
-Twierdzenie Dehna z~1915 mówi, że jedynym węzłem,
-którego grupą są liczby całkowite $\mathbb Z$, jest niewęzeł.
-Wynik ten został później istotnie uogólniony.
-Michael Kervaire pokazał w~1966 roku (w \cite{kervaire65}),
-że abstrakcyjna grupa $G$ jest grupą podstawową dopełnienia węzła
-(co najmniej pięciowymiarowego) wtedy i~tylko wtedy, gdy:
-\begin{enumerate}[leftmargin=*]
-    \itemsep0em
-    \item abelianizacją $G$ jest grupa liczb całkowitych, $\mathbb Z$,
-    \item druga grupa homologii $G$ jest trywialna,
-    \item $G$ jest skończenie prezentowana oraz
-    \item $G$ stanowi domknięcie normalne pojedynczego generatora.
-\end{enumerate}
+\begin{proof}[Niedowód]
+    Kawauchi w \cite{kawauchi96}, patrz wniosek 6.1.5.
+\end{proof}
 
-Wiadomo, że w~wymiarach $n \ge 3$ warunki te są co najmniej wystarczające,
-jednakże problem  pełnej charakteryzacji w~czwartym wymiarze jest otwarty.
-Pierwsze dwa wynikają z~dualności Alexandera,
-dwa kolejne stanowią przeformułowanie prezentacji Wirtingera.
+Twierdzenie Dehna z~1915 mówi, że jedynym węzłem, którego grupą są liczby całkowite $\mathbb Z$, jest niewęzeł.
+Wynik ten został później istotnie uogólniony.
+Michael Kervaire pokazał w~1966 roku (w \cite{kervaire65}) jakie warunki musi spełniać grupa $G$, by istniał pewien węzeł, którego grupą jest właśnie $G$.
+Patrz też twierdzenie 14.1.1 w \cite{kawauchi96}.
+
+\begin{proposition}
+    Niech $G$ będzie grupą węzła $S^n \subseteq S^{n+2}$.
+    Wtedy:
+    \begin{enumerate}[leftmargin=*]
+        \itemsep0em
+        \item grupa $G$ jest skończenie prezentowana,
+        \item abelianizacja $G/G'$ jest nieskończoną grupą cykliczną,
+        \item druga grupa homologii $H_2(G) = 0$ jest trywialna,
+        \item istnieje element $x \in G$ zwany południkiem taki, że $G$ jest najmniejszą podgrupą normalną $G$, która zawiera $x$.
+    \end{enumerate}
+\end{proposition}
+
+Wyżej wymienione warunki konieczne są także wystarczające, jeżeli $n \ge 3$, jednakże problem pełnej charakteryzacji w~czwartym wymiarze jest otwarty.
+Warunki 2. i 3. wynikają z~dualności Alexandera, zaś 1. i 4. stanowią przeformułowanie prezentacji Wirtingera.
 
 % Koniec sekcji Grupa węzła. Prezentacja Wirtingera
