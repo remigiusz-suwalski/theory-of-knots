@@ -88,14 +88,16 @@ Rachunki są nieco uciążliwe.
 
 \begin{proposition}
     Wielomianem Alexandera splotu torusowego $K(q, r) \neq K(0,0)$ o~$d$ składowych jest
-    \[
-        \alexander_{q, r}(t) = (-1)^{d-1} \frac{(1-t)(1 - t^{qr/d})^d}{(1-t^q)(1-t^r)} \left/t^{(q-1)(r-1)/2}\right. .
-    \]
+    \begin{equation}
+        \alexander_{K(q, r)}(t) = (-1)^{d-1} \frac{(1-t)(1 - t^{qr/d})^d}{(1-t^q)(1-t^r)} \cdot t^{-(q-1)(r-1)/2}.
+    \end{equation}
 \end{proposition}
 
+Powyższy fakt często pojawia się jako ćwiczenie w podręcznikach topologii.
+
 \begin{proof}
-    Macierzą Seiferta węzła torusowego $K(q,r)$ jest macierz
-    \[
+    Macierzą Seiferta węzła torusowego $K(q,r)$ jest macierz blokowa
+    \begin{equation}
         M = \begin{bmatrix}
             B & & & & \\
             -B & B & & & \\
@@ -103,17 +105,18 @@ Rachunki są nieco uciążliwe.
             & & \ddots & B & \\
             & & & -B & B
         \end{bmatrix}
-    \]
+    \end{equation}
     złożona z~$(r-1)^2$ bloków o~wymiarach $(q-1) \times (q-1)$:
-    \[
-        B \begin{bmatrix}
+    \begin{equation}
+        B = \begin{bmatrix}
             -1 & & & & \\
             1 & -1 & & & \\
             & 1 & \ddots & & \\
             & & \ddots & -1 & \\
             & & & 1 & -1
         \end{bmatrix} \qedhere
-    \]
+    \end{equation}
+    Pełny dowód można znaleźć w przykładzie 9.15 w książce \cite{burde85}, gdzie wyznaczono jakobian prezentacji grupy węzła $\langle x, y \mid x^py^{-q}\rangle$.
 \end{proof}
 
 Znajomość wielomianu Alexandera wystarcza na szczęście do podania pełnej klasyfikacji węzłów torusowych bez uciążliwego dowodu.
