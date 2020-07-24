@@ -79,28 +79,27 @@ co jest maksymalną możliwą wartością zgodnie z~naszym prostym ograniczeniem
 to węzeł jest $(2,p)$-torusowy albo wygląda jak diagram niewęzła po pierwszym ruchu Reidemeistera.
 
 % Liczba gordyjska nietrywialnego węzła skręconego (definicja \ref{twist_knots}) to jeden, wystarczy bowiem rozwiązać jego splecione końce.
-Patrz także stwierdzenie \ref{torus_unknotting}.
+Patrz także stwierdzenie \ref{torus_unknotting} o liczbie gordyjskiej węzłów torusowych.
 
-Suma dwóch węzłów $1$-gordyjskch jest $2$-gordyjska, pokazał to Scharleman.
-Od początku teorii węzłów podejrzewano dużo więcej:
+\begin{proposition}
+    \label{unknotting_one_prime}
+    Węzły $1$-gordyjskie są pierwsze.
+\end{proposition}
+
+Podejrzewał to H. Wendt w~1937 roku, kiedy policzył liczbę gordyjską węzła babskiego używając homologii rozgałęzionego nakrycia cyklicznego.
+
+\begin{proof}[Niedowód]
+    W pracy \cite{scharleman85} z~1985 roku M. Scharleman podał dość zawiłe uzasadnienie, w~które zamieszane były grafy planarne.
+    Obecnie znamy prostsze dowody, patrz \cite{lackenby97} albo \cite{zhang91}.
+\end{proof}
+
+Scharlemann pokazał w \cite[wniosek 1.6]{scharlemann98}, że liczba gordyjska jest podaddytywna, to znaczy zachodzi $u(K_1 \shrap K_2) \le u(K_1) + u(K_2)$.
+Stąd oraz z faktu \ref{unknotting_one_prime} wynika, że suma dwóch $1$-gordyjskich węzłów jest $2$-gordyjska, ale od początku teorii węzłów podejrzewano dużo więcej:
 
 \begin{conjecture}
     Niech $K, J$ będą węzłami.
     Wtedy $u(K \shrap J) = u(K) + u(J)$, czyli liczba gordyjska jest addytywna.
 \end{conjecture}
-
-Z tej nieudowodnionej do dzisiaj (stan na 2018) hipotezy można wyciągnąć wniosek,
-że jeśli do rozwiązania węzła wystarcza odwrócenie skrzyżowania, to jest pierwszy.
-Podejrzewał to H. Wendt w~1937 roku,
-kiedy policzył liczbę gordyjską węzła babskiego używając homologii rozgałęzionego nakrycia cyklicznego.
-
-\begin{proposition}
-    Węzły $1$-gordyjskie są pierwsze.
-\end{proposition}
-
-\begin{proof}[Niedowód]
-    W pracy \cite{scharleman85} z~1985 roku M. Scharleman podał dość zawiłe uzasadnienie, w~które zamieszane były grafy planarne.
-\end{proof}
 
 W pracy \cite{shimizu14} Ayaka Shimizu rozpatruje różne operacje, które rozwiązują węzły lub sploty.
 Na przykład zamiana pod- i nadskrzyżowań wokół obszaru na diagramie rozwiązuje węzły, ale nie sploty.
