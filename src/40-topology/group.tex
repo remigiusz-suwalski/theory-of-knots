@@ -1,21 +1,20 @@
-\section{Grupa węzła. Prezentacja Wirtingera} % (fold)
+\section{Grupa splotu. Prezentacja Wirtingera} % (fold)
 \label{sec:group_wirtinger}
-Kiedy mówimy o~grupie węzła,
-zazwyczaj mamy na myśli obiekt opisany poniżej,
-a nie grupę kolorującą z~definicji \ref{colgrp_def}.
-Nie należy ich mylić.
+
+Ponieważ dopełnienie dowolnego splotu, zarówno w przestrzeni $\R^3$ jak i $S^3$, jest łukowo spójne, jego grupa podstawowa nie zależy od wyboru punktu bazowego.
+Dzięki temu poniższa definicja ma sens:
 
 \begin{definition}
     \label{def:knot_group}
     \index{grupa!węzła}
-    Grupa węzła $K$ to grupa podstawowa jego dopełnienia, $\pi_1(\R^3 \setminus K)$.
+    Niech $L$ będzie splotem.
+    Grupę podstawową jego dopełnienia,  $\pi_1(\R^3 \setminus K)$, nazywamy grupą splotu.
 \end{definition}
 
-Przestrzeń $\R^3 \setminus K$ jest łukowo spójna,
-zatem powyższa definicja nie zależy od wyboru punktu bazowego.
-Oto grupy kilku najprostszych węzłów.
+Kiedy mówimy o~grupie węzła, zazwyczaj mamy na myśli obiekt opisany powyżej, a nie grupę kolorującą z~definicji \ref{colgrp_def}.
+Nie należy ich mylić, grupa węzła ma bowiem dużo większe znaczenie.
 
-% The group of a prime knot does not, however, necessarily determine the topological type of the exterior. Dehn hips [12, p. 2431 on certain “essential” solid tori in the exteriors of torus knots and of cable knots produce Haken manifolds that are homotopically equivalent but not homeomorphic to the original exteriors and that, in fact, cannot be imbedded in S3: Whitten, KNOT COMPLEMENTS AND GROUPS
+Podamy teraz kilka przykładów węzłów oraz ich grup.
 
 \begin{example}
     Niewęzeł: $\Z$.
@@ -33,15 +32,15 @@ Oto grupy kilku najprostszych węzłów.
     Węzeł ósemkowy: $\langle x, y \mid yxy^{{-1}}xy=xyx^{{-1}}yx \rangle$.
 \end{example}
 
+% The group of a prime knot does not, however, necessarily determine the topological type of the exterior. Dehn hips [12, p. 2431 on certain “essential” solid tori in the exteriors of torus knots and of cable knots produce Haken manifolds that are homotopically equivalent but not homeomorphic to the original exteriors and that, in fact, cannot be imbedded in S3: Whitten, KNOT COMPLEMENTS AND GROUPS
+
 \begin{proposition}
     \label{prop:knot_group_invariant}
     Grupa węzła jest niezmiennikiem węzłów.
 \end{proposition}
 
 \begin{proof}
-    Gdy dwa węzły są równoważne,
-    istnieje izotopijny z~identycznością homeomorfizm $\R^3 \to \R^3$,
-    który posyła pierwszy węzeł na drugi.
+    Gdy dwa węzły są równoważne, istnieje izotopijny z~identycznością homeomorfizm $\R^3 \to \R^3$, który posyła pierwszy węzeł na drugi.
     Obcięty do dopełnień węzłów indukuje izomorfizm grup podstawowych.
 \end{proof}
 
@@ -53,10 +52,16 @@ Oto grupy kilku najprostszych węzłów.
     Jest to wniosek 3 z~pracy \cite{feustel78}.
 \end{proof}
 
-Grupa podstawowa odróżnia od siebie dowolne dwa węzły pierwsze.
-Na przykładzie grupy $\langle x,y,z \mid xyx=yxy,xzx=zxz\rangle$,
-która odpowiada zarówno sumie prostej różno-, jak i~jednoskrętnych trójlistników,
-widać jednak, że nie jest niezmiennikiem zupełnym.
+\begin{proposition}
+    Niech $K, L$ będą węzłami pierwszymi.
+    Jeżeli ich grupy są izomorficzne, to same węzły są równoważne.
+\end{proposition}
+
+\begin{proof}
+    Jak piszą Gordon, Luecke w \cite{gordon89}, jest to bezpośredni wniosek z ich twierdzenia 2: nietrywialna chirurgia Dehna na nietrywialnym węźle nigdy nie daje $S^3$.
+\end{proof}
+
+Na przykładzie grupy $\langle x,y,z \mid xyx=yxy,xzx=zxz\rangle$, która odpowiada zarówno sumie prostej różno-, jak i~jednoskrętnych trójlistników, widać że założenia o pierwszości nie można pominąć.
 Prawdziwe jest ogólniejsze stwierdzenie:
 
 \begin{proposition}
@@ -66,17 +71,13 @@ Prawdziwe jest ogólniejsze stwierdzenie:
 
 \index{prezentacja Wirtingera}
 Wiemy więc już trochę o~nowym niezmienniku, ale nie umiemy go jeszcze wyznaczać.
-Jak zauważył Wilhelm Wirtinger około roku 1905 (!),
-grupa węzła zawsze posiada pewną specjalną prezentację,
-nazwaną na jego cześć prezentacją Wirtingera.
-Jest to skończona prezentacja, w~której wszystkie relacje są postaci $w g_i w^{-1} = g_j$,
-gdzie $w$ to pewne słowo na generatorach, $g_1, \ldots, g_k$.
-Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach,
-dowodząc jednocześnie jej istnienia.
+Jak zauważył Wilhelm Wirtinger około roku 1905, a więc jeszcze przed narodzinami teorii węzłów, grupa węzła zawsze posiada pewną specjalną prezentację, nazwaną na jego cześć prezentacją Wirtingera.
+Jest to skończona prezentacja, w~której wszystkie relacje są postaci $w g_i w^{-1} = g_j$, gdzie $w$ to pewne słowo na generatorach, $g_1, \ldots, g_k$.
+Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach, dowodząc jednocześnie jej istnienia.
 
 \begin{proposition}
     \label{prop:wirtinger}
-    Każdy węzeł posiada prezentację Wirtingera.
+    Grupa każdego węzła posiada prezentację Wirtingera.
 \end{proposition}
 
 \begin{proof}
@@ -123,13 +124,9 @@ dowodząc jednocześnie jej istnienia.
     Można też zauważyć, że abelianizacją grupy podstawowej węzła jest pierwsza grupa homologii okręgu, czyli $\Z$.
 \end{proof}
 
-Istnieje alternatywna prezentacja grupy węzła, która pochodzi od Dehna,
-gdzie zamiast etykietować łuki,
-przypisuje się różne litery czterem częściom płaszczyzny,
-które są rozcinane przez skrzyżowanie.
+Istnieje alternatywna prezentacja grupy węzła, która pochodzi od Dehna, gdzie zamiast etykietować łuki, przypisuje się różne litery czterem częściom płaszczyzny, które są rozcinane przez skrzyżowanie.
 Pomijamy tę prezentację dla oszczędności miejsca.
-Klasycznie (jak na przykład w~\cite{crowell63}) macierz, a~co za tym idzie,
-także wielomian Alexandera wprowadza się przy użyciu prezentacji Wirtingera i~pochodnej Foxa.
+Klasycznie (jak na przykład w~\cite{crowell63}) macierz, a~co za tym idzie, także wielomian Alexandera wprowadza się przy użyciu prezentacji Wirtingera i~pochodnej Foxa.
 Oryginalna praca Alexandera była jednak bliższa duchem pomysłom Dehna.
 
 \begin{definition}
