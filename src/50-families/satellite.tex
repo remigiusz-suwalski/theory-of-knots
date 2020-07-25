@@ -1,46 +1,70 @@
 \section{Węzły satelitarne} % (fold)
 \label{sec:satellite}
-Wyobraźmy sobie węzeł $K'$ leżący wewnątrz trywialnego torusa $V$ tak, by nie zawierał się w~żadnej mieszczącej się w~tym torusie 3-kuli.
-Zawiążmy następnie torus $V$: ustalmy włożenie $f \colon V \to S^3$.
-Splot $K = f(K')$ orbituje wokół swojego kompana, tj. obrazu rdzenia torusa przez włożenie $f$ i~nie opuszcza jego małego rurowego otoczenia.
-Dość nieprzypadkowo splot $K$ nazywamy satelitarnym, zaś obraz rdzenia -- węzłem towarzyszącym.
-Konstrukcja satelity jest, w~porównaniu z~sumą spójną, dość zawiła.
-Pożądanym byłoby mieć do dyspozycji więcej operacji rozkładających węzły na prostsze, i~badać nierozkładalne obiekty.
-Ale ich nie ma.
+% meridian - południk
+% longitude - równoleżnik
+Załóżmy, że w dopełnieniu pewnego splotu został zanurzony torus.
+Jeżeli jest ściśliwy, to albo równoleżnikl torusa ogranicza dysk w dopełnieniu splotu~i torus jest niezawęźlony, albo południk ogranicza dysk w dopełnieniu splotu i~splot nie przebiega wzdłuż torusa.
+Żadna z~tych sytuacji nie jest ciekawa.
+Inny zdegenerowany przypadek występuje, gdy torus stanowi rurowe otoczenie jednego z~ogniw splotu.
+W przeciwnym razie splot można zbudować z~prostszych obiektów.
 
-Torus $f(\partial V)$ nie jest równoległy do brzegu ani ściśliwy.
-Odwrotnie, jeśli w~dopełnieniu węzła mamy torus, którego południk lub równoleżnik ogranicza dysk, to węzeł nie biegnie wzdłuż torusa lub ten jest niezawęźlony.
-Przypadek, gdy torus jest otoczeniem rurowym węzła, też nie jest ciekawy.
-To motywuje następującą definicję.
+Oto formalny opis konstrukcji.
+Niech $W$ będzie pełnym torusem.
+Dysk zanurzony w $W$, którego brzeg stanowi nieściągalną pętlę w $\partial W$, nazywamy południkowym.
+Mówimy, że zamknięta krzywa $\lambda \subseteq W$ jest właściwa, jeżeli przecina wszystkie dyski południkowe.
 
-\begin{definition}
+\begin{definition}[węzeł satelitarny]
     \index{węzeł!satelitarny}
-    Węzeł nazywamy satelitarnym, jeśli zawiera nieściśliwy, nierównoległy do brzegu torus we własnym dopełnieniu.
+    Niech $P$ będzie splotem zanurzonym w~niezawęźlonym torusie $W$ tak, by co najmniej jedno z~ogniw stanowiło właściwą pętlę w~$W$.
+    Niech $C$ będzie węzłem, zaś $V$ jego rurowym otoczeniem.
+    Wybierzmy dowolny homeomorfizm $h \colon W \to V$.
+    Wtedy splot $S = h(P)$ nazywamy satelitą o~wzorcu $P$ oraz towarzyszu $C$.
 \end{definition}
 
-Klasa węzłów satelitarnych obejmuje węzły złożone.
-W ich przypadku można wskazać pewien szczególny torus nieściśliwy -- połykający pierwszy składnik, a~potem podążający za drugim.
-Świetnie przedstawione jest to na stronie 82 książki \cite{cromwell04} Cromwella.
-Niektóre węzły przedstawiają się jako satelity w~dokładnie jeden sposób, inne nie są jednoznaczne.
-W \cite{jaco79} ulepszono definicję satelitarności do tzw. \emph{splicing}u i~opisano jednoznaczny rozkład Jaco-Shalena-Johannsona, czego prawdziwość przypuszczał wcześniej Waldhausen.
-Żaden węzeł torusowy ani trywialny nie jest satelitą, ale są nimi kable oraz duble Whiteheada.
+% \begin{definition}
+%     Węzeł nazywamy satelitarnym, jeśli zawiera nieściśliwy, nierównoległy do brzegu torus we własnym dopełnieniu.
+% \end{definition}
 
-\begin{definition}
+Hoste i inni podejrzewają w~\cite{thistlethwaite98}, że jeśli satelita owija się $m$-krotnie wokół torusa, zaś indeks skrzyżowaniowy towarzysza wynosi $k$, to satelita nie posiada diagramu o~mniej niż $km^2$ skrzyżowaniach.
+
+Ponieważ dla trójlistnika $k = 3$, napotkali się tylko na satelity owijające się $m = 2$ razy podczas tablicowania pierwszych węzłów do 16 skrzyżowań.
+Nie spodziewano się żadnego satelity ósemki, gdyż wtedy $k = 4$, zatem każdy satelita miałby co najmniej $4 \cdot 2^2 + 1 = 17$ skrzyżowań: dodatkowe $+1$ jest potrzebne, by nie dostać splotu o~dwóch ogniwach.
+
+Najprostszy satelita ma 13 skrzyżowań.
+
+\begin{example}[swallow-follow torus]
+	Klasa węzłów satelitarnych obejmuje węzły złożone.
+	W ich przypadku można wskazać pewien szczególny torus nieściśliwy -- połykający pierwszy składnik, a~potem podążający za drugim.
+	Świetnie przedstawione jest to na stronie 82 książki \cite{cromwell04} Cromwella.
+\end{example}
+
+Schubert pokazał, że zorientowane klasy izotopii węzłów w~$S^3$ tworzą wolny przemienny monoid na przeliczalnie wielu generatorach.
+Dowód to uważna analiza nieściśliwych torusów obecnych w~dopełnieniu sumy spójnej.
+To doprowadziło go do definicji węzłów satelitarnych i~towarzyszących w~przełomowej pracy \cite{schubert53} oraz zunifikowało teorię 3-rozmaitości z teorią węzłów.
+Patrz też \cite{motegi97}.
+% czemu akurat Motegi?
+
+Na brzegu torusa $V$ można wprowadzić pewien układ współrzędnych: południk to pętla właściwa w $\partial V$, która ogranicza dysk w $V$, natomiast równoleżnik to pętla w $\partial V$, która spotyka południk raz.
+Z~dokładnością do izotopii południk jest jeden, ale równoleżnik nie.
+Gdy indeks zaczepienia równoleżnika oraz rdzenia torusa wynosi zero, mówimy, że równoleżnik jest preferowany.
+
+\begin{definition}[dubel Whiteheada]
     \index{dubel Whiteheada}
-    Jeżeli $K' \subseteq V$ jest skręconym jednokrotnie niewęzłem, to węzeł $K$ nazywamy dublem Whiteheada.
+    Jeżeli $P \subseteq W$ jest skręconym jednokrotnie niewęzłem, to węzeł $S$ nazywamy dublem Whiteheada.
 \end{definition}
 
 Każdy węzeł posiada nieskończenie wiele dubli Whiteheada: wystarczy rozciąć torus $V$, skręcić jedną końcówkę i~ponownie zszyć, żaden z~nich nie jest odróżniany od niewęzła przez wielomian Alexandera.
 
-\begin{definition}
-    \index{węzeł!kablowy}
-    Jeżeli $K' \subseteq \partial V$ jest węzłem torusowym,    to $K$ nazywamy węzłem kablowym.
-\end{definition}
+Wyróżnia się pewien szczególny homeomorfizm $h$, który przenosi południk i preferowany równoleżnik $W$ na południk i preferowany równoleżnik $V$.
+Nazywamy go wiernym.
+% faithful
+O dublu względem wiernego homeomorfizmu mówimy, że jest nieskręcony.
 
-Satelita, którego indeks zawijający przekracza dwa, ma co najmniej 27 skrzyżowań.
-Jeśli jego kompan to ósemka -- co najmniej siedemnaście.
-Oprócz tego istnieją cztery satelity o~ponad dwunastu skrzyżowaniach.
-Podejrzewa się, że satelita, który wykonuje $m$ pełnych obrotów wokół kompana o~indeksie skrzyżowaniowym $k$, nie posiada diagramu o~mniej niż $km^2$ skrzyżowaniach.
+\begin{definition}[węzeł kablowy]
+	\index{węzeł!kablowy}
+	Niech $h \colon W \to V$ będzie wiernym homeomorfizmem, zaś $P$ węzłem $(p, q)$-torusowym.
+	Satelitę $S$ nazywamy węzłem $(p, q)$-kablowym albo krótko kablem.
+\end{definition}
 
 \begin{proposition}
     Każdy kabel wyznacza jednoznacznie węzeł, z~którego powstał.
@@ -51,9 +75,32 @@ Podejrzewa się, że satelita, który wykonuje $m$ pełnych obrotów wokół kom
     Wiemy jednak z~twierdzenia Gordona-Lueckego, że różne węzły mają różne dopełnienia.
 \end{proof}
 
-Schubert pokazał, że zorientowane klasy izotopii węzłów w~$S^3$ tworzą wolny przemienny monoid na przeliczalnie wielu generatorach.
-Dowód to uważna analizua nieściśliwych torusów obecnych w~dopełnieniu sumy spójnej.
-To doprowadziło go do definicji węzłów satelitarnych i~towarzyszących w~przełomowej pracy \cite{schubert53} oraz zunifikowało teorię 3-rozmaitości z teorią węzłów.
-Patrz też \cite{motegi97}.
+Niewęzeł nie ma nietrywialnych węzłów towarzyszących.
+
+\begin{definition}
+	Towarzysza $C$ nietrywialnego splotu nazywamy właściwym, jeśli nie jest niewęzłem i~nie jest ogniwem tego splotu.
+\end{definition}
+
+Sploty bez właściwych towarzyszy określa się zazwyczaj terminem ,,atoroidalny''.
+Patrz też diagram przedstawiony w {cromwell04} na stronie 83.
+
+\begin{proposition}
+	Duble nietrywialnych węzłów oraz kable są pierwsze.
+\end{proposition}
+
+\begin{proof}
+	Jest to wniosek z twierdzenia 4.4.1 w~\cite{cromwell04}: jeśli wzorzec jest niewęzłem lub węzłem pierwszym, to każdy właściwy satelita jest pierwszy.
+\end{proof}
+
+Niektóre węzły przedstawiają się jako satelity w~dokładnie jeden sposób, inne nie.
+Rok 1979 przyniósł amerykańską pracę \cite{jaco79} oraz niemiecką książkę \cite{johannson79}, gdzie niezależnie od siebie opisano jednoznaczny rozkład, nazywany teraz rozkładem Jaco-Shalena-Johannsona:
+
+\begin{proposition}
+	Niech $M$ będzie nierozkładalną, orientowalną, domkniętą 3-rozmaitością.
+	Istnieje wtedy jedyna z dokładnością do izotopii minimalna rodzina rozłącnzie zanurzonych nieściśliwych torusów tak, że każda składowa 3-rozmaitości powstałej przez rozcinanie wzdluż torusów jest atoroidalna lub włóknistą przestrzenią Seiferta ($S^1$-wiązką nad dwuwymiarowym orbifoldem).
+\end{proposition}
+
+Jest on związany z operacją splatania (ang. \emph{splicing}), będącej uogólnieniem budowania satelitów.
+Hipotezę o jedyności rozkładu wysnuł wcześniej Waldhausen.
 
 % Koniec sekcji Węzły satelitarne
