@@ -178,7 +178,64 @@ Co bardziej dramatyczne, Kanenobu wskazał przy użyciu elementarnych metod (!) 
 \end{proposition}
 
 \begin{proof}[Niedowód]
-    Węzły w tej rodzinie posiadają nieizomorficzne moduły Alexandera, więc są parami różne.
+    Rozpatrzmy rodzinę węzłów $K(p, q)$, gdzie całkowite liczby $p, q$ oznaczają ile razy wykonano pełny skręt wewnątrz prostokąta:
+    \[
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.08]
+        \begin{knot}[clip width=3, flip crossing/.list={1,3,6,7}]
+        \strand [semithick] (0, 25)
+            [in=left, out=right] to (20, 25)
+            [in=up, out=right] to (25, 5)
+            [in=down, out=down] to (15, 5)
+            [in=right, out=up] to (10, 20)
+            [in=up, out=left] to (5, 15)
+            [in=up, out=down] to (5, 5)
+            [in=left, out=down] to (15, -10)
+        ;
+        \strand [semithick] (15, -10)
+            [in=down, out=right] to (20, 10)
+            [in=up, out=up] to (30, 10)
+            [in=right, out=down] to (20, -25)
+            [in=down, out=left] to (5, -20)
+            [in=down, out=up] to (5, -10)
+        ;
+        \strand [semithick] (5, -10)
+            [in=down, out=up] to (15, 0)
+            [in=right, out=up] to (0, 5)
+            [in=up, out=left] to (-15, 0)
+            [in=up, out=down] to (-5, -10)
+            ;
+        \strand [semithick] (-15, -10)
+            [in=down, out=left] to (-20, 10)
+            [in=up, out=up] to (-30, 10)
+            [in=left, out=down] to (-20, -25)
+            [in=down, out=right] to (-5, -20)
+            [in=down, out=up] to (-5, -10)
+        ;
+        \strand [semithick] (0, 25)
+            [in=right, out=left] to (-20, 25)
+            [in=up, out=left] to (-25, 5)
+            [in=down, out=down] to (-15, 5)
+            [in=left, out=up] to (-10, 20)
+            [in=up, out=right] to (-5, 15)
+            [in=up, out=down] to (-5, 5)
+            [in=right, out=down] to (-15, -10)
+        ;
+        \draw[fill=blue!10!white] (-5, 10) rectangle (5, 15);
+        \draw[fill=blue!10!white] (-5, -17.5) rectangle (5, -12.5);
+        \node at (0, 12.5) {$p$};
+        \node at (0, -15) {$q$};
+        \end{knot}
+        \end{tikzpicture}
+    \]
+    I tak zachowując oznaczenia z pracy \cite{kanenobu86} prawdą jest, że:
+    \begin{enumerate}
+        \item $K(p,q) \approx K(q,p)$ (lemat 1),
+        \item węzły $K(p,q)$ i $K(p', q')$ mają ten sam moduł Alexandera wtedy i tylko wtedy, gdy $|p-q| = |p'-q'|$ (lemat 2),
+        \item węzły $K(p,q)$ i $K(p', q')$ mają ten sam wielomian Jonesa (HOMFLY) wtedy i tylko wtedy, gdy $p+q = p'+q'$ (lemat 3).
+    \end{enumerate}
+    Wynika stąd, że węzły $K(p, q)$, gdzie $p \ge q$, są parami różne.
+    Dalej, węzeł $K(p,q)$ jest amfichiralny wtedy i tylko wtedy, gdy $p + q = 0$, zawsze trzymostowy (lemat 4) i hiperboliczny dokładnie wtedy, gdy $(p, q) \neq (0, 0)$.
+    Autor twierdzi, że dowód włóknistości, taśmowości i~bycia genusu $2$ zamieścił wcześniej w~\cite{kanenobu81}.
 \end{proof}
 
 Zaletą wielomianu HOMFLY jest to, że często wykrywa chiralność (węzeł chiralny nie jest równoważny swemu lustrzanemu odbiciu), ale nie odróżnia enancjomerów węzłów $9_{42}$, $10_{48}$, $10_{71}$, $10_{91}$, $10_{104}$, oraz $10_{125}$.
