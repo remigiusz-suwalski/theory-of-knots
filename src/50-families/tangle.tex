@@ -7,7 +7,7 @@ Conway wprowadził pojęcie supła i~chociaż wszystkich węzłów nie można z~
 Supły stanowią budulec splotów takich jak na przykład precle z~definicji \ref{def:pretzel}.
 
 Sekcja oparta jest na podręczniku Murasugiego \cite{murasugi96} i~pracach \cite{conway70}, \cite{kauffman97}, \cite{kauffman04}, a~także \cite{schubert56}.
-Po raz pierwszy z~supłami zetknęliśmy się w~pracy \cite{janiak04}, także czerpiącej inspirację z~\cite{murasugi96}, choć podejrzewamy, że konwencje nazewnicze w tych pracach wzajemnie wykluczają się.
+Supły występują także w polskojęzycznym artykule \cite{janiak04}, ten zawiera jednak nieprzyjemną pułapkę: wprowadza konwencję sprzeczną z~powszechnie akceptowaną notacją.
 
 \begin{definition}[supeł]
     \label{def:tangle}
@@ -19,7 +19,7 @@ Istnieją dwa rodzaje supłów -- naprzemienne i~sąsiadujące.
 \input{50-families/tangle_01}
 
 Podobnie jak dla węzłów, pojawia się naturalne pytanie o~równoważność dwóch supłów.
-Jest tak wtedy, gdy istnieje homeomorfizm* kuli na siebie, który przekształca jeden supeł na drugi, ale nie rusza sfery otaczającej.
+Jest tak wtedy, gdy istnieje homeomorfizm kuli na siebie, który przekształca jeden supeł na drugi, ale nie rusza sfery otaczającej.
 Dla diagramów odpowiada to ruchom Reidemeistera, nie mamy jednak prawa opuszczać kuli zawierającej supeł.
 
 Wszystkich supłów jest bardzo dużo, więc ograniczymy się do końca rozdziału do pewnej ich regularnej rodziny.
@@ -31,30 +31,55 @@ Oto cztery podstawowe supły:
     Supły powstające z~$(0)$ lub $(\infty)$ przez homeomorfizm kuli na siebie permutujący wejścia i~wyjścia nazywamy wymiernymi.
 \end{definition}
 
-Wystarczy się przy tym ograniczyć do ciągu obrotów półsfery dolnej (SW--SE) oraz lewej (SW--NW)
-Z obrotami prawoskrętnymi wiążemy liczby dodatnie, natomiast z~lewoskrętnymi -- ujemne.
-Otrzymujemy tak pewną krotkę $(a_1, \ldots, a_n)$.
-Jeśli $n$ jest parzyste, zaczynamy od supła $(\infty)$, jeśli nie -- od $(0)$.
-Ostatni obrót dotyczy półsfery dolnej.
-Krotka nie jest jeszcze niezmiennikiem supłów (gdyż $(-2,3,3) \cong (3, -2, 3)$), ale nic straconego.
-Potrzebować będziemy prostej definicji, uzasadniającej określenie ,,supły wymierne''.
-% Conway pokazał, że dla dowolnego supła przy pomocy wielomianu Alexandera zdefiniować można  pewien ułamek.
+Pokażemy teraz, jak zamienić dowolny skończony ciąg liczb całkowitych w~supeł, jako że jest to prostsze od procesu odwrotnego.
+Nazwijmy jednak najpierw dwa rodzaje skrętów:
+\[
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+    \useasboundingbox (-10, -10) rectangle (10, 5);
+    \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={2}]
+        \strand[semithick] (-10, -5) [out=right, in=left] to (0, 5) to (10, -5);
+        \strand[semithick] (-10, 5) [out=right, in=left] to (0, -5);
+        \strand[semithick] (0, -5) [out=right, in=left] to (10, 5);
+        \node at (0, -9) {prawy skręt};
+    \end{knot}
+    \end{tikzpicture}
+    \quad\quad\quad
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
+    \useasboundingbox (-10, -10) rectangle (10, 5);
+    \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
+        \strand[semithick] (-10, -5) [out=right, in=left] to (0, 5) to (10, -5);
+        \strand[semithick] (-10, 5) [out=right, in=left] to (0, -5);
+        \strand[semithick] (0, -5) [out=right, in=left] to (10, 5);
+        \node at (0, -9) {lewy skręt};
+    \end{knot}
+    \end{tikzpicture}
+\]
+
+Mając ciąg $(a_1, a_2, \ldots, a_n)$ wykonujemy naprzemiennie obroty półsferą dolną (SW--SE, takie nazywamy pionowymi) oraz prawą (SW--NW, a takie poziomymi) tak, by ostatni był obrót poziomy.
+Oto reguła zgodnie z którą wybieramy kierunek obrotów.
+Podczas pionowych obrotów, prawy skręt jest dodatni, zaś lewy ujemny.
+Podczas poziomych, zamieniamy znaki: prawy odpowiada ujemnym wyrazom ciągu, lewy dodatnim.
+Wreszcie, jeżeli $n$ jest nieparzyste, zaczynamy od supła $T(0)$, w przeciwnym razie od supła $T(0, 0)$.
+
+Różnym ciągom mogą odpowiadać te same supły, na przykład $T(-2, 3, 3) = T(3, -2)$, więc notacja nie jest jednoznaczna, ale to nic złego.
+Każdemu supłowi przypiszmy pewną liczbę wymierną, według przepisu:
+\begin{equation}
+    T(a_1, a_2, \ldots, a_n) \mapsto a_n + \frac{1}{\ldots + 1/a_1} = \frac \alpha \beta.
+\end{equation}
 
 \begin{proposition}
 \label{prp:continued_fractions}
-    Istnieje bijekcja między klasami supłów wymiernych oraz łańcuchowymi ułamkami, które je przedstawiają:
-    \[
-        \frac \alpha \beta = a_n + \frac{1}{a_{n-1} + 1 / (a_{n-2} +  \ldots + 1/a_1)} \in \Q \cup \{\infty\}.
-    \]
+    Istnieje bijekcja między typami supłów wymiernych oraz ułamkami łańcuchowymi.
 \end{proposition}
 
-\begin{proof}
-    Praca \cite{conway70} Conwaya.
+\begin{proof}[Niedowód]
+    Praca \cite{conway70} Conwaya, strony 331-332.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}[ćwiczenie 9.2.6 w \cite{murasugi96}]
 \label{prp:continued_fractions_2}
-    Supły o~łańcuchowych ułamkach różnych od $0$ i~$\infty$ można kodować ciągami liczb całkowitych tego samego znaku.
+    Niech $T(a_1, a_2, \ldots, a_n)$ będzie supłem różnym od $0$ oraz $\infty$.
+    Wtedy bez straty ogólności można założyć, że wszystkie liczby $a_i$ są tego samego znaku.
 \end{proposition}
 
 Z każdym supłem $T$ związane jest jego odbicie $\overline T$, obraz wyjściowego przez symetrię względem prostej $y = -x$.
@@ -67,9 +92,10 @@ Rodzina supłów wymiernych jest zamknięta na branie produktów, ale nie sum.
 Wprowadzamy więc następującą, ogólniejszą definicję.
 Supeł będący skończoną sumą supłów wymiernych, ich luster, odbić lub odbić luster nazywamy algebraicznym.
 
-\begin{definition}[notacja Conwaya]
+\begin{tobedone}[notacja Conwaya]
     \label{conway_notation}
-\end{definition}
+    ???
+\end{tobedone}
 
 Przez zszycie par łuków wejściowych (lub wyjściowych) zamieniamy supły w~węzły:
 \input{50-families/tangle_04}
@@ -90,13 +116,12 @@ Nazewnictwo nie jest przypadkowe. %, wrócimy do tego tematu wkrótce.
     Praca \cite{conway70} Conwaya.
 \end{proof}
 
-Istnieją supły $T_1$, $T_2$ takie, że węzły $N(T_i)$ są nietrywialne, ale $N(T_1 + T_2)$ to niewęzeł.
-Co gorsza, dla każdego wymiernego supła $A$ istnieje taki supeł $B$, że $N(A+B)$ jest niewęzłem.
+% Istnieją supły $T_1$, $T_2$ takie, że węzły $N(T_i)$ są nietrywialne, ale $N(T_1 + T_2)$ to niewęzeł.
+% Co gorsza, dla każdego wymiernego supła $A$ istnieje taki supeł $B$, że $N(A+B)$ jest niewęzłem.
 
-Praca \cite{conway70} zawiera jeszcze jeden ciekawy rezultat, uogólniony przez Lickorisha i~Milletta w~\cite{lickorish87}.
-Przyjmijmy następujące skróty: niech $A_n = P_{N(A)}(x,y)$, $A_d = P_{D(A)}(x,y)$.
-
-\begin{proposition}
+\begin{tobedone}
+    Praca \cite{conway70} zawiera jeszcze jeden ciekawy rezultat, uogólniony przez Lickorisha i~Milletta w~\cite{lickorish87}.
+    Przyjmijmy następujące skróty: niech $A_n = P_{N(A)}(x,y)$, $A_d = P_{D(A)}(x,y)$.
     Dla dowolnych supłów $A, B$ mamy
     \[
     (1 - (x+y)^2)(A+B)_n = (A_nB_d + A_dB_n) - (x+y)(A_nB_n+  A_dB_d)
@@ -105,12 +130,9 @@ Przyjmijmy następujące skróty: niech $A_n = P_{N(A)}(x,y)$, $A_d = P_{D(A)}(x
     \[
         (A+B)_d = A_dB_d.
     \]
-\end{proposition}
-
-Uwaga, zastosowano tu nieco inną parametryzację wielomianu HOMFLY.
+    Uwaga, zastosowano tu nieco inną parametryzację wielomianu HOMFLY.
+\end{tobedone}
 
 \input{50-families/tangle-bridge}
 
 \input{50-families/tangle-mutants}
-
-% Koniec sekcji Supły

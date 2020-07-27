@@ -1,11 +1,8 @@
 \subsection{Sploty o~dwóch mostach} % (fold)
 \label{sub:twobridge}
-
-% \todo[inline]{sygnatura: Murasugi, 192.}
-
-Zajmiemy się teraz indeksem mostowym.
+Zajmiemy się teraz związkiem supłów z indeksem mostowym.
 Wiemy, że węzeł trywialny jest jednomostowy, następne w hierarchii są sploty dwumostowe.
-Nazywa się je także wymiernymi, po angielsku czasami także \emph{4-plats}.
+Nazywa się je także wymiernymi, po angielsku czasami \emph{4-plats}.
 Jako pierwszy studiował je Bankwitz z~Schumannem w~1934 roku.
 Mają co najwyżej dwie składowe i~są odwracalne.
 
@@ -17,26 +14,15 @@ Mają co najwyżej dwie składowe i~są odwracalne.
     Prosty wniosek z~tego, że liczba mostowa prawie jest addytywna (fakt \ref{bridge_additive}).
 \end{proof}
 
-\begin{proposition}
-    Sploty dwumostowe są alternujące.
-\end{proposition}
+\begin{corollary}
+    \label{prp:two_bridge_hyperbolic}
+    Węzły dwumostowe są $(\pm 2, n)$-torusowe albo hiperboliczne.
+\end{corollary}
 
 \begin{proof}
-    Goodrick w~\cite{goodrick72} podał diagramatyczny dowód, gdzie ciąg ruchów zmienia diagram splotu dwumostowego w~alternujący.
-\end{proof}
-
-\begin{proposition}
-\label{prp:two_bridge_tangle}
-    Sploty z~dwoma mostami to dokładnie sploty typu $D(T)$ dla pewnego supła wymiernego $T$.
-\end{proposition}
-
-\begin{proposition}
-\label{prp:two_bridge_hyperbolic}
-    Węzły dwumostowe, które nie są $(\pm 2, n)$-torusowymi, muszą być hiperbolicznymi.
-\end{proposition}
-
-\begin{proof}
-    Podręcznik \cite{murasugi96} Murasugiego, twierdzenie 9.3.3 na stronie 138.
+    Skorzystajmy z trychotomii Thurstona: węzły dwumostowe są pierwsze, zatem nie są satelitarne.
+    Pozostało rozpatrzyć przypadek, kiedy nie są hiperboliczne.
+    Teza wynika wtedy bezpośrednio z faktu \ref{torus_bridge}, który głosi, że $br(T_{p, q}) = \min\{|p|, |q|\}$.
 \end{proof}
 
 %\todo[inline]{Murasugi Theorem 9.3.3 (138) lub Janiak-Osajca, Pogoda (34).}
@@ -45,25 +31,44 @@ Mają co najwyżej dwie składowe i~są odwracalne.
 % Man kann stets erreichen, dass alle {\displaystyle a_{i}} a_{i} dasselbe Vorzeichen haben.[1] Insbesondere gibt die Conway-Normalform dann ein alternierendes Knotendiagramm.[2]
 %Insbesondere ist ein 2-Brücken-Knoten genau dann amphichiral, wenn {\displaystyle q^{2}\equiv -1\ mod\ p} q^{2}\equiv -1\ mod\ p ist.
 
-Każdy splot dwumostowy można przedstawić następującym diagramem:
-\input{50-families/tangle_05}
+\begin{proposition}
+\label{prp:two_bridge_tangle}
+    Sploty z~dwoma mostami to dokładnie sploty typu $D(T)$ dla pewnego supła wymiernego $T$.
+\end{proposition}
 
-% \todo[inline]{Uwaga: Janiak-Osajca, Pogoda definiują osobny diagram o~$2k$ skrętach!}
+Dowód tego stwierdzenia znaleźć można na przykład w książce \cite{murasugi96}, strony 183-187.
+Wynika z niego, że każdy splot dwumostowy można przedstawić następującym diagramem:
+\input{50-families/tangle_05}
 
 Oto reguła, zgodnie z~którą wybieramy znaki liczb $a_i$:
 jeśli $i$ jest nieparzyste, prawy skręt jest dodatni, jeśli parzyste -- lewy jest dodatni.
 Sam diagram oznaczamy $C(a_1, \ldots, a_{2k+1})$ i~nazywamy postacią normalną Conwaya.
-Przez analogię do supłów, definiujemy ułamek łańcuchowy
-\[
-    \frac \alpha \beta = a_1 + \frac{1}{a_2 + 1/\ldots}
-\]
-
-Wartość bezwzględna ułamka $\alpha/\beta$ zawsze przekracza $1$ i~odwrotnie, każdy taki ułamek pochodzi od pewnego węzła.
-Parę $(\alpha, \beta)$ (o względnie pierwszych współrzędnych) nazywamy typem węzła dwumostowego.
 
 \begin{proposition}
-\label{prp:tangle_equivalence}
-    Dwumostowe sploty typów $(\alpha, \beta)$ oraz $(\alpha', \beta')$ są (pomijając orientację) równoważne wtedy i~tylko wtedy, gdy $\alpha = \alpha'$ i~$\beta \equiv \beta'$ lub $\beta \beta'\equiv 1$ modulo $\alpha$.
+    % Murasugi proposition 9.3.2
+    Sploty dwumostowe są alternujące.
+\end{proposition}
+
+\begin{proof}
+    Goodrick w~\cite{goodrick72} podał diagramatyczny dowód, gdzie ciąg ruchów zmienia diagram splotu dwumostowego w~alternujący.
+    Wynika to też z faktu \ref{prp:continued_fractions_2}.
+\end{proof}
+
+Przez analogię do supłów, definiujemy ułamek łańcuchowy
+\begin{equation}
+    C(a_1, \ldots, a_{2k+1}) \mapsto a_1 + \frac{1}{a_2 + 1/\ldots} = \frac \alpha \beta.
+\end{equation}
+
+Zauważmy, że wartość bezwzględna ułamka $\alpha/\beta$ zawsze przekracza $1$ i~odwrotnie, każdy taki ułamek pochodzi od pewnego węzła dwumostowego.
+Parę względnie pierwszych liczb $(\alpha, \beta)$ nazywamy typem węzła dwumostowego.
+
+\begin{proposition}
+    \label{prp:tangle_equivalence}
+    Dwumostowe sploty typów $(\alpha, \beta)$ oraz $(\alpha', \beta')$ są, pomijając orientację, równoważne wtedy i~tylko wtedy, gdy spełniony jest jeden z warunków:
+    \begin{itemize}
+        \item $\alpha = \alpha'$ oraz $\beta \equiv \beta' \pmod \alpha$,
+        \item $\alpha = \alpha'$ oraz $\beta \beta' \equiv 1 \pmod \alpha$.
+    \end{itemize}
 \end{proposition}
 
 \begin{proof}
@@ -72,25 +77,57 @@ Parę $(\alpha, \beta)$ (o względnie pierwszych współrzędnych) nazywamy type
 \end{proof}
 
 \begin{proposition}
-\label{prp:chiral_tangles}
+    \label{prp:chiral_tangles}
     Splot typu $(\alpha, \beta)$ jest achiralny dokładnie, gdy $\beta^2 \equiv -1 \mod \alpha$.
 \end{proposition}
 
-Węzłów dwumostowych nie można odróżniać od siebie samym wyznacznikiem, gdyż prawdziwe jest następujące stwierdzenie.
+Cztery kolejne stwierdzenia to fakt 9.3.4 w \cite{murasugi96}:
 
 \begin{proposition}
-\label{prp:tangle_determinant}
+    Niech $b$ będzie dowolną liczbą całkowitą.
+    Wtedy następujące sploty są tego samego typu:
+    \begin{align}
+        N(T(a_1, a_2, \ldots, a_{2k+1})) & \approx N(T(a_1, a_2, \ldots, a_{2k+1}, b, 0)) \\
+                                         & \approx D(T(-a_1, -a_2, \ldots, -a_{2k+1}, b)) \\
+                                         & \approx C(a_1, a_2, \ldots, a_{2k}-1, 1). \\
+        N(T(a_1, a_2, \ldots, a_{2k}))   & \approx D(T(-a_1, -a_2, \ldots, -a_{2k}, b)) \\
+                                         & \approx C(a_1, a_2, \ldots, a_{2k}-1, 1). \\
+        D(T(a_1, a_2, \ldots, a_{2k+1})) & \approx D(T(a_1, a_2, \ldots, a_{2k}, 0)) \\
+                                         & \approx C(1, a_1-1, a_2, \ldots, a_{2k}). \\
+        D(T(a_1, a_2, \ldots, a_{2k}))   & \approx D(T(a_1, a_2, \ldots, a_{2k-1}, 0)) \\
+                                         & \approx C(a_1, a_2, \ldots, a_{2k-1}).
+    \end{align}
+\end{proposition}
+
+\begin{proposition}
+    \label{prp:tangle_determinant}
     Wyznacznikiem dwumostowego splotu typu $(\alpha, \beta)$ jest $\alpha$.
 \end{proposition}
 
+Wynika stąd, że wyznacznik nie wystarcza do odróżniania splotów dwumostowych.
+
 \begin{proof}
-    Chcąc oszczędzić niektórym Czytelnikom cierpień odsyłamy po prostu do \cite{schubert56}.
+    % Chcąc oszczędzić niektórym Czytelnikom cierpień odsyłamy po prostu do \cite{schubert56}.
+    \url{https://math.stackexchange.com/questions/3327846/}.
 \end{proof}
+
+Niech $A, B$ będą supłami.
+Wiemy, że suma $A+B$ nie musi być supłem, zaś $D(A+B)$ niekoniecznie jest splotem dwumostowym.
+Pomimo to, splot $N(A+B)$ jest dwumostowy, potrafimy nawet powiedzieć, jaki ma wyznacznik:
+
+\begin{proposition}
+    % Theorem 9.3.5 Murasugi
+    \label{prp:tangle_determinant_correct}
+    Niech $A, B$ będą supłami, którym odpowiadają skrócone ułamki $p/q$ oraz $r/s$.
+    Wtedy splot $L = N(A+B)$ jest dwumostowy, typu $(\alpha, \beta)$ i ma wyznacznik $\alpha = |ps + qr|$.
+\end{proposition}
+
+Murasugi (twierdzenie 9.3.5) twierdzi, że dowód znajduje się w \cite{ernst90}.
 
 \begin{proposition}
 \label{prp:tangle_signature}
     Rozpatrzmy węzeł dwumostowy typu $(\alpha, \beta)$, gdzie $0 < \beta < \alpha$ i~$\beta$ jest nieparzyste.
-    Niech $r_i$ będzie resztą z~dzielenia $i\beta$ przez $2\alpha$ leżącą w~przedziale $(-\alpha, \alpha)$ dla $i = 0, 1, \ldots, \alpha - 1$.
+    Niech $r_k$ będzie resztą z~dzielenia $k\beta$ przez $2\alpha$ leżącą w~przedziale $(-\alpha, \alpha)$ dla $k = 0, 1, \ldots, \alpha - 1$.
     Różnica między ilością dodatnich reszt i~ujemnych reszt to sygnatura węzła.
 \end{proposition}
 
