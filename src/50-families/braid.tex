@@ -188,22 +188,25 @@ Problem, czy dwa słowa prezentują równoważne węzły -- nie.
 \index{reprezentacja Burau}
 Na zakończenie sekcji wspomnijmy o~macierzowej reprezentacji Burau.
 Wyznaczona jest ona przez obrazy generatorów:
-\[
+\begin{equation}
     \varphi(\sigma_i) = I_{i-1} \oplus \begin{pmatrix}
         1-t & t \\
         1   & 0
     \end{pmatrix} \oplus I_{n-i-1}
-\]
-Reprezentacja $\varphi$ jest wierna dla $n = 2, 3$ i~niewierna dla $n \ge 5$.
+\end{equation}
+Reprezentacja $\varphi$ jest wierna dla $n = 2, 3$.
+Moody pokazał, że reprezentacja nie jest wierna dla $n > 8$, Long, Paton ulepszyli jego podejście i otrzymali mocniejszą nierównosć $n > 5$.
+Ich kontrukcja korzysta z~pewnej zamkniętej krzywej na sześciokrotnie przekłutym dysku o~pewnych cechach homologicznych.
+Podobnymi metodami Bigelow pokazał u schyłku stulecia \cite{bigelow99}, że jeśli
+\begin{align}
+    \psi_1 & = \sigma_3^{{-1}}\sigma_2\sigma_1^2\sigma_2\sigma_4^3\sigma_3\sigma_2, \\
+\psi_2 & = \sigma_4^{{-1}}\sigma_3\sigma_2\sigma_1^{{-2}}\sigma_2\sigma_1^2\sigma_2^2\sigma_1\sigma_4^5,
+\end{align}
+to komutator $[\psi_1^{{-1}}\sigma_4\psi_1,\psi_2^{{-1}}\sigma_4\sigma_3\sigma_2\sigma_1^2\sigma_2\sigma_3\sigma_4\psi_2]$ należy do jądra.
 Czy reprezentacja Burau dla $B_4$ jest wierna?
 Negatywna odpowiedź na to pytanie prawie na pewno prowadziłaby do
 nietrywialnego węzła, którego wielomianem HOMFLY jest $1$,
 natomiast odpowiedź pozytywna raczej nie ma aż tak dramatycznych następstw.
-Bigelow w~1999 roku znalazł nietrywialne elementy jądra zadane komutatorem $[\psi_1^{{-1}}\sigma_4\psi_1,\psi_2^{{-1}}\sigma_4\sigma_3\sigma_2\sigma_1^2\sigma_2\sigma_3\sigma_4\psi_2]$, gdzie
-    \begin{align*}
-        \psi_1 & = \sigma_3^{{-1}}\sigma_2\sigma_1^2\sigma_2\sigma_4^3\sigma_3\sigma_2, \\
-\psi_2 & = \sigma_4^{{-1}}\sigma_3\sigma_2\sigma_1^{{-2}}\sigma_2\sigma_1^2\sigma_2^2\sigma_1\sigma_4^5.
-    \end{align*}
 
 Grupy $B_n$ mogą być obiektem badań algebry bez związku z~teorią węzłów.
 
