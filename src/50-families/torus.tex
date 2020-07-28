@@ -1,14 +1,13 @@
 \section{Węzły torusowe} % (fold)
 \label{sec:torus}
 W tej sekcji przyjrzymy się węzłom o~specjalnym ułożeniu w~przestrzeni $\R^3$.
-Do ich określenia potrzebny jest torus trywialny,
-powierzchnia otrzymana przez obrót okręgu $(x-2)^2 + y^2 = 1$ wokół osi $y$.
+Do ich określenia potrzebny jest torus trywialny, powierzchnia otrzymana przez obrót okręgu $(x-2)^2 + y^2 = 1$ wokół osi $y$.
 Można go także uzyskać przez sklejenie podstaw walca tak, by go przy tym nie zapętlić.
 Oczywiście istnieją też nietrywialne torusy, na przykład rurowe otoczenie trójlistnika.
 
-\begin{definition}
+\begin{definition}[splot torusowy]
     \index{węzeł!torusowy}
-    Węzeł (splot) torusowy to taki, który leży na powierzchni niezaplątanego torusa.
+    Splot leżący na powierzchni niezaplątanego torusa nazywamy torusowym.
 \end{definition}
 
 Na walcu $S^2 \times [0,1]$, którego podstawa leży w~płaszczyźnie $xy$, rozpatrzmy $r$ skierowanych odcinkach (dla $k = 0, 1, \ldots, r - 1$) o~końcach w~punktach
@@ -17,10 +16,10 @@ Na walcu $S^2 \times [0,1]$, którego podstawa leży w~płaszczyźnie $xy$, rozp
     \left(\cos \frac{2k \pi}{r}, \sin \frac{2k\pi}{r}, 1 \right).
 \end{align*}
 Przekręćmy górną podstawę walca wokół osi $z$ o~skierowany kąt $2\pi q / r$ oraz utożsammy ze sobą pary punktów $(x, y, 0) \sim (x, y, 1)$,
-Uzyskaliśmy splot torusowy $K_{q, r}$: okrąża on $q$ razy rdzeń torusa i~$p$ razy jego oś symetrii obrotowej.
+Uzyskaliśmy splot torusowy $T_{q, r}$: okrąża on $q$ razy rdzeń torusa i~$p$ razy jego oś symetrii obrotowej.
 Określimy jeszcze kilka splotów torusowych.
-Węzeł $K_{0, 0}$ leży na powierzchni torusa i~jest ściągalny do punktu, zaś $K_{1, 0}$ to nawinięta toroidalnie pętla.
-Węzeł $K_{p, q}$ posiada następującą parametryzację:
+Węzeł $T_{0, 0}$ leży na powierzchni torusa i~jest ściągalny do punktu, zaś $T_{1, 0}$ to nawinięta toroidalnie pętla.
+Węzeł $T_{p, q}$ posiada następującą parametryzację:
 \[
     x = (2+\cos q \phi) \cos p \phi, \quad
     y = (2+\cos q \phi) \sin p \phi, \quad
@@ -50,7 +49,7 @@ Poniżej przedstawiamy trzy węzły torusowe.
 Okazuje się, że innych obiektów już nie ma.
 
 \begin{proposition}
-    Jeśli żadna ze składowych splotu torusowego nie jest postaci $K_{0, 0}$ lub $K_{1, 0}$, to splot ten jest równoważny ze splotem $K_{q, r}$ dla pewnych $q, r$.
+    Jeśli żadna ze składowych splotu torusowego nie jest postaci $T_{0, 0}$ lub $T_{1, 0}$, to splot ten jest równoważny ze splotem $T_{q, r}$ dla pewnych $q, r$.
     Największy wspólny dzielnik indeksów $q, r$ jest jednocześnie liczbą składowych splotu.
 \end{proposition}
 
@@ -73,15 +72,15 @@ Siedem węzłów z tabeli na końcu książki to węzły torusowe.
 Są to niewęzeł, $3_1 = T_{3,2}$, $5_1 = T_{5,2}$, $7_1 = T_{7,2}$, $8_{19} = T_{4,3}$, $9_1 = T_{9,2}$ oraz $10_{124} = T_{5, 3}$.
 
 \begin{proposition}
-    Ustalmy względnie pierwsze $q, r$ takie, że $|q|, |r| \ge 2$.
-    Splot $K(q, r)$ jest równoważny z~odwrotnym do niego splotem $K(-q, -r)$.
+    Niech $q, r$ będą względnie pierwszymi liczbami takimi, że $|q|, |r| \ge 2$.
+    Wtedy splot $T_{q,r}$ oraz splot do niego odwrotny, $T_{-q, -r}$, są tego samego typu.
 \end{proposition}
 
-Sploty $K(q, r)$ oraz $K(r, q)$ również są równoważne.
-Murasugi prezentuje w~książce \cite{murasugi96} przyjemny dowód opierający się na następującym lemacie:
-Sfera $S^3$ powstaje z~powierzchni dwóch węzłów trywialnych z~wnętrzem ($D^2 \times S^1$) przez wzajemne sklejenie południka i~równoleżnika z~równoleżnikiem i~południkiem.
+Sploty $T_{q,r}$ oraz $T_{r,q}$ również są równoważne: Murasugi prezentuje w~swojej książce \cite{murasugi96} przyjemny dowód opierający się na następującym lemacie:
 
-% {\color{red} Longitude, meridian -- ustalić słownictwo}
+\begin{lemma}
+    Sfera $S^3$ powstaje z~powierzchni dwóch węzłów trywialnych z~wnętrzem ($D^2 \times S^1$) przez wzajemne sklejenie południka i~równoleżnika z~równoleżnikiem i~południkiem.
+\end{lemma}
 
 Macierze Seiferta $M$ mają nieskomplikowaną blokową budowę, która może posłużyć do znalezienia wielomianu Alexandera (wzorem $\alexander = \det (M - tM^t)$).
 Rachunki są nieco uciążliwe.
