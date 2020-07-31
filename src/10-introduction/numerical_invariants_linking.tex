@@ -1,0 +1,108 @@
+\subsection{Indeks zaczepienia} % (fold)
+\label{sub:linking_number}
+\begin{definition} \label{sign_def}
+    Na diagramie zorientowanego splotu, każdemu skrzyżowaniu przypisujemy \textbf{znak} równy $\pm 1$.
+    Skrzyżowania dodatnie nazywamy praworęcznymi, ujemne zaś: leworęcznymi.
+    \[
+        \sign \Bigl(\,\,\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+        \strand[semithick,-Latex] (-5,-5) -- (5,5);
+        \strand[semithick,Latex-] (-5,5) -- (5,-5);
+        \end{knot}\end{tikzpicture}\,\,\Bigr) = +1 \quad
+        \sign \Bigl(\,\,\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5, flip crossing/.list={1}]
+        \strand[semithick,-Latex] (-5,-5) -- (5,5);
+        \strand[semithick,Latex-] (-5,5) -- (5,-5);
+        \end{knot}\end{tikzpicture}\,\,\Bigr) = -1
+    \]
+\end{definition}
+
+\begin{definition}
+    \index{indeks!zaczepienia}
+    Niech $L = K_1 \sqcup K_2$ będzie splotem o dwóch ogniwach.
+    Wielkość
+    \[
+        \operatorname{lk}(K_1, K_2) = \frac 12 \sum_i \sign c_i,
+    \]
+    gdzie sumowanie rozciąga się na wszystkie skrzyżowania, gdzie spotykają się łuki z różnych ogniw, nazywamy \textbf{indeksem zaczepienia} węzłów $K_1, K_2$.
+    Ogólniej, jeśli $L = K_1 \sqcup \ldots \sqcup K_n$ jest splotem o $n$ ogniwach, to jego indeks zaczepienia wyznacza wzór $\operatorname{lk}(L) = \sum_{i < j} \operatorname{lk}(K_i, K_j)$.
+\end{definition}
+
+Zauważmy, że indeks zaczepienia splotu Hopfa wynosi $1$, natomiast splotu Whiteheada $0$.
+Są zatem istotnie różne.
+W obydwu przypadkach indeks zaczepienia jest liczbą całkowitą, nie stanowi to przypadku.
+Na mocy twierdzenia Jordana $\operatorname{lk}$ jest funkcją o całkowitych wartościach.
+
+\begin{proposition}
+    Indeks zaczepienia jest dobrze określonym niezmiennikiem zorientowanych splotów.
+\end{proposition}
+
+\begin{proof}
+    Sprawdźmy wpływ ruchów Reidemeistera na wartość
+    $\operatorname{lk}(L)$:
+
+    \[
+        \fbox{
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+        \strand[semithick] (-10,10) .. controls (-10,2) and (-10,2) .. (-6,-2);
+        \strand[semithick] (-10,-10) .. controls (-10,-2) and (-10,-1) .. (-9,0);
+        \strand[semithick] (-7,1) -- (-6,2);
+        \strand[semithick] (-6,2) .. controls (2,9) and (2,-9) .. (-6,-2);
+        \end{knot}
+        \end{tikzpicture}
+        $\stackrel{R_1}{\cong} \,\,$
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+        \strand[semithick] (0,10) -- (0,-10);
+        \end{knot}
+        \end{tikzpicture}}
+        %%%
+        \quad \fbox{
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+        \strand[semithick] (4,-10) .. controls (4,-4) and (-4,-4) .. (-4,0);
+        \strand[semithick] (4,10) .. controls (4, 4) and (-4, 4) .. (-4,0);
+        \strand[semithick] (-4,-10) .. controls (-4,-4) and (4,-4) .. (4,0);
+        \strand[semithick] (-4,10) .. controls (-4, 4) and (4,4) .. (4,0);
+        \node[blue] at (-4,4)[left] {$a$};
+        \node[blue] at (-4,-4)[left] {$-a$};
+        \end{knot}
+        \end{tikzpicture}
+        $\stackrel{R_2}{\cong} \,\,$
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5]
+        \strand[semithick] (4,-10) .. controls (4,-4) and (1,-4) .. (1,0);
+        \strand[semithick] (4,10) .. controls (4, 4) and (1, 4) .. (1,0);
+        \strand[semithick] (-4,-10) .. controls (-4,-4) and (-1,-4) .. (-1,0);
+        \strand[semithick] (-4,10) .. controls (-4, 4) and (-1,4) .. (-1,0);
+        \end{knot}
+        \end{tikzpicture}}
+        %%%
+        \quad \fbox{
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5, flip crossing/.list={1,2,3}]
+        \strand[semithick] (-10,-10) -- (10,10);
+        \strand[semithick] (-10,10) -- (10,-10);
+        \strand[semithick] (-10,-2) .. controls (-4, -2) and (-4,8) .. (0,8);
+        \strand[semithick] (10,-2) .. controls (4, -2) and (4,8) .. (0,8);
+        \node[blue] at (-6,4)[left] {$a$};
+        \node[blue] at (6,4)[right] {$b$};
+        \node[blue] at (0,-2)[below] {$c$};
+        \end{knot}
+        \end{tikzpicture}
+        $\stackrel{R_3}{\cong} \,\,$
+        \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
+        \begin{knot}[clip width=5, flip crossing/.list={1,2,3}]
+        \strand[semithick] (-10,-10) -- (10,10);
+        \strand[semithick] (-10,10) -- (10,-10);
+        \strand[semithick] (-10,2) .. controls (-4, 2) and (-4,-8) .. (0,-8);
+        \strand[semithick] (10,2) .. controls (4, 2) and (4,-8) .. (0,-8);
+        \node[blue] at (-6,-4)[left] {$a$};
+        \node[blue] at (6,-4)[right] {$b$};
+        \node[blue] at (0,2)[above] {$c$};
+        \end{knot}
+        \end{tikzpicture}}
+    \]
+    Na mocy twierdzenia Reidemeistera dowód został zakończony.
+\end{proof}

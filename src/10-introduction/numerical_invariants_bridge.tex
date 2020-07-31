@@ -1,0 +1,46 @@
+\subsection{Liczba mostowa} % (fold)
+\label{sub:bridge_index}
+\index{liczba!mostowa}
+Z angielskiego \emph{bridge number}.
+Wprowadzona w~1954 przez Schuberta.
+\begin{definition}
+    Liczba mostowa $\operatorname{br}(K)$ to minimalna liczba mostów:
+    długich łuków, które biegną przez nadskrzyżowania.
+\end{definition}
+
+Można pokazać, że $n$-mostowe węzły rozkładają się na sumę dwóch trywialnych $n$-supłów.
+
+\begin{proposition}
+    \label{bridge_additive}
+    Niech $K_1, K_2$ będą węzłami.
+    Wtedy $\operatorname{br} (K_1) + \operatorname{br}(K_2) = \operatorname{br}(K_1 \# K_2) + 1$.
+\end{proposition}
+
+\begin{proof}[Nieedowód]
+    Schubert pokazał to blisko pół wieku temu w~\cite{schubert54}.
+    Nowszy dowód pochodzi od Schultens, w~artykule \cite{schultens03} skorzystała z~foliacji na brzegu węzła towarzyszącego sateltarnemu.
+    Dokładniejszy opis powyższych prac wykraczałby poza zakres tego opracowania, zostanie więc pominięty.
+\end{proof}
+
+Tylko jeden węzeł jest jednomostowy, to niewęzeł.
+Kolejne w~hierarchii skomplikowania, czyli dwumostowe, to domknięcia wymiernych supłów.
+Węzły trójmostowe pozostają nie do końca zbadane, Japończycy pokazali w~\cite{fukuhama99}, że trzymostowe węzły genusu jeden są preclami.
+Praca \cite{hilden12} zawiera klasyfikację wszystkich węzłów trzymostowych przy użyciu tak zwanej reprezentacji motylkowej, podobną do wyniku Schuberta opisanego w~sekcji \ref{sub:twobridge}.
+
+Murasugi wspomina w rozdziale 4.3 podręcznika \cite{murasugi96} następującą hipotezę, nie podaje jednak wcale, skąd się wzięła:
+
+\begin{conjecture}
+    Jeśli $K$ jest węzłem, to $c(K) \ge 3 br(K) - 3$, przy czym równość zachodzi dokładnie dla niewęzła, trójlistnika i~sumy spójnej trójlistników.
+\end{conjecture}
+
+Należy więc uzupełnić brakujące informacje.
+Murasugi w pracy \cite{murasugi88} przypuszcza, że dla splotów o $\mu$ ogniwach zachodzi nierównosć $c(K) + \mu - 1 \ge 3 br(K) - 3$, przedstawia jednocześnie dowód jej szczególnego przypadku, dla alternujących splotów algebraicznych.
+Hipoteza Murasugiego stanowi uogólnienie dużo starszego problemu pochodzącego od Foxa \cite{fox50}, który zapytał, czy nierówność jest prawdziwa dla węzłów, gdy $\mu = 1$.
+
+Nie istnieje związek między liczbą mostową oraz gordyjską.
+Po pierwsze, węzły torusowe $T_{2,n}$ są dwumostowe, a~ich liczba gordyjska jest duża.
+Po drugie, podwojenie węzła (poza specjalnymi przypadkami, jak pokazał Schubert) zwiększa liczbę mostową dwukrotnie; liczba gordyjska takiego podwojenia wynosi $1$.
+
+Podobnie nie ma zależności między liczbą mostową oraz genusem.
+
+% Koniec podsekcji Liczba mostowa
