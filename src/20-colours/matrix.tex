@@ -84,22 +84,45 @@ Ich defekty modulo $3$ to $1$ i~$2$, zatem są różne.
 %     Pokażemy, że zmiana etykietowania nie zmienia wyznacznika.
 % \end{proof}
 
+Wyznacznik jest blisko związany z kolorowaniami.
+
+\begin{lemma}
+    Niech $A$ będzie macierzą $r \times r$ o całkowitych wyrazach.
+    Istnieje niezerowy wektor $x \in (\Z/n\Z)^r$ taki, że $Ax \equiv 0 \mod n$ wtedy i tylko wtedy, gdy liczby $\det A$ oraz $n$ nie są względnie pierwsze.
+\end{lemma}
+
+\begin{proof}
+    Z~algebry liniowej wiemy, że dla pewnych odwracalnych całkowitoliczbowych macierzy $C, R$ macierz $RAC = diag(a_1, \ldots, a_m)$ jest diagonalna: to postać normalna Smitha.
+    Istnieje odpowiedniość między niezerowymi rozwiązanami równania $Ax \equiv 0$ oraz $Dy \equiv 0$, mamy bowiem $x \equiv Cy$, zatem bez straty ogólności możemy przyjąć, że macierz $A$ jest diagonalna.
+
+    Istnieje niezerowy wektor $x$ taki, że $Ax \equiv 0 \mod n$ wtedy i tylko wtedy, jeśli istnieją $x_1, \ldots, x_m \in \Z/n\Z$, nie wszystkie zerowe, że dla każdego $i$ mamy $a_ix_i \equiv 0 \mod n$.
+    Oznacza to, że dla pewnego $i$ liczby $a_i, n$ nie są względnie pierwsze.
+    Macierz $A$ jest diagonalna, więc jej wyznacznik ma postać $\det A = \pm |a_1| \cdot \ldots \cdot |a_m|$.
+    Wnioskujemy stąd, że liczby $\det A, n$ także nie są względnie pierwsze.
+\end{proof}
+
 \begin{proposition}
     \label{prp:colour_det}
     Splot $L$ koloruje się modulo $n$ wtedy i~tylko wtedy, gdy liczby $\det L$ oraz $n$ nie są względnie pierwsze.
 \end{proposition}
 
 \begin{proof}
+    Wybierzmy diagram dla splotu $L$ z uporządkowanymi łukami i skrzyżowaniami.
     Bez straty ogólności ograniczmy się do tych kolorowań, gdzie $x_0 = 0$.
     Kolorowanie modulo $n$ istnieje dokładnie wtedy, gdy istnieje niezerowy wektor $(x_1, x_2, \ldots, x_m)$ taki, że $Ax \equiv 0 \mod n$.
-    Ale z~algebry liniowej wiemy, że dla pewnych całkowitoliczbowych macierzy $C, R$ macierz $RAC = diag(y_1, \ldots, y_m)$ jest diagonalna.
-    Warunek z~faktu tłumaczy się wtedy na istnienie rozwiązania dla przynajmniej jednego z~równań $x_iy_i \equiv 0 \mod n$.
+    Na mocy lematu oraz definicji $\det L = |\det A|$, dowód zostaje zakończony.
 \end{proof}
 
 \begin{corollary}
-    Niech $L$ będzie splotem.
-    Jeśli $\det L = 1$, to splot $L$ jest niewidzialny (nie kolorouje się modulo $n$ dla każdego naturalnego $n$).
-    Jeśli $\det L = 0$, to splot $L$ koloruje się modulo $n$ dla każdego naturalnego $n$.
+    Niech $L$ będzie takim splotem, że $\det L = 1$.
+    Wtedy splot $L$ nie koloruje się modulo $n$ dla żadnego naturalnego $n$.
+\end{corollary}
+
+O takich splotach czasami, choć rzadko, mówi się, że są niewidzialne.
+
+\begin{corollary}
+    Niech $L$ będzie takim splotem, że $\det L = 0$.
+    Wtedy splot $L$ koloruje się modulo $n$ dla każdego naturalnego $n$.
 \end{corollary}
 
 \begin{corollary}
