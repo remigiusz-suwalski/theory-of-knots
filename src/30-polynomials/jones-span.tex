@@ -14,6 +14,7 @@ Najpierw wyjaśnimy znaczenie przymiotników z~hipotezy Taita.
     \label{def:isthmus}
     \index{diagram!zredukowany}
     Wąskie skrzyżowanie między dwiema rozłącznymi częśćmi diagramu nazywamy przesmykiem (\emph{isthmus}).
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
         \begin{knot}[clip width=5]
@@ -26,6 +27,7 @@ Najpierw wyjaśnimy znaczenie przymiotników z~hipotezy Taita.
         \end{knot}
         \end{tikzpicture}
     \]
+\end{comment}
     Diagram jest zredukowany, gdy nie zawiera przesmyków.
 \end{definition}
 
@@ -121,6 +123,7 @@ Niech $D$ będzie alternującym, zredukowanym diagramem spójnym.
 Wtedy wszystkie jego skrzyżowania mają ten sam znak.
 Wybierzmy dla niego uszachowienie.
 Odwracając w~razie potrzeby kolory możemy założyć, że wszystkie skrzyżowania są dodatnie:
+\begin{comment}
 \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.15]
     \begin{knot}[clip width=5]
@@ -141,8 +144,10 @@ Odwracając w~razie potrzeby kolory możemy założyć, że wszystkie skrzyżowa
     \end{knot}
     \end{tikzpicture}
 \]
+\end{comment}
 Takie uszachowienie nazywamy \emph{standardowym}.
 Porównajmy wygładzenie $s_+D$ z~$s_-D$:
+\begin{comment}
 \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.10]
         \node at (0, 8) {$s_+D$};
@@ -163,6 +168,7 @@ Porównajmy wygładzenie $s_+D$ z~$s_-D$:
         \draw[fill=blue!10!white, draw=none] ( 25, 0) -- ( 18, 0) [in=down, out=left] to ( 15, -5) -- ( 25, -5);
     \end{tikzpicture}
 \]
+\end{comment}
 
 Zamknięte krzywe tworzące $s_+D$ są brzegami białych obszarów uszachowienia, podczas gdy te tworzące $s_-D$ stanowią brzeg czarnych obszarów.
 Zauważmy jeszcze, że na każdym skrzyżowaniu występują cztery różne czarne i~białe obszary: gdyby pewien obszar dotykał tam sam siebie, mielibyśmy do czynienia w~tym miejscu z~przesmykiem, a~założyliśmy przecież, że diagram jest zredukowany.
@@ -199,6 +205,7 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu występują cztery różne czarn
     Musimy pokazać, że ostatnie dwie nierówności tak naprawdę są równościami.
     Pierwsza wynika z~tego, że $D'$ jest spójny, alternujący i~zredukowany.
     Z drugiej strony $|s_-D'|=|s_-D|-1$, ponieważ przejście od $s_-D$ do $s_-D'$ skleja dwa czarne obszary, jak na poniższym rysunku:
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.20]
         \begin{knot}[clip width=5]
@@ -228,6 +235,7 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu występują cztery różne czarn
         \end{tikzpicture}
         \qedhere
     \]
+\end{comment}
     To kończy dowód.
     \end{proof}
 

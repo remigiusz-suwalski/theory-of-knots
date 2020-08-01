@@ -24,6 +24,7 @@ Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
         \item istniały dwa włókna różnych kolorów,
         \item równanie $a + b \equiv 2c$ modulo $n$ było spełnione przy każdym skrzyżowaniu:
     \end{enumerate}
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
             \useasboundingbox (-5, -5) rectangle (5,5);
@@ -36,6 +37,7 @@ Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
             \end{knot}
         \end{tikzpicture}.
     \]
+\end{comment}
     Takie przyporządkowanie nazywamy kolorowaniem.
 \end{definition}
 
@@ -51,6 +53,7 @@ Kolorowanie nazywamy trywialnym, jeśli używa tylko jednego koloru.
 \begin{proof}
     Wystarczy sprawdzić, jak ruchy Reidemeistera zmieniają kolory.
     Pierwszy i~drugi:
+\begin{comment}
     \[
         \fbox{
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
@@ -95,8 +98,10 @@ Kolorowanie nazywamy trywialnym, jeśli używa tylko jednego koloru.
         \end{knot}
         \end{tikzpicture}}
     \]
+\end{comment}
     Trzeci ruch także nie wymaga skomplikowanych rachunków.
     Najkrótszy łuk na diagramach ma kolor $2a-c$ po lewej oraz $2b-c$ po prawej stronie.
+\begin{comment}
     \[
      \fbox{
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
@@ -127,6 +132,7 @@ Kolorowanie nazywamy trywialnym, jeśli używa tylko jednego koloru.
         \end{knot}
         \end{tikzpicture}} \qedhere
     \]
+\end{comment}
 \end{proof}
 
 Trójlistnik koloruje się dokładnie modulo krotności trójki, ósemka zaś -- piątki.
@@ -178,6 +184,7 @@ Każdy diagram węzła rozcina płaszczyznę na obszary, z~czego jeden jest nieo
 
 Ustalmy węzeł $K$ oraz dowolne uszachowienie dla jego diagramu.
 Skojarzmy z~każdym skrzyżowaniem równanie kolorujące, zgodnie z~poniższym schematem:
+\begin{comment}
 \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
     \useasboundingbox (-5, -10) rectangle (5,5);
     \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
@@ -208,6 +215,7 @@ Skojarzmy z~każdym skrzyżowaniem równanie kolorujące, zgodnie z~poniższym s
     \end{knot}
     \end{tikzpicture}
 \]
+\end{comment}
 
 \begin{proposition}
     \label{prp:colouring_sum_zero}
@@ -241,6 +249,7 @@ Jako kolorów użyjemy teraz elementów $g_1, \ldots, g_n$ pewnej skończonej gr
 
 \begin{definition}[etykietowanie]
     Mówimy, że zorientowany węzeł $K$ jest etykietowalny grupą $G$ generowaną przez elementy $g_1, \ldots, g_n$, jeśli posiada diagram, którego włóknom przypisano elementy $g_1, \ldots, g_n$ tak, by równanie $gk=hg$ było spełnione przy każdym skrzyżowaniu ($g$: włókno biegnące górą, $k$: bo jego lewej stronie, $h$: po prawej).
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
             \useasboundingbox (-5, -5) rectangle (5,5);
@@ -253,6 +262,7 @@ Jako kolorów użyjemy teraz elementów $g_1, \ldots, g_n$ pewnej skończonej gr
             \end{knot}
         \end{tikzpicture}
     \]
+\end{comment}
 \end{definition}
 
 Równanie $gkg^{-1}=h$ mówi, że etykiety włókien wchodzących oraz wychodzących są sprzężone.

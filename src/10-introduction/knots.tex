@@ -11,6 +11,8 @@ Węzeł (a) nazywamy niewęzłem, jest to kalka angielskiego \emph{unknot}.
 Następne w~kolejce widoczne są trójlistnik (b,~\emph{trefoil}), ósemka (c,~\emph{figure-eight}), pięciolistnik (d,~\emph{cinquefoil}) oraz słynna para Perko (e,~f~wg oryginalnej numeracji Rolfsena).
 Pod diagramami umieściliśmy notację Alexandera-Briggsa, jeszcze do niej wrócimy.
 
+
+\begin{comment}
 \begin{figure}[H]
     \centering
     \begin{minipage}[b]{.14\linewidth}
@@ -45,6 +47,7 @@ Pod diagramami umieściliśmy notację Alexandera-Briggsa, jeszcze do niej wróc
         \subcaption{$10_{162}$}
     \end{minipage}
 \end{figure}
+\end{comment}
 
 Początkowo celem teorii węzłów była klasyfikacja wszystkich węzłów.
 Od XIX wieku, kiedy teoria węzłów wyodrębniła się jako osobny dział matematyki,
@@ -67,12 +70,14 @@ Można przyjąć nieidealną, naiwną definicję:
 
 Niestety, dopuszcza ona patologiczne z~kombinatorycznego punktu widzenia węzły dzikie, jak ten z~rysunku \ref{wild_knot}:
 
+\begin{comment}
 \begin{figure}
     \centering
     \label{wild_knot}
     \includegraphics[width=0.5\linewidth]{wild_knot.png}
     \caption{Węzeł dziki}
 \end{figure}
+\end{comment}
 
 Zastanówmy się, jakim formalizmem opisać manipulowanie fizycznym sznurkiem, by wykluczyć węzły dzikie z~naszych rozważań.
 Nie można użyć izotopii (dwa węzły są izotopijne, jeśli istnieje ciągła funkcja $F \colon S^1 \times [0, 1] \to \R^3$ taka, że $F(-, 0)$ jest pierwszym, zaś $F(-,1)$ drugim węzłem), gdyż każdy węzeł jest izotopijny z punktem:
@@ -155,7 +160,7 @@ W~takiej sytuacji obydwa sploty mają tyle samo ogniw.
     Splot Hopfa to najprostszy splot nietrywialny, którym w~1931 r. zajmował się Heinz Hopf, topolog niemiecki, w~ramach badań nad tzw. rozwłóknieniem (Hopf fibration).
     Whitehead w~1934 odkrył kontrprzykład do nieudanego dowodu hipotezy Poincarego.
     Był nim splot o~dwóch składowych przedstawiony na poniższym rysunku.
-
+\begin{comment}
     \begin{figure}[H]
         \begin{minipage}[b]{.48\linewidth}
             \centering
@@ -168,6 +173,8 @@ W~takiej sytuacji obydwa sploty mają tyle samo ogniw.
             \subcaption{splot Whiteheada}
         \end{minipage}
     \end{figure}
+\end{comment}
+    .
 \end{example}
 
 Jeśli dwa węzły są równoważne, to ich dopełnienia są oczywiście homeomorficzne.
@@ -261,6 +268,7 @@ Najpierw zdefiniujmy trzy lokalne operacje na diagramach.
 \begin{definition}
     \index{ruchy Reidemeistera}
     Trzy ruchy Reidemeistera, $R_1$, $R_2$, oraz $R_3$, to następujące deformacje diagramu:
+\begin{comment}
     \[
         \underbrace{\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
         \begin{knot}[clip width=5]
@@ -315,6 +323,7 @@ Najpierw zdefiniujmy trzy lokalne operacje na diagramach.
         \end{knot}
         \end{tikzpicture}}_{R_3}
     \]
+\end{comment}
 \end{definition}
 
 Ruch $R_i$ operuje więc na $i$ łukach diagramu.
@@ -381,6 +390,7 @@ Patrz także {\url{http://geometrygames.org/SnapPea/index.html}.
 Przykładami trudnych w~rozpoznaniu niewęzłów są: niewęzeł Goritza, Freedmana.
 Więcej trudnych niewęzłów zawiera praca \cite{zanellati16} autorstwa C. Petronio oraz A. Zanellatiego.
 
+\begin{comment}
 \begin{figure}[H]
     \begin{minipage}[b]{.32\linewidth}
         \centering
@@ -398,6 +408,7 @@ Więcej trudnych niewęzłów zawiera praca \cite{zanellati16} autorstwa C. Petr
         \subcaption{Freedmana}
     \end{minipage}
 \end{figure}
+\end{comment}
 
 Zanim opowiemy, jak dotąd przebiegała klasyfikacja węzłów o małej liczbie skrzyżowań, zdefiniujemy klasę splotów ze specjalnymi diagramami.
 
@@ -465,6 +476,7 @@ To właśnie grupowanie diagramów przedstawiających ten sam węzeł, a~nie sam
 
 Aby sobie pomóc, Tait znalazł lokalną modyfikację diagramu, która nie zmienia indeksu skrzyżowaniowego, znaną obecnie jako flype.
 
+\begin{comment}
 \[
 \begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
 \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
@@ -488,6 +500,7 @@ Aby sobie pomóc, Tait znalazł lokalną modyfikację diagramu, która nie zmien
 \end{knot}
 \end{tikzpicture}
 \]
+\end{comment}
 
 Inną taktykę szukania węzłów przyjał wielebny Thomas Kirkman: zaczynał od małego zbioru "nieredukowalnych" rzutów, do których systematycznie dokładał skrzyżowania.
 Tait przeczytał pracę Kirkmana, po czym w~latach 1884/1885 opracował listę węzłów alternujących o~mniej niż 11 skrzyżowaniach.

@@ -27,6 +27,7 @@ Elementy $x \in X$ będą dla nas kolorami, którymi oznaczymy długie łuki na 
 Gdy trzy kolory spotykają się przy jednym skrzyżowaniu, definiujemy funkcję $\triangleright \colon X \times X \to X$, jak na rysunku.
 To znaczy: kiedy łuk o kolorze $x$ przechodzi pod łukiem koloru $y$, staje się łukiem w kolorze $x \triangleright y$.
 
+\begin{comment}
 \[
     \begin{tikzpicture}[scale=0.18, baseline=0]
         \path[TIKZ_ARCH,Latex-] (-4,0) -- (4,8);
@@ -37,6 +38,7 @@ To znaczy: kiedy łuk o kolorze $x$ przechodzi pod łukiem koloru $y$, staje si�
         \node[darkblue] at (-4, 8)[below left] {$x$};
     \end{tikzpicture}
 \]
+\end{comment}
 
 Ta definicja pochodzi z~nieopublikowanej korespondencji między Johnem Conwayem i~Gavenem Wraithem, którzy w 1959 byli studentami I stopnia na uniwersytecie w Cambridge.
 Ponownie odkryto ją w latach 80. XX wieku: Joyce w 1982 po raz pierwszy nazwał te obiekty kwandlami, Matwiejow w tym samym roku jako grupoidy rozdzielne, Brieskorn w 1986 jako zbiory automorficzne.
@@ -67,6 +69,7 @@ Teraz możemy przetłumaczyć ruchy Reidemeistera w aksjomaty kwandli.
 \begin{proof}
     Musimy pokazać, że etykiety na diagramiem przed każdym ruchem Reidemeistera wyznaczają jednoznacznie układ etykiet po tym ruchu.
     Pierwszy ruch:
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
         \begin{knot}[clip width=5,flip crossing/.list={1}]
@@ -85,7 +88,9 @@ Teraz możemy przetłumaczyć ruchy Reidemeistera w aksjomaty kwandli.
         \end{knot}
         \end{tikzpicture}
     \]
+\end{comment}
     Drugi ruch:
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
         \begin{knot}[clip width=4, flip crossing/.list={1,2}]
@@ -107,7 +112,9 @@ Teraz możemy przetłumaczyć ruchy Reidemeistera w aksjomaty kwandli.
         \end{knot}
         \end{tikzpicture}
     \]
+\end{comment}
     Trzeci ruch:
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
         \begin{knot}[clip width=5, flip crossing/.list={3}]
@@ -135,6 +142,7 @@ Teraz możemy przetłumaczyć ruchy Reidemeistera w aksjomaty kwandli.
         \end{tikzpicture}
         \qedhere
     \]
+\end{comment}
 \end{proof}
 
 Homomorfizmy definiujemy standardowo, przez analogię do grup:
@@ -212,6 +220,7 @@ Półka stanowi uogólnienie dwóch obiektów -- wraków i wrzecion.
 \end{example}
 
 Wraki dobrze współgrają z podwójnym pierwszym ruchem Reidemeistera, który to nie zmienia spinu diagramu:
+\begin{comment}
 \[
     \begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
     \begin{knot}[clip width=5,flip crossing/.list={1}]
@@ -234,6 +243,7 @@ Wraki dobrze współgrają z podwójnym pierwszym ruchem Reidemeistera, który t
     \end{knot}
     \end{tikzpicture}
 \]
+\end{comment}
 
 \begin{definition}[wrzeciono]
     \index{spindle}

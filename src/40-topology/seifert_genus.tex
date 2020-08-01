@@ -208,6 +208,7 @@ Przebiega w dwóch etapach: najpierw pokazuje się, że genus sumy nie jest wię
     Pokażemy najpierw, że $g(J \# K) \le g(J) + g(K)$.
     Wybierzmy powierzchnie Seiferta $M_J$ oraz $M_K$ dla $J$ oraz $K$ o~minimalnym genusie.
     Suma $J \shrap K$ powstaje z~$J$ oraz $K$, podobnie jest z~powierzchniami Seiferta:
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.12]
         \draw[semithick,-Latex] (-7, -5) to (-5, -5) [in=right, out=right] to (-5, 5) to (-7, 5);
@@ -236,6 +237,7 @@ Przebiega w dwóch etapach: najpierw pokazuje się, że genus sumy nie jest wię
         \node at (0, 0) {$M_{J \# K}$};
         \end{tikzpicture}
     \]
+\end{comment}
 
     Skoro $M_{J\#K}$ powstaje z~$M_J \sqcup M_K$ przez dołączenie paska do brzegu, mamy
     \[
@@ -252,6 +254,7 @@ Przebiega w dwóch etapach: najpierw pokazuje się, że genus sumy nie jest wię
     Pokażemy jeszcze, że $g(J \# K) \ge g(J)+g(K)$.
     Zaczynamy od powierzchni Seiferta $M_{J\#K}$ dla $J\#K$ o~minimalnym genusie $g(M_{J\#K})$ równym $g(J\#K)$.
     Poprzez wykonanie chirurgii na powierzchni, możemy przyjąć specjalną postać jak w~poprzednim dowodzie:
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.16]
             \fill[blue!10!white] (-5, -5) rectangle(5, 5);
@@ -260,6 +263,7 @@ Przebiega w dwóch etapach: najpierw pokazuje się, że genus sumy nie jest wię
             \node at (0, 0) {$M_{J \# K}$};
         \end{tikzpicture}
     \]
+\end{comment}
 
     Usunięcie paska daje powierzchnie Seiferta dla $M_J$ oraz $M_K$ takie, że
     \[
@@ -329,6 +333,7 @@ Praca Schuberta korzysta z twierdzenia Alexandera, że 2-sfera w przestrzeni $\R
 \begin{proof}
     Pokażemy, że wszystkie węzły $(2n+2)_1$ są pierwsze, gdzie $n \ge 1$.
     Istotnie, algorytm Seiferta zastosowany do diagramu tego węzła wyprodukuje $2n+1$ okręgów.
+\begin{comment}
     \[
         \begin{tikzpicture}[baseline=-0.65ex,scale=0.055]
         \begin{knot}[clip width=10, flip crossing/.list={1,4,5},end tolerance=1pt]
@@ -396,6 +401,7 @@ Praca Schuberta korzysta z twierdzenia Alexandera, że 2-sfera w przestrzeni $\R
             \draw[semithick] (10,  10) circle (5);
         \end{tikzpicture}
     \]
+\end{comment}
     Wynika stąd, że genus wynosi $\frac 12 (1 - (1+2n) + (2+2n)) = 1$, ponieważ wyznacznik ma wartość $4n+1$,
     węzły $2n+2)_1$ nie są trywialne i~są parami różne.
 \end{proof}

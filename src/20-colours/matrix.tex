@@ -9,6 +9,7 @@ Diagram bez takich krzywych ma tyle samo skrzyżowań, co łuków.
     \index{macierz!kolorująca}
     Ustalmy diagram bez zamkniętych krzywych dla splotu $L$ z~łukami $x_0, \ldots, x_m$ oraz skrzyżowaniami $0, \ldots, m$.
     Definiujemy macierz $A_+$, której wyraz $a_{lj}$ jest współczynnikiem przy $x_j$ w~$l$-tym równaniu kolorującym:
+\begin{comment}
     \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
     \useasboundingbox (-5, -10) rectangle (5,5);
     \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
@@ -20,6 +21,7 @@ Diagram bez takich krzywych ma tyle samo skrzyżowań, co łuków.
         \node[black] at (0, -7)[below] {$x_j+x_k - 2x_i \equiv 0 \mod n$};
     \end{knot}
     \end{tikzpicture}\]
+\end{comment}
     Macierz kolorująca $A$ powstaje z~macierzy $A_+$ przez skreślenie dowolnego wiersza i~kolumny.
 \end{definition}
 
@@ -138,6 +140,7 @@ My opiszemy krótko macierz Goeritza.
 Ustalmy szachowiony diagram $D$ dla splotu $L$.
 Oznaczmy białe obszary $0, 1, \ldots, m$, przy czym $0$ jest obszarem nieograniczonym.
 Przydzielmy skrzyżowaniom znaki:
+\begin{comment}
     \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
     \useasboundingbox (-5, -5) rectangle (5,5);
     \begin{knot}[clip width=5, end tolerance=1pt, flip crossing/.list={1}]
@@ -160,6 +163,7 @@ Przydzielmy skrzyżowaniom znaki:
         \node[darkblue] at (-5, 0) {$-1$};
     \end{knot}
     \end{tikzpicture}\]
+\end{comment}
 
 \begin{definition}
     \index{macierz!Goeritza}
