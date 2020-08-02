@@ -4,38 +4,68 @@
 Z angielskiego \emph{unknotting number}.
 
 \begin{definition}
-    Liczba gordyjska $\operatorname{u}(K)$ węzła $K$ to minimalna liczba skrzyżowań,
-    które trzeba odwrócić na pewnym jego diagramie, by dostać niewęzeł.
-    Liczba $u$ nie musi być osiągana przez diagram o~minimalnej liczbie skrzyżowań.
+    Niech $L$ będzie splotem.
+    Minimalną liczbę skrzyżowań, które trzeba odwrócić na pewnym jego diagramie, by dostać niewęzeł, nazywamy liczbą gordyjską i~oznaczamy $\operatorname{u}(L)$.
 \end{definition}
 
-Dotychczas wyznaczono liczbę gordyjską dla prawie wszystkich węzłów pierwszych o~co najwyżej dziesięciu skrzyżowaniach,
-Cha i~Livingston podają następującą listę wyjątków:
-$10_{11}$, $10_{47}$, $10_{51}$, $10_{54}$, $10_{61}$, $10_{76}$, $10_{77}$, $10_{79}$, $10_{100}$ (stan na rok 2008).
-S. Bleiler odkrył w~\cite{bleiler84} fascynujący przykład wymiernego węzła $2$-gordyjskiego,
-czego świadkiem nie może być diagram o~minimalnej liczbie skrzyżowań
-(ponieważ, co jeszcze bardziej fascynujące, węzeł ten posiada tylko jeden diagram o~dziesięciu skrzyżowaniach z~trzema do odwrócenia).
-Koduje go liczba $29/6$, w~tabeli węzłów figuruje jako $10_8$.
-Stojmenow w~\cite{stoimenow01} pokazuje, że jeden węzeł może mieć kilka diagramów minimalnych,
-z których tylko niektóre są świadkiem $1$-gordyjskości (są to między innymi $14_{36750}$ oraz $14_{36760}$.)
+Zgodnie z ,,klasyczną'' definicją, między odwracaniem kolejnych skrzyżowań mamy prawo wykonać izotopie otaczające; natomiast zgodnie ze ,,standardową'' definicją, takie izotopie są zabronione.
+Obie definicje są równoważne: tłumaczy to książka Adamsa \cite[s. 58]{adams94}.
 
-Coward, Lackenby dowiedli w~\cite{coward11}, że jeśli $K$ jest 1-gordyjski i~o genusie 1, to z~dokładnością do pewnej relacji równoważności, tylko jedna zmiana skrzyżowania rozwiązuje go; chyba że $K$ jest ósemką -- wtedy takie zmiany są dwie.
-Kanenobu, Murakami oraz Kohn dwadzieścia lat wcześniej wiedzieli, że wymierne sploty 1-gordyjskie posiadają rozwiązujące skrzyżowanie na minimalnym diagramie (\cite{kanenobu86}, \cite{kohn91}).
+W pracy \cite{shimizu14} Shimizu rozpatruje różne operacje, które rozwiązują węzły lub sploty.
+Nie będziemy się nimi zajmować, podamy tylko przykład: zamiana pod- i nadskrzyżowań wokół obszaru na diagramie rozwiązuje węzły, ale nie sploty; kontrprzykładem jest splot Hopfa.
 
 Jeśli odwrócenie pewnych skrzyżowań daje niewęzeł, to odwrócenie pozostałych także.
-To daje proste, choć niezbyt pomocne oszacowanie liczby gordyjskiej: $2 \operatorname{u} (K) \le \operatorname{cr} (K)$.
-Borodzik oraz Friedl podali niedawno całkiem mocne ograniczenia na liczbę gordyjską w~pracach \cite{borodzik14} i~\cite{borodzik15} opierając się o~parowanie Blanchfielda
-(poprawiając ograniczenia z~sygnatury Levine'a-Tristrama, indeksu Nakanishiego oraz przeszkodą Lickorisha).
-Dwadzieścia pięć węzłów o~co najwyżej dwunastu skrzyżowaniach ma liczbę gordyjską równą co najmniej trzy, co trudno pokazać innymi metodami.
+To daje proste liczby gordyjskiej: $2 \operatorname{u} (K) \le \operatorname{cr} (K)$.
+Nie jest zbyt pomocne, równość zachodzi pięć razy dla pierwszych węzłów do 12 skrzyżowań: $3_{1}$, $5_{1}$, $7_{1}$, $9_{1}$, $11a_{367}$.
+Dokładna wartość liczby gordyjskiej jest znana tylko dla niektórych klas węzłów, na przykład torusowych (fakt \ref{torus_unknotting}) albo skręconych (definicja \ref{twist_knots}).
 
-Dla każdego nietrywialnego splotu istnieje diagram wymagający odwrócenia dowolnie wielu skrzyżowań (dowód zawiera praca \cite{taniyama09} Taniyamy).
+Dla każdego nietrywialnego splotu istnieje diagram wymagający odwrócenia dowolnie wielu skrzyżowań.
+Dowód zawiera praca \cite{taniyama09} Taniyamy.
 Pokazany jest tam jeszcze jeden godny uwagi fakt.
-Jeśli liczba gordyjska diagramu $D$ wynosi $\frac 12 (c(D) - 1)$,
-co jest maksymalną możliwą wartością zgodnie z~naszym prostym ograniczeniem,
+Jeśli liczba gordyjska diagramu $D$ wynosi $\frac 12 (\operatorname{cr} D - 1)$, co jest maksymalną możliwą wartością zgodnie z~naszym prostym ograniczeniem,
 to węzeł jest $(2,p)$-torusowy albo wygląda jak diagram niewęzła po pierwszym ruchu Reidemeistera.
 
-% Liczba gordyjska nietrywialnego węzła skręconego (definicja \ref{twist_knots}) to jeden, wystarczy bowiem rozwiązać jego splecione końce.
-Patrz także stwierdzenie \ref{torus_unknotting} o liczbie gordyjskiej węzłów torusowych.
+Bleiler odkrył w~\cite{bleiler84} fascynujący przykład wymiernego węzła $10_8$, który jest $2$-gordyjski, ale świadkiem tego nie może być żaden diagram mininalny, ponieważ, co jeszcze bardziej fascynujące, węzeł ten posiada tylko jeden diagram o~dziesięciu skrzyżowaniach oraz liczbie gordyjskiej 3.
+Wynika stąd, że liczba $u$ nie musi być osiągana przez diagram minimalny, wbrew powszechnym przypuszczeniom obecnym jeszcze w latach 70.
+Praca \cite{bernhard94} opisuje nieskończoną rodzinę węzłów $C_k$, gdzie $C_2 = 10_8$ jest węzłem Bleilera.
+
+Przykład Bleilera pokazuje, że do szukania liczby gordyjskiej potrzeba wyrafinowanego algorytmu.
+Ponieważ odwrócenie jednego ze skrzyżowań na minimalnym diagramie węzła $10_8$ daje $1$-gordyjski węzeł $4_1, 5_1, 6_1$ lub $6_2$, możemy liczyć, że każdy diagram minimalny ma skrzyżowanie, którego odwrócenie zmniejsza liczbę gordyjską.
+Dlatego jeszcze w~latach 90. postawiono hipotezę:
+
+\begin{conjecture}[Bernharda-Jablana, \cite{bernhard94}, \cite{jablan98}]
+    \label{bernhard_jablan}
+    Każdy węzeł $K$ posiada diagram $D$ realizujący liczbę gordyjską oraz skrzyżowanie, którego odwrócenie daje nowy węzeł $K'$ z diagramem $D'$ o mniejszej liczbie gordyjskiej: $u(D') < u(D)$.
+\end{conjecture}
+
+Zakładając prawdziwość hipotezy \ref{bernhard_jablan}, mamy prosty sposób na wyznaczenie liczby $u(K)$: weźmy skończenie wiele diagramów minimalnych dla węzła $K$, na każdym z~nich odwracajmy skrzyżowania i rekursywnie szukajmy liczb gordyjskich prostszych węzłów.
+Najmniejsza spośród nich różni się wtedy o~jeden od liczby $u(K)$.
+
+Brittenham, Hermiller w artykule \cite{brittenham17} twierdzą, że hipoteza jest fałszywa, ten nie został jednak jeszcze zrecenzowany.
+Prawdziwość sprawdzono natomiast dla węzłów do jedenastu skrzyżowań oraz splotów o dwóch ogniwach do dziewięciu skrzyżowań (Kohn w \cite{kohn93}?).
+
+\begin{example}[Brittenham, Hermiller]
+    Hipoteza Bernharda-Jablana jest fałszywa dla co najmniej jednego spośród czterech węzłów: $12n_{288}$, $12n_{491}$, $12n_{501}$, $13n_{3370}$.
+\end{example}
+
+Bleiler postawił w~\cite{bleiler84} problem: czy jeden węzeł może mieć kilka diagramów minimalnych, z~których tylko niektóre są świadkiem $1$-gordyjskości?
+Rozwiązanie przyszło wkrótce z Japonii: według \cite{kanenobumurakami86} dzieje się tak m.in. dla węzła $8_{14}$.
+Stojemenow w~pracy \cite{stoimenow01} pełnej różnych przykładów wskazał dodatkowo węzły $14_{36750}$ oraz $14_{36760}$.
+
+Sploty o liczbie gordyjskiej 1 zasługują na szczególną uwagę.
+
+\begin{proposition}
+    Niech $L$ będzie wymiernym splotem 1-gordyjskim.
+    Wtedy na minimalnym diagramie $L$ jedno ze skrzyżowań jest rozwiązujące.
+\end{proposition}
+
+\begin{proof}
+    Kanenobu, Murakami dla węzłów \cite{kanenobumurakami86}, wkrótce po tym Kohn dla splotów \cite{kohn91}.
+\end{proof}
+
+Z pracy \cite{kanenobumurakami86} wynika dodatkowo, że liczba gordyjska węzłów $8_{3}$, $8_{4}$, $8_{6}$, $8_{8}$, $8_{12}$, $9_{5}$, $9_{8}$, $9_{15}$, $9_{17}$, $9_{31}$ wynosi dokładnie 2, wcześniej wiedzieliśmy, że jest równa co najwyżej 2. 
+
+Coward, Lackenby dowiedli w~\cite{coward11}, że jeśli $K$ jest 1-gordyjski i~o genusie 1, to z~dokładnością do pewnej relacji równoważności, tylko jedna zmiana skrzyżowania rozwiązuje go; chyba że $K$ jest ósemką -- wtedy takie zmiany są dwie.
 
 \begin{proposition}
     \label{unknotting_one_prime}
@@ -57,34 +87,31 @@ Stąd oraz z faktu \ref{unknotting_one_prime} wynika, że suma dwóch $1$-gordyj
     Wtedy $u(K \shrap J) = u(K) + u(J)$, czyli liczba gordyjska jest addytywna.
 \end{conjecture}
 
-W pracy \cite{shimizu14} Ayaka Shimizu rozpatruje różne operacje, które rozwiązują węzły lub sploty.
-Na przykład zamiana pod- i nadskrzyżowań wokół obszaru na diagramie rozwiązuje węzły, ale nie sploty.
-Kontrprzykładem jest splot Hopfa.
+Dotychczas wyznaczono liczbę gordyjską dla prawie wszystkich węzłów pierwszych o~co najwyżej dziesięciu skrzyżowaniach,
+Cha, Livingston \cite{cha05} podają następującą listę wyjątków:
+$10_{11}$, $10_{47}$, $10_{51}$, $10_{54}$, $10_{61}$, $10_{76}$, $10_{77}$, $10_{79}$, $10_{100}$ (stan na rok 2018).
+
+Borodzik oraz Friedl podali niedawno całkiem mocne ograniczenia na liczbę gordyjską w~pracach \cite{borodzik14} i~\cite{borodzik15}.
+Ich narzędziem jest parowanie Blanchfielda.
+Poprawiają tam starsze estymaty wynikające z~sygnatury Levine'a-Tristrama, indeksu Nakanishiego oraz przeszkody Lickorisha.
+Wśród węzłów o~co najwyżej dwunastu skrzyżowaniach 25 ma liczbę gordyjską równą co najmniej trzy, co trudno pokazać innymi metodami.
 
 Liczbę gordyjską można uogólnić w naturalny sposób do metryki.
 Mianowicie mając dane dwa węzły $K_0, K_1$, rozpatrzmy wszystkie homotopie $f : [0,1] \times S^1 \to \R^3$ takie, że wszystkie funkcje $f_t$ są zanurzeniami z co najwyżej jednym punktem podwójnym.
 Zażądajmy dodatkowo, by styczne do krótkich łuków, które przecinają się w tym punkcie, były od siebie różne.
 Odległością gordyjską między węzłami $K_0, K_1$ jest minimalna liczba podwójnych punktów, jakie posiada homotopia $f$.
-
-Przestrzeń węzłów z~tą metryką bywa sprzeczna z~intuicją: twierdzenie C~z~pracy \cite{gambaudo05} głosi, że zawiera ona prawie idealną kopię przestrzeni euklidesowej dowolnego wymiaru.
+Twierdzenie C~z~pracy \cite{gambaudo05} głosi, że zawiera ona prawie idealną kopię przestrzeni euklidesowej dowolnego wymiaru.
 Dokładniej:
 
 \begin{proposition}
     Dla każdej liczby całkowitej $n \ge 1$ istnieje funkcja $\xi: \Z^n \to \mathcal{K}$, dodatnie stałe $A, B, C$ oraz norma $\|\cdot\|$ na przestrzeni $\R^n$ takie, że spełniona jest podwójna nierówność
-    \[
+    \begin{equation}
         A\|x-y\|  - B \le d(\xi(x), \xi(y)) \le C\|x-y\|.
-    \]
+    \end{equation}
 \end{proposition}
 
-Dowód korzysta z grup warkoczowych, które poznamy w sekcji \ref{sec:braid}.
-
-\begin{conjecture}[Bernhard 1994, Jablan 1998] \label{bernhard_jablan}
-    Każdy węzeł $K$ posiada diagram $D$ realizujący liczbę gordyjską oraz skrzyżowanie, którego odwrócenie daje nowy węzeł $K'$ z diagramem $D'$ o mniejszej liczbie gordyjskiej: $u(D') < u(D)$.
-\end{conjecture}
-
-Gdyby hipoteza była prawdziwa, mielibyśmy dość prosty algorytm do wyznaczania liczby gordyjskiej $u(K)$: wystarczy skonstruować skończenie wiele diagramów minimalnych dla węzła $K$, odwracać kolejne skrzyżowania i szukać rekursywnie liczb gordyjskich nowych węzłów.
-Hipoteza jest prawdziwa dla węzłów do jedenastu skrzyżowań (patrz baza danych KnotInfo C. Livingstona) i splotów o dwóch składowych do dziewięciu skrzyżowań, pokazał to Kohn w pracy \cite{kohn93} z 1993 (!) roku.
-
-Brittenham, Hermiller twierdzą, że hipoteza jest fałszywa.
+\begin{proof}
+    Dowód korzysta z grup warkoczowych, które poznamy w sekcji \ref{sec:braid}.
+\end{proof}
 
 % Koniec podsekcji Liczba gordyjska
