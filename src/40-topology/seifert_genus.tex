@@ -36,7 +36,26 @@ Dla wygody przypomnijmy jeszcze definicję klasycznego niezmiennika powierzchni:
     jest niezmiennikiem powierzchni, zwanym zazwyczaj charakterystyką Eulera.
 \end{definition}
 
-Jeśli $M$ jest powierzchnią o genusie $g$ i $\mu$ składowych spójności brzegu, to $\chi = 2 - \mu - 2g$.
+Definicja ta nie jest wygodna podczas ręcznych obliczeń.
+
+\begin{proposition}
+    Niech $M$ będzie powierzchnią o genusie $g$ i $\mu$ składowych spójności brzegu.
+    Wtedy
+    \begin{equation}
+        \chi = 2 - \mu - 2g.
+    \end{equation}
+\end{proposition}
+
+\begin{proposition}
+    Charakterystykę Eulera powierzchni jednoznacznie wyznaczają cztery reguły:
+    \begin{itemize}
+        \item jeśli $M$ jest dyskiem, to $\chi(M) = 1$,
+        \item jeśli $M_1, M_2$ są powierzchniami, to $\chi(M_1 \sqcup M_2) = \chi(M_1) + \chi(M_2)$,
+        \item jeśli powierzchnia $M_2$ powstaje z $M_1$ przez dołączenie paska, to $\chi(M_2) = \chi(M_1) - 1$,
+        \item jeśli powierzchnia $M_2$ powstaje z $M_1$ przez dołączenie dysku do całej składowej spójności brzegu, to $\chi(M_2) = \chi(M_1) + 1$.
+    \end{itemize}
+\end{proposition}
+
 Nas interesują głównie powierzchnie Seiferta węzłów:
 
 \begin{proposition}
