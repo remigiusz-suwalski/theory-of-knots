@@ -65,6 +65,8 @@ Węzły hiperboliczne stanowią najliczniejszą i najmniej zrozumianą rodzinę 
     Thurston w \cite{thurston82}.
 \end{proof}
 
+Dwa lata później Menasco \cite{menasco84} pokazał, że każdy pierwszy, alternujący splot jest albo 2-warkoczem (a zatem, torusowy) albo hiperboliczny.
+
 \begin{corollary}
     Każdy węzeł hiperboliczny jest pierwszy.
 \end{corollary}
@@ -174,31 +176,130 @@ Patrz także oryginalne prace: Mostowa \cite{mostow73}, Prasada \cite{prasad73}.
     Warunki podane wyżej mają swoje odpowiedniki dla przestrzeni $X$ ($X$ nie zawiera właściwej 2-sfery, właściwego dysku, właściwego torusa, właściwego pierścienia) oraz grupy $\pi$ ($\pi$ nie jest wolnym produktem, nie jest cykliczna oraz nie zawiera kopii $\Z^2$).
 \end{tobedone}
 
-% objętość
-
-\begin{tobedone}
-    Żaden węzeł nie ma mniejszej objętości hiperbolicznej od ósemki.
-\end{tobedone}
-
-Dowód tego faktu podał Cao z~Meyerhoffem w~2001 roku.
-Opierali się oni na działaniu komputerowego programu, który wyeliminował inne możliwości.
-
-\begin{tobedone}
-    Objętość hiperboliczna nie odróżnia hiperbolicznych mutantów.
-\end{tobedone}
-
-Nie jestem w~stanie podać odnośnika do dowodu w~literaturze -- przypominam, że chodzi o~mutanty z~definicji \ref{def:mutant}.
-Stwierdzenie to można znaleźć na przykład w~książce Adamsa (strona 124).
-
-Objętość hiperboliczna bardzo dobrze odróżnia od siebie węzły.
-Pewien węzeł o~dwunastu skrzyżowaniach i~$5_2$ mają jednak tę samą objętość.
-
-\begin{tobedone}
+\begin{proposition}
     Grupa symetrii węzła hiperbolicznego jest skończona: cykliczna lub diedralna.
-\end{tobedone}
+\end{proposition}
+
+Uwaga -- nie chodzi tutaj ani o grupę węzła, ani grupę kolorującą, ale prawdopodobnie grupę automorfizmów zewnętrznych grupy $\pi_1(S^3 \setminus K)$.
 
 \begin{proof}
-    Praca \cite{kodama92}.
+    Pierwszy był Riley w artykule \cite{riley75}, można też zapoznać się z późniejszą pracą \cite{kodama92} Kodamy.
 \end{proof}
+
+% objętość
+
+Twierdzenie Mostowa-Prasada pozwala nam na wprowadzenie nowych niezmienników splotów hiperbolicznych: wystarczy wziąć dowolny geometryczny niezmiennik dopełnienia węzła.
+Najważniejszym z nich wydaje się być objętość.
+
+\begin{definition}[objętość]
+    Niech $L$ będzie splotem hiperbolicznym.
+    Objętość dopełnienia $L$ względem zupełnej metryki hiperbolicznej nazywamy objętością splotu $L$ i oznaczamy $\volume L$.
+\end{definition}
+
+Objętość jest zawsze skończoną liczbą rzeczywistą.
+Dla wygody przyjmuje się czasami, że objętość węzłów torusowych oraz satelitarnych wynosi $0$.
+Komputerowy program SnapPea napisany przez J. Weeksa pozwala na wyznaczenie objętości dowolnego splotu o rozsądnej ilości skrzyżowań.
+
+\begin{example}
+    $\volume 4_1 \approx 2.0298832$.
+\end{example}
+
+Patrz też ciąg A091518 w bazie danych OEIS.
+
+\begin{proposition}
+    \label{least_volume}
+    Żaden węzeł nie ma mniejszej objętości hiperbolicznej od ósemki.
+\end{proposition}
+
+\begin{proof}
+    Cao, Meyerhoff w \cite{cao01} przeanalizowali pakowania horokul w uniwersalnym nakryciu związanym z rozmaitościami.
+    Doszli do wniosku, że nie ma tam dostatecznieo wolnego miejsca, jeżeli ostrze (cusp) nie jest odpowiedniego rozmiaru.
+    Trzykrotnie wspierają się przy tym pomocą komputera, by sprawdzić, że określone warunki są spełnione we wszystkich punktach danej przestrzeni parametrów.
+\end{proof}
+
+\begin{example}
+    $\volume 5_2 \approx 2.82812$.
+\end{example}
+
+W encyklopedii Wolfram Mathworld znajduje się informacja, że $5_2$ oraz pewien węzeł o~dwunastu skrzyżowaniach mają tę samą objętość, prawdopodobnie chodzi tu o~$12n_{242}$, który znany jest także jako $(-2, 3, 7)$-precel. 
+
+\begin{example}
+    $\volume 6_1 \approx 3.16396$.
+\end{example}
+
+\begin{example}
+    $\volume 6_2 \approx 4.40083$.
+\end{example}
+
+\begin{example}
+    $\volume 6_3 \approx 5.69302$.
+\end{example}
+
+\begin{example}
+    $\volume 7_4 \approx 5.13794$.
+\end{example}
+
+\begin{example}
+    Niech $K$ będzie jednym z dwóch węzłów w parze Perko.
+    Wtedy $\volume K \approx 5.63877$.
+\end{example}
+
+Praca \cite{purcell19} wspomina kilka przyjemnych ograniczeń, jakie musi spełniać objętość.
+Aby je przytoczyć, musimy najpierw zdefiniować dwie stałe: $v_4$ oraz $v_8$, objętość idealnego czworościanu (odpowiednio: ośmiościanu) foremnego w $\mathbb H^3$.
+Mamy
+\begin{align}
+    v_4 & = 1.0149\ldots \\
+    v_8 & = 3.6638\ldots
+\end{align}
+
+I tak najpierw Adams pokazał:
+
+\begin{proposition}
+    Niech $D$ będzie diagramem hiperbolicznego splotu o $\operatorname{cr} L \ge 5$ skrzyżowaniach.
+    Wtedy
+    \begin{equation}
+        \volume (S^3 \setminus K) \le 4 (\operatorname{cr} D - 4) v_4.
+    \end{equation} 
+\end{proposition}
+
+A później poprawił wswój wynik:
+
+\begin{proposition}
+    Niech $D$ będzie diagramem hiperbolicznego splotu o $\operatorname{cr} L \ge 5$ skrzyżowaniach.
+    Wtedy
+    \begin{equation}
+        \volume (S^3 \setminus K) \le 4 (\operatorname{cr} D - 5) v_8 + 4v_4.
+    \end{equation} 
+\end{proposition}
+
+Jego metoda polega na podzieleniu dopełnienia splotu na czterościany i ośmiościany oraz policzeniu ich.
+To, w połączeniu ze znanymi ograniczeniam na objętość ,,cegiełek'', wystarcza.
+Podział na ośmiościany zaproponował Dylan Thurston (nie mylić z Williamem!).
+
+% Wiki
+
+Thurston zauważył, że tylko skończenie wiele hiperbolicznych 3-rozmaitości może mieć tę samą objętość -- wynika to z prac Gromova i Jørgensena.
+Następnie Wielenberg przedstawił w~\cite{wielenberg81} przykłady pokazujące, że istnieją dowolnie duże kolizje wśród węzłów hiperbolicznych: pewne podgrupy klasycznej grupy Picarda działają  na półprzestrzeni hiperbolicznej wymiaru 3 i mają przy tym fundamentalne wielościany identyczne jako zbiory, ale znacząco różne w~sposobie, w jaki zidentyfikowano ich ściany.
+
+Na przykład mutacja węzła hiperbolicznego nigdy nie zmienia objętości \cite{ruberman87}, \cite[s. 124]{adams94}.
+Praktyka pokazuje jednak, że niezmiennik dobrze wspomaga proces tablicowania węzłów.
+
+\begin{proposition}
+    Objętości hiperboliczne 3-rozmaitości tworzą dobrze uporządkowany podzbiór $\R$, typu $\omega^\omega$.
+\end{proposition}
+
+\begin{proof}
+    Wikipedia twierdzi, że dowód jest gdzieś w \cite{neumann85}, ja tego nie widzę.
+\end{proof}
+
+W dowolnej rodzinie węzłów istnieje element o najmniejszej objętości.
+Dla orientowalnych, niezwartych hiperbolicznych 3-rozmaitości, klasy obejmującej dopełnienia hiperbolicznych węzłów, najmniejszą objętość posiada dopełnienie ósemki oraz jej bliźniak, otrzymany przez $(5, 1)$-chirurgię jednego z ogniw splotu Whiteheada.
+To jest fakt \ref{least_volume}.
+Natomiast wśród orientowalnych 3-rozmaitości o dwóch ostrzach najmniejszą objętość, ma $(-2, 3, 8)$-precel oraz splot Whiteheada: Agol pokazał to w \cite{agol10}.
+Ich objętość wynosi
+\begin{equation}
+    v_8 = 4 \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)^2} = \approx 3.6638623767. % ... 08876060218414059729536443096597497126688537065 ...
+\end{equation}
+Yoshida \cite{yoshida13} znalazł splot z najmniejszą objętością równą $2v_8$ wśród tych o 4 ogniwach, sploty o 3 ogniwach nie są zbyt dobrze zrozumiane.
 
 % Koniec sekcji Węzły hiperboliczne
