@@ -21,14 +21,16 @@ build/knot-theory.pdf: src/knot-theory.tex src/*/*.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) knot-theory.tex
 
 build/draft-knot-theory.pdf: src/*/*.tex
-	sed -i -r 's@(\\includecomment\{comment\})@% \1@g' src/include/head.tex
+	sed 's@\(\\includecomment\)@% \1@g' src/include/head.tex > src/include/head.tex.bak
+	mv src/include/head.tex.bak src/include/head.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) knot-theory.tex
 	cp src/knot_theory.bib build/knot_theory.bib
 	-cd build && bibtex knot-theory
 	cd build && makeindex knot-theory
 	cd src && pdflatex $(PDFLATEX_FLAGS) knot-theory.tex
 	cd src && pdflatex $(PDFLATEX_FLAGS) knot-theory.tex
-	sed -i -r 's@%.*(\\includecomment\{comment\})@\1@g' src/include/head.tex
+	sed 's@%.*\(\\includecomment.*\)@\1@g' src/include/head.tex > src/include/head.tex.bak
+	mv src/include/head.tex.bak src/include/head.tex
 	mv build/knot-theory.pdf build/draft-knot-theory.pdf
 
 release:
