@@ -1,68 +1,80 @@
 \section{Węzły hiperboliczne} % (fold)
 \label{sec:hyperbolic}
-\begin{definition}
-    Węzeł nazywamy hiperbolicznym, jeżeli na jego dopełnieniu można zadać metrykę o~stałej krzywiźnie $-1$.
+Jak pisaliśmy w sekcji \ref{mutants_mutation}, słynne węzły Conwaya oraz Kinoshity-Terasakiego odróżnił od siebie po raz pierwszy przez Rileya.
+Zbadał paraboliczne reprezentacje ich grup w skończoną grupę prostą $PSL(2, 7)$, co doprowadziło go do odkrycia w dopełnieniu ósemki struktury hiperbolicznej \cite{riley75}.
+% https://arxiv.org/pdf/2002.00564.pdf
+Zainspirowany tym wynikiem Thurston najpierw rozłożył dopełnienie ósemki na dwa idealne wielościany, a potem znacznie uogólnił swój przykład.
+
+Reszta sekcji powstała na podstawie przeglądowej pracy \cite{purcell19} Futera, Kalfagianniego, Purcell i innych oraz notatek z~wykładów, które były prowadzone przez samą Purcell.
+Wiedzę o~węzłach hiperbolicznych można czerpać także z~artykułu: \cite{weeks05} Weeksa.
+Poprawiona wersja dostępna w~serwisie arXiv.
+
+% Badając sploty nie ograniczamy się tylko do diagramów, ale korzystamy też z ich dopełnień, to znaczy 3-rozmaitości $S^3 \setminus L$.
+% Jest ona homeomorficzna z wnętrzem zwartej rozmaitości $X(L) = S^3 \setminus N(K)$, zwanej zewnętrzem splotu, gdzie $N(L)$ stanowi rurowe otoczenie splotu.
+% Dalej możemy stosować maszynierę topologii 3-rozmaitości.
+
+% \begin{definition}[ściśliwy]
+%     Niech orientowalna powierzchnia $S$ będzie właściwie\footnote{properly} zanurzona w zwartej, orientowalnej 3-rozmaitości $M$.
+%     Załóżmy, że dla każdego dysku $E \subseteq M$ z brzegiem $\partial E \subseteq S$ istnieje dysk $E' \subseteq S$ taki, że $\partial E = \partial E'$.
+%     Mówimy wtedy, że powierzchnia $S$ jest nieściśliwa.
+% \end{definition}
+
+% $\partial$-ściśliwość
+
+% essential
+
+% Haken
+
+% monodromy of fibration
+
+% Węzły i sploty, które będziemy rozpatrywać dalej, mają szczególną strukturą geometryczną.
+
+\begin{definition}[hiperboliczny]
     \index{węzeł!hiperboliczny}
+    Splot $L$, na dopełnieniu którego można zadać zupełną metrykę o stałej krzywiźnie $-1$ nazywamy hiperbolicznym.
 \end{definition}
 
-\begin{theorem}[trychotomia Thurstona, 1978]
+\begin{proposition}
+    Splot $L$ jest hiperboliczny wtedy i tylko wtedy, gdy $S^3 \setminus L = \mathbb H^3 / \Gamma$, gdzie $\mathbb H^3$ to hiperboliczna 3-przestrzeń, zaś $\Gamma$ jest dyskretną, beztorsyjną grupą izometrii, izomorficzną z $\pi_1(S^3 \setminus L)$.
+\end{proposition}
+
+Thurston podejrzewał, że każda 3-rozmaitość rozkłada się wzdłuż sfer i nieściśliwych torusów na części wyposażone w jedną z ośmiu kanonicznych geometrii:
+\begin{itemize}
+\item sferyczną $S^3$,
+\item euklidesową $E^3$,
+\item hiperboliczną $H^3$,
+\item $S^2 \times \R$,
+\item $H^2 \times \R$,
+\item uniwersalne nakrycie $SL(2, \R)$,
+\item geometrię Sol albo
+\item geometrię Nil.
+\end{itemize}
+Nie umiał podać pełnego uzasadnienia, w 1982 roku udowodnił swoje przypuszczenie dla rozmaitości Hakena.
+Dowód hipotezy geometryzacyjnej dostarczył mniej więcej dwie dekady później Perelman, nie to jest jednak dla nas najważniejsze.
+
+Thurston pokazał też, że dopełnienie węzła jest rozmaitością włóknistą Seiferta, toroidalną albo hiperboliczną.
+Innymi słowy, przedstawił trychotomię:
+\begin{theorem}
     \index{twierdzenie!Thurstona}
-    Każdy węzeł należy do dokładnie jednej z trzech nieskończonych rodzin: węzłów torusowych, satelitarnych albo hiperbolicznych.
+    Każdy węzeł jest satelitarny, torusowy albo hiperboliczny.
 \end{theorem}
 
-% Stwierdzenie to nazywa się czasem trychotomią Thurstona, gdyż dzieli węzły na trzy rodzaje.
-Z twierdzenia o~sztywności (\emph{rigidity theorem}) Mostowa i~Prasada (1973), jeśli na dopełnieniu węzła można zadać strukturę hiperboliczną, to w~tylko jeden sposób.
-\index{twierdzenie!o sztywności}
-Co więcej, Mostow pokazał, że jeśli istnieje izomorfizm grup podstawowych domkniętych, hiperbolicznych 3-rozmaitości, to są one izometryczne.
-Wiedzę o~węzłach hiperbolicznych można czerpać z~prac: \cite{weeks05} (poprawiona wersja dostępna w~serwisie ArXiv), "Hyperbolic Knot Theory" J. Purcell.
-
-\begin{proposition}[kryterium Thurstona]
-    Niech $L$ będzie splotem z dopełnieniem $X$ i grupą podstawową $\pi = \pi_1(X)$.
-    Jeżeli spełnione są następujące warunki:
-    \begin{enumerate}
-    \item $L$ nie rozszczepia się,
-    \item $L$ nie jest niewęzłem,
-    \item żadna składowa $L$ nie jest niezakłóconym węzłem satelitarnym (?),
-    \item $L$ nie jest węzłem torusowym,
-    \end{enumerate}
-    to $L$ jest splotem hiperbolicznym.
-    Warunki podane wyżej mają swoje odpowiedniki dla przestrzeni $X$ ($X$ nie zawiera właściwej 2-sfery, właściwego dysku, właściwego torusa, właściwego pierścienia) oraz grupy $\pi$ ($\pi$ nie jest wolnym produktem, nie jest cykliczna oraz nie zawiera kopii $\Z^2$).
-\end{proposition}
-
-\begin{proposition}
-    Żaden węzeł nie ma mniejszej objętości hiperbolicznej od ósemki.
-\end{proposition}
-
-Dowód tego faktu podał Cao z~Meyerhoffem w~2001 roku.
-Opierali się oni na działaniu komputerowego programu, który wyeliminował inne możliwości.
-
-\begin{proposition}
-    Objętość hiperboliczna nie odróżnia hiperbolicznych mutantów.
-\end{proposition}
-
-Nie jestem w~stanie podać odnośnika do dowodu w~literaturze -- przypominam, że chodzi o~mutanty z~definicji \ref{def:mutant}.
-Stwierdzenie to można znaleźć na przykład w~książce Adamsa (strona 124).
-
-\begin{proposition}
-    Grupa symetrii węzła hiperbolicznego jest skończona: cykliczna lub diedralna.
-\end{proposition}
+Węzły hiperboliczne stanowią najliczniejszą i najmniej zrozumianą rodzinę węzłów.
 
 \begin{proof}
-    Praca \cite{kodama92}.
+    Thurston w \cite{thurston82}.
 \end{proof}
 
-Objętość hiperboliczna bardzo dobrze odróżnia od siebie węzły.
-Pewien węzeł o~dwunastu skrzyżowaniach i~$5_2$ mają jednak tę samą objętość.
-
-\begin{proposition}
+\begin{corollary}
     Każdy węzeł hiperboliczny jest pierwszy.
-\end{proposition}
+\end{corollary}
 
 Prawie każdy węzeł pierwszy o~mniej niż 17 skrzyżowaniach jest hiperboliczny, na 32 wyjątki składa się 12 węzłów torusowych oraz 20 satelitów trójlistnika.
 Te ostatnie mają co najmniej 11 skrzyżowań.
 Baza ciągów liczb całkowitych OEIS zawiera informacje na temat liczności poszczególnych typów węzłów.
 Analizując ciągi A051764, A051765 oraz A052408 można dojść do wniosku, że wraz ze wzrostem liczby skrzyżowań, stosunek liczby węzłów hiperbolicznych do wszystkich węzłów dąży do $1$:
 
+\begin{figure}[H]
 \renewcommand*{\arraystretch}{1.4}
 \footnotesize
 \begin{longtable}{lcccccccccccccc}
@@ -74,6 +86,7 @@ Analizując ciągi A051764, A051765 oraz A052408 można dojść do wniosku, że 
     \hline
 \end{longtable}
 \normalsize
+\end{figure}
 
 W pracy \cite{malyutin16} A. Malyutin pokazał jednak, że to przypuszczenie jest sprzeczne z~wieloma innymi starymi hipotezami teorii węzłów: \ref{malyutin1} -- \ref{malyutin4}.
 
@@ -116,8 +129,76 @@ Pokazał w~niej, że jeśli oznaczymy liczbę splotów pierwszych i~nierozszczep
 
 % Every non-split, prime, alternating link that is not a~torus link is hyperbolic by a~result of William Menasco.
 
-
-
 % https://arxiv.org/abs/math/0309466
 % https://arxiv.org/abs/math/0311380
+
+Czwarty rozdział książki \cite{purcell2020} zawiera ćwiczenie, by znaleźć dwuparametrową rodzinę zupełnych struktur hiperbolicznych na dziurawym torusie oraz czterokrotnie dziurawej sferze.
+Elastyczność tego rodzaju nie występuje w przestrzeniach wyższych wymiarów.
+Z twierdzenia o sztywności, w wersji algebraicznej:
+
+\begin{theorem}[Mostow-Prasad]
+    \index{twierdzenie!o sztywności}
+    Niech $\Gamma_1, \Gamma_2$ będą dyskretnymi podgrupami grupy izometrii $\mathbb H^n$ dla $n \ge 3$ takimi, że ilorazy $\mathbb H^n$ mają skończone objętości.
+    Załóżmy też, że istnieje izomorfizm grup $\varphi \colon \Gamma_1 \to \Gamma_2$.
+    Wtedy podgrupy $\Gamma_1, \Gamma_2$ są sprzężone.
+\end{theorem}
+
+albo geometrycznej:
+
+\begin{theorem}[Mostow-Prasad]
+    Niech $M_1, M_2$ będą zupełnymi, hiperbolicznymi rozmaitościami o skończonych objętościach.
+    Wtedy każdy izomorfizm grup podstawowych $\varphi \colon \pi_1(M_1) \to \pi_1(M_2)$ realizowany jest jednoznacznie przez izometrię.
+\end{theorem}
+
+wynika, że jeśli znaleźliśmy jakąś zupełną strukturę hiperboliczną na dopełnieniu splotu, to innych już nie ma. 
+Dzięki temu niezmienniki mające korzenie w geometrii hiperbolicznej mają przyjemne własności.
+Patrz także oryginalne prace: Mostowa \cite{mostow73}, Prasada \cite{prasad73}.
+
+\begin{proof}
+    Thurston przedstawił szkic rozumowania w sekcji 5.9 swoich notatek, na bazie których powstała później książka \cite{thurston97}.
+    Inne szczegółowe rozumowanie można znaleźć w rozdziale C podręcznika \cite{benedetti92}.
+\end{proof}
+
+% luźno związane: http://www.deltami.edu.pl/temat/matematyka/topologia/2012/12/27/%William_Thurston_i_hipoteza_geometryzacyjna/
+
+\begin{tobedone}[kryterium Thurstona]
+    Niech $L$ będzie splotem z dopełnieniem $X$ i grupą podstawową $\pi = \pi_1(X)$.
+    Jeżeli spełnione są następujące warunki:
+    \begin{enumerate}
+    \item $L$ nie rozszczepia się,
+    \item $L$ nie jest niewęzłem,
+    \item żadna składowa $L$ nie jest niezakłóconym węzłem satelitarnym (?),
+    \item $L$ nie jest węzłem torusowym,
+    \end{enumerate}
+    to $L$ jest splotem hiperbolicznym.
+    Warunki podane wyżej mają swoje odpowiedniki dla przestrzeni $X$ ($X$ nie zawiera właściwej 2-sfery, właściwego dysku, właściwego torusa, właściwego pierścienia) oraz grupy $\pi$ ($\pi$ nie jest wolnym produktem, nie jest cykliczna oraz nie zawiera kopii $\Z^2$).
+\end{tobedone}
+
+% objętość
+
+\begin{tobedone}
+    Żaden węzeł nie ma mniejszej objętości hiperbolicznej od ósemki.
+\end{tobedone}
+
+Dowód tego faktu podał Cao z~Meyerhoffem w~2001 roku.
+Opierali się oni na działaniu komputerowego programu, który wyeliminował inne możliwości.
+
+\begin{tobedone}
+    Objętość hiperboliczna nie odróżnia hiperbolicznych mutantów.
+\end{tobedone}
+
+Nie jestem w~stanie podać odnośnika do dowodu w~literaturze -- przypominam, że chodzi o~mutanty z~definicji \ref{def:mutant}.
+Stwierdzenie to można znaleźć na przykład w~książce Adamsa (strona 124).
+
+Objętość hiperboliczna bardzo dobrze odróżnia od siebie węzły.
+Pewien węzeł o~dwunastu skrzyżowaniach i~$5_2$ mają jednak tę samą objętość.
+
+\begin{tobedone}
+    Grupa symetrii węzła hiperbolicznego jest skończona: cykliczna lub diedralna.
+\end{tobedone}
+
+\begin{proof}
+    Praca \cite{kodama92}.
+\end{proof}
+
 % Koniec sekcji Węzły hiperboliczne
