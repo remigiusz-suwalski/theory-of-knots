@@ -65,6 +65,37 @@ Węzły hiperboliczne stanowią najliczniejszą i najmniej zrozumianą rodzinę 
     Thurston w \cite{thurston82}.
 \end{proof}
 
+Sam Nead, użytkownik portalu MathOverflow napisał, że kryterium Thurstona dzięki maszynerii JSJ oraz pracom innych osób można wysłowić algebraicznie.
+
+\begin{proposition}
+    % There is a topological criterion due to Thurston.  Using the JSJ machine (and work of many others) this criterion can also be phrased algebraically.  I'll essay these below.  Please note that the situation is much simpler for knots.  To answer your question most directly, here is the desired reference to Wikipedia. 
+    % http://en.wikipedia.org/wiki/Hyperbolic_link
+    % This page refers to the books of Colin Adams and William Thurston.  Both are excellent. 
+    % Now, here is Thurston's criterion. (EDIT: exposition improved after reading Bruno Martelli's answer.)
+    % Suppose that $L$ is the link and $X$ is the link complement.  Suppose $\pi = \pi_1(X)$. We assume the following properties (and each property assumes the proceeding ones). $\newcommand{\ZZ}{\mathbb{Z}}$
+    %  - $L$ is not a split link.  Equivalently, $X$ is contains no essential two-sphere.  Equivalently, $\pi$ is not a free product.
+    %  - $L$ is not the unknot. Equivalently, $X$ contains no essential disk. Equivalently, $\pi$ is not $\ZZ$.
+    %  - $L$ has no component that is an "undisturbed satellite knot".  Equivalently, $X$ contains no essential torus.
+    %  - $L$ is not a torus knot. Equivalently, $X$ contains no essential annulus. These last two topological properties are equivalent to $\pi$ not containing a copy of $\ZZ^2$.
+    % Then $X$ admits a hyperbolic structure.
+    Niech $L$ będzie splotem, który nie rozszczepia się, nie jest niewęzłem, nie posiada wśród ogniw niezakłóconego węzła satelitarnego oraz nie jest węzłem torusowym.
+    Wtedy $L$ jest węzłem hiperbolicznym.
+\end{proposition}
+
+\begin{proposition}
+    Niech $L$ będzie splotem takim, że jego dopełnienie $S^3 \setminus L$ nie zawiera właściwej 2-sfery, właściwego dysku, właściwego torusa oraz właściwego pierścienia.
+    Wtedy $L$ jest węzłem hiperbolicznym.
+\end{proposition}
+
+\begin{proposition}
+    Niech $L$ będzie splotem takim, że jego grupa $\pi = \pi(S^3 \setminus L)$ nie jest produktem wolnym, nie jest nieskończona i cykliczna oraz nie zawiera w sobie kopii grupy $\Z \oplus \Z$.
+    Wtedy $L$ jest węzłem hiperbolicznym.
+\end{proposition}
+
+\begin{proof}
+    Patrz \url{https://mathoverflow.net/a/153327}.
+\end{proof}
+
 Dwa lata później Menasco \cite{menasco84} pokazał, że każdy pierwszy, alternujący splot jest albo 2-warkoczem (a zatem, torusowy) albo hiperboliczny.
 
 \begin{corollary}
@@ -162,19 +193,6 @@ Patrz także oryginalne prace: Mostowa \cite{mostow73}, Prasada \cite{prasad73}.
 \end{proof}
 
 % luźno związane: http://www.deltami.edu.pl/temat/matematyka/topologia/2012/12/27/%William_Thurston_i_hipoteza_geometryzacyjna/
-
-\begin{tobedone}[kryterium Thurstona]
-    Niech $L$ będzie splotem z dopełnieniem $X$ i grupą podstawową $\pi = \pi_1(X)$.
-    Jeżeli spełnione są następujące warunki:
-    \begin{enumerate}
-    \item $L$ nie rozszczepia się,
-    \item $L$ nie jest niewęzłem,
-    \item żadna składowa $L$ nie jest niezakłóconym węzłem satelitarnym (?),
-    \item $L$ nie jest węzłem torusowym,
-    \end{enumerate}
-    to $L$ jest splotem hiperbolicznym.
-    Warunki podane wyżej mają swoje odpowiedniki dla przestrzeni $X$ ($X$ nie zawiera właściwej 2-sfery, właściwego dysku, właściwego torusa, właściwego pierścienia) oraz grupy $\pi$ ($\pi$ nie jest wolnym produktem, nie jest cykliczna oraz nie zawiera kopii $\Z^2$).
-\end{tobedone}
 
 \begin{proposition}
     Grupa symetrii węzła hiperbolicznego jest skończona: cykliczna lub diedralna.
