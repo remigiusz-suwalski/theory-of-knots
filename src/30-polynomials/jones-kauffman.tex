@@ -396,40 +396,47 @@ Wcześniej pokazał to z~dużo większym wysiłkiem Dehn, patrz przykład \ref{t
     Każdy węzeł ma tylko dwie orientacje, splot może mieć ich $2^n$, gdzie $n$ to liczba składowych.
 \end{proof}
 
-\begin{proposition} \label{prp:jones_multiplicative_1}
-    Niech $L, M$ będą zorientowanymi splotami, wtedy
+\begin{proposition}
+    \label{prp:jones_multiplicative_1}
+    Niech $L_1, L_2$ będą zorientowanymi splotami.
+    Wtedy
     \begin{equation}
-        \jones(L \sqcup M) = (-t^{1/2} - t^{-1/2}) \jones(L) \jones(M).
+        \jones(L_1 \sqcup L_2) = (-t^{1/2} - t^{-1/2}) \jones(L_1) \jones(L_2).
     \end{equation}
 \end{proposition}
 
 \begin{proof}
-    Wybierzmy diagramy $D, E$ dla (odpowiednio) $L, M$.
-    Po podstawieniu $t^{1/2}=A^{-2}$ widzimy, że chcemy pokazać
+    Wybierzmy diagramy $D_1, D_2$ dla splotów $L_1, L_2$.
+    Po podstawieniu $t^{1/2} = A^{-2}$ widzimy, że chcemy pokazać
     \begin{equation}
-        (-A)^{-3w(D\sqcup E)} \langle D\sqcup E\rangle = (-A^2-A^{-2})(-A)^{-3(w(D)+w(E))} \langle D \rangle \langle E \rangle.
+        (-A)^{-3w(D_1 \sqcup D_2)} \langle D_1 \sqcup D_2 \rangle
+        =
+        (-A^2 - A^{-2})(-A)^{-3(w(D_1) + w(D_2))} \langle D_1 \rangle \langle D_2 \rangle.
     \end{equation}
 
-    Oczywiście $w(D\sqcup E)=w(D)+w(E)$, więc wystarczy udowodnić, że
+    Oczywiście $w(D_1 \sqcup D_2) = w(D_1) + w(D_2)$, więc wystarczy udowodnić, że
     \begin{equation}
-        \langle D\sqcup E\rangle = (-A^2-A^{-2})\langle D\rangle\langle E\rangle.
+        \langle D_1 \sqcup D_2 \rangle = (-A^2 - A^{-2}) \langle D_1 \rangle \langle D_2 \rangle.
     \end{equation}
 
-    Oznaczmy przez $f_1(D)$, $f_2(D)$ lewą i~prawą stronę ostatniego równania.
-    Są to wielomiany Laurenta, które zależą tylko od $D$.
+    Oznaczmy przez $f_1(D_1)$, $f_2(D_1)$ odpowiednio lewą i~prawą stronę ostatniego równania.
+    Są to wielomiany Laurenta, które zależą tylko od $D_1$.
     Aksjomaty Kauffmana pozwalają na pokazanie, że obie funkcje mają następujące własności:
-    \begin{align*}
-        f_i(\LittleUnknot)        & = (-A^2-A^{-2}) \langle E \rangle \\
-        f_i(D\sqcup\LittleUnknot) & = (-A^2-A^{-2}) f_i(D) \\
-        f_i(\LittleRightCrossing) & = Af_i(\LittleRightSmoothing) + A^{-1}f_i(\LittleLeftSmoothing).
-    \end{align*}
-    To wyznacza ich wartości dla dowolnego diagramu $D$, zatem $f_1 \equiv f_2$, co kończy dowód.
+    \begin{align}
+        f_i(\LittleUnknot)            & = (-A^2 - A^{-2}) \langle D_2 \rangle \\
+        f_i(D_1 \sqcup \LittleUnknot) & = (-A^2 - A^{-2}) f_i(D_1) \\
+        f_i(\LittleRightCrossing)     & = A f_i(\LittleRightSmoothing) + A^{-1} f_i(\LittleLeftSmoothing).
+    \end{align}
+    Ponieważ powyższe tożsamości wystarczają do wyznaczenia wartości funkcji $f_i$ dla dowolnego diagramu $D_1$, dochodzimy do wniosku, że $f_1 \equiv f_2$.
+    To kończy dowód.
 \end{proof}
 
-\begin{proposition} \label{prp:jones_multiplicative_2}
-    Niech $J, K$ będą zorientowanymi węzłami, wtedy
+\begin{proposition}
+    \label{prp:jones_multiplicative_2}
+    Niech $K_1, K_2$ będą zorientowanymi węzłami.
+    Wtedy
     \begin{equation}
-        \jones(J \# K) = \jones(J) \jones(K).
+        \jones(K_1 \# K_2) = \jones(K_1) \jones(K_2).
     \end{equation}
 \end{proposition}
 
@@ -445,8 +452,8 @@ Wcześniej pokazał to z~dużo większym wysiłkiem Dehn, patrz przykład \ref{t
             \strand[semithick,Latex-] (-12, 3) [in=left, out=right] to (12, -3);
             \strand[semithick,Latex-] (12, 3) [in=right, out=left] to (-12, -3);
 
-            \node at (-17, 0) {$J$};
-            \node at (17, 0) {$K$};
+            \node at (-17, 0) {$K_1$};
+            \node at (17, 0) {$K_2$};
         \end{knot}
         \end{tikzpicture}
         \quad\quad
@@ -458,8 +465,8 @@ Wcześniej pokazał to z~dużo większym wysiłkiem Dehn, patrz przykład \ref{t
             \strand[semithick,Latex-] (-12, 3) [in=left, out=right] to (12, -3);
             \strand[semithick,Latex-] (12, 3) [in=right, out=left] to (-12, -3);
 
-            \node at (-17, 0) {$J$};
-            \node at (17, 0) {$K$};
+            \node at (-17, 0) {$K_1$};
+            \node at (17, 0) {$K_2$};
         \end{knot}
         \end{tikzpicture}
         \quad\quad
@@ -473,17 +480,22 @@ Wcześniej pokazał to z~dużo większym wysiłkiem Dehn, patrz przykład \ref{t
             \strand[semithick] (12, -3) [in=down, out=left] to (2, 0);
             \strand[semithick,Latex-] (12, 3) [in=up, out=left] to (2, 0);
 
-            \node at (-17, 0) {$J$};
-            \node at (17, 0) {$K$};
+            \node at (-17, 0) {$K_1$};
+            \node at (17, 0) {$K_2$};
         \end{knot}
         \end{tikzpicture}
     \]
 \end{comment}
-    Relacja kłębiasta może zostać użyta do pokazania, że
+    Relacja kłębiasta orzeka w tym przypadku, że
     \begin{equation}
-    t^{-1}\jones(J\#K)-t\jones(J\#K)+(t^{-1/2}-t^{1/2})\jones(J\sqcup K)=0.
+        t^{-1} \jones(K_1 \# K_2) - t \jones(K_1 \# K_2) + (t^{-1/2} - t^{1/2}) \jones(K_1 \sqcup K_2) = 0.
     \end{equation}
-    Ale $\jones(J\sqcup K)=(-t^{1/2}-t^{-1/2})\jones(J)\jones(K)$, co upraszcza się do $\jones(J\#K)=\jones(J)\jones(K)$ i~kończy dowód.
+    Ostatni składnik sumy można rozwinąć na mocy faktu \ref{prp:jones_multiplicative_1}.
+    Po uporządkowaniu dostaniemy:
+    \begin{equation}
+        (t^{-1} - t) \jones(K_1 \# K_2) - (t^{-1} - t) \jones(K_1) \jones(K_2) = 0,
+    \end{equation}
+    a stąd widać już prawdziwość dowodzonej tezy.
 \end{proof}
 
 % Koniec sekcji Relacja kłębiasta
