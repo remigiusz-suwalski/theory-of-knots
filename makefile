@@ -8,6 +8,11 @@ draft: prepare chapter-draft release
 prepare:
 	mkdir -p build
 
+precommit:
+	find src -type f \
+		| xargs awk -F ';' '/^% DICTIONARY/ {print "\\item \\textbf{" $$2 "} " $$3}' \
+		| sort > src/90-appendix/dictionary.tex
+
 chapter-all: build/knot-theory.pdf
 
 chapter-draft: build/draft-knot-theory.pdf
