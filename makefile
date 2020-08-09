@@ -9,6 +9,7 @@ prepare:
 	mkdir -p build
 
 precommit:
+	for i in $$(find src -type f -iname '*.tex'); do sed '$$a\' $$i > file && mv file $$i; done
 	find src -type f \
 		| xargs awk -F ';' '/^% DICTIONARY/ {print "\\item \\textbf{" $$2 "} " $$3}' \
 		| sort > src/90-appendix/dictionary.tex
