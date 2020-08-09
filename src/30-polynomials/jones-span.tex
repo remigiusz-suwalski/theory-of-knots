@@ -1,14 +1,9 @@
 \subsection{Hipotezy Taita} % (fold)
 \label{sub:span}
-Przytoczmy raz jeszcze treść pierwszej hipotezy Taita (\ref{conj_tait_i}).
-
-\begin{conjecture}[Tait]
-    \label{taitjones}
-    Jeśli zorientowany splot $L$ posiada zredukowany, spójny, alternujący diagram o~$n$ skrzyżowaniach, to każdy jego diagram składa się z co najmniej $n$ skrzyżowań.
-\end{conjecture}
-
-Przedstawiony przez nas dowód nie będzie odbiegać znacząco od podejścia Kauffmana w~\cite{kauffman87}.
-Najpierw wyjaśnimy znaczenie przymiotników z~hipotezy Taita.
+W tej podsekcji definiujemy stan oraz wygładzenie diagramu, następnie wyprowadzamy wzór o~sumowaniu stanów oraz dowodzimy prawdziwości dwóch technicznych lematów.
+Pozwoli to oszacować rozpiętość wielomianu Jonesa, skąd bezpośrednio wynika już I hipoteza Taita \ref{conj_tait_i}.
+Nie odbiega to znacząco od podejścia Kauffmana w~\cite{kauffman87}.
+Na koniec naszkicujemy krótko dowody pozostałych hipotez.
 
 \begin{definition}
     \label{def:isthmus}
@@ -34,20 +29,16 @@ Najpierw wyjaśnimy znaczenie przymiotników z~hipotezy Taita.
 Słowo przesmyk pochodzi z teorii grafów, skrzyżowanie jest przesmykiem dokładnie wtedy, gdy odpowiadająca mu krawędź w grafie węzła jest przesmykiem, czyli jej usunięcie zwiększa liczbę składowych spójności.
 Tam używa się także określenia most, które u~nas ma już inne znaczenie.
 
-\begin{definition}
-    Diagram jest spójny, gdy nie można go podzielić na dwie niepuste części, które nie spotykają się na żadnym skrzyżowaniu.
+\begin{definition}[spójny]
+    \label{diagram!spójny}
+    Diagram, którego nie można podzielić na dwie niepuste części niespotykające się na żadnym skrzyżowaniu, nazywamy spójnym.
 \end{definition}
 
 Jeżeli diagram nie jest spójny, możemy przesunąć rozłączne ogniwa na siebie przy użyciu II ruchu Reidemeistera.
-W~dowodzie hipotezy Taita użyjemy rozpiętości wielomianu Jonesa, która stanowi uogólnienie stopnia wielomianu.
-
-\begin{definition}
-    Rozpiętością wielomianu Laurenta $f$ jednej zmiennej $X$ nazywamy różnicę między najwyższym oraz najmniejszym wykładnikiem pojawiającym się w~$f$: $\operatorname{span} f = M_f - m_f$.
-\end{definition}
-
-Rozwiniemy teraz rekurencyją definicję klamry Kauffmana do sumy, która okaże się użyteczna przy dowodzeniu późniejszych twierdzeń.
+Hipoteza Taita mówi coś o zredukowanych, spójnych i alternujących diagramach.
 
 \begin{definition}[stan]
+    \label{stan diagramu}
     Niech $D$ będzie diagramem splotu.
     Każdą funkcję $s$ ze zbioru skrzyżowań diagramu $D$ o wartościach $\pm 1$ nazywamy stanem.
     Sumę wszystkich wartości $s$ oznaczamy $|s|$.
@@ -111,7 +102,6 @@ Dla wygody wprowadźmy skrót $\langle D \mid s \rangle := (-A^{-2}-A^2)^{|sD|-1
     Teraz wystarczy dodać do siebie dwa ostatnie równania.
     %: $A[\PrawyGladki]+A^{-1}[\LewyGladki] = \sum_s(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|} = [\RightCrossing]$.
 \end{proof}
-
 Zbadamy następnie dwa najprostsze stany dowolnego diagramu.
 
 \begin{definition}
@@ -239,46 +229,63 @@ Zauważmy jeszcze, że na każdym skrzyżowaniu występują cztery różne czarn
     To kończy dowód.
     \end{proof}
 
+W~dowodzie hipotezy Taita użyjemy rozpiętości wielomianu Jonesa, która stanowi uogólnienie stopnia wielomianu.
+
+\begin{definition}[rozpiętość]
+    Niech $f$ będzie wielomianem Laurenta jednej zmiennej $X$.
+    Wtedy różnicę między najwyższą i najniższą potęgą $X$,
+    \begin{equation}
+        \operatorname{span} f = \operatorname{maxdeg} f - \operatorname{mindeg} f,
+    \end{equation}
+    nazywamy rozpiętością wielomianu $f$.
+\end{definition}
+
  \begin{lemma}
     \label{lem:pretait_lemma_2}
     Niech $D$ będzie diagramem splotu o~$n$ skrzyżowaniach.
     Wtedy
     \begin{align}
-        M \langle D & \rangle \le n + 2|s_+D| - 2 \\
-        m \langle D & \rangle \ge -n - 2|s_-D| + 2
+        \operatorname{maxdeg} \langle D \rangle & \le n - 2 + 2|s_+D| \\
+        \operatorname{mindeg} \langle D \rangle & \ge 2 - n - 2|s_-D|
     \end{align}
     z równością, jeżeli $D$ jest alternujący, zredukowany i~spójny.
 \end{lemma}
 
 \begin{proof}
-    Udowodnimy tylko pierwszą część, druga jest do niej podobna.
+    Ponieważ dowody tych nierówności przebiegają analogicznie, ograniczymy się do pierwszej z nich.
+    Dla oszczędności miejsca będziemy pisać $M$ zamiast $\operatorname{maxdeg}$.
 
     Niech $s$ będzie dowolnym stanem.
-    Zauważmy, że $M \langle D|s\rangle = 2|sD| + |s| - 2$, a więc w~szczególności $M \langle D|s_+\rangle = 2|s_+D| + n - 2$.
-    Gdyby udało się nam pokazać nierówność $M\langle D|s\rangle \le M\langle D|s_+\rangle$
-    dla wszystkich innych stanów $s$, dowód lematu byłby zakończony.
-
-    Kolejną ważną dla dowodu obserwacją jest to, że istnieje ciąg stanów $s_+ = s_0$, $s_1$, \ldots, $s_r=s$, w~którym $s_{i+1}$ powstaje z~$s_i$ przez pojedynczą zmianę $+1$ na $-1$.
-    Skoro diagram $s_{i+1}D$ uzyskujemy z~$s_{i}D$ przez połączenie dwóch zamkniętych krzywych lub podział jednej zamkniętej krzywej na dwie części, to mamy dwie nowe równości: $|s_{i+1}| = |s_i| - 2$ oraz $|s_{i+1}D| = |s_iD| \pm 1$.
-    To kończy dowód nierówności z lematu, ponieważ
+    Istnieje wtedy ciąg stanów $s_+ = s_0, s_1, \ldots, s_r = s$, w~którym stan $s_{i+1}$ powstaje z~$s_i$ przez zmianę wartości w jednym ze skrzyżowań z $+1$ na $-1$.
+    Skoro diagram $s_{i+1}D$ uzyskujemy z~$s_{i}D$ przez połączenie dwóch zamkniętych krzywych lub podział jednej krzywej na dwie części, mamy: $|s_{i+1}| = |s_i| - 2$ oraz $|s_{i+1}D| = |s_iD| \pm 1$.
+    Wnioskujemy stąd, że
     \begin{align}
         M \langle D \mid s_{i+1} \rangle
         & = 2|s_{i+1}D| + |s_{i+1}|-2 \\
         & = (2|s_iD| + |s_i| -2 ) + (\pm 2-2) \\
         & \le M \langle D|s_i\rangle.
     \end{align}
-    Powtarzając odpowiednio wiele razy dostajemy łańcuch nierówności
+    Powtarzając odpowiednio wiele razy, dostajemy łańcuch nierówności
     \begin{equation}
-        \langle D \mid s\rangle =M\langle D \mid s_r\rangle \le\ldots\le M\langle D \mid s_0\rangle=M\langle D \mid s_+\rangle.
+        M \langle D \mid s \rangle
+        =
+        M \langle D \mid s_r \rangle
+        \le \ldots \le
+        M \langle D \mid s_0 \rangle
+        =
+        M \langle D \mid s_+ \rangle.
     \end{equation}
+    Zauważmy, że dla każdego stanu $s$ zachodzi $M \langle D|s \rangle = 2|sD| + |s| - 2$.
+    Zatem
+    \begin{equation}
+        M \langle D \mid s \rangle \le 2 |s_+D| + |s| - 2 = 2|s_+D| + n - 2,
+    \end{equation}
+    co kończy dowód pierwszej części lematu.
 
-    Pokażemy teraz, że jeśli $D$ jest zredukowany, alternujący i~spójny, to nierówność zamienia się w~równość.
-    Będzie to wynikało z ostrej nierówności
-    \begin{equation}
-        M\langle D|s\rangle < M\langle D| s_+\rangle
-    \end{equation}
-    dla $s\neq s_+$, jeżeli tylko powołamy się na powyższy argument.
-    Wystarczy ograniczyć się do tych $s$, które powstają z~$s_+$ przez zmianę pojedynczego stanu $+1$ na $-1$.
+    Załóżmy teraz, że diagram $D$ jest zredukowany, alternujący i~spójny.
+    Chcemy pokazać, że stan $s_+$ dominuje nad pozostałymi: żaden inny nie wnosi do sumy wyrazu z~takim samym najwyższym wykładnikiem.
+    Czy warunek $s \neq s_+$ implikuje $M\langle D|s\rangle < M\langle D| s_+\rangle$?
+    Dzięki łańcuchowi nierówności wystarczy sprawdzić to tylko dla tych stanów $s$, które powstają z~$s_+$ przez zmianę pojedynczej wartości $+1$ na $-1$.
     Ale to już jest oczywiste, gdyż $sD$ otrzymujemy przez sklejenie dwóch białych obszarów $s_+ D$.
 \end{proof}
 
@@ -291,7 +298,7 @@ Możemy wreszcie zająć się rozpiętością wielomianu Jonesa.
 
 \begin{proof}
     Pokażemy prawdziwość innego, równoważnego stwierdzenia: $\operatorname{span} \langle D\rangle\le 4n$.
-    Dwa poprzednie lematy \ref{lem:pretait_lemma_1} oraz \ref{lem:pretait_lemma_2} raze, mówią, że
+    Dwa poprzednie lematy \ref{lem:pretait_lemma_1} oraz \ref{lem:pretait_lemma_2} mówią razem, że
     \begin{align}
         \operatorname{span}\langle D\rangle
         & = M\langle D\rangle - m\langle D\rangle \\
@@ -302,7 +309,10 @@ Możemy wreszcie zająć się rozpiętością wielomianu Jonesa.
     \end{align}
 \end{proof}
 
-Jesteśmy już w~stanie podać dowód twierdzenia \ref{taitjones} wspomnianego na początku sekcji.
+\begin{conjecture}[Tait]
+    \label{taitjones}
+    Jeśli zorientowany splot $L$ posiada zredukowany, spójny, alternujący diagram o~$n$ skrzyżowaniach, to każdy jego diagram składa się z co najmniej $n$ skrzyżowań.
+\end{conjecture}
 
 \begin{proof}
     Załóżmy nie wprost, że istnieje diagram o~mniejszej liczbie skrzyżowań,
@@ -316,8 +326,8 @@ jednak czasami możemy oszacować jego rozpiętość korzystając z~następując
     Niech $L$ będzie zorientowanym splotem ze spójnym diagramem $D$, na którym widać $n$ skrzyżowań.
     Wtedy
     \begin{align}
-        3w(D)-2|s_+D|+2-n & \le 4 m(\jones(L) \\
-        3w(D)+2|s_-D|+n-2 & \ge 4 M(\jones(L)),
+        3w(D) - 2|s_+D| + 2 - n & \le 4 m(\jones(L) \\
+        3w(D) + 2|s_-D| + n - 2 & \ge 4 M(\jones(L)),
     \end{align}
     z~równością dla zredukowanego i~alternującego $D$.
 \end{corollary}
@@ -325,5 +335,9 @@ jednak czasami możemy oszacować jego rozpiętość korzystając z~następując
 \begin{proof}
     Wystarczy powołać się na definicję \ref{def:jones_polynomial} oraz lemat \ref{lem:pretait_lemma_2}.
 \end{proof}
+
+\begin{tobedone}
+    Dowód II i III hipotezy -- szkic.
+\end{tobedone}
 
 % Koniec podsekcji Rozpiętość i~wielomian Jonesa
