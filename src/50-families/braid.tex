@@ -1,6 +1,6 @@
 \section{Warkocze} % (fold)
 \label{sec:braid}
-Podam teraz opis grupy warkoczy, rozważanej po raz pierwszy niejawnie przez A. Hurwitza w~1885 roku i~jawnie przez E. Artina czterdzieści lat później.
+Zaczniemy od opisu grupy warkoczy, rozważanej po raz pierwszy niejawnie przez A. Hurwitza w~1885 roku i~jawnie przez E. Artina czterdzieści lat później.
 O dwóch punktach $(d_1, t_1)$, $(d_2, t_2)$ w~walcu $B^2 \times [0, 1] \subseteq \R^3$ powiemy, że łączący je odcinek jest malejący, jeśli $t_1 > t_2$.
 Łamana malejąca to taka, która jest złożona z~malejących odcinków.
 
@@ -95,9 +95,10 @@ pozostawiając mu małą wskazówkę graficzną:
 \end{comment}
 
 \begin{proposition}
-    Grupa warkoczy jest izomorficzna z~grupę prezentowaną przez generatory $\sigma_1, \ldots, \sigma_{n-1}$ oraz relacje:
-    $\sigma_i \sigma_j = \sigma_j \sigma_i$ dla $|i - j| \neq 1$,
-    $\sigma_i\sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ dla $1 \le i \le n-2$.
+    Grupa warkoczy $B_n$ ma prezentację
+    \begin{equation}
+        \{\sigma_1, \ldots, \sigma_{n-1} : \sigma_i\sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}, |i-j| \neq 1 \implies \sigma_i \sigma_j = \sigma_j \sigma_i\}.
+    \end{equation}
 \end{proposition}
 
 Generatory $\sigma_i$ posiadają prostą interpretację graficzną:
@@ -121,26 +122,27 @@ Generatory $\sigma_i$ posiadają prostą interpretację graficzną:
 \]
 \end{comment}
 
+Jeśli zapomnimy, jak poszczególne pasma krzyżują się, każdy warkocz staje się permutacją zbioru $n$-elementowego.
+To odwzorowanie jest ,,na'' i zgodne ze składaniem warkoczy, dlatego wyznacza homomorfizm $B_n \to S_n$.
+% DICTIONARY;braid, pure;warkocz, czysty
+Jego jądro stanowi podgrupa warkoczy czystych, czyli takich, że początek i~koniec każdego pasma znajdują się w tej samej pozycji.
+
 \begin{proposition}
-    Grupa warkoczy $B_n$ jest nieprzemienna wtedy i tylko wtedy, gdy $n \ge 3$.
+    Grupa warkoczy $B_n$ jest przemienna wtedy i tylko wtedy, gdy $n < 3$.
 \end{proposition}
 
 \begin{proof}
     Dla $n = 1$ grupa warkoczowa jest trywialna, dla $n = 2$ mamy $B_2 \cong \Z$.
-
-    Jeśli zapomnimy, jak poszczególne pasma krzyżują się, każdy warkocz staje się permutacją zbioru $n$-elementowego.
-    To odwzorowanie jest ,,na'' i zgodne ze składaniem warkoczy, dlatego wyznacza homomorfizm $B_n \to S_n$.
-    Grupa $S_n$ dla $n \ge 2$ jest nieprzemienna, zatem grupa $B_n$ także taka jest.
+    Załóżmy, że $n \ge 3$. Wtedy grupa symetrii $S_n$ jest nieprzemienna, zatem grupa $B_n$ także taka jest.
 \end{proof}
 
 Obrazem generatora $\sigma_i \in B_n$ jest transpozycja $(i, i+1) \in S_n$, co pozwala przepisać prezentację Artina grupy $B_n$ do prezentacji Coxetera grupy symetrii:
 \begin{equation}
-    S_n = \langle s_1, \ldots, s_{n-1} \mid s_{i}s_{i+1}s_{i} = s_{i+1}s_{i}s_{i+1}, s_i^2 = 1, s_is_j=s_js_i \mbox { dla } |i-j| \ge 2\rangle.
+    S_n = \langle s_1, \ldots, s_{n-1} \mid
+    s_i^2 = 1,
+    s_{i}s_{i+1}s_{i} = s_{i+1}s_{i}s_{i+1},
+    s_is_j = s_js_i \mbox { dla } |i-j| \neq 1 \rangle
 \end{equation}
-
-% DICTIONARY;braid, pure;warkocz, czysty
-Jądrem homomorfizmu $B_n \to S_n$ jest podgrupa warkoczy czystych.
-Początek i~koniec każdego pasma czystego warkocza znajduje się w tej samej pozycji.
 
 \begin{proposition}
     Jeśli $n \ge 3$, to centrum grupy $B_n$ jest generowane przez warkocz $(\prod_{i = 1}^{n-1} \sigma_i)^n$.
@@ -150,8 +152,8 @@ Początek i~koniec każdego pasma czystego warkocza znajduje się w tej samej po
     Garside w \cite{garside69}.
 \end{proof}
 
-Grupa $B_1$ jest trywialna, $B_2$ cykliczna, zaś $B_3$ to grupa podstawowa trójlistnika.
-Nie istnieje węzeł, którego grupą podstawową byłaby jednak $B_n$ dla $n \ge 4$: tam elementy $\sigma_1$, $\sigma_n$ oraz generator centrum rozpinają grupę izomorficzną z~$\Z^3$.
+Grupa $B_3$ jest grupą podstawową trójlistnika.
+Nie istnieje żaden węzeł, którego grupą podstawową byłaby jednak $B_n$ dla $n \ge 4$: tam elementy $\sigma_1$, $\sigma_n$ oraz generator centrum rozpinają grupę izomorficzną z~$\Z^3$.
 Natomiast asferyczna, niezwarta 3-rozmaitość nie może mieć grupy podstawowej $\Z^3$.
 Musimy pominąć czysto kohomologiczny dowód faktu, ale zaiste prowadzi to do sprzeczności.
 
@@ -167,7 +169,7 @@ Nie wiadomo, kto wymyślił operację domykania warkoczy, ale była ona z pewno�
 \end{theorem}
 
 \begin{proof}
-    W kolejności chronologicznej: Alexander \cite{alexander23}, Morton \cite{mortonhr86}, Yamada \cite{yamada87}, Vogel \cite{vogel90}.
+    W kolejności chronologicznej: najpierw Alexander \cite{alexander23}, a po blisko połowie wieku Morton \cite{mortonhr86}, Yamada \cite{yamada87} i Vogel \cite{vogel90}.
 \end{proof}
 
 Niech $b \in B_n$ będzie słowem zapisanym na standardowych generatorach.
