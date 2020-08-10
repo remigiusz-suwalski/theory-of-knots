@@ -1,6 +1,6 @@
 .PHONY: all clean prepare chapter-all release
 
-PDFLATEX_FLAGS = -shell-escape -halt-on-error -output-directory ../build/ 
+PDFLATEX_FLAGS = -shell-escape -halt-on-error -output-directory ../build/
 
 all: prepare chapter-all release
 draft: prepare chapter-draft release
@@ -9,7 +9,7 @@ prepare:
 	mkdir -p build
 
 precommit:
-	./src/merridew/bibliography_sort.py src/knot_theory.bib 
+	./src/merridew/bibliography_sort.py src/knot_theory.bib
 	for i in $$(find src -type f -iname '*.tex'); do sed '$$a\' $$i > file && mv file $$i; done
 	find src -type f \
 		| xargs awk -F ';' '/^% DICTIONARY/ {print "\\item \\textbf{" $$2 "} " $$3}' \
