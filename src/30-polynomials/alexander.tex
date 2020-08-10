@@ -250,24 +250,34 @@ Być może istnieje bezpośredni dowód tej nierówności, ale jedyne uzasadnien
 
 Przedstawimy teraz kilka innych definicji, które prowadzą do tego samego niezmiennika.
 
-\begin{definition}
-    Wielomian Alexandera $\alexander_L(t) \in \Z[t^{-1/2}, t^{1/2}]$ zorientowanego splotu $L$ to taki wielomian Laurenta, który przy tych samych oznaczeniach, co w~twierdzeniu \ref{tracheotomia}, spełnia relację kłębiastą:
-    \begin{enumerate}
-        \item $\alexander_{\LittleUnknot}(t) = 1$
-        \item $\alexander_{L_+}(t) - \alexander_{L_-}(t) - (t^{1/2} - t^{-1/2}) \alexander_{L_0}(t) = 0$.
-    \end{enumerate}
-
-    Przypomnijmy, że $L_+$, $L_-$, $L_0$ to zorientowane sploty, które różnią się jedynie na małym obszarze:
+\begin{definition}[relacja kłębiasta]
+    Niech $L$ będzie zorientowanym splotem z ustalonym diagramem oraz skrzyżowaniem.
+    Oznaczmy przez $L_+, L_-, L_0$ trzy diagramy splotów, które różnią się jedynie na małym obszarze wokół ustalonego skrzyżowania:
+\begin{comment}
     \[
         \skeinplus \quad\quad\quad\quad
         \skeinminus \quad\quad\quad\quad
         \skeinzero
     \]
+\end{comment}
+    Mówimy, że niezmiennik zorientowanych splotów $f$ spełnia relację kłębiastą, jeżeli wartości $f(L_+)$, $f(L_-)$ i $f(L_0)$ są związane pewnym wielomianowym równaniem, niezależnie od wyboru splotu $L$.
 \end{definition}
 
-Conway chcąc szybko liczyć wielomian Alexandera zaproponował, by reparametryzować go wzorem $\alexander(x^2) = \conway(x - 1/x)$.
-Wzór ten był znany Alexanderowi, nie wiedzieć jednak czemu nie zyskał uwagi.
-Spełniona jest wtedy inna relacja kłębiasta:
+Termin ,,skein'' (kłąb) wprowadził Conway około roku 1970, kontynuując tradycję używania słów, które kojarzą się ze sznurkami.
+
+\begin{definition}
+    Niech $L$ będzie zorientowanym splotem.
+    Wielomian Laurenta $\alexander_L(t) \in \Z[t^{\pm 1/2}]$, który spełnia relację kłębiastą
+    \begin{equation}
+        \alexander_{L_+}(t) - \alexander_{L_-}(t) - (t^{1/2} - t^{-1/2}) \alexander_{L_0}(t) = 0
+    \end{equation}
+    z warunkiem brzegowym $\alexander_{\LittleUnknot}(t) = 1$, nazywamy wielomianem Alexandera.
+\end{definition}
+
+Wzór ten, choć znany był Alexanderowi, nie zyskał przez wiele dekad uwagi matematyków.
+Mogło tak być, gdyż w pracy \cite{alexander28} znalazł się on na samym końcu, pod nagłówkiem ,,twierdzenia różne''.
+Na nowo odkrył go Conway: chcąc szybko liczyć wielomian Alexandera zaproponował, by reparametryzować go wzorem $\alexander(x^2) = \conway(x - 1/x)$.
+Spełnia wtedy zależność
 \begin{equation}
     \conway_{L_+}(x)- \conway_{L_-}(x) = x \conway_{L_0}(x).
 \end{equation}
@@ -286,15 +296,14 @@ Relacja kłębiasta wystarcza do wyznaczenia $\alexander_L$ dla każdego splotu 
     Skrzyżowań już odwiedzonych nie zmieniamy wcale. Po powrocie do punktu wybranego na początku uzyskamy diagram niewęzła.
 \end{proof}
 
-Jako proste zastosowanie relacji kłębiastej pokażemy, że wielomian Alexandera nie potrafi odróżnić od siebie niesplotów.
+Dzięki niej wiemy też, że wielomian Alexandera nie odróżnia od siebie niesplotów.
+Wady tej nie posiada wielomian Jonesa.
 
 \begin{proposition}
     \label{prp:alexander_unlinks}
     Niech $L$ będzie splotem rozszczepialnym.
     Wtedy $\alexander_L(t) \equiv 0$.
 \end{proposition}
-
-Natomiast wielomian Jonesa $\jones$ odróżnia od siebie co najmniej niesploty.
 
 \begin{proof}
     Skorzystamy z~relacji kłębiastej.
@@ -335,7 +344,5 @@ Alexander pokazał, że ideał ten zawsze jest niezerowy i~główny.
 
 % https://math.berkeley.edu/~hutching/teach/215b-2004/yu.pdf
 \textbf{Definicja przy użyciu różniczek Foxa: https://math.berkeley.edu/hutching/teach/215b-2004/yu.pdf}
-
-\textbf{Dodać informację, że świat przeoczył relację kłębiastą od Alexandera, bo ten umieścił ją w rozdziale z różnościami.}
 
 % Koniec sekcji Wielomian Alexandera

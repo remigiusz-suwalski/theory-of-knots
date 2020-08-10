@@ -31,12 +31,13 @@ W ten sposób odkryliśmy definicję.
     nazywamy klamrą Kauffmana.
 \end{definition}
 
-Tutaj $\LittleUnknot$ oznacza standardowy diagram dla niewęzła,
-zaś trzy symbole $\LittleRightCrossing$, $\LittleRightSmoothing$ oraz $\LittleLeftSmoothing$ odnoszą się do diagramów,
-które są identyczne wszędzie poza małym obszarem (tak jak w~relacji kłębiastej).
-\textbf{Duplikat wyjaśnienia, czym jest relacja kłębiasta?}
+Trzeci aksjomat jest wariacją na temat relacji kłębiastej.
+
+\begin{tobedone}
+Przesunąć do rozdziału 1!
 Diagramy $\LittleRightSmoothing$ oraz $\LittleLeftSmoothing$ nazywa się odpowiednio
 dodatnim (prawym) i~ujemnym (lewym) wygładzeniem $\LittleRightCrossing$.
+\end{tobedone}
 
 \begin{lemma}
     Klamra Kauffmana każdego diagramu wyznacza się w~skończenie wielu krokach.
@@ -240,7 +241,7 @@ I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 \end{proposition}
 
 \begin{proof}
-    Proste wnioski z~relacji kłębiastej.
+    Jak wkrótce się przekonamy, to proste wnioski z~relacji kłębiastej.
     Explicite wskazał je Jones w \cite{jones85} (jako theorem 14, 15).
 \end{proof}
 
@@ -304,17 +305,14 @@ Dlaczego?
 Chociaż klamra Kauffmana to użyteczne narzędzie podczas dowodzenia różnych teoretycznych własności, niezbyt nadaje się do obliczeń, szczególnie ręcznych.
 Na szczęście wtedy z pomocą przychodzi:
 
-\begin{theorem}[relacja kłębiasta]
-    \label{tracheotomia}
-    \index{relacja kłębiasta}
-    Wielomian Jonesa spełnia zależność rekurencyjną
+\begin{definition}
+    Niech $L$ będzie zorientowanym splotem.
+    Wielomian Laurenta $\jones_L(t) \in \Z[t^{\pm 1/2}]$, który spełnia relację kłębiastą
     \begin{equation}
         t^{-1} \jones(L_+) - t\jones(L_-) + (t^{-1/2} - t^{1/2}) \jones(L_0) = 0
     \end{equation}
-    z warunkiem brzegowym $\jones(\LittleUnknot) = 1$.
-\end{theorem}
-
-Termin ,,skein'' (kłąb) wprowadził Conway około roku 1970, kontynuując tradycję używania słów, które kojarzą się ze sznurkami.
+    z warunkiem brzegowym $\jones(\LittleUnknot) = 1$, nazywamy wielomianem Jonesa.
+\end{definition}
 
 \begin{proof}
 Wyraźmy wielomian Jonesa przez nawias Kauffmana i~spin.
