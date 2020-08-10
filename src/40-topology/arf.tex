@@ -1,22 +1,24 @@
 \section{Niezmiennik Cahita Arfa} % (fold)
 \label{sub:arf}
 Niezmiennik Arfa dla węzłów można zdefiniować na kilka sposobów, z~których żaden jest istotnie lepszy od pozostałych.
-Pierwszy był Robertello \cite{robertello65}:
+Przyjmuje on dwie wartości: $0$ i $1$.
+Pierwszy był pomysł Robertello \cite{robertello65}:
 
 \begin{proposition}[Robertello, 1965]
-    Niech
+    Niech $K$ będzie węzłem, zaś
     \begin{equation}
-        \alexander (t)=c_{0}+c_{1}t+\cdots +c_{n}t^{n}+\cdots +c_{0}t^{2n}
+        \alexander_K(t)=c_{0}+c_{1}t+\cdots +c_{n}t^{n}+\cdots +c_{0}t^{2n}
     \end{equation}
-    będzie wielomianem Alexandera.
-    Wtedy niezmiennik Arfa to $c_{n-1}+c_{n-3}+\cdots +c_{r}\mod 2$, gdzie $r = 0$ dla nieparzystych $n$, $r = 1$ w~przeciwnym razie.
+    jego wielomianem Alexandera.
+    Wtedy niezmiennik Arfa to $c_{n-1}+c_{n-3}+\cdots +c_{r} \mod 2$, gdzie $r = 0$ dla nieparzystych $n$, $r = 1$ w~przeciwnym razie.
 \end{proposition}
 
 Nieco później Murasugi \cite{murasugi69} zauważył, że warunek można uprościć:
 
 \begin{proposition}[Murasugi, 1969]
     \label{arf_murasugi}
-    $\operatorname{Arf}(K) = 0$ wtedy i~tylko wtedy, gdy $\alexander_K(-1) \equiv \pm 1 \mod 8$.
+    Niech $K$ będzie węzłem.
+    Wtedy $\operatorname{Arf} K = 0$ wtedy i~tylko wtedy, gdy $\alexander_K(-1) \equiv \pm 1 \mod 8$.
 \end{proposition}
 
 Louis Kauffman zaproponował inne podejście w~1983 roku, z wykorzystaniem diagramów.
@@ -63,17 +65,25 @@ Dwa węzły nazwiemy równoważnymi przez przejścia, jeśli są związane skoń
 
 \begin{definition}[Kauffman, 1983]
     \index{niezmiennik!Arfa}
-    Niech $K$ będzie węzłem.
-    Jeśli jest równoważny przez przejścia z niewęzłem, to mówimy że jego niezmiennik Arfa znika: $\operatorname{Arf} K = 0$.
-    W przeciwnym razie węzeł $K$ jest równoważny z trójlistnikiem, wtedy kładziemy $\operatorname{Arf} K = 1$.
+    Każdy węzeł $K$ jest równoważny przez przejścia albo z niewęzłem, albo z trójlistnikiem.
+    W pierwszym przypadku mówimy, że niezmiennik Arfa znika: $\operatorname{Arf} K = 0$, w drugim, że nie: $\operatorname{Arf} K = 1$.
 \end{definition}
 
 Wreszcie Jones zauważył \cite{jones85}, że wielomian $\jones$ także pozwala na określenie niezmiennika Arfa, dzięki zespolonym algebrom Clifforda oraz pracy \cite{lannes85}.
 Jest to jedyna definicja, którą łatwo rozszerzyć do splotów.
 
 \begin{proposition}[Jones, 1985]
+    \label{arf_jones}
     $\operatorname{Arf}(K) = \jones_K(i)$.
 \end{proposition}
+
+\begin{corollary}
+    Niezmiennik Arfa jest $\shrap$-addytywny.
+\end{corollary}
+
+\begin{proof}
+    Wynika to z faktu \ref{arf_jones} oraz \ref{prp:jones_multiplicative_2}, ale istnieją też bardziej bezpośrednie dowody.
+\end{proof}
 
 Na zakończenie zostawiliśmy definicję zakorzenioną w topologii algebraicznej.
 
@@ -86,18 +96,9 @@ Na zakończenie zostawiliśmy definicję zakorzenioną w topologii algebraicznej
     \end{equation}
 \end{proposition}
 
-\begin{proposition}
-    Niezmiennik Arfa jest $\shrap$-addytywny.
-\end{proposition}
-
 O niezmienniku Arfa usłyszymy jeszcze poznając węzły plastrowe, w~sekcji \ref{sec:slice}.
 
-\begin{tobedone}
-https://macsphere.mcmaster.ca/handle/11375/25082 Definition 2.20. Let F be a Seifert surface of a classical knot K. The homology group H 1 (F,Z/2) has a quadratic form q represented by 1 2 (V + V T ) (mod 2). The Arf invariant of K is the Arf invariant of q. The geometric interpretation of ...
-% q : H 1 (F,Z/2) → Z/2
-is that q(a) measures the number of full twists modulo 2 of the band in a neighborhood of a. For example, the knot in Figure 2.9 has Arf invariant equal to 1. Note that the Arf invariant does not change if we choose a different basis. The Arf invariant has not been extended to virtual knots; see [Chr17] and [FIKM14, Sec.8.2.3]. But it is known not to extend to welded knots, and in Section 4.2 we will see that two knots are p-move equivalent if and only if they have the same Arf invariant.
-\end{tobedone}
-
+% https://macsphere.mcmaster.ca/handle/11375/25082 geometryczna interpretacja
 
 % OEIS http://oeis.org/A131433, ...1434
 % Koniec sekcji Niezmiennik Cahita Arfa
