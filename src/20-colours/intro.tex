@@ -1,23 +1,39 @@
 Opisane w pierwszym rozdziale niezmienniki, takie jak liczba gordyjska czy liczba mostowa, pozwalają na odróżnienie od siebie niektórych węzłów, jednak wyznaczanie ich wartości nie jest łatwym zadaniem.
-Nie potrafimy nawet uzasadnić, że niewęzeł oraz trójlistnik są różnymi węzłami.
-Dlatego teraz podamy prosty niezmiennik splotów: \emph{trójkolorowalność}, polegającą na przypisaniu włóknom diagramu jednego z~trzech kolorów według określonych reguł.
+Dlatego nie potrafimy jeszcze uzasadnić, że istnieje jakikolwiek nietrywialny węzeł.
+Zmieni się to teraz: poznamy kolorowania, niezmienniki splotów powstałe z diagramów, gdzie każde włókno występuje w jednym z trzech kolorów.
 
-Następnie rozszerzymy paletę do dowolnie wielu kolorów, by wreszcie zastąpić ją dowolną nieprzemienną grupą skończoną.
-Nawet wzmocniony wariant nie jest idealnym narzędziem klasyfikującym: istnieją węzły, których nie odróżnia.
-Problem ten będzie powtarzać się dla prawie wszystkich późniejszych niezmienników, pierwszy niezmiennik zupełny poznamy dopiero w~rozdziale czwartym.
-Jest nim uniwersalny niezmiennik Wasiljewa.
-Nie stanowi to wielkiego powodu do radości ze względu na trudności w~jego wyznaczaniu.
+Następnie rozszerzymy paletę z trzech do skończenie wielu kolorów, by później zastąpić ją dowolną nieprzemienną grupą skończoną.
+Nawet ten ostatni wariant kolorowania nie stanowi idealnego narzędzia do klasyfikacji węzłów.
+Mówimy, że nie jest zupeły: istnieją różne węzły, którym przypisuje te same wartości, czyli ich nie odróżnia.
+Problem ten będzie powtarzać się dla prawie wszystkich późniejszych niezmienników, z wyjątkiem dopiero całki Koncewicza (patrz sekcja \ref{sec:vassiliev}).
 
 \section{Kolorowanie splotów} % (fold)
 \label{sec:colour_links}
-Oto mniej mętny opis trójkolorowalności, czyli jak nietrudno się domyślić, kolorowalności trzema kolorami.
-Diagram $D$ splotu $K$ jest trójkolorowalny, jeśli każdemu włóknu można przypisać jeden z~trzech kolorów tak, by co najmniej dwa zostały użyte.
-Wymagamy przy tym, by przy żadnym skrzyżowaniu nie spotykały się dokładnie dwa kolory.
+Przygodę z kolorowaniami rozpoczyna się zazwyczaj od trójkolorowalności.
+Jest to pewna cecha diagramów, którą można posiadać albo nie.
 
-Dla własnej wygody jako kolorów używać będziemy kolejnych liczb naturalnych $0, 1, 2, \ldots$.
-Pozwala to zapisać warunek kolorowalności równaniem algebraicznym.
+\begin{definition}[trójkolorowalność]
+    Niech $D$ będzie diagramem splotu $L$, którego łuki występują w~trzech kolorach.
+    Jeżeli spełnione są następujące warunki:
+    \begin{itemize}
+        \item nie wszystkie łuki są tego samego koloru,
+        \item przy każdym skrzyżowaniu spotykają się albo trzy łuki w trzech różnych kolorach, albo wszystkie tego samego koloru,
+    \end{itemize}
+    to mówimy, że diagram $D$ jest trójkolorowalny.
+\end{definition}
 
-\begin{definition}[kolorowanie] \label{def:colour_equation}
+ Splot posiadający trójkolorowalny diagram nazywamy krótko trójkolorowalnym.
+
+\begin{example}
+    Trójlistnik jest trójkolorowalny, niewęzeł nie jest.
+    Węzły te są zatem od siebie różne.
+\end{example}
+
+Dla własnej wygody jako kolorów używać będziemy kolejnych liczb naturalnych $0, 1, \ldots, n$.
+Pozwala to zapisać warunek kolorowalności równaniem algebraicznym, niezależnie od ilości użytych kolorów.
+
+\begin{definition}[kolorowanie]
+    \label{def:colour_equation}
     Niech $L$ będzie splotem, zaś $n$ liczbą naturalną.
     Mówimy, że splot $L$ jest kolorowalny modulo $n$, jeśli posiada diagram, którego włóknom można przypisać liczby całkowite $0, \ldots, n - 1$ tak, by
     \begin{enumerate}[leftmargin=*]
