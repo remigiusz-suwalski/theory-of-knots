@@ -104,19 +104,20 @@ pozostawiając mu małą wskazówkę graficzną:
 Generatory $\sigma_i$ posiadają prostą interpretację graficzną:
 \begin{comment}
 \[
-    \begin{tikzpicture}[baseline=-0.65ex, scale=0.05]
-    \useasboundingbox (-15, -10) rectangle (15, 15);
+    \begin{tikzpicture}[baseline=-0.65ex, scale=0.2]
     \begin{knot}[clip width=5, end tolerance=1pt]
-        \strand[semithick] (-15, -10) to (-15, 10);
-        \strand[semithick] ( 15, -10) to ( 15, 10);
-        \strand[semithick] (-5, -10) to (-5, -5) .. controls (-5, 1) and (5, -1) .. (5, 5) to (5, 10);
-        \strand[semithick] (-5, 10) to (-5, 5) .. controls (-5, -1) and (5, 1) .. (5, -5) to (5, -10);
-        \node  at (-10, 0) {\ldots};
-        \node at ( 10, 0) {\ldots};
-        \node [above] at (-15, 12) {$1$};
-        \node [above] at ( -5, 12) {$i$};
-        \node [above] at (  5, 12) {$i+1$};
-        \node [above] at ( 15, 12) {$n$};
+        \strand[semithick] (-8, -4.5) to (8, -4.5);
+        \strand[semithick] [in=left,out=right] (-8, -1.5) to (8, 1.5);
+        \strand[semithick] [in=left,out=right] (-8, 1.5) to (8, -1.5);
+        \strand[semithick] (-8, 4.5) to (8, 4.5);
+        \node at (-10, -4.5) {$1$};
+        \node at (-10, -3) {$\ldots$};
+        \node at (-10, -1.5) {$i$};
+        \node at (-10, 1.5) {$i+1$};
+        \node at (-10, 3) {$\ldots$};
+        \node at (-10, 4.5) {$n$};
+        \node at (0, 3) {$\ldots$};
+        \node at (0, -3) {$\ldots$};
     \end{knot}
     \end{tikzpicture}
 \]

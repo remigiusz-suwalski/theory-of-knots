@@ -1,16 +1,15 @@
 \subsection{Spin} % (fold)
 \label{sub:writhe}
-Przypomnijmy, że znak skrzyżowania na diagramie to liczba $1$ lub $-1$ (definicja \ref{sign_def}).
-
 % DICTIONARY;writhe;spin
+Z angielskiego \emph{writhe}.
 \begin{definition}[spin]    
     \index{spin}
+    Niech $D$ będzie diagramem zorientowanego splotu.
     Wielkość
     \begin{equation}
-        w(D) = \sum_c \operatorname{sign} c,
+        \writhe D = \sum_c \operatorname{sign} c,
     \end{equation}
-    gdzie sumowanie przebiega po wszystkich skrzyżowaniach diagramu $D$ zorientowanego splotu lub węzła, nazywamy spinem.
-    Z angielskiego \emph{writhe}.
+    gdzie sumowanie przebiega po wszystkich skrzyżowaniach diagramu $D$ nazywamy spinem.
 \end{definition}
 
 Co ważne, spin nie jest niezmiennikiem splotów ani węzłów.
@@ -21,7 +20,13 @@ Spin jest za to niezmiennikiem węzłów alternujących, mówi o~tym druga hipot
 \begin{lemma}
     \label{writhe_not_invariant}
     Spin nie zależy od orientacji.
-    Tylko I ruch Reidemeistera zmienia spin: $w(\MalyreidemeisterIa) = w(\MalyreidemeisterIb )-1$, pozostałe ruchy nie mają na niego wpływu.
+    Tylko I ruch Reidemeistera zmienia spin:
+\begin{comment}
+    \begin{equation}
+        \writhe (\MalyreidemeisterIa) = \writhe (\MalyreidemeisterIb) - 1.
+    \end{equation}
+\end{comment}
+    Pozostałe ruchy nie mają na niego wpływu.
 \end{lemma}
 
 % Koniec sekcji Spin

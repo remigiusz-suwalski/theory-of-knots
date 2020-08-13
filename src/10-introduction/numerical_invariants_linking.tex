@@ -1,8 +1,9 @@
 \subsection{Indeks zaczepienia} % (fold)
 \label{sub:linking_number}
-\begin{definition} \label{sign_def}
-    Na diagramie zorientowanego splotu, każdemu skrzyżowaniu przypisujemy \textbf{znak} równy $\pm 1$.
-    Skrzyżowania dodatnie nazywamy praworęcznymi, ujemne zaś: leworęcznymi.
+\begin{definition}[znak]
+    \label{sign_def}
+    \index{znak skrzyżowania}
+    Liczbę $\pm 1$ przypisaną do skrzyżowania zgodnie z diagramem:
 \begin{comment}
     \[
         \sign \Bigl(\,\,\begin{tikzpicture}[baseline=-0.65ex,scale=0.07]
@@ -17,31 +18,61 @@
         \end{knot}\end{tikzpicture}\,\,\Bigr) = -1
     \]
 \end{comment}
+    nazywamy znakiem skrzyżowania.
 \end{definition}
 
-\begin{definition}
+Skrzyżowania dodatnie to takie, w których obrócenie dolnego łuku w prawo daje górny łuk, dlatego czasem nazywa się je także praworęcznymi.
+Oczywiście skrzyżowania ujemne nazywamy wtedy leworęcznymi.
+
+\begin{definition}[wygładzenie]
+    \index{wygładzenie}
+    Niech dany będzie diagram z wyróżnionym skrzyżowaniem.
+    Wtedy diagramy
+\begin{comment}
+    \begin{figure}[H]
+        \begin{minipage}[b]{.48\linewidth}
+            \[
+                \RightCrossSmoothing
+            \]
+            \subcaption{wygładzenie dodatnie}
+        \end{minipage}
+        \begin{minipage}[b]{.48\linewidth}
+            \[
+                \LeftCrossSmoothing
+            \]
+            \subcaption{wygładzenie ujemne}
+        \end{minipage}
+    \end{figure}
+\end{comment}
+    powstałe przez zmianę małego otoczenia tego skrzyżowania nazywamy wygładzeniami.
+    Jeżeli nie zaznaczono inaczej, wygładzamy zgodnie ze znakiem skrzyżowania.
+\end{definition}
+
+\begin{definition}[indeks zaczepienia]
     \index{indeks!zaczepienia}
     Niech $L = K_1 \sqcup K_2$ będzie splotem o dwóch ogniwach.
     Wielkość
-    \[
-        \operatorname{lk}(K_1, K_2) = \frac 12 \sum_i \sign c_i,
-    \]
-    gdzie sumowanie rozciąga się na wszystkie skrzyżowania, gdzie spotykają się łuki z różnych ogniw, nazywamy \textbf{indeksem zaczepienia} węzłów $K_1, K_2$.
-    Ogólniej, jeśli $L = K_1 \sqcup \ldots \sqcup K_n$ jest splotem o $n$ ogniwach, to jego indeks zaczepienia wyznacza wzór $\operatorname{lk}(L) = \sum_{i < j} \operatorname{lk}(K_i, K_j)$.
+    \begin{equation}
+        \linking(K_1, K_2) = \frac 12 \sum_i \sign c_i,
+    \end{equation}
+    gdzie sumowanie rozciąga się na wszystkie skrzyżowania, na których spotykają się łuki z różnych ogniw, nazywamy indeksem zaczepienia węzłów $K_1, K_2$.
+    Ogólniej, jeśli dany jest splot $L = K_1 \sqcup \ldots \sqcup K_n$ posiadający $n$ ogniw, to jego indeks zaczepienia wyznacza wzór
+    \begin{equation}
+        \linking(L) = \sum_{i < j} \linking(K_i, K_j).
+    \end{equation}
 \end{definition}
 
 Zauważmy, że indeks zaczepienia splotu Hopfa wynosi $1$, natomiast splotu Whiteheada $0$.
 Są zatem istotnie różne.
-W obydwu przypadkach indeks zaczepienia jest liczbą całkowitą, nie stanowi to przypadku.
-Na mocy twierdzenia Jordana $\operatorname{lk}$ jest funkcją o całkowitych wartościach.
+W obydwu przypadkach indeks zaczepienia jest liczbą całkowitą.
+Istotnie, na mocy twierdzenia Jordana $\linking$ jest funkcją o całkowitych wartościach.
 
 \begin{proposition}
     Indeks zaczepienia jest dobrze określonym niezmiennikiem zorientowanych splotów.
 \end{proposition}
 
 \begin{proof}
-    Sprawdźmy wpływ ruchów Reidemeistera na wartość
-    $\operatorname{lk}(L)$:
+    Sprawdźmy wpływ ruchów Reidemeistera na wartość $\linking L$:
 \begin{comment}
     \[
         \fbox{
