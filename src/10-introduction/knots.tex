@@ -265,9 +265,9 @@ Mając dane dwa różne diagramy chcielibyśmy wiedzieć, czy reprezentują ten 
 Na szczęście Reidemeister w latach 20. XX wieku podał proste kryterium rozstrzygające ten problem.
 Najpierw zdefiniujmy trzy lokalne operacje na diagramach.
 
-\begin{definition}
-    \index{ruchy Reidemeistera}
-    Trzy ruchy Reidemeistera, $R_1$, $R_2$, oraz $R_3$, to następujące deformacje diagramu:
+\begin{definition}[ruchy Reidemeistera]
+    \index{ruchy!Reidemeistera}
+    Trzy gatunki lokalnych deformacji diagramu splotu:
 \begin{comment}
     \[
         \underbrace{\begin{tikzpicture}[baseline=-0.65ex,scale=0.1]
@@ -324,6 +324,7 @@ Najpierw zdefiniujmy trzy lokalne operacje na diagramach.
         \end{tikzpicture}}_{R_3}
     \]
 \end{comment}
+    skręcenie lub rozkręcenie ($R_1$), wsunięcie lub rozsunięcie ($R_2$) lub przesunięcie łuku przez skrzyżowanie ($R_3$) nazywamy ruchami Reidemeistera.
 \end{definition}
 
 Ruch $R_i$ operuje więc na $i$ łukach diagramu.
@@ -339,7 +340,7 @@ jego drugi ruch jest naszym pierwszym.
     oraz gładko deformując łuki bez zmiany biegu skrzyżowań.
 \end{theorem}
 
-Twierdzenie Reidemeistera jest prawdziwe zarówno dla splotów zorientowanych jak i~takich, które nie posiadają orientacji.
+Twierdzenie Reidemeistera jest prawdziwe także dla splotów zorientowanych, wtedy jednak w każdym ruchu trzeba uwzględnić wszystkie możliwe orientacje łuków.
 
 \begin{proof}
     Szkielet dowodu można znaleźć w~książce Burdego i~Zieschanga.
@@ -348,19 +349,39 @@ Twierdzenie Reidemeistera jest prawdziwe zarówno dla splotów zorientowanych ja
     Innym przystępnym źródłem jest podręcznik \cite{murasugi96} Murasugiego ,,Knot theory and its applications''.
 \end{proof}
 
-{\color{red}\textbf{Brakuje prawdziwych cytowań}}
+\begin{tobedone}
+    Trace (1983) showed that two knot diagrams for the same knot are related by using only type II and III moves if and only if they have the same writhe and winding number.
+    Trace, Bruce (1983), "On the Reidemeister moves of a classical knot", Proceedings of the American Mathematical Society, 89 (4): 722–724, doi:10.2307/2044613, MR 0719004
+\end{tobedone}
+
+\begin{tobedone}
+    Furthermore, combined work of Östlund (2001), Manturov (2004), and Hagge (2006) shows that for every knot type there are a pair of knot diagrams so that every sequence of Reidemeister moves taking one to the other must use all three types of moves.
+    Östlund, Olof-Petter (2001), "Invariants of knot diagrams and relations among Reidemeister moves", J. Knot Theory Ramifications, 10 (8): 1215–1227, arXiv:math/0005108, doi:10.1142/S0218216501001402, MR 1871226
+    Manturov, Vassily Olegovich (2004), Knot theory, Boca Raton, FL: Chapman et Hall/CRC, doi:10.1201/9780203402849, ISBN 0-415-31001-6, MR 2068425
+    Hagge, Tobias (2006), "Every Reidemeister move is needed for each knot type", Proc. Amer. Math. Soc., 134 (1): 295–301, doi:10.1090/S0002-9939-05-07935-9, MR 2170571
+\end{tobedone}
+
+\begin{tobedone}
+    Alexander Coward demonstrated that for link diagrams representing equivalent links, there is a sequence of moves ordered by type: first type I moves, then type II moves, type III, and then type II. The moves before the type III moves increase crossing number while those after decrease crossing number. 
+    Coward, Alexander; Lackenby, Marc (2014), "An upper bound on Reidemeister moves", American Journal of Mathematics, 136 (4): 1023–1066, arXiv:1104.1882, doi:10.1353/ajm.2014.0027, MR 3245186?
+\end{tobedone}
 
 W praktyce twierdzenia \ref{thm:reidemeister} nie stosuje się bezpośrednio do diagramów splotów.
-Jednym z~powodów jest wynik Cowarda i~Lackenby'a (\cite{coward11}): jeśli na dwóch diagramach tego samego węzła widać łącznie $n$ skrzyżowań, to ,,wystarcza''
-\[
-    R(n) = 2^{2^{\ldots^{2^n}}}
-\]
-ruchów Reidemeistera, by przejść między nimi; piętrowa potęga ma $10^{1000000n}$ warstw.
-Gdy jeden z~diagramów jest pozbawiony skrzyżowań, czyli przedstawia niewęzeł, wystarcza $(236n)^{11}$ ruchów.
-Zapewne lepsze ograniczenia istnieją, ale ich nie znamy.
-Ważne jest to, że wielkość $R(n)$ jest skończona.
+Mając dane dwa spójne diagramy tego samego splotu trudno znaleźć jest ciąg ruchów przekształcający jeden z nich w drugi.
+Załóżmy, że widać na nich odpowiednio $n_1, n_2$ skrzyżowań.
+Jak piszą Coward, Lackenby w \cite{coward11}, istnieje funkcja $f \colon \N \times \N \to \N$ taka, że między dwoma diagramami można przejść wykonując co najwyżej $f(n_1, n_2)$ ruchów.
+Wynika to z oczywistego faktu, że istnieje skończenie wiele spójnych diagramów o danej liczbie skrzyżowań oraz twierdzenia Reidemeistera.
+Okazuje się jednak, że od funkcji $f$ można żądać, by była obliczalna i faktycznie, główy wynik \cite{coward11} orzeka, że
+\begin{equation}
+	f(n_1, n_2) = 2^{2^{\ldots^{2^{n_1 + n_2}}}}
+\end{equation}
+jest taką funkcją.
+Piętrowa potęga liczy sobie aż $10^{1000000 (n_1 + n_2)}$ warstw, ale przynajmniej jest jawnie zdefiniowana.
+Natomiast jeżeli $n_2 = 0$, czyli drugi diagram przedstawia niewęzeł, wystarcza $(236n_1)^{11}$ ruchów, to świeższy wynik samego Lackenby'a \cite{lackenby15}.
 
-{\color{red}\textbf{Przedstawić rozumowanie (piramidka z węzłami), dlaczego to nie jest takie oczywiste.}}
+\begin{tobedone}
+	Przedstawić rozumowanie (piramidka z węzłami), dlaczego to nie jest takie oczywiste.
+\end{tobedone}
 
 Zamiast tego definiuje się niezmienniki, czyli funkcje ze zbioru wszystkich diagramów, które nie zmieniają swojej wartości podczas wykonywania ruchów Reidemeistera.
 Kiedy pewien niezmiennik przyjmuje różne wartości na dwóch diagramach, te przedstawiają dwa istotnie różne sploty.
@@ -383,9 +404,12 @@ czy powierzchnia normalna na striangulowanej 3-rozmaitości jest (nie)ściśliwa
 To okazało się być wystarczającym do udzielenia negatywnej odpowiedzi na pytanie Thurstona:
 ,,czy przestrzeń Seiferta-Webera jest rozmaitością Hakena?'',
 a zatem wykraczającego poza poziom tej pracy.
-Patrz także {\url{http://geometrygames.org/SnapPea/index.html}.
 
-{\color{red}\textbf{Dowiązać tutaj wszystkie wykrywacze niewęzła opisane w książce}}
+SnapPea\footnote{Dostępny pod adresem \url{http://geometrygames.org/SnapPea/index.html}.} to inny popularny wśród niskowymiarowych topologów program pozwalający badać hiperboliczne 3-rozmaitości, patrz sekcja \ref{sec:hyperbolic}.
+
+\begin{tobedone}
+	Dowiązać tutaj wszystkie wykrywacze niewęzła opisane w książce
+\end{tobedone}
 
 Przykładami trudnych w~rozpoznaniu niewęzłów są: niewęzeł Goritza, Freedmana.
 Więcej trudnych niewęzłów zawiera praca \cite{zanellati16} autorstwa C. Petronio oraz A. Zanellatiego.
@@ -568,7 +592,7 @@ Pierwsze dowody pochodzą znowu od Kauffmana \cite{kauffman87} oraz Thistlethwai
 \end{conjecture}
 
 Tę hipotezę udowodnił Menasco z Thistlethwaitem, \cite{menasco91}.
-Wynika z~niej, że dwa zredukowane diagramy alternujące tego samego węzła mają ten sam spin: ruch flype nie zmienia spinu (dla niektórych to jest II hipoteza).	
+Wynika z~niej, że dwa zredukowane diagramy alternujące tego samego węzła mają ten sam spin: ruch flype nie zmienia spinu (dla niektórych to jest II hipoteza).    
 My pokażemy nieco później, czyli po poznaniu wielomianu Jonesa, że wszystkie trzy hipotezy są prawdziwe.
 
 \textbf{Wstawić odniesienia do naszego dowodu}
@@ -596,7 +620,7 @@ Jeżeli znajdujemy się nad skrzyżowaniem, parzyste etykiety zapisujemy z przec
 Kiedy skończymy, każde skrzyżowanie będzie mieć dwie etykiety.
 
 \begin{definition}
-	Ciąg parzystych liczb występujących na diagramie kolejno przy $1, 3, \ldots$ nazywamy kodem Dowkera-Thistlethwaite'a.
+    Ciąg parzystych liczb występujących na diagramie kolejno przy $1, 3, \ldots$ nazywamy kodem Dowkera-Thistlethwaite'a.
 \end{definition}
 
 Opisany powyżej kod nie jest idealny, ponieważ odtworzony z niego węzeł może być lustrzanym odbiciem wyjściowego.
