@@ -1,24 +1,39 @@
 \section{Węzły Lissajous} % (fold)
+% szkielet: praca Lamma
 \label{sec:lissajous}
 
 Węzły Lissajous zdefiniowali Bogle, Hearst, Jones i Stoilov w 1994 roku jako węzły, których pewien diagram jest krzywą Lissajous.
 
-\begin{definition}
+\begin{definition}[węzeł Lissajous]
     \index{węzeł!Lissajous}
-    Węzłem Lissajous nazywamy węzeł zadany parametrycznie:
+    Węzeł zadany parametrycznie:
     \begin{equation}
         x = \cos(n_xt + \varphi_x) \quad
         y = \cos(n_yt + \varphi_y) \quad
         z = \cos(n_zt + \varphi_z),
     \end{equation}
-    gdzie $n_x, n_y, n_z$ (,,częstotliwości'') to stałe całkowite, zaś $\varphi_x, \varphi_y, \varphi_z$ (,,fazy'') są rzeczywiste.
+    gdzie $n_x, n_y, n_z$ (,,częstotliwości'') to stałe całkowite, zaś $\varphi_x, \varphi_y, \varphi_z$ (,,fazy'') są rzeczywiste, nazywamy węzłem Lissajous.
 \end{definition}
 
 Węzeł nie może posiadać samoprzecięć, dlatego żadna z~wielkości $n_i\varphi_j-n_j\varphi_i$, dla różnych indeksów $i, j$ nie może być krotnością $\pi$.
 Bez straty ogólności możemy założyć, że $\varphi_z = 0$.
 Dodatkowo stałe $n_x, n_y, n_z$ muszą być parami względnie pierwsze.
 
-Przykładem są $5_2$ (dla $n_x = 3$, $n_y = 2$, $n_z = 7$, $\varphi_x = 7/10$, $\varphi_y = 2/10$), $6_1$, $7_4$, $8_{15}$, $10_1$, $10_{35}$, $10_{58}$, suma prawego i~lewego trójlistnika, suma dwóch kopii $5_2$.
+Wiele węzłów jest węzłami Lissajous:
+
+\begin{example}
+    Dla $n_x = 3$, $n_y = 2$, $n_z = 7$, $\varphi_x = 7/10$, $\varphi_y = 2/10$ mamy węzeł $5_2$.
+\end{example}
+
+\begin{example}
+    Węzły pierwsze $6_1$, $7_4$, $8_{15}$, $10_1$, $10_{35}$, $10_{58}$ są węzłami Lissajous.
+\end{example}
+
+\begin{example}
+    Suma prawego i~lewego trójlistnika, suma dwóch kopii $5_2$ są węzłami Lissajous.
+\end{example}
+
+Wszystkie węzły wyżej nazywają się wg numeracji Conwaya/Rolfsena.
 
 \begin{proposition}
     Istnieje nieskończenie wiele węzłów Lissajous.
@@ -57,7 +72,7 @@ To nakłada ograniczenia na wielomian Alexandera.
 \begin{proposition}
     \label{lissajous_square}
     Niech $K$ będzie węzłem Lissajous.
-    Wtedy $\alexander(x)$, jego wielomian Alexandera, jest kwadratem w~pierścieniu $\Z_2[x]$.
+    Wtedy $\alexander(x)$, jego wielomian Alexandera, jest kwadratem w~pierścieniu $(\Z/2\Z)[x]$.
 \end{proposition}
 
 \begin{proof}
@@ -87,7 +102,7 @@ Wygodnie jest przeformułować warunek z faktu \ref{lissajous_square} do następ
 Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kwadratem modulo $2$ wtedy i tylko wtedy, gdy współczynniki $A_{2k+1}$ są parzyste dla $k \ge 0$.
 
 \begin{corollary}
-    Jeśli $K$ jest wezłem Lissajous, to jego niezmiennik Arfa znika.
+    Niech $K$ będzie węzłem Lissajous, wtedy niezmiennik $\operatorname{Arf} K = 0$ znika.
 \end{corollary}
 
 \begin{proof}
@@ -108,7 +123,8 @@ Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kw
 
 \begin{corollary}
 	\label{lissajous_twobridge}
-    Jeśli $K$ jest dwumostowym wezłem Lissajous, to $\alexander_K(t) \equiv 1 \mod 2$.
+    Niech $K$ będzie dwumostowym węzłem Lissajous.
+    Wtedy $\alexander_K(t) \equiv 1 \mod 2$.
 \end{corollary}
 
 \begin{proof}
@@ -128,11 +144,12 @@ Można skorzystać z tego samego argumentu, co w dowodzie wniosku \ref{lissajous
 	Wtedy $(p, q)$-kabel węzła $K$ nie jest węzłem Lissajous.
 \end{proposition}
 
-Obiekt ten, $(p, q)$-kabel, zdefiniowano w książce Eisenbuda/Neumanna ,,Three-dimensional link theory and invariants of plane curve singularities'', celowo pominiętej w bibliografii.
+Lamm pisze, że obiekt ten -- $(p, q)$-kabel -- zdefiniowano w książce Eisenbuda/Neumanna ,,Three-dimensional link theory and invariants of plane curve singularities''.
+Celowo pomijamy ją w bibliografii, prawdopodobnie chodzi o zwykłe węzły satelitarne.
 
 \begin{proof}
 	Niech $L$ będzie $(p, q)$-kablem węzła $K$.
-	Seifert pokazał w 1950 (praca \cite{seifert50}), że
+	Seifert pokazał w \cite{seifert50}, że
     \begin{equation}
     	\alexander_L(t) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)} \alexander_K(t^p).
     \end{equation}
@@ -168,7 +185,9 @@ Węzły bilardowe to zamknięte trajektorie kuli, która zostaje wystrzelona z j
 Jones, Przytycki pokazali w \cite{jones98}, że węzły bilardowe to dokładnie węzły Lissajous i zadali pytanie, czy każdy węzeł można zrealizować jako trajektorię kuli w jakimś wielościanie.
 
 Odpowiedź jest pozytywna.
-Koseleff, Pecker w~\cite{koseleff14} korzystając z~twierdzenia Manturowa (każdy splot jest domknięciem kwasitorycznego warkocza) pokazują, że każdy węzeł ma diagram, który jest wielokątem gwiaździstym.
+Koseleff, Pecker w~\cite{koseleff14} korzystając z~twierdzenia Manturowa 
+(każdy splot jest domknięciem kwazitorycznego warkocza)
+pokazują, że każdy węzeł ma diagram, który jest wielokątem gwiaździstym.
 Użyte zostało twierdzenie Kroneckera z~1884 roku: jeśli liczby $\theta_0 = 1, \theta_1, \ldots, \theta_k$ są liniowo niezależne nad ciałem $\Q$, to zbiór punktów $(\lfloor n\theta_i \rfloor_{i=0}^k)_{n=0}^\infty$ leży gęsto w kostce jednostkowej.
 
 Lamm, Obermeyer dowiedli w 1999, że węzły bilardowe wewnątrz walca są taśmowe albo okresowe, więc w walcu nie można zrealizować każdego węzła.
