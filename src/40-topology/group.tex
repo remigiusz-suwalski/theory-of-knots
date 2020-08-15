@@ -8,7 +8,7 @@ Dzięki temu poniższa definicja ma sens:
     \label{def:knot_group}
     \index{grupa!węzła}
     Niech $L$ będzie splotem.
-    Grupę podstawową jego dopełnienia,  $\pi_1(\R^3 \setminus K)$, nazywamy grupą splotu.
+    Grupę podstawową jego dopełnienia, $\pi_1(\R^3 \setminus L)$, nazywamy grupą splotu.
 \end{definition}
 
 Kiedy mówimy o~grupie węzła, zazwyczaj mamy na myśli obiekt opisany powyżej, a nie grupę kolorującą z~definicji \ref{colgrp_def}.
@@ -62,14 +62,15 @@ Podamy teraz kilka przykładów węzłów oraz ich grup.
 \end{proof}
 
 Wcześniej Whitten wiedział tylko, że jeśli węzły pierwsze mają izomorficzne grupy, to dopełnienia tych węzłów są homeomorficzne.
-Jak sam wspomina w \cite{whitten87}: ,,The group of a prime knot does not, however, necessarily determine the topological type of the exterior. Dehn hips [12, p. 243] on certain “essential” solid tori in the exteriors of torus knots and of cable knots produce Haken manifolds that are homotopically equivalent but not homeomorphic to the original exteriors and that, in fact, cannot be imbedded in $S^3$.''.
+Jak sam wspomina w \cite{whitten87}: ,,\emph{The group of a prime knot does not, however, necessarily determine the topological type of the exterior. Dehn hips on certain “essential” solid tori in the exteriors of torus knots and of cable knots produce Haken manifolds that are homotopically equivalent but not homeomorphic to the original exteriors and that, in fact, cannot be imbedded in $S^3$.}''.
 
 Na przykładzie grupy $\langle x,y,z \mid xyx=yxy,xzx=zxz\rangle$, która odpowiada zarówno sumie prostej różno-, jak i~jednoskrętnych trójlistników, widać że założenia o pierwszości nie można pominąć.
 Prawdziwe jest ogólniejsze stwierdzenie:
 
 \begin{proposition}
     \label{prop:knot_group_sum}
-    Jeśli $K, L$ są węzłami, to grupa podstawowa nie odróżnia węzła $K \shrap L$ od $K \shrap -L^*$.
+    Niech $K_1, K_2$ będą zorientowanymi węzłami.
+    Wtedy węzłom $K_1 \shrap K_2$, $K_1 \shrap mr K$ odpowiadają izomorficzne grupy.
 \end{proposition}
 
 \index{prezentacja Wirtingera}
@@ -120,7 +121,8 @@ Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach, dowodząc jed
 
 \begin{corollary}
     \label{prop:knot_group_abelianisation}
-    Abelianizacją grupy węzła jest $\Z$.
+    Niech $G$ będzie grupą węzła.
+    Wtedy jej abelianizacją jest $G^{\operatorname{ab}} = \Z$.
 \end{corollary}
 
 \begin{proof}
@@ -132,22 +134,23 @@ Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach, dowodząc jed
 
 Istnieje alternatywna prezentacja grupy węzła, która pochodzi od Dehna, gdzie zamiast etykietować łuki, przypisuje się różne litery czterem częściom płaszczyzny, które są rozcinane przez skrzyżowanie.
 Pomijamy tę prezentację dla oszczędności miejsca.
-Klasycznie (jak na przykład w~\cite{crowell63}) macierz, a~co za tym idzie, także wielomian Alexandera wprowadza się przy użyciu prezentacji Wirtingera i~pochodnej Foxa.
+Klasycznie, jak na przykład w~\cite{crowell63}, macierz, a~co za tym idzie, także wielomian Alexandera wprowadza się przy użyciu prezentacji Wirtingera i~pochodnej Foxa.
 Oryginalna praca Alexandera była jednak bliższa duchem pomysłom Dehna.
 
-\begin{definition}
+\begin{definition}[pochodna Foxa]
     \index{pochodna Foxa}
-    Niech $G$ będzie grupą generowaną przez (niekoniecznie skończony) podzbiór $\{g_i\}_{i \in I}$..
-    Pochodna Foxa to różniczkowanie $G \to \Z G$: addytywne odwzorowanie spełniające trzy aksjomaty:
-    \begin{enumerate}
-        \item $(\partial/\partial g_i)(e) = 0$;
-        \item $(\partial/\partial g_i)(g_j) = 1$, jeśli $i = j$, $0$ w~przeciwnym razie;
-        \item $(\partial/\partial g_i)(uw) = (\partial/\partial g_i)(u) + u(\partial/\partial g_i)(w)$ dla dowolnych słów $u, w \in G$.
-    \end{enumerate}
+    Niech $G$ będzie wolną grupą generowaną przez (niekoniecznie skończony) podzbiór $\{g_i\}_{i \in I}$.
+    Odwzorowanie $\partial/\partial g_i \colon G \to \Z G$ spełniające trzy aksjomaty:
+    \begin{align}
+        \frac{\partial}{\partial g_i} (e) & = 0 \\
+        \frac{\partial}{\partial g_i} (g_j) & = \delta_{ij} \\
+        \forall u, v \in G : \frac{\partial}{\partial g_i} (uv) & = \frac{\partial}{\partial g_i}(u) + u \frac{\partial}{\partial g_i} (w),
+    \end{align}
+    gdzie $\delta_{ij}$ oznacza deltę Kroneckera, nazywamy pochodną cząstkową Foxa.
 \end{definition}
 
 Ustalmy prezentację grupy węzła z $n$ relacjami (słowami) $w_1, \ldots, w_n$ nad $n$-literowym alfabetem $x_1, \ldots, x_n$.
-Zdefiniujmy następnie macierz Jacobiego $n \times n$, której elementami są pochodne Foxa słów $w_i$ względem zmiennej $x_j$:
+Zdefiniujmy następnie macierz Jacobiego wymiaru $n \times n$, elementami której są pochodne Foxa słów $w_i$ względem zmiennych $x_j$:
 \begin{equation}
     J = \left(\frac{\partial w_i}{\partial x_j}\right).
 \end{equation}
