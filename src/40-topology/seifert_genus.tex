@@ -16,7 +16,7 @@ Sferę traktujemy dla wygody jako sumę spójną $g = 0$ torusów.
 Wtedy sumę spójną $g$ torusów możemy wyobrazić sobie jako sferę, do której doklejono $g$ uchwytów.
 
 \begin{definition}[genus powierzchni]
-    Ilość torusów nazywamy genusem powierzchni i oznaczamy literą $g$.
+    Ilość torusów nazywamy genusem powierzchni i oznaczamy literą $\genus$.
 \end{definition}
 
 Podobna charakteryzacja istnieje dla powierzchni z~brzegiem.
@@ -42,7 +42,7 @@ Definicja ta nie jest wygodna podczas ręcznych obliczeń.
     Niech $M$ będzie powierzchnią o genusie $g$ i $\mu$ składowych spójności brzegu.
     Wtedy
     \begin{equation}
-        \chi = 2 - \mu - 2g.
+        \chi = 2 - \mu - 2\genus.
     \end{equation}
 \end{proposition}
 
@@ -74,7 +74,7 @@ Reszta tej podsekcji nie jest wymagana do zrozumienia macierzy Seiferta, przyjrz
 
 \begin{definition}[3-genus]
     Niech $K$ będzie węzłem.
-    Minimalny genus spośród wszystkich powierzchni Seiferta węzła $K$ nazywamy 3-genusem i oznaczamy $g$.
+    Wśród wszystkich powierzchni Seiferta węzła $K$ istnieje co najmniej jedna o minimalnym genusie, jej genus nazywamy 3-genusem węzła $K$ i oznaczamy także przez $\genus$.
 \end{definition}
 
 Znalezienie 3-genusu dowolnego węzła sprawia te same trudności, co wyznaczenie jego liczby gordyjskiej.
@@ -84,7 +84,7 @@ Z dołu 3-genus można szacować przy użyciu wielomianu Alexandera:
 \begin{proposition}
     \label{prp:alexander_genus}
     Niech $K$ będzie węzłem.
-    Wtedy $\operatorname{span} \alexander(t) \le 2g$.
+    Wtedy $\operatorname{span} \alexander_K(t) \le 2\genus(K)$.
 \end{proposition}
 
 \begin{proof}
@@ -92,19 +92,20 @@ Z dołu 3-genus można szacować przy użyciu wielomianu Alexandera:
     Wtedy macierz Seiferta powstała z $F$ jest rzędu $2g$, więc żaden ze składników jej wyznacznika nie może mieć stopnia większego niż $2g$.
 \end{proof}
 
-To dolne ograniczenie jest realizowane przez pewną powierzchnię Seiferta dla każdego pierwszego węzła o~co najwyżej 11 skrzyżowaniach poza siedmioma wyjątkami: 11n42, 11n67, 11n97 ($g = 2$), 11n34, 11n45, 11n73 oraz 11n152 ($g=3$).
+To dolne ograniczenie jest realizowane przez pewną powierzchnię Seiferta dla każdego pierwszego węzła o~co najwyżej 11 skrzyżowaniach poza siedmioma wyjątkami: 11n42, 11n67, 11n97 ($g = 2$), 11n34, 11n45, 11n73 oraz 11n152 ($g = 3$).
 Jeżeli nie powoduje to nieporozumień, zamiast 3-genus można pisać po prostu genus.
 
 \begin{proposition}
-    Niech $K$ będzie węzłem.
-    Wtedy $\operatorname{span} \alexander(t) = 2g$ wtedy i tylko wtedy, gdy $\det M \neq 0$.
+    Niech $K$ będzie węzłem, zaś $M$ pewną macierzą.
+    Wtedy $\operatorname{span} \alexander_K(t) = 2\genus(K)$ wtedy i tylko wtedy, gdy wyznacznik $\det M \neq 0$ jest niezerowy.
     % Murasugi
+    % co oznacza M?
 \end{proposition}
 
 Floer zdefiniował w~\cite{floer90} przestrzeń wektorową nazywaną teraz homologią Floera, jest ona wyposażona w~endomorfizm parzystego stopnia, który powstaje z 2-wymiarowej klasy homologii reprezentowanej przez powierzchnię Seiferta.
 %~kanoniczną gradację modulo $2$ oraz 
 \index{homologia!Floera}
-Ta homologiaa ozkłada się na sumę prostą przestrzeni własnych wyróżnionego endomorfizmu, ich charakterystyki Eulera są współczynnikami wielomianu Alexandera.
+Ta homologia rozkłada się na sumę prostą przestrzeni własnych wyróżnionego endomorfizmu, ich charakterystyki Eulera są współczynnikami wielomianu Alexandera.
 Pozwala to na dokładniejsze szacowanie genusu węzła, patrz prace Ozsváth, Szabó \cite{szabo03} i Ghigginiego \cite{ghiggini08}.
 
 Z góry genus ograniczony jest przez kilka klasycznych niezmienników numerycznych.
@@ -112,13 +113,13 @@ Zanim to pokażemy, przytoczymy techniczny lemat udowodniony przez Yamadę (\cit
 
 \begin{proposition}
     \label{seifert_circles_braid}
-    Niech $L$ będzie splotem, zaś $s(K)$ minimalną liczbą okręgów Seiferta, które dostajemy ze wszystkich możliwych diagramów splotu $L$.
-    Wtedy $s(K) = \operatorname{b}(K)$ pokrywa się wartością z indeksem warkoczowym.
+    Niech $L$ będzie splotem, zaś $s(L)$ minimalną liczbą okręgów Seiferta, które dostajemy ze wszystkich możliwych diagramów splotu $L$.
+    Wtedy $s(L) = \braid(L)$ pokrywa się wartością z indeksem warkoczowym.
 \end{proposition}
 
 \begin{proposition}
     Niech $L$ będzie splotem.
-    Wtedy $\operatorname{cr} (K) - \operatorname{b} (K) - \mu(K) + 2 \ge 2 \operatorname{g}(K)$
+    Wtedy $\crossing(L) - \braid(L) - \mu(L) + 2 \ge 2 \genus(L)$.
 \end{proposition}
 
 \begin{proof}
@@ -128,12 +129,12 @@ Zanim to pokażemy, przytoczymy techniczny lemat udowodniony przez Yamadę (\cit
     \begin{equation}
         g = \frac{c + 2 - s - \mu(K)}{2}.
     \end{equation}
-    Z~minimalności diagramu wynika, że $c = \operatorname{cr}(K)$.
-    Fakt \ref{seifert_circles_braid} mówi, że $s \ge \operatorname{b}(K)$.
-    Nierówność $g \ge \operatorname{g}(K)$ wynika z~definicji genusu.
+    Z~minimalności diagramu wynika, że $c = \crossing(L)$.
+    Fakt \ref{seifert_circles_braid} mówi, że $s \ge \braid(L)$.
+    Nierówność $g \ge \operatorname{g}(L)$ wynika z~definicji genusu.
     Z powyższych rozważań wynika, że
     \begin{equation}
-        \operatorname{cr} (K) + 2 \ge  2 \operatorname{g}(K) + \operatorname{b} (K) + \mu(K),
+        \crossing(L) + 2 \ge  2 \genus(L) + \operatorname{b}(L) + \mu(L),
     \end{equation}
     a to jest równoważnie nierówności, której prawdziwości dowodzimy.
 \end{proof}
@@ -141,7 +142,7 @@ Zanim to pokażemy, przytoczymy techniczny lemat udowodniony przez Yamadę (\cit
 \begin{corollary}
     \label{crl:crossing_genus}
     Niech $K$ będzie węzłem.
-    Wtedy $\operatorname{cr} \ge 2 \operatorname{g}$.
+    Wtedy $\crossing K \ge 2 \genus K$.
 \end{corollary}
 
 Czy w definicji genusu można ograniczyć się do powierzchni Seiferta, które pochodzą od algorytmu Seiferta?
