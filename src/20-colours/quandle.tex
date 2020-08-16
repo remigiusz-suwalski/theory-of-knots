@@ -10,7 +10,7 @@ David Joyce zapytany o znaczenie słowa \emph{quandle} odpowiedział: ,,I needed
 
 % DICTIONARY;quandle;kwandel
 \begin{definition}[kwandl]
-    \index{quandle}
+    \index{kwandl}
     Zbiór $X$ wyposażony w dwuargumentowe działanie $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi:
     \begin{enumerate}
         \item $x \triangleright x = x$,
@@ -150,7 +150,11 @@ Homomorfizmy definiujemy standardowo, przez analogię do grup:
 
 \begin{definition}
     Niech $Q_1, Q_2$ będą kwandlami.
-    Odwzorowanie $f \colon Q_1 \to Q_2$, które dla waszystkich $x,y \in Q_1$ spełnia warunek $f(x \triangleright y) = f(x) \triangleright f(y)$, nazywamy homomorfizmem.
+    Odwzorowanie $f \colon Q_1 \to Q_2$ spełniające warunek
+    \begin{equation}
+        \forall x, y \in Q_1 : f(x \triangleright y) = f(x) \triangleright f(y),
+    \end{equation}
+    nazywamy homomorfizmem.
 \end{definition}
 
 Wiele znanych struktur algebraicznych okazuje się być źródłem kwandli.
@@ -160,7 +164,7 @@ Wiele znanych struktur algebraicznych okazuje się być źródłem kwandli.
 \end{example}
 
 \begin{example}[kwandle sprzężone]
-    Grupa z działaniem $x \triangleright y = y^{-n} x y^n$.
+    Grupa z działaniem $x \triangleright y = y^{-n} x y^n$ dla każdego $n \in \N$.
 \end{example}
 
 \begin{example}[kwandl Alexandera]
@@ -179,17 +183,19 @@ Niebrzydowski, Przytycki pokazali w 2008 roku, że kwandl podstawowy trójlistni
 
 Aksjomaty grupy można wzmacniać (grupy abelowe) lub osłabiać (monoidy).
 Podobnie czyni się z aksjomatami kwandli.
-Kwandle inwolutywne odpowiadają węzłom bez orientacji, wraki dobrze opisują węzły obramowane (\emph{framed}), i tak dalej.
+\index{węzeł!obramowany}
+Kwandle inwolutywne odpowiadają węzłom bez orientacji, wraki dobrze opisują węzły obramowane, i tak dalej.
 
 \begin{definition}[kwandl inwolutywny]
-    Kwandl $Q$, w którym dla wszystkich $x, y \in Q$ zachodzi $x \triangleleft (x \triangleleft y) = y$, nazywamy inwolutywnym (albo kei).
+    Kwandl $Q$, w którym dla wszystkich $x, y \in Q$ zachodzi $x \triangleleft (x \triangleleft y) = y$, nazywamy inwolutywnym albo kei.
 \end{definition}
 
 Kwandle inwolutywne badał jako pierwszy Mituhisa Takasaki (1943).
 Szukał niełącznej struktury, która dobrze opisywałaby odbicia w skończonej geometrii.
 
+% DICTIONARY;shelf;półka
 \begin{definition}[półka]
-    \index{shelf}
+    \index{półka}
     Zbiór $X$ wyposażony w dwuargumentowe działanie $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$, nazywamy półką.
 \end{definition}
 
@@ -202,9 +208,10 @@ Półki zdefiniowała Alissa Crans w pracy doktorskiej.
 To nieprzetłumaczalna gra słów: dwie półki (\emph{shelves}), lewa i prawa, które dobrze do siebie pasują, dają stojak (\emph{rack}).
 Półka stanowi uogólnienie dwóch obiektów -- wraków i wrzecion.
 
+% DICTIONARY;wrack;wrak
 \begin{definition}[wrak]
-    \index{wrack}
-    Zbiór $X$ z dwuargumentowym działaniem $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi:
+    \index{wrak}
+    Zbiór $X$ z dwuargumentowym działaniem $\triangleright$ takim, że dla każdej trójki elementów $x, y, z \in X$ zachodzi:
     \begin{enumerate}
         \item odwzorowanie $\beta_y \colon X \to X$ dane wzorem $\beta_y(x) = x \triangleright y$ jest odwracalne,
         \item $(x \triangleright y) \triangleright z = (x \triangleright z) \triangleright (y \triangleright z)$
@@ -246,8 +253,9 @@ Wraki dobrze współgrają z podwójnym pierwszym ruchem Reidemeistera, który t
 \]
 \end{comment}
 
+% DICTIONARY;spindle;wrzeciono
 \begin{definition}[wrzeciono]
-    \index{spindle}
+    \index{wrzeciono}
     Zbiór $X$ z dwuargumentowym działaniem $\triangleright$ taki, że dla wszystkich elementów $x, y, z \in X$ zachodzi:
     \begin{enumerate}
         \item $x \triangleright x = x$,
