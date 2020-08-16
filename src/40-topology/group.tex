@@ -32,8 +32,6 @@ Podamy teraz kilka przykładów węzłów oraz ich grup.
     Węzeł ósemkowy: $\langle x, y \mid yxy^{{-1}}xy=xyx^{{-1}}yx \rangle$.
 \end{example}
 
-% The group of a prime knot does not, however, necessarily determine the topological type of the exterior. Dehn hips [12, p. 2431 on certain “essential” solid tori in the exteriors of torus knots and of cable knots produce Haken manifolds that are homotopically equivalent but not homeomorphic to the original exteriors and that, in fact, cannot be imbedded in S3: Whitten, KNOT COMPLEMENTS AND GROUPS
-
 \begin{proposition}
     \label{prop:knot_group_invariant}
     Grupa węzła jest niezmiennikiem węzłów.
@@ -53,7 +51,7 @@ Podamy teraz kilka przykładów węzłów oraz ich grup.
 \end{proof}
 
 \begin{proposition}
-    Niech $K, L$ będą węzłami pierwszymi.
+    Niech $K_1, K_2$ będą węzłami pierwszymi.
     Jeżeli ich grupy są izomorficzne, to same węzły są równoważne.
 \end{proposition}
 
@@ -70,7 +68,7 @@ Prawdziwe jest ogólniejsze stwierdzenie:
 \begin{proposition}
     \label{prop:knot_group_sum}
     Niech $K_1, K_2$ będą zorientowanymi węzłami.
-    Wtedy węzłom $K_1 \shrap K_2$, $K_1 \shrap mr K$ odpowiadają izomorficzne grupy.
+    Wtedy węzłom $K_1 \shrap K_2$, $K_1 \shrap mr K_2$ odpowiadają izomorficzne grupy.
 \end{proposition}
 
 \index{prezentacja Wirtingera}
@@ -119,6 +117,10 @@ Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach, dowodząc jed
     w~których łuk $a_i$ biegnie górą, zaś $a_j$ leży po jego lewej stronie.
 \end{proof}
 
+\begin{tobedone}
+    Wizualizacja relacji Wirtingera dla pojedynczego skrzyżowania.
+\end{tobedone}
+
 \begin{corollary}
     \label{prop:knot_group_abelianisation}
     Niech $G$ będzie grupą węzła.
@@ -165,10 +167,11 @@ twierdzenia o~sferze, o~pętli oraz hipotezy Knesera.
 
 \begin{proposition}
     \label{prop:knot_group_split}
-    Następujące warunki są równoważne dla splotu $L \subseteq S^3$:
+    Niech $L \subseteq S^3$ będzie splotem.
+    Następujące warunki są równoważne:
     \begin{enumerate}
-        \item splot $L$ nie jest rozszczepialny
-        \item grupa podstawowa splotu $L$ nie jest produktem wolnym
+        \item grupa podstawowa splotu $L$ nie jest produktem wolnym,
+        \item splot $L$ nie jest rozszczepialny,
         \item splot $L$ jest rozmaitością Hakena o~nieściśliwym brzegu.
     \end{enumerate}
 \end{proposition}
@@ -179,7 +182,12 @@ twierdzenia o~sferze, o~pętli oraz hipotezy Knesera.
 
 \begin{proposition}
     \label{prop:knot_group_free}
-    Splot o~wolnej grupie podstawowej rangi $n$ to trywialny splot o~$n$ ogniwach.
+    Niech $L \subseteq S^3$ będzie splotem.
+    Następujące warunki są równoważne:
+    \begin{enumerate}
+        \item grupa podstawowa splotu $L$ jest wolna, rangi $n$,
+        \item splot $L$ jest trywialny, złożony z $n$ ogniw.
+    \end{enumerate}
 \end{proposition}
 
 \begin{proof}[Niedowód]
