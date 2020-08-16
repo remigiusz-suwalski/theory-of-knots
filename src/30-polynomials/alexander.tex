@@ -1,9 +1,10 @@
 \section{Wielomian Alexandera} % (fold)
 \label{sec:alexander}
-
-Wielomian Alexandera został odkryty w~1928 roku (\cite{alexander28}) i~aż do roku 1984 pozostał jedynym znanym niezmiennikiem wielomianowym węzłów zorientowanych.
-Przytoczymy jego opis oparty nie o~teorię homologii, a~równania kolorujące -- głównym powodem jest elementarność takiego podejścia.
-Najpierw trzeba je uogólnić.
+Większość niezmienników, jakie dotąd widzieliśmy, przypisuje każdemu węzłowi lub splotowi pewną liczbę całkowitą: niezmienniki z pierwszego rozdziału, liczba kolorowań, wyznacznik czy też defekt są właśnie takie.
+Poznamy teraz wielomian, opisany po raz pierwszy przez Jamesa Waddella Alexandera w~1923 roku \cite{alexander23}.
+Przez blisko sześć dekad pozostał on jedynym wielomianowym niezmiennikiem węzłów.
+Ze względu na elementarność takiego podejścia, pominiemy teorię homologii, zamiast tego skupiając naszą uwagę na równaniach kolorujących.
+Najpierw trzeba je jednak uogólnić.
 
 \begin{definition}
 \label{def:polynomial_colouring}
@@ -39,18 +40,18 @@ Istotnie, wystarczy podstawić tutaj $t = -1$, by otrzymać mniej ogólną defin
 Nasz nowy niezmiennik nie jest zwykłym wielomianem, tylko wielomianem Laurenta jednej zmiennej, czyli elementem pierścienia $\Z[t, t^{-1}]$.
 
 \begin{proposition} \label{alexander_invariance}
-    Wielomian Alexandera z~dokładnością do relacji równoważności
+    Wielomian Alexandera z~dokładnością do mnożenia przez jedności:
     \begin{equation}
-        f(t) \equiv g(t) \iff f(t) = \pm t^m g(t) \mbox{ dla pewnego } m \in \Z
+        f(t) \equiv g(t) \iff \exists m \in \Z: f(t) = \pm t^m g(t)
     \end{equation}
     jest niezmiennikiem zorientowanych splotów.
 \end{proposition}
 
 W dowodzie niezmienniczości wyznacznika węzła skorzystaliśmy z~relacji między nim a~grupą kolorującą.
-Poprzednie wydanie książki zawierało sugestię, że elementarny (czyli taki, który nie korzysta z~teorii modułów) dowód niezmienniczości wielomianu Alexandera nie istnieje.
+Poprzednie wydania książki zawierały sugestię, że elementarny (czyli taki, który nie korzysta z~teorii modułów) dowód niezmienniczości wielomianu Alexandera nie istnieje.
 Sugestia ta była błędna, wystarczy użyć alternatywnej definicji.
 
-\begin{proof}[Szkic dowodu]
+\begin{proof}
     Ustalmy diagram o~$k$ skrzyżowaniach, który rozcina płaszczyznę na $k+2$ obszarów i~utwórzmy macierz o~wymiarach $k \times k$, której kolumny odpowiadają obszarom, wiersze zaś skrzyżowaniom -- pomijając przy tym dwa sąsiadujące ze sobą obszary -- o~wyrazach ze współczynników równań kolorujących.
     Jej wyznacznik jest wielomianem Alexandera.
 
@@ -89,8 +90,8 @@ Sugestia ta była błędna, wystarczy użyć alternatywnej definicji.
     Każda z~tych operacji zmienia wyznacznik macierzy o~czynnik $\pm t^{-m}$, co kończy dowód.
 \end{proof}
 
-Dla wygody można przeprowadzić normalizację wielomianu przez wzięcie reprezentanta, który jest symetryczny w~zmiennych $t$ oraz $t^{-1}$ i~przyjmuje w~punkcie $1$ wartość $\alexander(1) = 1$.
-Odwrotnie, każdy wielomian Laurenta z~całkowitymi współczynnikami o~takich własnościach jest wielomianem Alexandera pewnego węzła:
+Zwyczajowo wielomian normalizuje się: bierze reprezentanta, który jest symetryczny w~zmiennych $t$ i $t^{-1}$ oraz przyjmuje w~punkcie $1$ wartość $\alexander_L(1) = 1$.
+Odwrotnie, dowolny wielomian Laurenta z~całkowitymi współczynnikami o~takich własnościach jest wielomianem Alexandera pewnego węzła:
 
 \begin{proposition}
     Każdy wielomian Laurenta $p(t)$ o~całkowitych współczynnikach taki, że $p(1/t) = p(t)$ i~$p(1) = \pm 1$ jest wielomianem Alexandera pewnego węzła.
