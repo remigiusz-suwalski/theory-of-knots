@@ -46,13 +46,6 @@ Poniżej przedstawiamy trzy węzły torusowe.
     \end{minipage}
 \end{figure}
 
-Okazuje się, że innych obiektów już nie ma.
-
-\begin{proposition}
-    Jeśli żadna ze składowych splotu torusowego nie jest postaci $T_{0, 0}$ lub $T_{1, 0}$, to splot ten jest równoważny ze splotem $T_{q, r}$ dla pewnych $q, r$.
-    Największy wspólny dzielnik indeksów $q, r$ jest jednocześnie liczbą składowych splotu.
-\end{proposition}
-
 %Węzeł ten leży na torusie $(r - 2)^2 + z^2 = 1$.
 % p = 5;
 % q = 3;
@@ -68,15 +61,28 @@ Okazuje się, że innych obiektów już nie ma.
 % Axes -> False
 % ]
 
+Okazuje się, że innych obiektów już nie ma.
+
+\begin{proposition}
+    Niech $K$ będzie splotem torusowym takim, że żadne z jego ogniw nie jest niewęzłem, czyli postaci $T_{1, 0}$.
+    Wtedy dla pewnych całkowitch $p, q$, węzły $K$ oraz $T_{p, q}$ są tego samego typu.
+\end{proposition}
+
+\begin{proposition}
+    Niech $d$ będzie największym wspólnym dzielnikiem liczb całkowitych $p, q$.
+    Wtedy węzeł torusowy $T_{p, q}$ posiada dokładnie $d$ ogniw.
+\end{proposition}
+
 Siedem węzłów z tabeli na końcu książki to węzły torusowe.
 Są to niewęzeł, $3_1 = T_{3,2}$, $5_1 = T_{5,2}$, $7_1 = T_{7,2}$, $8_{19} = T_{4,3}$, $9_1 = T_{9,2}$ oraz $10_{124} = T_{5, 3}$.
 
 \begin{proposition}
-    Niech $q, r$ będą względnie pierwszymi liczbami takimi, że $|q|, |r| \ge 2$.
-    Wtedy splot $T_{q,r}$ oraz splot do niego odwrotny, $T_{-q, -r}$, są tego samego typu.
+    Niech $p, q$ będą względnie pierwszymi liczbami takimi, że $|p|, |q| \ge 2$.
+    Wtedy splot $T_{p, q}$ oraz splot do niego odwrotny, $T_{-p, -q}$, są tego samego typu.
 \end{proposition}
 
-Sploty $T_{q,r}$ oraz $T_{r,q}$ również są równoważne: Murasugi prezentuje w~swojej książce \cite{murasugi96} przyjemny dowód opierający się na następującym lemacie:
+Sploty $T_{p, q}$ oraz $T_{q, p}$ również są równoważne.
+Murasugi prezentuje w~swojej książce \cite{murasugi96} przyjemny dowód opierający się na następującym lemacie:
 
 \begin{lemma}
     Sfera $S^3$ powstaje z~powierzchni dwóch węzłów trywialnych z~wnętrzem ($D^2 \times S^1$) przez wzajemne sklejenie południka i~równoleżnika z~równoleżnikiem i~południkiem.
@@ -86,16 +92,18 @@ Macierze Seiferta $M$ mają nieskomplikowaną blokową budowę, która może pos
 Rachunki są nieco uciążliwe.
 
 \begin{proposition}
-    Wielomianem Alexandera splotu torusowego $K(q, r) \neq K(0,0)$ o~$d$ składowych jest
+    Niech $L = T_{p, q}$ będzie splotem torusowym o $d$ ogniwach, różnym od $T_{0, 0}$.
+    Wtedy jego wielomaienm Alexandera jest
     \begin{equation}
-        \alexander_{K(q, r)}(t) = (-1)^{d-1} \frac{(1-t)(1 - t^{qr/d})^d}{(1-t^q)(1-t^r)} \cdot t^{-(q-1)(r-1)/2}.
+        \alexander_L(t) = (-1)^{d-1} \frac{(1-t)(1 - t^{pq/d})^d}{(1-t^p)(1-t^q)} \cdot t^{-(p-1)(q-1)/2}.
     \end{equation}
 \end{proposition}
 
 Powyższy fakt często pojawia się jako ćwiczenie w podręcznikach topologii.
+% TODO: w jakich dokładnie podręcznikach?
 
 \begin{proof}
-    Macierzą Seiferta węzła torusowego $K(q,r)$ jest macierz blokowa
+    Macierzą Seiferta węzła torusowego $L = T_{p, q}$ jest macierz blokowa
     \begin{equation}
         M = \begin{bmatrix}
             B & & & & \\
@@ -105,7 +113,7 @@ Powyższy fakt często pojawia się jako ćwiczenie w podręcznikach topologii.
             & & & -B & B
         \end{bmatrix}
     \end{equation}
-    złożona z~$(r-1)^2$ bloków o~wymiarach $(q-1) \times (q-1)$:
+    złożona z~$(q-1)^2$ bloków o~wymiarach $(p-1) \times (p-1)$:
     \begin{equation}
         B = \begin{bmatrix}
             -1 & & & & \\
@@ -113,7 +121,7 @@ Powyższy fakt często pojawia się jako ćwiczenie w podręcznikach topologii.
             & 1 & \ddots & & \\
             & & \ddots & -1 & \\
             & & & 1 & -1
-        \end{bmatrix} \qedhere
+        \end{bmatrix}
     \end{equation}
     Pełny dowód można znaleźć w przykładzie 9.15 w książce \cite{burde85}, gdzie wyznaczono jakobian prezentacji grupy węzła $\langle x, y \mid x^py^{-q}\rangle$.
 \end{proof}
@@ -121,42 +129,52 @@ Powyższy fakt często pojawia się jako ćwiczenie w podręcznikach topologii.
 Znajomość wielomianu Alexandera wystarcza na szczęście do podania pełnej klasyfikacji węzłów torusowych bez uciążliwego dowodu.
 
 \begin{proposition}
-    Węzły torusowe $K(q, r)$, $K(p, s)$ są równoważne wtedy i~tylko wtedy, gdy $\{q, r\} = \{p, s\}$ lub $\{q, r\} = \{-p, -s\}$.
+    Niech $p, q, r, s$ będą liczbami całkowitymi.
+    Następujące warunki są równoważne:
+    \begin{itemize}
+        \item węzły torusowe $T_{q, r}$ oraz $T_{p, s}$ są równoważne,
+        \item $\{q, r\} = \{p, s\}$ lub $\{q, r\} = \{-p, -s\}$.
+    \end{itemize}
 \end{proposition}
 
 \begin{proof}
     Ograniczymy się do przypadku, gdy $p, q, r, s \ge 2$.
     Tylko jedna implikacja wymaga dowodu, w~prawo.
     Bez straty ogólności załóżmy więc, że $q > r$, $p > s$.
-    Skoro węzły $K(q, r)$ i~$K(p,s)$ są równoważne, to porównanie najwyższych współczynników w~ich wielomianach Alexandera daje równość $(q-1)(r-1) = (p-1)(s-1)$.
+    Skoro węzły $T_{q, r}$ i~$T_{p,s}$ są równoważne, to porównanie najwyższych współczynników w~ich wielomianach Alexandera daje równość $(q-1)(r-1) = (p-1)(s-1)$.
     Wymnożenie wszystkiego prowadzi do czterech przypadków: $s = r$, $s = ps$, $qr = r$, $qr = ps$, z~których dwa środkowe nie mogą zachodzić (gdyż $p, q > 1$).
     Z czwartego wynika, że $qr \le s < ps$, czyli sprzeczność.
 \end{proof}
 
 Podamy teraz wartości całkowitoliczbowych niezmienników dla węzłów torusowych przy założeniu, że $q$ lub $r$ nie jest zerem.
-Nietrywialne węzły torusowe są pierwsze i~odwracalne, ale mają niezerową sygnaturę, więc nie są chiralne (wiedział to Schreier w 1924: ,,Über die Gruppen $A^a B^b = 1$'').
+Nietrywialne węzły torusowe są pierwsze i~odwracalne, ale mają niezerową sygnaturę, więc nie są chiralne.
+Wiedział to Schreier w 1924: ,,Über die Gruppen $A^a B^b = 1$''.
+% TODO: zamienić na prawdziwe cytowanie
 
 \begin{proposition}
-    Węzeł torusowy $K(q, r)$ ma okres $|q|$ oraz $|r|$.
+    Węzeł torusowy $T_{p, q}$ ma okres $|p|$ oraz $|q|$.
 \end{proposition}
 
 \begin{proposition}
-    Dla $q, r > 0$ zdefiniujmy wielkość $\sigma(q, r) = - \sigma(K_{q, r})$.
-    Wtedy, jeśli
-    \begin{itemize}[leftmargin=*]
-    \itemsep0em
-        \item $2r < q$ i~$r$ jest parzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2$.
-        \item $2r < q$ i~$r$ jest nieparzyste, to $\sigma(q, r) = \sigma(q-2r, r) + r^2 - 1$.
-        \item $\sigma(2r, r) = r^2 - 1$.
-        \item jeśli $r \le q < 2r$ i~$r$ jest parzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-1$.
-        \item jeśli $r \le q < 2r$ i~$r$ jest nieparzyste, to $\sigma(q, r) + \sigma(2r-q, r) = r^2-2$.
-    \end{itemize}
-    Co więcej, $\sigma(q, r) = \sigma(r, q)$, $\sigma(q, 1) = 0$, $\sigma(q, 2) = q-1$.
+    Niech $p, q > 0$ będą liczbami całkowitymi, zaś $R_2$ oznacza resztę z dzielenia przez dwa.
+    Zdefiniujmy funkcję $\sigma(p, q) = - \sigma(T_{p, q})$.
+    Spełnia zależność rekurencyjną
+    \begin{equation}
+        \sigma(p, q) = \begin{cases}
+             q^2 + \sigma(p-2q, p) - R_2(p)       & \text{jeśli } 2q < p \\
+             q^2 - 1                              & \text{jeśli } 2q = p \\
+             q^2 - \sigma(2q - p, q) + R_2(r) - 2 & \text{jeśli } 2q > p \ge q
+        \end{cases}
+    \end{equation}
+    z warunkami brzegowymi: $\sigma(p, q) = \sigma(q, p)$, $\sigma(1, q) = 0$, $\sigma(2, q) = q-1$.
 \end{proposition}
 
-Dowód zawiera praca \cite{litherland81}.
+\begin{proof}
+    Dowód zawiera praca \cite{litherland81}.
+\end{proof}
+
 Borodzik niedawno przyjrzał się dokładniej sygnaturom węzłów torusowych.
-W pracy \cite{borodzik10} napisanej z K. Oleszkiewiczem pokazał, że nie istnieje wymierna funkcja $R(p, q)$, która pokrywałaby się z sygnaturą węzła torusowego $T_{p, q}$ dla wszystkich względnie pierwszych i nieparzystych $p$ oraz $q$.
+W pracy \cite{borodzik10} napisanej z K. Oleszkiewiczem pokazał, że nie istnieje wymierna funkcja $R(p, q)$, która pokrywałaby się z sygnaturą węzła torusowego $T_{p, q}$ dla wszystkich względnie pierwszych, nieparzystych $p$ oraz $q$.
 Uwaga: definicja funkcji $s$ z \cite{borodzik10} zawiera złośliwą literówkę.
 
 \begin{proposition}
