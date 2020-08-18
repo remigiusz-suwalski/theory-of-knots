@@ -32,14 +32,14 @@ Podamy teraz definicję równoważności dla węzłów singularnych przez analog
 \end{definition}
 
 \begin{definition}
-    Dwa singularne węzły $K, L$ są równoważne, co zapisujemy jako $K \approx L$, jeśli istnieje zachowujący orientację homeomorfizm $\varphi$ przestrzeni $\R^3$ w~siebie, który przenosi jeden węzeł na drugi: $\varphi(K) = L$ oraz indukuje bijekcję między rodzinami płaskich dysków $K$ i~$L$.
+    Dwa singularne węzły $K, L$ są równoważne, co zapisujemy jako $K = L$, jeśli istnieje zachowujący orientację homeomorfizm $\varphi$ przestrzeni $\R^3$ w~siebie, który przenosi jeden węzeł na drugi: $\varphi(K) = L$ oraz indukuje bijekcję między rodzinami płaskich dysków $K$ i~$L$.
 \end{definition}
 
 Ten drugi warunek gwarantuje nam, że skrzyżowania wokół podwójnych punktów nie ulegną zniszczeniu.
 Istnieje podobne kryterium dla diagramów, odpowiednik twierdzenia Reidemeistera (\ref{thm:reidemeister}).
 
 \begin{proposition}
-    Dwa singularne diagramy są równoważne dokładnie wtedy, kiedy można między nimi przejść przy użyciu ciągu ruchów Reidemeistera (poza małymi otoczeniami wierzchołków) oraz operacji $\Omega$:
+    Dwa singularne diagramy są równoważne dokładnie wtedy, kiedy można między nimi przejść przy użyciu ciągu ruchów Reidemeistera oraz operacji $\Omega$:
 \begin{comment}
     \[
     \begin{tikzpicture}[baseline=-0.65ex, scale=0.1]
@@ -88,13 +88,15 @@ Załóżmy teraz, że mamy jakiś niezmiennik węzłów $v$ o~wymiernych wartoś
 Najprościej zrobić to rekurencyjnie.
 Niech $\hat v$ będzie już określony dla węzłów singularnych o co najwyżej $n - 1$ wierzchołkach i~wybierzmy dowolny węzeł o~$n$ wierzchołkach.
 Okazuje się, że jeżeli położymy
+\begin{comment}
 \begin{equation}
-    \hat v(K) = \hat v(K_+) - \hat v(K_-),
+    \hat v(K) = \hat v(\LittleLeftCrossing) - \hat v(\LittleRightCrossing),
 \end{equation}
-to dostaniemy dobrze określoną funkcję: jeśli $L \approx K$ jest innym węzłem singularnym, to $\hat v(L) = \hat v(K)$.
+\end{comment}
+to dostaniemy dobrze określoną funkcję: jeśli $L = K$ jest innym węzłem singularnym, to $\hat v(L) = \hat v(K)$.
 Nazywamy ją niezmiennikiem singularnym indukowanym przez niezmiennik węzłów $v_0$.
 
-\begin{definition}[rząd niezmiennika]\
+\begin{definition}[rząd niezmiennika]
     \label{def:vassiliev_order}
     Niech $v$ będzie niezmiennikiem singularnym.
     Mówimy, że $v$ jest niezmiennikiem Wasiljewa rzędu co najwyżej $n$, jeśli dla dowolnego singularnego węzła $K$ o $n + 1$ wierzchołkach zachodzi $v(K) = 0$.
@@ -179,7 +181,7 @@ Jeśli $q < 0$, wszystkie skrzyżowania odwracamy:
 Wynik był znany już w latach 90., na przykład Birman w \cite{birman93} pokazała, że liczba gordyjska nie jest niezmiennikiem Wasiljewa.
 
 \begin{proof}
-    Każdy z tych niezmienników nie znika na singularnym węźle $K[n+1, n]$.
+    Żaden z tych niezmienników nie znika na singularnym węźle $K[n+1, n]$.
 \end{proof}
 
 Udowodnimy kilka najprostszych własności niezmienników Wasiljewa.
@@ -351,6 +353,3 @@ Wygląda na to, że nikt nie odważył się dokonać tego dla innych węzłów (
 \end{conjecture}
 
 To jedna z najtrudniejszych hipotez teorii węzłów -- ponieważ całka Koncewicza jest mocniejsza od każdego wielomianowego niezmiennika, jaki dotąd poznaliśmy (wielomiany Alexandera, Jonesa, HOMFLY, Kauffmana), można o~niej myśleć jako o uogólnieniu hipotezy \ref{jones_conjecture}.
-
-% bez tego w poprzednim akapicie pojawia się artefakt
-${}$
