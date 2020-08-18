@@ -2,29 +2,39 @@
 \label{sec:kauffman_polynomial}
 Mniej więcej w~tym samym czasie, gdy odkryto wielomian BLM/Ho, Kauffman zaproponował sposób, dzięki któremu ten wielomian można uogólnić do odróżniającego lustra.
 % Dopuszczał stosowanie tylko drugiego i~trzeciego ruchu Reidemeistera.
-Wielomianu Kauffmana nie należy mylić z~nawiasem Kauffmana!
+Wielomianu Kauffmana nie należy mylić z~klamrą Kauffmana!
 
 \begin{definition}[wielomian Kauffmana]
     \index{wielomian!Kauffmana}
-    Półzorientowany wielomian dwóch zmiennych dany wzorem
+    Niech $K$ będzie zorientowanym splotem, zaś $D$ ustalonym diagramem o~spinie $\writhe D$.
+    Istnieje wielomian $L(K)$ wyznaczony przez relację kłębiastą
+    \begin{equation}
+        L(\LittleLeftCrossing) + L(\LittleRightCrossing) = z L(\LittleLeftSmoothing) + z L(\LittleRightSmoothing)
+    \end{equation}
+    z warunkiem brzegowym $L(\LittleUnknot) = 1$, niezmienniczy względem II i III ruchu Reidemeistera oraz taki, że $L(s) = a^{-1} L(s_r) = a L(s_l)$, gdzie $s$ jest pojedynczym węzłem, zaś $s_r, s_l$ to jego obrazy względem dwóch wariantów I ruchu Reidemeistera.
+    Wtedy wielomian dwóch zmiennych
     \begin{equation}
         % F_L(a, z) = a^{-w(L)} \langle |L| \rangle,
-        F_K(a, z) = a^{-w(K)} L(K),
+        F_K(a, z) = a^{-\writhe D} L(D),
     \end{equation}
-    gdzie $w$ to spin zorientowanego diagramu splotu, zaś $L(K)$ jest wielomianem wyznaczonym przez cztery własności:
-    \begin{enumerate}
-        \item $L(\LittleUnknot) = 1$,
-        \item $L(s) = a^{-1} L(s_r) = a L(s_l)$, gdzie $s$ jest pojedynczym węzłem, zaś $s_r, s_l$ to jego obrazy względem dwóch wariantów I ruchu Reidemeistera,
-        \item $L$ jest niezmienniczy względem II i III ruchu Reidemeistera,
-        \item $L(\LittleLeftCrossing) + L(\LittleRightCrossing) = z L(\LittleLeftSmoothing) + z L(\LittleRightSmoothing)$,
-    \end{enumerate}
     nazywamy wielomianem Kauffmana.
 \end{definition}
 
 Jego związki z~wielomianem HOMFLY pozostają nieznane.
-Wiemy natomiast, że stanowi uogólnienie wielomianu BLM/Ho: $Q(x) = F(1, x)$ oraz wielomianu Jonesa:
-\begin{equation}
-    \jones(t)=F(-t^{-3/4},t^{-1/4}+t^{1/4}).
-\end{equation}
+Wiemy natomiast, że 
+
+\begin{proposition}
+    Wielomian Kauffmana uogólnia wielomian BLM/Ho, zgodnie z podstawieniem
+    \begin{equation}
+        Q(x) = F(1, x).
+    \end{equation}
+\end{proposition}
+
+\begin{proposition}
+    Wielomian Kauffmana uogólnia wielomian Jonesa, zgodnie z podstawieniem
+    \begin{equation}
+        \jones(t)=F(-t^{-3/4},t^{-1/4}+t^{1/4}).
+    \end{equation}
+\end{proposition}
 
 % Koniec sekcji Wielomian Kauffmana
