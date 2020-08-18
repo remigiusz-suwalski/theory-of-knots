@@ -40,9 +40,9 @@ Wszystkie węzły wyżej nazywają się wg numeracji Conwaya/Rolfsena.
 \end{proposition}
 
 \begin{proof}
-	Niech $a, b > 1$ będą względnie pierwsze.
-	Lamm w \cite{lamm97} pokazał dużo ogólniejszy wynik.
-	Mianowicie: węzeł Lissajous o~częstotliwościach $n_x = a$, $n_y = b$, $n_z = 2ab-a-b$ oraz fazach:
+    Niech $a, b > 1$ będą względnie pierwsze.
+    Lamm w \cite{lamm97} pokazał dużo ogólniejszy wynik.
+    Mianowicie: węzeł Lissajous o~częstotliwościach $n_x = a$, $n_y = b$, $n_z = 2ab-a-b$ oraz fazach:
     \begin{equation}
         \varphi_x = \frac{2n_x-1}{n_z} \pi, \quad
         \varphi_y = \frac{\pi}{n_z}, \quad
@@ -84,7 +84,7 @@ To nakłada ograniczenia na wielomian Alexandera.
     W przeciwnym razie możemy powołać się na fakt \ref{lissajous_two_periodic} oraz \ref{murasugi_periodic} (z $n=2^1$ oraz $\lambda = 1$).
     Dostaniemy równość
     \begin{equation}
-    	\label{lissajous_square_equiv}
+        \label{lissajous_square_equiv}
         \alexander_K(t) \equiv \alexander^2_{J}(t) \mod 2,
     \end{equation}
     która kończy dowód.
@@ -113,7 +113,7 @@ Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kw
 \end{proof}
 
 \begin{corollary}
-	\label{lissajous_fiber}
+    \label{lissajous_fiber}
     Włókniste węzły o nieparzystym genusie nie są węzłami Lissajous.
 \end{corollary}
 
@@ -122,7 +122,7 @@ Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kw
 \end{proof}
 
 \begin{corollary}
-	\label{lissajous_twobridge}
+    \label{lissajous_twobridge}
     Niech $K$ będzie dwumostowym węzłem Lissajous.
     Wtedy $\alexander_K(t) \equiv 1 \mod 2$.
 \end{corollary}
@@ -140,18 +140,18 @@ Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kw
 Można skorzystać z tego samego argumentu, co w dowodzie wniosku \ref{lissajous_fiber} oraz \ref{lissajous_twobridge}.
 
 \begin{proposition}
-	Niech $p, q$ będą względnie pierwszymi liczbami różnymi od $0, \pm 1$, zaś $K$ węzłem.
-	Wtedy $(p, q)$-kabel węzła $K$ nie jest węzłem Lissajous.
+    Niech $p, q$ będą względnie pierwszymi liczbami różnymi od $0, \pm 1$, zaś $K$ węzłem.
+    Wtedy $(p, q)$-kabel węzła $K$ nie jest węzłem Lissajous.
 \end{proposition}
 
 Lamm pisze, że obiekt ten -- $(p, q)$-kabel -- zdefiniowano w książce Eisenbuda/Neumanna ,,Three-dimensional link theory and invariants of plane curve singularities''.
 Celowo pomijamy ją w bibliografii, prawdopodobnie chodzi o zwykłe węzły satelitarne.
 
 \begin{proof}
-	Niech $L$ będzie $(p, q)$-kablem węzła $K$.
-	Seifert pokazał w \cite{seifert50}, że
+    Niech $L$ będzie $(p, q)$-kablem węzła $K$.
+    Seifert pokazał w \cite{seifert50}, że
     \begin{equation}
-    	\alexander_L(t) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)} \alexander_K(t^p).
+        \alexander_L(t) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)} \alexander_K(t^p).
     \end{equation}
     Dwa najwyższe współczynniki w wielomianie ułamkowym to $\pm 1$, a skoro $|p| > 1$, dwa najwyższe współczynniki $\alexander_L$ to także $\pm 1$.
     ,,Wygodne sformułowanie'' kończy dowód.
@@ -162,7 +162,7 @@ Celowo pomijamy ją w bibliografii, prawdopodobnie chodzi o zwykłe węzły sate
 \end{corollary}
 
 \begin{proof}
-	Węzły torusowe to kable niewęzła.
+    Węzły torusowe to kable niewęzła.
 \end{proof}
 
 \begin{corollary}
@@ -170,22 +170,22 @@ Celowo pomijamy ją w bibliografii, prawdopodobnie chodzi o zwykłe węzły sate
 \end{corollary}
 
 \begin{proof}
-	Wynika to z ogólniejszego stwierdzenia: jeśli spełniony jest warunek $|p_n|, |q_n| > 1$, to iterowane węzły torusowe typu $((p_n, q_n), (p_1, q_1))$ nie są węzłami Lissajous.
+    Wynika to z ogólniejszego stwierdzenia: jeśli spełniony jest warunek $|p_n|, |q_n| > 1$, to iterowane węzły torusowe typu $((p_n, q_n), (p_1, q_1))$ nie są węzłami Lissajous.
 \end{proof}
 
 Podamy teraz pierwszy warunek wystarczający, by być węzłem Lissajous.
 Znaleźli go Hoste z Zirbel w~\cite{zirbel06}:
 
 \begin{proposition}
-	Niech $K$ będzie węzłem skręconym.
-	Następujące warunki są równoważne: $K$ jest węzłem Lissajous; niezmiennik Arfa węzła $K$ znika.
+    Niech $K$ będzie węzłem skręconym.
+    Następujące warunki są równoważne: $K$ jest węzłem Lissajous; niezmiennik Arfa węzła $K$ znika.
 \end{proposition}
 
 Węzły bilardowe to zamknięte trajektorie kuli, która zostaje wystrzelona z jednej ze ścian sześcianu, odbija się pod takim samym kątem, pod jakim pada na ściany.
 Jones, Przytycki pokazali w \cite{jones98}, że węzły bilardowe to dokładnie węzły Lissajous i zadali pytanie, czy każdy węzeł można zrealizować jako trajektorię kuli w jakimś wielościanie.
 
 Odpowiedź jest pozytywna.
-Koseleff, Pecker w~\cite{koseleff14} korzystając z~twierdzenia Manturowa 
+Koseleff, Pecker w~\cite{koseleff14} korzystając z~twierdzenia Manturowa
 (każdy splot jest domknięciem kwazitorycznego warkocza)
 pokazują, że każdy węzeł ma diagram, który jest wielokątem gwiaździstym.
 Użyte zostało twierdzenie Kroneckera z~1884 roku: jeśli liczby $\theta_0 = 1, \theta_1, \ldots, \theta_k$ są liniowo niezależne nad ciałem $\Q$, to zbiór punktów $(\lfloor n\theta_i \rfloor_{i=0}^k)_{n=0}^\infty$ leży gęsto w kostce jednostkowej.
