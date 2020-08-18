@@ -213,35 +213,39 @@ Uwaga: definicja funkcji $s$ z \cite{borodzik10} zawiera złośliwą literówkę
 \end{corollary}
 
 \begin{proposition}[Murasugi, 1991]
-    Mamy $cr(K_{q,r}) = \min\{|q|(|r| -1), |r|(|q|-1)\}$.
+    Mamy $\crossing T_{p, q} = \min \{|pq| - |p|, |pq| - |q|\}$.
 \end{proposition}
 
 Wyznaczenie indeksu rozwiązującego było dużo trudniejsze.
 Murasugi pisze w~książce \cite{murasugi96}, że mamy nierówność
-\[
-    u(K(q, r)) \le \frac 12 (q-1)(r-1),
-\]
-z równością dla względnie pierwszych $q, r > 0$.
+\begin{equation}
+    u(T_{p, q}) \le \frac 12 (p-1)(q-1),
+\end{equation}
+z równością dla względnie pierwszych $p, q > 0$.
 Hipoteza Milnora głosiła, że w~rzeczywistości równość zachodzi zawsze.
 Dowód został odnaleziony w~latach 1993-1995 przy użyciu tzw. \emph{gauge theory} (działu teorii pola, gdzie lagranżjan jest niezmienniczy względem grup Liego lokalnych transformacji...).
-Patrz prace \cite{kronheimer93} oraz \cite{kronheimer95}.
 
 \begin{proposition}[Kronheimer, Mrówka] \label{torus_unknotting}
-    Dla względnie pierwszych $q, r > 0$ mamy
-    \[
-        u(K(q, r)) = \frac 12 (q-1)(r-1),
-    \]
+    Dla względnie pierwszych $p, q > 0$ mamy
+    \begin{equation}
+        u(T_{p, q}) = \frac 12 (p - 1)(q - 1),
+    \end{equation}
 \end{proposition}
+
+\begin{proof}
+    Patrz prace \cite{kronheimer93} oraz \cite{kronheimer95}.
+\end{proof}
 
 Genus pokrywa się z~liczbą gordyjską dla węzłów (czyli względnie pierwszych $q, r$).
 
 \begin{proposition} \label{torus_bridge}
-    Indeksem mostowym węzła $K_{q,r}$ jest mniejsza z~liczb $|q|, |r|$.
+    $\bridge T_{p, q} = \min \{|p|, |q|\}$
 \end{proposition}
 
 \begin{corollary}
     \label{braid-for-forus}
-    Indeksem warkoczowym węzła torusowego $T_{p, q}$, $p, q \neq 0$, jest $\min\{|p|, |q|\}$.
+    Niech $p, q \neq 0$ będą liczbami całkowitymi.
+    Wtedy $\braid T_{p, q} = \min \{|p|, |q|\}$.
 \end{corollary}
 
 \begin{proof}
@@ -255,22 +259,27 @@ Genus pokrywa się z~liczbą gordyjską dla węzłów (czyli względnie pierwszy
 \end{proof}
 
 \begin{proposition}
-    Mamy $\bracket{K_{2, n}} = A \bracket{K_{2,n-1}} + (-1)^{n-1} A^{2-3n}$
-    oraz $\bracket{K_{2,1}} = -A^3$.
+    Klamra Kauffmana spełnia zależność rekurencyjną
+    \begin{equation}
+        \bracket{T_{2, n}} = A \bracket{T_{2,n-1}} + (-1)^{n-1} A^{2-3n}
+    \end{equation}
+    z warunkiem brzegowym $\bracket{T_{2,1}} = -A^3$.
 \end{proposition}
 
 \begin{proposition}
-    Wielomianem Jonesa węzła $(m, n)$-torusowego jest
-    \[
-        \jones(t) = \frac {t^{(m-1)(n-1):2}}{1-t^2} \cdot (1 - t^{m+1} - t^{n+1} + t^{m+n}).
-    \]
+    Niech $L = T_{p, q}$ będzie węzłem torusowym.
+    Wtedy jego wielomianem Jonesa jest
+    \begin{equation}
+        \jones(t) = \frac {{\sqrt t}^{(p-1)(q-1)}}{1-t^2} \cdot (1 - t^{p+1} - t^{q+1} + t^{p+q}).
+    \end{equation}
 \end{proposition}
 
 \begin{proposition}
-    Wielomianem Alexandera węzła $(p,q)$-torusowego jest
-    \[
-         \alexander(T_{p,q}) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)}.
-    \]
+    Niech $L = T_{p, q}$ będzie węzłem torusowym.
+    Wtedy jego wielomianem Alexandera jest
+    \begin{equation}
+         \alexander(t) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)}.
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
@@ -285,7 +294,7 @@ Genus pokrywa się z~liczbą gordyjską dla węzłów (czyli względnie pierwszy
 \end{corollary}
 
 \begin{proof}
-    Mamy $\alexander(T_{2,n}) = (t^n+1) / (t+1)$, więc $\deg \alexander (T_{2,n}) = n - 1$.
+    Mamy $\alexander(T_{2,n})(t) = (t^n+1) / (t+1)$, więc $\deg \alexander (T_{2,n}) = n - 1$.
 \end{proof}
 
 \begin{proposition}
@@ -296,7 +305,6 @@ Genus pokrywa się z~liczbą gordyjską dla węzłów (czyli względnie pierwszy
 \begin{proof}
     Najpierw pokazali to Murasugi \cite{murasugi61}, Neuwirth \cite{neuwirth61} przy dodatkowym założeniu, że węzeł $K$ jest alternujący,
     wkrótce po tym Burde, Zieschang znaleźli dowód w ogólnym przypadku \cite{burde66}.
-    % Murasugi i~Neuwirth w~1961 dla węzłów alternujących, zaś Burde z~Zieschangiem w~1965 pokazali, że nietrywialny węzeł, którego grupa ma nietrywialne centrum, jest torusowy.
 \end{proof}
 
 % Koniec sekcji Węzły torusowe
