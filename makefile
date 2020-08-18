@@ -18,10 +18,13 @@ prepare:
 
 precommit:
 	./src/merridew/bibliography_sort.py src/knot_theory.bib
-	for i in $$(find src -type f -iname '*.tex'); do sed '$$a\' $$i > file && mv file $$i; perl -p -i -e 's/\t/    /g' "$$i"; done
+	for i in $$(find src -type f -iname '*.tex'); do \
+	    sed '$$a\' $$i > file && mv file $$i; \
+	    perl -p -i -e 's/\t/    /g' "$$i"; \
+	done;
 	find src -type f \
-		| xargs awk -F ';' '/^% DICTIONARY/ {print "\\item \\textbf{" $$2 "} " $$3}' \
-		| sort > src/90-appendix/dictionary.tex
+	    | xargs awk -F ';' '/^% DICTIONARY/ {print "\\item \\textbf{" $$2 "} " $$3}' \
+	    | sort > src/90-appendix/dictionary.tex
 
 chapter-all: build/knot-theory.pdf
 
