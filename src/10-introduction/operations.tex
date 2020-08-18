@@ -43,7 +43,7 @@ Na lewym obrazku odbiliśmy diagram względem poziomej prostej, innym sposobem n
 Zauważmy, że wykonując powyższe operacje na węźle możemy otrzymać mniej niż czterech różne obiekty ($L$, $mL$, $rL$, $mrL$) -- na przykład trójlistnik jest własnym rewersem, ale nie lustrem.
 
 \begin{definition}
-    \index{węzeł!chiralny}
+    \index{węzeł!chiralny (skrętny)}
     \index{węzeł!odwracalny}
     \index{węzeł!zwierciadlany}
     Wyróżniamy pięć typów symetrii węzłów:
@@ -152,9 +152,9 @@ Indeksem zaczepienia $\lambda$ węzła $p(K)$ jest różnica między liczbą skr
     Niech $K$ będzie węzłem o~okresie $n = p^r$, gdzie $p$ jest liczbą pierwszą.
     Niech $J$ będzie jego węzłem ilorazowym, z~indeksem zaczepienia $\lambda$.
     Wtedy wielomian $\alexander_J$ jest dzielnikiem wielomianu $\alexander_K$ oraz istnieje pewna całkowita liczba $k$, taka że
-    \[
+    \begin{equation}
         \alexander_K = \pm \alexander_J^n \left(1 + t + t^2 + \ldots + t^{\lambda - 1}\right)^{n-1} \mod p.
-    \]
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
@@ -169,13 +169,12 @@ Indeksem zaczepienia $\lambda$ węzła $p(K)$ jest różnica między liczbą skr
 Suma spójna węzłów to szczególny przypadek sklejenia dwóch rozmaitości wzdłuż brzegu.
 
 \begin{definition}[suma niespójna]
-    \index{suma!niespójna}
     Niech $L_1$ oraz $L_2$ będą splotami, które leżą po różnych stronach ustalonej płaszczyzny w przestrzeni $\R^3$.
     Teoriomnogościową sumę $L_1 \sqcup L_2$ nazywamy sumą niespójną splotów.
 \end{definition}
 
 \begin{definition}[suma spójna]
-    \index{suma!spójna}
+    \index{suma!spójna, niespójna}
     Niech $K_1, K_2$ będą zorientowanymi węzłami.
     Natnijmy każdy z nich w dwóch punktach tego samego krótkiego łuku, a następnie zszyjmy dwoma łukami, które nie przecinają już istniejących, jak na obrazku.
     Otrzymany węzeł nazywamy sumą spójną węzłów $K_1$ oraz $K_2$.

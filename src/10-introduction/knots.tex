@@ -11,7 +11,6 @@ Węzeł (a) nazywamy niewęzłem, jest to kalka angielskiego \emph{unknot}.
 Następne w~kolejce widoczne są trójlistnik (b,~\emph{trefoil}), ósemka (c,~\emph{figure-eight}), pięciolistnik (d,~\emph{cinquefoil}) oraz słynna para Perko (e,~f~wg oryginalnej numeracji Rolfsena).
 Pod diagramami umieściliśmy notację Alexandera-Briggsa, jeszcze do niej wrócimy.
 
-
 \begin{comment}
 \begin{figure}[H]
     \centering
@@ -138,7 +137,7 @@ Stwierdzenie to przestaje być prawdziwe po zastąpieniu przestrzeni $\R^m$ prze
         \end{cases} .
     \]
 
-    Funkcja $F$ jest gładka, gdyż na mocy lematu Hadamarda funkcja $f$ zapisuje się jako suma $x_1 g_1(x) + \ldots + x_mg_m(x)$,gdzie funkcje $g_i$ są gładkie, co jakoś kończy dowód.
+    Funkcja $F$ jest gładka, gdyż na mocy lematu Hadamarda funkcja $f$ zapisuje się jako suma $x_1 g_1(x) + \ldots + x_mg_m(x)$, gdzie funkcje $g_i$ są gładkie, co jakoś kończy dowód.
 \end{proof}
 
 Formalnie węzły to pewne odwzorowania, więc prawidłowym sposobem na zapisanie, że są izotopijne (czyli dla nas: równe), jest $K_1 \simeq K_2$.
@@ -158,8 +157,14 @@ W~takiej sytuacji obydwa sploty mają tyle samo ogniw.
 \begin{example}
     \index{splot!Hopfa}
     Splot Hopfa to najprostszy splot nietrywialny, którym w~1931 r. zajmował się Heinz Hopf, topolog niemiecki, w~ramach badań nad tzw. rozwłóknieniem (Hopf fibration).
+\end{example}
+
+\begin{example}
+    \index{splot!Whiteheada}
     Whitehead w~1934 odkrył kontrprzykład do nieudanego dowodu hipotezy Poincarego.
     Był nim splot o~dwóch składowych przedstawiony na poniższym rysunku.
+\end{example}
+
 \begin{comment}
     \begin{figure}[H]
         \begin{minipage}[b]{.48\linewidth}
@@ -174,8 +179,6 @@ W~takiej sytuacji obydwa sploty mają tyle samo ogniw.
         \end{minipage}
     \end{figure}
 \end{comment}
-    .
-\end{example}
 
 Jeśli dwa węzły są równoważne, to ich dopełnienia są oczywiście homeomorficzne.
 Pytanie o~prawdziwość implikacji odwrotnej jako pierwszy zadał najprawdopodobniej w~1908 roku Tietze (,,Über die topologischen Invarianten mehrdimensionaler Mannigfaltigkeiten'').
@@ -223,8 +226,9 @@ Chociaż w~świetle definicji \ref{def:knot} węzły są pewnymi regularnymi pod
 z kombinatorycznego punktu widzenia wygodniej jest rysować je na płaszczyźnie.
 
 \begin{definition}[orientacja]
-    \index{węzeł!zorientowany}
+    \index{splot!zorientowany}
     Węzeł, w~którym wybrano kierunek, w~którym należy się po nim poruszać, nazywamy zorientowanym.
+    Splot nazywamy zorientowanym, jeśli wszystkie jego ogniwa traktowane jako węzły są zorientowane.
 \end{definition}
 
 \begin{definition} [diagram] \label{def_diagrams}
@@ -333,6 +337,7 @@ jego drugi ruch jest naszym pierwszym.
 
 \begin{theorem}[Reidemeister, 1927]
     \label{thm:reidemeister}
+    \index{twierdzenie!Reidemeistera}
     Każdy splot posiada diagram.
     Dwa diagramy przedstawiają równoważne sploty,
     wtedy i~tylko wtedy gdy pierwszy można otrzymać z~drugiego
@@ -372,7 +377,7 @@ Mając dane dwa spójne diagramy tego samego splotu trudno znaleźć jest ciąg 
 Załóżmy, że widać na nich odpowiednio $n_1, n_2$ skrzyżowań.
 Jak piszą Coward, Lackenby w \cite{coward11}, istnieje funkcja $f \colon \N \times \N \to \N$ taka, że między dwoma diagramami można przejść wykonując co najwyżej $f(n_1, n_2)$ ruchów.
 Wynika to z oczywistego faktu, że istnieje skończenie wiele spójnych diagramów o danej liczbie skrzyżowań oraz twierdzenia Reidemeistera.
-Okazuje się jednak, że od funkcji $f$ można żądać, by była obliczalna i faktycznie, główy wynik \cite{coward11} orzeka, że
+Okazuje się jednak, że od funkcji $f$ można żądać, by była obliczalna i faktycznie, główny wynik \cite{coward11} orzeka, że
 \begin{equation}
     f(n_1, n_2) = 2^{2^{\ldots^{2^{n_1 + n_2}}}}
 \end{equation}
@@ -415,6 +420,9 @@ SnapPea\footnote{Dostępny pod adresem \url{http://geometrygames.org/SnapPea/ind
 Przykładami trudnych w~rozpoznaniu niewęzłów są: niewęzeł Goritza, Freedmana.
 Więcej trudnych niewęzłów zawiera praca \cite{zanellati16} autorstwa C. Petronio oraz A. Zanellatiego.
 
+\index{niewęzeł}
+\index{niewęzeł!Goritza}
+\index{niewęzeł!Freedmana}
 \begin{comment}
 \begin{figure}[H]
     \begin{minipage}[b]{.32\linewidth}
@@ -438,7 +446,7 @@ Więcej trudnych niewęzłów zawiera praca \cite{zanellati16} autorstwa C. Petr
 Zanim opowiemy, jak dotąd przebiegała klasyfikacja węzłów o małej liczbie skrzyżowań, zdefiniujemy klasę splotów ze specjalnymi diagramami.
 
 \begin{definition}[alternacja]
-    \index{węzeł!alternujący}
+    \index{splot!alternujący}
     Diagram splotu, gdzie podczas poruszania się wzdłuż każdego ogniwa nad- oraz podskrzyżowania mijane są naprzemiennie, nazywamy alternującym.
     Splot jest alternujący, jeśli posiada alternujący diagram.
 \end{definition}
@@ -500,6 +508,7 @@ Onieśmielony przez liczbę możliwych ciągów dla kolejnych indeksów skrzyżo
 To właśnie grupowanie diagramów przedstawiających ten sam węzeł, a~nie samo szukanie wszystkich możliwych diagramów, sprawia trudność.
 
 Aby sobie pomóc, Tait znalazł lokalną modyfikację diagramu, która nie zmienia indeksu skrzyżowaniowego, znaną obecnie jako flype.
+\index{ruchy!flype}
 Flype to stary szkocki czasownik oznaczający ,,wykręcać na drugą stronę''.
 
 \begin{comment}
@@ -599,6 +608,7 @@ Pzedstawimy ze szczegółami dowód pierwszej hipotezy w~sekcji \ref{sub:span} o
 
 \subsection{Metody kodowania}
 \subsubsection{Notacja Alexandera-Briggsa}
+\index{notacja!Alexandera-Briggsa}
 Najbardziej tradycyjny, wprowadzony w~1927 roku sposób opisu węzłów do 9 skrzyżowań.
 Węzły kodowane są przez indeks skrzyżowaniowy z dolnym indeksem informującym o miejscu w tablicy węzłów.
 Porzadek jest umowny i nie ma żadnego głębszego znaczenia, jego wybór należy do osoby, która jako pierwsza znajdzie wszystkie węzły o danej liczbie skrzyżowań.
@@ -613,6 +623,8 @@ Podręcznik Kawauchiego wymienia diagramy.
 % http://stoimenov.net/stoimeno/homepage/ptab/
 
 \subsubsection{Notacja Dowkera-Thistlethwaite'a}
+\index{notacja!Taita}
+\index{notacja!Dowkera-Thistletwaite'a}
 Poprawia notację Taita.
 Należy ustalić minimalny diagram węzła, dowolny punkt początkowy oraz kierunek i zacząć przemierzać węzeł.
 Za każdym razem, kiedy mijamy skrzyżowanie, przypisujemy mu kolejną liczbę naturalną, zaczynając od jedynki.
@@ -644,5 +656,6 @@ a(n) & = \frac{1}{n} \sum_{d\mid n} \left(\frac{n}{d}\right)^d \cdot u \left(d, 
 Kilka początkowych wartości to $a_3 = 1, 2, 5, 20, 87, 616, 4843, 44128, 444621, \ldots$ (ciąg A002484 w OEIS).
 
 \subsubsection{Notacja Conwaya}
+\index{notacja!Conwaya}
 Wprowadzona przez Conwaya w~pracy \cite{conway70}.
 Opiera się na pojęciu supła, dlatego więcej szczegółów przedstawiamy dopiero w definicji \ref{conway_notation}.

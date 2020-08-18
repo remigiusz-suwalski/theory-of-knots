@@ -15,7 +15,7 @@ W pracy \cite{shimizu14} Shimizu rozpatruje różne operacje, które rozwiązuj�
 Nie będziemy się nimi zajmować, podamy tylko przykład: zamiana pod- i nadskrzyżowań wokół obszaru na diagramie rozwiązuje węzły, ale nie sploty; kontrprzykładem jest splot Hopfa.
 
 Jeśli odwrócenie pewnych skrzyżowań daje niewęzeł, to odwrócenie pozostałych także.
-To daje proste liczby gordyjskiej: $2 \operatorname{u} (K) \le \operatorname{cr} (K)$.
+To daje proste liczby gordyjskiej: $2 \operatorname{u} (K) \le \crossing (K)$.
 Nie jest zbyt pomocne, równość zachodzi pięć razy dla pierwszych węzłów do 12 skrzyżowań: $3_{1}$, $5_{1}$, $7_{1}$, $9_{1}$, $11a_{367}$.
 Dokładna wartość liczby gordyjskiej jest znana tylko dla niektórych klas węzłów, na przykład torusowych (fakt \ref{torus_unknotting}) albo skręconych (definicja \ref{twist_knots}).
 
@@ -23,7 +23,7 @@ Dla każdego nietrywialnego splotu istnieje diagram wymagający odwrócenia dowo
 Wcześniej Nakanishi znalazł 2-gordyjski diagram 1-gordyjskiego węzła $6_2$ (\cite{nakanishi83}) oraz udowodnił, że każdy nietrywialny węzeł ma diagram, który nie jest 1-gordyjski (\cite{nakanishi96}).
 Dowód zawiera praca \cite{taniyama09} Taniyamy.
 Pokazany jest tam jeszcze jeden godny uwagi fakt.
-Jeśli liczba gordyjska diagramu $D$ wynosi $\frac 12 (\operatorname{cr} D - 1)$, co jest maksymalną możliwą wartością zgodnie z~naszym prostym ograniczeniem,
+Jeśli liczba gordyjska diagramu $D$ wynosi $\frac 12 (\crossing D - 1)$, co jest maksymalną możliwą wartością zgodnie z~naszym prostym ograniczeniem,
 to węzeł jest $(2,p)$-torusowy albo wygląda jak diagram niewęzła po pierwszym ruchu Reidemeistera.
 
 Bleiler odkrył w~\cite{bleiler84} fascynujący przykład wymiernego węzła $10_8$, który jest $2$-gordyjski, ale świadkiem tego nie może być żaden diagram mininalny, ponieważ, co jeszcze bardziej fascynujące, węzeł ten posiada tylko jeden diagram o~dziesięciu skrzyżowaniach oraz liczbie gordyjskiej 3.
@@ -36,6 +36,7 @@ Dlatego jeszcze w~latach 90. postawiono hipotezę:
 
 \begin{conjecture}[Bernharda-Jablana, \cite{bernhard94}, \cite{jablan98}]
     \label{bernhard_jablan}
+    \index{hipoteza!Bernharda-Jablana}
     Każdy węzeł $K$ posiada diagram $D$ realizujący liczbę gordyjską oraz skrzyżowanie, którego odwrócenie daje nowy węzeł $K'$ z diagramem $D'$ o mniejszej liczbie gordyjskiej: $u(D') < u(D)$.
 \end{conjecture}
 
@@ -84,8 +85,8 @@ Scharlemann pokazał w \cite[wniosek 1.6]{scharlemann98}, że liczba gordyjska j
 Stąd oraz z faktu \ref{unknotting_one_prime} wynika, że suma dwóch $1$-gordyjskich węzłów jest $2$-gordyjska, ale od początku teorii węzłów podejrzewano dużo więcej:
 
 \begin{conjecture}
-    Niech $K, J$ będą węzłami.
-    Wtedy $u(K \shrap J) = u(K) + u(J)$, czyli liczba gordyjska jest addytywna.
+    Niech $K_1, K_2$ będą węzłami.
+    Wtedy $u(K_1 \shrap K_2) = u(K_1) + u(K_2)$, czyli liczba gordyjska jest addytywna.
 \end{conjecture}
 
 Dotychczas wyznaczono liczbę gordyjską dla prawie wszystkich węzłów pierwszych o~co najwyżej dziesięciu skrzyżowaniach,
