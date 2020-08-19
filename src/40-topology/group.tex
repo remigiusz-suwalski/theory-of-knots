@@ -24,6 +24,20 @@ Podamy teraz kilka przykładów węzłów oraz ich grup.
     Trójlistnik: grupa warkoczowa $B_3 \cong \langle x, y \mid x^2 = y^3\rangle$.
 \end{example}
 
+\begin{proof}
+    Wynika to z równości
+    % https://en.wikipedia.org/wiki/Tietze_transformations
+    \begin{align}
+        \pi_1(S^3 \setminus 3_1) & = \langle x, y, z \mid xz = yx, zy = xz, yx = zy \rangle \\
+                                 & = \langle x, y \mid xyx = yxy \rangle \\
+                                 & = \langle x, y, a, b \mid xyx = yxy, a = yx, b = xyx \rangle \\
+                                 & = \langle x, a, b \mid xa = a^2x^{-1}, b = xa \rangle \\
+                                 & = \langle a, b \mid b = a^2(ba^{-1})^{-1} \rangle \\
+                                 & = \langle a, b \mid a^3 = b^2 \rangle,
+    \end{align}
+    prawdziwych na mocy transformacji Tietzego.
+\end{proof}
+
 \begin{example}
     Węzeł $(p,q)$-torusowy: $\langle x, y \mid x^p = y^q \rangle$.
 \end{example}
@@ -117,9 +131,56 @@ Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach, dowodząc jed
     w~których łuk $a_i$ biegnie górą, zaś $a_j$ leży po jego lewej stronie.
 \end{proof}
 
-\begin{tobedone}
-    Wizualizacja relacji Wirtingera dla pojedynczego skrzyżowania.
-\end{tobedone}
+\begin{figure}[H]
+    \begin{minipage}[b]{.48\linewidth}
+        \[
+            \begin{tikzpicture}[baseline=-0.65ex, scale=0.2]
+                \useasboundingbox (-5, -5) rectangle (5,5);
+                \begin{knot}[clip width=3.5, end tolerance=1pt, flip crossing/.list={1}]
+                    \strand[thick, Latex-] (-5,5) to (5,-5);
+                    \strand[thick, -Latex] (-5,-5) to (5,5);
+                    % top left
+                    \strand[thick, Latex-, darkblue] (-5, 1) to (-1, 5);
+                    % bottom left
+                    \strand[thick, Latex-, darkblue] (-5, -1) to (-1, -5);
+                    % bottom right
+                    \strand[thick, -Latex, darkblue] (5, -1) to (1, -5);
+                    % top right
+                    \strand[thick, -Latex, darkblue] (5, 1) to (1, 5);
+                    \node[darkblue] at (-7, -2) {$x_k$};
+                    \node[darkblue] at (-7, 2) {$x_{j+1}$};
+                    \node[darkblue] at (7, -2) {$x_j$};
+                    \node[darkblue] at (7, 2) {$x_k$};
+                \end{knot}
+            \end{tikzpicture}
+        \]
+        \subcaption{skrzyżowanie dodatnie: $x_j = x_k x_{j+1} x_k^{-1}$}
+    \end{minipage}
+    \begin{minipage}[b]{.48\linewidth}
+        \[
+            \begin{tikzpicture}[baseline=-0.65ex, scale=0.2]
+                \useasboundingbox (-5, -5) rectangle (5,5);
+                \begin{knot}[clip width=3.5, end tolerance=1pt, flip crossing/.list={1}]
+                    \strand[thick, Latex-] (-5,5) to (5,-5);
+                    \strand[thick, Latex-] (-5,-5) to (5,5);
+                    % top left
+                    \strand[thick, Latex-, darkblue] (-5, 1) to (-1, 5);
+                    % bottom left
+                    \strand[thick, -Latex, darkblue] (-5, -1) to (-1, -5);
+                    % bottom right
+                    \strand[thick, -Latex, darkblue] (5, -1) to (1, -5);
+                    % top right
+                    \strand[thick, Latex-, darkblue] (5, 1) to (1, 5);
+                    \node[darkblue] at (-7, -2) {$x_k$};
+                    \node[darkblue] at (-7, 2) {$x_{j+1}$};
+                    \node[darkblue] at (7, -2) {$x_j$};
+                    \node[darkblue] at (7, 2) {$x_k$};
+                \end{knot}
+            \end{tikzpicture}
+        \]
+        \subcaption{skrzyżowanie ujemne: $x_j = x_k^{-1} x_{j+1} x_k$}
+    \end{minipage}
+\end{figure}
 
 \begin{corollary}
     \label{prop:knot_group_abelianisation}

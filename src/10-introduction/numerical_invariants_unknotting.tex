@@ -11,6 +11,27 @@ Z angielskiego \emph{unknotting number}.
 Zgodnie z ,,klasyczną'' definicją, między odwracaniem kolejnych skrzyżowań mamy prawo wykonać izotopie otaczające; natomiast zgodnie ze ,,standardową'' definicją, takie izotopie są zabronione.
 Obie definicje są równoważne: tłumaczy to książka Adamsa \cite[s. 58]{adams94}.
 
+\begin{lemma}
+    \label{lem:unknotting_well_defined}
+    W dowolnym rzucie splotu można odwrócić pewne skrzyżowania tak, by uzyskać diagram niesplotu.
+\end{lemma}
+
+\begin{proof}
+    Bez straty ogólności założę, że diagram przedstawia węzeł.
+    Ustalmy zatem diagram węzła i~wybierzmy jakiś początkowy punkt na nim, różny od skrzyżowania wraz z~kierunkiem, wzdłuż którego będziemy przemierzać węzeł.
+    Za każdym razem, kiedy odwiedzamy nowe skrzyżowanie, zmieniamy je w~razie potrzeby na takie, przez które przemieszczamy się wzdłuż górnego łuku.
+    Skrzyżowań już odwiedzonych nie zmieniamy wcale.
+
+    Teraz wyobraźmy sobie nasz nowy węzeł w~trójwymiarowej przestrzeni $\mathbb R^3$, przy czym oś $z$ skierowana jest z~płaszczyzny, w~której leży diagram, w~naszą stronę.
+    Umieśćmy początkowy punkt tak, by jego trzecią współrzędną była $z = 1$.
+
+    Przemierzając węzeł, zmniejszamy stopniowo tę współrzędną, aż osiągniemy wartość $0$ tuż przed punktem, z~którego wyruszyliśmy.
+    Połączmy obydwa punkty (początkowy oraz ten, w~którym osiągamy współrzędną $z = 0$) pionowym odcinkiem.
+    Zauważmy, że kiedy patrzymy na węzeł w~kierunku osi $z$, nie widzimy żadnych skrzyżowań.
+
+    Oznacza to, że nasza procedura przekształciła początkowy diagram w~diagram niewęzła, co należało okazać.
+\end{proof}
+
 W pracy \cite{shimizu14} Shimizu rozpatruje różne operacje, które rozwiązują węzły lub sploty.
 Nie będziemy się nimi zajmować, podamy tylko przykład: zamiana pod- i nadskrzyżowań wokół obszaru na diagramie rozwiązuje węzły, ale nie sploty; kontrprzykładem jest splot Hopfa.
 
