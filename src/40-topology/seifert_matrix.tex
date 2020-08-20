@@ -22,6 +22,10 @@ Potrzebowaliśmy wyróżnić jedną ze stron powierzchni $S$, by słowo ,,nad'' 
     Przy zachowaniu powyższych oznaczeń, macierz, której wyrazy określa wzór $M_{i,j} = \operatorname{lk}(x_i, x_j^*)$, nazywamy macierzą Seiferta.
 \end{definition}
 
+\begin{tobedone}
+The Seifert matrix was introduced by [Seifert 1934] in the case of a knot.
+\end{tobedone}
+
 Konstrukcja macierzy Seiferta zależy od wyboru diagramu oraz orientacji krzywych $x_i$, dlatego nie jest niezmiennikiem węzłów.
 Stanie się nim, kiedy uwzględnimy jeszcze wpływ ruchów Reidemeistera.
 
@@ -61,12 +65,23 @@ Badania powyższej relacji równoważności prowadzili w~latach sześćdziesiąt
     Macierz Seiferta modulo $S$-równoważność jest niezmiennikiem splotów.
 \end{proposition}
 
+
 Dowód tego faktu jest elementarny, ale dość długi.
-Razem z~ułatwiającymi zrozumienie diagramami można znaleźć go w podręczniku Murasugiego, dlatego pominiemy go i skupimy się na tym, jakie niezmienniki można otrzymać z macierzy Seiferta.
+Razem z~ułatwiającymi zrozumienie diagramami można znaleźć go w podręczniku Murasugiego albo \cite[s. 64]{kawauchi96}, dlatego pominiemy go i skupimy się na tym, jakie niezmienniki można otrzymać z macierzy Seiferta.
 
 Wyznacznik samej macierzy Seiferta nie jest niezmiennikiem.
 Wykonując operację $\Lambda_2$ dostajemy macierz, której ostatnia kolumna albo ostatni wiersz są zerami, więc jej wyznacznik także jest zerem.
 Jeśli jednak najpierw dokonamy jej symetryzacji, dostaniemy znany już niezmiennik.
+
+\begin{tobedone}
+Theorem 5.1.4 An integral square matrix V of size n is a Seifert matrix of an r-component link L if and only if m = (n - r + 1)/2 is a non-negative integer and
+V - V' iis unimodular-congruent to the block sum T of m copies of $(0, 1, -1, 0)$ and
+the zero matrix $O^{r-1}$ of size r-1.
+
+Corollary: An integral square matrix V is a Seifert matrix of a knot if and only if det(V - V') = 1.
+
+Kawauchi, strona 62.
+\end{tobedone}
 
 \begin{proposition}
     Niech $M$ będzie macierzą Seiferta węzła $K$.
