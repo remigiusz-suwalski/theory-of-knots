@@ -112,10 +112,11 @@ Izotopia otaczająca nie pozwala na ściąganie zaplątanych fragmentów do punk
     \label{def:knot}
     \index{węzeł}
     Gładkie włożenie $S^1 \to \R^3$ otaczająco izotopijne z~zamkniętą łamaną bez samoprzecięć nazywamy węzłem poskromionym.
+    Dwa węzły są równoważne, jeśli istnieje pomiędzy nimi izotopia otaczająca.
 \end{definition}
 
-Przez prawie całą książkę interesować nas będą jedynie węzły poskromione,
-dlatego jeśli nie zaznaczono inaczej, przez węzeł rozumiemy węzeł poskromiony.
+Przez prawie całą książkę interesować nas będą jedynie węzły poskromione, czyli takie które nie są dzikie,
+dlatego jeśli nie zaznaczono inaczej, od teraz pisząc węzeł mamy na myśli węzeł poskromiony.
 Istnieje jeszcze jedna, konkurencyjna definicja węzłów równoważnych:
 
 \begin{proposition}
@@ -202,6 +203,7 @@ Twierdzenie to zamienia problem lokalny (czy dwa węzły w kuli $S^3$ są równo
 Whitehead w~pracy \cite{whitehead37} z~1937 roku podał nieskończenie wiele splotów, których dopełnienia wyglądają jak dopełnienia splotu Whiteheada.
 Odpowiednik twierdzenia \ref{thm_gordon_luecke} dla splotów jest więc fałszywy.
 
+% TODO: przesunąć to gdzieś dalej, za definicję skrzyżowania
 Poniższa definicja nie jest nam jeszcze potrzebna, ale wygodnie przytoczyć ją już teraz.
 
 \begin{definition}[rozszczepialność]
@@ -232,38 +234,52 @@ z kombinatorycznego punktu widzenia wygodniej jest rysować je na płaszczyźnie
     Splot nazywamy zorientowanym, jeśli wszystkie jego ogniwa traktowane jako węzły są zorientowane.
 \end{definition}
 
-\begin{definition} [diagram] \label{def_diagrams}
-    \index{diagram}
-    Cień to rzut węzła $K \subseteq \R^3$ na płaszczyznę.
-    Cień razem z~informacją o~tym, jak przebiegają skrzyżowania i pozbawiony katastrof: potrójnych przecięć, stycznych czy dziobów nazywamy diagramem.
+\begin{definition}
+    Rzut węzła $K \subseteq \R^3$ na płaszczyznę nazywamy cieniem.
 \end{definition}
 
-% TODO: Narysować katastrofy
+\begin{definition}[skrzyżowanie]
+    Podwójny punkt w cieniu nazywamy skrzyżowaniem.
+\end{definition}
 
-\begin{definition} [włókno]
+\begin{definition}[diagram]
+    \index{diagram}
+    \label{def_diagrams}
+    Cień razem z~informacją o~tym, jak przebiegają skrzyżowania i pozbawiony katastrof: potrójnych przecięć, stycznych czy dziobów nazywamy diagramem.
+    % TODO: Narysować katastrofy
+\end{definition}
+
+Orientację na diagramie zaznaczamy małą strzałką wskazującą kierunek poruszania się.
+
+\begin{definition}[włókno]
     \index{włókno}
     Fragment diagramu, który biegnie między dwoma kolejnymi tunelami, czyli podskrzyżowaniami, nazywamy włóknem.
 \end{definition}
 
-\begin{definition} [nić]
+\begin{definition}[nić]
     \index{nić}
-    Fragment diagramu, który biegnie między dwoma kolejnymi skrzyżowaniami nazywamy nicią.
+    Fragment diagramu, który biegnie między dwoma kolejnymi skrzyżowaniami, nazywamy nicią.
 \end{definition}
 
 Nici powstają z włókien przez rozcięcie ich przy każdym nadskrzyżowaniu.
 
 \begin{proposition}
-    Niech $K$ będzie węzłem.
-    Zbiór diagramów jest otwarty i~gęsty w~zbiorze wszystkich rzutów.
+    Niech $L$ będzie splotem.
+    Jego diagramy tworzą otwarty i~gęsty podzbiór wszystkich rzutów.
 \end{proposition}
+
+Kawauchi \cite[s. 7]{kawauchi96} wspomina w tym miejscu podręcznik Crowella, Foxa \cite[s. 7]{crowell63}.
 
 \begin{proof}
     Rzut splotu na równoległe płaszczyzny jest taki sam, a te można sparametryzować prostymi przechodzącymi przez początek układu współrzędnych, które tworzą przestrzeń rzutową $\R \mathbb P^2$.
     Niech $S$ będzie zbiorem prostych, które dają złe rzuty.
     Wystarczy pokazać jego nigdziegęstość.
     Okazuje się, że $S$ jest też jednowymiarowy.
-    (Dowód za \cite{crowell63}).
 \end{proof}
+
+\begin{corollary}
+    Każdy splot posiada diagram.
+\end{corollary}
 
 Wynika stąd, że każdy węzeł ma wiele diagramów.
 Mając dane dwa różne diagramy chcielibyśmy wiedzieć, czy reprezentują ten sam węzeł.
@@ -339,11 +355,8 @@ jego drugi ruch jest naszym pierwszym.
 \begin{theorem}[Reidemeister, 1927]
     \label{thm:reidemeister}
     \index{twierdzenie!Reidemeistera}
-    Każdy splot posiada diagram.
-    Dwa diagramy przedstawiają równoważne sploty,
-    wtedy i~tylko wtedy gdy pierwszy można otrzymać z~drugiego
-    wykonując skończenie wiele ruchów Reidemeistera
-    oraz gładko deformując łuki bez zmiany biegu skrzyżowań.
+    Niech $D_1, D_2$ będą diagramami dwóch splotów $L_1, L_2$.
+    Sploty $L_1, L_2$ są takie same wtedy i tylko wtedy, gdy diagram $D_2$ można otrzymać z $D_1$ wykonując skończony ciąg ruchów Reidemeistera oraz gładkich deformacji łuków, bez zmiany biegu skrzyżowań.
 \end{theorem}
 
 Dowód podali niezależnie Reidemeister \cite{reidemeister27} oraz Alexander, Briggs \cite{briggs27}.
@@ -359,6 +372,8 @@ Twierdzenie Reidemeistera jest prawdziwe także dla splotów zorientowanych, wte
 \begin{tobedone}
     Trace (1983) showed that two knot diagrams for the same knot are related by using only type II and III moves if and only if they have the same writhe and winding number.
     Trace, Bruce (1983), "On the Reidemeister moves of a classical knot", Proceedings of the American Mathematical Society, 89 (4): 722–724, doi:10.2307/2044613, MR 0719004
+
+    Wspomnieć o węzłach obramowanych (framed knots), które są równoważne przy użyciu II, III i podwójnego I ruchu Reidemeistera.
 \end{tobedone}
 
 \begin{tobedone}
