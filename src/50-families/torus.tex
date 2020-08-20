@@ -88,6 +88,37 @@ Murasugi prezentuje w~swojej książce \cite{murasugi96} przyjemny dowód opiera
     Sfera $S^3$ powstaje z~powierzchni dwóch węzłów trywialnych z~wnętrzem ($D^2 \times S^1$) przez wzajemne sklejenie południka i~równoleżnika z~równoleżnikiem i~południkiem.
 \end{lemma}
 
+\begin{proposition}
+    Klamra Kauffmana spełnia zależność rekurencyjną
+    \begin{equation}
+        \bracket{T_{2, n}} = A \bracket{T_{2,n-1}} + (-1)^{n-1} A^{2-3n}
+    \end{equation}
+    z warunkiem brzegowym $\bracket{T_{2,1}} = -A^3$.
+\end{proposition}
+
+\begin{proposition}
+    Niech $L = T_{p, q}$ będzie węzłem torusowym.
+    Wtedy jego wielomianem Jonesa jest
+    \begin{equation}
+        \jones(t) = \frac {{\sqrt t}^{(p-1)(q-1)}}{1-t^2} \cdot (1 - t^{p+1} - t^{q+1} + t^{p+q}).
+    \end{equation}
+\end{proposition}
+
+\begin{proposition}
+    Niech $L = T_{p, q}$ będzie węzłem torusowym.
+    Wtedy jego wielomianem Alexandera jest
+    \begin{equation}
+         \alexander(t) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)}.
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    Przypadek $p = 2$ wymaga prostego rozumowania indukcyjnego.
+    Samo ćwiczenie pojawia się w~wielu podręcznikach topologii.
+    Pełny dowód można znaleźć w~przykładzie 9.15 książki ,,Knots'' Burdego oraz Zieschanga.
+    Inne podejście, tak zwaną formułę Seiferta-Torresa, prezentuje przeglądowa praca Turaewa ,,Reidemeister torsion in knot theory'', 119-182.
+\end{proof}
+
 Macierze Seiferta $M$ mają nieskomplikowaną blokową budowę, która może posłużyć do znalezienia wielomianu Alexandera (wzorem $\alexander = \det (M - tM^t)$).
 Rachunki są nieco uciążliwe.
 
@@ -126,7 +157,21 @@ Powyższy fakt często pojawia się jako ćwiczenie w podręcznikach topologii.
     Pełny dowód można znaleźć w przykładzie 9.15 w książce \cite{burde85}, gdzie wyznaczono jakobian prezentacji grupy węzła $\langle x, y \mid x^py^{-q}\rangle$.
 \end{proof}
 
+\begin{corollary}
+    Wielomian Alexandera odróżnia od siebie węzły $(2,n)$-torusowe.
+\end{corollary}
+
+\begin{proof}
+    Mamy $\alexander(T_{2,n})(t) = (t^n+1) / (t+1)$, więc $\deg \alexander (T_{2,n}) = n - 1$.
+\end{proof}
+
 Znajomość wielomianu Alexandera wystarcza na szczęście do podania pełnej klasyfikacji węzłów torusowych bez uciążliwego dowodu.
+
+\begin{tobedone}
+    The classification of the torus knots followed from that of the free product Zp *Zq which is the quotient group of the group of the torus knot (cf.[Schreier 1924]).
+    Now the Alexander polynomial is an easy tool for solving this problem (cf. Exercise 7.4.4).
+    % Kawauchi
+\end{tobedone}
 
 \begin{proposition}
     Niech $p, q, r, s$ będą liczbami całkowitymi.
@@ -214,6 +259,7 @@ Uwaga: definicja funkcji $s$ z \cite{borodzik10} zawiera złośliwą literówkę
 
 \begin{proposition}[Murasugi, 1991]
     Mamy $\crossing T_{p, q} = \min \{|pq| - |p|, |pq| - |q|\}$.
+    % minimal crossing number is Ipl(lql - 1) (cf. [Murasugi 1991]
 \end{proposition}
 
 Wyznaczenie indeksu rozwiązującego było dużo trudniejsze.
@@ -234,12 +280,14 @@ Dowód został odnaleziony w~latach 1993-1995 przy użyciu tzw. \emph{gauge theo
 
 \begin{proof}
     Patrz prace \cite{kronheimer93} oraz \cite{kronheimer95}.
+    % This last result was proved by F. B. Kronheimer and T. S. Mrowka in [Kronheimer-Mrowka 1993], who determined the 4-dimensional genus of T(p, q) (defined in 12.3) by applying gauge theory to an embedded surface in a 4-manifold.
 \end{proof}
 
 Genus pokrywa się z~liczbą gordyjską dla węzłów (czyli względnie pierwszych $q, r$).
 
 \begin{proposition} \label{torus_bridge}
     $\bridge T_{p, q} = \min \{|p|, |q|\}$
+    % It is also known that the bridge index of a torus knot T(p, q) with Ipi > Iql is Iql (see [Schu- bert 1954])
 \end{proposition}
 
 \begin{corollary}
@@ -259,47 +307,9 @@ Genus pokrywa się z~liczbą gordyjską dla węzłów (czyli względnie pierwszy
 \end{proof}
 
 \begin{proposition}
-    Klamra Kauffmana spełnia zależność rekurencyjną
-    \begin{equation}
-        \bracket{T_{2, n}} = A \bracket{T_{2,n-1}} + (-1)^{n-1} A^{2-3n}
-    \end{equation}
-    z warunkiem brzegowym $\bracket{T_{2,1}} = -A^3$.
-\end{proposition}
-
-\begin{proposition}
-    Niech $L = T_{p, q}$ będzie węzłem torusowym.
-    Wtedy jego wielomianem Jonesa jest
-    \begin{equation}
-        \jones(t) = \frac {{\sqrt t}^{(p-1)(q-1)}}{1-t^2} \cdot (1 - t^{p+1} - t^{q+1} + t^{p+q}).
-    \end{equation}
-\end{proposition}
-
-\begin{proposition}
-    Niech $L = T_{p, q}$ będzie węzłem torusowym.
-    Wtedy jego wielomianem Alexandera jest
-    \begin{equation}
-         \alexander(t) = \frac{(t^{pq}-1)(t-1)}{(t^p-1)(t^q-1)}.
-    \end{equation}
-\end{proposition}
-
-\begin{proof}
-    Przypadek $p = 2$ wymaga prostego rozumowania indukcyjnego.
-    Samo ćwiczenie pojawia się w~wielu podręcznikach topologii.
-    Pełny dowód można znaleźć w~przykładzie 9.15 książki ,,Knots'' Burdego oraz Zieschanga.
-    Inne podejście, tak zwaną formułę Seiferta-Torresa, prezentuje przeglądowa praca Turaewa ,,Reidemeister torsion in knot theory'', 119-182.
-\end{proof}
-
-\begin{corollary}
-    Wielomian Alexandera odróżnia od siebie węzły $(2,n)$-torusowe.
-\end{corollary}
-
-\begin{proof}
-    Mamy $\alexander(T_{2,n})(t) = (t^n+1) / (t+1)$, więc $\deg \alexander (T_{2,n}) = n - 1$.
-\end{proof}
-
-\begin{proposition}
     Niech $K$ będzie nietrywialnym węzłem, którego grupa ma nietrywialne centrum.
     Wtedy $K$ jest węzłem torusowym.
+    % Kawauchi: The torus knots are characterized as the only knots whose groups have non-trivial centers (cf. Corollary 6.3.6).
 \end{proposition}
 
 \begin{proof}

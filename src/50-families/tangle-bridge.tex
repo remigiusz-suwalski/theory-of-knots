@@ -4,6 +4,7 @@ Zajmiemy się teraz związkiem supłów z indeksem mostowym.
 Wiemy, że węzeł trywialny jest jednomostowy, następne w hierarchii są sploty dwumostowe.
 Nazywa się je także wymiernymi, po angielsku czasami \emph{4-plats}.
 Jako pierwszy studiował je Bankwitz z~Schumannem w~1934 roku.
+% Kawauchi: as 4-plat presentations, which is just Conway's normal form.
 Mają co najwyżej dwie składowe i~są odwracalne.
 
 \begin{proposition}
@@ -19,11 +20,11 @@ Mają co najwyżej dwie składowe i~są odwracalne.
     Węzły dwumostowe są $(\pm 2, n)$-torusowe albo hiperboliczne.
 \end{corollary}
 
-\begin{proof}
-    Skorzystajmy z trychotomii Thurstona: węzły dwumostowe są pierwsze, zatem nie są satelitarne.
-    Pozostało rozpatrzyć przypadek, kiedy nie są hiperboliczne.
+\begin{tobedone}
+    % Skorzystajmy z trychotomii Thurstona: węzły dwumostowe są pierwsze, zatem nie są satelitarne.
+    % Pozostało rozpatrzyć przypadek, kiedy nie są hiperboliczne.
     Teza wynika wtedy bezpośrednio z faktu \ref{torus_bridge}, który głosi, że $br(T_{p, q}) = \min\{|p|, |q|\}$.
-\end{proof}
+\end{tobedone}
 
 %\todo[inline]{Murasugi Theorem 9.3.3 (138) lub Janiak-Osajca, Pogoda (34).}
 % Aus der unten stehenden Klassifikation ergibt sich, dass man jede Verschlingung mit 2 Brücken wie im Bild rechts darstellen kann, wobei {\displaystyle a_{i}\in \mathbb {Z} } a_{i}\in \mathbb{Z }  die Anzahl der Halbtwists in der jeweiligen Box bezeichnet und für gerade bzw. ungerade {\displaystyle i} i~positive {\displaystyle a_{i}} a_{i} links- bzw. rechtshändigen Halbtwists entsprechen.
@@ -59,6 +60,10 @@ Przez analogię do supłów, definiujemy ułamek łańcuchowy
     C(a_1, \ldots, a_{2k+1}) \mapsto a_1 + \frac{1}{a_2 + 1/\ldots} = \frac \alpha \beta.
 \end{equation}
 
+\begin{tobedone}
+    To jest postać normalna Conwaya, ale mamy jeszcze postać Schuberta - \cite[s. 21]{kawauchi96}.
+\end{tobedone}
+
 Zauważmy, że wartość bezwzględna ułamka $\alpha/\beta$ zawsze przekracza $1$ i~odwrotnie, każdy taki ułamek pochodzi od pewnego węzła dwumostowego.
 Parę względnie pierwszych liczb $(\alpha, \beta)$ nazywamy typem węzła dwumostowego.
 
@@ -71,6 +76,10 @@ Parę względnie pierwszych liczb $(\alpha, \beta)$ nazywamy typem węzła dwumo
     \end{itemize}
 \end{proposition}
 
+\begin{tobedone}
+    \cite[s. 23]{kawauchi96}: czasem $2\alpha$ zamiast $\alpha$.
+\end{tobedone}
+
 \begin{proof}
     Dowód opiera się na tym, że podwójnie cykliczna przestrzeń nakrywająca rozcięta wzdłuż splotu jest przestrzenią soczewkową typu $(\alpha, \beta)$.
     Nie definiowaliśmy nawet tych przestrzeni, szczegóły można znaleźć w~podręczniku \cite{murasugi96} albo \cite{schubert56}.
@@ -80,6 +89,10 @@ Parę względnie pierwszych liczb $(\alpha, \beta)$ nazywamy typem węzła dwumo
     \label{prp:chiral_tangles}
     Splot typu $(\alpha, \beta)$ jest achiralny dokładnie, gdy $\beta^2 \equiv -1 \mod \alpha$.
 \end{proposition}
+
+\begin{proof}
+    Wynika to z tego, że lustrem splotu typu $(\alpha, \beta)$ jest splot typu $(\alpha, -\beta)$ oraz faktu \ref{prp:tangle_equivalence}.
+\end{proof}
 
 Cztery kolejne stwierdzenia to fakt 9.3.4 w \cite{murasugi96}:
 
