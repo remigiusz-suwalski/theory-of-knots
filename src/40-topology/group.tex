@@ -1,4 +1,4 @@
-\section{Grupa splotu. Prezentacja Wirtingera} % (fold)
+\section{Grupa splotu}
 \label{sec:group_wirtinger}
 
 Ponieważ dopełnienie dowolnego splotu, zarówno w przestrzeni $\R^3$ jak i $S^3$, jest łukowo spójne, jego grupa podstawowa nie zależy od wyboru punktu bazowego.
@@ -6,22 +6,26 @@ Dzięki temu poniższa definicja ma sens:
 
 \begin{definition}
     \label{def:knot_group}
-    \index{grupa!węzła}
+    \index{grupa!splotu}
     Niech $L$ będzie splotem.
-    Grupę podstawową jego dopełnienia, $\pi_1(\R^3 \setminus L)$, nazywamy grupą splotu.
+    Grupę podstawową jego dopełnienia, $\pi_1(\R^3 \setminus L)$, nazywamy grupą splotu i oznaczamy $\pi(L)$.
 \end{definition}
 
 Kiedy mówimy o~grupie węzła, zazwyczaj mamy na myśli obiekt opisany powyżej, a nie grupę kolorującą z~definicji \ref{colgrp_def}.
 Nie należy ich mylić, grupa węzła ma bowiem dużo większe znaczenie.
 
-Podamy teraz kilka przykładów węzłów oraz ich grup.
+Podamy najpierw kilka przykładów węzłów oraz ich grup.
 
 \begin{example}
     Niewęzeł: $\Z$.
 \end{example}
 
+Z twierdzenia o pętli, czyli uogólnienia lematu Dehna wynika, że niewęzeł jest jedynym węzłem, którego grupą podstawową jest $\Z$.
+% https://math.stackexchange.com/questions/3468034/knot-group-is-mathbbz-iff-k-is-the-unknot
+
 \begin{example}
-    Trójlistnik: grupa warkoczowa $B_3 \cong \langle x, y \mid x^2 = y^3\rangle$.
+    \label{exm:trefoil_group}
+    Trójlistnik: $\langle x, y \mid x^2 = y^3\rangle$.
 \end{example}
 
 \begin{proof}
@@ -38,23 +42,112 @@ Podamy teraz kilka przykładów węzłów oraz ich grup.
     prawdziwych na mocy transformacji Tietzego.
 \end{proof}
 
+Trójlistnik jest węzłem $(3, 2)$-torusowym, więc powyższy przykład stanowi szczególny przypadek grupy węzła torusowego:
+
 \begin{example}
     Węzeł $(p,q)$-torusowy: $\langle x, y \mid x^p = y^q \rangle$.
 \end{example}
+
+\begin{proof}
+    Wniosek z twierdzenia Seiferta-van Kampena, patrz \cite[s. 77]{kawauchi96}.
+\end{proof}
 
 \begin{example}
     Węzeł ósemkowy: $\langle x, y \mid yxy^{{-1}}xy=xyx^{{-1}}yx \rangle$.
 \end{example}
 
+\begin{example}
+    Splot Hopfa: $\Z \oplus \Z$.
+\end{example}
+
+Jak wspomina Kawauchi, z klasyfikacji abelowych grup podstawowych 3-rozmaitości wynika, że $\Z$ oraz $\Z \oplus \Z$ są jedynymi przemiennymi grupami splotów i podaje w formie ćwiczenia informację, że splot Hopfa oraz niewęzeł to jedyne sploty o przemiennej grupie \cite[s. 83]{kawauchi96}.
+
 \begin{proposition}
     \label{prop:knot_group_invariant}
-    Grupa węzła jest niezmiennikiem węzłów.
+    Jeżeli sploty $L_1, L_2$ są równoważne, to grupy $\pi(L_1), \pi(L_2)$ są izomorficzne.
+    Innymi słowy, grupa jest niezmiennikiem splotów.
 \end{proposition}
 
 \begin{proof}
-    Gdy dwa węzły są równoważne, istnieje izotopijny z~identycznością homeomorfizm $\R^3 \to \R^3$, który posyła pierwszy węzeł na drugi.
-    Obcięty do dopełnień węzłów indukuje izomorfizm grup podstawowych.
+    Gdy dwa sploty są równoważne, istnieje izotopijny z~identycznością homeomorfizm $\R^3 \to \R^3$, który posyła pierwszy splot na drugi.
+    Obcięty do dopełnień splotów indukuje izomorfizm grup podstawowych.
 \end{proof}
+
+Na przykładzie grupy $\langle x,y,z \mid xyx=yxy,xzx=zxz\rangle$, która odpowiada zarówno sumie prostej różno-, jak i~jednoskrętnych trójlistników, widać że implikacja odwrotna nie zachodzi: mają one różne sygnatury (patrz uwaga za wnioskiem \ref{crl:acheiral_signature}).
+Prawdziwe jest nawet ogólniejsze stwierdzenie:
+
+\begin{proposition}
+    \label{prop:knot_group_sum}
+    Niech $K_1, K_2$ będą zorientowanymi węzłami.
+    Wtedy węzłom $K_1 \shrap K_2$, $K_1 \shrap mr K_2$ odpowiadają izomorficzne grupy.
+\end{proposition}
+
+\begin{proof}
+    Wniosek z twierdzeń o podgrupie południkowo-równoleżnikowej \cite[s. 75]{kawauchi96}.
+\end{proof}
+
+Twierdzenie odwrotne do faktu \ref{prop:knot_group_invariant} jest prawdziwe w klasie węzłów pierwszych:
+
+\begin{proposition}
+    Niech $K_1, K_2$ będą węzłami pierwszymi.
+    Jeżeli ich grupy są izomorficzne, to same węzły są równoważne.
+\end{proposition}
+
+,,\emph{The group of a prime knot does not, however, necessarily determine the topological type of the exterior. Dehn hips on certain “essential” solid tori in the exteriors of torus knots and of cable knots produce Haken manifolds that are homotopically equivalent but not homeomorphic to the original exteriors and that, in fact, cannot be imbedded in $S^3$}'' (Whitten, \cite{whitten87}).
+
+\begin{proof}
+    % to jest kopia \cite[s. 76]{kawauchi96}
+    Whitten pokazał w \cite{whitten87}, że węzły o izomorficznych grupach mają homeomorficzne dopełnienia.
+    Wkrótce po tym Gordon, Luecke udowodnili w \cite{gordon89}, że nietrywialna chirurgia Dehna na nietrywialnym węźle nigdy nie daje sfery $S^3$, a stąd wynika, że każdy homeomorfizm dopełnień węzłów można przedłużyć do homeomorfizmu $S^3$ w siebie posyłającego jeden węzeł na drugi jako zbiory.
+\end{proof}
+
+Kawauchi proponuje jako proste ćwiczenie \cite[s. 73]{kawauchi96} pokazanie, że grupa sumy niespójnej splotów $L_1, L_2$ jest izomorficzna z wolnym produktem $\pi(L_1) * \pi(L_2)$, a następnie przytacza twierdzenie:
+
+\begin{proposition}
+    \label{prop:knot_group_split}
+    Niech $L \subseteq S^3$ będzie splotem.
+    Następujące warunki są równoważne:
+    \begin{enumerate}
+        \item splot $L$ nie jest rozszczepialny,
+        \item splot $L$ jest niewęzłem lub jego dopełnienie jest rozmaitością Hakena o~nieściśliwym brzegu,
+        \item grupa podstawowa splotu $L$ jest nierozkładalna względem produktu wolnego.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    Z twierdzenia o pętli (niech $M$ będzie spójną 3-rozmaitością o niepustym brzegu, zaś $F$ powierzchnią na $\partial M$; jeżeli homomorfizm $\pi_1(F) \to \pi_1(M)$ indukowany przez inkluzję nie jest różnowartościowy, to istnieje dysk ściskający dla $F$ w $M$) i sferze (niech $M$ będzie spójną zorientowaną 3-rozmaitością, jeżeli $\pi_2(M)$ jest nietrywialna, to istnieje sfera właściwa w $M$) wynika, że $1 \implies 2$.
+    Implikacja $2 \implies 3$ jest wnioskiem z hipotezy Knesera (niech $M$ będzie zwartą, spójną 3-rozmaitością, której brzeg jest pusty lub złożony z nieściśliwych powierzchni; jeśli $\pi_1(M) \cong G_1 * G_2$, to istnieje rozkład $M$ na sumę $M_1 \shrap M_2$ taką, że $\pi_1(M_i) \cong G_i$), zaś wynikanie $3 \implies 1$ jest oczywiste.
+    To kończy dowód.
+\end{proof}
+
+\begin{corollary}
+    \label{prop:knot_group_free}
+    Niech $L \subseteq S^3$ będzie splotem.
+    Następujące warunki są równoważne:
+    \begin{enumerate}
+        \item grupa podstawowa splotu $L$ jest wolna, rangi $n$,
+        \item splot $L$ jest trywialny, złożony z $n$ ogniw.
+    \end{enumerate}
+\end{corollary}
+
+\begin{proposition}
+    Niech $L \subseteq S^3$ będzie splotem.
+    Następujące warunki są równoważne:
+    \begin{enumerate}
+        \item splot $L$ jest prosty i niepierścieniowaty\footnote{simple, anannular}
+        \item grupa $\pi(L)$ jest nieprzemienną, nierozkładalną względem produktu wolnego podgrupą dyskretną $PSL_2(\C)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    Wniosek z twierdzenia Thurstona o hiperbolizacji, patrz \cite[s. 76]{kawauchi96}.
+\end{proof}
+
+Kawauchi wspomina jeszcze w \cite[s. 85]{kawauchi96}:
+
+\begin{proposition}
+    Grupa splotu jest rezydualnie skończona i lokalnie indeksowalna: dla każdej  nietrywialnej skończenie generowanej podgrupy, istnieje epimorfizm z niej w $\Z$.
+\end{proposition}
 
 \begin{proposition}
     Grupa węzła jest niezmiennikiem mocniejszym od genusu, a~w~przypadku węzłów złożonych, także od indeksu mostowego.
@@ -64,27 +157,7 @@ Podamy teraz kilka przykładów węzłów oraz ich grup.
     Jest to wniosek 3 z~pracy \cite{feustel78}.
 \end{proof}
 
-\begin{proposition}
-    Niech $K_1, K_2$ będą węzłami pierwszymi.
-    Jeżeli ich grupy są izomorficzne, to same węzły są równoważne.
-\end{proposition}
-
-\begin{proof}
-    Jak piszą Gordon, Luecke w \cite{gordon89}, jest to bezpośredni wniosek z ich twierdzenia 2: nietrywialna chirurgia Dehna na nietrywialnym węźle nigdy nie daje $S^3$.
-\end{proof}
-
-Wcześniej Whitten wiedział tylko, że jeśli węzły pierwsze mają izomorficzne grupy, to dopełnienia tych węzłów są homeomorficzne.
-Jak sam wspomina w \cite{whitten87}: ,,\emph{The group of a prime knot does not, however, necessarily determine the topological type of the exterior. Dehn hips on certain “essential” solid tori in the exteriors of torus knots and of cable knots produce Haken manifolds that are homotopically equivalent but not homeomorphic to the original exteriors and that, in fact, cannot be imbedded in $S^3$.}''.
-
-Na przykładzie grupy $\langle x,y,z \mid xyx=yxy,xzx=zxz\rangle$, która odpowiada zarówno sumie prostej różno-, jak i~jednoskrętnych trójlistników, widać że założenia o pierwszości nie można pominąć.
-Prawdziwe jest ogólniejsze stwierdzenie:
-
-\begin{proposition}
-    \label{prop:knot_group_sum}
-    Niech $K_1, K_2$ będą zorientowanymi węzłami.
-    Wtedy węzłom $K_1 \shrap K_2$, $K_1 \shrap mr K_2$ odpowiadają izomorficzne grupy.
-\end{proposition}
-
+\subsection{Prezentacja Wirtingera}
 \index{prezentacja Wirtingera}
 Wiemy więc już trochę o~nowym niezmienniku, ale nie umiemy go jeszcze wyznaczać.
 Jak zauważył Wilhelm Wirtinger około roku 1905, a więc jeszcze przed narodzinami teorii węzłów, grupa węzła zawsze posiada pewną specjalną prezentację, nazwaną na jego cześć prezentacją Wirtingera.
@@ -131,6 +204,7 @@ Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach, dowodząc jed
     w~których łuk $a_i$ biegnie górą, zaś $a_j$ leży po jego lewej stronie.
 \end{proof}
 
+\begin{comment}
 \begin{figure}[H]
     \begin{minipage}[b]{.48\linewidth}
         \[
@@ -181,6 +255,7 @@ Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach, dowodząc jed
         \subcaption{skrzyżowanie ujemne: $x_j = x_k^{-1} x_{j+1} x_k$}
     \end{minipage}
 \end{figure}
+\end{comment}
 
 \begin{corollary}
     \label{prop:knot_group_abelianisation}
@@ -195,6 +270,28 @@ Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach, dowodząc jed
     Można też zauważyć, że abelianizacją grupy podstawowej węzła jest pierwsza grupa homologii okręgu, czyli $\Z$.
 \end{proof}
 
+Michael Kervaire w \cite{kervaire65} pokazał, jakie własności musi posiadać grupa węzła:
+
+\begin{tobedone}
+Patrz też twierdzenie 14.1.1 w \cite{kawauchi96}.
+\end{tobedone}
+
+\begin{proposition}
+    Niech $G$ będzie grupą węzła $S^n \subseteq S^{n+2}$.
+    Wtedy:
+    \begin{enumerate}[leftmargin=*]
+        \itemsep0em
+        \item grupa $G$ jest skończenie prezentowana,
+        \item abelianizacja $G/G'$ jest nieskończoną grupą cykliczną,
+        \item druga grupa homologii $H_2(G) = 0$ jest trywialna,
+        \item istnieje element $x \in G$ zwany południkiem taki, że $G$ jest najmniejszą podgrupą normalną $G$, która zawiera $x$.
+    \end{enumerate}
+\end{proposition}
+
+Wyżej wymienione warunki konieczne są także wystarczające, jeżeli $n \ge 3$, jednakże problem pełnej charakteryzacji w~czwartym wymiarze jest otwarty.
+Warunki 2. i 3. wynikają z~dualności Alexandera, zaś 1. i 4. stanowią przeformułowanie prezentacji Wirtingera.
+
+\subsection{Pochodna Foxa}
 Istnieje alternatywna prezentacja grupy węzła, która pochodzi od Dehna, gdzie zamiast etykietować łuki, przypisuje się różne litery czterem częściom płaszczyzny, które są rozcinane przez skrzyżowanie.
 Pomijamy tę prezentację dla oszczędności miejsca.
 Klasycznie, jak na przykład w~\cite{crowell63}, macierz, a~co za tym idzie, także wielomian Alexandera wprowadza się przy użyciu prezentacji Wirtingera i~pochodnej Foxa.
@@ -222,57 +319,4 @@ Wykreślmy z macierzy $J$ najpiew jedną kolumnę oraz jeden wiersz z tej macier
 Otrzymaliśmy znowu wielomian Alexandera.
 Fox napisał cykl pięciu artykułów \cite{fox53}, \cite{fox54}, \cite{fox56}, \cite{fox58}, \cite{fox60} poświęcony wolnemu rachunkowi różniczkowemu, powyższa definicja jest tylko małym wycinkiem tego cyklu opublikowanego w Annals of Mathematics.
 
-Dwa następne stwierdzenia są już trudniejsze w~dowodzie,
-na przykład uzasadnienie pierwszego może wymagać:
-twierdzenia o~sferze, o~pętli oraz hipotezy Knesera.
-
-\begin{proposition}
-    \label{prop:knot_group_split}
-    Niech $L \subseteq S^3$ będzie splotem.
-    Następujące warunki są równoważne:
-    \begin{enumerate}
-        \item grupa podstawowa splotu $L$ nie jest produktem wolnym,
-        \item splot $L$ nie jest rozszczepialny,
-        \item splot $L$ jest rozmaitością Hakena o~nieściśliwym brzegu.
-    \end{enumerate}
-\end{proposition}
-
-\begin{proof}[Niedowód]
-    Kawauchi w \cite{kawauchi96}, patrz twierdzenie 6.1.4.
-\end{proof}
-
-\begin{proposition}
-    \label{prop:knot_group_free}
-    Niech $L \subseteq S^3$ będzie splotem.
-    Następujące warunki są równoważne:
-    \begin{enumerate}
-        \item grupa podstawowa splotu $L$ jest wolna, rangi $n$,
-        \item splot $L$ jest trywialny, złożony z $n$ ogniw.
-    \end{enumerate}
-\end{proposition}
-
-\begin{proof}[Niedowód]
-    Kawauchi w \cite{kawauchi96}, patrz wniosek 6.1.5.
-\end{proof}
-
-Twierdzenie Dehna z~1915 mówi, że jedynym węzłem, którego grupą są liczby całkowite $\mathbb Z$, jest niewęzeł.
-Wynik ten został później istotnie uogólniony.
-Michael Kervaire pokazał w~1966 roku (w \cite{kervaire65}) jakie warunki musi spełniać grupa $G$, by istniał pewien węzeł, którego grupą jest właśnie $G$.
-Patrz też twierdzenie 14.1.1 w \cite{kawauchi96}.
-
-\begin{proposition}
-    Niech $G$ będzie grupą węzła $S^n \subseteq S^{n+2}$.
-    Wtedy:
-    \begin{enumerate}[leftmargin=*]
-        \itemsep0em
-        \item grupa $G$ jest skończenie prezentowana,
-        \item abelianizacja $G/G'$ jest nieskończoną grupą cykliczną,
-        \item druga grupa homologii $H_2(G) = 0$ jest trywialna,
-        \item istnieje element $x \in G$ zwany południkiem taki, że $G$ jest najmniejszą podgrupą normalną $G$, która zawiera $x$.
-    \end{enumerate}
-\end{proposition}
-
-Wyżej wymienione warunki konieczne są także wystarczające, jeżeli $n \ge 3$, jednakże problem pełnej charakteryzacji w~czwartym wymiarze jest otwarty.
-Warunki 2. i 3. wynikają z~dualności Alexandera, zaś 1. i 4. stanowią przeformułowanie prezentacji Wirtingera.
-
-% Koniec sekcji Grupa węzła. Prezentacja Wirtingera
+% Koniec sekcji Grupa splotu
