@@ -1,0 +1,133 @@
+\subsection{Prezentacja Wirtingera}
+\index{prezentacja Wirtingera}
+Wiemy więc już trochę o~nowym niezmienniku, ale nie umiemy go jeszcze wyznaczać.
+Jak zauważył Wilhelm Wirtinger około roku 1905, a więc jeszcze przed narodzinami teorii węzłów, grupa węzła zawsze posiada pewną specjalną prezentację, nazwaną na jego cześć prezentacją Wirtingera.
+Jest to skończona prezentacja, w~której wszystkie relacje są postaci $w g_i w^{-1} = g_j$, gdzie $w$ to pewne słowo na generatorach, $g_1, \ldots, g_k$.
+Przedstawimy ją zaraz ze względu na użyteczność w~rachunkach, dowodząc jednocześnie jej istnienia.
+
+\begin{proposition}
+    \label{prop:wirtinger}
+    Grupa każdego węzła posiada prezentację Wirtingera.
+\end{proposition}
+
+\begin{proof}
+    Oto zarys konstruktywnego dowodu.
+    Przedstawiony algorytm jest bardzo wygodnym sposobem na wyznaczenie grupy węzła.
+    Niech $K$ będzie węzłem z~diagramem o~$n$ łukach i~$m$ skrzyżowaniach.
+    Wtedy
+    \begin{equation}
+        \pi_1(K) \cong \langle a_1, \ldots, a_n \mid r_1, \ldots, r_m\rangle,
+    \end{equation}
+    gdzie $a_i$ to włókna diagramu, zaś $r_x$ to relacje Wirtingera: $a_ia_ja_i^{-1}a_k^{-1}=1$,
+\begin{comment}
+    \[
+    \begin{tikzpicture}[baseline=-0.65ex,scale=0.15]
+    \begin{knot}[clip width=15]
+        \strand[semithick,-Latex] (-5, -5) to (5, 5);
+        \strand[semithick,-Latex] (-5, 5) to (5, -5);
+        \node[darkblue] at (5, 5)[below right] {$a_i$};
+        \node[darkblue] at (5, -5)[above right] {$a_k$};
+        \node[darkblue] at (-5, 5)[below left] {$a_j$};
+    \end{knot}
+    \end{tikzpicture}
+    \quad\quad
+    \begin{tikzpicture}[baseline=-0.65ex,scale=0.15]
+    \begin{knot}[clip width=15, flip crossing/.list={1}]
+        \strand[semithick,-Latex] (-5, -5) to (5, 5);
+        \strand[semithick,-Latex] (-5, 5) to (5, -5);
+        \node[darkblue] at (5, 5)[below right] {$a_j$};
+        \node[darkblue] at (-5, -5)[above left] {$a_k$};
+        \node[darkblue] at (-5, 5)[below left] {$a_i$};
+    \end{knot}
+    \end{tikzpicture}
+    \]
+\end{comment}
+    w~których łuk $a_i$ biegnie górą, zaś $a_j$ leży po jego lewej stronie.
+\end{proof}
+
+\begin{comment}
+\begin{figure}[H]
+    \begin{minipage}[b]{.48\linewidth}
+        \[
+            \begin{tikzpicture}[baseline=-0.65ex, scale=0.2]
+                \useasboundingbox (-5, -5) rectangle (5,5);
+                \begin{knot}[clip width=3.5, end tolerance=1pt, flip crossing/.list={1}]
+                    \strand[thick, Latex-] (-5,5) to (5,-5);
+                    \strand[thick, -Latex] (-5,-5) to (5,5);
+                    % top left
+                    \strand[thick, Latex-, darkblue] (-5, 1) to (-1, 5);
+                    % bottom left
+                    \strand[thick, Latex-, darkblue] (-5, -1) to (-1, -5);
+                    % bottom right
+                    \strand[thick, -Latex, darkblue] (5, -1) to (1, -5);
+                    % top right
+                    \strand[thick, -Latex, darkblue] (5, 1) to (1, 5);
+                    \node[darkblue] at (-7, -2) {$x_k$};
+                    \node[darkblue] at (-7, 2) {$x_{j+1}$};
+                    \node[darkblue] at (7, -2) {$x_j$};
+                    \node[darkblue] at (7, 2) {$x_k$};
+                \end{knot}
+            \end{tikzpicture}
+        \]
+        \subcaption{skrzyżowanie dodatnie: $x_j = x_k x_{j+1} x_k^{-1}$}
+    \end{minipage}
+    \begin{minipage}[b]{.48\linewidth}
+        \[
+            \begin{tikzpicture}[baseline=-0.65ex, scale=0.2]
+                \useasboundingbox (-5, -5) rectangle (5,5);
+                \begin{knot}[clip width=3.5, end tolerance=1pt, flip crossing/.list={1}]
+                    \strand[thick, Latex-] (-5,5) to (5,-5);
+                    \strand[thick, Latex-] (-5,-5) to (5,5);
+                    % top left
+                    \strand[thick, Latex-, darkblue] (-5, 1) to (-1, 5);
+                    % bottom left
+                    \strand[thick, -Latex, darkblue] (-5, -1) to (-1, -5);
+                    % bottom right
+                    \strand[thick, -Latex, darkblue] (5, -1) to (1, -5);
+                    % top right
+                    \strand[thick, Latex-, darkblue] (5, 1) to (1, 5);
+                    \node[darkblue] at (-7, -2) {$x_k$};
+                    \node[darkblue] at (-7, 2) {$x_{j+1}$};
+                    \node[darkblue] at (7, -2) {$x_j$};
+                    \node[darkblue] at (7, 2) {$x_k$};
+                \end{knot}
+            \end{tikzpicture}
+        \]
+        \subcaption{skrzyżowanie ujemne: $x_j = x_k^{-1} x_{j+1} x_k$}
+    \end{minipage}
+\end{figure}
+\end{comment}
+
+\begin{corollary}
+    \label{prop:knot_group_abelianisation}
+    Niech $G$ będzie grupą węzła.
+    Wtedy jej abelianizacją jest $G^{\operatorname{ab}} = \Z$.
+\end{corollary}
+
+\begin{proof}
+    Relacja $a_ia_ja_i^{-1}a_k^{-1}=1$ po przejściu do abelianizacji przyjmuje postać $a_j = a_k$.
+    Oznacza to, że etykieta łuku nie zmienia się podczas przejścia pod każdym skrzyżowaniem, zatem wszystkie etykiety są takie same.
+
+    Można też zauważyć, że abelianizacją grupy podstawowej węzła jest pierwsza grupa homologii okręgu, czyli $\Z$.
+\end{proof}
+
+Michael Kervaire w \cite{kervaire65} pokazał, jakie własności musi posiadać grupa węzła:
+
+\begin{tobedone}
+Patrz też twierdzenie 14.1.1 w \cite{kawauchi96}.
+\end{tobedone}
+
+\begin{proposition}
+    Niech $G$ będzie grupą węzła $S^n \subseteq S^{n+2}$.
+    Wtedy:
+    \begin{enumerate}[leftmargin=*]
+        \itemsep0em
+        \item grupa $G$ jest skończenie prezentowana,
+        \item abelianizacja $G/G'$ jest nieskończoną grupą cykliczną,
+        \item druga grupa homologii $H_2(G) = 0$ jest trywialna,
+        \item istnieje element $x \in G$ zwany południkiem taki, że $G$ jest najmniejszą podgrupą normalną $G$, która zawiera $x$.
+    \end{enumerate}
+\end{proposition}
+
+Wyżej wymienione warunki konieczne są także wystarczające, jeżeli $n \ge 3$, jednakże problem pełnej charakteryzacji w~czwartym wymiarze jest otwarty.
+Warunki 2. i 3. wynikają z~dualności Alexandera, zaś 1. i 4. stanowią przeformułowanie prezentacji Wirtingera.

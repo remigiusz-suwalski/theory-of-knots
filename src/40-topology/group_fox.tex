@@ -1,0 +1,27 @@
+\subsection{Pochodna Foxa}
+Istnieje alternatywna prezentacja grupy węzła, która pochodzi od Dehna, gdzie zamiast etykietować łuki, przypisuje się różne litery czterem częściom płaszczyzny, które są rozcinane przez skrzyżowanie.
+Pomijamy tę prezentację dla oszczędności miejsca.
+Klasycznie, jak na przykład w~\cite{crowell63}, macierz, a~co za tym idzie, także wielomian Alexandera wprowadza się przy użyciu prezentacji Wirtingera i~pochodnej Foxa.
+Oryginalna praca Alexandera była jednak bliższa duchem pomysłom Dehna.
+
+\begin{definition}[pochodna Foxa]
+    \index{pochodna Foxa}
+    Niech $G$ będzie wolną grupą generowaną przez (niekoniecznie skończony) podzbiór $\{g_i\}_{i \in I}$.
+    Odwzorowanie $\partial/\partial g_i \colon G \to \Z G$ spełniające trzy aksjomaty:
+    \begin{align}
+        \frac{\partial}{\partial g_i} (e) & = 0 \\
+        \frac{\partial}{\partial g_i} (g_j) & = \delta_{ij} \\
+        \forall u, v \in G : \frac{\partial}{\partial g_i} (uv) & = \frac{\partial}{\partial g_i}(u) + u \frac{\partial}{\partial g_i} (w),
+    \end{align}
+    gdzie $\delta_{ij}$ oznacza deltę Kroneckera, nazywamy pochodną cząstkową Foxa.
+\end{definition}
+
+Ustalmy prezentację grupy węzła z $n$ relacjami (słowami) $w_1, \ldots, w_n$ nad $n$-literowym alfabetem $x_1, \ldots, x_n$.
+Zdefiniujmy następnie macierz Jacobiego wymiaru $n \times n$, elementami której są pochodne Foxa słów $w_i$ względem zmiennych $x_j$:
+\begin{equation}
+    J = \left(\frac{\partial w_i}{\partial x_j}\right).
+\end{equation}
+
+Wykreślmy z macierzy $J$ najpiew jedną kolumnę oraz jeden wiersz z tej macierzy, po czym podstawmy za wszystkie litery zmienną $t$ i policzmy wyznacznik.
+Otrzymaliśmy znowu wielomian Alexandera.
+Fox napisał cykl pięciu artykułów \cite{fox53}, \cite{fox54}, \cite{fox56}, \cite{fox58}, \cite{fox60} poświęcony wolnemu rachunkowi różniczkowemu, powyższa definicja jest tylko małym wycinkiem tego cyklu opublikowanego w Annals of Mathematics.
