@@ -227,11 +227,11 @@ Jego wartości w~niektórych pierwiastkach jedności są związane z~innymi niez
 I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 
 \begin{proposition} \label{jones_sharp_p_hard}
-    $\jones(\omega_3) = 1$.
+    $\jones_L(\omega_3) = 1$.
 \end{proposition}
 
 \begin{proposition}
-    $\jones(1) = (-2)^{n-1}$.
+    $\jones_L(1) = (-2)^{n-1}$.
 \end{proposition}
 
 \begin{proof}
@@ -240,7 +240,7 @@ I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 \end{proof}
 
 \begin{proposition}
-    Pochodna w punkcie $t = 1$ znika: $\jones'(1) = 0$.
+    Pochodna w punkcie $t = 1$ znika: $\jones'_L(1) = 0$.
 \end{proposition}
 
 \begin{proof}
@@ -248,7 +248,7 @@ I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 \end{proof}
 
 \begin{proposition}
-    Liczba trzy-kolorowań splotu wynosi $3|\jones(\omega_6)|^2$.
+    $V_L(\omega_6) = \pm i^{n-1} \cdot (\sqrt 3i)^r$, gdzie $r$ jest rangą pierwszej grupy homologii podwówjnego rozgałęzionego nakrycia $L$ nad $\Z_3$.
 \end{proposition}
 
 \begin{proof}
@@ -256,8 +256,16 @@ I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 \end{proof}
 
 \begin{proposition}
-    Jeśli $K$ jest właściwym splotem (indeks zaczepienia każdej składowej o~resztę splotu jest parzysty), to $\jones(i) = (-\sqrt 2)^{n-1}(-1)^{\operatorname{Arf} K}$.
-    W przeciwnym razie $\jones(i) = 0$.
+    Liczba trzy-kolorowań splotu $L$ wynosi $3|\jones_L(\omega_6)|^2$.
+\end{proposition}
+
+\begin{proof}
+    Dowód zawiera praca ,,3-coloring and other elementary invariants of knots'' (Przytycki, 1998).
+\end{proof}
+
+\begin{proposition}
+    Jeśli $K$ jest właściwym splotem (indeks zaczepienia każdej składowej o~resztę splotu jest parzysty), to $\jones_L(i) = (-\sqrt 2)^{n-1}(-1)^{\operatorname{Arf} K}$.
+    W przeciwnym razie $\jones_L(i) = 0$.
 \end{proposition}
 
 \begin{proof}
@@ -266,8 +274,8 @@ I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 
 \begin{proposition}
     Niech $G$ będzie pierwszą grupą homologii podwójnego nakrycia $S^3$ rozgałęzionego nad składowymi.
-    Jeśli $G$ jest torsyjna, to $\jones(-1) = |G|$.
-    W przeciwnym razie $\jones(-1) = 0$.
+    Jeśli $G$ jest torsyjna, to $\jones_L(-1) = |G|$.
+    W przeciwnym razie $\jones_L(-1) = 0$.
 \end{proposition}
 
 \begin{proof}
