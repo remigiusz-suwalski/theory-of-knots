@@ -1,6 +1,6 @@
 \section{Węzły hiperboliczne} % (fold)
 \label{sec:hyperbolic}
-Jak pisaliśmy w sekcji \ref{mutants_mutation}, słynne węzły Conwaya oraz Kinoshity-Terasakiego odróżnił od siebie po raz pierwszy przez Rileya.
+Jak pisaliśmy w sekcji \ref{sec:mutant}, słynne węzły Conwaya oraz Kinoshity-Terasakiego odróżnił od siebie po raz pierwszy przez Rileya.
 Zbadał paraboliczne reprezentacje ich grup w skończoną grupę prostą $PSL(2, 7)$, co doprowadziło go do odkrycia w dopełnieniu ósemki struktury hiperbolicznej \cite{riley75}.
 % https://arxiv.org/pdf/2002.00564.pdf
 Zainspirowany tym wynikiem Thurston najpierw rozłożył dopełnienie ósemki na dwa idealne wielościany, a potem znacznie uogólnił swój przykład.
@@ -121,17 +121,17 @@ Analizując ciągi A051764, A051765 oraz A052408 można dojść do wniosku, że 
 \normalsize
 \end{figure}
 
-W pracy \cite{malyutin16} A. Malyutin pokazał jednak, że to przypuszczenie jest sprzeczne z~wieloma innymi starymi hipotezami teorii węzłów: \ref{malyutin1} -- \ref{malyutin4}.
+W pracy \cite{malyutin16} A. Malyutin pokazał jednak, że to przypuszczenie jest sprzeczne z~wieloma innymi starymi hipotezami teorii węzłów: \ref{con:malyutin1} -- \ref{con:malyutin4}.
 
 \begin{conjecture}
-    \label{malyutin1}
+    \label{con:malyutin1}
     Indeks skrzyżowaniowy jest addytywny względem sumy spójnej.
 \end{conjecture}
 
-(To jest powtórzenie hipotezy \ref{cnj:crossing_additive}).
+(To jest powtórzenie hipotezy \ref{con:crossing_additive}).
 Murasugi dowiódł prawdziwości hipotezy dla węzłów alternujących, w~pracy \cite{murasugi87} jest to wniosek z~dowodu hipotezy Taita.
 Krótko po tym Lickorish, Thistlethwaite powtórzyli to dla węzłów adekwatnych w \cite{lickorish88}.
-Na początku XX wieku Diao \cite{diao04} oraz Gruber \cite{gruber03} niezależnie udowodnili hipotezę \ref{malyutin1} dla pewnej szerokiej klasy węzłów, obejmującej wszystkie węzły torusowe oraz wiele węzłów alternujących oraz pewne inne obiekty, których nie chcemy opisywać.
+Na początku XX wieku Diao \cite{diao04} oraz Gruber \cite{gruber03} niezależnie udowodnili hipotezę \ref{con:malyutin1} dla pewnej szerokiej klasy węzłów, obejmującej wszystkie węzły torusowe oraz wiele węzłów alternujących oraz pewne inne obiekty, których nie chcemy opisywać.
 
 \begin{conjecture}
     Satelita ma większy (w słabszej wersji: nie mniejszy) indeks skrzyżowaniowy niż jego towarzysze.
@@ -150,7 +150,7 @@ Diao pokazał w \cite[tw. 3.8]{diao04}, że torusowe węzły także są $1$-regu
 Pisaliśmy o tym w podsekcji \ref{sub:crossing_number}.
 
 \begin{conjecture}
-    \label{malyutin4}
+    \label{con:malyutin4}
     Węzły pierwsze są $2/3$-regularne.
 \end{conjecture}
 
@@ -225,7 +225,7 @@ Komputerowy program SnapPea napisany przez J. Weeksa pozwala na wyznaczenie obj�
 Patrz też ciąg A091518 w bazie danych OEIS.
 
 \begin{proposition}
-    \label{least_volume}
+    \label{prp:eight_least_hyperbolic}
     Żaden węzeł nie ma mniejszej objętości hiperbolicznej od ósemki.
 \end{proposition}
 
@@ -312,7 +312,7 @@ Praktyka pokazuje jednak, że niezmiennik dobrze wspomaga proces tablicowania w�
 
 W dowolnej rodzinie węzłów istnieje element o najmniejszej objętości.
 Dla orientowalnych, niezwartych hiperbolicznych 3-rozmaitości, klasy obejmującej dopełnienia hiperbolicznych węzłów, najmniejszą objętość posiada dopełnienie ósemki oraz jej bliźniak, otrzymany przez $(5, 1)$-chirurgię jednego z ogniw splotu Whiteheada.
-To jest fakt \ref{least_volume}.
+To jest fakt \ref{prp:eight_least_hyperbolic}.
 Natomiast wśród orientowalnych 3-rozmaitości o dwóch ostrzach najmniejszą objętość, ma $(-2, 3, 8)$-precel oraz splot Whiteheada: Agol pokazał to w \cite{agol10}.
 Ich objętość wynosi
 \begin{equation}

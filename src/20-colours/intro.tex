@@ -33,7 +33,7 @@ Dla własnej wygody jako kolorów używać będziemy kolejnych liczb naturalnych
 Pozwala to zapisać warunek kolorowalności równaniem algebraicznym, niezależnie od ilości użytych kolorów.
 
 \begin{definition}[kolorowanie]
-    \label{def:colour_equation}
+    \label{def:colouring_equation}
     Niech $L$ będzie splotem, zaś $n$ liczbą naturalną.
     Mówimy, że splot $L$ jest kolorowalny modulo $n$, jeśli posiada diagram, którego włóknom można przypisać liczby całkowite $0, \ldots, n - 1$ tak, by
     \begin{enumerate}[leftmargin=*]
@@ -62,7 +62,8 @@ Opierając się na definicji oraz ruchach Reidemeistera możemy wykazać pierws
 
 Kolorowanie nazywamy trywialnym, jeśli używa tylko jednego koloru.
 
-\begin{proposition} \label{color_invariant}
+\begin{proposition}
+    \label{prp:colouring_invariance}
     Własność ,,być $n$-kolorowalnym'' jest niezmiennikiem węzłów.
 \end{proposition}
 
@@ -153,11 +154,11 @@ Kolorowanie nazywamy trywialnym, jeśli używa tylko jednego koloru.
 
 Trójlistnik koloruje się dokładnie modulo krotności trójki, ósemka zaś -- piątki.
 Sama kolorowalność nie mówi wiele, splot jest kolorowalny lub nie.
-Dowód faktu \ref{color_invariant} pokazuje coś więcej: liczba kolorowań, być może trywialnych, jest mocniejszym niezmiennikiem.
+Dowód faktu \ref{prp:colouring_invariance} pokazuje coś więcej: liczba kolorowań, być może trywialnych, jest mocniejszym niezmiennikiem.
 
 \begin{lemma}
     \label{lem:colouring_arc}
-    Niech $D$ będzie diagramem z definicji \ref{def:colour_equation} z wybranym łukiem, zaś $k \in \{0, \ldots, n - 1\}$ pewnym kolorem.
+    Niech $D$ będzie diagramem z definicji \ref{def:colouring_equation} z wybranym łukiem, zaś $k \in \{0, \ldots, n - 1\}$ pewnym kolorem.
     Bez straty ogólności możemy założyć, że krótki łuk jest koloru $k$.
 \end{lemma}
 
@@ -168,7 +169,7 @@ Kolorem tym zazwyczaj jest $0$.
 \end{proof}
 
 \begin{proposition}
-    \label{no_knots_colours_mod_two}
+    \label{prp:no_colourings_mod_2}
     Żaden węzeł nie koloruje się modulo dwa.
 \end{proposition}
 

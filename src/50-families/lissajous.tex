@@ -1,7 +1,5 @@
 \section{Węzły Lissajous} % (fold)
 % szkielet: praca Lamma
-
-
 Węzły Lissajous zdefiniowali Bogle, Hearst, Jones i Stoilov w 1994 roku jako węzły, których pewien diagram jest krzywą Lissajous.
 
 \begin{definition}[węzeł Lissajous]
@@ -58,7 +56,7 @@ Węzły Lissajous są bardzo symetryczne.
 \end{proposition}
 
 \begin{proposition}
-    \label{lissajous_two_periodic}
+    \label{prp:lissajous_two_periodic}
     Jeśli jedna z częstotliwości jest parzysta, to węzeł jest 2-okresowy.
 \end{proposition}
 
@@ -70,7 +68,7 @@ Węzły Lissajous są bardzo symetryczne.
 To nakłada ograniczenia na wielomian Alexandera.
 
 \begin{proposition}
-    \label{lissajous_square}
+    \label{prp:lissajous_alexander}
     Niech $K$ będzie węzłem Lissajous.
     Wtedy $\alexander(x)$, jego wielomian Alexandera, jest kwadratem w~pierścieniu $(\Z/2\Z)[x]$.
 \end{proposition}
@@ -81,10 +79,10 @@ To nakłada ograniczenia na wielomian Alexandera.
     Jeśli wszystkie częstotliwości są nieparzyste, węzeł jest silnie dodatnio achiralny.
     Wtedy wielomian $\alexander(x)$ jest kwadratem w pierścieniu $\Z[x]$ (pokazano to w \cite{hartley79}).
 
-    W przeciwnym razie możemy powołać się na fakt \ref{lissajous_two_periodic} oraz \ref{murasugi_periodic} (z $n=2^1$ oraz $\lambda = 1$).
+    W przeciwnym razie możemy powołać się na fakt \ref{prp:lissajous_two_periodic} oraz \ref{prp:murasugi_periodic} (z $n=2^1$ oraz $\lambda = 1$).
     Dostaniemy równość
     \begin{equation}
-        \label{lissajous_square_equiv}
+        \label{eqn:lissajous_squared}
         \alexander_K(t) \equiv \alexander^2_{J}(t) \mod 2,
     \end{equation}
     która kończy dowód.
@@ -98,7 +96,7 @@ Tylko pierwszy z nich jest na pewno węzłem Lissajous (stan na 2018).
     Trójlistnik oraz ósemka nie są węzłami Lissajous.
 \end{example}
 
-Wygodnie jest przeformułować warunek z faktu \ref{lissajous_square} do następującej postaci.
+Wygodnie jest przeformułować warunek z faktu \ref{prp:lissajous_alexander} do następującej postaci.
 Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kwadratem modulo $2$ wtedy i tylko wtedy, gdy współczynniki $A_{2k+1}$ są parzyste dla $k \ge 0$.
 
 \begin{corollary}
@@ -109,11 +107,11 @@ Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kw
     Niech $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ będzie  wielomianem Alexandera.
     Wtedy $\alexander_K(1) = \pm 1$, zatem $0 = \pm 1 + A_0 + 2A_1 + \ldots + 2A_n$.
     Możemy teraz odjąć to od $\alexander_K(-1) = A_0 - 2A_1 \pm \ldots$, by uzyskać $\alexander_K(-1) = \pm 1 - 4A_1 - 4A_3 - \ldots$.
-    Razem z wygodnym przeformułowaniem daje to $\alexander_K(-1) \equiv \pm 1 \mod 8$, co w połączeniu z~\ref{arf_murasugi} kończy dowód.
+    Razem z wygodnym przeformułowaniem daje to $\alexander_K(-1) \equiv \pm 1 \mod 8$, co w połączeniu z~\ref{prp:arf_murasugi} kończy dowód.
 \end{proof}
 
 \begin{corollary}
-    \label{lissajous_fiber}
+    \label{cor:lissajous_fibered}
     Włókniste węzły o nieparzystym genusie nie są węzłami Lissajous.
 \end{corollary}
 
@@ -122,7 +120,7 @@ Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kw
 \end{proof}
 
 \begin{corollary}
-    \label{lissajous_twobridge}
+    \label{cor:lissajous_twobridge}
     Niech $K$ będzie dwumostowym węzłem Lissajous.
     Wtedy $\alexander_K(t) \equiv 1 \mod 2$.
 \end{corollary}
@@ -130,14 +128,14 @@ Wielomian $\alexander(t) = A_0 + A_1(t+1/t) + \ldots + A_n(t^n + 1/t^n)$ jest kw
 \begin{proof}
     Nietrywialny węzeł o dwóch mostach nie może być silnie dodatnio achiralny (patrz \cite{hartley79}).
     Jeśli jest węzłem Lissajous, jedna z jego częstotliwości okazuje się być parzysta.
-    Wtedy jego faktor jest trywialny i~kongruencja \ref{lissajous_square_equiv} daje $\alexander_K(t) \equiv 1 \mod 2$.
+    Wtedy jego faktor jest trywialny i~kongruencja \ref{eqn:lissajous_squared} daje $\alexander_K(t) \equiv 1 \mod 2$.
 \end{proof}
 
 \begin{corollary}
     Dwumostowe węzły włókniste nie są węzłami Lissajous.
 \end{corollary}
 
-Można skorzystać z tego samego argumentu, co w dowodzie wniosku \ref{lissajous_fiber} oraz \ref{lissajous_twobridge}.
+Można skorzystać z tego samego argumentu, co w dowodzie wniosku \ref{cor:lissajous_fibered} oraz \ref{cor:lissajous_twobridge}.
 
 \begin{proposition}
     Niech $p, q$ będą względnie pierwszymi liczbami różnymi od $0, \pm 1$, zaś $K$ węzłem.

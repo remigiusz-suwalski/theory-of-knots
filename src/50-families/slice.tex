@@ -75,11 +75,12 @@ Ten prosty test stwierdza, że 2743 spośród 2977 węzłów o mniej niż 13 skr
 \end{proposition}
 
 \begin{proof}
-    Ustalmy węzeł $K$, wiemy już, że jego wyznacznik jest kwadratem, a na mocy faktu \ref{odd_determinant} także tyle, że jest liczbą nieparzystą.
-    Wynika stąd przystawanie $\det K \equiv 1 \mod 8$, które w~połączeniu z warunkiem Murasugiego (fakt \ref{arf_murasugi}) daje $\operatorname{Arf} K = 0$.
+    Ustalmy węzeł $K$, wiemy już, że jego wyznacznik jest kwadratem, a na mocy faktu \ref{cor:knot_determinant_odd} także tyle, że jest liczbą nieparzystą.
+    Wynika stąd przystawanie $\det K \equiv 1 \mod 8$, które w~połączeniu z warunkiem Murasugiego (fakt \ref{prp:arf_murasugi}) daje $\operatorname{Arf} K = 0$.
 \end{proof}
 
-\begin{proposition} \label{slice_signature}
+\begin{proposition}
+    \label{prp:slice_signature}
     Niech $K$ będzie węzłem plastrowym.
     Wtedy $\sigma(K) = 0$.
 \end{proposition}
@@ -130,8 +131,9 @@ Więcej informacji w~podręczniku Kawauchiego.
 % Theorem 1.4[Hartley and Kawauchi 1979].If K is strongly positive amphicheiral,the Alexander polynomial1Kis the square of a symmetric polynomial.
 
 \subsection{Węzły skręcone}
-\begin{definition} \label{twist_knots}
+\begin{definition}
     \index{węzeł!skręcony}
+    \label{def:twist_knot}
     Węzeł powstały przez $n$-krotne półskręcanie domkniętej pętli oraz splecienie końców nazywamy węzłem skręconym.
 \end{definition}
 

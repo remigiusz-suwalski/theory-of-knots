@@ -7,7 +7,6 @@ Ze względu na elementarność takiego podejścia, pominiemy teorię homologii, 
 Najpierw trzeba je jednak uogólnić.
 
 \begin{definition}
-
     Wielomianowe równanie kolorujące związane ze skrzyżowaniem
 \begin{comment}
     \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.12]
@@ -25,7 +24,7 @@ Najpierw trzeba je jednak uogólnić.
     Tylko orientacja górnej wiązki ma znaczenie.
 \end{definition}
 
-Istotnie, wystarczy podstawić tutaj $t = -1$, by otrzymać mniej ogólną definicję \ref{def:colour_equation}.
+Istotnie, wystarczy podstawić tutaj $t = -1$, by otrzymać mniej ogólną definicję \ref{def:colouring_equation}.
 
 \begin{definition}[wielomian Alexandera]
     \label{def:alexander_polynomial}
@@ -39,7 +38,8 @@ Istotnie, wystarczy podstawić tutaj $t = -1$, by otrzymać mniej ogólną defin
 
 Nasz nowy niezmiennik nie jest zwykłym wielomianem, tylko wielomianem Laurenta jednej zmiennej, czyli elementem pierścienia $\Z[t, t^{-1}]$.
 
-\begin{proposition} \label{alexander_invariance}
+\begin{proposition}
+    \label{alexander_invariance}
     Wielomian Alexandera z~dokładnością do mnożenia przez jedności:
     \begin{equation}
         f(t) \equiv g(t) \iff \exists m \in \Z: f(t) = \pm t^m g(t)
@@ -115,7 +115,7 @@ Wielomian nie odróżnia luster i~odwrotności od wyjściowych węzłów:
 \end{proposition}
 
 \begin{proof}
-    Po odbiciu diagramu względem pionowej prostej skrzyżowanie z~definicji \ref{def:colour_equation} również się odbija.
+    Po odbiciu diagramu względem pionowej prostej skrzyżowanie z~definicji \ref{def:colouring_equation} również się odbija.
     Równanie związane z~nim zmienia się według schematu:
     \begin{equation}
         a + tc - ta - b = 0 \rightleftharpoons a + tb - ta - c = 0
@@ -128,7 +128,7 @@ Nasz niezmiennik nie wykrywa niewęzła.
 Na przykład $11_{471} = 11n_{34}$, $11_{473} = 11n_{42}$ albo $(-3, 5, 7)$-precel posiadają trywialny wielomian Alexandera, zjawisko to nie występuje wśród nietrywialnych węzłów o co najwyżej 10 skrzyżowaniach.
 
 \begin{proposition}
-    \label{prp:alexander_det}
+    \label{prp:alexander_determinant}
     Niech $L$ będzie zorientowanym splotem.
     Wtedy $\alexander_L(-1) = \pm \det L$.
 \end{proposition}
@@ -137,7 +137,8 @@ Na przykład $11_{471} = 11n_{34}$, $11_{473} = 11n_{42}$ albo $(-3, 5, 7)$-prec
     Wystarczy porównać definicję dla $\alexander_L$ (\ref{def:alexander_polynomial}) oraz $\det L$ (\ref{def:determinant}).
 \end{proof}
 
-\begin{proposition} \label{prp:alexander_multiplicative}
+\begin{proposition}
+    \label{prp:alexander_multiplicative}
     Jeśli $J, K$ są zorientowanymi węzłami, to $\alexander_{J \shrap K}(t) \equiv \alexander_J(t) \alexander_K(t)$.
 \end{proposition}
 
@@ -236,7 +237,7 @@ Na przykład $11_{471} = 11n_{34}$, $11_{473} = 11n_{42}$ albo $(-3, 5, 7)$-prec
     \end{equation}
 \end{proposition}
 
-Być może istnieje bezpośredni dowód tej nierówności, ale jedyne uzasadnienie, jakie znam, opiera się na fakcie \ref{prp:alexander_genus} oraz wniosku \ref{crl:crossing_genus}.
+Być może istnieje bezpośredni dowód tej nierówności, ale jedyne uzasadnienie, jakie znam, opiera się na fakcie \ref{prp:alexander_genus} oraz wniosku \ref{cor:crossing_genus}.
 
 \begin{proposition}
     Tylko skończenie wiele węzłów alternujących może mieć ten sam wielomian Alexandera.

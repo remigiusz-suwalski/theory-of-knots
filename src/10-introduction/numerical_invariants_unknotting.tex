@@ -38,7 +38,7 @@ Nie będziemy się nimi zajmować, podamy tylko przykład: zamiana pod- i nadskr
 Jeśli odwrócenie pewnych skrzyżowań daje niewęzeł, to odwrócenie pozostałych także.
 To daje proste liczby gordyjskiej: $2 \operatorname{u} (K) \le \crossing (K)$.
 Nie jest zbyt pomocne, równość zachodzi pięć razy dla pierwszych węzłów do 12 skrzyżowań: $3_{1}$, $5_{1}$, $7_{1}$, $9_{1}$, $11a_{367}$.
-Dokładna wartość liczby gordyjskiej jest znana tylko dla niektórych klas węzłów, na przykład torusowych (fakt \ref{torus_unknotting}) albo skręconych (definicja \ref{twist_knots}).
+Dokładna wartość liczby gordyjskiej jest znana tylko dla niektórych klas węzłów, na przykład torusowych (fakt \ref{prp:torus_unknotting_number}) albo skręconych (definicja \ref{def:twist_knot}).
 
 Dla każdego nietrywialnego splotu istnieje diagram wymagający odwrócenia dowolnie wielu skrzyżowań.
 Wcześniej Nakanishi znalazł 2-gordyjski diagram 1-gordyjskiego węzła $6_2$ (\cite{nakanishi83}) oraz udowodnił, że każdy nietrywialny węzeł ma diagram, który nie jest 1-gordyjski (\cite{nakanishi96}).
@@ -56,12 +56,12 @@ Ponieważ odwrócenie jednego ze skrzyżowań na minimalnym diagramie węzła $1
 Dlatego jeszcze w~latach 90. postawiono hipotezę:
 
 \begin{conjecture}[Bernharda-Jablana, \cite{bernhard94}, \cite{jablan98}]
-    \label{bernhard_jablan}
     \index{hipoteza!Bernharda-Jablana}
+    \label{con:bernhard_jablan}
     Każdy węzeł $K$ posiada diagram $D$ realizujący liczbę gordyjską oraz skrzyżowanie, którego odwrócenie daje nowy węzeł $K'$ z diagramem $D'$ o mniejszej liczbie gordyjskiej: $u(D') < u(D)$.
 \end{conjecture}
 
-Zakładając prawdziwość hipotezy \ref{bernhard_jablan}, mamy prosty sposób na wyznaczenie liczby $u(K)$: weźmy skończenie wiele diagramów minimalnych dla węzła $K$, na każdym z~nich odwracajmy skrzyżowania i rekursywnie szukajmy liczb gordyjskich prostszych węzłów.
+Zakładając prawdziwość hipotezy \ref{con:bernhard_jablan}, mamy prosty sposób na wyznaczenie liczby $u(K)$: weźmy skończenie wiele diagramów minimalnych dla węzła $K$, na każdym z~nich odwracajmy skrzyżowania i rekursywnie szukajmy liczb gordyjskich prostszych węzłów.
 Najmniejsza spośród nich różni się wtedy o~jeden od liczby $u(K)$.
 
 Brittenham, Hermiller w artykule \cite{brittenham17} twierdzą, że hipoteza jest fałszywa, ten nie został jednak jeszcze zrecenzowany.
@@ -91,7 +91,7 @@ Z pracy \cite{kanenobumurakami86} wynika dodatkowo, że liczba gordyjska węzł�
 Coward, Lackenby dowiedli w~\cite{coward11}, że jeśli $K$ jest 1-gordyjski i~o genusie 1, to z~dokładnością do pewnej relacji równoważności, tylko jedna zmiana skrzyżowania rozwiązuje go; chyba że $K$ jest ósemką -- wtedy takie zmiany są dwie.
 
 \begin{proposition}
-    \label{unknotting_one_prime}
+    \label{prp:unknotting_one_prime}
     Węzły $1$-gordyjskie są pierwsze.
 \end{proposition}
 
@@ -103,7 +103,7 @@ Podejrzewał to H. Wendt w~1937 roku, kiedy policzył liczbę gordyjską węzła
 \end{proof}
 
 Scharlemann pokazał w \cite[wniosek 1.6]{scharlemann98}, że liczba gordyjska jest podaddytywna, to znaczy zachodzi $u(K_1 \shrap K_2) \le u(K_1) + u(K_2)$.
-Stąd oraz z faktu \ref{unknotting_one_prime} wynika, że suma dwóch $1$-gordyjskich węzłów jest $2$-gordyjska, ale od początku teorii węzłów podejrzewano dużo więcej:
+Stąd oraz z faktu \ref{prp:unknotting_one_prime} wynika, że suma dwóch $1$-gordyjskich węzłów jest $2$-gordyjska, ale od początku teorii węzłów podejrzewano dużo więcej:
 
 \begin{conjecture}
     Niech $K_1, K_2$ będą węzłami.

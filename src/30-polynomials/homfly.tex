@@ -22,9 +22,9 @@ W przeciwnym razie używa się skrótu HOMFLY-PT.
 % Using three variables: x⋅P(L +)+y⋅P(L −)+z⋅P(L 0)=0x \cdot P(L_+) + y \cdot P(L_-) + z \cdot P(L_0) = 0.
 
 \begin{definition}[wielomian HOMFLY]
-    \label{def:homfly}
-    \index{wielomian!HOMFLY}
     \index{relacja kłębiasta}
+    \index{wielomian!HOMFLY}
+    \label{def:homfly}
     Niech $L$ będzie zorientowanym diagramem splotu.
     Wielomian Laurenta $P$ dwóch zmiennych, który spełnia relację kłębiastą
     \begin{equation}
@@ -59,20 +59,16 @@ Relacja kłębiasta pozwala wywnioskować własności wielomianu sumy spójnej i
 Potrzebować będziemy lematu:
 
 \begin{lemma}
-    \label{links_homfly}
+    \label{lem:homfly_unlinks}
     Wielomianem HOMFLY dla niesplotu o~$n$ składowych jest
     \begin{equation}
         P(U_n) = \left(-\frac{l+1/l}{m}\right)^{n-1}.
     \end{equation}
 \end{lemma}
 
-%\begin{proof}
-    % Dla dowodu tej równości nie trzeba powoływać się na fakt \ref{homfly_sums}.
 Można potraktować to jako proste ćwiczenie z~indukcji matematycznej, pozostawiam je uwadze Czytelnika.
-%\end{proof}
 
 \begin{proposition}
-    \label{homfly_sums}
     Niech $L_1, L_2$ będą splotami.
     Wtedy
     \begin{align}
@@ -91,7 +87,7 @@ Dowód przebiega analogicznie do dowodu ,,multiplikatywności'' wielomianów Ale
         L_2 = \sum_{k=1}^n b_k U_k.
     \end{equation}
 
-    Skorzystamy w~tym miejscu z~lematu \ref{links_homfly}.
+    Skorzystamy w~tym miejscu z~lematu \ref{lem:homfly_unlinks}.
     Wynika z~niego, że $P(U_i)P(U_j) = P(U_{i+j-1})$ i~bezpośrednio
     \begin{equation}
         P(L_1)P(L_2) = \sum_{k=1}^{2n} \sum_{i=1}^{k-1} a_i b_{k-i}P(U_{k-1}).
@@ -126,7 +122,7 @@ Teraz powołamy się na lemat \ref{lem:unknotting_well_defined}.
     Początkowy diagram odpowiada $L_+$ lub $L_-$, relacja kłębiasta pozwala na uzyskanie wielomianu wyjściowego splotu zależnego od wielomianu splotu z
     diagramem, na którym jest mniej skrzyżowań oraz splotu, który jest ,,jedno skrzyżowanie bliżej'' niesplotu.
 
-    Powtarzając tę procedurę dojdziemy w~pewnym momencie do splotów trywialnych, gdzie powołujemy się na wniosek \ref{links_homfly}.
+    Powtarzając tę procedurę dojdziemy w~pewnym momencie do splotów trywialnych, gdzie powołujemy się na wniosek \ref{lem:homfly_unlinks}.
 \end{proof}
 
 Porównajmy wielomian HOMFLY ze znanymi już wielomianami Alexandera $\alexander$ oraz Jonesa $\jones$.

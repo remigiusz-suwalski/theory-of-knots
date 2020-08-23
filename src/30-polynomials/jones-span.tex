@@ -1,13 +1,13 @@
 \subsection{Hipotezy Taita} % (fold)
-\label{sub:span}
+\label{sub:tait_conjectures}
 W tej podsekcji definiujemy stan oraz wygładzenie diagramu, następnie wyprowadzamy wzór o~sumowaniu stanów oraz dowodzimy prawdziwości dwóch technicznych lematów.
-Pozwoli to oszacować rozpiętość wielomianu Jonesa, skąd bezpośrednio wynika już I hipoteza Taita \ref{conj_tait_i}.
+Pozwoli to oszacować rozpiętość wielomianu Jonesa, skąd bezpośrednio wynika już I hipoteza Taita \ref{con:tait_1}.
 Nie odbiega to znacząco od podejścia Kauffmana w~\cite{kauffman87}.
 Na koniec naszkicujemy krótko dowody pozostałych hipotez.
 
 \begin{definition}
-    \label{def:isthmus}
     \index{diagram!zredukowany}
+    \label{def:isthmus}
     Wąskie skrzyżowanie między dwiema rozłącznymi częśćmi diagramu nazywamy przesmykiem (\emph{isthmus}).
 \begin{comment}
     \[
@@ -30,7 +30,6 @@ Słowo przesmyk pochodzi z teorii grafów, skrzyżowanie jest przesmykiem dokła
 Tam używa się także określenia most, które u~nas ma już inne znaczenie.
 
 \begin{definition}[spójny]
-
     Diagram, którego nie można podzielić na dwie niepuste części niespotykające się na żadnym skrzyżowaniu, nazywamy spójnym.
 \end{definition}
 
@@ -38,7 +37,6 @@ Jeżeli diagram nie jest spójny, możemy przesunąć rozłączne ogniwa na sieb
 Hipoteza Taita mówi coś o zredukowanych, spójnych i alternujących diagramach.
 
 \begin{definition}[stan]
-
     Niech $D$ będzie diagramem splotu.
     Każdą funkcję $s$ ze zbioru skrzyżowań diagramu $D$ o wartościach $\pm 1$ nazywamy stanem.
     Sumę wszystkich wartości $s$ oznaczamy $|s|$.
@@ -66,10 +64,10 @@ Dla wygody wprowadźmy skrót $\langle D \mid s \rangle := (-A^{-2}-A^2)^{|sD|-1
     Pokażemy, że spełnia ona aksjomaty Kauffmana z~definicji \ref{def:kauffman_bracket}, stąd wynika już, że $[D] = \bracket{D}$.
     % ona $[\LittleUnknot]=1$, $[D\sqcup\LittleUnknot]=(-A^{-2}-A^2) [D]$ oraz $[\LittleRightCrossing] = A [\LittleRightSmoothing] + A^{-1}[\LittleLeftSmoothing]$.
 
-    Pierwszy aksjomat (równość \ref{kauffman_axiom_1}) mówi o niewęźle $\LittleUnknot$.
+    Pierwszy aksjomat (równość \ref{eqn:kauffman_axiom_1}) mówi o niewęźle $\LittleUnknot$.
     Posiada on tylko jeden stan $s$ dany wzorem $|s| = 0$, zatem $|s\,\LittleUnknot| = 1$ oraz $[D] = (-A^2 - A^{-2})^0 \cdot A^0 = 1$.
 
-    By pokazać, że funkcja $[\,\cdot\,]$ spełnia drugi aksjomat (równość \ref{kauffman_axiom_2}) zauważmy, że diagramy $D \sqcup \LittleUnknot$ oraz $D$ mają te same skrzyżowania,
+    By pokazać, że funkcja $[\,\cdot\,]$ spełnia drugi aksjomat (równość \ref{eqn:kauffman_axiom_2}) zauważmy, że diagramy $D \sqcup \LittleUnknot$ oraz $D$ mają te same skrzyżowania,
     więc możemy utożsamiać stany $s$ dla $D$ ze stanami $u$ dla $D \sqcup \LittleUnknot$.
     Wtedy $|u| = |s|$ oraz $|u(D \sqcup \LittleUnknot)| = |sD| + 1$.
     Zatem
@@ -79,7 +77,7 @@ Dla wygody wprowadźmy skrót $\langle D \mid s \rangle := (-A^{-2}-A^2)^{|sD|-1
         & = \sum_s (-A^2-A^{-2})^{|sD|} A^{|s|} \\
         & = (-A^2-A^{-2}) [D].
     \end{align}
-    Pozostał ostatni aksjomat, równość \ref{kauffman_axiom_3}.
+    Pozostał ostatni aksjomat, równość \ref{eqn:kauffman_axiom_3}.
     Bezpośrednio z definicji mamy
     \begin{equation}
        A[\LittleRightSmoothing]
@@ -91,16 +89,16 @@ Dla wygody wprowadźmy skrót $\langle D \mid s \rangle := (-A^{-2}-A^2)^{|sD|-1
     \begin{align}
         A\left[\LittleRightSmoothing\right]
         & = \sum_u (-A^2-A^{-2})^{|u\,\LittleRightSmoothing|-1}A^{|u|+1} \\
-        \label{e1fe5572}
+        \label{eqn:state_sum_right}
         & = \sum_{s(c)=1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|},
     \end{align}
     podobne rozumowanie pokazuje, że
     \begin{align}
-        \label{52e527e6}
+        \label{eqn:state_sum_left}
         A^{-1}\left[\LittleLeftSmoothing\right]
         & = \sum_{s(c)=-1}(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|}.
     \end{align}
-    Dodanie do siebie równań \ref{e1fe5572} oraz \ref{52e527e6} kończy dowód.
+    Dodanie do siebie równań \ref{eqn:state_sum_right} oraz \ref{eqn:state_sum_left} kończy dowód.
     %: $A[\PrawyGladki]+A^{-1}[\LewyGladki] = \sum_s(-A^2-A^{-2})^{|s\,\LittleRightCrossing|-1}A^{|s|} = [\RightCrossing]$.
 \end{proof}
 Zbadamy następnie dwa najprostsze stany dowolnego diagramu.

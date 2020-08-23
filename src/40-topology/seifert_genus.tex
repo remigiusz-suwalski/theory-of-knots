@@ -59,13 +59,13 @@ Definicja ta nie jest wygodna podczas ręcznych obliczeń.
 Nas interesują głównie powierzchnie Seiferta węzłów:
 
 \begin{proposition}
-    \label{euler_and_seifert}
+    \label{prp:seifert_euler_characteristics}
     Niech $K$ będzie węzłem z~diagramem $D$.
     Wtedy $\chi(M_D) = d - b$, gdzie $b$ jest liczbą skrzyżowań $D$, zaś $d$ jest liczbą okręgów Seiferta.
 \end{proposition}
 
 \begin{proof}
-    W~dowodzie faktu \ref{seifert_existence} widzieliśmy, że liczba skrzyżowań $b$ jest jednocześnie liczbą pasków doklejonych do dysków.
+    W~dowodzie faktu \ref{prp:seifert_exists} widzieliśmy, że liczba skrzyżowań $b$ jest jednocześnie liczbą pasków doklejonych do dysków.
     Bezpośredni rachunek pokazuje, że wtedy $k_0 = 4b$, $k_1 = 6b$ oraz $k_2 = b+d$.
     Wynika stąd, że $\chi = 4b - 6b + b + d = d - b$.
 \end{proof}
@@ -112,7 +112,7 @@ Z góry genus ograniczony jest przez kilka klasycznych niezmienników numeryczny
 Zanim to pokażemy, przytoczymy techniczny lemat udowodniony przez Yamadę (\cite{yamada87}):
 
 \begin{proposition}
-    \label{seifert_circles_braid}
+    \label{prp:seifert_circles_braid}
     Niech $L$ będzie splotem, zaś $s(L)$ minimalną liczbą okręgów Seiferta, które dostajemy ze wszystkich możliwych diagramów splotu $L$.
     Wtedy $s(L) = \braid(L)$ pokrywa się wartością z indeksem warkoczowym.
 \end{proposition}
@@ -127,12 +127,12 @@ Powyższe stwierdzenie występuje bez dowodu w \cite[s. 17]{kawauchi96}.
 \begin{proof}
     Ustalmy minimalny diagram $D$ dla splotu $L$ i zastosujmy do niego algorytm Seiferta.
     Dostaniemy tak $s$ okręgów Seiferta oraz powierzchnię o genusie $g$.
-    Fakt \ref{euler_and_seifert} mówiący, że $\chi = s - c$, można przekształcić do
+    Fakt \ref{prp:seifert_euler_characteristics} mówiący, że $\chi = s - c$, można przekształcić do
     \begin{equation}
         g = \frac{c + 2 - s - \mu(K)}{2}.
     \end{equation}
     Z~minimalności diagramu wynika, że $c = \crossing(L)$.
-    Fakt \ref{seifert_circles_braid} mówi, że $s \ge \braid(L)$.
+    Fakt \ref{prp:seifert_circles_braid} mówi, że $s \ge \braid(L)$.
     Nierówność $g \ge \operatorname{g}(L)$ wynika z~definicji genusu.
     Z powyższych rozważań wynika, że
     \begin{equation}
@@ -142,7 +142,7 @@ Powyższe stwierdzenie występuje bez dowodu w \cite[s. 17]{kawauchi96}.
 \end{proof}
 
 \begin{corollary}
-    \label{crl:crossing_genus}
+    \label{cor:crossing_genus}
     Niech $K$ będzie węzłem.
     Wtedy $\crossing K \ge 2 \genus K$.
 \end{corollary}
@@ -205,7 +205,7 @@ Moriah, matematyk izraelski, mniej więcej w tym samym czasie rozwiązał proble
 \end{corollary}
 
 \begin{proposition}
-    \label{genus_one}
+    \label{prp:genus_detects_unknot}
     Genus wykrywa niewęzły: $K$ jest niewęzłem wtedy i tylko wtedy, gdy $g(K) = 0$.
 \end{proposition}
 
@@ -219,7 +219,7 @@ Moriah, matematyk izraelski, mniej więcej w tym samym czasie rozwiązał proble
 \end{proof}
 
 \begin{proposition}
-\label{genus_sum}
+    \label{prp:genus_of_sum}
     Jeśli $J, K$ są węzłami, to $g (J \shrap K) = g(J) + g(K)$.
 \end{proposition}
 
@@ -295,11 +295,11 @@ Przebiega w dwóch etapach: najpierw pokazuje się, że genus sumy nie jest wię
 \end{proof}
 
 \begin{corollary}
-\label{no_inverses}
+    \label{cor:connected_sum_no_inverses}
     Jeśli suma spójna dwóch węzłów jest niewęzłem, to oba składniki także nim są.
 \end{corollary}
 
-Powrócimy teraz do węzłów pierwszych (definicja \ref{primeknot}).
+Powrócimy teraz do węzłów pierwszych (definicja \ref{def:prime_knot}).
 
 \begin{proposition}
     Niech $K$ będzie węzłem.
@@ -308,7 +308,7 @@ Powrócimy teraz do węzłów pierwszych (definicja \ref{primeknot}).
 
 \begin{proof}
     Załóżmy nie wprost, że $K = K_1 \# K_2$ jest sumą dwóch nietrywialnych węzłów.
-    Z~faktu \ref{genus_sum} wynika wtedy, że $g(K) = g(K_1) + g(K_2)$.
+    Z~faktu \ref{prp:genus_of_sum} wynika wtedy, że $g(K) = g(K_1) + g(K_2)$.
     Zatem jeden z węzłów $K_1, K_2$ ma genus zero i jest trywialny, wbrew naszemu założeniu.
 \end{proof}
 
@@ -352,7 +352,7 @@ Praca Schuberta korzysta z twierdzenia Alexandera, że 2-sfera w przestrzeni $\R
 \end{tobedone}
 
 \begin{proposition}
-\label{infty_primes}
+    \label{prp:infinitely_many_prime_knots}
     Istnieje nieskończenie wiele węzłów pierwszych.
 \end{proposition}
 

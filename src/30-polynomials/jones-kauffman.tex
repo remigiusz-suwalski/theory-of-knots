@@ -24,9 +24,9 @@ W ten sposób odkryliśmy definicję.
     który jest niezmienniczy ze względu na gładkie deformacje diagramu,
     a~przy tym spełnia trzy poniższe aksjomaty:
     \begin{align}
-        \bracket{\LittleUnknot} & = 1 \label{kauffman_axiom_1} \\
-        \bracket{D \sqcup \LittleUnknot} & = (-A^{-2} - A^2) \bracket{D} \label{kauffman_axiom_2} \\
-        \bracket{\LittleRightCrossing} & = A \bracket{\LittleRightSmoothing} + A^{-1} \bracket{\LittleLeftSmoothing} \label{kauffman_axiom_3}
+        \bracket{\LittleUnknot} & = 1 \label{eqn:kauffman_axiom_1} \\
+        \bracket{D \sqcup \LittleUnknot} & = (-A^{-2} - A^2) \bracket{D} \label{eqn:kauffman_axiom_2} \\
+        \bracket{\LittleRightCrossing} & = A \bracket{\LittleRightSmoothing} + A^{-1} \bracket{\LittleLeftSmoothing} \label{eqn:kauffman_axiom_3}
     \end{align}
     nazywamy klamrą Kauffmana.
 \end{definition}
@@ -139,7 +139,7 @@ korzystaliśmy tu z~własności drugiego ruchu.
 \end{corollary}
 
 Klamra Kauffmana nie jest niezmiennikiem węzłów ze względu na I ruch Reidemeistera.
-Jeżeli przypomnimy sobie, że na mocy lematu \ref{writhe_not_invariant} spin także nie jest niezmiennikiem węzłów, odkryjemy ,,trik Kauffmana'': niedoskonałości tych dwóch obiektów znoszą się wzajemnie.
+Jeżeli przypomnimy sobie, że na mocy lematu \ref{lem:writhe_reidemeister} spin także nie jest niezmiennikiem węzłów, odkryjemy ,,trik Kauffmana'': niedoskonałości tych dwóch obiektów znoszą się wzajemnie.
 
 \begin{definition}
     \index{wielomian!Jonesa}
@@ -175,7 +175,7 @@ Zaczniemy od wyznaczenia bezpośrednio z definicji, jakie są wielomiany Jonesa 
 Dla porównania, wielomian Alexandera wszystkich splotów rozszczepialnych jest taki sam (stwierdzenie \ref{prp:alexander_unlinks}).
 
 \begin{proposition}
-\label{prp:jones_trivial_link}
+    \label{prp:jones_trivial_link}
     Wielomianem Jonesa splotu trywialnego o $n$ ogniwach jest
     \begin{equation}
         \jones(K_n) = \left(-\sqrt{t} - \frac{1}{\sqrt {t}}\right)^{n-1}.
@@ -201,7 +201,8 @@ $10_{137}$ -- $10_{155}$.
 Jones wiedział, że wielomianowe niezmienniki nie radzą sobie z~odróżnianiem od siebie mutantów, dlatego zapytał w~2000 roku, czy jego wielomian wykrywa niewęzły.
 Pozostaje to otwartym problemem do dziś.
 
-\begin{conjecture} \label{jones_conjecture}
+\begin{conjecture}
+    \label{con:jones}
     Niech $K$ będzie węzłem.
     Jeśli $\jones_K(t) \equiv 1$, to $K$ jest niewęzłem.
 \end{conjecture}
@@ -226,7 +227,8 @@ Niech $\jones$ będzie wielomianem Jonesa splotu $K$ o~$n$ składowych spójnoś
 Jego wartości w~niektórych pierwiastkach jedności są związane z~innymi niezmiennikami węzłów.
 I tak przyjmując oznaczenie $\omega_k = \exp(2\pi i/k)$ mamy
 
-\begin{proposition} \label{jones_sharp_p_hard}
+\begin{proposition}
+    \label{prp:jones_at_roots_of_unity}
     $\jones_L(\omega_3) = 1$.
 \end{proposition}
 
@@ -376,16 +378,16 @@ Ale czasami potrafi odróżnić splot od jego lustra:
 \end{proof}
 
 \begin{corollary}
-    \label{amphicheiral_implies_jones}
+    \label{cor:joines_of_amphicheiral}
     Jeśli $K$ jest węzłem zwierciadlanym, to wielomian $\jones_K$ jest symetryczny.
 \end{corollary}
 
-Implikacja odwrotna nie zachodzi na mocy wniosku \ref{crl:acheiral_signature}: węzeł $9_{42}$ ma symetryczny wielomian Jonesa, ale niezerową sygnaturę.
+Implikacja odwrotna nie zachodzi na mocy wniosku \ref{cor:acheiral_signature}: węzeł $9_{42}$ ma symetryczny wielomian Jonesa, ale niezerową sygnaturę.
 Poniżej trzynastu skrzyżowań taka sytuacja ma miejsce dla dokładnie czternastu węzłów pierwszych.
 % 9_42, 10_125, 11n_19, 11n_24, 11n_82, 12a_0669, 12a_1171, 12a_1179, 12a_1205, 12n_0362, 12n_0506, 12n_0562, 12n_0571, 12n_0821
 
 Równość $\jones(mL)(t)=\jones(L)(t^{-1})$ nie jest spełniona dla trójlistnika, zatem ten nie jest równoważny ze swoim lustrem.
-Wcześniej pokazał to z~dużo większym wysiłkiem Dehn, patrz przykład \ref{trefoil_is_chiral}.
+Wcześniej pokazał to z~dużo większym wysiłkiem Dehn, patrz przykład \ref{exm:trefoil_is_chiral}.
 
 \begin{corollary}
     Wielomian Jonesa nie zależy od orientacji węzła.

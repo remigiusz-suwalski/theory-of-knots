@@ -5,8 +5,6 @@ Rodzina węzłów wyposażona w~sumę spójną tworzy przemienny monoid z~jednoz
 Znacznie później (w sekcji \ref{sec:tangle}) określimy jeszcze sumę oraz iloczyn supłów.
 
 \subsection{Lustro i~rewers} % (fold)
-
-
 \begin{definition}[lustro]
     \index{lustro}
     Niech $L$ będzie zorientowanym splotem.
@@ -74,7 +72,7 @@ Wyróżniamy pięć typów symetrii węzłów:
 Całkowicie skrętne są też między innymi wszystkie węzły torusowe.
 
 \begin{example}
-    \label{trefoil_is_chiral}
+    \label{exm:trefoil_is_chiral}
     Trójlistnik jest odwracalny, ale nie zwierciadlany.
 \end{example}
 
@@ -82,7 +80,7 @@ Po raz pierwszy odkrył to M. Dehn w 1914 roku \cite{dehn14}.
 Oto, jak tego dokonał.
 Iloraz grafu Cayleya dla grupy podstawowej trójlistnika, $G = \pi_1(S^3 - K)$, zanurza się w~produkt $\mathbb H^2 \times \R$, co pozwala wyznaczyć grupę zewnętrznych automorfizmów grupy $G$, $\Z/2\Z$.
 Korzystając z południków i równoleżników pokazał następnie, że nietrywialny automorfizm odwraca orientację przestrzeni otaczającej.
-My przekonamy się o~tym przez wyznaczenie wielomianu Jonesa trójlistnika, patrz wniosek \ref{amphicheiral_implies_jones}.
+My przekonamy się o~tym przez wyznaczenie wielomianu Jonesa trójlistnika, patrz wniosek \ref{cor:joines_of_amphicheiral}.
 
 \begin{example}
     Węzeł $8_{17}$ jest zwierciadlany ujemnie, ale nie odwracalny.
@@ -90,7 +88,7 @@ My przekonamy się o~tym przez wyznaczenie wielomianu Jonesa trójlistnika, patr
 
 Sześćdziesiąt lat temu nie było pewne, czy węzły nieodwracalne w~ogóle istnieją; obecnie wiadomo, że prawie wszystkie węzły są nieodwracalne (\cite[s.~46]{murasugi96}).
 W~roku 1962 Ralph Fox wskazał kilku kandydatów do tego tytułu.
-Hale Trotter odkrył rok później nieskończoną rodzinę nieodwracalnych precli, patrz \ref{trotter}.
+Hale Trotter odkrył rok później nieskończoną rodzinę nieodwracalnych precli, patrz \ref{prp:pretzel_not_invertible}.
 
 \begin{example}
     Węzeł $12a427$ jest zwierciadlany dodatnio, ale nie odwracalny.
@@ -135,7 +133,8 @@ z bazy danych ``The On-Line Encyclopedia of Integer Sequences'' (OEIS).
 
 Można wyróżnić jeszcze jeden rodzaj symetrii.
 
-\begin{definition} \label{def_period}
+\begin{definition}
+    \label{def:period}
     \index{węzeł!okresowy}
     Węzeł $K$ nazywamy $n$-okresowym, jeśli istnieje obrót $f \colon \R^3 \to \R^3$ o~kąt $2\pi/n$ wokół pewnej prostej $l$, rozłącznej z~węzłem, taki że $f(K) = K$.
 \end{definition}
@@ -148,7 +147,7 @@ Tę drugą symetrię można dostrzec na diagramie realizującym indeks mostowy.
 \end{proposition}
 
 Z~każdym węzłem okresowym związany jest inny, prostszy węzeł.
-Niech $f$ będzie obrotem z definicji \ref{def_period}, zaś $p \colon \R^3 \to \R^3/f \simeq \R^3$ rzutem na przestrzeń ilorazową.
+Niech $f$ będzie obrotem z definicji \ref{def:period}, zaś $p \colon \R^3 \to \R^3/f \simeq \R^3$ rzutem na przestrzeń ilorazową.
 \index{węzeł!ilorazowy}
 Wtedy $p(K)$ nazywamy \emph{węzłem ilorazowym}, zaś $K$ to jego $n$-krotne nakrycie.
 
@@ -159,7 +158,7 @@ Indeksem zaczepienia $\lambda$ węzła $p(K)$ jest różnica między liczbą skr
 
 \begin{proposition}[warunek Murasugiego]
     \index{warunek Murasugiego}
-    \label{murasugi_periodic}
+    \label{prp:murasugi_periodic}
     Niech $K$ będzie węzłem o~okresie $n = p^r$, gdzie $p$ jest liczbą pierwszą.
     Niech $J$ będzie jego węzłem ilorazowym, z~indeksem zaczepienia $\lambda$.
     Wtedy wielomian $\alexander_J$ jest dzielnikiem wielomianu $\alexander_K$ oraz istnieje pewna całkowita liczba $k$, taka że
@@ -340,7 +339,7 @@ The proof (whose details are left to the reader) is essentially obtained from th
 (1) is directly proved by a cut-and-paste argument of combinatorial topology. (2) is usually obtained from Schubert's result on the additivity of the knot genus (cf. 4.1.5) under the connected sum, i.e., g(Ll~L2) = geLd +g(L2) (which is also proved by a cut-and-paste argument).
 \end{tobedone}
 
-Prawdziwy dowód oparty jest na topologii algebraicznej, stanowi bezpośredni wniosek z~faktów \ref{genus_one} oraz \ref{genus_sum}.
+Prawdziwy dowód oparty jest na topologii algebraicznej, stanowi bezpośredni wniosek z~faktów \ref{prp:genus_detects_unknot} oraz \ref{prp:genus_of_sum}.
 
 Półgrupę węzłów z~operacją sumy spójnej można ulepszyć do grupy na dwa sposoby:
 albo poprzez zmianę działania, w~jakie jest wyposażona,

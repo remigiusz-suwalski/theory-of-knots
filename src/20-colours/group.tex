@@ -1,33 +1,36 @@
 \section{Grupa} % (fold)
 
 \index{grupa!kolorująca}
-\begin{definition} \label{colgrp_def}
+\begin{definition}
+    \label{def:colouring_group}
     Niech $L$ będzie splotem.
     Grupa kolorująca $L$, oznaczana $\operatorname{Col}(L)$, to abelowa grupa generowana przez łuki diagramu przedstawiającego $L$ z~równaniami skrzyżowań tegoż diagramu jako relacjami.
     Oprócz tego mamy jeszcze jedną relację, $a = 0$, gdzie $a$ jest ustalonym łukiem.
 \end{definition}
 
-\begin{proposition} \label{morphism_colour}
+\begin{proposition}
+    \label{prp:colourings_are_morphisms}
     Splot $L$ koloruje się modulo $n$, wtedy i~tylko wtedy gdy istnieje nietrywialny homomorfizm $\operatorname{Col}(L) \to \Z/n\Z$.
 \end{proposition}
 
 \begin{proof}
-    Niech $a$ będzie ustalonym łukiem na diagramie splotu $L$ z definicji \ref{colgrp_def}.
+    Niech $a$ będzie ustalonym łukiem na diagramie splotu $L$ z definicji \ref{def:colouring_group}.
     Funkcja $\varphi \colon \operatorname{Col}(L) \to \Z/n\Z$ jest nietrywialnym morfizmem, jeśli przyjmuje choć raz wartość różną od zera, spełnia warunek $\varphi(a) = 0$ i~dla każdego skrzyżowania prawdziwe jest równanie
     \begin{equation}
         \varphi(x_j) + \varphi(x_k) - 2\varphi(x_i) = 0
     \end{equation}
-    przy oznaczeniach z definicji \ref{def:colour_equation}.
+    przy oznaczeniach z definicji \ref{def:colouring_equation}.
     To pokazuje, że niezerowe morfizmy $\operatorname{Col}(L) \to \Z/n\Z$ to dokładnie kolorowania modulo $n$, z kolorem $\varphi(l)$ na łuku $l$.
 \end{proof}
 
-\begin{corollary} \label{odd_determinant}
+\begin{corollary}
+    \label{cor:knot_determinant_odd}
     Niech $K$ będzie węzłem.
     Wtedy $\det K$ jest liczbą nieparzystą.
 \end{corollary}
 
 \begin{proof}
-    Bezpośredni wniosek z faktów \ref{no_knots_colours_mod_two} oraz \ref{morphism_colour}.
+    Bezpośredni wniosek z faktów \ref{prp:no_colourings_mod_2} oraz \ref{prp:colourings_are_morphisms}.
 \end{proof}
 
 \begin{proposition}
@@ -37,7 +40,7 @@
 \begin{proof}[Szkic dowodu]
     Do wyznaczenia grupy kolorującej potrzebujemy diagramu $D$ z wybranym łukiem $a$.
     Musimy zatem sprawdzić, że ustalenie innego diagramu lub łuku prowadzi do grupy izomorficznej z wyjściową.
-    Dla diagramów wystarczy sprawdzić, co dzieje się podczas ruchów Reidemeistera jak w dowodzie faktu \ref{color_invariant}.
+    Dla diagramów wystarczy sprawdzić, co dzieje się podczas ruchów Reidemeistera jak w dowodzie faktu \ref{prp:colouring_invariance}.
     W przypadku łuku rozumowanie przebiega analogicznie do dowodu lematu \ref{lem:colouring_arc}.
 \end{proof}
 
@@ -71,7 +74,8 @@ Podsumujmy.
     Przy oznaczeniach z powyższego faktu, $\det(L) = |d_1| \cdot \ldots \cdot |d_n|$.
 \end{proof}
 
-\begin{corollary} \label{det_invariant}
+\begin{corollary}
+    \label{cor:determinant_invariant}
     Wyznacznik jest niezmiennikiem splotów.
 \end{corollary}
 
@@ -125,7 +129,7 @@ To oznacza, że $\det K_k = 2k-3$.
 \end{proposition}
 
 \begin{proof}
-    Macierz diagonalna otrzymana po wniosku \ref{det_invariant} także jest niezmiennikiem węzłów.
+    Macierz diagonalna otrzymana po wniosku \ref{cor:determinant_invariant} także jest niezmiennikiem węzłów.
 
     Macierzą dla splotu trójlistników $(3_1)^{\# n}$ trójlistników jest $\operatorname{diag}(1, \ldots, 1, 3, \ldots, 3)$, zaś dla węzła $K_k$: $\operatorname{diag} (1, \ldots, 1, 3^?)$.
 \end{proof}
