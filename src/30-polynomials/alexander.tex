@@ -94,6 +94,7 @@ Zwyczajowo wielomian normalizuje się: bierze reprezentanta, który jest symetry
 Odwrotnie, dowolny wielomian Laurenta z~całkowitymi współczynnikami o~takich własnościach jest wielomianem Alexandera pewnego węzła:
 
 \begin{proposition}
+    \label{prp:alexander_hosokawa}
     Każdy wielomian Laurenta $p(t)$ o~całkowitych współczynnikach taki, że $p(1/t) = p(t)$ i~$p(1) = \pm 1$ jest wielomianem Alexandera pewnego węzła.
 \end{proposition}
 
@@ -106,10 +107,18 @@ Odwrotnie, dowolny wielomian Laurenta z~całkowitymi współczynnikami o~takich 
     Książka \cite{rolfsen76} Rolfsena na stronach 171-172 zawiera natomiast jawną konstrukcję węzła o~danym wielomianie Alexandera.
 \end{proof}
 
-Wielomian nie odróżnia luster i~odwrotności od wyjściowych węzłów:
+Istnieje nieopisana przez nas odmiana wielomianu Alexandera, która liczy sobie tyle zmiennych, ile ogniw posiada splot.
+Fakt \ref{prp:alexander_hosokawa} można częściowo uogólnić: Torres znalazł w~\cite{torres53} dwie geometryczne własności tych wielomianów, nazwane później warunkami Torresa.
+\index{warunek!Torresa}
+Nie są one warunkami wystarczającymi, jak odkrył ponad ćwierć wieku później Hillman \cite{hillman81}: wielomian
+\begin{equation}
+    D(x,y) = \frac{1}{1-xy} \cdot \left((1 - x^6y^6)(x - 1 + 1/x) - 2(1 - x^5y^5)(1 - x)(1 - y)\right)
+\end{equation}
+spełnia warunki Torresa, ale nie jest wielomianem Alexandera.
+
+Wielomian Alexandera nie odróżnia luster i~odwrotności od wyjściowych węzłów:
 
 \begin{proposition}
-
     Niech $L$ będzie zorientowanym splotem.
     Wtedy $\alexander_{mL}(t) = \alexander_L(1/t) = \alexander_{rL}(t)$.
 \end{proposition}
