@@ -1,5 +1,7 @@
 \section{Niezmienniki Wasiljewa} % (fold)
+\index{niezmiennik!Wasiljewa}
 \label{sec:vassiliev}
+% DICTIONARY;invariant, finite type;niezmiennik, skończonego typu
 Niezmienniki Wasiljewa (znane także jako niezmienniki skończonego typu) umożliwiają radykalnie nowe podejście do węzłów.
 Około 1989 roku odkryli je niezależnie Wiktor Wasiljew, w~oparciu o~teorię osobliwości, oraz Michaił Goussarow, metodami kombinatorycznymi.
 My przedstawimy to drugie podejście.
@@ -11,6 +13,7 @@ Oprócz tego jest jeszcze pięknie zilustrowana książka \cite{duzhin12} trzech
 % Kenneth A. Perko, Jr. (amazon): Not too happy about the reference at page 49 to "old Perko's notation," but that's just me. (Also, Fermat, mentioned at page 10, was not much of a lawyer, having used his father's money to buy a life-long provincial judgeship.) Clearly the book is an essential acquisition for anyone in the field and should provide great recreational value for reading on long airplane flights.
 Szkielet sekcji oparliśmy natomiast o piętnasty rozdział podręcznika Murasugiego, \cite{murasugi96}.
 
+% DICTIONARY;knot, singular;węzeł, singularny
 \begin{definition}[węzeł singularny]
     \index{węzeł!singularny}
     Niech $f \colon S^1 \to \R^3$ będzie kawałkami liniową funkcją, która jest różnowartościowa poza skończenie wieloma punktami.
@@ -128,6 +131,7 @@ Wartość stałej $C$ trudno obliczyć, dlatego Stojmenow zaproponował ogranicz
 \end{conjecture}
 
 Nierówność jest nietrywialna tylko dla splotu $L$ z~$k+1, k-1, \ldots$ składowymi; trywialna dla $k = 0$, łatwa dla $k=1$ (wtedy $\conway_1$ jest indeksem zaczepienia splotów o~dwóch składowych) oraz udowodniona dla węzłów i~$k=2$ przez Polyaka, Viro w~2001 (\cite{polyak01}).
+\index{niezmiennik!Cassona}
 % The Casson knot invariant (to be distinguished from the better-known Casson invariant) is defined to be the Vassiliev knot invariant v_2, which turns out to be \alexander_k''(1) / 2 , where \alexander_k is the Alexander polynomial of k. It can be characterized as the unique Vassiliev invariant of degree 2 that takes value 0 on the trivial knot and value 1 on the trefoil knot.
 
 \begin{example}
@@ -204,6 +208,8 @@ Udowodnimy kilka najprostszych własności niezmienników Wasiljewa.
 \end{proposition}
 
 \begin{tobedone}
+    \index{diagram!strunowy}
+    % DICTIONARY;diagram, chord;diagram, strunowy
     Chord diagrams. Ich produkt jest dobrze określony modulo relacja 4T.
 \end{tobedone}
 
@@ -212,6 +218,8 @@ Udowodnimy kilka najprostszych własności niezmienników Wasiljewa.
 \end{tobedone}
 
 \begin{tobedone}
+    % DICTIONARY;actuality table;tablica rzeczywistości
+    \index{tablica rzeczywistości?}
     Actuality tables.
 \end{tobedone}
 
@@ -230,6 +238,9 @@ Poniższa tabela ma dość ciekawą historię.
 Wasiljew znalazł ręcznie wartości w kolumnach dla $n \le 4$ w 1990 roku.
 Potem Bar-Natan napisał komputerowy program rozwiazujący pewne równania liniowe i~znalazł tak wymiary przestrzeni $\mathcal V_n$ dla $n \le 9$, miało to miejsce w roku 1993.
 Wreszcie Kneissler cztery lata później znalazł dolne oraz górne ograniczenia: dolne oparte o znaczone powierzchnie, górne pochodzące od algebry Vogela (\cite{kneissler97}).
+\index{algebra!Vogela}
+\index{powierzchnia!znaczona}
+% DICTIONARY;marked surface;powierzchnia znaczona
 Dla $n \le 12$ ograniczenia te pokrywają się!
 
 \renewcommand*{\arraystretch}{1.4}
@@ -280,7 +291,7 @@ Dla wyższych rzędów nie dość, że nie znamy dokładnych wartości ciągu $d
 
 Zanim przejdziemy do ograniczeń z dołu, zdefinujmy jeszcze jedną przestrzeń, $\mathcal P_n \subseteq \mathcal V_n$.
 Składa się z~tych niezmienników Wasiljewa, które są jednocześnie morfizmami, to znaczy spełniają równość $v(K_1 \shrap K_2) = v(K_1) + v(K_2)$.
-Każdy niezmiennik jest wielomianową kombinacją niezmienników pierwotnch.
+Każdy niezmiennik jest wielomianową kombinacją niezmienników pierwotnych.
 
 \begin{proposition}[Chmutov, Duzhin i Lando, 1994]
     $\dim \mathcal P_n \ge 1$.
@@ -334,6 +345,7 @@ Stanford rozszerzył ten wynik: w~\cite{stanford96} udowodnił, że dla każdego
 Z drugiej strony, Chmutow i inni piszą w \cite{duzhin12}, że sześć niezmienników rzędu co najwyżej 4 wystarcza do odróżnienia dowolnych dwóch węzłów pierwszych do 8 skrzyżowań.
 
 W 1993 roku Maxim Koncewicz pokazał, że dla każdego węzła można policzyć pewną całkę (teraz nazywaną całką Koncewicza), która jest uniwersalnym niezmiennikiem Wasiljewa.
+\index{całka!Koncewicza}
 Oznacza to, że z jej wartości można odtworzyć wszystkie inne niezmienniki skończonego typu.
 Bar-Natan w 1995 roku znalazł wartość tej całki dla niewęzła:
 \begin{equation}
@@ -345,6 +357,7 @@ gdzie $b_{2n}$ to zmodyfikowane liczby Bernoulliego o funkcji tworzącej
 \end{equation}
 zaś $w_{2n}$ to ,,koła'': diagramy okręgu z doczepionymi $2n$ promieniami.
 Liniową kombinację należy rozumieć jako element algebry chińskich znaków, opisanej w następnej wersji tej książki.
+\index{algebra!chińskich znaków}
 Następnie Marché w~2003 roku znalazł wartości całki dla węzłów torusowych (\cite{marche04}).
 Wygląda na to, że nikt nie odważył się dokonać tego dla innych węzłów (stan na 2019).
 
@@ -353,6 +366,8 @@ Wygląda na to, że nikt nie odważył się dokonać tego dla innych węzłów (
     Uniwersalny niezmiennik Wasiljewa jest zupełny.
 \end{conjecture}
 
-To jedna z najtrudniejszych hipotez teorii węzłów -- ponieważ całka Koncewicza jest mocniejsza od każdego wielomianowego niezmiennika, jaki dotąd poznaliśmy (wielomiany Alexandera, Jonesa, HOMFLY, Kauffmana), można o~niej myśleć jako o uogólnieniu hipotezy \ref{con:jones}.
+Całka Koncewicza jest mocniejsza od każdego wielomianowego niezmiennika, jaki dotąd poznaliśmy, wliczając w to wielomiany Alexandera, Jonesa, HOMFLY oraz Kauffmana.
+Wynika stąd, że stanowić będzie dużo trudniejszy problem niż dowód hipotezy \ref{con:jones} mówiącej, że wielomian Jonesa wykrywa niewęzły.
+
 % DICTIONARY;link, string;splot, sznurkowy
 Chmutov, Duzhin wspominają w bardzo czytelnie napisanym artykule \cite{chmutov05}, że hipoteza \ref{con:vassilliev} jest prawdziwa dla splotów sznurkowych i warkoczy, jak dowiedziono w \cite{kohno87}, \cite{barnatandror95}.
