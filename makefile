@@ -1,3 +1,5 @@
+SHELL=/bin/bash
+
 .PHONY: all clean prepare chapter-all release
 
 PDFLATEX_FLAGS = -shell-escape -halt-on-error -output-directory ../build/
@@ -25,6 +27,9 @@ precommit:
 	find src -type f \
 	    | xargs awk -F ';' '/^% DICTIONARY/ {print "\\item \\textbf{" $$2 "} " $$3}' \
 	    | sort > src/90-appendix/dictionary.tex
+	diff \
+		<(grep -Ehor src/ -e '\\label\{.*\}'  | sed -r 's/^\\label//g' | sort -u) \
+		<(grep -Ehor src/ -e '\\ref\{[^}]*\}' | sed -r 's/^\\ref//g'   | sort -u)
 
 chapter-all: build/knot-theory.pdf
 
