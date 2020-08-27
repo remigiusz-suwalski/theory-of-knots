@@ -163,13 +163,15 @@ Indeksem zaczepienia $\lambda$ węzła $p(K)$ jest różnica między liczbą skr
     Niech $J$ będzie jego węzłem ilorazowym, z~indeksem zaczepienia $\lambda$.
     Wtedy wielomian $\alexander_J$ jest dzielnikiem wielomianu $\alexander_K$ oraz istnieje pewna całkowita liczba $k$, taka że
     \begin{equation}
-        \alexander_K = \pm \alexander_J^n \left(1 + t + t^2 + \ldots + t^{\lambda - 1}\right)^{n-1} \mod p.
+        \alexander_K(t) \equiv \pm t^k \alexander_J(n)^n \left(1 + t + t^2 + \ldots + t^{\lambda - 1}\right)^{n-1} \mod p.
     \end{equation}
 \end{proposition}
 
 \begin{proof}
-    Mozolne operacje na macierzach, których wyznacznikiem jest wielomian Alexandera.
-    Patrz \cite{murasugi71}.
+    Mozolne operacje na macierzach, których wyznacznikiem jest wielomian Alexandera, patrz \cite{murasugi71}.
+    Kawauchi przedstawia inny dowód: najpierw dowodzi tego dla węzła torusowego $T_{n, d}$, którego węzłem ilorazowym jest niewęzeł.
+    W ogólnym przypadku, korzysta z relacji kłębiastej dla wielomianu Conwaya.
+    Szczegóły oraz odsyłacze do dalszych prac znaleźć można w jego przeglądowej publikacji \cite[s. 122-124]{kawauchi96}.
 \end{proof}
 
 % Koniec podsekcji Lustro i~rewers
