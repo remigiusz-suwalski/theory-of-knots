@@ -1,5 +1,4 @@
 \section{Operacje na węzłach} % (fold)
-
 W tej sekcji poznamy sposoby otrzymywania nowych obiektów z~już istniejących (rewers i~lustro splotu).
 Rodzina węzłów wyposażona w~sumę spójną tworzy przemienny monoid z~jednoznacznością rozkładu.
 Znacznie później (w sekcji \ref{sec:tangle}) określimy jeszcze sumę oraz iloczyn supłów.
@@ -7,12 +6,14 @@ Znacznie później (w sekcji \ref{sec:tangle}) określimy jeszcze sumę oraz ilo
 \subsection{Lustro i~rewers} % (fold)
 \begin{definition}[lustro]
     \index{lustro}
+    \index{węzeł!lustrzany}
     Niech $L$ będzie zorientowanym splotem.
     Splot $mL$ powstały przez odbicie splotu $L$ względem dowolnej płaszczyzny nazywamy lustrem.
 \end{definition}
 
 \begin{definition}[rewers]
     \index{rewers}
+    \index{węzeł!odwrotny}
     Niech $L$ będzie zorientowanym splotem.
     Splot $rL$ powstały przez odwrócenie orientacji wszystkich ogniw splotu $L$ nazywamy rewersem.
 \end{definition}
@@ -79,6 +80,7 @@ Całkowicie skrętne są też między innymi wszystkie węzły torusowe.
 Po raz pierwszy odkrył to M. Dehn w 1914 roku \cite{dehn14}.
 Oto, jak tego dokonał.
 Iloraz grafu Cayleya dla grupy podstawowej trójlistnika, $G = \pi_1(S^3 - K)$, zanurza się w~produkt $\mathbb H^2 \times \R$, co pozwala wyznaczyć grupę zewnętrznych automorfizmów grupy $G$, $\Z/2\Z$.
+\index{grupa!podstawowa}
 Korzystając z południków i równoleżników pokazał następnie, że nietrywialny automorfizm odwraca orientację przestrzeni otaczającej.
 My przekonamy się o~tym przez wyznaczenie wielomianu Jonesa trójlistnika, patrz wniosek \ref{cor:joines_of_amphicheiral}.
 
@@ -128,7 +130,6 @@ z bazy danych ``The On-Line Encyclopedia of Integer Sequences'' (OEIS).
         \hline
     \end{tabular}
     \caption{Liczba węzłów o~poszczególnych typach symetrii}
-
 \end{table}
 
 Można wyróżnić jeszcze jeden rodzaj symetrii.
@@ -276,6 +277,7 @@ Ważna jest orientacja składników: suma dwóch trójlistników może być węz
 Uzasadnienie, że te węzły są różne, nie jest łatwym zadaniem.
 Fox pokazał w~1952 roku, że ich dopełnienia nie są homeomorficzne.
 Suma przeciwnie skręconych trójlistników jest plastrowa, natomiast tak samo skręconych nie jest.
+\index{węzeł!plastrowy}
 (To jedno z niewielu miejsc, gdzie nomenklatura pochodzi od żeglarzy: z~angielskiego \emph{granny knot, square knot}.)
 
 Warunku, by zszywające łuki nie przecinały diagramów, nie można pominąć: Cromwell w~\cite[s.90]{cromwell04} pokazuje przykład dwóch niewęzłów, z~których otrzymano niepoprawnie dwie różne sumy, $6_1$ oraz $8_{20}$.
@@ -289,7 +291,7 @@ The Murasugi sum of Seifert surfaces was introduced originally in [Murasugi 1958
 % TODO: \textbf{W topologii rozważa się podobną operację dla dwóch $n$-wymiarowych rozmaitości: z~każdej z nich usuwa się kulę, po czym skleja wzdłuż brzegu kuli. Kiedy zajmujemy się węzłami, nie interesuje nas jednak struktura rozmaitości (gdyż każdy węzeł jest równoważny z okręgiem), ale zanurzenie w~otaczającą przestrzeń.}
 
 \begin{proposition}
-    Suma spójna jest dobrze określonym działaniem.
+    Suma spójna węzłów jest dobrze określonym działaniem.
 \end{proposition}
 
 Suma spójna nie jest dobrze określona dla splotów:
@@ -318,6 +320,7 @@ Dużo później pokażemy, że działaniu $\shrap$ brakuje elementów przeciwnyc
 
 \begin{proof}[Niedowód]
     Technika ta zwana jest szwindlem Mazura.
+    \index{szwindel Mazura}
     Załóżmy, że $K \shrap L = \Unknot$ i~dopuśćmy wyjątkowo węzły dzikie.
     Skonstruujmy sumę $K \shrap L \shrap K \shrap \ldots$,
     przy czym kolejne składniki powinny zmniejszać się,
@@ -349,6 +352,7 @@ albo osłabiając definicję węzłów równoważnych.
 Drugi pomysł jest dużo lepszy niż pierwszy.
 Na początku lat pięćdziesiątych J. Milnor wprowadził do matematyki pojęcie zgodności
 (z angielskiego \emph{concordance}), które zastąpiło zwykłą równoważność.
+\index{węzeł!zgodny}
 Element neutralny nowej grupy to węzły plastrowe, ich opis leży w~sekcji \ref{sec:slice}.
 Zagadnienia te zakorzenione są w~czterowymiarowej topologii.
 
