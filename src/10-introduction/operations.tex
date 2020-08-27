@@ -109,6 +109,20 @@ ale Hoste (Thistlethwaite?) znalazł w~1998 kontrprzykład o~piętnastu skrzyżo
 Jest on jedynym znanym nam dzisiaj.
 Hipoteza Taita jest prawdziwa dla węzłów pierwszych, alternujących.
 
+\begin{proposition}[10.4.4 w \cite{kawauchi96}]
+    Niech $K$ będzie węzłem zwierciadlanym.
+    Wtedy
+    \begin{align}
+        V(t) & = V(1/t) \\
+        P(a, z) & = P(1/a, z) \\
+        F(a, z) & = F(1/a, z),
+    \end{align}
+    gdzie $\jones, P, F$ oznacza kolejno wielomian Jonesa, HOMFLY oraz Kauffmana.
+    Równość $\conway(z) = \conway(-z)$ zachodzi dla wszystkich węzłów, zwierciadlanych lub nie.
+
+    Patrz fakt \ref{cor:joines_of_amphicheiral}.
+\end{proposition}
+
 Poniższa tabela oparta jest (kolejno) o~ciągi
 \href{https://oeis.org/A051766}{51766},
 \href{https://oeis.org/A051769}{51769},
@@ -131,6 +145,14 @@ z bazy danych ``The On-Line Encyclopedia of Integer Sequences'' (OEIS).
     \end{tabular}
     \caption{Liczba węzłów o~poszczególnych typach symetrii}
 \end{table}
+
+\begin{tobedone}[Kawauchi, definicja 10.3.2]
+    Węzeł $K \subseteq S^3$ jest silnie odwracalny, jeśli istnieje inwolucja pary $(S^3, K)$ która zachowuje orientację sfery, ale odwraca orientację węzła.
+\end{tobedone}
+
+Węzeł silnie odwracalny jest odwracalny, ale nie vice versa (Hartley 1980, Whitten 1981).
+Chyba, że ograniczymy się do węzłów hiperbolicznych (Kawauchi proposition 10.3.3, cf. 3.2.11).
+Bycie silnie odwracalnym nie narzuca żadnych ograniczeń na wielomian Alexandera (odniesienie do $u = 1$?), patrz Sakai 1983.
 
 \subsection{Węzły okresowe}
 Można wyróżnić jeszcze jeden rodzaj symetrii.
