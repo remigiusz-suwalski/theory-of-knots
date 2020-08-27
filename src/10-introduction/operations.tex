@@ -132,6 +132,7 @@ z bazy danych ``The On-Line Encyclopedia of Integer Sequences'' (OEIS).
     \caption{Liczba węzłów o~poszczególnych typach symetrii}
 \end{table}
 
+\subsection{Węzły okresowe}
 Można wyróżnić jeszcze jeden rodzaj symetrii.
 
 \begin{definition}
@@ -140,11 +141,24 @@ Można wyróżnić jeszcze jeden rodzaj symetrii.
     Węzeł $K$ nazywamy $n$-okresowym, jeśli istnieje obrót $f \colon \R^3 \to \R^3$ o~kąt $2\pi/n$ wokół pewnej prostej $l$, rozłącznej z~węzłem, taki że $f(K) = K$.
 \end{definition}
 
-Trójlistnik jest 3-okresowy, węzeł $5_1$ 5-okresowy (widać to na standardowym diagramie) i~2-okresowy.
-Tę drugą symetrię można dostrzec na diagramie realizującym indeks mostowy.
+Zamiast obrotów można rozpatrywać dowolne odwzorowania okresowe $f \colon S^3 \to S^3$, których zbiór punktów stałych jest rozłączny z węzłem $K$, homeomorficzny z $S^1$ oraz które trzymają węzeł $K$ w miejscu, ale dostaje się wtedy dokładnie taką samą klasę węzłów.
+\index{hipoteza!Smitha}
+Wynika to z hipotezy Smitha, otrzymanej z połączenia głębokich teorii dotyczących geometrii i topologii 3-rozmaitości.
+% Kawauchi, ćwiczenie 10.1.10
+% Morgan-Bass 1984
 
 \begin{proposition}
     Zbiór wszystkich okresów jest niezmiennikiem węzłów.
+\end{proposition}
+
+Nieodwracalny węzeł $8_{17}$ nie posiada żadnych okresów.
+% ćwiczenie 10.1.5 w Kawauchi
+Węzeł $5_1$ 5-okresowy, co widać na standardowym diagramie, oraz 2-okresowy, tę drugą symetrię można dostrzec na diagramie realizującym indeks mostowy.
+Trójlistnik ma dokładnie dwa okresy, $2$ i~$3$.
+Ogólniej, jak głosi Kawauchi \cite[ćwiczenie 10.1.9]{kawauchi96}:
+
+\begin{proposition}
+    Jedynymi okresami węzła $(p, q)$-torusowego są dzielniki liczb $p$ oraz $q$.
 \end{proposition}
 
 Z~każdym węzłem okresowym związany jest inny, prostszy węzeł.
