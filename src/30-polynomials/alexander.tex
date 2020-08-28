@@ -1,5 +1,4 @@
-\section{Wielomian Alexandera} % (fold)
-
+\section{Wielomian Alexandera}
 Większość niezmienników, jakie dotąd widzieliśmy, przypisuje każdemu węzłowi lub splotowi pewną liczbę całkowitą: niezmienniki z pierwszego rozdziału, liczba kolorowań, wyznacznik czy też defekt są właśnie takie.
 Poznamy teraz wielomian, opisany po raz pierwszy przez Jamesa Waddella Alexandera w~1923 roku \cite{alexander23}.
 Przez blisko sześć dekad pozostał on jedynym wielomianowym niezmiennikiem węzłów.
@@ -116,7 +115,7 @@ Nie są one warunkami wystarczającymi, jak odkrył ponad ćwierć wieku późni
 \end{equation}
 spełnia warunki Torresa, ale nie jest wielomianem Alexandera.
 
-Wielomian Alexandera nie odróżnia luster i~odwrotności od wyjściowych węzłów:
+Wielomian Alexandera nie odróżnia luster i~rewersów od wyjściowych węzłów:
 
 \begin{proposition}
     Niech $L$ będzie zorientowanym splotem.
@@ -139,7 +138,7 @@ Na przykład $11_{471} = 11n_{34}$, $11_{473} = 11n_{42}$ albo $(-3, 5, 7)$-prec
 \begin{proposition}
     \label{prp:alexander_determinant}
     Niech $L$ będzie zorientowanym splotem.
-    Wtedy $\alexander_L(-1) = \pm \det L$.
+    Wtedy $|\alexander_L(-1)| = \det L$.
 \end{proposition}
 
 \begin{proof}
@@ -148,11 +147,15 @@ Na przykład $11_{471} = 11n_{34}$, $11_{473} = 11n_{42}$ albo $(-3, 5, 7)$-prec
 
 \begin{proposition}
     \label{prp:alexander_multiplicative}
-    Jeśli $J, K$ są zorientowanymi węzłami, to $\alexander_{J \shrap K}(t) \equiv \alexander_J(t) \alexander_K(t)$.
+    Niech $K_1, K_2$ będą zorientowanymi węzłami.
+    Wtedy
+    \begin{equation}
+        \alexander_{K_1 \shrap K_2}(t) \equiv \alexander_{K_1}(t) \alexander_{K_2}(t)
+    \end{equation}
 \end{proposition}
 
 \begin{proof}
-    Wybierzmy poniższe diagramy dla węzłów $J$ oraz $K$:
+    Wybierzmy poniższe diagramy dla węzłów $K_1$ oraz $K$:
 \begin{comment}
     \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.07]
     %\useasboundingbox (-5, -5) rectangle (5,5);
@@ -184,9 +187,9 @@ Na przykład $11_{471} = 11n_{34}$, $11_{473} = 11n_{42}$ albo $(-3, 5, 7)$-prec
     \end{tikzpicture}
 \]
 \end{comment}
-    Niech $A$ oraz $B$ oznaczają macierze otrzymane z~wielomianowych równań kolorujących dla $J$ oraz $K$ przez skreślenie skrajnie lewej kolumny i~górnego wiersza.
-    Wtedy $\alexander_J(t) = \det A$ oraz $\alexander_K(t) = \det B$.
-    Poniższy diagram przedstawia sumę $J \shrap K$:
+    Niech $A$ oraz $B$ oznaczają macierze otrzymane z~wielomianowych równań kolorujących dla $K_1$ oraz $K_2$ przez skreślenie skrajnie lewej kolumny i~górnego wiersza.
+    Wtedy $\alexander_{K_1}(t) = \det A$ oraz $\alexander_{K_2}(t) = \det B$.
+    Poniższy diagram przedstawia sumę $K_1 \shrap K_2$:
 
 \begin{comment}
 \[\begin{tikzpicture}[baseline=-0.65ex, scale=0.07]
@@ -219,11 +222,11 @@ Na przykład $11_{471} = 11n_{34}$, $11_{473} = 11n_{42}$ albo $(-3, 5, 7)$-prec
     \end{tikzpicture}\]
 \end{comment}
 
-    Uporządkujmy łuki na diagramie jako $x_0 = y_0$, $x_1, \ldots, x_m$, $y_1, \ldots, y_n$, $z$; skrzyżowania: $0, 1, \ldots, m$ (z $J$), $1, \ldots, n$ (z $K$), $\zeta$.
-    Wielomianowe równanie kolorujące dla $J \shrap K$ nad skrzyżowaniami $1, \ldots, m$ ($1, \ldots, n$) są takie same, jak przed dodaniem do siebie węzłów.
+    Uporządkujmy łuki na diagramie jako $x_0 = y_0$, $x_1, \ldots, x_m$, $y_1, \ldots, y_n$, $z$; skrzyżowania: $0, 1, \ldots, m$ (z $K_1$), $1, \ldots, n$ (z $K_2$), $\zeta$.
+    Wielomianowe równanie kolorujące dla $K_1 \shrap K_2$ nad skrzyżowaniami $1, \ldots, m$ ($1, \ldots, n$) są takie same, jak przed dodaniem do siebie węzłów.
     Nad skrzyżowaniem $\zeta$ równanie orzeka, że $(1-t)y_0+t z-y_n=0$.
 
-    Wynika stąd, że $\alexander_{J \shrap K}(t)$ jest wyznacznikiem macierzy
+    Wynika stąd, że $\alexander_{K_1 \shrap K_2}(t)$ jest wyznacznikiem macierzy
     \begin{align*}
         M &= \left(\begin{array}{cc|cc|c}
             & & & & \\
@@ -236,7 +239,7 @@ Na przykład $11_{471} = 11n_{34}$, $11_{473} = 11n_{42}$ albo $(-3, 5, 7)$-prec
     \end{align*}
 
     Skreśliliśmy lewą kolumnę oraz górny wiersz.
-    Zatem $\alexander_{J \shrap K}(t) = t^?\alexander_J(t) \alexander_K(t)$, jeśli nie pomyliliśmy się w~obliczeniach.
+    Zatem $\alexander_{K_1 \shrap K_2}(t) = t^?\alexander_{K_1}(t) \alexander_{K_2}(t)$, jeśli nie pomyliliśmy się w~obliczeniach.
 \end{proof}
 
 \begin{proposition}
@@ -316,6 +319,7 @@ Wady tej nie posiada wielomian Jonesa.
 Implikacja w drugą stronę jest fałszywa.
 Niech $\sigma_* = \sigma_{2} \sigma_{3}^{-2} \sigma_{2}$.
 Domknięcie warkocza $\sigma_{1} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_{1} \sigma_{3} \sigma_* \sigma_{3}$ nie jest rozszczepialne, ale jego wielomian Alexandera jest zerem.
+\index{warkocz}
 Warkocze poznamy w rozdziale piątym.
 
 % Wielomian Jonesa (zdefiniowany w~kolejnej sekcji) spełnia podobną równość.
@@ -340,7 +344,7 @@ Na $X$, a~przez to także na grupie homologii $H_1(X)$, działa automorfizm $t$,
 Jeśli posiada przedstawienie z~$r$ generatorami i~$s$ relacjami, gdzie $r \le s$, rozpatrzmy ideał generowany przez minory $r \times r$ macierzy prezentacji (jeśli nie, weźmy ideał zerowy).
 Alexander pokazał, że ideał ten zawsze jest niezerowy i~główny.
 
-% https://math.berkeley.edu/~hutching/teach/215b-2004/yu.pdf
-% TODO: \textbf{Definicja przy użyciu różniczek Foxa: https://math.berkeley.edu/hutching/teach/215b-2004/yu.pdf}
-
-% Koniec sekcji Wielomian Alexandera
+\begin{tobedone}
+    Definicja przy użyciu różniczek Foxa:
+    https://math.berkeley.edu/~hutching/teach/215b-2004/yu.pdf
+\end{tobedone}
