@@ -1,0 +1,34 @@
+\subsection{Węzły skręcone}
+\begin{definition}
+    \index{węzeł!skręcony}
+    \label{def:twist_knot}
+    Węzeł powstały przez $n$-krotne półskręcanie domkniętej pętli oraz splecienie końców nazywamy węzłem skręconym.
+\end{definition}
+
+Węzły skręcone to dokładnie towarzyszące niewęzłowi w~węzłach satelitarnych, tak zwane whiteheadowskie duble niewęzła.
+Wszystkie są odwracalne (ale tylko niewęzeł oraz ósemka są amfichiralne) i~mają liczbę gordyjską $1$, ponieważ wystarczy rozwiązać skrzyżowanie, które plotło końce.
+Każdy jest $2$-mostowy i~posiada zerową sygnaturę.
+Dalsze własności węzłów skręconych zależą od $n$, ilości półskrętów.
+Indeks skrzyżowaniowy wynosi $n + 2$.
+
+\begin{proposition}
+    Wielomianowymi niezmiennikami węzłów skręconych są:
+    \begin{align*}
+    (q+1)\jones(q) & = \begin{cases}
+        1+q^{-2}+q^{-n}-q^{-n-3} & n \mbox{ nieparzyste} \\
+        q^{3}+q-q^{3-n}+q^{-n} & n \mbox{ parzyste}
+    \end{cases} \\
+    2 \conway (z) & = \begin{cases}
+        (n+1) z^{2} + 2 & n \mbox{ nieparzyste} \\
+        2 - nz^2 & n \mbox{ parzyste}
+    \end{cases}
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    Niewęzeł oraz węzeł dokerski $6_1$ są jedynymi skręconymi węzłami plastrowymi.
+\end{proposition}
+
+\begin{proof}
+    \cite{casson86}.
+\end{proof}

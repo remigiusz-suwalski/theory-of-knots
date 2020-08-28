@@ -1,0 +1,54 @@
+\subsection{Węzły taśmowe}
+\begin{definition}
+    \index{węzeł!taśmowy}
+    Węzeł $K = f(S^1)$ będący brzegiem singularnego dysku $f \colon D \to S^3$ posiadającego następującą własność: każda przecinająca siebie składowa jest łukiem $A \subseteq f(D^2)$, dla którego $f^{-1}(A)$ składa się z~dwóch łuków w~$D^2$ (jeden z~nich jest wewnętrzny), nazywamy taśmowym.
+\end{definition}
+
+Jak pisze Kawauchi, mamy oczywiste wynikanie:
+
+\begin{proposition}
+    Każdy węzeł taśmowy jest plastrowy.
+\end{proposition}
+
+Dawno temu Fox zapytał, czy implikacja odwrotna także jest prawdziwa:
+
+\begin{conjecture}[slice-ribbon problem]
+    \index{hipoteza!plastrowo-taśmowa}
+    Czy każdy węzeł plastrowy jest taśmowy?
+\end{conjecture}
+
+Nie wiemy do dzisiaj.
+Lisca pokazał prawdziwość hipotezy dla węzłów 2-mostowych \cite{lisca07}, Greene oraz Jabuka zrobili to dla precli o trzech pasmach w \cite{greene11}.
+P. Teichner myśli o niej jako o~życzeniu, które uprościłoby pewne 4-wymiarowe problemy, gdyby było prawdziwe, ale Gompf, Scharlemann i Thompson zasugerowali w~\cite{gompf10} potencjalny kontrprzykład.
+
+%%% Kawauchi 157:
+\subsection{Węzły algebraicznie plastrowe}
+Węzeł, którego macierz Seiferta jest zerowo kobordantna, nazywamy plastrowym algebraicznie.
+Lokalnie płaską, zwartą, zorientowaną, właściwą powierzchnię $S$ w $B^4$ taką, że $K = \partial S$ jest węzłem w $\partial B^4 = S^3$ nazywamy izotropową, jeżeli istnieje lokalnie płaska, zwarta, zorientowana 3-podrozmaitość $M \subseteq B^4$, gdzie $S \subseteq \partial M$ oraz $F = \operatorname{cl} \partial M \setminus S$ jest powierzchnią Seiferta dla $K$ w $S^3$, zaś $S$ jest izotropowa w $M$.
+
+\begin{proposition}
+    Węzeł $K$ w~$S^3$ jest algebraicznie plastrowy dokładnie wtedy, gdy ogranicza izotropową powierzchnię $S$ w~kuli $B^4$.
+\end{proposition}
+
+\begin{corollary}
+    Niech $K$ będzie węzłem plastrowym.
+    Wtedy $K$ jest węzłem algebraicznie plastrowym.
+\end{corollary}
+
+\begin{proof}
+    \cite[s. 158]{kawauchi96}
+\end{proof}
+
+\begin{proposition}
+    \label{prp:cobordant_to_algebraic_is_algebraic}
+    Niech $K$ będzie węzłem zgodnym z węzłem algebraicznie plastrowym.
+    Wtedy każda macierz Seiferta dowolnej powierzchni Seiferta $K$ jest zerowo kobordantna.
+    W szczególności, $K$ jest węzłem algebraicznie plastrowym.
+\end{proposition}
+
+\begin{proof}
+    \cite[s. 159]{kawauchi96}
+\end{proof}
+
+% Theorem 1.3[Long 1984].A strongly positive amphicheiral knot is algebraicallyslice.
+% Theorem 1.4[Hartley and Kawauchi 1979].If K is strongly positive amphicheiral,the Alexander polynomial1Kis the square of a symmetric polynomial.
