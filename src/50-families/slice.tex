@@ -4,18 +4,27 @@ Węzły plastrowe i taśmowe oraz pojęcie kobordyzmu, które wkrótce opiszemy,
 Nie zapoznamy się z nią bliżej oraz nie podamy naszego ulubionego odniesienia do tego tematu w~literaturze, ponieważ sami nie rozumiemy go zbyt dobrze.
 Wszystko zaczęło się od artykułu \cite{fox66} Foxa, Milnora.
 
-\begin{definition}[płaski]
+%%% Kawauchi 155:
+
+\begin{definition}[płaski dysk]
     Niech $D \subseteq B^4$ będzie dyskiem posiadającym otoczenie $N$, kopię zbioru $D \times I
     ^2$, która przecina sferę $S^3$ dokładnie w $\partial D \times I^2$.
     Mówimy wtedy, że dysk $D$ jest płaski.
 \end{definition}
 
+\begin{tobedone}
+    Płaski? Lokalnie płaski?
+    \cite[s. 155]{kawauchi96}
+\end{tobedone}
+
 \begin{definition}[węzeł plastrowy]
     \index{węzeł!plastrowy}
     Niech $K \subseteq S^3$ będzie takim węzłem, że w kuli $B^4$ istnieje płaski dysk $D$ taki, że $K = \partial D = D \cap S^3$.
+    Wtedy $K$ nazywamy węzłem plastrowym.
 \end{definition}
 
-Następujące węzły o~mniej niż jedenastu skrzyżowaniach są plastrowe: $6_1$, $8_{20}$, $8_{8}$, $8_{9}$, $9_{27}$, $9_{41}$, $9_{46}$, $10_{22}$, $10_{35}$, $10_{3}$, $10_{42}$, $10_{48}$, $10_{75}$, $10_{87}$, $10_{99}$, $10_{123}$, $10_{129}$, $10_{137}$, $10_{140}$, $10_{153}$, $10_{155}$, $10_{155}$.
+Następujące węzły o~mniej niż jedenastu skrzyżowaniach są plastrowe: $6_1$, $8_{8}$, $8_{9}$, $8_{20}$, $9_{27}$, $9_{41}$, $9_{46}$, $10_{3}$, $10_{22}$, $10_{35}$, $10_{42}$, $10_{48}$, $10_{75}$, $10_{87}$, $10_{99}$, $10_{123}$, $10_{129}$, $10_{137}$, $10_{140}$, $10_{153}$ oraz $10_{155}$.
+\index{węzeł!Conwaya}
 Wśród pierwszych węzłów do dwunastu skrzyżowań najdłużej opierał się węzeł Conwaya, aż Piccirillo pokazała w~\cite{piccirillo20}, że nie jest plastrowy.
 
 \begin{proposition}
@@ -27,24 +36,8 @@ Wśród pierwszych węzłów do dwunastu skrzyżowań najdłużej opierał się 
     Pierwszy był Fox z Milnorem \cite{fox66}, patrz także lemat 12.1.2.2 w \cite{kawauchi96}.
 \end{proof}
 
-Istnieje konkurencyjna definicja węzłów plastrowych.
-Dwa sploty $K, L \subseteq S^n$ nazywamy zgodnymi (z angielskiego \emph{concordant}), jeśli istnieje włożenie $f \colon K \times [0,1] \to S^n \times [0,1]$ spełniające dwa warunki: $f(K \times 0) = K \times 0$ oraz $f(K \times 1) = L \times 1$.
-
-\begin{definition}
-    Węzeł zgodny z~niewęzłem nazywamy plastrowym.
-\end{definition}
-
-Zgodność jest relacją równoważności, słabszą od izotopii, ale mocniejszą od homotopii.
-W zbiorze jej klas abstrakcji, oznaczanym przez $C^1$, można zadać strukturę grupy abelowej.
-%izomorficznej z~$\Z^\infty \oplus (\Z/2)^\infty \oplus (\Z/4)^\infty$.
-\index{grupa!zgodności}
-Działanie dane jest wzorem $[K] + [L] = [K \shrap L]$; niewęzeł stanowi element neutralny.
-Elementem odwrotnym do $[K]$ jest $[mrK]$.
-
-% TODO: \textbf{Livingston: A SURVEY OF CLASSICAL KNOT CONCORDANCE}. The application of abelian knot invariants (those determined by the cohomology of abelian covers or, equivalently, by the Seifert form) to concordance culminated in 1969 with Levine’s classification of higher dimensional knot concordance, [62, 63], which applied in the classical dimension to give a surjective homomorphism $\varphi \colon C \to \Z^\infty \oplus \Z_2^\infty \oplus \Z_4^\infty$. In 1975 Casson and Gordon [8, 9] proved that Levine’s homomorphism is not an isomorphism, constructing nontrivial elements in the kernel, and Jiang expanded on this to show that the kernel contains a subgroup isomorphic to $\Z_2^\infty$. More significant, Freedman proved that all knots with trivial Alexander polynomial are in fact slice in the topological locally flat category.
-
 \begin{proposition}
-    Albo wszystkie trzy węzły $K, L, K \shrap L$ są plastrowe, albo co najwyżej jeden z~nich.
+    Albo wszystkie trzy węzły $K_1, K_2, K_1 \shrap K_2$ są plastrowe, albo co najwyżej jeden z~nich.
 \end{proposition}
 
 \begin{proof}[Niedowód]
@@ -70,6 +63,22 @@ Pierwszym poważnym wynikiem z dziedziny teorii węzłów plastrowych, pochodzą
 Ten prosty test stwierdza, że 2743 spośród 2977 węzłów o mniej niż 13 skrzyżowaniach nie jest plastrowych.
 
 \begin{proposition}
+    \label{prp:slice_signature}
+    Niech $K$ będzie węzłem plastrowym.
+    Wtedy $\sigma(K) = 0$.
+\end{proposition}
+
+\begin{tobedone}[Szkic dowodu]
+    Ustalmy odwzorowanie $f$, które jest niesingularne, symetryczne i~dwuliniowe, z~przestrzeni $V$ o~wymiarze $2n$ oraz wyznaczoną przez nie formę kwadratową.
+    Jeśli znika ona na podprzestrzeni wymiaru $n$, to ma zerową sygnaturę.
+    dowód znaleziony w~podręczniku Lickorisha.
+    Patrz też twierdzenie 8.8 z~artykułu \cite{murasugi65}.
+    Praca "Infinite Order Amphicheiral Knots". (Charles Livingston, 2001) -- chyba nie?
+\end{tobedone}
+
+Test ten eliminuje kolejne 45 węzłów poniżej 13 skrzyżowań.
+
+\begin{proposition}
     Niech $K$ będzie węzłem plastrowym.
     Wtedy $\operatorname{Arf} K = 0$.
 \end{proposition}
@@ -79,20 +88,161 @@ Ten prosty test stwierdza, że 2743 spośród 2977 węzłów o mniej niż 13 skr
     Wynika stąd przystawanie $\det K \equiv 1 \mod 8$, które w~połączeniu z warunkiem Murasugiego (fakt \ref{prp:arf_murasugi}) daje $\operatorname{Arf} K = 0$.
 \end{proof}
 
+%%% Kawauchi 156:
+
+Wprowadzimy teraz relację równoważności na zbiorze węzłów, która prowadzi przez fakt \ref{prp:cobordant_iff_sum_slice} do alternatywnej definicji węzłów plastrowych.
+
+\begin{definition}[zgodność]
+    Dwa węzły $K_0, K_1$ takie, że istnieje lokalnie płaski, zorientowany, właściwy pierścień $C$ taki, że $C \cap S^3 \times i = K_i \times i$, nazywamy zgodnymi.
+    
+    Dwa sploty $K, L \subseteq S^n$ nazywamy zgodnymi (z angielskiego \emph{concordant}), jeśli istnieje włożenie $f \colon K \times [0,1] \to S^n \times [0,1]$ spełniające dwa warunki: $f(K \times 0) = K \times 0$ oraz $f(K \times 1) = L \times 1$.
+\end{definition}
+
+Zgodność to zazwyczaj concordance, rzadziej używa się terminu cobordism.
+
 \begin{proposition}
-    \label{prp:slice_signature}
-    Niech $K$ będzie węzłem plastrowym.
-    Wtedy $\sigma(K) = 0$.
+    \label{prp:cobordant_iff_sum_slice}
+    Dwa węzły $K_1, K_2$ są zgodne wtedy i tylko wtedy, gdy suma $mr K_0 \shrap K_1$ jest plastrowa.
 \end{proposition}
 
-\begin{proof}[Szkic dowodu]
-    Ustalmy odwzorowanie $f$, które jest niesingularne, symetryczne i~dwuliniowe, z~przestrzeni $V$ o~wymiarze $2n$ oraz wyznaczoną przez nie formę kwadratową.
-    Jeśli znika ona na podprzestrzeni wymiaru $n$, to ma zerową sygnaturę.
-    % TODO: \textbf{(dowód znaleziony w~podręczniku Lickorisha). Patrz też twierdzenie 8.8 z~artykułu \cite{murasugi65}. Praca "Infinite Order Amphicheiral Knots". (Charles Livingston, 2001) -- chyba nie?}
+\begin{proof}
+    Ćwiczenie 12.1.3 w \cite{kawauchi96}.
 \end{proof}
 
-Test ten eliminuje kolejne 45 węzłów poniżej 13 skrzyżowań.
+\begin{definition}
+    Węzeł zgodny z~niewęzłem nazywamy plastrowym.
+\end{definition}
 
+,,Bycie zgodnym'' jest relacją równoważności.
+\textbf{Zgodność jest relacją równoważności, słabszą od izotopii, ale mocniejszą od homotopii.}
+Klasę abstrakcji węzła $K$ oznaczamy przez $[K]$.
+Iloraz zbioru węzłów przez tę relację, $C^1$, wyposażony w działanie
+\begin{equation}
+    [K_1] + [K_2] = [K_1 \shrap K_2]
+\end{equation}
+staje się grupą abelową, której elementem neutralnym jest klasa abstrakcji niewęzła, zaś elementem przeciwnym do $[K]$ jest $[mr K]$.
+\index{grupa!zgodności}
+Nazywamy ją grupą zgodności.
+
+%%% Kawauchi 157:
+
+Niech $\Theta$ oznacza rodzinę macierzy Seiferta, kwadratowych macierzy $V$ o całkowitych wyrazach takich, że $\det (V - V^T) = 1$.
+Mówimy, macierz $V \in \Theta$ jest zerowo kobordantna, jeśli istnieje całkowitoliczbowa macierz $P$ o~wyznaczniku równym $\pm 1$, że
+\begin{equation}
+    V = P \begin{pmatrix} 0 & V_{21} \\ V_{12} & V_{22} \end{pmatrix} P^{-1}
+\end{equation}
+Takie macierze nazywamy unimodularnie sprzężonymi.
+
+\begin{proposition}
+    Niech $V \in \Theta$ będzie macierzą zerowo kobordantną.
+    Wtedy istnieje plastrowy węzeł $K$, którego macierzą Seiferta jest $V$.
+\end{proposition}
+
+\begin{proof}
+    \cite[proposition 12.2.1]{kawauchi96}
+\end{proof}
+
+Przez analogię, o dwóch macierzach $V_1, V_2 \in \Theta$ mówimy, że są kobordantne, jeżeli $(-V_1) \oplus V_2$ jest zerowo kobordantna.
+Kobordyzm jest znowu relacją równoważności, iloraz $\Theta$ przez nią oznaczamy przez $G_-$, a elementy tego ilorazu jako $[V]$.
+Wyposażony w działanie $[V_1] + [V_2] = [V_1 \oplus V_2]$ staje się grupą abelową.
+
+\begin{proposition}
+    % Kawauchi 12.2.8
+    Odwzorowanie $\psi \colon C^1 \to G_-$ posyłające klasę abstrakcji węzła w klasę abstrakcji jego macierzy Seiferta jest dobrze określonym epimorfizmem.
+\end{proposition}
+
+\begin{proof}
+    Funkcja $\psi$ jest dobrze określona na mocy faktu \ref{prp:cobordant_to_algebraic_is_algebraic}, jest homomorfizmem jak wynika z dowodu faktu \ref{prp:signature_additive}.
+    To, że jest ,,na'', jest wnioskiem z \cite[s. 62]{kawauchi96}
+\end{proof}
+
+Funkcję $\psi$ rozpatrywał Levine \cite{levine69}.
+Casson, Gordon pokazali w latach 70., że jej jądro jest niepuste \cite{gordon78}.
+
+\begin{proposition}
+    $G_- \cong \Z^\infty \oplus (\Z/4\Z)^\infty \oplus (\Z/2\Z)^\infty$.
+\end{proposition}
+
+Dowód tego faktu jest pominięty nawet w pracy Kawauchiego
+% \alexander(t) = 1 => K plastowy (w TOP) ale niekoniecznie (w PL)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%izomorficznej z~$\Z^\infty \oplus (\Z/2)^\infty \oplus (\Z/4)^\infty$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% TODO: \textbf{Livingston: A SURVEY OF CLASSICAL KNOT CONCORDANCE}. The application of abelian knot invariants (those determined by the cohomology of abelian covers or, equivalently, by the Seifert form) to concordance culminated in 1969 with Levine’s classification of higher dimensional knot concordance, [62, 63], which applied in the classical dimension to give a surjective homomorphism $\varphi \colon C \to \Z^\infty \oplus \Z_2^\infty \oplus \Z_4^\infty$. In 1975 Casson and Gordon [8, 9] proved that Levine’s homomorphism is not an isomorphism, constructing nontrivial elements in the kernel, and Jiang expanded on this to show that the kernel contains a subgroup isomorphic to $\Z_2^\infty$. More significant, Freedman proved that all knots with trivial Alexander polynomial are in fact slice in the topological locally flat category.
+
+
+\subsection{Węzły taśmowe}
 \begin{definition}
     \index{węzeł!taśmowy}
     Węzeł $K = f(S^1)$ będący brzegiem singularnego dysku $f \colon D \to S^3$ posiadającego następującą własność: każda przecinająca siebie składowa jest łukiem $A \subseteq f(D^2)$, dla którego $f^{-1}(A)$ składa się z~dwóch łuków w~$D^2$ (jeden z~nich jest wewnętrzny), nazywamy taśmowym.
@@ -115,17 +265,36 @@ Nie wiemy do dzisiaj.
 Lisca pokazał prawdziwość hipotezy dla węzłów 2-mostowych \cite{lisca07}, Greene oraz Jabuka zrobili to dla precli o trzech pasmach w \cite{greene11}.
 P. Teichner myśli o niej jako o~życzeniu, które uprościłoby pewne 4-wymiarowe problemy, gdyby było prawdziwe, ale Gompf, Scharlemann i Thompson zasugerowali w~\cite{gompf10} potencjalny kontrprzykład.
 
+%%% Kawauchi 157:
+\subsection{Węzły algebraicznie plastrowe}
+Węzeł, którego macierz Seiferta jest zerowo kobordantna, nazywamy plastrowym algebraicznie.
+Lokalnie płaską, zwartą, zorientowaną, właściwą powierzchnię $S$ w $B^4$ taką, że $K = \partial S$ jest węzłem w $\partial B^4 = S^3$ nazywamy izotropową, jeżeli istnieje lokalnie płaska, zwarta, zorientowana 3-podrozmaitość $M \subseteq B^4$, gdzie $S \subseteq \partial M$ oraz $F = \operatorname{cl} \partial M \setminus S$ jest powierzchnią Seiferta dla $K$ w $S^3$, zaś $S$ jest izotropowa w $M$.
+
 \begin{proposition}
-    Każda macierz Seiferta $V$ (całkowitoliczbowa, kwadratowa, taka że $\det (V - V^t) = 1$), która jest unimodularnie sprzężona: istnieje całkowitoliczbowa macierz $P$ o~wyznaczniku równym $\pm 1$, że
-    \begin{equation}
-        V = P \begin{pmatrix} 0 & V_{21} \\ V_{12} & V_{22} \end{pmatrix} P^{-1}
-    \end{equation}
-    stanowi macierz Seiferta pewnego węzła plastrowego.
+    Węzeł $K$ w~$S^3$ jest algebraicznie plastrowy dokładnie wtedy, gdy ogranicza izotropową powierzchnię $S$ w~kuli $B^4$.
 \end{proposition}
 
-Takie węzły nazywamy plastrowymi algebraicznie.
-Węzeł $K$ w~$S^3$ jest algebraicznie plastrowy dokładnie wtedy, gdy ogranicza izotropiczną powierzchnię w~kuli $B^4$.
-Więcej informacji w~podręczniku Kawauchiego.
+\begin{corollary}
+    Niech $K$ będzie węzłem plastrowym.
+    Wtedy $K$ jest węzłem algebraicznie plastrowym.
+\end{corollary}
+
+\begin{proof}
+    \cite[s. 158]{kawauchi96}
+\end{proof}
+
+\begin{proposition}
+    \label{prp:cobordant_to_algebraic_is_algebraic}
+    Niech $K$ będzie węzłem zgodnym z węzłem algebraicznie plastrowym.
+    Wtedy każda macierz Seiferta dowolnej powierzchni Seiferta $K$ jest zerowo kobordantna.
+    W szczególności, $K$ jest węzłem algebraicznie plastrowym.
+\end{proposition}
+
+\begin{proof}
+    \cite[s. 159]{kawauchi96}
+\end{proof}
+
+Więcej informacji w~podręczniku Kawauchiego \cite[s. 154-169]{kawauchi96}.
 
 % Theorem 1.3[Long 1984].A strongly positive amphicheiral knot is algebraicallyslice.
 % Theorem 1.4[Hartley and Kawauchi 1979].If K is strongly positive amphicheiral,the Alexander polynomial1Kis the square of a symmetric polynomial.
