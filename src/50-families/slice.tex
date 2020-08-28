@@ -113,16 +113,22 @@ Zgodność to zazwyczaj concordance, rzadziej używa się terminu cobordism.
     Węzeł zgodny z~niewęzłem nazywamy plastrowym.
 \end{definition}
 
-,,Bycie zgodnym'' jest relacją równoważności.
-\textbf{Zgodność jest relacją równoważności, słabszą od izotopii, ale mocniejszą od homotopii.}
+,,Bycie zgodnym'' jest relacją równoważności, słabszą od bycia izotopijnym.
+% ale mocniejszą od homotopii?
+% izotopia: https://encyclopediaofmath.org/wiki/Cobordism_of_knots
 Klasę abstrakcji węzła $K$ oznaczamy przez $[K]$.
-Iloraz zbioru węzłów przez tę relację, $C^1$, wyposażony w działanie
-\begin{equation}
-    [K_1] + [K_2] = [K_1 \shrap K_2]
-\end{equation}
-staje się grupą abelową, której elementem neutralnym jest klasa abstrakcji niewęzła, zaś elementem przeciwnym do $[K]$ jest $[mr K]$.
-\index{grupa!zgodności}
-Nazywamy ją grupą zgodności.
+
+\begin{definition}[grupa zgodności]
+    \index{grupa!zgodności}
+    Niech $C^1$ oznacza iloraz zbioru wszystkich węzłów przez relację zgodności.
+    Zbiór $C^1$ wyposażony w~działanie
+    \begin{equation}
+        [K_1] + [K_2] = [K_1 \shrap K_2]
+    \end{equation}
+    staje się grupą abelową, nazywaną grupą zgodności.
+    Jej elementem eneutralnym jest klasa abstrakcji niewęzła.
+    Elementem przeciwnym do $[K]$ jest $[mr K]$.
+\end{definition}
 
 %%% Kawauchi 157:
 
@@ -163,84 +169,13 @@ Casson, Gordon pokazali w latach 70., że jej jądro jest niepuste \cite{gordon7
     $G_- \cong \Z^\infty \oplus (\Z/4\Z)^\infty \oplus (\Z/2\Z)^\infty$.
 \end{proposition}
 
-Dowód tego faktu jest pominięty nawet w pracy Kawauchiego
+% Dowód tego faktu jest pominięty nawet w pracy Kawauchiego
+
 % \alexander(t) = 1 => K plastowy (w TOP) ale niekoniecznie (w PL)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%izomorficznej z~$\Z^\infty \oplus (\Z/2)^\infty \oplus (\Z/4)^\infty$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+% Kawauchi, supplementary notes for Chapter 12: for a knot K with trivial Alexander polynomial it was shown by Freedman 1982 that K is necessarily a slice knot in TOP category but by...
 
 % TODO: \textbf{Livingston: A SURVEY OF CLASSICAL KNOT CONCORDANCE}. The application of abelian knot invariants (those determined by the cohomology of abelian covers or, equivalently, by the Seifert form) to concordance culminated in 1969 with Levine’s classification of higher dimensional knot concordance, [62, 63], which applied in the classical dimension to give a surjective homomorphism $\varphi \colon C \to \Z^\infty \oplus \Z_2^\infty \oplus \Z_4^\infty$. In 1975 Casson and Gordon [8, 9] proved that Levine’s homomorphism is not an isomorphism, constructing nontrivial elements in the kernel, and Jiang expanded on this to show that the kernel contains a subgroup isomorphic to $\Z_2^\infty$. More significant, Freedman proved that all knots with trivial Alexander polynomial are in fact slice in the topological locally flat category.
-
 
 \subsection{Węzły taśmowe}
 \begin{definition}
@@ -293,8 +228,6 @@ Lokalnie płaską, zwartą, zorientowaną, właściwą powierzchnię $S$ w $B^4$
 \begin{proof}
     \cite[s. 159]{kawauchi96}
 \end{proof}
-
-Więcej informacji w~podręczniku Kawauchiego \cite[s. 154-169]{kawauchi96}.
 
 % Theorem 1.3[Long 1984].A strongly positive amphicheiral knot is algebraicallyslice.
 % Theorem 1.4[Hartley and Kawauchi 1979].If K is strongly positive amphicheiral,the Alexander polynomial1Kis the square of a symmetric polynomial.
