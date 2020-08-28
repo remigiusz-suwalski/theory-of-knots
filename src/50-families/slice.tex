@@ -7,8 +7,7 @@ Wszystko zaczęło się od artykułu \cite{fox66} Foxa, Milnora.
 %%% Kawauchi 155:
 
 \begin{definition}[płaski dysk]
-    Niech $D \subseteq B^4$ będzie dyskiem posiadającym otoczenie $N$, kopię zbioru $D \times I
-    ^2$, która przecina sferę $S^3$ dokładnie w $\partial D \times I^2$.
+    Niech $D \subseteq B^4$ będzie dyskiem posiadającym otoczenie $N$, kopię zbioru $D \times I^2$, która przecina sferę $S^3$ dokładnie w $\partial D \times I^2$.
     Mówimy wtedy, że dysk $D$ jest płaski.
 \end{definition}
 
@@ -53,6 +52,7 @@ Pierwszym poważnym wynikiem z dziedziny teorii węzłów plastrowych, pochodzą
 \end{proposition}
 
 \begin{corollary}
+    \index{wyznacznik}
     Wyznacznik węzła plastrowego jest kwadratem.
 \end{corollary}
 
@@ -63,6 +63,7 @@ Pierwszym poważnym wynikiem z dziedziny teorii węzłów plastrowych, pochodzą
 Ten prosty test stwierdza, że 2743 spośród 2977 węzłów o mniej niż 13 skrzyżowaniach nie jest plastrowych.
 
 \begin{proposition}
+    \index{sygnatura}
     \label{prp:slice_signature}
     Niech $K$ będzie węzłem plastrowym.
     Wtedy $\sigma(K) = 0$.
@@ -79,6 +80,7 @@ Ten prosty test stwierdza, że 2743 spośród 2977 węzłów o mniej niż 13 skr
 Test ten eliminuje kolejne 45 węzłów poniżej 13 skrzyżowań.
 
 \begin{proposition}
+    \index{niezmiennik!Arfa}
     Niech $K$ będzie węzłem plastrowym.
     Wtedy $\operatorname{Arf} K = 0$.
 \end{proposition}
@@ -88,94 +90,19 @@ Test ten eliminuje kolejne 45 węzłów poniżej 13 skrzyżowań.
     Wynika stąd przystawanie $\det K \equiv 1 \mod 8$, które w~połączeniu z warunkiem Murasugiego (fakt \ref{prp:arf_murasugi}) daje $\operatorname{Arf} K = 0$.
 \end{proof}
 
-%%% Kawauchi 156:
-
-Wprowadzimy teraz relację równoważności na zbiorze węzłów, która prowadzi przez fakt \ref{prp:cobordant_iff_sum_slice} do alternatywnej definicji węzłów plastrowych.
-
-\begin{definition}[zgodność]
-    Dwa węzły $K_0, K_1$ takie, że istnieje lokalnie płaski, zorientowany, właściwy pierścień $C$ taki, że $C \cap S^3 \times i = K_i \times i$, nazywamy zgodnymi.
-    
-    Dwa sploty $K, L \subseteq S^n$ nazywamy zgodnymi (z angielskiego \emph{concordant}), jeśli istnieje włożenie $f \colon K \times [0,1] \to S^n \times [0,1]$ spełniające dwa warunki: $f(K \times 0) = K \times 0$ oraz $f(K \times 1) = L \times 1$.
-\end{definition}
-
-Zgodność to zazwyczaj concordance, rzadziej używa się terminu cobordism.
-
 \begin{proposition}
-    \label{prp:cobordant_iff_sum_slice}
-    Dwa węzły $K_1, K_2$ są zgodne wtedy i tylko wtedy, gdy suma $mr K_0 \shrap K_1$ jest plastrowa.
+    Niech $K$ będzie węzłem w kategorii TOP.
+    Jeżeli jego wielomian Alexandera jest trywialny: $\alexander_K(t) \equiv 1$, to węzeł $K$ jest plastrowy.
 \end{proposition}
 
 \begin{proof}
-    Ćwiczenie 12.1.3 w \cite{kawauchi96}.
+    Freedman w \cite[tw. 1.13]{freedman82}.
 \end{proof}
 
-\begin{definition}
-    Węzeł zgodny z~niewęzłem nazywamy plastrowym.
-\end{definition}
+Jak wynika z twierdzenia Donaldsona, wynik przestaje być prawdziwy po przejściu kategorii PL.
+Dość klarownie różnicę między tymi dwiema kategoriami tłumaczy Gompf w~\cite{gompf86}.  
 
-,,Bycie zgodnym'' jest relacją równoważności, słabszą od bycia izotopijnym.
-% ale mocniejszą od homotopii?
-% izotopia: https://encyclopediaofmath.org/wiki/Cobordism_of_knots
-Klasę abstrakcji węzła $K$ oznaczamy przez $[K]$.
-
-\begin{definition}[grupa zgodności]
-    \index{grupa!zgodności}
-    Niech $C^1$ oznacza iloraz zbioru wszystkich węzłów przez relację zgodności.
-    Zbiór $C^1$ wyposażony w~działanie
-    \begin{equation}
-        [K_1] + [K_2] = [K_1 \shrap K_2]
-    \end{equation}
-    staje się grupą abelową, nazywaną grupą zgodności.
-    Jej elementem eneutralnym jest klasa abstrakcji niewęzła.
-    Elementem przeciwnym do $[K]$ jest $[mr K]$.
-\end{definition}
-
-%%% Kawauchi 157:
-
-Niech $\Theta$ oznacza rodzinę macierzy Seiferta, kwadratowych macierzy $V$ o całkowitych wyrazach takich, że $\det (V - V^T) = 1$.
-Mówimy, macierz $V \in \Theta$ jest zerowo kobordantna, jeśli istnieje całkowitoliczbowa macierz $P$ o~wyznaczniku równym $\pm 1$, że
-\begin{equation}
-    V = P \begin{pmatrix} 0 & V_{21} \\ V_{12} & V_{22} \end{pmatrix} P^{-1}
-\end{equation}
-Takie macierze nazywamy unimodularnie sprzężonymi.
-
-\begin{proposition}
-    Niech $V \in \Theta$ będzie macierzą zerowo kobordantną.
-    Wtedy istnieje plastrowy węzeł $K$, którego macierzą Seiferta jest $V$.
-\end{proposition}
-
-\begin{proof}
-    \cite[proposition 12.2.1]{kawauchi96}
-\end{proof}
-
-Przez analogię, o dwóch macierzach $V_1, V_2 \in \Theta$ mówimy, że są kobordantne, jeżeli $(-V_1) \oplus V_2$ jest zerowo kobordantna.
-Kobordyzm jest znowu relacją równoważności, iloraz $\Theta$ przez nią oznaczamy przez $G_-$, a elementy tego ilorazu jako $[V]$.
-Wyposażony w działanie $[V_1] + [V_2] = [V_1 \oplus V_2]$ staje się grupą abelową.
-
-\begin{proposition}
-    % Kawauchi 12.2.8
-    Odwzorowanie $\psi \colon C^1 \to G_-$ posyłające klasę abstrakcji węzła w klasę abstrakcji jego macierzy Seiferta jest dobrze określonym epimorfizmem.
-\end{proposition}
-
-\begin{proof}
-    Funkcja $\psi$ jest dobrze określona na mocy faktu \ref{prp:cobordant_to_algebraic_is_algebraic}, jest homomorfizmem jak wynika z dowodu faktu \ref{prp:signature_additive}.
-    To, że jest ,,na'', jest wnioskiem z \cite[s. 62]{kawauchi96}
-\end{proof}
-
-Funkcję $\psi$ rozpatrywał Levine \cite{levine69}.
-Casson, Gordon pokazali w latach 70., że jej jądro jest niepuste \cite{gordon78}.
-
-\begin{proposition}
-    $G_- \cong \Z^\infty \oplus (\Z/4\Z)^\infty \oplus (\Z/2\Z)^\infty$.
-\end{proposition}
-
-% Dowód tego faktu jest pominięty nawet w pracy Kawauchiego
-
-% \alexander(t) = 1 => K plastowy (w TOP) ale niekoniecznie (w PL)
-
-% Kawauchi, supplementary notes for Chapter 12: for a knot K with trivial Alexander polynomial it was shown by Freedman 1982 that K is necessarily a slice knot in TOP category but by...
-
-% TODO: \textbf{Livingston: A SURVEY OF CLASSICAL KNOT CONCORDANCE}. The application of abelian knot invariants (those determined by the cohomology of abelian covers or, equivalently, by the Seifert form) to concordance culminated in 1969 with Levine’s classification of higher dimensional knot concordance, [62, 63], which applied in the classical dimension to give a surjective homomorphism $\varphi \colon C \to \Z^\infty \oplus \Z_2^\infty \oplus \Z_4^\infty$. In 1975 Casson and Gordon [8, 9] proved that Levine’s homomorphism is not an isomorphism, constructing nontrivial elements in the kernel, and Jiang expanded on this to show that the kernel contains a subgroup isomorphic to $\Z_2^\infty$. More significant, Freedman proved that all knots with trivial Alexander polynomial are in fact slice in the topological locally flat category.
+\input{50-families/slice-concordance}
 
 \input{50-families/slice-ribbon}
 
