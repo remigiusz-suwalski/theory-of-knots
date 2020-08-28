@@ -18,8 +18,12 @@ Wszystko zaczęło się od artykułu \cite{fox66} Foxa, Milnora.
 
 \begin{definition}[węzeł plastrowy]
     \index{węzeł!plastrowy}
-    Niech $K \subseteq S^3$ będzie takim węzłem, że w kuli $B^4$ istnieje płaski dysk $D$ taki, że $K = \partial D = D \cap S^3$.
-    Wtedy $K$ nazywamy węzłem plastrowym.
+    % z \cite{gompf86}
+    Niech $K$ będzie takim węzłem w $S^3 = \partial B^4$, który ogranicza gładko zanurzony 2-dysk w $B^4$.
+    O węźle $K$ mówimy wtedy, że jest plastrowy.
+    % stare:
+    % Niech $K \subseteq S^3$ będzie takim węzłem, że w kuli $B^4$ istnieje płaski dysk $D$ taki, że $K = \partial D = D \cap S^3$.
+    % Wtedy $K$ nazywamy węzłem plastrowym.
 \end{definition}
 
 Następujące węzły o~mniej niż jedenastu skrzyżowaniach są plastrowe: $6_1$, $8_{8}$, $8_{9}$, $8_{20}$, $9_{27}$, $9_{41}$, $9_{46}$, $10_{3}$, $10_{22}$, $10_{35}$, $10_{42}$, $10_{48}$, $10_{75}$, $10_{87}$, $10_{99}$, $10_{123}$, $10_{129}$, $10_{137}$, $10_{140}$, $10_{153}$ oraz $10_{155}$.
@@ -91,6 +95,7 @@ Test ten eliminuje kolejne 45 węzłów poniżej 13 skrzyżowań.
 \end{proof}
 
 \begin{proposition}
+    \label{prp:trivial_alexander_implies_slice}
     Niech $K$ będzie węzłem w kategorii TOP.
     Jeżeli jego wielomian Alexandera jest trywialny: $\alexander_K(t) \equiv 1$, to węzeł $K$ jest plastrowy.
 \end{proposition}
@@ -99,8 +104,8 @@ Test ten eliminuje kolejne 45 węzłów poniżej 13 skrzyżowań.
     Freedman w \cite[tw. 1.13]{freedman82}.
 \end{proof}
 
-Jak wynika z twierdzenia Donaldsona, wynik przestaje być prawdziwy po przejściu kategorii PL.
-Dość klarownie różnicę między tymi dwiema kategoriami tłumaczy Gompf w~\cite{gompf86}.  
+Implikacja \ref{prp:trivial_alexander_implies_slice} przestaje być prawdziwa po przejściu do kategorii PL.
+Dość klarownie różnicę między kategoriami TOP i PL tłumaczy Gompf w~\cite{gompf86}, wspomniane jest tam także twierdzenie Donaldsona, kluczowy składnik w~uzasadnieniu tej różnicy.
 
 \input{50-families/slice-concordance}
 
