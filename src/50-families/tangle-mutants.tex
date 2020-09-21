@@ -1,31 +1,42 @@
 \subsection{Mutanty i mutacje}
 \label{sec:mutant}
 Na zakończenie wspomnimy o~mutacjach.
+
 \begin{definition}[mutacja]
-    \label{def:mutant}
-    \index{mutacja/mutant}
-    Półobrót supła względem osi poziomej, pionowej albo też prostopadłej do płaszczyzny, w~jakiej leży diagram, nazywamy mutacją, zaś otrzymany tak splot -- mutantem.
+    \label{def:mutacja}
+    \index{mutacja}
+    Półobrót supła względem osi poziomej, pionowej albo też prostopadłej do płaszczyzny, w~jakiej leży diagram, nazywamy mutacją.
     W razie potrzeby zmieniamy orientację supła na przeciwną.
 \end{definition}
 
+\begin{tobedone}
+rysunek z pracy ,,Tabulating and distinguishing mutants''
+\end{tobedone}
+
+\begin{definition}[mutant]
+    \label{def:mutant}
+    \index{mutant}
+    Niech $K$ będzie węzłem.
+    Węzeł, który powstaje przez wykonanie ciągu mutacji na węźle $K$, nazywamy mutantem węzła $K$.
+\end{definition}
+
 Mutacja węzła o~co najwyżej dziesięciu skrzyżowaniach nie zmienia jego klasy abstrakcji.
-Najsłynniejszą parę mutantów stanowią węzeł Conwaya $11n_{34}$ oraz Kinoshity-Terasakiego $11n_{42}$.
+Najprostszą, a zarazem najsłynniejszą parą różnych od siebie mutantów stanowią węzeł Conwaya $11n_{34}$ oraz Kinoshity-Terasakiego $11n_{42}$.
 \index{węzeł!Conwaya}
 \index{węzeł!Kinoshity-Terasakiego}
+
+\begin{tobedone}
+rysunek
+\end{tobedone}
+
 Conway zauważył podczas klasyfikacji niealternujących węzłów, że tylko one posiadają trywialny wielomian Alexandera.
 Mają też taki sam wielomian Jonesa,
 \begin{equation}
     \jones(t) = t^{6} -2t^5 +2t^4 -2t^3 +t^2 +2t^{-1} -2t^{-2} +2t^{-3} -t^{-4}.
 \end{equation}
-Kinoshita, Terasaki zdefiniowali nieskończoną rodzinę węzłów o trywialnym wielomianie Alexandera, której pierwszym wyrazem jest węzeł $11n_{42}$ (w~\cite{kinoshita57}).
+Kinoshita, Terasaki zdefiniowali nieskończoną rodzinę węzłów o trywialnym wielomianie Alexandera, której pierwszym wyrazem jest węzeł $11n_{42}$ w~\cite{kinoshita57}.
 Dowód tego, że $11n_{34}$ oraz $11n_{42}$ są różne, jako pierwszy podał prawdopodobnie Riley w~1971 roku \cite{riley71}: wykorzystał on homomorfizmy z~grupy węzła w~$PSL(2, 7)$.
 Genusy, odpowiednio: $3$ i~$2$, wyznaczył Gabai piętnaście lat później w~\cite{gabai86}, używał foliacji.
-
-Niedawno Stojmenow podjął się systematycznie znalezienia mutantów wśród węzłów o~mniej niż 19 skrzyżowaniach (praca \cite{stoimenow10} z~2010 roku).
-Twierdzi, że w~\cite{chmutov94} pokazano, że ,,niezmienniki Wasiljewa stopnia co najwyżej 8. nie rozróżniają mutantów''; ja tego nie widzę.
-\index{niezmiennik!Wasiljewa}
-Wynik poprawił Murakami sześć lat później do 10. stopnia w~dostępnej na swojej stronie internetowej pracy ,,Finite type invariants detecting the mutant knots''.
-Potwierdził też, że pewien niezmiennik stopnia 11. używany przez Mortona i~Cromwella odróżnia węzeł Conwaya od węzła Kinoshity-Terasakiego.
 
 Mutanty nie dają się łatwo odróżniać niezmiennikami.
 
@@ -37,7 +48,7 @@ Mutanty nie dają się łatwo odróżniać niezmiennikami.
     \index{wielomian!kablowy}
     sygnatury Tristrama-Levine'a, % cooper99
     \index{sygnatura}
-    symplicjalnej objętości Gromowa, % ruberman87
+    symplicjalnej objętości Gromowa, % ruberman87: Ruberman [42] showed that mutants have equal volume in all hyperbolic pieces of the JSJ decomposition.
     \index{objętość!Gromowa}
     instanton homologii Floera, % ruberman99
     \index{homologia!Floera}
@@ -45,12 +56,81 @@ Mutanty nie dają się łatwo odróżniać niezmiennikami.
     \index{niezmiennik!Wittena}
     ani Cassona. % kirk89
     \index{niezmiennik!Cassona}
+    % wielomian Alexandera
 \end{proposition}
 
 \begin{proof}
     Prace \cite{menasco91}, \cite{przytycki89}, \cite{lipson87}, \cite{cooper99}, \cite{ruberman87}, \cite{ruberman99}, \cite{rong94} oraz \cite{kirk89}.
 \end{proof}
 
+Poziom zaawansowania tej książki nie pozwala przedstawić szczegółów dowodu.
+Możemy jedynie przytoczyć obserwację... 
+
+\begin{tobedone}
+The following observation gives evidence of difficulty in distinguishing between a link and its Conway mutant (cf. [Viro 1977]):
+Proposition 3.8.2 If L' is a Conway mutant of a link L, then the double covering spaces over 53 with branch sets Land L' are orientation-preservingly homeomorphic.
+We also observe here another fact in [Cooper 1982] which you can understand after you know the facts in Chapter 5. Namely, the Seifert matrices of any knot and its Conway mutant are S-equivalent, so that their Alexander polynomials and their signatures are equal, respectively.
+\end{tobedone}
+
+Niedawno Stojmenow podjął się systematycznie szukania mutantów wśród węzłów o~mniej niż 19 skrzyżowaniach (praca \cite{stoimenow10} z~2010 roku).
+Początkowo pracował sam, badając pewne subtelne przykłady postanowił uwikłać w swój projekt Toshifumiego Tanakę, a później także Daniela Mateię.
+Praca \cite{stoimenow10} jest kontynuacją artykułu, który napisali wspólnymi siłami.
+
+I tak na stronie 531 można przeczytać, że ,,niezmienniki Wasiljewa stopnia co najwyżej 8. nie rozróżniają mutantów węzłów \cite{chmutov94}, ja tego nie widzę.
+\index{niezmiennik!Wasiljewa}
+Mniej więcej sześć lat później wynik poprawił J. Murakami (nie mylić z H. Murakamim!) do 10. stopnia w~niezindeksowanej pracy \cite{murakami99}.
+W międzyczasie Cromwell, Morton znaleźli niezmiennik stopnia 11., który odróżnia węzły Conwaya oraz Kinoshity-Terasakiego; patrz \cite{cromwell96}.
+% czy Murakami potwierdził wynik Cromwella, Mortona?
+
+Podsumowanie poszukiwań mutantów stanowi poniższa tabela.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llllll} \toprule
+skrzyżowania & 11 & 12 & 13  & 14   & 15    \\ \midrule
+pary         & 16 & 70 & 703 & 3917 & 24884 \\
+trójki       &    & 5  & 38  & 233  & 1000  \\
+czwórki      &    &    & 32  & 262  & 2909  \\
+szóstki      &    &    & 1   & 17   & 172   \\
+ósemki       &    &    &     & 6    & 84    \\
+łącznie      & 16 & 75 & 774 & 4435 & 29049 \\
+\bottomrule
+\hline
+\end{tabular}
+\caption{Liczba grup mutantów wśród pierwszych węzłów do 15 skrzyżowań}
+\end{table}
+
+Mutant węzła złożonego także jest złożony, co więcej istnieje bijekcja między węzłami pierwszymi, z których są zbudowane \cite{ruberman87}.
+Wystarczy zatem ograniczyć się do węzłów pierwszych, niestety wciąż nie jest znana ogólna procedura pozwalająca wyliczyć wszystkie mutanty danego węzła.
+
+Zbiór problemów niskowymiarowej topologii opublikowany przez Kirby'iego zawiera następujące pytanie:
+\begin{conjecture}
+    Niech $K$ będzie prostym\footnote{simple} węzłem bez orientacji.
+    Czy istnieją węzły niebędące mutantami $K$, których nie można odróżnić od $K$ wielomianem Jonesa oraz wszystkimi jego satelitami?
+\end{conjecture}
+
+Stojmenow pisze, że tak: pierwszą chronologicznie parą jest $14_{41721}$, $14_{42125}$.
+Dowód korzysta ze wzoru fuzyjnego pokazanego przez Masbauma oraz Vogela \cite{masbaum94}.
+% fusion formula
+Wzór ten zastosowany do konkretnej pary węzłów sprawia trudności rachunkowe, jednak jest wystarczającym narzędziem, by rozszerzyć konstrukcję do ogólnego wyniku:
+
+\begin{proposition}
+    Istnieje nieskończenie wiele par prostych węzłów hiperbolicznych o tych samych kolorowych wielomianach Jonesa, które nie są swoimi mutantami.
+\end{proposition}
+
+\begin{proof}
+    \cite{toshifumi09}.
+\end{proof}
+
+Millett, Ewing napisali w połowie lat osiemdziesiątych w języku C programy liczące wyjątkowo szybko wielomian HOMFLY oraz wielomian Kauffmana danego węzła.
+Programy te pozwalają na obliczenia tam, gdzie nie dają sobie rady inne narzędzia.
+Autorzy nie wiedzieli wtedy, że ktoś jeszcze będzie z nich korzystać w przyszłości, dlatego poczynili w kodzie liczne optymalizacje dla stacji roboczej Sun, jaką wtedy dysponowali.
+Okazuje się, że dla węzłów o mniej więcej 50 skrzyżowaniach program kończy swoje działanie zrzutem pamięci, wpada w pętlę bez wyjścia, albo zwraca niepoprawny wynik (składniki wielomianu Kauffmana są postaci $a^m z^n$, gdzie $m + n$ jest nieparzyste).
+
+Stoimenow korzystał z tych programów podczas tablicowania mutantów.
+W swojej pracy poruszył jeszcze temat symetrycznych mutantów, my nie poświęcimy temu zagadnieniu miejsca.
+
+%%% to już nie jest stoimenow10
 Jeśli wyjściowy diagram był alternujący, to mutant też jest alternujący.
 Istnieje podejrzenie, że mutacja nie zmienia liczby gordyjskiej.
 Gordon i~Luecke w~2006 pokazali to dla klasy węzłów $1$-gordyjskich (\cite{gordon06}), dużo wcześniej wiedzieliśmy tylko, że jedynym mutantem niewęzła jest niewęzeł (Rolfsen w~\cite{rolfsen93}?).
@@ -65,9 +145,3 @@ Gordon i~Luecke w~2006 pokazali to dla klasy węzłów $1$-gordyjskich (\cite{go
     Wcześniej Livingston pokazał istnienie mutantów o~różnym genusie plastrowym (\cite{livingston83}).
 \end{proof}
 
-\begin{tobedone}
-The following observation gives evidence of difficulty in distinguishing between a link and its Conway mutant (cf. [Viro 1977]):
-Proposition 3.8.2 If L' is a Conway mutant of a link L, then the double covering spaces over 53 with branch sets Land L' are orientation-preservingly homeomor- phic.
-
-We also observe here another fact in [Cooper 1982] which you can understand after you know the facts in Chapter 5. Namely, the Seifert matrices of any knot and its Conway mutant are S-equivalent, so that their Alexander polynomials and their signatures are equal, respectively.
-\end{tobedone}
