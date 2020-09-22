@@ -60,59 +60,36 @@ Mutanty nie dają się łatwo odróżniać niezmiennikami.
 \end{proposition}
 
 \begin{proof}
-    Prace \cite{menasco91}, \cite{przytycki89}, \cite{lipson87}, \cite{cooper99}, \cite{ruberman87}, \cite{ruberman99}, \cite{rong94} oraz \cite{kirk89}.
+    Poziom zaawansowania tej książki nie pozwala przedstawić szczegółów dowodu, dlatego wymienimy tylko odnośniki do literatury: \cite{menasco91}, \cite{przytycki89}, \cite{lipson87}, \cite{cooper99}, \cite{ruberman87}, \cite{ruberman99}, \cite{rong94} oraz \cite{kirk89}.
 \end{proof}
 
-Poziom zaawansowania tej książki nie pozwala przedstawić szczegółów dowodu.
-Możemy jedynie przytoczyć obserwację... 
-
-\begin{tobedone}
-The following observation gives evidence of difficulty in distinguishing between a link and its Conway mutant (cf. [Viro 1977]):
-Proposition 3.8.2 If L' is a Conway mutant of a link L, then the double covering spaces over 53 with branch sets Land L' are orientation-preservingly homeomorphic.
-We also observe here another fact in [Cooper 1982] which you can understand after you know the facts in Chapter 5. Namely, the Seifert matrices of any knot and its Conway mutant are S-equivalent, so that their Alexander polynomials and their signatures are equal, respectively.
-\end{tobedone}
+Warto przytoczyć teraz obserwację 3.8.2 z \cite[s. 43]{kawauchi96}: jeśli sploty $L_1, L_2$ są mutantami, to podwójne przestrzenie nakryciowe nad $S^3$ rozgałęzione odpowiednio wzdłuż $L_1$ oraz $L_2$ są homeomorficzne z zachowaniem orientacji.
+Co więcej, macierze Seiferta mutantów są $S$-równoważne.
+To tłumaczy czemu większość niezmienników nie radzi sobie z odróżnianiem mutantów.
+% Viro: Two-fold branched coverings of three-sphere
 
 Niedawno Stojmenow podjął się systematycznie szukania mutantów wśród węzłów o~mniej niż 19 skrzyżowaniach (praca \cite{stoimenow10} z~2010 roku).
 Początkowo pracował sam, badając pewne subtelne przykłady postanowił uwikłać w swój projekt Toshifumiego Tanakę, a później także Daniela Mateię.
 Praca \cite{stoimenow10} jest kontynuacją artykułu, który napisali wspólnymi siłami.
 
-I tak na stronie 531 można przeczytać, że ,,niezmienniki Wasiljewa stopnia co najwyżej 8. nie rozróżniają mutantów węzłów \cite{chmutov94}, ja tego nie widzę.
+I tak na stronie 531 można przeczytać, że ,,niezmienniki Wasiljewa co najwyżej 8. stopnia nie rozróżniają mutantów węzłów \cite{chmutov94}, ja tego nie widzę.
 \index{niezmiennik!Wasiljewa}
 Mniej więcej sześć lat później wynik poprawił J. Murakami (nie mylić z H. Murakamim!) do 10. stopnia w~niezindeksowanej pracy \cite{murakami99}.
 W międzyczasie Cromwell, Morton znaleźli niezmiennik stopnia 11., który odróżnia węzły Conwaya oraz Kinoshity-Terasakiego; patrz \cite{cromwell96}.
 % czy Murakami potwierdził wynik Cromwella, Mortona?
 
-Podsumowanie poszukiwań mutantów stanowi poniższa tabela.
+Mutant węzła złożonego także jest złożony, co więcej istnieje bijekcja między czynnikami w ich rozkładach na węzły pierwsze \cite{ruberman87}.
+Dzięki temu możemy bez straty ogólności założyć, że badamy tylko węzły pierwsze, niestety wciąż nie jest znana ogólna procedura pozwalająca wyliczyć wszystkie mutanty danego węzła.
 
-\begin{table}[h]
-\centering
-\begin{tabular}{llllll} \toprule
-skrzyżowania & 11 & 12 & 13  & 14   & 15    \\ \midrule
-pary         & 16 & 70 & 703 & 3917 & 24884 \\
-trójki       &    & 5  & 38  & 233  & 1000  \\
-czwórki      &    &    & 32  & 262  & 2909  \\
-szóstki      &    &    & 1   & 17   & 172   \\
-ósemki       &    &    &     & 6    & 84    \\
-łącznie      & 16 & 75 & 774 & 4435 & 29049 \\
-\bottomrule
-\hline
-\end{tabular}
-\caption{Liczba grup mutantów wśród pierwszych węzłów do 15 skrzyżowań}
-\end{table}
-
-Mutant węzła złożonego także jest złożony, co więcej istnieje bijekcja między węzłami pierwszymi, z których są zbudowane \cite{ruberman87}.
-Wystarczy zatem ograniczyć się do węzłów pierwszych, niestety wciąż nie jest znana ogólna procedura pozwalająca wyliczyć wszystkie mutanty danego węzła.
-
-Zbiór problemów niskowymiarowej topologii opublikowany przez Kirby'iego zawiera następujące pytanie:
-\begin{conjecture}
+Zbiór problemów niskowymiarowej topologii opublikowany przez Kirby'iego \cite{kirby78} zawiera następujące pytanie:
+\begin{conjecture}[problem 1.91]
     Niech $K$ będzie prostym\footnote{simple} węzłem bez orientacji.
     Czy istnieją węzły niebędące mutantami $K$, których nie można odróżnić od $K$ wielomianem Jonesa oraz wszystkimi jego satelitami?
 \end{conjecture}
 
-Stojmenow pisze, że tak: pierwszą chronologicznie parą jest $14_{41721}$, $14_{42125}$.
-Dowód korzysta ze wzoru fuzyjnego pokazanego przez Masbauma oraz Vogela \cite{masbaum94}.
+Stojmenow pisze, że tak: pierwszą chronologicznie parą jest $14_{41721}$, $14_{42125}$, dowód tego faktu opiera się na wzorze fuzyjnym Masbauma-Vogela odkrytym w pracy \cite{masbaum94}.
 % fusion formula
-Wzór ten zastosowany do konkretnej pary węzłów sprawia trudności rachunkowe, jednak jest wystarczającym narzędziem, by rozszerzyć konstrukcję do ogólnego wyniku:
+Choć wzór ten zastosowany do konkretnej pary węzłów sprawia zazwyczaj trudności rachunkowe, to jest wystarczającym narzędziem, by rozszerzyć konstrukcję do ogólnego wyniku:
 
 \begin{proposition}
     Istnieje nieskończenie wiele par prostych węzłów hiperbolicznych o tych samych kolorowych wielomianach Jonesa, które nie są swoimi mutantami.
@@ -120,28 +97,77 @@ Wzór ten zastosowany do konkretnej pary węzłów sprawia trudności rachunkowe
 
 \begin{proof}
     \cite{toshifumi09}.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Mauris condimentum leo sit amet venenatis elementum.
+    Sed congue ligula ut lorem dictum eleifend.
+    Maecenas sem elit, sodales ac massa sed, semper dapibus sem.
+    Maecenas vel porta mi.
+    Donec venenatis tellus nec tellus rhoncus malesuada.
+    Nam gravida eu nisi pretium eleifend.
+    Nulla faucibus tincidunt nunc in semper.
+    Cras ut blandit magna, eget blandit turpis.
+    Vivamus aliquam quam id velit iaculis mattis.
+    Ut a posuere orci.
+    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum in ligula quis ex efficitur cursus.
 \end{proof}
 
-Millett, Ewing napisali w połowie lat osiemdziesiątych w języku C programy liczące wyjątkowo szybko wielomian HOMFLY oraz wielomian Kauffmana danego węzła.
-Programy te pozwalają na obliczenia tam, gdzie nie dają sobie rady inne narzędzia.
+Zaraz po rewolucji, jaką w latach 80. wywołała relacja kłębiasta, Ewing napisał z~Millettem komputerowy program w~języku C, który wyjątkowo szybko znajdował wielomiany HOMFLY oraz Kauffmana zadanego węzła.
+Nawet dziś program ten jest w stanie uporać się z węzłami, z którymi nie radzą sobie inne narzędzia.
 Autorzy nie wiedzieli wtedy, że ktoś jeszcze będzie z nich korzystać w przyszłości, dlatego poczynili w kodzie liczne optymalizacje dla stacji roboczej Sun, jaką wtedy dysponowali.
-Okazuje się, że dla węzłów o mniej więcej 50 skrzyżowaniach program kończy swoje działanie zrzutem pamięci, wpada w pętlę bez wyjścia, albo zwraca niepoprawny wynik (składniki wielomianu Kauffmana są postaci $a^m z^n$, gdzie $m + n$ jest nieparzyste).
+Dzisiaj okazuje się, że dla węzłów o większej liczbie skrzyżowań program często kończy swoje działanie zrzutem pamięci, wpada w pętlę bez wyjścia albo zwraca niepoprawny wynik (składniki wielomianu Kauffmana są postaci $a^m z^n$, gdzie $m + n$ jest nieparzyste).
+Stojmenow korzystał z tych programów podczas tablicowania mutantów.
+Jak postępował?
+\begin{enumerate}
+    \item podzielił węzły na grupy o tej samej objętości, wielomianie Jonesa oraz Alexandera;
+    \item w każdej z grup szukał ciągu mutacji pomiędzy diagramami minimalnymi;
+    \item tam, gdzie nie udało się znaleźć mutantów, liczył 2-kablowy wielomian HOMFLY;
+    \item jeśli wielomian był taki sam, szukał ciągu mutacji między nieminimalnymi diagramami do 18 skrzyżowań;
+    \item wreszcie pozostałe grupy zostały potraktowane reprezentacjami grupy podstawowej dwukrotnego nakrycia.
+\end{enumerate}
 
-Stoimenow korzystał z tych programów podczas tablicowania mutantów.
-W swojej pracy poruszył jeszcze temat symetrycznych mutantów, my nie poświęcimy temu zagadnieniu miejsca.
+Podsumowanie jego pracy zawiera tabela:
 
-%%% to już nie jest stoimenow10
-Jeśli wyjściowy diagram był alternujący, to mutant też jest alternujący.
-Istnieje podejrzenie, że mutacja nie zmienia liczby gordyjskiej.
-Gordon i~Luecke w~2006 pokazali to dla klasy węzłów $1$-gordyjskich (\cite{gordon06}), dużo wcześniej wiedzieliśmy tylko, że jedynym mutantem niewęzła jest niewęzeł (Rolfsen w~\cite{rolfsen93}?).
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lccccc} \toprule
+        skrzyżowania & 11 & 12 & 13  & 14   & 15    \\ \midrule
+        pary         & 16 & 70 & 703 & 3917 & 24884 \\
+        trójki       &    & 5  & 38  & 233  & 1000  \\
+        czwórki      &    &    & 32  & 262  & 2909  \\
+        szóstki      &    &    & 1   & 17   & 172   \\
+        ósemki       &    &    &     & 6    & 84    \\
+        łącznie      & 16 & 75 & 774 & 4435 & 29049 \\
+        \bottomrule
+        \hline
+    \end{tabular}
+    \caption{Liczba grup mutantów wśród pierwszych węzłów do 15 skrzyżowań}
+\end{table}
+
+% W swojej pracy poruszył jeszcze temat symetrycznych mutantów, my nie poświęcimy temu zagadnieniu miejsca.
+Reszta wyłożonego materiału nie pochodzi już z pracy \cite{stoimenow10}.
+
+\begin{proposition}
+    Niech $D$ będzie alternującym diagramem.
+    Wtedy każdy mutant $D$ też jest alternujący.
+\end{proposition}
+
+\begin{conjecture}
+    Mutacja nie zmienia liczby gordyjskiej.
+\end{conjecture}
+
+Jak czytamy w \cite[problem 1.69]{kirby78}, przypuszczenie to jest bardzo trudne do udowodnienia: wynika z niego inna stara hipoteza teorii węzłów, że liczba gordyjska splotów jest addytywna.
+Przytoczymy tylko dwa częściowe wyniki.
+Najpierw Rolfsen zauważył, że jedynym mutantem niewęzła jest sam niewęzeł \cite{rolfsen93}.
+Dekadę później Gordon, Luecke pokazali, iż klasa węzłów $1$-gordyjskich jest zamknięta na przeprowadzanie mutacji \cite{gordon06}.
 
 \begin{proposition}
     Niech $m, n$ będą nieujemnymi liczbami całkowitymi.
     Wtedy istnieje węzeł $K$ o genusie plastrowym równym $m$, którego pewien mutant ma genus plastrowy równy $n$.
 \end{proposition}
 
+Stanowi to uogólnienie obserwacji Livingstona \cite{livingston83}, że istnieją mutanty o~różnym genusie plastrowym.
+
 \begin{proof}
     Kim, Livingston w \cite{kim05}.
-    Wcześniej Livingston pokazał istnienie mutantów o~różnym genusie plastrowym (\cite{livingston83}).
 \end{proof}
 
